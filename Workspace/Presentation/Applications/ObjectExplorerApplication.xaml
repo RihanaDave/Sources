@@ -1,0 +1,28 @@
+﻿<local:PresentationApplication x:Class="GPAS.Workspace.Presentation.Applications.ObjectExplorerApplication"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Applications"
+                               xmlns:objectExplorerControls="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer"
+                               mc:Ignorable="d"              
+             d:DesignHeight="350" d:DesignWidth="1000">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Name="mainGrid">
+        <objectExplorerControls:MainControl x:Name="mainControl"
+                                            Margin="5 0" 
+                                            ShowOnGraphRequested="MainControl_ShowOnGraphRequested"
+                                            ShowOnMapRequested="MainControl_ShowOnMapRequested"
+                                            ObjectSetBaseAdded="mainControl_ObjectSetBaseAdded"
+                                            SnapshotRequested="mainControl_SnapshotRequested"
+                                            SnapshotTaken="mainControl_SnapshotTaken"/>
+    </Grid>
+    
+</local:PresentationApplication>

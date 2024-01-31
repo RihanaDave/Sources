@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="DataSourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ManuallyEntered">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Document">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Graph">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CsvFile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AttachedDatabaseTable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DataLakeSearchResult">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExcelSheet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AccessTable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataSourceType" nillable="true" type="tns:DataSourceType" />
+  <xs:complexType name="ACL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Classification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Permissions" nillable="true" type="tns:ArrayOfACI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACL" nillable="true" type="tns:ACL" />
+  <xs:complexType name="ArrayOfACI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ACI" nillable="true" type="tns:ACI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfACI" nillable="true" type="tns:ArrayOfACI" />
+  <xs:complexType name="ACI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevel" type="tns:Permission" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACI" nillable="true" type="tns:ACI" />
+  <xs:simpleType name="Permission">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Discovery" />
+      <xs:enumeration value="Read" />
+      <xs:enumeration value="Write" />
+      <xs:enumeration value="Owner" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+  <xs:complexType name="ArrayOfGroupClassificationBasedPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupClassificationBasedPermission" nillable="true" type="tns:GroupClassificationBasedPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupClassificationBasedPermission" nillable="true" type="tns:ArrayOfGroupClassificationBasedPermission" />
+  <xs:complexType name="GroupClassificationBasedPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Permissions" nillable="true" type="tns:ArrayOfClassificationBasedPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupClassificationBasedPermission" nillable="true" type="tns:GroupClassificationBasedPermission" />
+  <xs:complexType name="ArrayOfClassificationBasedPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClassificationBasedPermission" nillable="true" type="tns:ClassificationBasedPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClassificationBasedPermission" nillable="true" type="tns:ArrayOfClassificationBasedPermission" />
+  <xs:complexType name="ClassificationBasedPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevel" type="tns:Permission" />
+      <xs:element minOccurs="0" name="Classification" nillable="true" type="tns:ClassificationEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassificationBasedPermission" nillable="true" type="tns:ClassificationBasedPermission" />
+  <xs:complexType name="ClassificationEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdentifierString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClassificationEntry" nillable="true" type="tns:ClassificationEntry" />
+  <xs:complexType name="ArrayOfDataSourceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataSourceInfo" nillable="true" type="tns:DataSourceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataSourceInfo" nillable="true" type="tns:ArrayOfDataSourceInfo" />
+  <xs:complexType name="DataSourceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acl" nillable="true" type="tns:ACL" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataSourceInfo" nillable="true" type="tns:DataSourceInfo" />
+</xs:schema>

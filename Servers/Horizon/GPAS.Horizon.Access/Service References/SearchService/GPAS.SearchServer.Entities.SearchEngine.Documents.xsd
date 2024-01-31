@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.SearchServer.Entities.SearchEngine.Documents" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.SearchServer.Entities.SearchEngine.Documents" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfBoundingBox">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BoundingBox" nillable="true" type="tns:BoundingBox" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBoundingBox" nillable="true" type="tns:ArrayOfBoundingBox" />
+  <xs:complexType name="BoundingBox">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="height" type="xs:int" />
+      <xs:element minOccurs="0" name="landmarks" nillable="true" type="tns:Landmarks" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="topLeft" type="q1:Point" />
+      <xs:element minOccurs="0" name="width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BoundingBox" nillable="true" type="tns:BoundingBox" />
+  <xs:complexType name="Landmarks">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="marks" nillable="true" type="q2:ArrayOfdouble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Landmarks" nillable="true" type="tns:Landmarks" />
+</xs:schema>

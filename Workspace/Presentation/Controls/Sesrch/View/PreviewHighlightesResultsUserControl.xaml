@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.Sesrch.View.PreviewHighlightesResultsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.Sesrch.View"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"  
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="Transparent">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid >
+        <Grid Name="grd_Previvew">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" IsReadOnly="True" FontSize="23" Foreground="{DynamicResource MaterialDesignBody}"
+                             BorderThickness="0" x:Name="FileName"
+                             TextAlignment="Left"
+                             FontWeight="Bold" TextWrapping="Wrap" >
+            </TextBox>
+            <RichTextBox Name="rtx_highlightes" Grid.Row="1" Foreground="{DynamicResource MaterialDesignBody}"
+                        IsReadOnly="True"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         materialDesign:TextFieldAssist.UnderlineBrush="Transparent"
+                        BorderThickness="0"    
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" >
+                <RichTextBox.Resources>
+                    <!-- This style is used to set the margins for all paragraphs in the FlowDocument to 0. -->
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="10"/>
+                        <Setter Property="BorderThickness" Value="0 10 0 0"></Setter>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
+        </Grid>
+
+        <Label Name="txb_Show" Content="Select a file to preview" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center"                           
+                           FontSize="12" />
+
+    </Grid>
+
+</UserControl>

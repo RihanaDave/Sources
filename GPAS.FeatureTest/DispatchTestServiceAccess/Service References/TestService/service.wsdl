@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TestService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl.Groups" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl.Users" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITestService_CreateNewGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewGroup" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_CreateNewGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_CreateNewMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewMembership" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_CreateNewMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetMembershipUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembershipUsers" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetMembershipUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembershipUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetGroupsOfUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsOfUser" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetGroupsOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsOfUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_SetGroupsMembershipForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetGroupsMembershipForUser" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_SetGroupsMembershipForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetGroupsMembershipForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_RevokeMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeMembership" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_RevokeMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_RemoveMembership_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveMembership" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_RemoveMembership_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveMembershipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_CreateNewAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAccount" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_CreateNewAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_ChangeUserAccountProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserAccountProfile" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_ChangeUserAccountProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserAccountProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetUserAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccounts" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_GetUserAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="ITestService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITestService">
+    <wsdl:operation name="CreateNewGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/CreateNewGroup" message="tns:ITestService_CreateNewGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/CreateNewGroupResponse" message="tns:ITestService_CreateNewGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/GetGroups" message="tns:ITestService_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/GetGroupsResponse" message="tns:ITestService_GetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/CreateNewMembership" message="tns:ITestService_CreateNewMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/CreateNewMembershipResponse" message="tns:ITestService_CreateNewMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembershipUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/GetMembershipUsers" message="tns:ITestService_GetMembershipUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/GetMembershipUsersResponse" message="tns:ITestService_GetMembershipUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsOfUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/GetGroupsOfUser" message="tns:ITestService_GetGroupsOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/GetGroupsOfUserResponse" message="tns:ITestService_GetGroupsOfUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupsMembershipForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/SetGroupsMembershipForUser" message="tns:ITestService_SetGroupsMembershipForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/SetGroupsMembershipForUserResponse" message="tns:ITestService_SetGroupsMembershipForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/RevokeMembership" message="tns:ITestService_RevokeMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/RevokeMembershipResponse" message="tns:ITestService_RevokeMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMembership">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/RemoveMembership" message="tns:ITestService_RemoveMembership_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/RemoveMembershipResponse" message="tns:ITestService_RemoveMembership_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/CreateNewAccount" message="tns:ITestService_CreateNewAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/CreateNewAccountResponse" message="tns:ITestService_CreateNewAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserAccountProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/ChangeUserAccountProfile" message="tns:ITestService_ChangeUserAccountProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/ChangeUserAccountProfileResponse" message="tns:ITestService_ChangeUserAccountProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/ChangePassword" message="tns:ITestService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/ChangePasswordResponse" message="tns:ITestService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/GetUserAccounts" message="tns:ITestService_GetUserAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/GetUserAccountsResponse" message="tns:ITestService_GetUserAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITestService/Authenticate" message="tns:ITestService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITestService/AuthenticateResponse" message="tns:ITestService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITestService" type="tns:ITestService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateNewGroup">
+      <soap:operation soapAction="http://tempuri.org/ITestService/CreateNewGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/ITestService/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewMembership">
+      <soap:operation soapAction="http://tempuri.org/ITestService/CreateNewMembership" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembershipUsers">
+      <soap:operation soapAction="http://tempuri.org/ITestService/GetMembershipUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsOfUser">
+      <soap:operation soapAction="http://tempuri.org/ITestService/GetGroupsOfUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupsMembershipForUser">
+      <soap:operation soapAction="http://tempuri.org/ITestService/SetGroupsMembershipForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeMembership">
+      <soap:operation soapAction="http://tempuri.org/ITestService/RevokeMembership" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMembership">
+      <soap:operation soapAction="http://tempuri.org/ITestService/RemoveMembership" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <soap:operation soapAction="http://tempuri.org/ITestService/CreateNewAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserAccountProfile">
+      <soap:operation soapAction="http://tempuri.org/ITestService/ChangeUserAccountProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ITestService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccounts">
+      <soap:operation soapAction="http://tempuri.org/ITestService/GetUserAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/ITestService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TestService">
+    <wsdl:port name="BasicHttpBinding_ITestService" binding="tns:BasicHttpBinding_ITestService">
+      <soap:address location="http://coretest:9011/TestService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

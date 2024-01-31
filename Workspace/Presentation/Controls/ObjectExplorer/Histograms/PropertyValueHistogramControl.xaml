@@ -1,0 +1,138 @@
+﻿<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.ObjectExplorer.Histograms.PropertyValueHistogramControl"
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                              xmlns:histogram="clr-namespace:GPAS.Histogram;assembly=GPAS.Histogram"
+                              xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+                              xmlns:converters1="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+                              xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer.Histograms"
+                              xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                              xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                              mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+
+    <controls:PresentationControl.Resources>
+        <converters1:SortTypeToBooleanConverter x:Key="SortTypeToBooleanConverter"/>
+
+        <Style x:Key="FilterTexBoxStyle" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}" TargetType="TextBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="5 10 10 10"/>
+        </Style>
+    </controls:PresentationControl.Resources>
+
+    <Grid Name="MainGrid" MouseRightButtonDown="mainGrid_MouseRightButtonDown" PreviewMouseLeftButtonDown="mainGrid_PreviewMouseLeftButtonDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.ContextMenu>
+            <ContextMenu Name="MainContextMenu" Style="{StaticResource ContextMenuStyle}">
+                <MenuItem Name="DrillDownOnCurrentSelectioinMenuItem"
+                          Header="Drill Down on current selection"
+                          Click="DrillDownOnCurrentSelectionMenuItem_Click"/>
+                <Separator/>
+                <MenuItem Name="AddCurrentSelectionToGraphMenuItem"
+                          Header="Add current selection to graph"
+                          IsEnabled="{Binding CanAddToGraphOrMap, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                          Click="AddCurrentSelectionToGraphMenuItem_Click"/>
+                <MenuItem Name="AddCurrentSelectionToMapMenuItem" 
+                          Header="Add current selection to map"                          
+                          IsEnabled="{Binding CanAddToGraphOrMap, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                          Click="AddCurrentSelectionToMapMenuItem_Click"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Filter" Grid.Row="0" HorizontalAlignment="Center" Style="{StaticResource SecondHeader}"/>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Filter type" Style="{StaticResource NormalTextBlock}"/>
+                <RadioButton Content="Matching" Margin="5" GroupName="FindType" Name="MatchingRadioButton"
+                             Foreground="{DynamicResource MaterialDesignBody}"
+                             IsChecked="{Binding FilterMatchingType, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource SortTypeToBooleanConverter},
+                    ConverterParameter={x:Static local:FilterMatchingType.Matching}}"/>
+
+                <RadioButton Content="Not matching" Margin="5" GroupName="FindType" Name="NotMatchingRadioButton"
+                             Foreground="{DynamicResource MaterialDesignBody}"
+                             IsChecked="{Binding FilterMatchingType, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource SortTypeToBooleanConverter},
+                    ConverterParameter={x:Static local:FilterMatchingType.NotMatching}}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Margin="0 10 0 0">
+                <TextBlock Text="Text type" Style="{StaticResource NormalTextBlock}"/>
+                <RadioButton Content="String" Margin="5" GroupName="FieldType" Name="StringRadioButton"
+                             Foreground="{DynamicResource MaterialDesignBody}"
+                             IsChecked="{Binding FilterType, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource SortTypeToBooleanConverter},ConverterParameter={x:Static local:FilterType.String}}"/>
+
+                <RadioButton Content="Regex" Margin="5" GroupName="FieldType" Name="RegexRadioButton"
+                             Foreground="{DynamicResource MaterialDesignBody}"
+                             IsChecked="{Binding FilterType, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource SortTypeToBooleanConverter},ConverterParameter={x:Static local:FilterType.Regex}}"/>
+            </StackPanel>
+
+            <TextBox Grid.Row="3" Name="FilterByValueTextBox" materialDesign:HintAssist.Hint="Filter by display value" 
+                     TextChanged="FilterByValueTextBox_TextChanged" Style="{StaticResource FilterTexBoxStyle}"/>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1" Name="BtnApplyFilter" Margin="5" 
+                        IsEnabled="{Binding FilterTextIsValid, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                        Content="{x:Static resource:Resources.Apply_Filter}" Click="BtnApplyFilter_Click"/>
+
+                <Button Grid.Column="0" Name="BtnClearFilter" Margin="5" IsEnabled="False"
+                        Content="{x:Static resource:Resources.Clear_Filter}" Click="BtnClearFilter_Click"/>
+            </Grid>
+
+            <Button Grid.Row="5" Name="DrillDownButton" Margin="10" VerticalAlignment="Bottom" 
+                    IsEnabled="{Binding CanDrillDown, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                    Content="{x:Static resource:Resources.Drill_Down}" Click="DrillDownButton_Click"/>
+        </Grid>
+
+        <Separator Grid.Column="1" Margin="5">
+            <Separator.LayoutTransform>
+                <RotateTransform Angle="90" />
+            </Separator.LayoutTransform>
+        </Separator>
+
+        <Grid Grid.Column="2" Name="HistogamGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <histogram:Histogram x:Name="MainHistogram" Title="Property value histogtram"
+                                 ShowMoreClicked="MainHistogram_ShowMoreClicked" Grid.Row="0" 
+                                 SelectedItemsChanged="MainHistogram_SelectedItemsChanged"
+                                 SnapshotTaken="MainHistogram_OnSnapshotTaken"/>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Visibility="{Binding UnloadableItemsTextBlock,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" Margin="10">
+                <materialDesign:PackIcon Kind="AlertRhombus" Foreground="OrangeRed" Height="25" Width="25" 
+                                         VerticalAlignment="Center"/>
+                <TextBlock  Name="UnableLoadValuesTextBlock" FontSize="16"
+                            Foreground="{DynamicResource MaterialDesignBody}" Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <waiting:WaitingControl x:Name="WaitingControl" Grid.Column="0" Grid.ColumnSpan="3" Message="Loading..."/>
+    </Grid>
+</controls:PresentationControl>

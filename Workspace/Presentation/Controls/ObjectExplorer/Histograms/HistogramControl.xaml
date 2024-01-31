@@ -1,0 +1,112 @@
+﻿<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.ObjectExplorer.Histograms.HistogramControl"
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                              xmlns:objectExplorerHist="clr-namespace:GPAS.ObjectExplorerHistogramViewer;assembly=GPAS.ObjectExplorerHistogramViewer"
+                              xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+                              xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                              xmlns:convertors="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer.Convertor"
+                              xmlns:histogram="clr-namespace:GPAS.Histogram;assembly=GPAS.Histogram"
+                              xmlns:propertyValueTemplates="clr-namespace:GPAS.Workspace.Presentation.Controls.PropertyValueTemplates"
+                              mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="250">
+
+    <controls:PresentationControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisConverter"/>
+        <convertors:ObjectTypeToVisibilityConvertor x:Key="objectTypeToVisibilityConvertor"/>
+        <convertors:PropertyTypeToVisibilityConvertor x:Key="propertyTypeToVisibilityConvertor"/>
+        <convertors:SinglePropertyTypeToVisibilityConvertor x:Key="singlePropertyTypeToVisibilityConvertor"/>
+        <convertors:MergeTypeToVisibilityConvertor x:Key="mergeTypeToVisibilityConvertor"/>
+        <convertors:NoneTypeToVisibilityConvertor x:Key="noneTypeToVisibilityConvertor"/>
+        <convertors:PropertyTypeURIToValidateForHistogramValueTypeConverter x:Key="PropertyTypeURIToIsEnabledHistogramThisPropertyMenuItemConverter"/>
+        <convertors:PropertyTypeURIToValidateForChartConverter x:Key="PropertyTypeURIToIsEnabledChartMenuItemConverter"/>
+    </controls:PresentationControl.Resources>
+
+        <Grid Name="mainGrid" MaxWidth="500" MouseRightButtonDown="Grid_MouseRightButtonDown">
+
+            <Grid.ContextMenu>
+                <ContextMenu Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource noneTypeToVisibilityConvertor}}"
+                         Style="{StaticResource ContextMenuStyle}">
+                    <MenuItem Name="DrillDownOnObjectsOfThisTypeMenuItem"
+                          Header="Drill down on objects of this type"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource objectTypeToVisibilityConvertor}}"
+                          Click="DrillDownOnObjectsOfThisTypeMenuItem_Click"/>
+                    
+                    <MenuItem Name="DrillDownOnObjectsWithSelectedPropertyMenuItem" 
+                          Header="Drill down on objects with selected property"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource propertyTypeToVisibilityConvertor}}"                                              
+                          Click="DrillDownOnObjectsWithSelectedPropertyMenuItem_Click"/>
+                    
+                    <MenuItem Name="DrillDownOnThisTypesMenuItem"
+                          Header="Drill down on this types"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource mergeTypeToVisibilityConvertor}}"
+                          Click="DrillDownOnThisTypesMenuItem_Click"/>
+
+                    <Separator/>
+
+                    <MenuItem Name="HistogramThisPropertyMenuItem" 
+                          Header="Histogram this property"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource singlePropertyTypeToVisibilityConvertor}}"
+                          IsEnabled="{Binding TypeURI, Converter={StaticResource PropertyTypeURIToIsEnabledHistogramThisPropertyMenuItemConverter}}"
+                          Click="HistogramThisPropertyMenuItem_Click"/>
+
+                    <MenuItem Name="PropertyMatchedValueFilterMenuItem" 
+                              Header="Property matched value filter" 
+                              Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource singlePropertyTypeToVisibilityConvertor}}"                                                     
+                              Click="PropertyMatchedValueFilterMenuItem_Click">
+                    </MenuItem>
+
+                    <MenuItem Name="BarChartThisPropertyMenuItem" 
+                          Header="Chart this Property"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource singlePropertyTypeToVisibilityConvertor}}"
+                          IsEnabled="{Binding TypeURI, Converter={StaticResource PropertyTypeURIToIsEnabledChartMenuItemConverter}}"
+                          Click="BarChartThisPropertyMenuItem_Click" />
+
+                    <Separator Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource singlePropertyTypeToVisibilityConvertor}}"/>
+
+                    <MenuItem Name="AddCurrentSelectionToGraphMenuItem"
+                          Header="Add current selection to graph"
+                          IsEnabled="{Binding CanAddToGraphOrMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource objectTypeToVisibilityConvertor}}"                                              
+                          Click="AddCurrentSelectionToGraphMenuItem_Click"/>
+
+                    <MenuItem Name="AddCurrentSelectionToMapMenuItem" 
+                          Header="Add current selection to map"
+                          IsEnabled="{Binding CanAddToGraphOrMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource objectTypeToVisibilityConvertor}}"
+                          Click="AddCurrentSelectionToMapMenuItem_Click"/>
+
+                    <MenuItem Name="AddCurrentSelectionToGraphForPropertyMenuItem" 
+                          Header="Add current selection to graph"
+                          IsEnabled="{Binding CanAddToGraphOrMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource propertyTypeToVisibilityConvertor}}"
+                          Click="AddCurrentSelectionToGraphForPropertyMenuItem_Click"/>
+
+                    <MenuItem Name="AddCurrentSelectionToMapForPropertyMenuItem" 
+                          Header="Add current selection to map" 
+                          IsEnabled="{Binding CanAddToGraphOrMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource propertyTypeToVisibilityConvertor}}"
+                          Click="AddCurrentSelectionToMapForPropertyMenuItem_Click"/>
+
+                    <MenuItem Name="AddCurrentSelectionToGraphForMergeStateMenuItem" 
+                          Header="Add current selection to graph"
+                          IsEnabled="{Binding CanAddToGraphOrMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource mergeTypeToVisibilityConvertor}}"
+                          Click="AddCurrentSelectionToGraphForMergeStateMenuItem_Click"/>
+
+                    <MenuItem Name="AddCurrentSelectionToMapForMergeStateMenuItem" 
+                          Header="Add current selection to map" 
+                          IsEnabled="{Binding CanAddToGraphOrMap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          Visibility="{Binding SelectedSuperCategoryType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource mergeTypeToVisibilityConvertor}}"
+                          Click="AddCurrentSelectionToMapForMergeStateMenuItem_Click"/>
+                </ContextMenu>
+            </Grid.ContextMenu>
+
+            <histogram:Histogram x:Name="MainHistogram" Background="{DynamicResource MaterialDesignCardBackground}"
+                                 SnapshotTaken="MainHistogram_OnSnapshotTaken"/>
+
+        </Grid>
+
+</controls:PresentationControl>

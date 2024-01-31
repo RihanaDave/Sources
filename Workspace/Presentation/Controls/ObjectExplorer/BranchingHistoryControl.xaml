@@ -1,0 +1,20 @@
+﻿<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.ObjectExplorer.BranchingHistoryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:branching="clr-namespace:GPAS.BranchingHistoryViewer;assembly=GPAS.BranchingHistoryViewer"
+             xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer"
+             xmlns:converter="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer.Convertor"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="800">
+    <Grid>
+        <branching:BranchingHistory x:Name="mainBranchingHisory"
+                                    SelectedSequnceChanged="mainBranchingHisory_SelectedSequnceChanged"
+                                    Recompute="mainBranchingHisory_Recompute"
+                                    ItemDragedAndDroped="mainBranchingHisory_ItemDragedAndDroped">
+        </branching:BranchingHistory>
+        
+    </Grid>
+</controls:PresentationControl>

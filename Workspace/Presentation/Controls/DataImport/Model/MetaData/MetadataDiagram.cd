@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.MetaData.MetaDataItemModel">
+    <Position X="7.25" Y="2.75" Width="1.75" />
+    <Members>
+      <Field Name="_value" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Field Name="needsRecalculation" Hidden="true" />
+      <Method Name="OnValueChanged" Hidden="true" />
+      <Field Name="ownerDataSource" Hidden="true" />
+      <Field Name="shellMetaData" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABACQAAAQACAAEAAAAAQQAAAAECBEAEAAQAgAAAAAgA=</HashCode>
+      <FileName>Controls\DataImport\Model\MetaData\MetaDataItemModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnerDataSource" />
+      <Property Name="ShellMetaData" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IDataSource" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCDAAyAABAAAlMAAAgwAQAhAAABEAACQQAAAAADAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\IDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.WindowsAPICodePack.Shell.PropertySystem.IShellProperty" Collapsed="true">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.MetaData.MetaDataType">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\MetaData\MetaDataType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

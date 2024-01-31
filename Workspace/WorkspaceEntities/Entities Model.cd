@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Entities.KWObject">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAgAAAqAAAEEAAAAAAAMAAAABAAAAAAAA=</HashCode>
+      <FileName>KWObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.KWRelationship">
+    <Position X="12.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAggAAAoCBAEAAAEAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>KWRelationship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.KWLink">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAhCAAACAAAAAAAMAAAAAACAAAAAA=</HashCode>
+      <FileName>KWLinks\KWLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.RelationshipBasedKWLink">
+    <Position X="8" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAhCAAACAAAAAAAMAAAAABCAAAAAA=</HashCode>
+      <FileName>KWLinks\RelationshipBasedKWLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.EventBasedKWLink">
+    <Position X="6" Y="6.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAgAAIAAAhCAACCAAAAAAEMAIAACACBAAACA=</HashCode>
+      <FileName>KWLinks\EventBasedKWLink.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.148" />
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.LinkDirection">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.Workspace.Entities.LinkDirection.Direction">
+        <TypeIdentifier>
+          <NewMemberFileName>KWLinks\LinkDirection.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KWLinks\LinkDirection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.GroupMasterKWObject">
+    <Position X="2.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAgAAAAAAAABAAAAAAAAEAIAAAQAAAAA=</HashCode>
+      <FileName>GroupMasterKWObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.KWProperty">
+    <Position X="13.75" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAACBAAAAgAAAoAAAEAAAEEAAAEEAAAAgAAAAAAA=</HashCode>
+      <FileName>KWProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.PropertyBasedKWLink">
+    <Position X="10.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAhCAAACAAAkAAAMAEAAAACAAAAAA=</HashCode>
+      <FileName>KWLinks\PropertyBasedKWLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.CompoundKWLink">
+    <Position X="6" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>KWLinks\CompoundKWLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.KWMedia">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAggAAAIAAAEAAAEAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>KWMedia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.GeoTimeKWProperty">
+    <Position X="11.75" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>GeoTimeKWProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.NotLoadedEventBasedKWLink">
+    <Position X="3.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAABCAAACAAAAAAAEQBAAAACAAAACA=</HashCode>
+      <FileName>KWLinks\NotLoadedEventBasedKWLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.NotLoadedRelationshipBasedKWLink">
+    <Position X="0.5" Y="6.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAABCAAACIAAAAAAEAAAAAACAAAACA=</HashCode>
+      <FileName>KWLinks\NotLoadedRelationshipBasedKWLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GPAS.Workspace.Entities.IObjectContainerKWLink">
+    <Position X="4.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KWLinks\IObjectContainerKWLink.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

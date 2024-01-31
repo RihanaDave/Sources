@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.TreeViewPicker.TreeViewPicker">
+    <Position X="2.75" Y="1.75" Width="3.5" />
+    <Members>
+      <Method Name="ApplyCriteria" Hidden="true" />
+      <Method Name="CandidateItemForSelectFirstItemMatch" Hidden="true" />
+      <Field Name="CandidateItemForSelectProperty" Hidden="true" />
+      <Method Name="Collapse" Hidden="true" />
+      <Field Name="ContentPopup" Hidden="true" />
+      <Method Name="ContentPopup_Opened" Hidden="true" />
+      <Field Name="CriteriaProperty" Hidden="true" />
+      <Method Name="Expand" Hidden="true" />
+      <Method Name="ExpanderToggleButton_PreviewMouseLeftButtonDown" Hidden="true" />
+      <Method Name="FindHeaderToggleButton" Hidden="true" />
+      <Method Name="FindItem" Hidden="true" />
+      <Method Name="FindPopUp" Hidden="true" />
+      <Method Name="GetFrameworkElementByName" Hidden="true" />
+      <Method Name="GetSelectedTreeViewItem" Hidden="true" />
+      <Method Name="GetTreeView" Hidden="true" />
+      <Method Name="Grid_PreviewMouseLeftButtonDown" Hidden="true" />
+      <Method Name="HandleExpandingPopUp" Hidden="true" />
+      <Field Name="HeaderDefaultIconProperty" Hidden="true" />
+      <Field Name="HeaderDefaultTitleProperty" Hidden="true" />
+      <Field Name="headerToggleButton" Hidden="true" />
+      <Method Name="HeaderToggleButton_PreviewMouseLeftButtonDown" Hidden="true" />
+      <Method Name="HeaderToggleButtonGetFocus" Hidden="true" />
+      <Field Name="IsExpandedProperty" Hidden="true" />
+      <Method Name="Items_CollectionChanged" Hidden="true" />
+      <Field Name="ItemsProperty" Hidden="true" />
+      <Method Name="OnCandidateItemForSelectChanged" Hidden="true" />
+      <Method Name="OnCriteriaChanged" Hidden="true" />
+      <Method Name="OnHeaderDefaultIconChanged" Hidden="true" />
+      <Method Name="OnHeaderDefaultTitleChanged" Hidden="true" />
+      <Method Name="OnIsExpandedChanged" Hidden="true" />
+      <Method Name="OnItemsChanged" Hidden="true" />
+      <Method Name="OnSearchBoxPlaceHolderChanged" Hidden="true" />
+      <Method Name="OnSelectedItemChanged" Hidden="true" />
+      <Method Name="OnSetCandidateItemForSelectChanged" Hidden="true" />
+      <Method Name="OnSetCriteriaChanged" Hidden="true" />
+      <Method Name="OnSetHeaderDefaultIconChanged" Hidden="true" />
+      <Method Name="OnSetHeaderDefaultTitleChanged" Hidden="true" />
+      <Method Name="OnSetIsExpandedChanged" Hidden="true" />
+      <Method Name="OnSetItemsChanged" Hidden="true" />
+      <Method Name="OnSetSearchBoxPlaceHolderChanged" Hidden="true" />
+      <Method Name="OnSetSelectedItemChanged" Hidden="true" />
+      <Method Name="OnSetShowExpanderButtonChanged" Hidden="true" />
+      <Method Name="OnShowExpanderButtonChanged" Hidden="true" />
+      <Method Name="RefreshUI" Hidden="true" />
+      <Method Name="RemoveCandidateItemForSelect" Hidden="true" />
+      <Method Name="RemoveSelectedItem" Hidden="true" />
+      <Method Name="SearchBoxGetFocus" Hidden="true" />
+      <Method Name="SearchBoxGetFocusIfFirstItemIsSelected" Hidden="true" />
+      <Field Name="SearchBoxPlaceHolderProperty" Hidden="true" />
+      <Field Name="searchTextBox" Hidden="true" />
+      <Field Name="SelectedItemProperty" Hidden="true" />
+      <Method Name="SelectItem" Hidden="true" />
+      <Field Name="ShowExpanderButtonProperty" Hidden="true" />
+      <Field Name="treeView" Hidden="true" />
+      <Method Name="TreeView_SelectedItemChanged" Hidden="true" />
+      <Method Name="TreeViewGetFocus" Hidden="true" />
+      <Method Name="TreeViewPicker" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>g4MA21KQQRgAvVAAIIgiMwqUBCSgqUQgxBUiDASYAoA=</HashCode>
+      <FileName>TreeViewPicker.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedItem" />
+      <Property Name="CandidateItemForSelect" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.TreeViewPicker.TreeViewPickerItem">
+    <Position X="8" Y="1.75" Width="2.75" />
+    <Members>
+      <Method Name="AddParentForChildren" Hidden="true" />
+      <Field Name="children" Hidden="true" />
+      <Method Name="Children_CollectionChanged" Hidden="true" />
+      <Method Name="FindFirstSelectabletItemMatch" Hidden="true" />
+      <Field Name="icon" Hidden="true" />
+      <Field Name="isCandidateForSelect" Hidden="true" />
+      <Field Name="isExpanded" Hidden="true" />
+      <Field Name="isMatch" Hidden="true" />
+      <Field Name="isSelectable" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Method Name="OnChildrenChanged" Hidden="true" />
+      <Method Name="OnIconChanged" Hidden="true" />
+      <Method Name="OnIsCandidateForSelectChanged" Hidden="true" />
+      <Method Name="OnIsExpandedChanged" Hidden="true" />
+      <Method Name="OnIsMatchChanged" Hidden="true" />
+      <Method Name="OnIsSelectableChanged" Hidden="true" />
+      <Method Name="OnIsSelectedChanged" Hidden="true" />
+      <Method Name="OnParentItemChanged" Hidden="true" />
+      <Method Name="OnPropertyChanged" Hidden="true" />
+      <Method Name="OnSelected" Hidden="true" />
+      <Method Name="OnTagChanged" Hidden="true" />
+      <Method Name="OnTitleChanged" Hidden="true" />
+      <Method Name="OnUnSelected" Hidden="true" />
+      <Field Name="parent" Hidden="true" />
+      <Method Name="RemoveParentForChildren" Hidden="true" />
+      <Method Name="SetValue" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Method Name="TreeViewPickerItem" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Children" Type="GPAS.TreeViewPicker.TreeViewPickerItem" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.812" />
+        <Point X="11.685" Y="2.812" />
+        <Point X="11.685" Y="2.5" />
+        <Point X="10.75" Y="2.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.07" Y="-0.265" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="GPAS.TreeViewPicker.TreeViewPickerItem" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="1.938" />
+        <Point X="11.724" Y="1.938" />
+        <Point X="11.724" Y="2.25" />
+        <Point X="10.75" Y="2.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.227" Y="0.068" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ADISgSCQTgkgEkRBtICVUAAChCAAgQQAIQBKAAGAAAM=</HashCode>
+      <FileName>TreeViewPickerItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

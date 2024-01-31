@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.DataImport.DataSourceHistogramUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:histogram="clr-namespace:GPAS.Histogram;assembly=GPAS.Histogram"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+             xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converters:DataSourceTypeToVisibilityControlConverter x:Key="DataSourceTypeToVisibilityControlConverter"/>
+        <converters:DataSourceImportingObjectCollectionToHistogramDescriptionConverer x:Key="DataSourceImportingObjectCollectionToHistogramDescriptionConverer"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <histogram:Histogram x:Name="DataSourcesHistogram" ShowSnapshotButton="False"
+                             Icon="{Binding DataSource.LargeIcon, IsAsync=True,
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                             Title="{Binding DataSource.Title, IsAsync=True,
+             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                             Description="{Binding DataSource.ImportingObjectCollection, IsAsync=True,
+             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},
+            Converter={StaticResource DataSourceImportingObjectCollectionToHistogramDescriptionConverer}}"
+                             Items="{Binding Items, IsAsync=True,
+             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"/>
+
+        <!--در صورتی که هیچ منبع داده‌ای انتخاب نشده باشد نمایش داده‌ می‌شود-->
+        <Grid Background="{Binding Background, IsAsync=True,
+             RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+              Visibility="{Binding DataSource, IsAsync=True,
+             RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, 
+            Converter={StaticResource DataSourceTypeToVisibilityControlConverter}, ConverterParameter={x:Null}}">
+            <TextBlock Text="Select a data source to view histogram" Foreground="{DynamicResource MaterialDesignBody}"
+                       Style="{StaticResource MaterialDesignSubtitle2TextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        
+        <waiting:WaitingControl x:Name="MainWaitingControl"/>
+    </Grid>
+</UserControl>

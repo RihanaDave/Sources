@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="GPAS.DateTimePicker.DateTimePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:GPAS.DateTimePicker.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="200" >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:IsValidAndForegroundToBrushesMultiConverter x:Key="IsValidAndForegroundToBrushesMultiConverter"/>
+            <converter:DateTimeToStrintCoverter x:Key="DateTimeToStrintCoverter"/>
+            <converter:IsValidToWarningVisibilityConverter x:Key="IsValidToWarningVisibilityConverter"/>
+            <converter:IsValidToBrushConverter x:Key="IsValidToBrushConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <materialDesign:DialogHost Grid.Row="0" x:Name="BaseDialogHost" 
+                                   BorderBrush="{DynamicResource MaterialDesignDivider}"
+                                   IsOpen="{Binding IsOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+            UpdateSourceTrigger=PropertyChanged}">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0" x:Name="DateTimeTextBoxViewer" FontSize="14"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         materialDesign:HintAssist.Hint="{Binding Hint, RelativeSource={RelativeSource FindAncestor, 
+                    AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
+                         materialDesign:HintAssist.Foreground="{Binding NewForeground,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                         materialDesign:TextFieldAssist.UnderlineBrush="{Binding NewForeground,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                         Text="{Binding Text, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    UpdateSourceTrigger=PropertyChanged}">
+                    <TextBox.Foreground>
+                        <MultiBinding Converter="{StaticResource IsValidAndForegroundToBrushesMultiConverter}">
+                            <Binding Path="NewForeground" RelativeSource="{RelativeSource FindAncestor, AncestorType=UserControl}" />
+                            <Binding Path="IsValid" RelativeSource="{RelativeSource FindAncestor, AncestorType=UserControl}" />
+                        </MultiBinding>
+                    </TextBox.Foreground>
+
+                </TextBox>
+
+                <Button Grid.Column="1" BorderBrush="Transparent" Background="Transparent"
+                        Name="OpenDialogButton"
+                        Command="{x:Static materialDesign:DialogHost.OpenDialogCommand }"
+                        materialDesign:DialogHost.DialogOpenedAttached="CombinedDialogOpenedEventHandler"
+                        materialDesign:DialogHost.DialogClosingAttached="CombinedDialogClosingEventHandler">
+                    <Button.Content>
+                        <materialDesign:PackIcon Kind="Calendar" Width="20" Height="20"  Foreground="{DynamicResource PrimaryHueMidBrush}" />
+                    </Button.Content>
+                    <Button.CommandParameter>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Calendar x:Name="CombinedCalendar"
+                                          Margin="-1 -2 -1 0"
+                                          FirstDayOfWeek="{Binding FirstDayOfWeek, 
+                                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                                    UpdateSourceTrigger=PropertyChanged }" />
+
+                                <materialDesign:Clock 
+                                    Name="CombinedClock"
+                                    DisplayAutomation="CycleWithSeconds"
+                                    Is24Hours="True">
+                                </materialDesign:Clock>
+
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Margin="8" HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button x:Name="CancelButton" Content=" Cancel"
+                                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                                        CommandParameter="DateTimePickerFalse"
+                                        Style="{DynamicResource MaterialDesignFlatButton}"/>
+                                <Button x:Name="OkButton" Content="Ok"
+                                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                                        CommandParameter="DateTimePickerTrue"
+                                        Style="{DynamicResource MaterialDesignFlatButton}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Button.CommandParameter>
+                </Button>
+            </Grid>
+        </materialDesign:DialogHost>
+
+        <StackPanel Grid.Row="1" Margin="0 0 20 0">
+            <TextBlock x:Name="ShowErrorMessage" HorizontalAlignment="Left" TextWrapping="Wrap"
+                       Text="{Binding IsValid.Message, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" 
+                       Foreground="{Binding IsValid,Converter={StaticResource IsValidToBrushConverter},
+                RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                UpdateSourceTrigger=PropertyChanged}"
+                       Visibility="{Binding InternalDiplayErorrMessage, Converter={StaticResource bool2VisibilityConverter},
+                RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

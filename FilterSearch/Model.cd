@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.FilterSearch.Query">
+    <Position X="0.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Query.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.CriteriaSet">
+    <Position X="2.75" Y="0.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAA=</HashCode>
+      <FileName>CriteriaSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.CriteriaBase">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CriteriaBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.KeywordCriteria">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>KeywordCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.ObjectTypeCriteria">
+    <Position X="7" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectTypeCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.PropertyValueCriteria">
+    <Position X="9" Y="2.25" Width="1.75" />
+    <AssociationLine Name="OperatorValuePair" Type="GPAS.FilterSearch.PropertyCriteriaOperatorValuePair">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="1.329" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAABAAAQAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyValueCriteria.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OperatorValuePair" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.FilterSearch.DateRangeCriteria">
+    <Position X="11" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgACAAIAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DateRangeCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.ContainerCriteria">
+    <Position X="13" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ContainerCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.StringPropertyCriteriaOperatorValuePair">
+    <Position X="5.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.FilterSearch.StringPropertyCriteriaOperatorValuePair.RelationalOperator">
+        <TypeIdentifier>
+          <NewMemberFileName>StringPropertyValueCriteria.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAACAAAAAAAAAAAAEAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>StringPropertyValueCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.IntegerPropertyCriteriaOperatorValuePair">
+    <Position X="0.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.FilterSearch.IntegerPropertyCriteriaOperatorValuePair.RelationalOperator">
+        <TypeIdentifier>
+          <NewMemberFileName>IntegerPropertyValueCriteria.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>IntegerPropertyValueCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.FloatPropertyCriteriaOperatorValuePair">
+    <Position X="3" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.FilterSearch.FloatPropertyCriteriaOperatorValuePair.RelationalOperator">
+        <TypeIdentifier>
+          <NewMemberFileName>FloatPropertyValueCriteria.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAABAAABAQAAAQ=</HashCode>
+      <FileName>FloatPropertyValueCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.DateTimePropertyCriteriaOperatorValuePair">
+    <Position X="8" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.FilterSearch.DateTimePropertyCriteriaOperatorValuePair.RelationalOperator">
+        <TypeIdentifier>
+          <NewMemberFileName>DateTimePropertyValueCriteria.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>DateTimePropertyValueCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.BooleanPropertyCriteriaOperatorValuePair">
+    <Position X="10.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.FilterSearch.BooleanPropertyCriteriaOperatorValuePair.RelationalOperator">
+        <TypeIdentifier>
+          <NewMemberFileName>BooleanPropertyValueCriteria.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>BooleanPropertyValueCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.PropertyCriteriaOperatorValuePair">
+    <Position X="1.25" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyCriteriaOperatorValuePair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.EmptyPropertyCriteriaOperatorValuePair">
+    <Position X="13" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmptyPropertyCriteriaOperatorValuePair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.LongPropertyCriteriaOperatorValuePair">
+    <Position X="15.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.FilterSearch.LongPropertyCriteriaOperatorValuePair.RelationalOperator">
+        <TypeIdentifier>
+          <NewMemberFileName>LongPropertyCriteriaOperatorValuePair.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>LongPropertyCriteriaOperatorValuePair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

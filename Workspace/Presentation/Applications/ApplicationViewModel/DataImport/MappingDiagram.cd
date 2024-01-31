@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Applications.ApplicationViewModel.DataImport.MappingViewModel">
+    <Position X="1" Y="0.75" Width="2.75" />
+    <Members>
+      <Method Name="AddEventLink" Hidden="true" />
+      <Method Name="AddFieldToCategoryFieldCollection" Hidden="true" />
+      <Method Name="AddLinkCommandMethod" Hidden="true" />
+      <Method Name="AddObjectCommandMethod" Hidden="true" />
+      <Method Name="AddPropertyCommandMethod" Hidden="true" />
+      <Method Name="AddRegularExpressionCommandMethod" Hidden="true" />
+      <Method Name="AddRelationShip" Hidden="true" />
+      <Method Name="AddValueCommandMethod" Hidden="true" />
+      <Field Name="categoryFieldCollection" Hidden="true" />
+      <Method Name="ClearAllCommandMethod" Hidden="true" />
+      <Method Name="ClearAllPropertyCommandMethod" Hidden="true" />
+      <Method Name="ClearAllValueCommandMethod" Hidden="true" />
+      <Field Name="CounterObjectType" Hidden="true" />
+      <Method Name="CreateDateTimeProperty" Hidden="true" />
+      <Method Name="CreateGeoTimeProperty" Hidden="true" />
+      <Method Name="CreateRegularProperty" Hidden="true" />
+      <Method Name="Field_Deselected" Hidden="true" />
+      <Method Name="Field_Selected" Hidden="true" />
+      <Method Name="GetFieldType" Hidden="true" />
+      <Method Name="GetRelatedRelationships" Hidden="true" />
+      <Method Name="GetSelectedFields" Hidden="true" />
+      <Method Name="GetSelectedObjects" Hidden="true" />
+      <Method Name="InsertValueCommandMethod" Hidden="true" />
+      <Method Name="IsMapMatchWithOntology" Hidden="true" />
+      <Method Name="IsValidCreateLinkCommandParameters" Hidden="true" />
+      <Method Name="LoadCommandMethod" Hidden="true" />
+      <Field Name="map" Hidden="true" />
+      <Method Name="Map_DataSourceFieldCollectionChanged" Hidden="true" />
+      <Method Name="MoveValueCommandMethod" Hidden="true" />
+      <Field Name="newMapLink" Hidden="true" />
+      <Field Name="newObjectNode" Hidden="true" />
+      <Method Name="PrepareCommands" Hidden="true" />
+      <Method Name="PrepareMapMatchedWithOntologyMessage" Hidden="true" />
+      <Method Name="PropertySetAsDisplayNameCommandMethod" Hidden="true" />
+      <Method Name="RegenerateCategoryFieldCollection" Hidden="true" />
+      <Method Name="RemoveObject" Hidden="true" />
+      <Method Name="RemovePropertyCommandMethod" Hidden="true" />
+      <Method Name="RemoveRegularExpressionCommandMethod" Hidden="true" />
+      <Method Name="RemoveRelationship" Hidden="true" />
+      <Method Name="RemoveSelectedItemCommandMethod" Hidden="true" />
+      <Method Name="RemoveValueCommandMethod" Hidden="true" />
+      <Method Name="SaveCommandMethod" Hidden="true" />
+      <Field Name="selectedFields" Hidden="true" />
+      <Method Name="SeparateTypesByComma" Hidden="true" />
+      <Method Name="SetInternalResolutionCommandMethod" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ZEYhGPDmSdAiLAgh+AtCBJFQlR0BAgUAiglABlA2BwA=</HashCode>
+      <FileName>Applications\ApplicationViewModel\DataImport\MappingViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Map" />
+      <Property Name="NewObjectNode" />
+      <Property Name="NewMapLink" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CategoryFieldCollection" />
+      <Property Name="SelectedFields" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.DataSourceFieldCategoryModel">
+    <Position X="6" Y="1" Width="2.5" />
+    <Members>
+      <Field Name="category" Hidden="true" />
+      <Field Name="dataSourceCollection" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAIAAAACAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\DataSourceFieldCategoryModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DataSourceCollection" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.DataSourceFieldModel">
+    <Position X="11" Y="1" Width="2" />
+    <Members>
+      <Field Name="id" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Method Name="OnDeselected" Hidden="true" />
+      <Method Name="OnSampleValueChanged" Hidden="true" />
+      <Method Name="OnSelected" Hidden="true" />
+      <Field Name="sampleValue" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAAQQAAiEEAAooAAAAAAAAABAIAAAUAAAAAAAgI=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\DataSourceFieldModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.MapModel" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAgCCAEBAEGAAYAAhAUACoAADAIAAAAAAAADA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\MapModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.RelationshipMapModel" Collapsed="true">
+    <Position X="7.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQQgAgMEIApKAAACQAEAAAAJAAAABAAAAAQgI=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\RelationshipMapModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Ontology.OntologyNode" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.FieldType" Collapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAJAAAAgAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\FieldType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

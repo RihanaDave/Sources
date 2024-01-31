@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Dependency direction&#xD;&#xA;----------------------&gt;&#xD;&#xA;Group &gt; Category &gt; Value-Count pair">
+    <Position X="5.333" Y="4.156" Height="0.625" Width="2.335" />
+  </Comment>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Histograms.ObjectTypesHistogramCategory" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAiAAAAAAgAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Histograms\ObjectTypesHistogramCategory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Histograms.ObjectTypesHistogramGroup" BaseTypeListCollapsed="true">
+    <Position X="1.25" Y="5.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACCAAAAAAACAAIAAAAQAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Controls\Histograms\ObjectTypesHistogramGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Histograms.ObjectTypesHistogramTypeCountPair" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIABAAABQAAAAAAAQAAAAAAAAAAAAAAAAAAAIAAAQAA=</HashCode>
+      <FileName>Controls\Histograms\ObjectTypesHistogramTypeCountPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Histograms.ObjectPropertiesHistogramGroup">
+    <Position X="1" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAFACAAAAAAAgAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Histograms\ObjectPropertiesHistogramGroup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Histograms.ObjectPropertiesHistogramCategory">
+    <Position X="4.5" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAgEAAAAAAAAAAAAAACAQAA=</HashCode>
+      <FileName>Controls\Histograms\ObjectPropertiesHistogramCategory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Histograms.ObjectPropertiesHistogramValueCountPair">
+    <Position X="8" Y="0.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgABAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAIABAAAA=</HashCode>
+      <FileName>Controls\Histograms\ObjectPropertiesHistogramValueCountPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

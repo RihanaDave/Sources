@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="GPAS.BranchingHistoryViewer.BranchLink"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GPAS.BranchingHistoryViewer"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewmodel="clr-namespace:GPAS.BranchingHistoryViewer.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="80" VerticalAlignment="Top" HorizontalAlignment="Left">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:IsInActiveSequenceToBackgroundColorBranchLinkConverter x:Key="IsInActiveSequence2Background"/>
+            <local:IsContingencyToOpacityBranchLinkConverter x:Key="IsContingency2Opacity"/>
+            <local:DeptFromToPolygonPointsConverter x:Key="polygonPoints"/>
+            <viewmodel:ConnectionLink x:Key="link"/>
+            <local:IsContingencyToTooltipVisibilityConverter x:Key="TooltipVisibility"/>
+
+            <SolidColorBrush x:Key="IsInActiveSequenceBackground" Color="AliceBlue"/>
+            <SolidColorBrush x:Key="IsNotInActiveSequenceBackground" Color="#efefef"/>
+
+            <PointCollection x:Key="DirectFlash">
+                <Point X="0" Y="10"/>
+                <Point X="35" Y="10"/>
+                <Point X="35" Y="0"/>
+                <Point X="80" Y="45"/>
+                <Point X="35" Y="90"/>
+                <Point X="35" Y="80"/>
+                <Point X="0" Y="80"/>
+            </PointCollection>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.Template>
+        <ControlTemplate TargetType="{x:Type UserControl}">
+            <Grid>
+                <Polygon Opacity="{Binding IsContingency, Converter={StaticResource IsContingency2Opacity}}" Margin="0 10" 
+                         Points="{Binding IsDirect, Converter={StaticResource polygonPoints}, ConverterParameter={StaticResource link}}">
+                    <Polygon.Fill>
+                        <MultiBinding Converter="{StaticResource IsInActiveSequence2Background}">
+                            <Binding Path="IsInActiveSequence"/>
+                            <Binding Path="CurrentTheme"/>
+                        </MultiBinding>
+                    </Polygon.Fill>
+                </Polygon>
+                <ContentPresenter Content="{TemplateBinding Content}"/>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Template>
+    <UserControl.ToolTip>
+        <ToolTip  Background="{DynamicResource MaterialDesignCardBackground}" 
+            Visibility="{Binding IsContingency, Converter={StaticResource TooltipVisibility}}">
+            <ToolTip.Content>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{Binding Description}"  Foreground="{DynamicResource MaterialDesignBody}" Padding="3"/>
+                </StackPanel>
+            </ToolTip.Content>
+        </ToolTip>
+    </UserControl.ToolTip>
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Image x:Name="imgIcon" Width="16" Height="16" Margin="3 1.5" HorizontalAlignment="Left" Source="{Binding Icon}"/>
+        <TextBlock x:Name="txbDescription" Text="{Binding Description}"   Width="50" Margin="3 1.5" FontSize="10"
+                   Foreground="{DynamicResource MaterialDesignBody}" TextTrimming="CharacterEllipsis"/>
+    </StackPanel>
+</UserControl>

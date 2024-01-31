@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.Waiting.WaitingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+             xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Panel.ZIndex="10000"
+             Visibility="Collapsed"
+             Foreground="{DynamicResource PrimaryHueMidBrush}">
+
+    <UserControl.Background>
+        <SolidColorBrush Color="Gray" Opacity="{Binding BackgroundOpacity, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+    </UserControl.Background>
+
+    <UserControl.Resources>
+        <converters:RowAndColumnConverter x:Key="RowAndColumnConverter"/>
+        <material:BooleanToVisibilityConverter x:Key="ReverseBooleanToVisibility" FalseValue="Visible" TrueValue="Collapsed"/>
+        <local:ProgressDisplayModeToVisibilityConverter x:Key="DisplayPercentage" PercentageValue="Visible" NumericValue="Collapsed"/>
+        <local:ProgressDisplayModeToVisibilityConverter x:Key="DisplayNumeric" PercentageValue="Collapsed" NumericValue="Visible"/>
+        <local:ProgressShapeToVisibilityConverter x:Key="CircularShape" CircularValue="Visible" LinearValue="Collapsed"/>
+        <local:ProgressShapeToVisibilityConverter x:Key="LinearShape" CircularValue="Collapsed" LinearValue="Visible"/>
+    </UserControl.Resources>
+
+    <Border CornerRadius="10" VerticalAlignment="Center" HorizontalAlignment="Center" 
+            Background="{Binding ProgressBoxBackground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" >
+        <Grid x:Name="MainGrid">
+            <Grid Name="CircularGrid" Margin="5" Background="Transparent"
+                  Visibility="{Binding ProgressShape, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                Converter={StaticResource CircularShape}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--اسپینر-->
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <ProgressBar x:Name="CircularProgressBar"
+                                 Style="{StaticResource MaterialDesignCircularProgressBar}"
+                                 Margin="{Binding ProgressMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Height="{Binding ProgressSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Width="{Binding ProgressSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 IsIndeterminate="{Binding IsIndeterminate, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Maximum="{Binding MaxValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Value="{Binding ProgressValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Visibility="{Binding IsIndeterminate, Converter={StaticResource ReverseBooleanToVisibility},
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+                        <StackPanel Orientation="Horizontal"
+                                    Visibility="{Binding ProgressValueDisplayMode, Converter={StaticResource DisplayPercentage},
+                            RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+                            <TextBlock FontWeight="Bold" 
+                                       Text="{Binding PercentageValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                            <TextBlock Text="%" FontWeight="Bold"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal"
+                                    Visibility="{Binding ProgressValueDisplayMode, Converter={StaticResource DisplayNumeric},
+                            RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+                            <TextBlock FontWeight="Bold"
+                                       Text="{Binding ProgressValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                            <TextBlock Text=" of " FontWeight="Bold"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                            <TextBlock FontWeight="Bold"
+                                       Text="{Binding MaxValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+
+                <!--متن پیام-->
+                <TextBlock Grid.Row="{Binding MessagePosition, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource RowAndColumnConverter}, ConverterParameter={x:Static local:ElementType.Row}}"
+                       Grid.Column="{Binding MessagePosition, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource RowAndColumnConverter}, ConverterParameter={x:Static local:ElementType.Column}}" 
+                       Text="{Binding Message, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                       Margin="{Binding MessageMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            </Grid>
+
+            <Grid Name="LinearGrid" Margin="5" Background="Transparent"
+                  Visibility="{Binding ProgressShape, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                Converter={StaticResource LinearShape}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--اسپینر-->
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <ProgressBar x:Name="LinearProgressBar"
+                                 Style="{StaticResource MaterialDesignLinearProgressBar}"
+                                 Margin="{Binding ProgressMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Height="{Binding ProgressSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 IsIndeterminate="{Binding IsIndeterminate, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Maximum="{Binding MaxValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Value="{Binding ProgressValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                 Visibility="{Binding ProgressShape, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                        Converter={StaticResource LinearShape}}"/>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal"
+                            Grid.Row="{Binding MessagePosition, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource RowAndColumnConverter}, ConverterParameter={x:Static local:ElementType.Row}}"
+                            Grid.Column="{Binding MessagePosition, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl},
+                    Converter={StaticResource RowAndColumnConverter}, ConverterParameter={x:Static local:ElementType.Column}}" 
+                            Margin="{Binding MessageMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+
+                    <!--متن پیام-->
+                    <TextBlock Text="{Binding Message, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                               FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                               Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                    
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3 0 0 0"
+                          Visibility="{Binding IsIndeterminate, Converter={StaticResource ReverseBooleanToVisibility},
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+                        <StackPanel Orientation="Horizontal"
+                                    Visibility="{Binding ProgressValueDisplayMode, Converter={StaticResource DisplayPercentage},
+                            RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+                            <TextBlock FontWeight="Bold" 
+                                       Text="{Binding PercentageValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                   />
+                            <TextBlock Text="%" FontWeight="Bold"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                                    Visibility="{Binding ProgressValueDisplayMode, Converter={StaticResource DisplayNumeric},
+                            RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}">
+                            <TextBlock FontWeight="Bold"
+                                       Text="{Binding ProgressValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                            <TextBlock Text=" of " FontWeight="Bold"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                            <TextBlock FontWeight="Bold"
+                                       Text="{Binding MaxValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       FontSize="{Binding MessageFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                       Foreground="{Binding MessageForeground, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

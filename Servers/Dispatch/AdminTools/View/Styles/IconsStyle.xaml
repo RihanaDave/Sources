@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="SideBarMenuIcon" TargetType="materialDesign:PackIcon">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+    </Style>
+
+    <Style x:Key="PagingControlIcon" TargetType="materialDesign:PackIcon">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="25"/>
+        <Setter Property="Margin" Value="5 10 10 10"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="ModuleIcon" TargetType="materialDesign:PackIcon">
+        <Setter Property="Height" Value="65"/>
+        <Setter Property="Width" Value="65"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="Indigo"/>
+    </Style>
+
+    <Style x:Key="ToolBarButtonIcon" TargetType="materialDesign:PackIcon">
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Foreground" Value="Indigo"/>
+    </Style>
+
+    <Style x:Key="CardsIcon" TargetType="materialDesign:PackIcon">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Foreground" Value="Indigo"/>
+    </Style>
+
+</ResourceDictionary>

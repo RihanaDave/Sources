@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<TypeMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ObjectsMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>نام</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>3</ColumnIndex>
+            <ColumnTitle>SenderDisplayName</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>آدرس_ایمیل</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>2</ColumnIndex>
+            <ColumnTitle>SenderEmail</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>FindMatch</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>شخص1</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>شخص</TypeUri>
+      </ObjectType>
+      <ID>571b57d1-8948-46a5-ac98-85ab263f8a11</ID>
+    </ObjectMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>نام</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>7</ColumnIndex>
+            <ColumnTitle>ReceiverDisplayName</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>آدرس_ایمیل</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>6</ColumnIndex>
+            <ColumnTitle>ReceiverEmail</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>FindMatch</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>شخص2</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>شخص</TypeUri>
+      </ObjectType>
+      <ID>6296ca4f-26f0-4965-b143-185780788d1d</ID>
+    </ObjectMapping>
+    <ObjectMapping xsi:type="DocumentMapping">
+      <Properties />
+      <MappingTitle>
+        <ConstValue>سند1</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>سند</TypeUri>
+      </ObjectType>
+      <ID>c854adb6-6973-4ed2-a6db-f01cd35e4a6a</ID>
+      <DocumentPathMapping xsi:type="TableColumnMappingItem">
+        <ColumnIndex>9</ColumnIndex>
+        <ColumnTitle>AttachmentsRelativePath</ColumnTitle>
+        <RegularExpressionPattern />
+        <ResolutionOption>FindMatch</ResolutionOption>
+      </DocumentPathMapping>
+      <PathOptions>
+        <SingleFile>true</SingleFile>
+        <FolderContent>true</FolderContent>
+        <SubFoldersContent>true</SubFoldersContent>
+      </PathOptions>
+      <IsDocumentNameAsDisplayName>true</IsDocumentNameAsDisplayName>
+    </ObjectMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>زمان_ارسال</TypeUri>
+          </PropertyType>
+          <Value xsi:type="DateTimeTableColumnMappingItem">
+            <ColumnIndex>5</ColumnIndex>
+            <ColumnTitle>DateSent</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+            <DateTimeCultureName />
+            <DateTimeStyles>None</DateTimeStyles>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>label</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>1</ColumnIndex>
+            <ColumnTitle>Subject</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>شناسه_ایمیل</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>0</ColumnIndex>
+            <ColumnTitle>MessageId</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>FindMatch</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>پست الکترونیک2</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>پست_الکترونیک</TypeUri>
+      </ObjectType>
+      <ID>b7eacad1-e2f0-4da6-8804-0f2f0458154c</ID>
+    </ObjectMapping>
+  </ObjectsMapping>
+  <RelationshipsMapping>
+    <RelationshipMapping>
+      <RelationshipDirection>PrimaryToSecondary</RelationshipDirection>
+      <RelationshipDescription xsi:type="ConstValueMappingItem">
+        <ConstValue>پست الکترونیک</ConstValue>
+      </RelationshipDescription>
+      <RelationshipType>
+        <TypeUri>حضور_در</TypeUri>
+      </RelationshipType>
+      <SourceId>571b57d1-8948-46a5-ac98-85ab263f8a11</SourceId>
+      <TargetId>b7eacad1-e2f0-4da6-8804-0f2f0458154c</TargetId>
+    </RelationshipMapping>
+    <RelationshipMapping>
+      <RelationshipDirection>PrimaryToSecondary</RelationshipDirection>
+      <RelationshipDescription xsi:type="ConstValueMappingItem">
+        <ConstValue>پست الکترونیک</ConstValue>
+      </RelationshipDescription>
+      <RelationshipType>
+        <TypeUri>حضور_در</TypeUri>
+      </RelationshipType>
+      <SourceId>b7eacad1-e2f0-4da6-8804-0f2f0458154c</SourceId>
+      <TargetId>6296ca4f-26f0-4965-b143-185780788d1d</TargetId>
+    </RelationshipMapping>
+    <RelationshipMapping>
+      <RelationshipDirection>SecondaryToPrimary</RelationshipDirection>
+      <RelationshipDescription xsi:type="ConstValueMappingItem">
+        <ConstValue>حضور در</ConstValue>
+      </RelationshipDescription>
+      <RelationshipType>
+        <TypeUri>حضور_در</TypeUri>
+      </RelationshipType>
+      <SourceId>b7eacad1-e2f0-4da6-8804-0f2f0458154c</SourceId>
+      <TargetId>c854adb6-6973-4ed2-a6db-f01cd35e4a6a</TargetId>
+    </RelationshipMapping>
+  </RelationshipsMapping>
+  <InterTypeAutoInternalResolution>true</InterTypeAutoInternalResolution>
+</TypeMapping>

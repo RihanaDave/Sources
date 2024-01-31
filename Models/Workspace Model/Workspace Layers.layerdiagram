@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="d66f374c-12ca-443a-b823-b8187b38cabf" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="28f4062b-d2ff-4836-84ae-e65005f2ad48" name="Comment1">
+      <body>لایه های اصلی محیط کاربری</body>
+    </comment>
+    <comment Id="ce6454ea-cfa8-4738-be99-f5b4a754c544" name="Comment2">
+      <body>موجودیت های یکتا در سمت محیط کاربری</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="87f37e86-b7b3-4871-94dd-a3f16ccff0b3" name="Workspace.Presentation">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="37ecf479-b673-44c8-8e37-e41b3145b43f" direction="Forward">
+          <layerMoniker Id="6bb4cc57-2f2f-411e-a693-cb5baed8f2fe" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ccf13ef2-3d8c-4105-8b1a-17c9d67f3b52" direction="Forward">
+          <layerMoniker Id="5854efd6-1a37-4d3a-9ba9-d951a58792bf" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="0a2fcdb6-953b-4d6c-9201-613c7206e1a7" name="Presentation">
+          <ArtifactNode Label="Presentation" Category="CodeSchema_Project" Id="(Assembly=../Presentation/Presentation.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=&quot;کاوش افزار ۲&quot;)" Label="کاوش افزار ۲.exe" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.exe" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="0d645ff9-8bf2-4cc4-90e2-2b83bd9d9473" name="Workspace.ServiceAccess">
+      <references>
+        <reference Id="8704c09a-92ea-43ae-a01c-d39e14b0ef29" name="WorkspaceServiceAccess">
+          <ArtifactNode Label="WorkspaceServiceAccess" Category="CodeSchema_Project" Id="(Assembly=../WorkspaceServiceAccess/WorkspaceServiceAccess.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=GPAS.Workspace.ServiceAccess)" Label="GPAS.Workspace.ServiceAccess.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="6bb4cc57-2f2f-411e-a693-cb5baed8f2fe" name="Workspace.Entities">
+      <references>
+        <reference Id="63642def-16ef-46dd-912b-0e35be02b10d" name="WorkspaceEntities">
+          <ArtifactNode Label="WorkspaceEntities" Category="CodeSchema_Project" Id="(Assembly=../WorkspaceEntities/WorkspaceEntities.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=GPAS.Workspace.Entities)" Label="GPAS.Workspace.Entities.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="8a9d5dfa-d604-4230-84d2-31d797601cd7" name="Conceptual Logic Layer">
+      <childLayers>
+        <layer Id="5854efd6-1a37-4d3a-9ba9-d951a58792bf" name="Workspace.Logic">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="1a1eb9a6-aa44-4d7f-bacf-a5c1986ef479" direction="Forward">
+              <layerMoniker Id="fe534010-c4c3-4314-8c72-368d9901707e" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="e99d9468-159d-4fc0-8ab2-fdb19af5528d" direction="Forward">
+              <layerMoniker Id="6bb4cc57-2f2f-411e-a693-cb5baed8f2fe" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="f7126249-2d3e-4b16-a25e-86a1858571dc" direction="Forward">
+              <layerMoniker Id="0d645ff9-8bf2-4cc4-90e2-2b83bd9d9473" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="90e7b7c5-36d9-4237-8c02-145acc915c44" name="WorkspaceLogic">
+              <ArtifactNode Label="WorkspaceLogic" Category="CodeSchema_Project" Id="(Assembly=../WorkspaceLogic/WorkspaceLogic.csproj)" />
+              <ExpandedNode Id="(Assembly=GPAS.Workspace.Logic)" Label="GPAS.Workspace.Logic.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Produces" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="fe534010-c4c3-4314-8c72-368d9901707e" name="Workspace.DataAccessManager">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="d4b8fe82-224b-4e70-a128-9a45672f1082" direction="Forward">
+              <layerMoniker Id="0d645ff9-8bf2-4cc4-90e2-2b83bd9d9473" />
+            </dependencyFromLayerToLayer>
+            <dependencyFromLayerToLayer Id="d11a0eaf-15d3-4d4a-a35a-ce6491a5e72c" direction="Forward">
+              <layerMoniker Id="6bb4cc57-2f2f-411e-a693-cb5baed8f2fe" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

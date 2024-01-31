@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.Sesrch.Model.SearchModel" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>oEAwBtBAOAcAYAgAwGAAABAAAAAAAACUwAAAgDAAAAA=</HashCode>
+      <FileName>Controls\Sesrch\Model\SearchModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Sesrch.Model.SearchResultModel">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAggQAEAIAABACAAAAAAAEAABABAAAUAAAABAAAI=</HashCode>
+      <FileName>Controls\Sesrch\Model\SearchResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Sesrch.ViewModel.SearchViewModel">
+    <Position X="13.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAABAAAAEAAAAAQAEAAAABAAgAAE=</HashCode>
+      <FileName>Controls\Sesrch\ViewModel\SearchViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ModelSearch" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SearchResultModels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.BaseModel" Collapsed="true">
+    <Position X="11.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.BaseViewModel" Collapsed="true">
+    <Position X="13.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

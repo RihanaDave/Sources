@@ -1,0 +1,117 @@
+﻿<Window x:Class="GPAS.Dispatch.AdminTools.View.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resource="clr-namespace:GPAS.Dispatch.AdminTools.Properties"
+        xmlns:view="clr-namespace:GPAS.Dispatch.AdminTools.View"
+        xmlns:userControls="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls"
+        xmlns:usersAndGroupManagement="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls.UsersAndGroupManagement"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing"
+        materialDesign:ShadowAssist.CacheMode="{x:Null}"
+        Title="{x:Static resource:Resources.Administrator_Tools}" 
+        Height="700" Width="1500" MinWidth="350">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <view:VisibilityConverter x:Key="VisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid Name="MainGrid" Margin="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <userControls:SidebarMenuTemplateUserControl Grid.Column="0" x:Name="SidebarMenuTemplateUserControl"
+                                                     SidebarEvent="SidebarMenuTemplateUserControl_SidebarEvent"/>
+
+        <userControls:MainUserControl Grid.Column="0" Grid.ColumnSpan="2" x:Name="MainUserControl"
+                                      Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter},
+                ConverterParameter={x:Static view:SidebarItems.Home} ,UpdateSourceTrigger=PropertyChanged}"
+                                      SelectModule="MainUserControl_SelectModule"
+                                      SelectSidebarItem="MainUserControl_SelectSidebarItem" />
+
+        <usersAndGroupManagement:UsersManagerUserControl
+            Grid.Column="1" x:Name="UsersManagerUserControl"
+            Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter},
+            ConverterParameter={x:Static view:SidebarItems.UserManager} ,UpdateSourceTrigger=PropertyChanged}"
+            SelectUser="UsersManagerUserControl_SelectUser"
+            ChangePassword="UsersManagerUserControl_ChangePassword"
+            ApplyUserEdit="UsersManagerUserControl_ApplyUserEdit"
+            ManageUserGroups="UsersManagerUserControl_ManageUserGroups"
+            RefreshUsersList="UsersManagerUserControl_RefreshUsersList"
+            CreateNewUser="UsersManagerUserControl_CreateNewUser"
+            ShowChangePasswordWindow="UsersManagerUserControl_ShowChangePasswordWindow"
+            UserSearch="UsersManagerUserControl_UserSearch"
+            DeleteUser="UsersManagerUserControl_DeleteUser"/>
+
+        <usersAndGroupManagement:GroupManagerUserControl
+            Grid.Column="1" x:Name="GroupManagerUserControl"
+            Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter},
+            ConverterParameter={x:Static view:SidebarItems.GroupManager} ,UpdateSourceTrigger=PropertyChanged}"
+            SelectGroup="GroupManagerUserControl_SelectGroup"
+            RefreshGroupsList="GroupManagerUserControl_RefreshGroupsList"
+            CreateNewGroup="GroupManagerUserControl_CreateNewGroup"
+            GroupSearch="GroupManagerUserControl_GroupSearch"
+            DeleteGroup="GroupManagerUserControl_DeleteGroup"
+            GroupClickMember="GroupManagerUserControl_GroupClickMember"
+            Permission="GroupManagerUserControl_Permission"/>
+
+        <Grid Grid.Column="1">
+            <userControls:ServersSynchronizationUserControl 
+                x:Name="ServersSynchronizationControl"
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.IndexesSynchronization} ,UpdateSourceTrigger=PropertyChanged}"
+                Refresh="ServersSynchronizationControl_Refresh"/>
+
+            <userControls:JobManagerUserControl 
+                x:Name="JobManagerControl"
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.JobManager} ,UpdateSourceTrigger=PropertyChanged}"
+                RefreshList="JobManagerControl_RefreshList"
+                RestartJob="JobManagerControl_RestartJob"             
+                PuaseResumeJob="JobManagerControl_PuaseResumeJob" />
+
+            <userControls:IpToGeoSpecialUserControl  
+                x:Name="IpToGeoSpecialControl"
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.IpToGeoSpecial} ,UpdateSourceTrigger=PropertyChanged}"
+                AddIpGeoEventButton="IpToGeoSpecialControl_AddIpGeoEventButton"
+                ChooseFileEventButton="IpToGeoSpecialControl_ChooseFileEventButton"
+                ImportIpGeoEventButton="IpToGeoSpecialControl_ImportIpGeoEventButton"/>
+
+            <userControls:DataManagementUserControl 
+                x:Name="DataManagementUserControl"
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.RemoveAllData} ,UpdateSourceTrigger=PropertyChanged}"
+                RemoveAllData="DataManagementUserControl_RemoveAllData"/>
+
+            <userControls:ObjectViewerUserControl
+                x:Name="ObjectViewerUserControl" 
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.ObjectViewer} ,UpdateSourceTrigger=PropertyChanged}"
+                SearchById="ObjectViewerUserControl_SearchById"
+                ShowPermissionsEvent="ObjectViewerUserControl_ShowPermissionsEvent"
+                SelectIdToShow="ObjectViewerUserControl_SelectIdToShow"/>
+
+            <userControls:ServersStatusUserControl
+                x:Name="ServersStatusUserControl"
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.ServersStatus} ,UpdateSourceTrigger=PropertyChanged}"/>
+
+            <userControls:HorizonIndexManagerUserControl
+                x:Name="HorizonIndexManagerUserControl"
+                Visibility="{Binding CurrentControl,Converter={StaticResource VisibilityConverter} ,
+                ConverterParameter={x:Static view:SidebarItems.HorizonIndexManager} ,UpdateSourceTrigger=PropertyChanged}"/>
+
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" x:Name="ProgressBar" Visibility="Collapsed">
+            <ProgressBar Height="50" Width="50"
+                         Style="{StaticResource MaterialDesignCircularProgressBar}"
+                         Value="0" IsIndeterminate="True"/>
+        </Grid>
+    </Grid>
+</Window>

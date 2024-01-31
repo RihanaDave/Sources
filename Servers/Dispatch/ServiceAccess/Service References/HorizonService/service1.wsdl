@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities.IndexChecking" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_ResetIndexes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetIndexes" />
+  </wsdl:message>
+  <wsdl:message name="IService_ResetIndexes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SyncPublishChanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:SyncPublishChanges" />
+  </wsdl:message>
+  <wsdl:message name="IService_SyncPublishChanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SyncPublishChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddNewGroupPropertiesToEdgeClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewGroupPropertiesToEdgeClass" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddNewGroupPropertiesToEdgeClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewGroupPropertiesToEdgeClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntities" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntitiesAppearedInEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntitiesAppearedInEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntitiesAppearedInEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntitiesAppearedInEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PerformCustomSearchAround_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerformCustomSearchAround" />
+  </wsdl:message>
+  <wsdl:message name="IService_PerformCustomSearchAround_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerformCustomSearchAroundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDataIndicesStable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDataIndicesStable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDataIndicesStable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDataIndicesStableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveHorizonIndexes_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveHorizonIndexes" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveHorizonIndexes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveHorizonIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_HorizonIndexChecking_InputMessage">
+    <wsdl:part name="parameters" element="tns:HorizonIndexChecking" />
+  </wsdl:message>
+  <wsdl:message name="IService_HorizonIndexChecking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HorizonIndexCheckingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllIndexes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllIndexes" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllIndexes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateIndex" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditIndex" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndex" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteAllIndexes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllIndexes" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteAllIndexes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAllIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailableResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IService">
+    <wsdl:operation name="ResetIndexes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ResetIndexes" message="tns:IService_ResetIndexes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ResetIndexesResponse" message="tns:IService_ResetIndexes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncPublishChanges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SyncPublishChanges" message="tns:IService_SyncPublishChanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SyncPublishChangesResponse" message="tns:IService_SyncPublishChanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewGroupPropertiesToEdgeClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddNewGroupPropertiesToEdgeClass" message="tns:IService_AddNewGroupPropertiesToEdgeClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddNewGroupPropertiesToEdgeClassResponse" message="tns:IService_AddNewGroupPropertiesToEdgeClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedEntities" message="tns:IService_FindRelatedEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedEntitiesResponse" message="tns:IService_FindRelatedEntities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedDocuments" message="tns:IService_FindRelatedDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedDocumentsResponse" message="tns:IService_FindRelatedDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedEvents" message="tns:IService_FindRelatedEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedEventsResponse" message="tns:IService_FindRelatedEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntitiesAppearedInEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedEntitiesAppearedInEvents" message="tns:IService_FindRelatedEntitiesAppearedInEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedEntitiesAppearedInEventsResponse" message="tns:IService_FindRelatedEntitiesAppearedInEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerformCustomSearchAround">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PerformCustomSearchAround" message="tns:IService_PerformCustomSearchAround_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PerformCustomSearchAroundResponse" message="tns:IService_PerformCustomSearchAround_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDataIndicesStable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsDataIndicesStable" message="tns:IService_IsDataIndicesStable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsDataIndicesStableResponse" message="tns:IService_IsDataIndicesStable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveHorizonIndexes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveHorizonIndexes" message="tns:IService_RemoveHorizonIndexes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveHorizonIndexesResponse" message="tns:IService_RemoveHorizonIndexes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HorizonIndexChecking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/HorizonIndexChecking" message="tns:IService_HorizonIndexChecking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/HorizonIndexCheckingResponse" message="tns:IService_HorizonIndexChecking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllIndexes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAllIndexes" message="tns:IService_GetAllIndexes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAllIndexesResponse" message="tns:IService_GetAllIndexes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateIndex" message="tns:IService_CreateIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateIndexResponse" message="tns:IService_CreateIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditIndex" message="tns:IService_EditIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditIndexResponse" message="tns:IService_EditIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteIndex" message="tns:IService_DeleteIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteIndexResponse" message="tns:IService_DeleteIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllIndexes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteAllIndexes" message="tns:IService_DeleteAllIndexes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteAllIndexesResponse" message="tns:IService_DeleteAllIndexes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsAvailable" message="tns:IService_IsAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsAvailableResponse" message="tns:IService_IsAvailable_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ResetIndexes">
+      <soap:operation soapAction="http://tempuri.org/IService/ResetIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncPublishChanges">
+      <soap:operation soapAction="http://tempuri.org/IService/SyncPublishChanges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewGroupPropertiesToEdgeClass">
+      <soap:operation soapAction="http://tempuri.org/IService/AddNewGroupPropertiesToEdgeClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntities">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedDocuments">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEvents">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntitiesAppearedInEvents">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedEntitiesAppearedInEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerformCustomSearchAround">
+      <soap:operation soapAction="http://tempuri.org/IService/PerformCustomSearchAround" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDataIndicesStable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsDataIndicesStable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveHorizonIndexes">
+      <soap:operation soapAction="http://tempuri.org/IService/RemoveHorizonIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorizonIndexChecking">
+      <soap:operation soapAction="http://tempuri.org/IService/HorizonIndexChecking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllIndexes">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAllIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateIndex">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditIndex">
+      <soap:operation soapAction="http://tempuri.org/IService/EditIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIndex">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteIndex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllIndexes">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteAllIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://core-kavosh:9051/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

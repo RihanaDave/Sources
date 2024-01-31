@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities.IndexChecking" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities.IndexChecking" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="HorizonIndexCheckingInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectTypeUri" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="Properties" nillable="true" type="q1:ArrayOfKProperty" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RelationsIds" nillable="true" type="q2:ArrayOflong" />
+      <xs:element minOccurs="0" name="ResultLimit" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HorizonIndexCheckingInput" nillable="true" type="tns:HorizonIndexCheckingInput" />
+  <xs:complexType name="HorizonIndexCheckingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ObjectIndexStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PropertiesIndexStatus" nillable="true" type="tns:ArrayOfIndexingStatus" />
+      <xs:element minOccurs="0" name="RelationsIndexStatus" nillable="true" type="tns:ArrayOfIndexingStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HorizonIndexCheckingResult" nillable="true" type="tns:HorizonIndexCheckingResult" />
+  <xs:complexType name="ArrayOfIndexingStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexingStatus" nillable="true" type="tns:IndexingStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexingStatus" nillable="true" type="tns:ArrayOfIndexingStatus" />
+  <xs:complexType name="IndexingStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexStatus" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexingStatus" nillable="true" type="tns:IndexingStatus" />
+</xs:schema>

@@ -1,0 +1,382 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WpfAppSlidingBar.Controls" >
+
+    <Style x:Key="{x:Type local:WaitSpin}" TargetType="{x:Type local:WaitSpin}">
+		<Setter Property="Visibility" Value="Visible" />
+        <Setter Property="ShapeFill" Value="White">
+        </Setter>
+		<Setter Property="ShapeStroke" Value="#00000000" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:WaitSpin}">
+					<Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<Canvas x:Name="Document" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0">
+							<Canvas.Resources>
+								<Storyboard x:Key="PART_LoadingAnimation" x:Name="PART_LoadingAnimation" RepeatBehavior="Forever">
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="1"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse2" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse4" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse5" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse6" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse7" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0.66"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0.33"/>
+							</DoubleAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse8" Storyboard.TargetProperty="(UIElement.Opacity)">
+								<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.655"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.33"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="1"/>
+								<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0.66"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+							</Canvas.Resources>
+							
+							<Ellipse x:Name="ellipse8" Width="15" Height="15" Canvas.Left="12" Canvas.Top="12" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0.66" />
+							<Ellipse x:Name="ellipse7" Width="15" Height="15" Canvas.Left="0" Canvas.Top="40" Stretch="Fill" StrokeThickness="1"  StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0.33" />
+							<Ellipse x:Name="ellipse6" Width="15" Height="15" Canvas.Left="12" Canvas.Top="68" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0" />
+							<Ellipse x:Name="ellipse5" Width="15" Height="15" Canvas.Left="40" Canvas.Top="80" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0" />
+							<Ellipse x:Name="ellipse4" Width="15" Height="15" Canvas.Left="68" Canvas.Top="68" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0" />
+							<Ellipse x:Name="ellipse3" Width="15" Height="15" Canvas.Left="80" Canvas.Top="40" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0" />
+							<Ellipse x:Name="ellipse2" Width="15" Height="15" Canvas.Left="68" Canvas.Top="12" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="0" />
+							<Ellipse x:Name="ellipse1" Width="15" Height="15" Canvas.Left="40" Canvas.Top="0" Stretch="Fill" StrokeThickness="1"  StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeStroke}" Fill="{TemplateBinding ShapeFill}" Opacity="1" />
+
+						</Canvas>
+					</Viewbox>	
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+	<Style x:Key="batons" TargetType="{x:Type local:WaitSpin}">
+		<Setter Property="Visibility" Value="Visible" />
+		<Setter Property="ShapeFill" Value="White"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type local:WaitSpin}">
+					<Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<Canvas x:Name="Document" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0">
+							<Canvas.Resources>
+								<Storyboard x:Key="PART_LoadingAnimation" x:Name="PART_LoadingAnimation" RepeatBehavior="Forever">
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse1" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="1"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse2" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse3" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse4" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse5" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse6" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse7" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="0.66"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0.33"/>
+									</DoubleAnimationUsingKeyFrames>
+									<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse8" Storyboard.TargetProperty="(UIElement.Opacity)">
+										<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.655"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.2000000" Value="0.33"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.6000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.4000000" Value="1"/>
+										<SplineDoubleKeyFrame KeyTime="00:00:01.6000000" Value="0.66"/>
+									</DoubleAnimationUsingKeyFrames>
+								</Storyboard>
+							</Canvas.Resources>
+
+							<Path x:Name="ellipse8" Width="31.6274" Height="31.6274" Canvas.Left="13.2645" Canvas.Top="13.5595" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 17.7645,18.0595L 40.3919,40.6869" Opacity="0.66" />
+							<Path x:Name="ellipse7" Width="41" Height="9" Canvas.Left="0" Canvas.Top="45.3" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 36.5,49.8L 4.5,49.8" Opacity="0.33" />
+							<Path x:Name="ellipse6" Width="31.6274" Height="31.6274" Canvas.Left="13.2645" Canvas.Top="54.9959" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 40.3919,59.4959L 17.7645,82.1234" Opacity="0" />
+							<Path x:Name="ellipse5" Width="9" Height="41" Canvas.Left="45.3" Canvas.Top="58.9" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 49.8,63.4L 49.8,95.4" Opacity="0" />
+							<Path x:Name="ellipse4" Width="31.6274" Height="31.6274" Canvas.Left="54.9131" Canvas.Top="55.2081" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 59.4131,59.7081L 82.0405,82.3355" Opacity="0" />
+							<Path x:Name="ellipse3" Width="41" Height="9" Canvas.Left="59.3" Canvas.Top="45.3" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 63.8,49.8L 95.8,49.8" Opacity="0" />
+							<Path x:Name="ellipse2" Width="31.6274" Height="31.6274" Canvas.Left="55.1959" Canvas.Top="13.0645" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 59.6959,40.1919L 82.3233,17.5645" Opacity="0" />
+							<Path x:Name="ellipse1" Width="9" Height="41" Canvas.Left="45.3" Canvas.Top="0" Stretch="Fill" StrokeThickness="9" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round" Stroke="{TemplateBinding ShapeFill}" Data="F1 M 49.8,4.5L 49.8,36.5" Opacity="1" />
+
+						</Canvas>
+					</Viewbox>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="circle" TargetType="{x:Type local:WaitSpin}">
+		<Setter Property="Visibility" Value="Visible" />
+		<Setter Property="ShapeFill">
+			<Setter.Value>
+				<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+					<GradientStop Color="Black" Offset="1"/>
+					<GradientStop Color="#4F7F7F7F" Offset="0.819"/>
+					<GradientStop Color="#FFFFB30B" Offset="0"/>
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type local:WaitSpin}">
+					<ControlTemplate.Resources>
+						
+						
+					</ControlTemplate.Resources>
+					<Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<Canvas x:Name="Document" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0" RenderTransformOrigin="0.5,0.5">
+							<Canvas.Resources>
+								<Storyboard x:Key="PART_LoadingAnimation" x:Name="PART_LoadingAnimation" RepeatBehavior="Forever">
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="Document">
+										<EasingDoubleKeyFrame KeyTime="00:00:01" Value="360"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+							</Canvas.Resources>
+							<Canvas.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Canvas.RenderTransform>
+
+							<Canvas x:Name="wait__spin" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0">
+								<Path x:Name="Path" Width="89.7472" Height="89.4943" Canvas.Left="5.25284" Canvas.Top="5.37926" Stretch="Fill" Data="F1 M 81.3337,82.2209L 75.1634,87.3117L 67.5176,91.4616L 66.3481,91.8246L 65.4142,92.1288L 64.4377,92.2352L 63.4598,92.1434L 62.5214,91.8531L 61.6459,91.4078L 60.8802,90.7925L 60.2536,90.0361L 59.7953,89.1674L 59.4911,88.2334L 59.3848,87.257L 59.4766,86.279L 59.7668,85.3406L 60.2122,84.4652L 60.8274,83.6995L 61.5838,83.0729L 62.4526,82.6146L 63.622,82.2516L 69.5653,79.0255L 74.2626,75.1498L 75.0138,74.517L 75.8787,74.0515L 76.8195,73.769L 77.7982,73.6853L 78.7768,73.769L 79.7176,74.0515L 80.5825,74.517L 81.3337,75.1498L 81.9665,75.901L 82.432,76.7659L 82.7145,77.7067L 82.7982,78.6853L 82.7145,79.664L 82.432,80.6048L 81.9665,81.4697L 81.3337,82.2209 Z M 48.7459,94.8736L 40.9362,94.0858L 32.4824,91.4616L 31.3431,90.8432L 30.4744,90.3849L 29.718,89.7583L 29.1027,88.9927L 28.6574,88.1172L 28.3671,87.1788L 28.2754,86.2009L 28.3817,85.2244L 28.6859,84.2905L 29.1442,83.4217L 29.7708,82.6653L 30.5364,82.05L 31.4119,81.6047L 32.3503,81.3145L 33.3282,81.2227L 34.3047,81.329L 35.2387,81.6332L 36.3779,82.2516L 42.941,84.2888L 48.7459,84.8736L 49.7246,84.9573L 50.6654,85.2397L 51.5303,85.7052L 52.2815,86.338L 52.9143,87.0892L 53.3798,87.9542L 53.6623,88.8949L 53.7459,89.8736L 53.6623,90.8522L 53.3798,91.793L 52.9143,92.6579L 52.2815,93.4091L 51.5303,94.042L 50.6654,94.5075L 49.7246,94.7899L 48.7459,94.8736 Z M 16.977,80.3615L 12.6883,75.1634L 8.53838,67.5176L 7.8017,65.1444L 7.49752,64.2104L 7.39118,63.234L 7.48297,62.256L 7.7732,61.3176L 8.21852,60.4422L 8.83379,59.6765L 9.5902,59.0499L 10.459,58.5916L 11.3929,58.2874L 12.3694,58.1811L 13.3473,58.2729L 14.2857,58.5631L 15.1612,59.0084L 15.9268,59.6237L 16.5534,60.3801L 17.0117,61.2488L 17.7484,63.622L 20.9745,69.5653L 24.048,73.2904L 24.6809,74.0416L 25.1464,74.9065L 25.4288,75.8473L 25.5125,76.826L 25.4288,77.8046L 25.1464,78.7454L 24.6809,79.6103L 24.048,80.3615L 23.2969,80.9943L 22.4319,81.4598L 21.4912,81.7423L 20.5125,81.826L 19.5338,81.7423L 18.5931,81.4598L 17.7282,80.9943L 16.977,80.3615 Z M 5.25284,47.4919L 5.91417,40.9362L 8.53838,32.4824L 9.75804,30.2354L 10.2163,29.3666L 10.8429,28.6102L 11.6086,27.995L 12.4841,27.5496L 13.4225,27.2594L 14.4004,27.1676L 15.3769,27.274L 16.3108,27.5781L 17.1796,28.0364L 17.936,28.663L 18.5513,29.4287L 18.9966,30.3042L 19.2868,31.2426L 19.3786,32.2205L 19.2723,33.197L 18.9681,34.1309L 17.7484,36.378L 15.7112,42.941L 15.2528,47.4919L 15.1692,48.4706L 14.8867,49.4113L 14.4212,50.2762L 13.7884,51.0274L 13.0372,51.6603L 12.1723,52.1258L 11.2315,52.4082L 10.2528,52.4919L 9.27418,52.4082L 8.33342,52.1258L 7.4685,51.6603L 6.71731,51.0274L 6.08446,50.2762L 5.61896,49.4113L 5.33652,48.4706L 5.25284,47.4919 Z M 20.6107,16.1748L 24.8366,12.6883L 32.4824,8.53838L 36.0594,7.42804L 36.9933,7.12386L 37.9698,7.01752L 38.9477,7.10931L 39.8861,7.39954L 40.7616,7.84487L 41.5272,8.46014L 42.1538,9.21655L 42.6122,10.0853L 42.9163,11.0192L 43.0227,11.9957L 42.9309,12.9736L 42.6406,13.912L 42.1953,14.7875L 41.5801,15.5532L 40.8237,16.1798L 39.9549,16.6381L 36.378,17.7484L 30.4347,20.9745L 27.6818,23.2459L 26.9306,23.8788L 26.0657,24.3443L 25.1249,24.6267L 24.1462,24.7104L 23.1676,24.6267L 22.2268,24.3443L 21.3619,23.8788L 20.6107,23.2459L 19.9779,22.4947L 19.5124,21.6298L 19.2299,20.689L 19.1462,19.7104L 19.2299,18.7317L 19.5124,17.791L 19.9779,16.926L 20.6107,16.1748 Z M 53.7621,5.37926L 59.0638,5.91416L 67.5176,8.53838L 70.8724,10.3593L 71.7411,10.8176L 72.4975,11.4442L 73.1128,12.2099L 73.5581,13.0854L 73.8483,14.0237L 73.9401,15.0017L 73.8338,15.9781L 73.5296,16.9121L 73.0713,17.7808L 72.4447,18.5372L 71.679,19.1525L 70.8036,19.5978L 69.8652,19.8881L 68.8872,19.9799L 67.9108,19.8735L 66.9768,19.5693L 63.622,17.7484L 57.059,15.7112L 53.7621,15.3793L 52.7835,15.2956L 51.8427,15.0131L 50.9778,14.5476L 50.2266,13.9148L 49.5938,13.1636L 49.1283,12.2987L 48.8458,11.3579L 48.7621,10.3793L 48.8458,9.4006L 49.1283,8.45985L 49.5938,7.59492L 50.2266,6.84373L 50.9778,6.21088L 51.8427,5.74538L 52.7835,5.46294L 53.7621,5.37926 Z M 84.6273,21.5829L 87.3117,24.8366L 91.4616,32.4824L 92.9456,37.2631L 93.2498,38.1971L 93.3561,39.1735L 93.2644,40.1514L 92.9741,41.0898L 92.5288,41.9653L 91.9135,42.731L 91.1571,43.3576L 90.2884,43.8159L 89.3544,44.1201L 88.378,44.2264L 87.4,44.1346L 86.4616,43.8444L 85.5862,43.3991L 84.8205,42.7838L 84.1939,42.0274L 83.7356,41.1586L 82.2516,36.378L 79.0255,30.4347L 77.5562,28.654L 76.9234,27.9028L 76.4579,27.0379L 76.1754,26.0971L 76.0918,25.1184L 76.1754,24.1398L 76.4579,23.199L 76.9234,22.3341L 77.5562,21.5829L 78.3074,20.9501L 79.1723,20.4846L 80.1131,20.2021L 81.0918,20.1184L 82.0704,20.2021L 83.0112,20.4846L 83.8761,20.9501L 84.6273,21.5829 Z M 95,50L 94.0858,59.0638L 91.4616,67.5176L 91.4445,67.5491L 90.9862,68.4179L 90.3596,69.1743L 89.5939,69.7896L 88.7184,70.2349L 87.7801,70.5251L 86.8021,70.6169L 85.8257,70.5106L 84.8917,70.2064L 84.0229,69.7481L 83.2665,69.1215L 82.6513,68.3558L 82.206,67.4803L 81.9157,66.542L 81.8239,65.564L 81.9303,64.5876L 82.2344,63.6536L 82.2516,63.622L 84.2888,57.059L 85,50L 85.0837,49.0213L 85.3661,48.0806L 85.8316,47.2157L 86.4645,46.4645L 87.2157,45.8316L 88.0806,45.3661L 89.0213,45.0837L 90,45L 90.9787,45.0837L 91.9194,45.3661L 92.7843,45.8316L 93.5355,46.4645L 94.1684,47.2157L 94.6339,48.0806L 94.9163,49.0213L 95,50 Z ">
+									<Path.Fill>
+										<LinearGradientBrush StartPoint="0.00832519,0.498587" EndPoint="0.988857,0.498587">
+											<LinearGradientBrush.GradientStops>
+												<GradientStop Color="#FFFFFFFF" Offset="0"/>
+												<GradientStop Color="#FF000000" Offset="1"/>
+											</LinearGradientBrush.GradientStops>
+										</LinearGradientBrush>
+									</Path.Fill>
+								</Path>
+							</Canvas>
+						</Canvas>
+					</Viewbox>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="iewait" TargetType="{x:Type local:WaitSpin}">
+		<Setter Property="Visibility" Value="Visible" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type local:WaitSpin}">
+					<Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<Canvas x:Name="Document" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0" RenderTransformOrigin="0.5,0.5">
+							<Canvas.Resources>
+								<Storyboard x:Key="PART_LoadingAnimation" x:Name="PART_LoadingAnimation" RepeatBehavior="Forever">
+									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="Document">
+										<EasingDoubleKeyFrame KeyTime="00:00:02" Value="360"/>
+									</DoubleAnimationUsingKeyFrames>
+								</Storyboard>
+							</Canvas.Resources>
+							<Canvas.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Canvas.RenderTransform>
+							<Canvas x:Name="wait__spin" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0">
+								<Canvas x:Name="Calque_5" Width="100" Height="100" Canvas.Left="0" Canvas.Top="0">
+									<Ellipse x:Name="Ellipse" Width="88.8889" Height="88.8889" Canvas.Left="5.55556" Canvas.Top="5.55555" Stretch="Fill" StrokeThickness="8.88889" StrokeLineJoin="Round" Stroke="#FF006C36"/>
+									<Ellipse x:Name="Ellipse_0" Width="15" Height="15" Canvas.Left="82.5" Canvas.Top="42.5179" Stretch="Fill">
+										<Ellipse.Fill>
+											<RadialGradientBrush RadiusX="0.499999" RadiusY="0.5" Center="0.499999,0.5" GradientOrigin="0.499999,0.5">
+												<RadialGradientBrush.GradientStops>
+													<GradientStop Color="#45006C36" Offset="0"/>
+													<GradientStop Color="#A27FB59A" Offset="0.47619"/>
+													<GradientStop Color="#FFFFFFFF" Offset="1"/>
+												</RadialGradientBrush.GradientStops>
+											</RadialGradientBrush>
+										</Ellipse.Fill>
+									</Ellipse>
+								</Canvas>
+							</Canvas>
+						</Canvas>
+					</Viewbox>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="other" TargetType="{x:Type local:WaitSpin}">
+		<Setter Property="Visibility" Value="Visible" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type local:WaitSpin}">
+					<Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+						<Canvas x:Name="Document" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0" RenderTransformOrigin="0.5,0.5">
+							<Canvas.Resources>
+								<Storyboard x:Key="PART_LoadingAnimation" x:Name="PART_LoadingAnimation" RepeatBehavior="Forever">
+									<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="Document">
+										<EasingDoubleKeyFrame KeyTime="00:00:02" Value="360"/>
+									</DoubleAnimationUsingKeyFrames>
+								</Storyboard>
+							</Canvas.Resources>
+							<Canvas.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Canvas.RenderTransform>
+							<Canvas x:Name="wait__spin" Width="100" Height="100" Clip="F1 M 0,0L 100,0L 100,100L 0,100L 0,0">
+								<Canvas x:Name="points" Width="100" Height="100" Canvas.Left="0" Canvas.Top="0">
+									<Ellipse x:Name="ellipse8" Width="15" Height="15" Canvas.Left="14.5" Canvas.Top="14.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#E6000000" Fill="#E6000000"/>
+									<Ellipse x:Name="ellipse7" Width="15" Height="15" Canvas.Left="2.5" Canvas.Top="42.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#CD000000" Fill="#CD000000"/>
+									<Ellipse x:Name="ellipse6" Width="15" Height="15" Canvas.Left="14.5" Canvas.Top="70.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#B3000000" Fill="#B3000000"/>
+									<Ellipse x:Name="ellipse5" Width="15" Height="15" Canvas.Left="42.5" Canvas.Top="82.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#9A000000" Fill="#9A000000"/>
+									<Ellipse x:Name="ellipse4" Width="15" Height="15" Canvas.Left="70.5" Canvas.Top="70.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#80000000" Fill="#80000000"/>
+									<Ellipse x:Name="ellipse3" Width="15" Height="15" Canvas.Left="82.5" Canvas.Top="42.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#67000000" Fill="#67000000"/>
+									<Ellipse x:Name="ellipse2" Width="15" Height="15" Canvas.Left="70.5" Canvas.Top="14.5" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#4D000000" Fill="#4D000000"/>
+									<Ellipse x:Name="ellipse1" Width="15" Height="15" Canvas.Left="42.5" Canvas.Top="2.49999" Stretch="Fill" StrokeThickness="1" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000"/>
+								</Canvas>
+							</Canvas>
+						</Canvas>
+					</Viewbox>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>

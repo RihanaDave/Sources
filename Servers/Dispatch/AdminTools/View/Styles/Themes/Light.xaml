@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="NormalBackground" Color="#FFEEEEEE"/>
+    <SolidColorBrush x:Key="Primary" Color="#FF3F51B5"/>
+    <SolidColorBrush x:Key="NormalForeground" Color="Black"/>
+    <SolidColorBrush x:Key="CardBackground" Color="White"/>
+    <SolidColorBrush x:Key="SecondBackground" Color="#FFCCCCCC"/>
+    <SolidColorBrush x:Key="ThirdBackground" Color="#FFAAAAAA"/>
+    <SolidColorBrush x:Key="SelectedSidebarItemBackground" Color="#FFAAAAAA"/>
+    <SolidColorBrush x:Key="DataGridHeaderBackground" Color="#FFBBBBBB"/>
+    
+</ResourceDictionary>

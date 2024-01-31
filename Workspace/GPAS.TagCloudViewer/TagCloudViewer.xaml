@@ -1,0 +1,23 @@
+<UserControl x:Class="GPAS.TagCloudViewer.TagCloudViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:graphxctrl="clr-namespace:GraphX.Controls;assembly=GraphX.WPF.Controls"
+             xmlns:local="clr-namespace:GPAS.TagCloudViewer.Foundations"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="550" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/GenericTemplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <graphxctrl:ZoomControl x:Name="zoomControl" Zoom="1.0" ZoomSensitivity="50">
+            <local:GraphArea x:Name="area"/>
+        </graphxctrl:ZoomControl>
+    </Grid>
+</UserControl>

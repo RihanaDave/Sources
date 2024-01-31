@@ -1,0 +1,64 @@
+﻿<local:BaseFilterSearchControl x:Class="GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.KeywordFilterSearchControl"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+                               xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias"
+                               xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.Converters"
+                               xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                               mc:Ignorable="d" Foreground="{DynamicResource MaterialDesignBody}" Margin="0 5 0 0"
+                         d:DesignHeight="200" d:DesignWidth="300">
+    
+    <local:BaseFilterSearchControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <converters:IsSelectedToHighlightBrushConverter x:Key="IsSelectedToHighlightBrushConverter"/>
+            <converters:ValidationStatusToVisibilityErrorBoxConverter x:Key="ValidationStatusToVisibilityErrorBoxConverter"/>
+            <converters:ValidationStatusToBrushConverter x:Key="ValidationStatusToBrushConverter"/>
+            <converters:KeywordToCorrectKeywordConverter x:Key="KeywordToCorrectKeywordConverter"/>
+        </ResourceDictionary>
+    </local:BaseFilterSearchControl.Resources>
+
+    <GroupBox Name="groupBox" Style="{DynamicResource MainGroupBox}">
+        <GroupBox.BorderBrush>
+            <MultiBinding Converter="{StaticResource IsSelectedToHighlightBrushConverter}">
+                <Binding Path="IsSelected"/>
+                <Binding Path="CurrentTheme"/>
+            </MultiBinding>
+        </GroupBox.BorderBrush>
+        <GroupBox.Header>
+            <TextBlock Text="{x:Static resource:Resources.Keyword}" FontWeight="Bold"
+                       Foreground="{Binding ElementName=groupBox, Path=BorderBrush}"/>
+        </GroupBox.Header>
+
+        <Grid x:Name="ContentGrid" Margin="0 5 0 0">
+            <Grid.ColumnDefinitions>                
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <common:ButtonWithIcon x:Name="RemoveButton" Grid.Row="0" Grid.Column="1" Click="RemoveButton_Click"
+                                   Background="#00000000" Icon="Close" Padding="2" Margin="0" Foreground="red"/>
+
+            <TextBlock Name="ValidationMessageLabel" Text="{Binding Path=ValidationMessage}" Grid.Row="0" Grid.Column="0"
+                       Style="{StaticResource MaterialDesignCaptionTextBlock}" VerticalAlignment="Center"
+                       Visibility="{Binding Path=ValidationStatus, Mode=OneWay,
+                Converter={StaticResource ValidationStatusToVisibilityErrorBoxConverter}}"
+                       Foreground="OrangeRed"/>
+
+            <TextBox Name="KeywordTextBox" Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Margin="2" Grid.ColumnSpan="2"
+                     materialDesign:HintAssist.Hint="{x:Static resource:Resources.Enter_keyword}" FontSize="14"                 
+                     Text="{Binding Keyword, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource KeywordToCorrectKeywordConverter}}"
+                     PreviewMouseLeftButtonDown="KeywordTextBox_PreviewMouseLeftButtonDown"/>
+        </Grid>
+    </GroupBox>
+</local:BaseFilterSearchControl>

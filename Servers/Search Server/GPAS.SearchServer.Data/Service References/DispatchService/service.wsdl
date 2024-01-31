@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InfrastructureService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl.Groups" />
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IInfrastructureService_GetObjectListById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectListById" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetObjectListById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectListByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_Publish_InputMessage">
+    <wsdl:part name="parameters" element="tns:Publish" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_Publish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_FinalizeContinousPublish_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizeContinousPublish" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_FinalizeContinousPublish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizeContinousPublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_RegisterNewDataSourceToRepositoryServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewDataSourceToRepositoryServer" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_RegisterNewDataSourceToRepositoryServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewDataSourceToRepositoryServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_SynchronizeNewDataSourceInSearchServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeNewDataSourceInSearchServer" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_SynchronizeNewDataSourceInSearchServer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SynchronizeNewDataSourceInSearchServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewObjectIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewObjectIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewObjectIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewObjectIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetLastAssignedObjectID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedObjectID" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetLastAssignedObjectID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedObjectIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetLastAssignedDataSourceID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedDataSourceID" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetLastAssignedDataSourceID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedDataSourceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewPropertyIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPropertyIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewPropertyIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPropertyIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewRelationIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewRelationIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewRelationIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewRelationIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetLastAssignedRelatioshshipID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedRelatioshshipID" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetLastAssignedRelatioshshipID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedRelatioshshipIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewDataSourceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewDataSourceId" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetNewDataSourceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewDataSourceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetDatalakeSlice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatalakeSlice" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetDatalakeSlice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatalakeSliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDocumentFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFile" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDocumentFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDataSourceFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFile" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDataSourceFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadFileAsDocumentAndDataSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileAsDocumentAndDataSource" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadFileAsDocumentAndDataSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileAsDocumentAndDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDocumentFromJobShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFromJobShare" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDocumentFromJobShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFromJobShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDataSourceFromJobShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFromJobShare" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_UploadDataSourceFromJobShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFromJobShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOntology_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOntology" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOntology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOntologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_OptimizeDeployment_InputMessage">
+    <wsdl:part name="parameters" element="tns:OptimizeDeployment" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_OptimizeDeployment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OptimizeDeploymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestSearchUnsyncObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestSearchUnsyncObjects" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestSearchUnsyncObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestSearchUnsyncObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestSearchUnsyncDataSources_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestSearchUnsyncDataSources" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestSearchUnsyncDataSources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestSearchUnsyncDataSourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestHorizonUnsyncObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestHorizonUnsyncObjects" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestHorizonUnsyncObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestHorizonUnsyncObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestHorizonUnsyncRelatioinships_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestHorizonUnsyncRelatioinships" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetOldestHorizonUnsyncRelatioinships_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOldestHorizonUnsyncRelatioinshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplySearchObjectsSynchronizationResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySearchObjectsSynchronizationResult" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplySearchObjectsSynchronizationResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySearchObjectsSynchronizationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplySearchDataSourcesSynchronizationResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySearchDataSourcesSynchronizationResult" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplySearchDataSourcesSynchronizationResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplySearchDataSourcesSynchronizationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplyHorizonObjectsSynchronizationResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyHorizonObjectsSynchronizationResult" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplyHorizonObjectsSynchronizationResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyHorizonObjectsSynchronizationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplyHorizonRelationshipsSynchronizationResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyHorizonRelationshipsSynchronizationResult" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_ApplyHorizonRelationshipsSynchronizationResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyHorizonRelationshipsSynchronizationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetHorizonUnsyncObjectsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHorizonUnsyncObjectsCount" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetHorizonUnsyncObjectsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHorizonUnsyncObjectsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetHorizonUnsyncRelationshipsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHorizonUnsyncRelationshipsCount" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetHorizonUnsyncRelationshipsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHorizonUnsyncRelationshipsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetSearchUnsyncObjectsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchUnsyncObjectsCount" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_GetSearchUnsyncObjectsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSearchUnsyncObjectsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_DeleteHorizonServerUnsyncConcepts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHorizonServerUnsyncConcepts" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_DeleteHorizonServerUnsyncConcepts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHorizonServerUnsyncConceptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_DeleteSearchServerUnsyncConcepts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSearchServerUnsyncConcepts" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_DeleteSearchServerUnsyncConcepts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSearchServerUnsyncConceptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_IsAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IInfrastructureService_IsAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IInfrastructureService">
+    <wsdl:operation name="GetObjectListById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetObjectListById" message="tns:IInfrastructureService_GetObjectListById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetObjectListByIdResponse" message="tns:IInfrastructureService_GetObjectListById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/Publish" message="tns:IInfrastructureService_Publish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/PublishResponse" message="tns:IInfrastructureService_Publish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizeContinousPublish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/FinalizeContinousPublish" message="tns:IInfrastructureService_FinalizeContinousPublish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/FinalizeContinousPublishResponse" message="tns:IInfrastructureService_FinalizeContinousPublish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewDataSourceToRepositoryServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/RegisterNewDataSourceToRepositoryServer" message="tns:IInfrastructureService_RegisterNewDataSourceToRepositoryServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/RegisterNewDataSourceToRepositoryServerResponse" message="tns:IInfrastructureService_RegisterNewDataSourceToRepositoryServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeNewDataSourceInSearchServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/SynchronizeNewDataSourceInSearchServer" message="tns:IInfrastructureService_SynchronizeNewDataSourceInSearchServer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/SynchronizeNewDataSourceInSearchServerResponse" message="tns:IInfrastructureService_SynchronizeNewDataSourceInSearchServer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewObjectIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewObjectIdRange" message="tns:IInfrastructureService_GetNewObjectIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewObjectIdRangeResponse" message="tns:IInfrastructureService_GetNewObjectIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedObjectID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetLastAssignedObjectID" message="tns:IInfrastructureService_GetLastAssignedObjectID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetLastAssignedObjectIDResponse" message="tns:IInfrastructureService_GetLastAssignedObjectID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedDataSourceID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetLastAssignedDataSourceID" message="tns:IInfrastructureService_GetLastAssignedDataSourceID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetLastAssignedDataSourceIDResponse" message="tns:IInfrastructureService_GetLastAssignedDataSourceID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPropertyIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewPropertyIdRange" message="tns:IInfrastructureService_GetNewPropertyIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewPropertyIdRangeResponse" message="tns:IInfrastructureService_GetNewPropertyIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewRelationIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewRelationIdRange" message="tns:IInfrastructureService_GetNewRelationIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewRelationIdRangeResponse" message="tns:IInfrastructureService_GetNewRelationIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedRelatioshshipID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetLastAssignedRelatioshshipID" message="tns:IInfrastructureService_GetLastAssignedRelatioshshipID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetLastAssignedRelatioshshipIDResponse" message="tns:IInfrastructureService_GetLastAssignedRelatioshshipID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDataSourceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewDataSourceId" message="tns:IInfrastructureService_GetNewDataSourceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetNewDataSourceIdResponse" message="tns:IInfrastructureService_GetNewDataSourceId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatalakeSlice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetDatalakeSlice" message="tns:IInfrastructureService_GetDatalakeSlice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetDatalakeSliceResponse" message="tns:IInfrastructureService_GetDatalakeSlice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetGroups" message="tns:IInfrastructureService_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetGroupsResponse" message="tns:IInfrastructureService_GetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDocumentFile" message="tns:IInfrastructureService_UploadDocumentFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDocumentFileResponse" message="tns:IInfrastructureService_UploadDocumentFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDataSourceFile" message="tns:IInfrastructureService_UploadDataSourceFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDataSourceFileResponse" message="tns:IInfrastructureService_UploadDataSourceFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileAsDocumentAndDataSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/UploadFileAsDocumentAndDataSource" message="tns:IInfrastructureService_UploadFileAsDocumentAndDataSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/UploadFileAsDocumentAndDataSourceResponse" message="tns:IInfrastructureService_UploadFileAsDocumentAndDataSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFromJobShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDocumentFromJobShare" message="tns:IInfrastructureService_UploadDocumentFromJobShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDocumentFromJobShareResponse" message="tns:IInfrastructureService_UploadDocumentFromJobShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFromJobShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDataSourceFromJobShare" message="tns:IInfrastructureService_UploadDataSourceFromJobShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/UploadDataSourceFromJobShareResponse" message="tns:IInfrastructureService_UploadDataSourceFromJobShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOntology">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetOntology" message="tns:IInfrastructureService_GetOntology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetOntologyResponse" message="tns:IInfrastructureService_GetOntology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OptimizeDeployment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/OptimizeDeployment" message="tns:IInfrastructureService_OptimizeDeployment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/OptimizeDeploymentResponse" message="tns:IInfrastructureService_OptimizeDeployment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestSearchUnsyncObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestSearchUnsyncObjects" message="tns:IInfrastructureService_GetOldestSearchUnsyncObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestSearchUnsyncObjectsResponse" message="tns:IInfrastructureService_GetOldestSearchUnsyncObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestSearchUnsyncDataSources">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestSearchUnsyncDataSources" message="tns:IInfrastructureService_GetOldestSearchUnsyncDataSources_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestSearchUnsyncDataSourcesResponse" message="tns:IInfrastructureService_GetOldestSearchUnsyncDataSources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestHorizonUnsyncObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestHorizonUnsyncObjects" message="tns:IInfrastructureService_GetOldestHorizonUnsyncObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestHorizonUnsyncObjectsResponse" message="tns:IInfrastructureService_GetOldestHorizonUnsyncObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestHorizonUnsyncRelatioinships">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestHorizonUnsyncRelatioinships" message="tns:IInfrastructureService_GetOldestHorizonUnsyncRelatioinships_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetOldestHorizonUnsyncRelatioinshipsResponse" message="tns:IInfrastructureService_GetOldestHorizonUnsyncRelatioinships_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplySearchObjectsSynchronizationResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/ApplySearchObjectsSynchronizationResult" message="tns:IInfrastructureService_ApplySearchObjectsSynchronizationResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/ApplySearchObjectsSynchronizationResultResponse" message="tns:IInfrastructureService_ApplySearchObjectsSynchronizationResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplySearchDataSourcesSynchronizationResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/ApplySearchDataSourcesSynchronizationResult" message="tns:IInfrastructureService_ApplySearchDataSourcesSynchronizationResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/ApplySearchDataSourcesSynchronizationResultResponse" message="tns:IInfrastructureService_ApplySearchDataSourcesSynchronizationResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyHorizonObjectsSynchronizationResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/ApplyHorizonObjectsSynchronizationResult" message="tns:IInfrastructureService_ApplyHorizonObjectsSynchronizationResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/ApplyHorizonObjectsSynchronizationResultResponse" message="tns:IInfrastructureService_ApplyHorizonObjectsSynchronizationResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyHorizonRelationshipsSynchronizationResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/ApplyHorizonRelationshipsSynchronizationResult" message="tns:IInfrastructureService_ApplyHorizonRelationshipsSynchronizationResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/ApplyHorizonRelationshipsSynchronizationResultResponse" message="tns:IInfrastructureService_ApplyHorizonRelationshipsSynchronizationResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHorizonUnsyncObjectsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetHorizonUnsyncObjectsCount" message="tns:IInfrastructureService_GetHorizonUnsyncObjectsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetHorizonUnsyncObjectsCountResponse" message="tns:IInfrastructureService_GetHorizonUnsyncObjectsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHorizonUnsyncRelationshipsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetHorizonUnsyncRelationshipsCount" message="tns:IInfrastructureService_GetHorizonUnsyncRelationshipsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetHorizonUnsyncRelationshipsCountResponse" message="tns:IInfrastructureService_GetHorizonUnsyncRelationshipsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchUnsyncObjectsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/GetSearchUnsyncObjectsCount" message="tns:IInfrastructureService_GetSearchUnsyncObjectsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/GetSearchUnsyncObjectsCountResponse" message="tns:IInfrastructureService_GetSearchUnsyncObjectsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHorizonServerUnsyncConcepts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/DeleteHorizonServerUnsyncConcepts" message="tns:IInfrastructureService_DeleteHorizonServerUnsyncConcepts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/DeleteHorizonServerUnsyncConceptsResponse" message="tns:IInfrastructureService_DeleteHorizonServerUnsyncConcepts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSearchServerUnsyncConcepts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/DeleteSearchServerUnsyncConcepts" message="tns:IInfrastructureService_DeleteSearchServerUnsyncConcepts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/DeleteSearchServerUnsyncConceptsResponse" message="tns:IInfrastructureService_DeleteSearchServerUnsyncConcepts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IInfrastructureService/IsAvailable" message="tns:IInfrastructureService_IsAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IInfrastructureService/IsAvailableResponse" message="tns:IInfrastructureService_IsAvailable_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IInfrastructureService" type="tns:IInfrastructureService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetObjectListById">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetObjectListById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/Publish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizeContinousPublish">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/FinalizeContinousPublish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewDataSourceToRepositoryServer">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/RegisterNewDataSourceToRepositoryServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynchronizeNewDataSourceInSearchServer">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/SynchronizeNewDataSourceInSearchServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewObjectIdRange">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetNewObjectIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedObjectID">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetLastAssignedObjectID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedDataSourceID">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetLastAssignedDataSourceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPropertyIdRange">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetNewPropertyIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewRelationIdRange">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetNewRelationIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedRelatioshshipID">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetLastAssignedRelatioshshipID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDataSourceId">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetNewDataSourceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatalakeSlice">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetDatalakeSlice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFile">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/UploadDocumentFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFile">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/UploadDataSourceFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileAsDocumentAndDataSource">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/UploadFileAsDocumentAndDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFromJobShare">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/UploadDocumentFromJobShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFromJobShare">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/UploadDataSourceFromJobShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOntology">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetOntology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptimizeDeployment">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/OptimizeDeployment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestSearchUnsyncObjects">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetOldestSearchUnsyncObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestSearchUnsyncDataSources">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetOldestSearchUnsyncDataSources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestHorizonUnsyncObjects">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetOldestHorizonUnsyncObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOldestHorizonUnsyncRelatioinships">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetOldestHorizonUnsyncRelatioinships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplySearchObjectsSynchronizationResult">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/ApplySearchObjectsSynchronizationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplySearchDataSourcesSynchronizationResult">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/ApplySearchDataSourcesSynchronizationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyHorizonObjectsSynchronizationResult">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/ApplyHorizonObjectsSynchronizationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyHorizonRelationshipsSynchronizationResult">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/ApplyHorizonRelationshipsSynchronizationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorizonUnsyncObjectsCount">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetHorizonUnsyncObjectsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorizonUnsyncRelationshipsCount">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetHorizonUnsyncRelationshipsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSearchUnsyncObjectsCount">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/GetSearchUnsyncObjectsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHorizonServerUnsyncConcepts">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/DeleteHorizonServerUnsyncConcepts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSearchServerUnsyncConcepts">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/DeleteSearchServerUnsyncConcepts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <soap:operation soapAction="http://tempuri.org/IInfrastructureService/IsAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InfrastructureService">
+    <wsdl:port name="BasicHttpBinding_IInfrastructureService" binding="tns:BasicHttpBinding_IInfrastructureService">
+      <soap:address location="http://core-kavosh:9011/InfrastructureService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

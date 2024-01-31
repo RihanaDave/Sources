@@ -1,0 +1,28 @@
+<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.ObjectLabelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="32" d:DesignWidth="250">
+    <Grid x:Name="mainGrid" Height="32" MouseEnter="mainGrid_MouseEnter" MouseLeave="mainGrid_MouseLeave" 
+          MouseDown="mainGrid_MouseDown" MouseUp="mainGrid_MouseUp" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Name="objectIconBorder" Grid.Column="0" Margin="1">
+            <Image Name="objectIconImage" Stretch="UniformToFill" 
+                   Source="{Binding Icon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2"/>
+        </Border>
+        <Label x:Name="objectTitleLabel"
+               Grid.Column="1" Foreground="{DynamicResource MaterialDesignBody}"
+               Margin="2,2,2,2" 
+               VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Left"
+               Content="{Binding ObjectTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        </Label>
+        <Label x:Name="coverLabel" Grid.ColumnSpan="2" MouseDoubleClick="coverLabel_MouseDoubleClick" />
+    </Grid>
+</controls:PresentationControl>

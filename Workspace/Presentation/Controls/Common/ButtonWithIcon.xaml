@@ -1,0 +1,51 @@
+﻿<Button x:Class="GPAS.Workspace.Presentation.Controls.Common.ButtonWithIcon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+        xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+        Padding="1" Margin="5"         
+        VerticalAlignment="Center" HorizontalAlignment="Center"
+        Style="{StaticResource MaterialDesignFlatButton}">
+
+    <Button.Resources>
+        <converters:RowAndColumnConverter x:Key="RowAndColumnConverter"/>
+    </Button.Resources>
+
+    <Button.ContentTemplate>
+        <DataTemplate>
+            <Grid Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--متن-->
+                <TextBlock Grid.Row="1" Grid.Column="1" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Margin="{Binding Path=ContentMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}"
+                           FontSize="{Binding Path=ContentFontSize, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}"
+                           Text="{Binding Path=Content, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}"/>
+
+                <!--نمایه-->
+                <materialDesign:PackIcon 
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Margin="{Binding Path=IconMargin, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}"
+                    Kind="{Binding Path=Icon, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}"
+                    Width="{Binding Path=IconWidth, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}" 
+                    Height="{Binding Path=IconHeight, RelativeSource={RelativeSource FindAncestor, AncestorType=Button}}"
+                    Grid.Row="{Binding IconPosition, RelativeSource={RelativeSource FindAncestor, AncestorType=Button},
+            Converter={StaticResource RowAndColumnConverter}, ConverterParameter={x:Static local:ElementType.Row}}" 
+                    Grid.Column="{Binding IconPosition, RelativeSource={RelativeSource FindAncestor, AncestorType=Button},
+            Converter={StaticResource RowAndColumnConverter}, ConverterParameter={x:Static local:ElementType.Column}}"/>
+            </Grid>
+        </DataTemplate>
+    </Button.ContentTemplate>
+</Button>
+

@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.DataImport.MappingGraphUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+             xmlns:commonConverters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport"
+             xmlns:map="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Model.Map"
+             xmlns:link="clr-namespace:GPAS.Workspace.Presentation.Controls.Link"
+             xmlns:ontologyPickers="clr-namespace:GPAS.Workspace.Presentation.Controls.OntologyPickers"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <converters:ImportStatusToIsEnableConverter x:Key="ImportStatusToIsEnableConverter"/>
+        
+        <system:Int32 x:Key="TwoNumber">2</system:Int32>
+        <system:Boolean x:Key="TrueBoolValue">true</system:Boolean>
+        <system:Boolean x:Key="FalseBoolValue">false</system:Boolean>
+        <commonConverters:AnyValuesAreNotNullToBooleanConverter x:Key="AnyValuesAreNotNullToBooleanConverter"/>
+        <commonConverters:FirstObjectToSecondObjectConverter x:Key="Number2ToTrueConverter" Condition="{StaticResource TwoNumber}"
+                                                             TrueValue="{StaticResource TrueBoolValue}" FalseValue="{StaticResource FalseBoolValue}"/>
+    </UserControl.Resources>
+    
+    <Grid>
+        <materialDesign:DialogHost>
+            <Grid>
+                <Grid Name="GraphActionsGrid" VerticalAlignment="Top" ZIndex="5"
+                      IsEnabled="{Binding Map.OwnerDataSource.ImportStatus, Converter={StaticResource ImportStatusToIsEnableConverter}}">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Gray" Opacity="0.3"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--افزودن موجودیت-->
+                    <Button Grid.Column="0" Name="AddObjectButton" Padding="1" Margin="5" Background="Transparent"
+                            Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
+                            materialDesign:DialogHost.DialogClosingAttached="AddNewPropertyOnDialogClosing"
+                            materialDesign:DialogHost.DialogOpenedAttached="AddNewObjectOnDialogOpened">
+                        <Button.Style>
+                            <Style BasedOn="{StaticResource MaterialDesignFlatButton}" TargetType="Button">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Map.SelectedWarning.WarningType}"
+                                             Value="{x:Static map:MapWarningType.NoObjects}">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard Storyboard="{StaticResource ItemListWarningBackgroundStoryboard}"/>
+                                        </DataTrigger.EnterActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.CommandParameter>
+                            <Grid MinWidth="300" MinHeight="200">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Add object" Margin="10" Grid.Row="0" 
+                                           Foreground="{DynamicResource PrimaryHueMidBrush}" 
+                                           FontSize="16" HorizontalAlignment="Center"/>
+
+                                <ontologyPickers:ObjectTypePicker 
+                                    Background="White" Foreground="Black"
+                                    x:Name="ObjectTypePicker" Grid.Row="1" Margin="10"
+                                    SelectedItemChanged="ObjectTypePickerOnSelectedItemChanged"
+                                    SelectedItem="{Binding NewObjectNode,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+
+                                <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" Grid.Row="2">
+                                    <Button Margin="5" IsCancel="True" Content="Cancel" CommandParameter="false"
+                                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+
+                                    <Button Margin="5" Name="AddNewObjectButton" Content="Add" IsEnabled="False"
+                                        CommandParameter="true" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" />
+                                </StackPanel>
+                            </Grid>
+                        </Button.CommandParameter>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Plus" Width="20" Height="20" VerticalAlignment="Center"/>
+                            <TextBlock Text="Add object" VerticalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!--افزودن ارتباط-->
+                    <Button Grid.Column="1" Name="AddLinkButton" Margin="5" Padding="1"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"
+                        materialDesign:DialogHost.DialogClosingAttached="AddNewLinkOnDialogClosing"
+                        materialDesign:DialogHost.DialogOpenedAttached="AddNewLinkOnDialogOpened"
+                            IsEnabled="{Binding Map.SelectedObjects.Count, Converter={StaticResource Number2ToTrueConverter}}">
+                        <Button.CommandParameter>
+                            <Grid MinWidth="300" MinHeight="200" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Add Link" Margin="10" Grid.Row="0" 
+                                       Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                       FontSize="16" HorizontalAlignment="Center"/>
+
+                                <link:CreateLinkUserControl x:Name="CreateLinkUserControl" Grid.Row="1"
+                                                        Margin="5"
+                                                        ValidationChanged="CreateLinkUserControlOnValidationChanged"
+                                                        LinkTypeUri="{Binding NewMapLink.TypeUri, Mode=TwoWay}"
+                                                        SourceTypeUri="{Binding NewMapLink.Source.TypeUri}"
+                                                        SourceDisplayName="{Binding NewMapLink.Source.Title}"
+                                                        TargetTypeUri="{Binding NewMapLink.Target.TypeUri}"
+                                                        TargetDisplayName="{Binding NewMapLink.Target.Title}"
+                                                        Direction="{Binding NewMapLink.Direction, Mode=TwoWay}"
+                                                        Description="{Binding NewMapLink.Description,
+                                    Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" Grid.Row="2">
+                                    <Button Margin="5" IsCancel="True" Content="Cancel" CommandParameter="false"
+                                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+
+                                    <Button x:Name="CreateLinkButton" Margin="5" Content="Add" IsEnabled="False" 
+                                        CommandParameter="true" 
+                                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" />
+                                </StackPanel>
+                            </Grid>
+                        </Button.CommandParameter>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="LinkVariantPlus" Width="20" Height="20"
+                                                     VerticalAlignment="Center"/>
+                            <TextBlock Text="Add link" VerticalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!--حذف آیتم‌های انتخاب شده-->
+                    <common:ButtonWithIcon  Grid.Column="2" x:Name="RemoveButton" Click="RemoveButtonOnClick" 
+                                            Content="Remove" Icon="Clear" ContentMargin="5">
+                        <common:ButtonWithIcon.IsEnabled>
+                            <MultiBinding Converter="{StaticResource AnyValuesAreNotNullToBooleanConverter}">
+                                <Binding Path="Map.SelectedObject" IsAsync="True"/>
+                                <Binding Path="Map.SelectedRelationship" IsAsync="True"/>
+                            </MultiBinding>
+                        </common:ButtonWithIcon.IsEnabled>
+                    </common:ButtonWithIcon>
+
+                    <!--پاک کردن تمام نگاشت-->
+                    <common:ButtonWithIcon  Grid.Column="3" x:Name="ClearAllButton" Click="ClearAllButtonOnClick" 
+                                            Content="Clear all" Icon="Eraser" ContentMargin="5"/>
+                </Grid>
+
+                <!--گراف-->
+                <local:BindableMappingGraphUserControl x:Name="MappingGraphControl" 
+                                                       Map="{Binding Map, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, IsAsync=True}"/>
+            </Grid>
+        </materialDesign:DialogHost>
+    </Grid>
+</UserControl>

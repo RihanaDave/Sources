@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="GPAS.Graph.GraphViewer.Foundations.FlowShapeAnimate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:GPAS.Graph.GraphViewer.Converters"
+             mc:Ignorable="d" >
+    
+    <UserControl.Resources>
+        <converter:DecreaseNumberConverter x:Key="DecreaseNumberConverter"/>
+    </UserControl.Resources>
+    
+    <Path Fill="{Binding FlowColor}"  Visibility="{Binding CanShow, Mode=TwoWay, Converter={StaticResource bool2VisibilityConverter}}">
+        <Path.Effect>
+            <BlurEffect Radius="45" KernelType="Gaussian"/>
+        </Path.Effect>
+        <Path.Data>
+            <EllipseGeometry x:Name="ShapeGeometry" Center="0,0" 
+                             RadiusX="{Binding FlowSize,Converter={StaticResource DecreaseNumberConverter}}" 
+                             RadiusY="{Binding FlowSize,Converter={StaticResource DecreaseNumberConverter}}"/>
+        </Path.Data>
+    </Path>
+</UserControl>

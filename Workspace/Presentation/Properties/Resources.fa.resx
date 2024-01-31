@@ -1,0 +1,2718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+  <data name="Adding_File_To_Object" xml:space="preserve">
+    <value>در حال افزودن فایل به شیء...</value>
+  </data>
+  <data name="Adding_File_To_Object_Was_Failed" xml:space="preserve">
+    <value>خطا در افزودن فایل به شیء:
+{0}</value>
+  </data>
+  <data name="Add_Concept" xml:space="preserve">
+    <value>افزودن مفهوم</value>
+  </data>
+  <data name="Add_File" xml:space="preserve">
+    <value>افزودن فایل</value>
+  </data>
+  <data name="Add_Media" xml:space="preserve">
+    <value>افزودن فایل رسانه</value>
+  </data>
+  <data name="Add_New_Concept_To_Ontology" xml:space="preserve">
+    <value>در حال افزودن مفهوم جدید به هستان شناسی...</value>
+  </data>
+  <data name="Add_Property" xml:space="preserve">
+    <value>افزودن ویژگی</value>
+  </data>
+  <data name="Apply_Layout" xml:space="preserve">
+    <value>اعمال چینش</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Objects_From_Graph" xml:space="preserve">
+    <value>آیا می خواهید {0} شیء از گراف حذف شود؟</value>
+  </data>
+  <data name="Assign_Existing_Property" xml:space="preserve">
+    <value>انتساب از ویژگی‌های موجود</value>
+  </data>
+  <data name="Assign_Property" xml:space="preserve">
+    <value>انتساب ویژگی</value>
+  </data>
+  <data name="Atleast_one_centeral_object_was_not_previously_on_graph" xml:space="preserve">
+    <value>حداقلی یکی از اشیا مرکزی، از قبل روی گراف موجود نبوده است</value>
+  </data>
+  <data name="BASIC_INFO" xml:space="preserve">
+    <value>اطلاعات پایه</value>
+  </data>
+  <data name="Begin_Time" xml:space="preserve">
+    <value>زمان شروع</value>
+  </data>
+  <data name="Browse_Selected_Objects" xml:space="preserve">
+    <value>نمایش اشیاء انتخاب شده</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="Cannot_Retrive_Directory_Information" xml:space="preserve">
+    <value>خطا در نمایش اطلاعات پوشه:
+{0}</value>
+  </data>
+  <data name="Cannot_Show_Directory" xml:space="preserve">
+    <value>خطا در نمایش محتویات پوشه:
+{0}</value>
+  </data>
+  <data name="Check_Big_Data_Search_Service" xml:space="preserve">
+    <value>در حال بررسی سرور جستجوی داده‌های حجیم...</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="Collapse_The_Group" xml:space="preserve">
+    <value>جمع کردن گروه</value>
+  </data>
+  <data name="Columns" xml:space="preserve">
+    <value>ستون‌ها</value>
+  </data>
+  <data name="Column_Name_WithColon" xml:space="preserve">
+    <value>نام ستون:</value>
+  </data>
+  <data name="Concept" xml:space="preserve">
+    <value>مفهوم</value>
+  </data>
+  <data name="Concept_Name_WithColon" xml:space="preserve">
+    <value>نام مفهوم:</value>
+  </data>
+  <data name="Const_Value" xml:space="preserve">
+    <value>مقدار ثابت</value>
+  </data>
+  <data name="Control_Is_Data_Initialized_Before" xml:space="preserve">
+    <value>کنترل مقدار دهی نشده است</value>
+  </data>
+  <data name="Control_Is_Not_Initialized" xml:space="preserve">
+    <value>کنترل قبلاً مقداردهی شده است</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>ایجاد</value>
+  </data>
+  <data name="Create_Directory" xml:space="preserve">
+    <value>ایجاد پوشه</value>
+  </data>
+  <data name="Create_Directory_Failed" xml:space="preserve">
+    <value>عملیات ایجاد پوشه شکست خورد
+{0}</value>
+  </data>
+  <data name="Create_Link" xml:space="preserve">
+    <value>ایجاد رابطه</value>
+  </data>
+  <data name="Create_new_Group" xml:space="preserve">
+    <value>ایجاد گروه جدید</value>
+  </data>
+  <data name="Create_New_Link" xml:space="preserve">
+    <value>ایجاد رابطه جدید</value>
+  </data>
+  <data name="Create_New_Object" xml:space="preserve">
+    <value>ایجاد شیء جدید</value>
+  </data>
+  <data name="Create_New_Property" xml:space="preserve">
+    <value>ایجاد ویژگی جدید</value>
+  </data>
+  <data name="Creating_Directory" xml:space="preserve">
+    <value>در حال ساخت پوشه...</value>
+  </data>
+  <data name="Creating_New_Group_In_Repository" xml:space="preserve">
+    <value>در حال ایجاد گروه ...</value>
+  </data>
+  <data name="Data_Import_Window" xml:space="preserve">
+    <value>ورود داده‌ها</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Deleting_Operation_Was_Failed" xml:space="preserve">
+    <value>عملیات حذف شکست خورد</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>توضیح</value>
+  </data>
+  <data name="Description_WithColon" xml:space="preserve">
+    <value>توضیح:</value>
+  </data>
+  <data name="Deselect_All_Links" xml:space="preserve">
+    <value>از انتخاب خارج کردن تمام رابطه‌ها</value>
+  </data>
+  <data name="Deselect_All_Objects" xml:space="preserve">
+    <value>از انتخاب خارج کردن تمام اشیاء</value>
+  </data>
+  <data name="Destination_WithColon" xml:space="preserve">
+    <value>مقصد:</value>
+  </data>
+  <data name="Directed_First_To_Second" xml:space="preserve">
+    <value>جهت رابطه از اول به دوم</value>
+  </data>
+  <data name="Directed_Second_To_First" xml:space="preserve">
+    <value>جهت رابطه از دوم به اول</value>
+  </data>
+  <data name="Directory_Was_Created" xml:space="preserve">
+    <value>پوشه ایجاد شد.</value>
+  </data>
+  <data name="Dispaly_Name_WithColon" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>مستندات</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>دانلود</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>در حال انجام دانلود...</value>
+  </data>
+  <data name="Download_Successfull" xml:space="preserve">
+    <value>دانلود انجام شد.</value>
+  </data>
+  <data name="Download_Was_Failed" xml:space="preserve">
+    <value>خطا در دانلود:
+{0}</value>
+  </data>
+  <data name="Do_You_Want_To_Delete_File" xml:space="preserve">
+    <value>آیا می خواهید فایل حذف شود؟</value>
+  </data>
+  <data name="Dynamic_Ontology" xml:space="preserve">
+    <value>هستان‌شناسی پویا</value>
+  </data>
+  <data name="End_Time" xml:space="preserve">
+    <value>زمان پایان</value>
+  </data>
+  <data name="Entered_Keyword_Is_Too_Long" xml:space="preserve">
+    <value>کلمه‌ی وارد شده بسیا طولانی است</value>
+  </data>
+  <data name="Entered_Keyword_Is_Too_Short" xml:space="preserve">
+    <value>کلمه‌ی وارد شده بسیا کوتاه است</value>
+  </data>
+  <data name="Entered_Values_Characters_Are_More_Than_50_Try_Again" xml:space="preserve">
+    <value>طول کاراکترهای وارد شده بیشتر از 50 می‌باشد، لطفا دوباره تلاش کنید...</value>
+  </data>
+  <data name="Enter_Group_name_WithColon" xml:space="preserve">
+    <value>نام گروه را وارد نمایید:</value>
+  </data>
+  <data name="Entities" xml:space="preserve">
+    <value>موجودیت‌ها</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>رخدادها</value>
+  </data>
+  <data name="Event_Relationship_Types_Hierarchy_Or_Icons_Loading_Failed" xml:space="preserve">
+    <value>بارگذاری سلسله مراتب انواع روابط/رویدادها یا بارگزاری آیکون‌ها با شکست مواجه شد| {0}</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Exit_Confirmation" xml:space="preserve">
+    <value>تآیید خروج</value>
+  </data>
+  <data name="Expand_Node_Selection_To_Next_Linked_Level" xml:space="preserve">
+    <value>گسترش انتخاب شیء تا سطح بعدی اشیاء براساس رابطه‌ها</value>
+  </data>
+  <data name="Expand_The_Group" xml:space="preserve">
+    <value>گسترش گروه</value>
+  </data>
+  <data name="File_Is_Empty" xml:space="preserve">
+    <value>فایل خالی است</value>
+  </data>
+  <data name="File_Not_Found" xml:space="preserve">
+    <value>فایل پیدا نشد</value>
+  </data>
+  <data name="File_Was_Deleted" xml:space="preserve">
+    <value>فایل حذف شد</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>پایان</value>
+  </data>
+  <data name="From_Column" xml:space="preserve">
+    <value>از ستون</value>
+  </data>
+  <data name="Get_Directory_Name" xml:space="preserve">
+    <value>دریافت نام پوشه</value>
+  </data>
+  <data name="Get_Graph" xml:space="preserve">
+    <value>دریافت گراف</value>
+  </data>
+  <data name="Get_Graph_Window" xml:space="preserve">
+    <value>دریافت گراف</value>
+  </data>
+  <data name="Graph_Arrangment_Exchange_Error" xml:space="preserve">
+    <value>خطا در چینش گراف:
+{0}</value>
+  </data>
+  <data name="Graph_Name" xml:space="preserve">
+    <value>نام گراف</value>
+  </data>
+  <data name="Graph_Preview" xml:space="preserve">
+    <value>پیش نمایش گراف</value>
+  </data>
+  <data name="Graph_Shared" xml:space="preserve">
+    <value>گراف ذخیره شد.</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>گروه</value>
+  </data>
+  <data name="Loading_File_Repository_Directories_" xml:space="preserve">
+    <value>بارگذاری پوشه‌های مخزن فایل...</value>
+  </data>
+  <data name="Import_Data" xml:space="preserve">
+    <value>ورود داده‌ها</value>
+  </data>
+  <data name="Initaizing_Big_Data_Search" xml:space="preserve">
+    <value>در حال مقداردهی اولیه به ابزار جستجوی داده‌های حجیم...</value>
+  </data>
+  <data name="Initializing_Workspace" xml:space="preserve">
+    <value>در حال مقداردهی اولیه به محیط کاربری...</value>
+  </data>
+  <data name="Invalid_Argument" xml:space="preserve">
+    <value>ورودی نامعتبر است</value>
+  </data>
+  <data name="Invalid_Graph_Arrangemt_XML" xml:space="preserve">
+    <value>فایل آرایش گراف، نامعتبر است</value>
+  </data>
+  <data name="Invalid_Object_Type_Null_Empty_Or_Whitespase" xml:space="preserve">
+    <value>نوع شیء نامعتبر است</value>
+  </data>
+  <data name="Invalid_Search_Keyword" xml:space="preserve">
+    <value>کلمه‌ی مورد جستجو نامعتبر است</value>
+  </data>
+  <data name="Invalid_Server_Response" xml:space="preserve">
+    <value>پاسخ سرور نامعتبر است</value>
+  </data>
+  <data name="Invert_Selection_Links" xml:space="preserve">
+    <value>انتخاب معکوس (رابطه‌ها)</value>
+  </data>
+  <data name="Invert_Selection_Objects" xml:space="preserve">
+    <value>انتخاب معکوس (اشیاء)</value>
+  </data>
+  <data name="Jobs_Status" xml:space="preserve">
+    <value>وضعیت کارهای درخواست‌ شده</value>
+  </data>
+  <data name="List_Of_Properties" xml:space="preserve">
+    <value>لیست ویژگی‌ها</value>
+  </data>
+  <data name="Loading_Indexes" xml:space="preserve">
+    <value>درحال بارگذاری ایندیس‌ها...</value>
+  </data>
+  <data name="Loading_Jobs_Status" xml:space="preserve">
+    <value>در حال بارگذاری وضعیت کارهای درخواست‌ شده...</value>
+  </data>
+  <data name="Loading_keyspaces" xml:space="preserve">
+    <value>درحال بارگذاری جداول داده‌های حجیم</value>
+  </data>
+  <data name="Loading_Properties" xml:space="preserve">
+    <value>در حال بارگذاری ویژگی‌ها</value>
+  </data>
+  <data name="Loading_Published_Graph" xml:space="preserve">
+    <value>در حال بارگذاری گراف ذخیره شده...</value>
+  </data>
+  <data name="Loading_Published_Graph_Image" xml:space="preserve">
+    <value>در حال بارگذاری تصویر گراف...</value>
+  </data>
+  <data name="Log_Name_WithColon" xml:space="preserve">
+    <value>نام شِما:</value>
+  </data>
+  <data name="Main_Window" xml:space="preserve">
+    <value>پنجره اصلی</value>
+  </data>
+  <data name="Main_Window_Initialization_Error" xml:space="preserve">
+    <value>خطا در مقداردهی اولیه به پنجره اصلی 
+{0}</value>
+  </data>
+  <data name="Make_A_Group" xml:space="preserve">
+    <value>ساخت گروه</value>
+  </data>
+  <data name="Mapping_Not_Exist" xml:space="preserve">
+    <value>نگاشتی وجود ندارد</value>
+  </data>
+  <data name="Mapping_Result_Sample_By_Preview_First_Row" xml:space="preserve">
+    <value>مثال از نتیجه‌ی اعمال نگاشت( به وسیله سطر انتخاب شده)</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>رسانه</value>
+  </data>
+  <data name="Name_WithColon" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="New_Concept" xml:space="preserve">
+    <value>مفهوم جدید</value>
+  </data>
+  <data name="New_Group" xml:space="preserve">
+    <value>گروه جدید</value>
+  </data>
+  <data name="New_Link" xml:space="preserve">
+    <value>رابطه جدید</value>
+  </data>
+  <data name="New_Object" xml:space="preserve">
+    <value>شیء جدید</value>
+  </data>
+  <data name="New_Property" xml:space="preserve">
+    <value>ویژگی جدید:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>بعدی</value>
+  </data>
+  <data name="Nodes_WithColon" xml:space="preserve">
+    <value>تعداد اشیاء:</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>هیچکدام</value>
+  </data>
+  <data name="Nothing_To_Import" xml:space="preserve">
+    <value>چیزی برای ورود داده‌ها وجود ندارد</value>
+  </data>
+  <data name="Not_Initialized" xml:space="preserve">
+    <value>(مقداردهی اولیه نشده است)</value>
+  </data>
+  <data name="Not_Initialized_Yet" xml:space="preserve">
+    <value>(هنوز مقدار‌دهی اولیه نشده است)</value>
+  </data>
+  <data name="No_Direction" xml:space="preserve">
+    <value>بدون جهت</value>
+  </data>
+  <data name="No_Direction_Selected" xml:space="preserve">
+    <value>جهتی انتخاب نشده است</value>
+  </data>
+  <data name="No_Document_Result" xml:space="preserve">
+    <value>(سندی یافت نشد)</value>
+  </data>
+  <data name="No_Edge_Exist_For_Mapping" xml:space="preserve">
+    <value>هیچ یالی برای نگاشت وجود ندارد</value>
+  </data>
+  <data name="No_Entity_Result" xml:space="preserve">
+    <value>(موجودیتی یافت نشد)</value>
+  </data>
+  <data name="No_Event" xml:space="preserve">
+    <value>(رویدادی وجود ندارد)</value>
+  </data>
+  <data name="No_Event_Result" xml:space="preserve">
+    <value>(رخدادی یافت نشد)</value>
+  </data>
+  <data name="No_Preview" xml:space="preserve">
+    <value>(پیش‌نمایشی وجود ندارد)</value>
+  </data>
+  <data name="No_Preview_Data_Available" xml:space="preserve">
+    <value>پیش‌نمایش داده‌ها موجود نیست.</value>
+  </data>
+  <data name="No_Property" xml:space="preserve">
+    <value>(ویژگی‌ای وجود ندارد)</value>
+  </data>
+  <data name="No_Published_Graph" xml:space="preserve">
+    <value>گراف ذخیره شده‌ای موجود نیست.</value>
+  </data>
+  <data name="No_Relationship" xml:space="preserve">
+    <value>(رابطه‌ای وجود ندارد)</value>
+  </data>
+  <data name="No_Vertex_Exist_For_Mapping" xml:space="preserve">
+    <value>هیچ شیءای برای نگاشت وجود ندارد</value>
+  </data>
+  <data name="Object_Count" xml:space="preserve">
+    <value>تعداد اشیاء</value>
+  </data>
+  <data name="Object_Types_Hierarchy_Or_Icons_Loading_Failed" xml:space="preserve">
+    <value>بارگذاری سلسله مراتب اشیاء یا بارگذاری آیکون‌ها با شکست مواجه شد</value>
+  </data>
+  <data name="Of_Type" xml:space="preserve">
+    <value>از نوع: {0}</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>قبول</value>
+  </data>
+  <data name="Ontology_All" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="Ontology_Already_Contains_This_Property_For" xml:space="preserve">
+    <value>هستان‌شناسی از قبل دارای این ویژگی برای ({0}) بوده است.</value>
+  </data>
+  <data name="Ontology_Customize" xml:space="preserve">
+    <value>سفارشی</value>
+  </data>
+  <data name="Ontology_Intersect" xml:space="preserve">
+    <value>اشتراک</value>
+  </data>
+  <data name="Ontology_Manager" xml:space="preserve">
+    <value>مدیریت هستان شناسی</value>
+  </data>
+  <data name="Ontology_None" xml:space="preserve">
+    <value>هیچکدام</value>
+  </data>
+  <data name="Ontology_Tree" xml:space="preserve">
+    <value>درخت هستان‌شناسی</value>
+  </data>
+  <data name="Ontology_Tree_Already_Contains_A_Concept_Named" xml:space="preserve">
+    <value>درخت هستان‌شناسی از قبل دارای نام مفهومی با مقدار {0} بوده است.</value>
+  </data>
+  <data name="Ontology_Union" xml:space="preserve">
+    <value>اجتماع</value>
+  </data>
+  <data name="Path_withColon" xml:space="preserve">
+    <value>مسیر:</value>
+  </data>
+  <data name="Performing_SearchAround_" xml:space="preserve">
+    <value>انجام جستجوی پیرامونی...</value>
+  </data>
+  <data name="Please_Wait" xml:space="preserve">
+    <value>لطفا صبر کنید...</value>
+  </data>
+  <data name="Preform_Big_Data_Search" xml:space="preserve">
+    <value>درحال جستجوی داده‌های حجیم...</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>قبلی</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>ویژگی‌ها</value>
+  </data>
+  <data name="Properties_Types_Hierarchy_Or_Icons_Loading_Failed" xml:space="preserve">
+    <value>بارگذاری سلسله مراتب انواع ویژگی‌ها یا بارگذاری آیکون‌ها با شکست مواجه شد: 
+{0}</value>
+  </data>
+  <data name="Properties_WithColon" xml:space="preserve">
+    <value>ویژگی‌ها:</value>
+  </data>
+  <data name="PROPERTIES_WithUpperCase" xml:space="preserve">
+    <value>ویژگی‌ها</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>ویژگی</value>
+  </data>
+  <data name="Property_Count" xml:space="preserve">
+    <value>تعداد ویژگی‌ها</value>
+  </data>
+  <data name="Property_Values_Characters_Are_More_Than_NUM_Try_Again" xml:space="preserve">
+    <value>تعداد کاراکترهای مقدار ویژگی بیشتر از {0} کرکتر است، لطفا دوباره تلاش کنید...</value>
+  </data>
+  <data name="Published_Graph" xml:space="preserve">
+    <value>گراف‌های ذخیره شده</value>
+  </data>
+  <data name="Publish_Graph" xml:space="preserve">
+    <value>ذخیره گراف</value>
+  </data>
+  <data name="Quick_Search" xml:space="preserve">
+    <value>جستجوی سریع</value>
+  </data>
+  <data name="Quit_Workspace" xml:space="preserve">
+    <value>خروج از محیط کاربری</value>
+  </data>
+  <data name="Register_Time" xml:space="preserve">
+    <value>زمان ثبت درخواست</value>
+  </data>
+  <data name="Relayout_Context_Menu_Not_Presented" xml:space="preserve">
+    <value>منو چینش مجدد موجود نیست</value>
+  </data>
+  <data name="Relayout_Vertices" xml:space="preserve">
+    <value>چینش مجدد اشیاء</value>
+  </data>
+  <data name="Remove_An_Object_From_Graph" xml:space="preserve">
+    <value>حذف یک شیء از گراف</value>
+  </data>
+  <data name="Remove_Object" xml:space="preserve">
+    <value>حذف شیء</value>
+  </data>
+  <data name="Remove_Objects" xml:space="preserve">
+    <value>حذف اشیاء</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>نتایج</value>
+  </data>
+  <data name="Results_Number_WithColon" xml:space="preserve">
+    <value>تعداد نتایج:</value>
+  </data>
+  <data name="Retriving_Published_Graphs_Information" xml:space="preserve">
+    <value>درحال بازیابی اطلاعات گراف‌های ذخیره شده...</value>
+  </data>
+  <data name="Review_These_Summary_Statistics_For_Your_Import" xml:space="preserve">
+    <value>۱. این آمار مختصر از ورود داده‌هایتان را مرور کنید.</value>
+  </data>
+  <data name="Save_Ontology" xml:space="preserve">
+    <value>ذخیره هستان شناسی</value>
+  </data>
+  <data name="Save_Property" xml:space="preserve">
+    <value>ذخیره ویژگی</value>
+  </data>
+  <data name="Saving_Property_" xml:space="preserve">
+    <value>در حال ذخیره ویژگی...</value>
+  </data>
+  <data name="Creating_New_Link_" xml:space="preserve">
+    <value>در حال ایجاد رابطه جدید...</value>
+  </data>
+  <data name="Creating_New_Object_" xml:space="preserve">
+    <value>در حال ایجاد شیء جدید...</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+  <data name="Search_Around_Objects_With_Same_Properties" xml:space="preserve">
+    <value>جستجوی پیرامونی جهت یافتن اشیا دارای ویژگی‌های یکسان</value>
+  </data>
+  <data name="Search_Box_WithColon" xml:space="preserve">
+    <value>مقدار مورد جستجو:</value>
+  </data>
+  <data name="Search_Failed" xml:space="preserve">
+    <value>عملیات جستجو شکست خورد</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>انتخاب</value>
+  </data>
+  <data name="Select_All_Links" xml:space="preserve">
+    <value>انتخاب تمام رابطه‌ها</value>
+  </data>
+  <data name="Select_All_Links_Of_Selected_Objects" xml:space="preserve">
+    <value>انتخاب تمام رابطه‌های مرتبط با اشیاء انتخاب شده</value>
+  </data>
+  <data name="Select_All_Objects" xml:space="preserve">
+    <value>انتخاب تمام اشیاء</value>
+  </data>
+  <data name="Select_A_Relationship_Event_Type_withColon" xml:space="preserve">
+    <value>انتخاب یک نوع رابطه/رخداد:</value>
+  </data>
+  <data name="Select_A_Search_Type_To_Begin" xml:space="preserve">
+    <value>یک نوع جستجو برای شروع انتخاب کنید. </value>
+  </data>
+  <data name="Select_A_Type" xml:space="preserve">
+    <value>(انتخاب یک نوع)</value>
+  </data>
+  <data name="Select_A_Type_For_The_New_Object_WithColon" xml:space="preserve">
+    <value>انتخاب یک نوع برای شیء جدید:</value>
+  </data>
+  <data name="Select_Directory" xml:space="preserve">
+    <value>انتخاب پوشه</value>
+  </data>
+  <data name="Select_Inner_Links_Of_Selected_Objects" xml:space="preserve">
+    <value>انتخاب رابطه‌های ورودی به اشیاء انتخاب شده</value>
+  </data>
+  <data name="Select_Orphans_Nodes" xml:space="preserve">
+    <value>انتخاب اشیاء بدون رابطه</value>
+  </data>
+  <data name="Select_Outer_Links_Of_Selected_Objects" xml:space="preserve">
+    <value>انتخاب رابطه‌های خروجی از اشیاء انتخاب شده</value>
+  </data>
+  <data name="Select_Properties_For_Concept" xml:space="preserve">
+    <value>انتخاب ویژگی‌ها برای مفهوم</value>
+  </data>
+  <data name="Set_Node_Selection_To_Next_Linked_Level" xml:space="preserve">
+    <value>انتخاب گره‌های سطح بعدی</value>
+  </data>
+  <data name="Share_Graph" xml:space="preserve">
+    <value>به اشتراک‌گذاری گراف</value>
+  </data>
+  <data name="Showing_Published_Graph" xml:space="preserve">
+    <value>درحال نمایش گراف ذخیره شده...</value>
+  </data>
+  <data name="Show_In_Graph" xml:space="preserve">
+    <value>نمایش در گراف</value>
+  </data>
+  <data name="Show_Link" xml:space="preserve">
+    <value>نمایش رابطه</value>
+  </data>
+  <data name="Show_Links" xml:space="preserve">
+    <value>نمایش رابطه‌ها</value>
+  </data>
+  <data name="Show_Object" xml:space="preserve">
+    <value>نمایش شیء</value>
+  </data>
+  <data name="Show_Objects" xml:space="preserve">
+    <value>نمایش اشیاء</value>
+  </data>
+  <data name="Sources" xml:space="preserve">
+    <value>منابع</value>
+  </data>
+  <data name="Source_Import" xml:space="preserve">
+    <value>منبع ورود داده‌ها</value>
+  </data>
+  <data name="Source_Object_Mapping_Is_Not_Exist" xml:space="preserve">
+    <value>نگاشت شیء مبدا موجود نیست</value>
+  </data>
+  <data name="Source_Object_Of_The_Link_May_Be_Added_To_Graph" xml:space="preserve">
+    <value>شیء مبدا رابطه ممکن است به گراف اضافه شده باشد.</value>
+  </data>
+  <data name="Source_WithColon" xml:space="preserve">
+    <value>منبع:</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="Step_1_Select_Data_Sources" xml:space="preserve">
+    <value>مرحله 1: انتخاب منابع داده‌ها</value>
+  </data>
+  <data name="Step_2_Create_New_Mappings" xml:space="preserve">
+    <value>مرحله 2: ایجاد نگاشت‌های جدید</value>
+  </data>
+  <data name="Step_3_Review_Your_Import" xml:space="preserve">
+    <value>مرحله 3: بررسی ورود داده‌های شما</value>
+  </data>
+  <data name="Structured_Data_Sources" xml:space="preserve">
+    <value>منابع داده‌ای ساخت یافته</value>
+  </data>
+  <data name="Target_Object_Mapping_Is_Not_Exist" xml:space="preserve">
+    <value>نگاشت شیء مقصد موجود نیست</value>
+  </data>
+  <data name="Target_Object_Of_The_Link_May_Be_Added_To_Graph" xml:space="preserve">
+    <value>شیء مقصد رابطه ممکن است به گراف اضافه شده باشد.</value>
+  </data>
+  <data name="The_File_Was_Added" xml:space="preserve">
+    <value>فایل اضافه شد.</value>
+  </data>
+  <data name="Time_Created_WithColon" xml:space="preserve">
+    <value>زمان ایجاد:</value>
+  </data>
+  <data name="Title_WithColon" xml:space="preserve">
+    <value>عنوان:</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="Type_WithColon" xml:space="preserve">
+    <value>نوع:</value>
+  </data>
+  <data name="Unable_To_Apply_Return_Newly_Created_Link_To_Its_Group" xml:space="preserve">
+    <value>ارتباطی که به تازگی ایجاد شده را نمی‌توان به گروهش اعمال نمود: 
+{0}</value>
+  </data>
+  <data name="Unable_To_Clear_Graph_Mappings" xml:space="preserve">
+    <value>امکان پاکسازی گراف نگاشت وجود ندارد.</value>
+  </data>
+  <data name="Unable_To_Collapse_Group_Vertex" xml:space="preserve">
+    <value>امکان جمع‌نمودن گروه اشیاء وجود ندارد: 
+{0}</value>
+  </data>
+  <data name="Unable_To_Create_Group_Before_Data_Initialization" xml:space="preserve">
+    <value>امکان ایجاد گروه قبل از مقداردهی اولیه به داده‌هاوجود ندراد.</value>
+  </data>
+  <data name="Unable_To_Create_New_Group" xml:space="preserve">
+    <value>امکان ایجاد گروه جدید وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Create_New_Object" xml:space="preserve">
+    <value>امکان ایجاد شیء جدید وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Creat_A_Link_With_A_Type_Except_Children_Of_Relationship_Or_Event_types" xml:space="preserve">
+    <value>امکان ایجاد یک لینک با نوعی بجز فرزندان ارتباطات یا رخدادها وجود ندارد.</value>
+  </data>
+  <data name="Unable_To_Discover_Related_Vertex" xml:space="preserve">
+    <value>امکان کشف شیء مرتبط وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Expand_Group_Vertex" xml:space="preserve">
+    <value>امکان گسترش اشیاء گروه وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Get_Related_Vertex" xml:space="preserve">
+    <value>امکان دریافت اشیاء مرتبط وجود ندارد.</value>
+  </data>
+  <data name="Unable_To_Get_Selected_File" xml:space="preserve">
+    <value>خطا در دریافت فایل انتخاب شده:
+{0}</value>
+  </data>
+  <data name="Unable_To_Initiate_Big_Data_Search_Application" xml:space="preserve">
+    <value>امکان مقدار دهی اولیه به ابزار جستجو داده‌های حجیم وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Initiate_Link_Creation_control" xml:space="preserve">
+    <value>امکان مقدار دهی اولیه به کنترل ایجاد لینک وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Load_Published_Graph" xml:space="preserve">
+    <value>امکان بارگذاری گراف ذخیره شده وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Prepairing_Exit" xml:space="preserve">
+    <value>امکان آماده‌سازی برای خروج وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Reach_Unique_Mapping_For_The_Edge" xml:space="preserve">
+    <value>امکان دسترسی به یک نگاشت یکتا برای این لبه وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Reach_Unique_Mapping_For_The_Vertex" xml:space="preserve">
+    <value>امکان دسترسی به یک نگاشت یکتا برای این گره وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Remove_Link_Form_Graph_Title_Source_Object_ID_Target_Object_ID" xml:space="preserve">
+    <value>امکان حذف لینک از روی گراف وجود ندارد؛ عنوان {0}، شناسه شیء مبداء {1}،شناسه شیء مقصد {2}</value>
+  </data>
+  <data name="Unable_To_Remove_Mapping" xml:space="preserve">
+    <value>امکان حذف گراف وجود ندارد.</value>
+  </data>
+  <data name="Unable_To_Remove_Objects_From_The_Graph" xml:space="preserve">
+    <value>امکان حذف شیء یا اشیاء از گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Remove_Object_Form_Graph_ID_Display_Name" xml:space="preserve">
+    <value>امکان حذف شیء از گراف وجود ندارد؛ شناسه {0}، نام نمایشی {1}</value>
+  </data>
+  <data name="Unable_To_Remove_Object_Mapping" xml:space="preserve">
+    <value>امکان حذف نگاشت یء وجود ندارد.</value>
+  </data>
+  <data name="Unable_To_Retrive_Graph_Content_From_Repository" xml:space="preserve">
+    <value>امکان بازیابی محتویات گراف از پایگاه‌داده وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Share_Graph" xml:space="preserve">
+    <value>امکان به اشتراک‌گذاری گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Create_New_Link_Window" xml:space="preserve">
+    <value>امکان نمایش پنجره ایجاد لینک جدید وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Create_New_Object_Window" xml:space="preserve">
+    <value>امکان نمایش پنجره ایجاد شیء جدید وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Links_On_The_Graph" xml:space="preserve">
+    <value>امکان نمایش لینک‌ها بر روی گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Link_Between_On_The_Graph" xml:space="preserve">
+    <value>امکان نمایش لینک "{0}" (بین: "{1}" (شناسه: {2}) و "{3}" (شناسه: {4})) بر روی گراف وجود ندارد:
+{5}</value>
+  </data>
+  <data name="Unable_To_Show_Objects_In_Browser_Application" xml:space="preserve">
+    <value>امکان نمایش اشیاء در نمایشگر شیء وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Objects_On_Graph" xml:space="preserve">
+    <value>امکان نمایش اشیاء بر روی گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Objects_On_The_Graph" xml:space="preserve">
+    <value>امکان نمایش اشیاء بر روی این گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Object_On_The_Graph" xml:space="preserve">
+    <value>امکان نمایش شیء "{0}" (شناسه: {1}) بر روی گراف وجود ندارد:
+{2}</value>
+  </data>
+  <data name="Unable_To_Show_Quick_Search_Result" xml:space="preserve">
+    <value>امکان نمایش نتایج جستجوی سریع وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_show_Retived_Objects_links_On_Graph" xml:space="preserve">
+    <value>امکان نمایش لینک‌های اشیاء بازیابی شده، بر روی گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unknown_Job_Status" xml:space="preserve">
+    <value>وضعیت درخواست‌ها نامشخص است</value>
+  </data>
+  <data name="Unknown_Mapping_Item_Type" xml:space="preserve">
+    <value>نوع نمونه نگاشت نامشخص است</value>
+  </data>
+  <data name="Unknown_Property_Type" xml:space="preserve">
+    <value>نوع ویژگی نامشخص است</value>
+  </data>
+  <data name="Unknown_State" xml:space="preserve">
+    <value>وضعیت نامشخص است</value>
+  </data>
+  <data name="Unknown_Value_Item_Type" xml:space="preserve">
+    <value>نوع نامشخص</value>
+  </data>
+  <data name="Unknow_Relationship_Direction" xml:space="preserve">
+    <value>جهت رابطه تعیین نشده است.</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>بارگذاری</value>
+  </data>
+  <data name="Upload_File" xml:space="preserve">
+    <value>بارگذاری فایل</value>
+  </data>
+  <data name="Upload_Operation_Was_Failed" xml:space="preserve">
+    <value>عملیات بارگذاری با شکست مواجه شد.</value>
+  </data>
+  <data name="Upload_Successfull" xml:space="preserve">
+    <value>عملیات بارگذاری انجام شد</value>
+  </data>
+  <data name="Uploding_File" xml:space="preserve">
+    <value>درحال بارگذاری فایل...</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="The_test_sample_contains_0_cells" xml:space="preserve">
+    <value>نمونه‌ی پیش‌نمایش دارای {0} خانه می‌باشد.</value>
+  </data>
+  <data name="The_test_sample_contains_0_rows" xml:space="preserve">
+    <value>نمونه‌ی پیش‌نمایش دارای {0} ردیف می‌باشد.</value>
+  </data>
+  <data name="Your_Graph_Has_Content_That_May_Be_Needed_Later_Do_You_Want_To_Save_Your_Graph" xml:space="preserve">
+    <value>محتوای گراف شما تغییر کرده است.
+آیا می خواهید گراف را ذخیره کنید؟</value>
+  </data>
+  <data name="You_Must_Restart_Your_Application_To_Apply_These_Changes_Restart_Now" xml:space="preserve">
+    <value>برای اعمال تغییرات نیاز به بارگذاری مجدد برنامه می‌باشد.
+آیا می خواهید از برنامه خارج شوید؟</value>
+  </data>
+  <data name="The_Service_Operation_Timed_Out" xml:space="preserve">
+    <value>زمان انتظار برای دریافت سرویس به پایان رسید</value>
+  </data>
+  <data name="Incoming_Nodes" xml:space="preserve">
+    <value>گره‌های ورودی</value>
+  </data>
+  <data name="Invert_Nodes" xml:space="preserve">
+    <value>انتخاب  معکوس گره‌های </value>
+  </data>
+  <data name="Linked_Entities" xml:space="preserve">
+    <value>موجودیت‌های مرتبط</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>لینکك‌ها</value>
+  </data>
+  <data name="Links_Between" xml:space="preserve">
+    <value>انتخاب لینک‌های مستقیم شیء</value>
+  </data>
+  <data name="Loading_Object_Information" xml:space="preserve">
+    <value>در حال بارگذاری اطلاعات شیء...</value>
+  </data>
+  <data name="Make_Group" xml:space="preserve">
+    <value>ایجاد گروه</value>
+  </data>
+  <data name="No_Mapping_For_The_Tab" xml:space="preserve">
+    <value>در گراف، شیء‌ای متناظر برای سربرگ کنونی وجود دارد</value>
+  </data>
+  <data name="Outgoing_Nodes" xml:space="preserve">
+    <value>گره‌های خروجی</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>انتشار</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Search_Around" xml:space="preserve">
+    <value>جستجوی پیرامونی</value>
+  </data>
+  <data name="Unable_To_Load_Object_Information" xml:space="preserve">
+    <value>امکان بارگذاری اطلاعات شیء وجود ندارد</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>نمایش شیء</value>
+  </data>
+  <data name="Unable_To_Show_Links_On_Graph" xml:space="preserve">
+    <value>امکان نمایش لینک‌ها بر روی گراف وجود ندارد</value>
+  </data>
+  <data name="Add_To_Graph" xml:space="preserve">
+    <value>نمایش در گراف</value>
+  </data>
+  <data name="Related_Entities_Date_Begin" xml:space="preserve">
+    <value>تاریخ شروع</value>
+  </data>
+  <data name="Related_Entities_Date_End" xml:space="preserve">
+    <value>تاریخ خاتمه</value>
+  </data>
+  <data name="Related_Entities_Related" xml:space="preserve">
+    <value>ارتباطات</value>
+  </data>
+  <data name="Related_Entities_Relationship" xml:space="preserve">
+    <value>وابستگی</value>
+  </data>
+  <data name="Related_Entities_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="Related_Events_Relationship" xml:space="preserve">
+    <value>وابستگی</value>
+  </data>
+  <data name="Related_Events_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="Related_Events_Time_Begin" xml:space="preserve">
+    <value>زمان شروع</value>
+  </data>
+  <data name="Related_Events_Time_End" xml:space="preserve">
+    <value>زمان خاتمه</value>
+  </data>
+  <data name="Related_Events_Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="Relate_Events_Label" xml:space="preserve">
+    <value>برچسب</value>
+  </data>
+  <data name="Collapse_Group" xml:space="preserve">
+    <value>بستن گروه</value>
+  </data>
+  <data name="Expand_Group" xml:space="preserve">
+    <value>بازگشایی گروه</value>
+  </data>
+  <data name="Linked_Document" xml:space="preserve">
+    <value>مستندات مرتبط</value>
+  </data>
+  <data name="Related_Documents_Count" xml:space="preserve">
+    <value>تعداد اشیاء مرتبط</value>
+  </data>
+  <data name="Related_Entities_Count" xml:space="preserve">
+    <value>تعداد موجودیت‌های مرتبط</value>
+  </data>
+  <data name="Related_Events_Count" xml:space="preserve">
+    <value>تعداد رخدادهای مرتبط</value>
+  </data>
+  <data name="Grouping" xml:space="preserve">
+    <value>Grouping</value>
+  </data>
+  <data name="Filter_Search" xml:space="preserve">
+    <value>جستجوی فیلتری </value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Add_Criterion" xml:space="preserve">
+    <value>افزودن معیار جدید</value>
+  </data>
+  <data name="Date_Filter" xml:space="preserve">
+    <value>فیلتر تاریخ</value>
+  </data>
+  <data name="Filter_Criteria" xml:space="preserve">
+    <value>معیار فیلتر:</value>
+  </data>
+  <data name="Filter_Search_Title" xml:space="preserve">
+    <value>عنوان جستجوی فیلتری:</value>
+  </data>
+  <data name="Keyword_Filter" xml:space="preserve">
+    <value>فیلتر کلیدواژه</value>
+  </data>
+  <data name="Object_Type_Filter" xml:space="preserve">
+    <value>فیلتر نوع اشیاء</value>
+  </data>
+  <data name="Property_Filter" xml:space="preserve">
+    <value>فیلتر ویژگی</value>
+  </data>
+  <data name="CriteriaSet_Filter" xml:space="preserve">
+    <value>CriteriaSet Filter</value>
+  </data>
+  <data name="Graph_Application" xml:space="preserve">
+    <value>کاربرد گراف</value>
+  </data>
+  <data name="Home_Application" xml:space="preserve">
+    <value>خانه</value>
+  </data>
+  <data name="Nested_Filter" xml:space="preserve">
+    <value>فیلتر تودرتو</value>
+  </data>
+  <data name="BigData_Search_Application" xml:space="preserve">
+    <value>جستجو در داده‌های حجیم</value>
+  </data>
+  <data name="Performing_FilterSearch_" xml:space="preserve">
+    <value>در حال جستجوی فیلتری</value>
+  </data>
+  <data name="Browser_Application" xml:space="preserve">
+    <value>کاربرد نمایشگر شئ</value>
+  </data>
+  <data name="Unknown_Relational_Operator_Type" xml:space="preserve">
+    <value>نوع عملگر منطقی نامشخص است.</value>
+  </data>
+  <data name="Some_Of_FilterSearch_Fields_are_empty_Please_Try_Again" xml:space="preserve">
+    <value>برخی از فیلدها یا کنترلهای تودرتو جستجوی فیلتری خالی است، لطفا دوباره تلاش کنید.</value>
+  </data>
+  <data name="Apply_As_Filter" xml:space="preserve">
+    <value>اعمال فیلتر</value>
+  </data>
+  <data name="Clear_Filter" xml:space="preserve">
+    <value>رفع فیلتر</value>
+  </data>
+  <data name="Select_Matching" xml:space="preserve">
+    <value>انتخاب اشیا متناظر</value>
+  </data>
+  <data name="Performing_Selection_By_Filter_Criteria" xml:space="preserve">
+    <value>درحال انتخاب اشیا براساس معیار(های) فیلتر</value>
+  </data>
+  <data name="Unable_To_Apply_Filter" xml:space="preserve">
+    <value>امکان اعمال فیلتر  وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Perform_Selection_By_Filter_Criteria" xml:space="preserve">
+    <value>امکان اعمال انتخاب براساس فیلتر وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Filter_Search_Result_On_Graph" xml:space="preserve">
+    <value>امکان نمایش نتیجه جستجوی فیلتری روی گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Apply_Filter" xml:space="preserve">
+    <value>اعمال فیلتر</value>
+  </data>
+  <data name="Unable_To_Clear_Filter" xml:space="preserve">
+    <value>امکان برداشتن فیلتر  وجود ندارد:
+{0}</value>
+  </data>
+  <data name="Apply_Search_Results" xml:space="preserve">
+    <value>اعمال نتایج جستجو</value>
+  </data>
+  <data name="Start_time_is_later_than_End_time" xml:space="preserve">
+    <value>زمان شروع بعد از زمان پایان است.</value>
+  </data>
+  <data name="Number_Of_The_Nested_Criteria_Is_Greater_Than_20" xml:space="preserve">
+    <value>تعداد معیارهای تودرتو بیشتر از 20 است.</value>
+  </data>
+  <data name="Reset_Criterion" xml:space="preserve">
+    <value>بازنشانی معیارها</value>
+  </data>
+  <data name="Mapping_not_completed_for_selected_sources" xml:space="preserve">
+    <value>نگاشت برای منبع(های) انتخاب شده تکمیل نشده است؛ از تعریف نگاشت صحیح برای منبع(های) انتخاب شده و نیز تعریف «نام نمایشی» برای نگاشت(های) اشیاء اطمینان حاصل کنید.</value>
+  </data>
+  <data name="Document_Types" xml:space="preserve">
+    <value>انواع اسناد</value>
+  </data>
+  <data name="Entity_Types" xml:space="preserve">
+    <value>انواع موجودیت‌ها</value>
+  </data>
+  <data name="Event_Types" xml:space="preserve">
+    <value>انواع رخدادها</value>
+  </data>
+  <data name="Object_Types" xml:space="preserve">
+    <value>انواع اشیاء</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>فیلتر</value>
+  </data>
+  <data name="Histogram" xml:space="preserve">
+    <value>هیستوگرام</value>
+  </data>
+  <data name="Unable_To_Apply_Selection" xml:space="preserve">
+    <value>امکان اعمال انتخاب وجود ندارد.
+{0}</value>
+  </data>
+  <data name="All_Documents" xml:space="preserve">
+    <value>همه‌ی سندها</value>
+  </data>
+  <data name="All_Entities" xml:space="preserve">
+    <value>همه‌ی موجودیت‌ها</value>
+  </data>
+  <data name="All_Evevnts" xml:space="preserve">
+    <value>همه‌ی رخدادها</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>آماده</value>
+  </data>
+  <data name="Unable_to_load_Histogram" xml:space="preserve">
+    <value>امکان بارگذاری هیستوگرام وجود ندارد</value>
+  </data>
+  <data name="Document_Properties" xml:space="preserve">
+    <value>ویژگی‌های سند</value>
+  </data>
+  <data name="Entity_Properties" xml:space="preserve">
+    <value>ویژگی‌های موجودیت</value>
+  </data>
+  <data name="Event_Properties" xml:space="preserve">
+    <value>ویژگی‌های رخداد</value>
+  </data>
+  <data name="Loading_objects" xml:space="preserve">
+    <value>بارگزاری اشیاء...</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="Any" xml:space="preserve">
+    <value>یکی</value>
+  </data>
+  <data name="Begin" xml:space="preserve">
+    <value>شروع:</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ:</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>پایان:</value>
+  </data>
+  <data name="Enter_keyword" xml:space="preserve">
+    <value>کلیدواژه را وارد کنید.</value>
+  </data>
+  <data name="Filter_with_semicolon" xml:space="preserve">
+    <value>فیلتر:</value>
+  </data>
+  <data name="Include_Child_Types" xml:space="preserve">
+    <value>به همراه نوع های زیرمجموعه</value>
+  </data>
+  <data name="Keyword" xml:space="preserve">
+    <value>کلیدواژه:</value>
+  </data>
+  <data name="Object_Type" xml:space="preserve">
+    <value>نوع ویژگی:</value>
+  </data>
+  <data name="of_the_following_are_true" xml:space="preserve">
+    <value>معیارهای زیر برقرار باشد. </value>
+  </data>
+  <data name="Property_Value" xml:space="preserve">
+    <value>مقدار ویژگی</value>
+  </data>
+  <data name="Property_with_SemiColon" xml:space="preserve">
+    <value>ویژگی:</value>
+  </data>
+  <data name="Search_with_semicolon" xml:space="preserve">
+    <value>جستجو:</value>
+  </data>
+  <data name="Close_All_But_This" xml:space="preserve">
+    <value>بستن همه سربرگها بجز این سربرگ</value>
+  </data>
+  <data name="Close_All_Tabs" xml:space="preserve">
+    <value>بستن همه سربرگها</value>
+  </data>
+  <data name="Publish_Concepts" xml:space="preserve">
+    <value>انتشار مفاهیم</value>
+  </data>
+  <data name="Some_concepts_have_changed_Do_you_want_to_publish_them" xml:space="preserve">
+    <value>برخی از مفاهیم تغییر کرده اند. آیا میخواید آنها را انتشار دهید؟</value>
+  </data>
+  <data name="Save_DisplayName" xml:space="preserve">
+    <value>ذخیره نام نمایشی</value>
+  </data>
+  <data name="Resolve_Conflict" xml:space="preserve">
+    <value>رفع تضاد</value>
+  </data>
+  <data name="Your_Data_Is_Published_But_Horizon_Server_Is_Not_Updated" xml:space="preserve">
+    <value>داده ها انتشار یافت ولی سرور هرایزن به روز نشد.</value>
+  </data>
+  <data name="Publish_was_completed" xml:space="preserve">
+    <value>انتشار انجام شد.</value>
+  </data>
+  <data name="Publish_inprogress" xml:space="preserve">
+    <value>انتشار درحال انجام است...</value>
+  </data>
+  <data name="Concepts_Conflict_Resolution" xml:space="preserve">
+    <value>رفع تناقض مفاهیم</value>
+  </data>
+  <data name="Media_Conflict_Resolution_Prompt" xml:space="preserve">
+    <value>تناقضی برای وجود مدیای زیر شناسایی شده:{0}{0}{1}شناسه: {2}{0}{1}با مسیر: {3}{0}{1}که مربوط به شئ: {4} (شناسه: {5} | نوع: {6}).{0}{0}این مدیا به طور محلی (منتشر نشده) حذف شده است.{0}آیا می‌خواهید تغییرات منتشر نشده باقی بماند (مدیا به عنوان حذف شده درنظر گرفته شود)؟</value>
+  </data>
+  <data name="Object_Conflict_Resolution_Prompt" xml:space="preserve">
+    <value>تناقضی برای داده‌های شئ زیر شناسایی شده:{0}{0}{1}شناسه شئ: {2}{0}{1}نوع شئ: {3}{0}{0}{1}نام نمایشی منتشر شده: "{4}" است،{0}{1}اما نام نمایشی موقت (هنوز منتشر نشده): {5}{0}{0}می‌باشد. آیا می‌خواهید تغییرات منتشر نشده خود را نگه دارید؟</value>
+  </data>
+  <data name="Property_Conflict_Resolution_Prompt" xml:space="preserve">
+    <value>تناقضی برای داده‌های ویژگی زیر شناسایی شده:{0}{0}{1}شناسه ویژگی: {2}{0}{1}نوع ویژگی: {3}{0}{1}که مربوط است به شئ: {4} (شناسه: {5} | نوع: {6}){0}{0}{1}مقدار منتشر شده‌ی ویژگی: "{7}" است،{0}{1}ولی مقدار منتشر نشده آن: "{8}"{0}{0}می‌باشد. آیا می‌خواهید تغییرات منتشر نشده باقی بماند؟</value>
+  </data>
+  <data name="fifty" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Hundred" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Ten" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Ten_Thousand" xml:space="preserve">
+    <value>10000</value>
+  </data>
+  <data name="Thirty" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Thousand" xml:space="preserve">
+    <value>1000</value>
+  </data>
+  <data name="Set_DisplayName" xml:space="preserve">
+    <value>انتساب نام نمایشی</value>
+  </data>
+  <data name="Column_Name_s_" xml:space="preserve">
+    <value>نام(های) ستون‌ها</value>
+  </data>
+  <data name="Property_Type" xml:space="preserve">
+    <value>نوع ویژگی</value>
+  </data>
+  <data name="Resolution_Option" xml:space="preserve">
+    <value>معیار Resolve</value>
+  </data>
+  <data name="Internal_Resolution_Options" xml:space="preserve">
+    <value>تنظیمات Resolve داخلی</value>
+  </data>
+  <data name="Set_Internal_Resolution_Options" xml:space="preserve">
+    <value>تنظیمات Resolve داخلی</value>
+  </data>
+  <data name="Map_for_data_source_0_has_same_type_object_mappings_that_not_ignored_for_internal_resolution_Perform_auto_resolve" xml:space="preserve">
+    <value>نگاشت مربوط به منبع داده‌ی شماره {0} (به ترتیب انتخاب منبع) دارای نگاشت شئ‌های هم‌نوعی است که از Resolve داخلی آن‌ها صرفنظر نشده است. آیا مایلید برای Resolve بین نوعی خودکار برای این نگاشت انجام شود؟</value>
+  </data>
+  <data name="Automatic_Resolution_Window" xml:space="preserve">
+    <value>پنجره Resolution خودکار</value>
+  </data>
+  <data name="Invalid_Internal_Resolution_Options" xml:space="preserve">
+    <value>تنظیمات Resolve داخلی معتبر نیستند</value>
+  </data>
+  <data name="Internal_Resolve_Summery_For_Find_And_Must_Match_Options" xml:space="preserve">
+    <value>به ازای تمام اشیائی که دارای {0} مشابه باشند، فرایند ورود داده‌ها آن‌ها را Resolve خواهد کرد، اگر آن‌ها با هم {1} مشابه نیز داشته باشند.</value>
+  </data>
+  <data name="Internal_Resolve_Summery_For_Only_Find_Match_Options" xml:space="preserve">
+    <value>به ازای تمام اشیائی که دارای {0} مشابه باشند، فرایند ورود داده‌ها آن‌ها را Resolve خواهد کرد.</value>
+  </data>
+  <data name="Objects_will_import_without_any_internal_resolution" xml:space="preserve">
+    <value>اشیاء بدون هیچ Resolve داخلی وارد خواهند شد.</value>
+  </data>
+  <data name="Summary_with_colon" xml:space="preserve">
+    <value>خلاصه: </value>
+  </data>
+  <data name="SemiStructured_source_s_import_completed_and_result_published" xml:space="preserve">
+    <value>ورود منابع داده‌ای نیمه ساختیافته تکمیل و نتیجه‌ی آن منتشر شد.</value>
+  </data>
+  <data name="Selected_file_0_is_too_large_for_import_process" xml:space="preserve">
+    <value>فایل انتخاب شده «{0}» برای فرایند ورود داده‌ها بزرگ است.</value>
+  </data>
+  <data name="Next_Data_Source" xml:space="preserve">
+    <value>منبع داده بعدی</value>
+  </data>
+  <data name="Registering_ServerSide_Import_Request" xml:space="preserve">
+    <value>ثبت درخواست ورود سمت سروری داده‌ها</value>
+  </data>
+  <data name="Uploading_0" xml:space="preserve">
+    <value>بارگذاری: {0}</value>
+  </data>
+  <data name="Upload_file_0_failed_with_exception_1_Do_you_want_to_retry" xml:space="preserve">
+    <value>بارگذاری فایل «{0}» با شکست مواجه شد:
+{1}.
+ آیا مایل به تلاش مجدد برای بارگذاری هستید(انتخاب دکمه «نه» به معنای صرف نظر از ورود داده‌های این فایل می‌باشد)؟</value>
+  </data>
+  <data name="You_Have_Not_Any_Thing_To_Publish" xml:space="preserve">
+    <value>شما چیزی برای انتشار ندارید.</value>
+  </data>
+  <data name="Import_Process" xml:space="preserve">
+    <value>فرایند ورود داده‌ها</value>
+  </data>
+  <data name="SemiStructured_source_s_import_process_is_too_large_and_passed_to_server" xml:space="preserve">
+    <value>به دلیل حجیم بودن فرایند ورود منابع داده‌ای نیمه ساختیافته، این کار برای انجام به سرویس‌دهنده‌ها سپرده خواهد شد.</value>
+  </data>
+  <data name="Prepair_server_side_import" xml:space="preserve">
+    <value>آماده‌سازی ورود داده‌های سمت سرور</value>
+  </data>
+  <data name="General_shortcutkey_category" xml:space="preserve">
+    <value>(عمومی)</value>
+  </data>
+  <data name="Operation_of_shortcutkey" xml:space="preserve">
+    <value>عملکرد</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_A_Operation_on_Graph_Application" xml:space="preserve">
+    <value>انتخاب همه‌ی اشیاء</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_A_Title" xml:space="preserve">
+    <value>Ctrl + A</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_B_Operation_on_Graph_Application" xml:space="preserve">
+    <value>نمایش شئ(های) انتخاب شده (در نمایشگر شئ)</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_B_Title" xml:space="preserve">
+    <value>Ctrl + B</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_F_Operation" xml:space="preserve">
+    <value>جستجوی سریع</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_F_Title" xml:space="preserve">
+    <value>Ctrl + F</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_L_Operation" xml:space="preserve">
+    <value>جستجوی فیلتری روی گراف</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_L_Title" xml:space="preserve">
+    <value>Ctrl + L</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_N_Operation_on_Browser_Application" xml:space="preserve">
+    <value>ایجاد ویژگی جدید</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_N_Operation_on_Graph_Application" xml:space="preserve">
+    <value>ایجاد شئ جدید</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_N_Title" xml:space="preserve">
+    <value>Ctrl + N</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_Shift_I_Operation_on_Graph_Application" xml:space="preserve">
+    <value>انتخاب معکوس اشیاء</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_Shift_I_Title" xml:space="preserve">
+    <value>Ctrl + Shift + I</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_S_Operation_on_Graph_Application" xml:space="preserve">
+    <value>اشتراک‌گذاری (ذخیره) گراف جاری</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_S_Title" xml:space="preserve">
+    <value>Ctrl + S</value>
+  </data>
+  <data name="ShortcutKey_F1_Operation" xml:space="preserve">
+    <value>پنجره راهنمای کلیدهای میانبر</value>
+  </data>
+  <data name="ShortcutKey_F1_Title" xml:space="preserve">
+    <value>F1</value>
+  </data>
+  <data name="Shortcut_Key" xml:space="preserve">
+    <value>کلید میانبر</value>
+  </data>
+  <data name="Shortcut_Keys" xml:space="preserve">
+    <value>کلیدهای میانبر</value>
+  </data>
+  <data name="New_Graph" xml:space="preserve">
+    <value>گراف جدید</value>
+  </data>
+  <data name="Hard_Delete" xml:space="preserve">
+    <value>حذف سخت</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="No_Data_Import_Preview_Field" xml:space="preserve">
+    <value>(بدون داده)</value>
+  </data>
+  <data name="Import_preview_invalid_lines_prompt" xml:space="preserve">
+    <value>{0} خط از سطرهای نمونه، شامل داده‌های نامعتبر می‌باشند.</value>
+  </data>
+  <data name="This_Feature_Is_Not_Supported" xml:space="preserve">
+    <value>از این میانبر پشتیبانی نمی شود.</value>
+  </data>
+  <data name="Clear_map_content" xml:space="preserve">
+    <value>پاک کردن محتوای نقشه</value>
+  </data>
+  <data name="Map_Application" xml:space="preserve">
+    <value>کاربرد نقشه</value>
+  </data>
+  <data name="Show_on_map" xml:space="preserve">
+    <value>نمایش روی نقشه</value>
+  </data>
+  <data name="Timeline" xml:space="preserve">
+    <value>خط زمان</value>
+  </data>
+  <data name="Load_a_mapping_will_remove_currently_defined_mapping" xml:space="preserve">
+    <value>بارگذاری یک نگاشت، نگاشتی را که در حال حاضر تعریف کرده‌اید حذف خواهد نمود؛ آیا مطمئنید که می‌خواهید از نگاشت موجود صرف‌نظر کنید؟</value>
+  </data>
+  <data name="Load_successfull" xml:space="preserve">
+    <value>بارگذاری موفقیت آمیز بود.</value>
+  </data>
+  <data name="Save_successfull" xml:space="preserve">
+    <value>ذخیره‌سازی موفقیت آمیز بود.</value>
+  </data>
+  <data name="Unable_To_Save_Import_Mapping" xml:space="preserve">
+    <value>امکان ذخیره‌سازی فایل نگاشت ورود داده‌ها وجود ندارد؛
+{0}</value>
+  </data>
+  <data name="FiveHundred" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="Loading_something_" xml:space="preserve">
+    <value>بارگذاری "{0}"...</value>
+  </data>
+  <data name="Count_of_unmerged_links_is_greater_than_0_Do_you_want_to_show" xml:space="preserve">
+    <value>تعداد لینک‌های جداشده بیشتر از {0} است؛ آیا می‌خواهید لینک‌های جداشده نمایش داده شود؟</value>
+  </data>
+  <data name="Unable_To_Show_More_Object_On_Graph" xml:space="preserve">
+    <value>امکان نمایش شئ(های) بیشتری روی گراف وجود ندارد؛ یک/چند شئ  نمی‌توانند روی گراف نمایش داده شوند</value>
+  </data>
+  <data name="Unable_to_merge_selected_objects_as_a_link" xml:space="preserve">
+    <value>امکان ادغام اشیا انتخاب شده به عنوان یک لینک وجود ندارد</value>
+  </data>
+  <data name="Merge" xml:space="preserve">
+    <value>ادغام</value>
+  </data>
+  <data name="Unmerge" xml:space="preserve">
+    <value>جداسازی</value>
+  </data>
+  <data name="timebased_properties" xml:space="preserve">
+    <value>ویژگی‌های زمانمند</value>
+  </data>
+  <data name="SemiStructured_source_s_import_completed_with_some_fails_and_result_published" xml:space="preserve">
+    <value>ورود منابع داده‌ای نیمه ساختیافته با تعدادی خطا انجام شد و نتایج آن منتشر شدند.
+تعداد {0} خط نامعتبر بود.
+برای جزئیات بیشتر به مسیر «گزارش ورود داده‌ها» مراجعه کنید.</value>
+  </data>
+  <data name="Add_New_Linking_Term" xml:space="preserve">
+    <value>افزودن ویژگی جدید:</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>قبلی</value>
+  </data>
+  <data name="Learn_More" xml:space="preserve">
+    <value>بیشتر</value>
+  </data>
+  <data name="Linking_on" xml:space="preserve">
+    <value>:ویژگی‌ها</value>
+  </data>
+  <data name="ResultsWithColon" xml:space="preserve">
+    <value>:نتایچ</value>
+  </data>
+  <data name="Targeting" xml:space="preserve">
+    <value>:مفاهیم نگاشت</value>
+  </data>
+  <data name="Choose_Matching_Criteria_For_Pass_Number" xml:space="preserve">
+    <value>انتخاب معیار برای روال کاری شماره</value>
+  </data>
+  <data name="Select_Object_For_Resolution" xml:space="preserve">
+    <value>انتخاب اشیاء برای Resolution</value>
+  </data>
+  <data name="Check_And_Finalize" xml:space="preserve">
+    <value>چک‌کردن موارد مشابه و مرحله نهایی</value>
+  </data>
+  <data name="Choose_Matching_Criteria" xml:space="preserve">
+    <value>انتخاب معیارهای تشابه</value>
+  </data>
+  <data name="Deselect_All" xml:space="preserve">
+    <value>از حالت انتخاب کردن همه</value>
+  </data>
+  <data name="Find_Successful_Matches_And_Resolve" xml:space="preserve">
+    <value>یافتن اشیاء مشابه و ادغام کردن آن‌ها</value>
+  </data>
+  <data name="Select_All" xml:space="preserve">
+    <value>انتخاب همه</value>
+  </data>
+  <data name="Select_Highlighted" xml:space="preserve">
+    <value>انتخاب موارد رنگی</value>
+  </data>
+  <data name="Unresolved_Objects" xml:space="preserve">
+    <value>اشیاء منتشر نشده</value>
+  </data>
+  <data name="Add_New_Target_Term" xml:space="preserve">
+    <value>یک نوع شیء جدید اضافه کنید</value>
+  </data>
+  <data name="Concepts" xml:space="preserve">
+    <value>مفاهیم</value>
+  </data>
+  <data name="Select_Property_Type" xml:space="preserve">
+    <value>نوع ویژگی را انتخاب کنید</value>
+  </data>
+  <data name="Select_Unique" xml:space="preserve">
+    <value>انتخاب یکتا</value>
+  </data>
+  <data name="Collapse_All" xml:space="preserve">
+    <value>بستن همه</value>
+  </data>
+  <data name="Expand_All" xml:space="preserve">
+    <value>باز کردن همه</value>
+  </data>
+  <data name="Match_Number" xml:space="preserve">
+    <value>شماره مورد مشابه</value>
+  </data>
+  <data name="Property_Conflicts" xml:space="preserve">
+    <value>تعداد ویژگیهای متفاوت</value>
+  </data>
+  <data name="Property_Matches" xml:space="preserve">
+    <value>تعداد ویژگی‌های مشابه</value>
+  </data>
+  <data name="Contain" xml:space="preserve">
+    <value>شامل</value>
+  </data>
+  <data name="No_Conflict" xml:space="preserve">
+    <value>بدون تصادم</value>
+  </data>
+  <data name="Match_Criteria" xml:space="preserve">
+    <value>معیارهای مشابه</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>مشابه</value>
+  </data>
+  <data name="Choose_an_object_resolution_setting" xml:space="preserve">
+    <value>3. یک روش ادغام اشیاء را انتخاب کنید.</value>
+  </data>
+  <data name="Dont_perform_object_resolution_on_my_imported_data" xml:space="preserve">
+    <value>ادغام اشیاء را روی داده‌های وارد شده‌ی من انجام نده.</value>
+  </data>
+  <data name="For_more_details_see_Import_logs" xml:space="preserve">
+    <value>برای جزئیات بیشتر گزارش (log)های ورود داده‌ها را ببینید.</value>
+  </data>
+  <data name="SemiStructured_source_s_import_completed_but_at_least_one_without_peripheral_servers_sync" xml:space="preserve">
+    <value>ورود داده‌ها برای منابع داده‌ی نیمه ساختیافته‌ی انتخاب شده انجام شد ولی حداقل یکی از آن‌ها بدون همگام‌سازی سرورهای جانبی انجام گرفت.</value>
+  </data>
+  <data name="Import_size_is_too_big_you_can_not_specify_new_resolution_criteria" xml:space="preserve">
+    <value>ورود داده‌ها بزرگ است و می‌بایست سمت سرور انجام شود، بنابراین شما نمی‌توانید شرایط ادغام جدیدی تعریف کنید.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>بارگزاری</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>جدید</value>
+  </data>
+  <data name="None_Recommanded" xml:space="preserve">
+    <value>هیچکدام (توصیه شده)</value>
+  </data>
+  <data name="Specify_new_resolution_criteria_in_the_Object_Resolution_Wizard_after_my_import" xml:space="preserve">
+    <value>تعریف شرایط ادغام جدید پس از ورود داده‌های من.</value>
+  </data>
+  <data name="Use_preexisting_resolution_criteria_from_an_Object_Resolution_Suite" xml:space="preserve">
+    <value>استفاده از شرایط ادغام از پیش تعریف شده از یک «مجموعه‌ی ادغام اشیاء»:</value>
+  </data>
+  <data name="Failed_lines_" xml:space="preserve">
+    <value>خطوط غیرقابل ورود:</value>
+  </data>
+  <data name="Continue_Resolution" xml:space="preserve">
+    <value>ادغام اشیاء</value>
+  </data>
+  <data name="Existing_Objects" xml:space="preserve">
+    <value>اشیاء موجود</value>
+  </data>
+  <data name="Resolved_Objects" xml:space="preserve">
+    <value>اشیاء ادغام شده</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>ورود داده‌ها</value>
+  </data>
+  <data name="Save_and_Import" xml:space="preserve">
+    <value>ذخیره‌سازی و ورود داده‌ها</value>
+  </data>
+  <data name="Resolve" xml:space="preserve">
+    <value>ادغام</value>
+  </data>
+  <data name="Selected_Targeting_Type_Is_Not_Exist_In_Selected_Unresolve_Objects" xml:space="preserve">
+    <value>توجه: نوع انتخاب شده در انواع اشیاء انتخاب شده برای ادغام سراسری وجود  ندارد</value>
+  </data>
+  <data name="Objects_Resolution_is_irreversible_are_you_sure" xml:space="preserve">
+    <value>ادغام اشیاء در این نسخه یک فرایند بازگشت ناپذیر است؛ آیا مطمئنید می‌خواهید اشیاء انتخاب شده را ادغام کنید؟</value>
+  </data>
+  <data name="No_Matches" xml:space="preserve">
+    <value>غیر مشابه‌ها</value>
+  </data>
+  <data name="No_Match_Objects" xml:space="preserve">
+    <value>اشیائی که مشابه ندارند</value>
+  </data>
+  <data name="Are_you_sure_you_want_to_close_object_resolution_wizard" xml:space="preserve">
+    <value>آیا مطمئن هستید که میخواهید پنجره ادغام سراسری بسته شود؟</value>
+  </data>
+  <data name="Continue_Resolution_Prompt" xml:space="preserve">
+    <value>پیام کلید ادامه ادغام سراسری</value>
+  </data>
+  <data name="Finish_Prompt" xml:space="preserve">
+    <value>پیام کلید پایان</value>
+  </data>
+  <data name="Quit_Resolution_Wizard" xml:space="preserve">
+    <value>خروج از پنجره ادغام سراسری</value>
+  </data>
+  <data name="Get_Resolution_Candidates_" xml:space="preserve">
+    <value>دریافت اشیاء نامزد ادغام...</value>
+  </data>
+  <data name="Performing_Global_Resolution_" xml:space="preserve">
+    <value>در حال انجام ادغام سراسری...</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>سیکل</value>
+  </data>
+  <data name="Semicolon" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="Object_Filters" xml:space="preserve">
+    <value>اشیاء جستجو</value>
+  </data>
+  <data name="Search_Terms" xml:space="preserve">
+    <value>ویژگی‌های جستجو</value>
+  </data>
+  <data name="Step_One" xml:space="preserve">
+    <value>مرحله اول</value>
+  </data>
+  <data name="Step_Three" xml:space="preserve">
+    <value>مرحله سوم</value>
+  </data>
+  <data name="Step_Two" xml:space="preserve">
+    <value>مرحله دوم</value>
+  </data>
+  <data name="Resolution_Scope" xml:space="preserve">
+    <value>محدوده ادغام</value>
+  </data>
+  <data name="Resolution_Types" xml:space="preserve">
+    <value>انواع ادغام</value>
+  </data>
+  <data name="All_Selected" xml:space="preserve">
+    <value>انتخاب همه موارد</value>
+  </data>
+  <data name="Due_to_publishing_the_selected_objects_in_the_previous_pass_you_must_publish_the_remaining_objects_even_without_Global_Resolution_to_retain_consistency_of_stored_objects" xml:space="preserve">
+    <value>به علت انتشار اشیاء انتخاب شده در مرحله یا مراحل قبل، به‌منظور سازگاری اشیاء ذخیره شده شما باید اشیاء باقیمانده را بدون انجام عملیات ادغام سراسری منتشر کند.</value>
+  </data>
+  <data name="Please_Enter_Your_Suite_Name" xml:space="preserve">
+    <value>لطفا نام فایل سوئیت را وارد کنید:</value>
+  </data>
+  <data name="Resolve_All" xml:space="preserve">
+    <value>ادغام همه</value>
+  </data>
+  <data name="Resolve_Unique" xml:space="preserve">
+    <value>ادغام یکتا</value>
+  </data>
+  <data name="Publish_Prompt" xml:space="preserve">
+    <value>پیام انتشار</value>
+  </data>
+  <data name="No_Saved_Suite_Selected" xml:space="preserve">
+    <value>هیچ سوئیت ذخیره‌شده‌ای انتخاب نشده است</value>
+  </data>
+  <data name="Saving_new_resolution_suite_" xml:space="preserve">
+    <value>ذخیره‌سازی سوئیت ادغام جدید...</value>
+  </data>
+  <data name="Nothing" xml:space="preserve">
+    <value>هیچ چیز</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>قبول</value>
+  </data>
+  <data name="AddedColon" xml:space="preserve">
+    <value>اضافه شده:</value>
+  </data>
+  <data name="Loading_resolution_suite_" xml:space="preserve">
+    <value>بازیابی سوئیت ادغام ...</value>
+  </data>
+  <data name="Unstructured_data_file_0_is_too_large_for_import" xml:space="preserve">
+    <value>فایل داده‌ی غیرساختیافته «{0}» برای ورود بزرگ است.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>گذرواژه:</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>حساب کاربری:</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>مدیر</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="UserName_Or_Password_Is_Incorrect" xml:space="preserve">
+    <value>حساب کاربری یا گذرواژه وارد شده صحیح نمی‌باشد.‌</value>
+  </data>
+  <data name="Upload_Failed" xml:space="preserve">
+    <value>آپلود فایل ناموفق بود. فایل قبلا موجود بوده است.</value>
+  </data>
+  <data name="Publishing_Document_And_Showing_In_Graph" xml:space="preserve">
+    <value>در حال انتشار سند و نمایش بر روی گراف</value>
+  </data>
+  <data name="No_Document_SubType_Defined_In_Ontology" xml:space="preserve">
+    <value>در هستان‌شناسی هیچ زیرنوعی برای سند تعریف نشده است</value>
+  </data>
+  <data name="Add_folder_files" xml:space="preserve">
+    <value>افزودن فایل‌های پوشه</value>
+  </data>
+  <data name="Select_the_folder_you_want_to_import_supported_files" xml:space="preserve">
+    <value>پوشه‌ای که می‌خواهید فایل‌های مورد پشتیبانی را از آن و از زیرپوشه‌هایش وارد نمایید، انتخاب کنید</value>
+  </data>
+  <data name="No_supported_file_found_in_selected_folder_and_its_subfolders" xml:space="preserve">
+    <value>هیچ فایل قابل پشتیبانی در پوشه‌ی انتخاب شده (و زیرپوشه(های) آن) یافت نشد</value>
+  </data>
+  <data name="Path_is_not_exist_or_accessable" xml:space="preserve">
+    <value>مسیر وجود ندارد ویا در دسترس نیست</value>
+  </data>
+  <data name="You_can_not_define_Global_Resolution_for_unstructured_files_import" xml:space="preserve">
+    <value>شما نمی‌توانید برای ورود فایل‌های غیرساختیافته ادغام سراسری تعریف کنید</value>
+  </data>
+  <data name="All_Data_Sources" xml:space="preserve">
+    <value>همه‌ی منابع داده</value>
+  </data>
+  <data name="One_or_more_unstructured_data_sources_not_published" xml:space="preserve">
+    <value>یک یا چند منبع داده‌ای غیرساختیافته منتشر نشدند؛ برای جزئیات بیشتر گزارش خطاها را ببینید</value>
+  </data>
+  <data name="Publish_unstructured_data_source_s_" xml:space="preserve">
+    <value>انتشار منابع داده‌ی غیرساختیافته</value>
+  </data>
+  <data name="File_0_Is_Empty" xml:space="preserve">
+    <value>فایل «{0}» خالی است!</value>
+  </data>
+  <data name="File_Downloading_Prompt" xml:space="preserve">
+    <value>پیام مرتبط با دانلود فایل</value>
+  </data>
+  <data name="There_is_no_file_for_the_document" xml:space="preserve">
+    <value>فایلی برای این سند وجود ندارد.</value>
+  </data>
+  <data name="There_is_no_candidate_for_selected_type_but_resolotion_method_will_be_saved_in_global_resolution_suite" xml:space="preserve">
+    <value>برای نوع انتخاب شده هیچ کاندیدایی وجود ندارد ولی روش ادغام برای این نوع در فایل سوئیت ذخیره خواهد شد.</value>
+  </data>
+  <data name="Database_Selection_Window" xml:space="preserve">
+    <value>پنجره انتخاب پایگاه داده</value>
+  </data>
+  <data name="Input_Dialog_Window" xml:space="preserve">
+    <value>پنجره ورود اطلاعات</value>
+  </data>
+  <data name="Select_Database" xml:space="preserve">
+    <value>انتخاب پایگاه داده:</value>
+  </data>
+  <data name="Add_Database" xml:space="preserve">
+    <value>افزودن پایگاه داده</value>
+  </data>
+  <data name="Database_Tables_And_Views_Are_Loading" xml:space="preserve">
+    <value>جداول بانک‌های اطلاعاتی در حال بارگذاری است.</value>
+  </data>
+  <data name="Database_URIs_Are_Loading" xml:space="preserve">
+    <value>مسیر بانک‌های اطلاعاتی در حال بارگذاری است.</value>
+  </data>
+  <data name="Selected_Map_Is_Not_Match_With_Selected_Data_Source" xml:space="preserve">
+    <value>نگاشت وارد شده متناسب با منبع داده انتخاب شده نمی‌باشد</value>
+  </data>
+  <data name="Are_you_sure_you_want_to_resolve_these_3_objects" xml:space="preserve">
+    <value>آیا مطمين هستید که می‌خواهید اشیاء انتخاب شده را با هم ادغام کنید؟</value>
+  </data>
+  <data name="Select_the_object_whose_title_you_wish_to_keep" xml:space="preserve">
+    <value>شیئی که می‌خواهید نام نمایشی آن باقی بماند را انتخاب کنید:</value>
+  </data>
+  <data name="This_operation_may_take_a_long_time" xml:space="preserve">
+    <value>این عملیات ممکن است زیاد طول بکشد.</value>
+  </data>
+  <data name="Graph_Resolution_Prompt" xml:space="preserve">
+    <value>ادغام از روی گراف</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>انتساب</value>
+  </data>
+  <data name="Assign_Media" xml:space="preserve">
+    <value>انتساب مدیا</value>
+  </data>
+  <data name="Do_You_Want_To_Remove_All_Objects_From_Map" xml:space="preserve">
+    <value>آیا می خواهید که همه اشیا از روی نقشه حذف شود؟</value>
+  </data>
+  <data name="No_Database_Has_Been_Assigned_To_Import_By_Administrator" xml:space="preserve">
+    <value>پایگاه داده ای برای ورود توسط مدیر تعریف نشده است.</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Links_From_Graph" xml:space="preserve">
+    <value>آیا می خواهید {0} لینک از گراف حذف شود؟</value>
+  </data>
+  <data name="Remove_Link" xml:space="preserve">
+    <value>حذف لینک</value>
+  </data>
+  <data name="Remove_Links" xml:space="preserve">
+    <value>حذف لینک ها</value>
+  </data>
+  <data name="Unable_To_Remove_Links_From_The_Graph" xml:space="preserve">
+    <value>امکان حذف شیء یا لینک ها از گراف وجود ندارد:
+{0}</value>
+  </data>
+  <data name="CSV_files_separator_unicode_char_decimal_code" xml:space="preserve">
+    <value>کد دهدهی کراکتر Unicode جداکننده‌های فایل‌های CSV:</value>
+  </data>
+  <data name="Change_" xml:space="preserve">
+    <value>تغییر...</value>
+  </data>
+  <data name="Csv_Separator" xml:space="preserve">
+    <value>جدا کننده‌ی CSV</value>
+  </data>
+  <data name="Enter_a_Unicode_character_code_to_use_as_CSV_fields_separator_" xml:space="preserve">
+    <value>کد یک نویسه‌ی Unicodeرا جهت استفاده به عنوان جداکننده‌ی فیلدهای فایل CSV وارد کنید:</value>
+  </data>
+  <data name="Preview_" xml:space="preserve">
+    <value>پیش‌نمایش:</value>
+  </data>
+  <data name="Changing_the_CSV_field_separator_will_remove_any_probably_defined_mapping_in_Step_2" xml:space="preserve">
+    <value>تغییر جداکننده‌ی فیلدهای فایل CSV نگاشت‌های احتمالی که در گام ۲ تعریف کرده‌اید را حذف خواهد کرد؛ آیا از تغییر جداکننده مطمئن هستید؟</value>
+  </data>
+  <data name="Representable_preview_" xml:space="preserve">
+    <value>پیش نمایش دیداری:</value>
+  </data>
+  <data name="Mismatch_Object_types_0" xml:space="preserve">
+    <value>نوع شئ‌های نامتناسب: {0}</value>
+  </data>
+  <data name="Mismatch_Property_types_0" xml:space="preserve">
+    <value>نوع ویژگی‌های نامتناسب: {0}</value>
+  </data>
+  <data name="Mismatch_Relationship_types_0" xml:space="preserve">
+    <value>نوع رابطه‌های نامتناسب: {0}</value>
+  </data>
+  <data name="Selected_Map_Is_Not_Match_With_Current_Ontology_" xml:space="preserve">
+    <value>نگاشت انتخاب شده با هستان‌شناسی موجود سازگار نیست؛</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Links_From_Cache" xml:space="preserve">
+    <value>آیا می خواهید {0} لینک منتشر نشده از حافظه‌ی موقت حذف شود؟</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Objects_And_Links_From_Graph" xml:space="preserve">
+    <value>آیا می خواهید {0} شیء و {1} لینک از گراف حذف شود؟</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Objects_From_Cache" xml:space="preserve">
+    <value>آیا می خواهید {0} شئ منتشر نشده از حافظه‌ی موقت حذف شود؟</value>
+  </data>
+  <data name="Sharing_Graph_" xml:space="preserve">
+    <value>در حال به اشتراک گذاری گراف...</value>
+  </data>
+  <data name="Unable_To_Load_Published_Graphs_Inforamtion" xml:space="preserve">
+    <value>امکان بازیابی اطلاعات گراف‌های منتشر شده وجود ندارد:\n{0}</value>
+  </data>
+  <data name="Multi_Value" xml:space="preserve">
+    <value>چند مقداره</value>
+  </data>
+  <data name="Table_Value" xml:space="preserve">
+    <value>مقدار جدولی</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>مثال:</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>خروجی:</value>
+  </data>
+  <data name="Regular_Expression" xml:space="preserve">
+    <value>عبارت منظم:</value>
+  </data>
+  <data name="Regular_Expression_Definition" xml:space="preserve">
+    <value>تعیین عبارت منظم</value>
+  </data>
+  <data name="Defined_criterias_for_the_importing_objects_results_too_many_candidates_" xml:space="preserve">
+    <value>شرایط تعریف شده برای اشیاء در حال ورود، منتج به تعداد زیادی کاندیدا برای ادغام اشیاء شده‌اند؛ بررسی کنید که شرایط تعریف شده به اندازه‌ی کافی دقیق باشند.</value>
+  </data>
+  <data name="ContentAnalysis_Tab" xml:space="preserve">
+    <value>تحلیل محتوا</value>
+  </data>
+  <data name="Loading_Tag_Cloud_" xml:space="preserve">
+    <value>دریافت Tag Cloud...</value>
+  </data>
+  <data name="Retrieve_Document_Content_" xml:space="preserve">
+    <value>بازیابی محتوای سند...</value>
+  </data>
+  <data name="Invalid_Key_Phrase_Score" xml:space="preserve">
+    <value>امتیاز نامعتبر برای عبارت کلیدی</value>
+  </data>
+  <data name="Invalid_Key_Phrase_Title" xml:space="preserve">
+    <value>عنوان نامعتبر برای عبارت کلیدی</value>
+  </data>
+  <data name="Detecting_Language_" xml:space="preserve">
+    <value>شناسایی زبان...</value>
+  </data>
+  <data name="Loading_" xml:space="preserve">
+    <value>در حال بارگزاری...</value>
+  </data>
+  <data name="Unable_to_load_document_content" xml:space="preserve">
+    <value>امکان بازیابی محتوای سند وجود ندارد؛ برای اطلاع از جزئیات بیشتر، گزارش خطاها را ببینید.</value>
+  </data>
+  <data name="Unable_to_load_language_statistics" xml:space="preserve">
+    <value>امکان آماده‌سازی آمار زبان‌ها وجود ندارد؛ برای اطلاع از جزئیات بیشتر، گزارش خطاها را ببینید.</value>
+  </data>
+  <data name="Unable_to_load_tag_cloud" xml:space="preserve">
+    <value>امکان آماده‌سازی Tag Cloud وجود ندارد؛ برای اطلاع از جزئیات بیشتر، گزارش خطاها را ببینید.</value>
+  </data>
+  <data name="Defined_import_is_too_large_and_also_includes_definitions_for_import_document_automatically" xml:space="preserve">
+    <value>ورود داده‌ی تعریف شده، بزرگ است و همچنین شامل تعاریفی برای ورود خودکار اسناد است؛ این نوع ورود داده می‌بایست در سمت سرور انجام شود و
+
+«زیرساخت می‌بایست حتما به مسیرهای اسناد تعریف شده در داده‌های ورودی دسرتسی داشته باشد، در غیر اینصورت اسناد وارد نخواهند شد»؛
+
+برای اطمینان از این دسترسی با مدیر خود مکاتبه کنید.
+آیا مطمئنید که می‌خواهید این فرایند را شروع کنید؟</value>
+  </data>
+  <data name="Mapping_is_not_completed_make_sure_defined_mapping_s_are_right" xml:space="preserve">
+    <value>نگاشت کامل نیست؛ از صحت نگاشت(ها) و انتخاب نام نمایشی برای تمام نگاشت‌های اشیاء اطمینان حال کنید.</value>
+  </data>
+  <data name="Unable_to_transform_selected_sample_data_row" xml:space="preserve">
+    <value>امکان استحصال داده از سطر داده‌ی نمونه‌ انتخاب شده وحود ندارد.</value>
+  </data>
+  <data name="No_object_will_generate" xml:space="preserve">
+    <value>هیچ شئی ایجاد نخواهد شد</value>
+  </data>
+  <data name="Unable_to_show_more_than_one_object_" xml:space="preserve">
+    <value>امکان نمایش بیش از یک شئ وجود ندارد!</value>
+  </data>
+  <data name="No_document_will_generate" xml:space="preserve">
+    <value>هیچ سندی ایجاد نخواهد شد</value>
+  </data>
+  <data name="Defined_import_is_too_large_and_also_includes_definitions_for_import_from_data_lake" xml:space="preserve">
+    <value>ورود داده‌ی تعریف شده، بزرگ است و همچنین شامل تعاریفی برای ورود از «دریاچه داده» است؛ در حال حاضر محیط کاربری این نوع ورود داده را انجام می‌دهد که این مساله می‌تواند زمان زیادی طول بکشد و منابع زیادی از محیط کاربری را درگیر نماید.
+آیا مطمئنید که می‌خواهید این فرایند را شروع کنید؟</value>
+  </data>
+  <data name="_0_objects_added_or_resolved_during_your_import_Do_you_want_to_show_them_on_graph" xml:space="preserve">
+    <value>{0} شئ در ورود داده‌ی شما افزوده/ادغام شدند؛ آیا می‌خواهید روی گراف نمایش داده شوند؟</value>
+  </data>
+  <data name="Edit_Permisions" xml:space="preserve">
+    <value>ویرایش سطوح دسترسی</value>
+  </data>
+  <data name="Manually_Entered_Data" xml:space="preserve">
+    <value>داده‏های ورودی دستی</value>
+  </data>
+  <data name="Edit_Permissions" xml:space="preserve">
+    <value>ویرایش مجوزها</value>
+  </data>
+  <data name="Set_user_access_permissions_on_the_data_you_re_importing" xml:space="preserve">
+    <value>2. تنظیم مجوز‌های دسترسی کاربران روی داده‌هایی که وارد می‌کنید.</value>
+  </data>
+  <data name="Publish_completed_but_search_indexes_were_not_updated_" xml:space="preserve">
+    <value>انتشار کامل شد اما اندیس‌های جستجو به طور کامل به‌روز نشدند؛ این مساله می‌تواند در جستجوی داده‌های وارد شده تاثیر بگذارد.</value>
+  </data>
+  <data name="Make_Visible_To_This_Groups" xml:space="preserve">
+    <value>قابل نمایش برای گروه‏های زیر:</value>
+  </data>
+  <data name="Securing_Connection_" xml:space="preserve">
+    <value>امن‌سازی ارتباط...</value>
+  </data>
+  <data name="Login_Failed" xml:space="preserve">
+    <value>ورود با شکست مواجه شد</value>
+  </data>
+  <data name="Make_sure_the_Username_and_Password_are_correct_and_Time_of_your_computer_is_synchronized_with_the_server" xml:space="preserve">
+    <value>از درست بودن «نام کاربری» و «رمز عبور» استفاده شده و همچنین از همگام بودن «زمان» رایانه‌تان با سرور، اطمینان حاصل کنید.</value>
+  </data>
+  <data name="Begin_Time_Label" xml:space="preserve">
+    <value>زمان شروع:</value>
+  </data>
+  <data name="End_Time_Label" xml:space="preserve">
+    <value>زمان پایان:</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>عرض جغرافیایی:</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>طول جغرافیایی:</value>
+  </data>
+  <data name="Polygon_Search" xml:space="preserve">
+    <value>جستجوی چندوجهی</value>
+  </data>
+  <data name="Click_to_draw_polygon_" xml:space="preserve">
+    <value>برای رسم چندوجهی کلیک کنید.</value>
+  </data>
+  <data name="Date_Range_" xml:space="preserve">
+    <value>محدوده‌ی زمانی: </value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>فیلترها</value>
+  </data>
+  <data name="Object_Types_" xml:space="preserve">
+    <value>انواع اشیاء: </value>
+  </data>
+  <data name="perimeter__" xml:space="preserve">
+    <value>محیط: </value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>نقاط</value>
+  </data>
+  <data name="Property_Types_" xml:space="preserve">
+    <value>انواع ویژگی‌ها: </value>
+  </data>
+  <data name="_points_with_comma_" xml:space="preserve">
+    <value> نقطه، </value>
+  </data>
+  <data name="Click_to_draw_route" xml:space="preserve">
+    <value>برای رسم مسیر کلیک کنید.</value>
+  </data>
+  <data name="Radius_Search" xml:space="preserve">
+    <value>جستجوی دایره‏ای</value>
+  </data>
+  <data name="Route_Search" xml:space="preserve">
+    <value>جستجوی مسیری</value>
+  </data>
+  <data name="Search_Setting" xml:space="preserve">
+    <value>تنظیمات جستجو</value>
+  </data>
+  <data name="Geo_Search" xml:space="preserve">
+    <value>جستجوی جغرافیایی</value>
+  </data>
+  <data name="Paragraph_Number" xml:space="preserve">
+    <value>تعداد پاراگراف</value>
+  </data>
+  <data name="Performing_Geographical_Search_" xml:space="preserve">
+    <value>انجام جستجوی جغرافیایی...</value>
+  </data>
+  <data name="Percent" xml:space="preserve">
+    <value>درصد</value>
+  </data>
+  <data name="Summarization_Rate" xml:space="preserve">
+    <value>نرخ خلاصه سازی:</value>
+  </data>
+  <data name="Unable_to_load_language_summarization" xml:space="preserve">
+    <value>امکان نمایش خلاصه متن وجود ندارد.</value>
+  </data>
+  <data name="loading_Summarize" xml:space="preserve">
+    <value>بارگذاری خلاصه متن.</value>
+  </data>
+  <data name="_No_Title_" xml:space="preserve">
+    <value>[بدون عنوان]</value>
+  </data>
+  <data name="Unable_to_load_saved_global_resolution_suite_s_" xml:space="preserve">
+    <value>امکان دریافت سوئیت(های) ادغام سراسری ذخیره شده وجود ندارد.</value>
+  </data>
+  <data name="Continue_anyway_" xml:space="preserve">
+    <value>با این حال ادامه می‌دهید؟</value>
+  </data>
+  <data name="Loading_Global_Resolution_Suite_s_" xml:space="preserve">
+    <value>بازیابی سوئیت(های) ادغام سراسری...</value>
+  </data>
+  <data name="Mismatch_Link_types_0" xml:space="preserve">
+    <value>نوع لینک(رابطه/رخداد)های نامتناسب: {0}</value>
+  </data>
+  <data name="Imagery" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="Source_" xml:space="preserve">
+    <value>منبع:</value>
+  </data>
+  <data name="No_map_tile_source_defined" xml:space="preserve">
+    <value>هیچ منبعی برای تامین تصاویر نقشه تعریف نشده است!</value>
+  </data>
+  <data name="Loading_map_tiles_" xml:space="preserve">
+    <value>بارگذاری تصاویر نقشه...</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>گزینه‌ها</value>
+  </data>
+  <data name="Costum_Search_Around_Result_More_Than_Threshold" xml:space="preserve">
+    <value>نتایج جستجوی پیرامونی سفارشی بیشتر از آستانه است و ممکن است برخی اشیا بازیابی نشوند.</value>
+  </data>
+  <data name="Heatmap" xml:space="preserve">
+    <value>نقشه گرمایی</value>
+  </data>
+  <data name="Advanced_Settings" xml:space="preserve">
+    <value>تنظیمات ویژه</value>
+  </data>
+  <data name="All_data_points" xml:space="preserve">
+    <value>همه نقاط </value>
+  </data>
+  <data name="Areal_Unit" xml:space="preserve">
+    <value>یکای منطقه:</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>داده</value>
+  </data>
+  <data name="data_points_contributing_values" xml:space="preserve">
+    <value>نقطه در مقدار دهی مشارکت دارند</value>
+  </data>
+  <data name="Density_Radius" xml:space="preserve">
+    <value>شعاع تراکم</value>
+  </data>
+  <data name="Hide_Heatmap" xml:space="preserve">
+    <value>پنهان شدن هیت مپ</value>
+  </data>
+  <data name="least_dense" xml:space="preserve">
+    <value>حداقل تراکم</value>
+  </data>
+  <data name="Legend" xml:space="preserve">
+    <value>افسانه</value>
+  </data>
+  <data name="most_dense" xml:space="preserve">
+    <value>حداکثر تراکم</value>
+  </data>
+  <data name="Opacity" xml:space="preserve">
+    <value>شفافیت</value>
+  </data>
+  <data name="Property_value_2" xml:space="preserve">
+    <value>مقدار شاخص:</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>شعاع:</value>
+  </data>
+  <data name="scale" xml:space="preserve">
+    <value>مقیاس</value>
+  </data>
+  <data name="Selected_data_points" xml:space="preserve">
+    <value>نقاط انتخاب شده</value>
+  </data>
+  <data name="Show_Heatmap" xml:space="preserve">
+    <value>نمایش هیت مپ</value>
+  </data>
+  <data name="Spectrum" xml:space="preserve">
+    <value>طیف رنگ</value>
+  </data>
+  <data name="There_is_no_data_to_generate_a_Heatmap" xml:space="preserve">
+    <value>هیچ داده ای برای تولید هیت مپ وجود ندارد</value>
+  </data>
+  <data name="The_Density_Radius_does_not_match_the_Areal_Unit" xml:space="preserve">
+    <value>شعاع تراکم با یکای منطقه همخوانی ندارد</value>
+  </data>
+  <data name="Value_for_each_data_points" xml:space="preserve">
+    <value>مقدار هر نقطه</value>
+  </data>
+  <data name="Custum_Search_Around_Result_More_Than_Threshold_OK_Cancel" xml:space="preserve">
+    <value>نتایج جستجوی پیرامونی سفارشی بیش از حد زیاد هستند و برخی از نتابج هرگز نمایش داده نخواهند شد؛
+برای پذیرش این نقصان در نتایج روی «OK» کلیک کنید، یا
+برای ادامه‌ی تعریف شرایط جستجو روی «Cancel» کلیک کنید.</value>
+  </data>
+  <data name="Tag_Cloud" xml:space="preserve">
+    <value>ابر کلمات</value>
+  </data>
+  <data name="The_Number_Of_Objects_With_GeoTime_Property_Is_Less_Than_Objects_Retrieved" xml:space="preserve">
+    <value>{0} شی(اشیا) بازیابی شد و به تعداد {1} ویژگی GeoDate دارند.</value>
+  </data>
+  <data name="Loading_heatmap_" xml:space="preserve">
+    <value>بارگزاری هیت مپ...</value>
+  </data>
+  <data name="There_is_no_result_for_this_query" xml:space="preserve">
+    <value>هیچ نتیجه ای برای این جستجو یافت نشد.</value>
+  </data>
+  <data name="Best_Slow" xml:space="preserve">
+    <value>بهترین/آهسته</value>
+  </data>
+  <data name="Good_Fast" xml:space="preserve">
+    <value>خوب/سریع</value>
+  </data>
+  <data name="Hide_map_points_and_labels" xml:space="preserve">
+    <value>مخفی کردن نقاط و برچسب های روی نقشه</value>
+  </data>
+  <data name="Numbersign_Colors" xml:space="preserve">
+    <value># رنگ ها</value>
+  </data>
+  <data name="Show_scale_on_map" xml:space="preserve">
+    <value>نمایش مقیاس روی نقشه</value>
+  </data>
+  <data name="Smoothing" xml:space="preserve">
+    <value>هموار سازی</value>
+  </data>
+  <data name="Color_Scale" xml:space="preserve">
+    <value>مقیاس رنگ</value>
+  </data>
+  <data name="Choose_Image_Files_To_Upload" xml:space="preserve">
+    <value>فایل انتخاب شود</value>
+  </data>
+  <data name="Image_Analysis_Application" xml:space="preserve">
+    <value>کاربرد تجزیه و تحلیل تصاویر</value>
+  </data>
+  <data name="or_drag_and_drop_them_here" xml:space="preserve">
+    <value>یا کشیده و در این مکان رها کنید</value>
+  </data>
+  <data name="Extracting_Faces" xml:space="preserve">
+    <value>استخراج چهره‌ها</value>
+  </data>
+  <data name="Recognizing_Faces" xml:space="preserve">
+    <value>تشخیص چهره‌ها</value>
+  </data>
+  <data name="Retrieved_Image_" xml:space="preserve">
+    <value>تصویر بازیابی شده:</value>
+  </data>
+  <data name="Search_Results_" xml:space="preserve">
+    <value>نتایج جستجو:</value>
+  </data>
+  <data name="Heatmap_Type" xml:space="preserve">
+    <value>نوع هیت مپ</value>
+  </data>
+  <data name="Linear" xml:space="preserve">
+    <value>خطی</value>
+  </data>
+  <data name="Percentile" xml:space="preserve">
+    <value>درصد</value>
+  </data>
+  <data name="Presentation" xml:space="preserve">
+    <value>ارائه</value>
+  </data>
+  <data name="Scale2" xml:space="preserve">
+    <value>مقیاس</value>
+  </data>
+  <data name="Only_positive_and_valid_numerical_values_are_effective" xml:space="preserve">
+    <value>فقط مقادیر عددی مثبت و معتبر موثر هستند.</value>
+  </data>
+  <data name="Search_Around_Result_More_Than_Threshold_" xml:space="preserve">
+    <value>نتایج جستجوی پیرامونی بیش از حد زیاد هستند و برخی از نتابج هرگز نمایش داده نخواهند شد.</value>
+  </data>
+  <data name="Prepare_SearchAround_Results_" xml:space="preserve">
+    <value>آماده‌سازی نتایج جستجوی پیرامونی...</value>
+  </data>
+  <data name="For_each_searched_object__a_maximum_of_NUMBER_results_are_loaded_and_there_are_more_results_to_display_" xml:space="preserve">
+    <value>به ازای هر شئ جستجو شده، حداکثر {0} نتیجه بارگذاری شده است و نتایج بیشتری برای نمایش وجود دارد.</value>
+  </data>
+  <data name="Load_more_" xml:space="preserve">
+    <value>بارگذاری بیشتر?</value>
+  </data>
+  <data name="No__That_s_enough_" xml:space="preserve">
+    <value>نه! همین کافی است.</value>
+  </data>
+  <data name="NUMBER_links_have_been_unmerged_from_links_between_two_objects_and_there_are_more_links_to_unmerge_" xml:space="preserve">
+    <value>{0} لینک از لینک های بین دو شئ باز شده است و لینک های بیشتری برای باز شدن وجود دارد.</value>
+  </data>
+  <data name="Unmerge_more_" xml:space="preserve">
+    <value>بازشدن بیشتر?</value>
+  </data>
+  <data name="Would_you_like_to_load_more_results_" xml:space="preserve">
+    <value>آیا می خواهید تعداد بیشتری از نتایج بارگذاری شود؟</value>
+  </data>
+  <data name="Would_you_like_to_unmerge_more_links_" xml:space="preserve">
+    <value>آیا می خواهید تعداد بیشتری از لینک ها باز شود؟</value>
+  </data>
+  <data name="Yes__Load_all_results___Up_to_NUMBER_results_" xml:space="preserve">
+    <value>بله! همه نتایج بارگذاری شود. (تا سقف {0} نتیجه)</value>
+  </data>
+  <data name="Yes__Load_up_to_NUMBER_results_" xml:space="preserve">
+    <value>بله! حداکثر {0} نتیجه بارگذاری شود.</value>
+  </data>
+  <data name="Yes__Unmerge_all_links___Up_to_NUMBER_links_" xml:space="preserve">
+    <value>بله! همه لینک ها باز شود. (تاسقف {0} لینک)</value>
+  </data>
+  <data name="Yes__Unmerge_up_to_NUMBER_links_" xml:space="preserve">
+    <value>بله! حداکثر {0} لینک باز شود.</value>
+  </data>
+  <data name="Reload" xml:space="preserve">
+    <value>بارگذاری مجدد</value>
+  </data>
+  <data name="Show_All" xml:space="preserve">
+    <value>نمایش همه</value>
+  </data>
+  <data name="There_are_more_relationships_that_can_not_be_displayed_" xml:space="preserve">
+    <value>روابط بیشتری وجود دارد که امکان نمایش آن ها نیست.</value>
+  </data>
+  <data name="objects" xml:space="preserve">
+    <value>شیء</value>
+  </data>
+  <data name="Preparing_Unmerge_" xml:space="preserve">
+    <value>آماده‌سازی جداسازی...</value>
+  </data>
+  <data name="Recompute_Set_Contents" xml:space="preserve">
+    <value>محاسبه مجدد مجموعه</value>
+  </data>
+  <data name="Select this Set" xml:space="preserve">
+    <value>انتخاب این مجموعه</value>
+  </data>
+  <data name="Recomputing_statistics_by_executing_statistical_query" xml:space="preserve">
+    <value>در حال محاسبه‌ی ارقام با اجرای پرس و جوی آماری</value>
+  </data>
+  <data name="Executing_statistical_query" xml:space="preserve">
+    <value>در حال اجرای پرس و جوی آماری</value>
+  </data>
+  <data name="Apply_Formula" xml:space="preserve">
+    <value>رابطه سفارشی</value>
+  </data>
+  <data name="Apply_formula_that_generated_second_set_to_first_set_" xml:space="preserve">
+    <value>تولید رابطه  دلخواه که از مجموعه دوم به مجموعه اول اعمال می شود.</value>
+  </data>
+  <data name="Combines_both_sets_into_one_" xml:space="preserve">
+    <value>دو مجموعه را در یک مجموعه ترکیب می کند.</value>
+  </data>
+  <data name="Exclusive_Or" xml:space="preserve">
+    <value>یا انحصاری</value>
+  </data>
+  <data name="Finds_all_items_in_both_sets_" xml:space="preserve">
+    <value>مواردی که در هر دو مجموعه هستند را پیدا می کند. </value>
+  </data>
+  <data name="Finds_all_of_the_items_in_the_first_set_that_aren_t_in_the_second_set_" xml:space="preserve">
+    <value>همه موارد موجود در مجموعه اول که در مجموعه دوم نیستند را پیدا می کند.</value>
+  </data>
+  <data name="Finds_all_of_the_items_in_the_second_set_that_aren_t_in_the_first_set_" xml:space="preserve">
+    <value>همه موارد موجود در مجموعه دوم که در مجموعه اول نیستند را پیدا می کند.</value>
+  </data>
+  <data name="Finds_all_of_the_items_that_are_in_either_set_but_not_both_" xml:space="preserve">
+    <value>تمام مواردی را که در هر دو مجموعه قرار دارد، اما نه هر دو را پیدا می کند.</value>
+  </data>
+  <data name="Intersection" xml:space="preserve">
+    <value>اشتراک</value>
+  </data>
+  <data name="Set_Algebra" xml:space="preserve">
+    <value>جبر مجموعه ای</value>
+  </data>
+  <data name="Subtract_Left" xml:space="preserve">
+    <value>تفریق چپ</value>
+  </data>
+  <data name="Subtract_Right" xml:space="preserve">
+    <value>تفریق راست</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>اجتماع</value>
+  </data>
+  <data name="Filter_Property_of_Type_" xml:space="preserve">
+    <value>فیلتر ویژگی از نوع:</value>
+  </data>
+  <data name="Note__Matching_is_not_Case_Sensitive_" xml:space="preserve">
+    <value>توجه: تطبیق حساس به حروف بزرگ و کوچک نیست.</value>
+  </data>
+  <data name="Property_Matched_Value_Filter" xml:space="preserve">
+    <value>فیلتر تطابق مقدار ویژگی</value>
+  </data>
+  <data name="With_matched_value__" xml:space="preserve">
+    <value>مطابقت با مقدار: </value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="Has_property_type" xml:space="preserve">
+    <value>دارای نوع ویژگی</value>
+  </data>
+  <data name="No_set" xml:space="preserve">
+    <value>بدون مجموعه</value>
+  </data>
+  <data name="ObjectsMatchingOneOfTheDefinedPropertyValues_" xml:space="preserve">
+    <value>اشیاء مطابق با یکی از مقادیر ویژگی تعریف شده:</value>
+  </data>
+  <data name="Of_type_" xml:space="preserve">
+    <value>نوع:</value>
+  </data>
+  <data name="Drag_an_area_on_the_chart_for_drill_down_" xml:space="preserve">
+    <value>برای Drill down منطقه ای از نمودار را درگ کنید.</value>
+  </data>
+  <data name="Log_axis" xml:space="preserve">
+    <value>محور لگاریتمی</value>
+  </data>
+  <data name="Selected_range__" xml:space="preserve">
+    <value>محدوده انتخابی: </value>
+  </data>
+  <data name="Show_crosshairs" xml:space="preserve">
+    <value>نمایش علامت ضربدر</value>
+  </data>
+  <data name="buckets_from" xml:space="preserve">
+    <value>میله از</value>
+  </data>
+  <data name="Recalculate_Buckets" xml:space="preserve">
+    <value>محاسبه مجدد میله ها</value>
+  </data>
+  <data name="Restore_Default" xml:space="preserve">
+    <value>بازیابی پیشفرض</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>تا</value>
+  </data>
+  <data name="Add_Current_Selection_to_Graph" xml:space="preserve">
+    <value>افزودن محدوده های انتخابی فعلی به گراف</value>
+  </data>
+  <data name="Add_Current_Selection_to_Map" xml:space="preserve">
+    <value>افزودن محدوده های انتخابی فعلی به نقشه</value>
+  </data>
+  <data name="Clear_All_Selections" xml:space="preserve">
+    <value>حذف تمامی محدوده های انتخابی</value>
+  </data>
+  <data name="Drill_Down_on_Current_Selections___N__Group_" xml:space="preserve">
+    <value>Drill Down روی محدوده های انتخابی فعلی ({0} دسته)</value>
+  </data>
+  <data name="Current_Investigation_Saved" xml:space="preserve">
+    <value>کاوش فعلی ذخیره شد.</value>
+  </data>
+  <data name="Investigation_Description" xml:space="preserve">
+    <value>توضیحات کاوش:</value>
+  </data>
+  <data name="Investigation_Title" xml:space="preserve">
+    <value>عنوان کاوش:</value>
+  </data>
+  <data name="Saving_Current_Investigation" xml:space="preserve">
+    <value>در حال ذخیره‌ی کاوش فعلی</value>
+  </data>
+  <data name="Unable_To_Save_Current_Investigation" xml:space="preserve">
+    <value>کاوش فعلی غیرقابل ذخیره‌سازی است.</value>
+  </data>
+  <data name="Load_Investigation" xml:space="preserve">
+    <value>بارگذاری کاوش</value>
+  </data>
+  <data name="Selected_Investigation_Loaded_Successfully" xml:space="preserve">
+    <value>کاوش انتخاب شده با موفقیت بارگذاری شد.</value>
+  </data>
+  <data name="Checking_Conditions_To_Open_Right_Click_Menu" xml:space="preserve">
+    <value>در حال بررسی شرایط ...</value>
+  </data>
+  <data name="Upload__eml_files_failed_with_exception_0_Do_you_want_to_retry" xml:space="preserve">
+    <value>بارگذاری فایل(های) .eml با شکست مواجه شد:
+{0}.
+ آیا مایل به تلاش مجدد برای بارگذاری هستید(انتخاب دکمه «نه» به معنای صرف نظر از ورود داده‌های این فایل می‌باشد)؟</value>
+  </data>
+  <data name="Take_Snapshot" xml:space="preserve">
+    <value>عکس گرفتن</value>
+  </data>
+  <data name="Snapshot_saved_successfully_" xml:space="preserve">
+    <value>تصویر با موفقیت ذخیره شد.</value>
+  </data>
+  <data name="Do_you_want_to_display_image_" xml:space="preserve">
+    <value>آیا تمایل دارید تصویر را مشاهده کنید؟</value>
+  </data>
+  <data name="All_supported_unstructured_files" xml:space="preserve">
+    <value>تمام فایل‌های غیرساختیافته‌ی قابل پشتیبانی</value>
+  </data>
+  <data name="Email_s_" xml:space="preserve">
+    <value>ایمیل(ها)</value>
+  </data>
+  <data name="Email_s_datasource" xml:space="preserve">
+    <value>منبع داده‌ی ایمیلی</value>
+  </data>
+  <data name="Unable_to_define_New_Global_Resolution_for_multiple_import_sources" xml:space="preserve">
+    <value>امکان تعریف ادغام سراسری جدید برای چند منبع ورود داده وجود ندارد</value>
+  </data>
+  <data name="Opening_0" xml:space="preserve">
+    <value>باز کردن {0}</value>
+  </data>
+  <data name="Unable_to_load_configuration_0_" xml:space="preserve">
+    <value>امکان بارگذاری تنظیم '{0}' وجود ندارد.</value>
+  </data>
+  <data name="Add_a_new_directory_to_the_beginning_of_the_path" xml:space="preserve">
+    <value>افزودن پوشه جدید به انتهای مسیر</value>
+  </data>
+  <data name="Add_a_new_directory_to_the_end_of_the_path" xml:space="preserve">
+    <value>افزودن پوشه جدید به انتهای مسیر</value>
+  </data>
+  <data name="Apply_regular_expression" xml:space="preserve">
+    <value>اعمال عبارات منظم</value>
+  </data>
+  <data name="Computer_name" xml:space="preserve">
+    <value>نام کامپیوتر</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>پوشه</value>
+  </data>
+  <data name="Drive_name" xml:space="preserve">
+    <value>نام درایو</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>پسوند</value>
+  </data>
+  <data name="File_name" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="Full_path" xml:space="preserve">
+    <value>مسیر کامل</value>
+  </data>
+  <data name="Path_" xml:space="preserve">
+    <value>مسیر:</value>
+  </data>
+  <data name="Path_part_from_begin" xml:space="preserve">
+    <value>بخشی از مسیر از ابتدا</value>
+  </data>
+  <data name="Path_part_from_end" xml:space="preserve">
+    <value>بخشی از مسیر از انتها</value>
+  </data>
+  <data name="Path_Part_Selection_Window" xml:space="preserve">
+    <value>پنجره انتخاب بخشی از مسیر</value>
+  </data>
+  <data name="Result_" xml:space="preserve">
+    <value>نتیجه:</value>
+  </data>
+  <data name="Select_the_part_of_the_path_you_want_to_extract_from_the_metadata_" xml:space="preserve">
+    <value>بخشی از مسیری را که می خواهید از ابرداده استخراج کنید را انتخاب کنید.</value>
+  </data>
+  <data name="This_directory_is_not_in_the_current_path" xml:space="preserve">
+    <value>این پوشه در مسیر جاری نیست</value>
+  </data>
+  <data name="This_value_will_be_determined_by_the_source_file_address_on_your_computer_" xml:space="preserve">
+    <value>این مقدار توسط آدرس فایل مبدأ بر روی کامپیوتر شما تعیین می شود.</value>
+  </data>
+  <data name="Load_Mapping" xml:space="preserve">
+    <value>بارگذاری نگاشت</value>
+  </data>
+  <data name="Load_Mapping_For_All" xml:space="preserve">
+    <value>بارگذاری نگاشت برای همه</value>
+  </data>
+  <data name="Data_source_path_based_value" xml:space="preserve">
+    <value>مقداری براساس مسیر فایل منبع</value>
+  </data>
+  <data name="Unable_to_get_direction_for_links_with_different_source_and_target" xml:space="preserve">
+    <value>امکان تعیین جهت برای لینک‌های دارای مبدا و مقصد متفاوت وجود ندارد</value>
+  </data>
+  <data name="_0_event" xml:space="preserve">
+    <value>{0} رخداد</value>
+  </data>
+  <data name="_0_events" xml:space="preserve">
+    <value>{0} رخداد</value>
+  </data>
+  <data name="_0_relationship" xml:space="preserve">
+    <value>{0} رابطه</value>
+  </data>
+  <data name="_0_relationships" xml:space="preserve">
+    <value>{0} رابطه</value>
+  </data>
+  <data name="_0_same_properties" xml:space="preserve">
+    <value>{0} ویژگی مشابه</value>
+  </data>
+  <data name="_0_same_property" xml:space="preserve">
+    <value>{0} ویژگی مشابه</value>
+  </data>
+  <data name="_and_0_more_event" xml:space="preserve">
+    <value>، و {0} رخداد دیگر</value>
+  </data>
+  <data name="_and_0_more_events" xml:space="preserve">
+    <value>، و {0} رخداد دیگر</value>
+  </data>
+  <data name="_and_0_more_relationship" xml:space="preserve">
+    <value>، و {0} رابطه‌ی دیگر</value>
+  </data>
+  <data name="_and_0_more_relationships" xml:space="preserve">
+    <value>، و {0} رابطه‌ی دیگر</value>
+  </data>
+  <data name="_and_0_more_same_properties" xml:space="preserve">
+    <value>، و {0} ویژگی مشابه دیگر</value>
+  </data>
+  <data name="_and_0_more_same_property" xml:space="preserve">
+    <value>، و {0} ویژگی مشابه دیگر</value>
+  </data>
+  <data name="__0_" xml:space="preserve">
+    <value>، {0}</value>
+  </data>
+  <data name="Link_ends_are_not_match_with_the_edge" xml:space="preserve">
+    <value>دو سر لینک با یال مطابق نیستند</value>
+  </data>
+  <data name="All_objects" xml:space="preserve">
+    <value>همه عناصر</value>
+  </data>
+  <data name="Animated" xml:space="preserve">
+    <value>متحرک</value>
+  </data>
+  <data name="Animation" xml:space="preserve">
+    <value>پویانمایی</value>
+  </data>
+  <data name="Flow_" xml:space="preserve">
+    <value>جریان:</value>
+  </data>
+  <data name="Flow_Color_" xml:space="preserve">
+    <value>رنگ جریان:</value>
+  </data>
+  <data name="Flow_Options" xml:space="preserve">
+    <value>گزینه های جریان</value>
+  </data>
+  <data name="Hide_Flows" xml:space="preserve">
+    <value>پنهان کردن جریان</value>
+  </data>
+  <data name="Scale_visualization_to_flow_value" xml:space="preserve">
+    <value>سایز براساس وزن جریان</value>
+  </data>
+  <data name="Selected_objects" xml:space="preserve">
+    <value>عناصر انتخاب شده</value>
+  </data>
+  <data name="Show_Flows" xml:space="preserve">
+    <value>نمایش جریان</value>
+  </data>
+  <data name="Show_flows_for_" xml:space="preserve">
+    <value>نمایش جریان برای:</value>
+  </data>
+  <data name="Speed_" xml:space="preserve">
+    <value>سرعت:</value>
+  </data>
+  <data name="Static" xml:space="preserve">
+    <value>ثابت</value>
+  </data>
+  <data name="Visualization_" xml:space="preserve">
+    <value>نمایش:</value>
+  </data>
+  <data name="Total_Events_Count" xml:space="preserve">
+    <value>تعداد همه رویدادها</value>
+  </data>
+  <data name="Value__Count_" xml:space="preserve">
+    <value>مقدار (تعداد)</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>بدون عنوان</value>
+  </data>
+  <data name="Flows" xml:space="preserve">
+    <value>جریان</value>
+  </data>
+  <data name="Branching_History" xml:space="preserve">
+    <value>تاریخچه شاخه</value>
+  </data>
+  <data name="According_to_applied_settings_you_have_not_owner_permission_on_imported_data" xml:space="preserve">
+    <value>طبق تنظیمات اعمال شده، شما بر روی داده‌های ورودی مجوز مالکیت ندارید.</value>
+  </data>
+  <data name="Only_one_object_will_generate_by_the_mapping" xml:space="preserve">
+    <value>براساس این نگاشت، فقط یک شئ ایجاد خواهد شد.</value>
+  </data>
+  <data name="Choose_a_character" xml:space="preserve">
+    <value>انتخاب کاراکتر</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>سفارشی</value>
+  </data>
+  <data name="Select_a_character_to_use_as_CSV_fields_separator" xml:space="preserve">
+    <value>یک کاراکتر  جهت استفاده به عنوان جداکننده‌ی فیلدهای فایل CSV انتخاب کنید</value>
+  </data>
+  <data name="Click_the_button_to_load_related_links" xml:space="preserve">
+    <value>برای بارگزاری لینک‌های مرتبط روی دکمه کلیک نمایید</value>
+  </data>
+  <data name="Load_All_Links" xml:space="preserve">
+    <value>بارگزاری همه لینک‌ها</value>
+  </data>
+  <data name="Begin_date_must_be_smaller_than_end_date_" xml:space="preserve">
+    <value>زمان شروع باید کوچک‌تر از زمان پایان باشد.</value>
+  </data>
+  <data name="End_date_must_be_greater_than_begin_date_" xml:space="preserve">
+    <value>زمان پایان باید بزرگ‌تر از زمان شروع باشد.</value>
+  </data>
+  <data name="InValid" xml:space="preserve">
+    <value>نامعتبر</value>
+  </data>
+  <data name="Select_an_object_type_from_list_" xml:space="preserve">
+    <value>یک نوع شئ از لیست انتخاب کنید.</value>
+  </data>
+  <data name="Select_a_property_type_from_list_" xml:space="preserve">
+    <value>یک نوع ویژگی از لیست انتخاب کنید.</value>
+  </data>
+  <data name="Container_" xml:space="preserve">
+    <value>Container:</value>
+  </data>
+  <data name="Container_Filter" xml:space="preserve">
+    <value>Container Filter</value>
+  </data>
+  <data name="Enter_Character" xml:space="preserve">
+    <value>کاراکتر مورد نظر را وارد کنید</value>
+  </data>
+  <data name="Preview_the_result" xml:space="preserve">
+    <value>پیش نمایش نتیجه کاراکتر انتخاب شده</value>
+  </data>
+  <data name="Object_Has_Number_Properties_Of_Property" xml:space="preserve">
+    <value>{0} {1} ویژگی {2} دارد</value>
+  </data>
+</root>

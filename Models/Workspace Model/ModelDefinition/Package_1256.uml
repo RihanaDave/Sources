@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="b1085f4d-b2e2-426c-b1c3-58df619fd513"
+  name="Workspace" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f3c7b417-a359-49ae-8497-440002063f2c"
+        LastKnownName="Presentation"
+        LastKnownLocation="Package1_1256.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f99e5022-5c96-4c7d-8bf1-0f47ce28fe2d"
+        LastKnownName="Logic"
+        LastKnownLocation="Package_1257.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4a213839-ae44-4022-acaa-40ae7889be68"
+        LastKnownName="ServiceAccesss"
+        LastKnownLocation="Package1_1257.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a8467933-2627-4daa-988a-19c4af23caba"
+        LastKnownName="Entities"
+        LastKnownLocation="Package2_1257.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="84f2713d-6c32-49e6-b34e-956f2d550d27"
+        LastKnownName="Ontology"
+        LastKnownLocation="Package_1259.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

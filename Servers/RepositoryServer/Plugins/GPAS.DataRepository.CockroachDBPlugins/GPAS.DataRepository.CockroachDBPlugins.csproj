@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41006B9F-4C13-4F65-B283-A592E6B90131}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GPAS.DataRepository.CockroachDBPlugins</RootNamespace>
+    <AssemblyName>GPAS.DataRepository.CockroachDBPlugins</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\GPAS.RepositoryServer.IISHost\bin\Plugins\GPAS.DataRepository.CockroachDBPlugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\GPAS.RepositoryServer.IISHost\Bin\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33FBBF9B-C7F4-4F91-99D9-335A18C2609D}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\GPAS.Logger\GPAS.Logger.csproj">
+      <Project>{7905DA86-186F-4D3B-8D13-68DF6ED7C31B}</Project>
+      <Name>GPAS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\GPAS.Ontology\GPAS.Ontology.csproj">
+      <Project>{C7C4F25F-18CF-4F2F-8638-39DEB1CAFF1A}</Project>
+      <Name>GPAS.Ontology</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\GPAS.Utility\GPAS.Utility.csproj">
+      <Project>{000A2D3B-E6FE-4A50-BB93-FE589E3421EF}</Project>
+      <Name>GPAS.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.RepositoryServer.Data\GPAS.RepositoryServer.Data.csproj">
+      <Project>{8C1AE2FF-043A-4C1A-B1FF-0FC14C1BAC05}</Project>
+      <Name>GPAS.RepositoryServer.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.RepositoryServer.Entities\GPAS.RepositoryServer.Entities.csproj">
+      <Project>{1838db03-59e2-434a-b065-94f4387c89c3}</Project>
+      <Name>GPAS.RepositoryServer.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.RepositoryServer.Logic\GPAS.RepositoryServer.Logic.csproj">
+      <Project>{8be61c3d-7ea2-4d3d-9c66-25b236a2bada}</Project>
+      <Name>GPAS.RepositoryServer.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

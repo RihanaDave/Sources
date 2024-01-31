@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CircleSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Center" nillable="true" type="tns:GeoPoint" />
+      <xs:element minOccurs="0" name="RediusInKiloMeters" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CircleSearchCriteria" nillable="true" type="tns:CircleSearchCriteria" />
+  <xs:complexType name="GeoPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Lat" type="xs:double" />
+      <xs:element minOccurs="0" name="Lng" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeoPoint" nillable="true" type="tns:GeoPoint" />
+  <xs:complexType name="PolygonSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LengthInMeters" type="xs:double" />
+      <xs:element minOccurs="0" name="Vertices" nillable="true" type="tns:ArrayOfGeoPoint" />
+      <xs:element minOccurs="0" name="WidthInMeters" type="xs:double" />
+      <xs:element minOccurs="0" name="isAnyVectorCoincident" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isAnyVectorCrossed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="perimeterInMeters" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolygonSearchCriteria" nillable="true" type="tns:PolygonSearchCriteria" />
+  <xs:complexType name="ArrayOfGeoPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeoPoint" nillable="true" type="tns:GeoPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeoPoint" nillable="true" type="tns:ArrayOfGeoPoint" />
+</xs:schema>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP.Summarization" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP.Summarization" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SummarizationRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RateType" type="tns:SummarizationRateType" />
+      <xs:element minOccurs="0" name="RateValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SummarizationRate" nillable="true" type="tns:SummarizationRate" />
+  <xs:simpleType name="SummarizationRateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Paragraph">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Percent">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SummarizationRateType" nillable="true" type="tns:SummarizationRateType" />
+</xs:schema>

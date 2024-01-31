@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTypeBasedStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TypeBasedStatistic" nillable="true" type="tns:TypeBasedStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTypeBasedStatistic" nillable="true" type="tns:ArrayOfTypeBasedStatistic" />
+  <xs:complexType name="TypeBasedStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Frequency" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeBasedStatistic" nillable="true" type="tns:TypeBasedStatistic" />
+  <xs:complexType name="ArrayOfPropertyValueStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyValueStatistic" nillable="true" type="tns:PropertyValueStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyValueStatistic" nillable="true" type="tns:ArrayOfPropertyValueStatistic" />
+  <xs:complexType name="PropertyValueStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Frequency" type="xs:long" />
+      <xs:element minOccurs="0" name="PropertyValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyValueStatistic" nillable="true" type="tns:PropertyValueStatistic" />
+  <xs:complexType name="PropertyBarValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bars" nillable="true" type="tns:ArrayOfPropertyBarValue" />
+      <xs:element minOccurs="0" name="BucketCount" type="xs:long" />
+      <xs:element minOccurs="0" name="End" type="xs:double" />
+      <xs:element minOccurs="0" name="Start" type="xs:double" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyBarValues" nillable="true" type="tns:PropertyBarValues" />
+  <xs:complexType name="ArrayOfPropertyBarValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyBarValue" nillable="true" type="tns:PropertyBarValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyBarValue" nillable="true" type="tns:ArrayOfPropertyBarValue" />
+  <xs:complexType name="PropertyBarValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:long" />
+      <xs:element minOccurs="0" name="End" type="xs:double" />
+      <xs:element minOccurs="0" name="Start" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyBarValue" nillable="true" type="tns:PropertyBarValue" />
+</xs:schema>

@@ -1,0 +1,98 @@
+﻿<UserControl x:Class="GPAS.Dispatch.AdminTools.View.UserControls.MainUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:GPAS.Dispatch.AdminTools.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+
+    <Grid Background="{DynamicResource NormalBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Administrator Tools" FontSize="25" TextAlignment="Center" VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Foreground="{DynamicResource NormalForeground}" Margin="50 50 50 30"/>
+
+        <ComboBox Grid.Row="1" ItemsSource="{Binding AllSidebarItems}" x:Name="AllSidebarItemsComboBox"
+                  HorizontalAlignment="Center" Width="300"
+                  FontSize="16" Margin="10" 
+                  Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                  materialDesign:HintAssist.Hint="Search" IsEditable="True"
+                  DropDownClosed="AllSidebarItemsComboBox_DropDownClosed"
+                  TextSearch.TextPath="ItemText">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="{Binding ItemIcon}" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding ItemText }" VerticalAlignment="Center" Margin="5" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <WrapPanel Grid.Row="2" x:Name="ModulesWrapPanel" HorizontalAlignment="Center" Margin="20 50 20 20">
+            <WrapPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource ModuleButton}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="DodgerBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Orientation" Value="Horizontal"/>
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+                <Style TargetType="materialDesign:PackIcon" BasedOn="{StaticResource ModuleIcon}"/>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource ModuleButtonText}"/>
+            </WrapPanel.Resources>
+
+            <Button x:Name="UsersManagerButton" Click="UsersManagerButton_Click"
+                    Tag="{x:Static view:Modules.UsersManager}">
+                <StackPanel>
+                    <materialDesign:PackIcon Kind="UsersGroup"/>
+                    <TextBlock Text="Users manager"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="DataButton" Click="DataButton_Click"
+                    Tag="{x:Static view:Modules.DataManager}">
+                <StackPanel>
+                    <materialDesign:PackIcon Kind="Database"/>
+                    <TextBlock Text="Data manager"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="JobManagerButton" Click="JobManagerButton_Click"
+                    Tag="{x:Static view:Modules.JobManager}">
+                <StackPanel>
+                    <materialDesign:PackIcon Kind="FormatListBulleted"/>
+                    <TextBlock Text="Job manager"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="IpToGeoButton" Click="IpToGeoButton_Click"
+                    Tag="{x:Static view:Modules.IpToGeoSpecial}">
+                <StackPanel>
+                    <materialDesign:PackIcon Kind="Sync"/>
+                    <TextBlock Text="IP to geo special"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="ServersStatusButton" Click="ServersStatusButton_Click"
+                    Tag="{x:Static view:Modules.ServersStatus}">
+                <StackPanel>
+                    <materialDesign:PackIcon Kind="ServerNetwork"/>
+                    <TextBlock Text="Servers status"/>
+                </StackPanel>
+            </Button>
+
+        </WrapPanel>
+    </Grid>
+</UserControl>

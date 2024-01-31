@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f99e5022-5c96-4c7d-8bf1-0f47ce28fe2d"
+  name="Logic" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="0ab4635f-33ce-4535-8f58-b3ba9193f0fd">
+      <packageMoniker
+        Id="a8467933-2627-4daa-988a-19c4af23caba"
+        LastKnownName="Entities"
+        LastKnownLocation="Package2_1257.uml" />
+    </dependency>
+    <dependency
+      Id="9ce549c1-a50c-4e5a-9004-e5045cfeb253">
+      <packageMoniker
+        Id="4a213839-ae44-4022-acaa-40ae7889be68"
+        LastKnownName="ServiceAccesss"
+        LastKnownLocation="Package1_1257.uml" />
+    </dependency>
+    <dependency
+      Id="6a48fce4-d3bb-4dd6-b54b-b66730edaf96">
+      <packageMoniker
+        Id="84f2713d-6c32-49e6-b34e-956f2d550d27"
+        LastKnownName="Ontology"
+        LastKnownLocation="Package_1259.uml" />
+    </dependency>
+  </suppliersInternal>
+</package>

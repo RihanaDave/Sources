@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="RelationshipBasedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsResultsCountMoreThanThreshold" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Results" nillable="true" type="tns:ArrayOfRelationshipBasedResultsPerSearchedObjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationshipBasedResult" nillable="true" type="tns:RelationshipBasedResult" />
+  <xs:complexType name="ArrayOfRelationshipBasedResultsPerSearchedObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationshipBasedResultsPerSearchedObjects" nillable="true" type="tns:RelationshipBasedResultsPerSearchedObjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelationshipBasedResultsPerSearchedObjects" nillable="true" type="tns:ArrayOfRelationshipBasedResultsPerSearchedObjects" />
+  <xs:complexType name="RelationshipBasedResultsPerSearchedObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotLoadedResults" nillable="true" type="tns:ArrayOfRelationshipBasedNotLoadedResult" />
+      <xs:element minOccurs="0" name="SearchedObjectID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationshipBasedResultsPerSearchedObjects" nillable="true" type="tns:RelationshipBasedResultsPerSearchedObjects" />
+  <xs:complexType name="ArrayOfRelationshipBasedNotLoadedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationshipBasedNotLoadedResult" nillable="true" type="tns:RelationshipBasedNotLoadedResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelationshipBasedNotLoadedResult" nillable="true" type="tns:ArrayOfRelationshipBasedNotLoadedResult" />
+  <xs:complexType name="RelationshipBasedNotLoadedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RelationshipID" type="xs:long" />
+      <xs:element minOccurs="0" name="TargetObjectID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationshipBasedNotLoadedResult" nillable="true" type="tns:RelationshipBasedNotLoadedResult" />
+  <xs:complexType name="EventBasedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsResultsCountMoreThanThreshold" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Results" nillable="true" type="tns:ArrayOfEventBasedResultsPerSearchedObjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventBasedResult" nillable="true" type="tns:EventBasedResult" />
+  <xs:complexType name="ArrayOfEventBasedResultsPerSearchedObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventBasedResultsPerSearchedObjects" nillable="true" type="tns:EventBasedResultsPerSearchedObjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventBasedResultsPerSearchedObjects" nillable="true" type="tns:ArrayOfEventBasedResultsPerSearchedObjects" />
+  <xs:complexType name="EventBasedResultsPerSearchedObjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotLoadedResults" nillable="true" type="tns:ArrayOfEventBasedNotLoadedResult" />
+      <xs:element minOccurs="0" name="SearchedObjectID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventBasedResultsPerSearchedObjects" nillable="true" type="tns:EventBasedResultsPerSearchedObjects" />
+  <xs:complexType name="ArrayOfEventBasedNotLoadedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventBasedNotLoadedResult" nillable="true" type="tns:EventBasedNotLoadedResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventBasedNotLoadedResult" nillable="true" type="tns:ArrayOfEventBasedNotLoadedResult" />
+  <xs:complexType name="EventBasedNotLoadedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstRealationshipID" type="xs:long" />
+      <xs:element minOccurs="0" name="SecondRealationshipID" type="xs:long" />
+      <xs:element minOccurs="0" name="TargetObjectID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventBasedNotLoadedResult" nillable="true" type="tns:EventBasedNotLoadedResult" />
+  <xs:complexType name="PropertyBasedResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsResultsCountMoreThanThreshold" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Results" nillable="true" type="tns:ArrayOfPropertyBasedResultsPerSearchedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyBasedResult" nillable="true" type="tns:PropertyBasedResult" />
+  <xs:complexType name="ArrayOfPropertyBasedResultsPerSearchedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertyBasedResultsPerSearchedProperty" nillable="true" type="tns:PropertyBasedResultsPerSearchedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertyBasedResultsPerSearchedProperty" nillable="true" type="tns:ArrayOfPropertyBasedResultsPerSearchedProperty" />
+  <xs:complexType name="PropertyBasedResultsPerSearchedProperty">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="LoadedResults" nillable="true" type="q1:ArrayOfKProperty" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NotLoadedResultPropertyIDs" nillable="true" type="q2:ArrayOflong" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="SearchedProperty" nillable="true" type="q3:KProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyBasedResultsPerSearchedProperty" nillable="true" type="tns:PropertyBasedResultsPerSearchedProperty" />
+</xs:schema>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<<<<<<< HEAD
+<<<<<<< HEAD:Sources/Servers/Search Server/GPAS.SearchServer.Data/Service References/DispatchService/GPAS.Dispatch.Entities.Publish.xsd
+  <xs:import schemaLocation="" namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+=======
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+>>>>>>> واسط_کاربری_جدید:Sources/Servers/Horizon/GPAS.Horizon.Access/Service References/DispatchService/GPAS.Dispatch.Entities.Publish.xsd
+=======
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+>>>>>>> واسط_کاربری_جدید
+  <xs:complexType name="AddedConcepts">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedMedias" nillable="true" type="q1:ArrayOfKMedia" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedObjects" nillable="true" type="q2:ArrayOfKObject" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedProperties" nillable="true" type="q3:ArrayOfKProperty" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedRelationships" nillable="true" type="q4:ArrayOfRelationshipBaseKlink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddedConcepts" nillable="true" type="tns:AddedConcepts" />
+  <xs:complexType name="ModifiedConcepts">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="DeletedMedias" nillable="true" type="q5:ArrayOfKMedia" />
+      <xs:element minOccurs="0" name="ModifiedProperties" nillable="true" type="tns:ArrayOfModifiedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifiedConcepts" nillable="true" type="tns:ModifiedConcepts" />
+  <xs:complexType name="ArrayOfModifiedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifiedProperty" nillable="true" type="tns:ModifiedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifiedProperty" nillable="true" type="tns:ArrayOfModifiedProperty" />
+  <xs:complexType name="ModifiedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerObjectID" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifiedProperty" nillable="true" type="tns:ModifiedProperty" />
+  <xs:complexType name="ArrayOfResolvedObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResolvedObject" nillable="true" type="tns:ResolvedObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResolvedObject" nillable="true" type="tns:ArrayOfResolvedObject" />
+  <xs:complexType name="ResolvedObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MatchedProperties" nillable="true" type="tns:ArrayOfMatchedProperty" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResolutionCondidateObjectIDs" nillable="true" type="q6:ArrayOflong" />
+      <xs:element minOccurs="0" name="ResolutionMasterObjectID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResolvedObject" nillable="true" type="tns:ResolvedObject" />
+  <xs:complexType name="ArrayOfMatchedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchedProperty" nillable="true" type="tns:MatchedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchedProperty" nillable="true" type="tns:ArrayOfMatchedProperty" />
+  <xs:complexType name="MatchedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchedProperty" nillable="true" type="tns:MatchedProperty" />
+  <xs:complexType name="PublishResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HorizonServerSyncDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="HorizonServerSynchronized" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RepositoryStoreDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="SearchServerSyncDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="SearchServerSynchronized" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublishResult" nillable="true" type="tns:PublishResult" />
+</xs:schema>

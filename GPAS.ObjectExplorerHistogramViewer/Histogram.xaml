@@ -1,0 +1,334 @@
+﻿<UserControl x:Class="GPAS.ObjectExplorerHistogramViewer.Histogram"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:convertors="clr-namespace:GPAS.ObjectExplorerHistogramViewer.Convertors"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="500">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+            <convertors:BooleanToVisibilityConverter x:Key="booleanToCollapsedVisibilityConverter"/>
+            <convertors:InverseBooleanToVisibillityConverter x:Key="inverseBooleanToVisibillityConverter"/>
+            <convertors:KeyValueTypeToVisibilityConverter x:Key="keyValueTypeToVisibilityConverter"/>
+            <convertors:ChangeHistogramShowingSizeTypeToVisibilityConverter x:Key="changeHistogramShowingSizeTypeToVisibilityConverter"/>
+            <convertors:LowerBoundTypeToVisibilityConverter x:Key="lowerBoundTypeToVisibilityConverter"/>
+
+            <Style x:Key="textBlockStyle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="TextAlignment" Value="Left"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
+            
+            <DataTemplate x:Key="level2">
+                <Grid Width="{Binding ActualWidth, ElementName=mainGrid, UpdateSourceTrigger=PropertyChanged , Converter={convertors:PercentageConverter}, ConverterParameter='0.9'}"   
+                      MouseDown="mainGrid_MouseDown">
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" 
+                            Grid.Column="0" 
+                            Grid.ColumnSpan="2" 
+                            Background="Gold"
+                            Opacity="0.8"
+                            Visibility="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVisConverter}}"/>
+
+                    <Grid Name="lowerBoundryGrid"
+                          Grid.Row="0"
+                          Background="#FFF3ECA7"
+                          Grid.Column="0"
+                          Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource lowerBoundTypeToVisibilityConverter}}"
+                          Grid.ColumnSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                   Padding="10,0,0,0" 
+                                   Style="{StaticResource textBlockStyle}"
+                                   Text="{Binding MinimumLoadableValueCount, StringFormat=Some properties occur less than {0} times in this data set.}">
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Column="0" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="24"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock VerticalAlignment="Center"
+                               FontSize="12"
+                               Visibility="{Binding CanShowAll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged , Converter={StaticResource booleanToCollapsedVisibilityConverter}}"
+                               IsEnabled="{Binding CanShowAll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               Grid.Row="0" 
+                               Grid.Column="0" 
+                               TextAlignment="Left"
+                               Margin="3"> 
+                        <Hyperlink Name="showAllHyperLink" 
+                                   IsEnabled="{Binding CanShowAll, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                   Click="showAllHyperLink_Click">
+                            Show All
+                        </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center"
+                               FontSize="12"
+                               Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged , Converter={StaticResource changeHistogramShowingSizeTypeToVisibilityConverter}}"
+                               IsEnabled="{Binding CanShowMore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               Grid.Row="0" 
+                               Grid.Column="1" 
+                               Padding="10,0,0,0"
+                               TextAlignment="Left"
+                               Margin="3"> 
+                        <Hyperlink Name="showMoreHyperLink" 
+                                   IsEnabled="{Binding CanShowMore, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                   Click="showMoreHyperLink_Click">
+                            Show More
+                        </Hyperlink>
+                        </TextBlock>
+
+                        <TextBlock VerticalAlignment="Center"
+                               FontSize="12" 
+                               Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource changeHistogramShowingSizeTypeToVisibilityConverter}}"
+                               IsEnabled="{Binding CanShowFewer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                               
+                               Grid.Row="0" 
+                               Grid.Column="2"
+                               TextAlignment="Left"
+                               Padding="10,0,0,0"
+                               Margin="3"> 
+                        <Hyperlink Name="showFewerHyperLink" 
+                                   IsEnabled="{Binding CanShowFewer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   
+                                   Click="showFewerHyperLink_Click">
+                            Show Fewer
+                        </Hyperlink>
+                        </TextBlock>
+                        
+                        <Image Source="{Binding Path=Icon}"  
+                           Height="24" 
+                           Width="24"
+                           Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged , Converter={StaticResource keyValueTypeToVisibilityConverter}}"                           
+                           Grid.Column="3"
+                           VerticalAlignment="Stretch" 
+                           HorizontalAlignment="Stretch"/>
+
+                        <TextBlock Text="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                               Style="{StaticResource textBlockStyle}"
+                               ToolTip="{Binding Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged , Converter={StaticResource keyValueTypeToVisibilityConverter}}"
+                               TextAlignment="Left"                               
+                               TextWrapping="NoWrap" 
+                               TextTrimming="WordEllipsis" 
+                               Padding="10,0,0,0"
+                               Grid.Column="4"
+                               Margin="2,1,2,1"/>
+
+                        <TextBlock Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                               Style="{StaticResource textBlockStyle}"
+                               ToolTip="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged , Converter={StaticResource keyValueTypeToVisibilityConverter}}"
+                               TextAlignment="Right"
+                               TextWrapping="NoWrap" 
+                               TextTrimming="WordEllipsis" 
+                               Padding="10,0,0,0"
+                               Grid.Column="5"
+                               Margin="2,1,2,1"/>
+
+                    </Grid>
+
+                    <Grid Grid.Column="1" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ProgressBar Name="progressBar" 
+                                     Grid.Column="0"
+                                     HorizontalAlignment="Stretch"
+                                     Margin="2" 
+                                     Minimum="0" 
+                                     Maximum="{Binding HistogramMax, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                     Value="{Binding HistogramPercent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                     Visibility="{Binding KeyValueType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged , Converter={StaticResource keyValueTypeToVisibilityConverter}}"
+                                     VerticalContentAlignment="Stretch"
+                                     Foreground="#FF45AEF7"/>
+                    </Grid>
+                </Grid>
+            </DataTemplate>
+
+            <HierarchicalDataTemplate x:Key="level1"
+                                      ItemsSource="{Binding ShowingHistogramKeyValuePairs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      ItemTemplate="{StaticResource level2}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Path=SubCategory}"
+                               Style="{StaticResource textBlockStyle}"
+                               FontSize="16"/>
+
+                    <TextBlock Grid.Column="1" 
+                               Padding="10,0,0,0"
+                           VerticalAlignment="Center">
+                        <Run Text= "("/>                                                                                                                                            
+                        <Run Text= "{Binding ShowingItemsCount , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>                                                                                                                        
+                        <Run Text= "/"/>
+                        <Run Text="{Binding TotalItemsCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Run Text= ")"/>
+                    </TextBlock>
+                </Grid>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" >
+        <Grid Name="mainGrid" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Row 0-->
+            <Grid Name="headerGrid"
+                  Height="80"
+                  Grid.Row="0" 
+                  Background="#FFF0ECEC" 
+                  Visibility="{Binding ShowHeader, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource booleanToCollapsedVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="{Binding Icon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" />
+                    <TextBlock Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                           Grid.Row="1" 
+                           FontSize="18"
+                           TextTrimming="WordEllipsis"
+                           Grid.Column="1"
+                           FontWeight="Bold"
+                           TextAlignment="Left"
+                           VerticalAlignment="Stretch"/>
+                    <Label Content="{Binding ItemCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                   Grid.Row="2" 
+                       FontSize="18"
+                   Grid.Column="1"
+                   HorizontalContentAlignment="Left"
+                   VerticalAlignment="Stretch"
+                   VerticalContentAlignment="Top"/>
+                </Grid>
+
+
+                <Button x:Name="btnSnapShot" Grid.Column="1"  Margin="5 0 5 0" Padding="6" VerticalAlignment="Center" ToolTip="Take Snapshot"
+                            FontFamily="FontAwesome" FontSize="16" Content="&#xF030;" Click="btnSnapShot_Click"
+                            />
+            </Grid>
+
+            <Label Name="NothingToPreviewPromptLabelForSearchResults"
+               Grid.Row="1"
+               Margin="3"
+               Background="White" 
+               Foreground="Silver" 
+               VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Center" 
+               FontStyle="Italic"
+               Visibility="Collapsed"
+               Content="No Preview Data Available"/>
+
+
+            <ItemsControl Name="HistogramSuperCategoryItemsControl" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <!--Row 0-->
+                            <Grid Grid.Row="0">
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FF494444" Offset="0.7"/>
+                                        <GradientStop Color="#FF666464"/>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="170"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding SuperCategory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                           Foreground="White"
+                                           FontSize="18" 
+                                           TextAlignment="Left"
+                                           Padding="10,0,0,0"
+                                           VerticalAlignment="Center"/>
+                                <TextBlock VerticalAlignment="Center"
+                                       FontSize="14" 
+                                       Foreground="White" 
+                                       Grid.Row="0" 
+                                       Grid.Column="1" 
+                                       TextAlignment="Right"
+                                       Padding="0,0,10,0"> 
+                                <Hyperlink Name="clearSelectionHyperLink" Foreground="White" Click="clearSelectionHyperLink_Click">
+                                    Clear Selection
+                                </Hyperlink>
+                                </TextBlock>
+                            </Grid>
+
+
+                            <!--Row 1-->
+                            <Grid Name="treeviewGrid" Background="#FFF0F0F0" Grid.Row="2" >
+                                <TreeView Name="categoryTreeview"                                          
+                                              Focusable="True" 
+                                              Background="Transparent"
+                                              ItemsSource="{Binding HistogramSubCategories, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                              ItemTemplate="{StaticResource level1}">
+                                    <TreeView.Resources>
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                                    Color="Transparent" />
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                                    Color="Black" />
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}"
+                                                    Color="Transparent" />
+                                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}"
+                                                    Color="Black" />
+                                    </TreeView.Resources>
+                                    <TreeView.ItemContainerStyle>
+                                        <Style TargetType="TreeViewItem">
+                                            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                        </Style>
+                                    </TreeView.ItemContainerStyle>
+                                </TreeView>
+
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,2595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DataSet" nillable="true">
+    <xs:complexType>
+      <xs:annotation>
+        <xs:appinfo>
+          <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </xs:appinfo>
+      </xs:annotation>
+      <xs:sequence>
+        <xs:element ref="xs:schema" />
+        <xs:any />
+=======
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Search" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.SearchAround" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.FilterSearch" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Jobs" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl.Groups" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import namespace="http://schemas.microsoft.com/Message" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" />
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+=======
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.TextualSearch" />
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+  <xs:element name="GetObjectListById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbObjectIDs" nillable="true" type="q1:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectListByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetObjectListByIdResult" nillable="true" type="q2:ArrayOfKObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyForObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="kObject" nillable="true" type="q3:KObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyForObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetPropertyForObjectResult" nillable="true" type="q4:ArrayOfKProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyForObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbObjIDs" nillable="true" type="q5:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyForObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetPropertyForObjectsResult" nillable="true" type="q6:ArrayOfKProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyListById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbOPropertyIDs" nillable="true" type="q7:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertyListByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetPropertyListByIdResult" nillable="true" type="q8:ArrayOfKProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectsId" nillable="true" type="q9:ArrayOflong" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertiesType" nillable="true" type="q10:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetSpecifiedPropertiesOfObjectsByTypesResult" nillable="true" type="q11:ArrayOfKProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypeAndValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q12:ArrayOflong" />
+        <xs:element minOccurs="0" name="propertiesTypeUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="propertiesValue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypeAndValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetSpecifiedPropertiesOfObjectsByTypeAndValueResult" nillable="true" type="q13:ArrayOfKProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLinksSourcedByObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="kObject" nillable="true" type="q14:KObject" />
+        <xs:element minOccurs="0" name="relationshipTypeURI" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLinksSourcedByObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetLinksSourcedByObjectResult" nillable="true" type="q15:ArrayOfRelationshipBaseKlink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipListById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbRelationshipIDs" nillable="true" type="q16:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipListByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetRelationshipListByIdResult" nillable="true" type="q17:ArrayOfRelationshipBaseKlink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectID" type="xs:long" />
+        <xs:element minOccurs="0" name="typeURI" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetRelationshipsBySourceObjectResult" nillable="true" type="q18:ArrayOfRelationshipBaseKlink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingRelationship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="typeURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="source" type="xs:long" />
+        <xs:element minOccurs="0" name="target" type="xs:long" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="direction" type="q19:LinkDirection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingRelationshipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetExistingRelationshipResult" nillable="true" type="q20:RelationshipBaseKlink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaUrisForObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaUrisForObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="GetMediaUrisForObjectResult" nillable="true" type="q21:ArrayOfKMedia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedGraphs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedGraphsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetPublishedGraphsResult" nillable="true" type="q22:ArrayOfKGraphArrangement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedGraphImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kGraphArrangementID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedGraphImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPublishedGraphImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedGraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kGraphArrangementID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPublishedGraphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPublishedGraphResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuickSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QuickSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="QuickSearchResult" nillable="true" type="q23:ArrayOfKObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Search" minOccurs="0" name="searchModel" nillable="true" type="q24:SearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Search" minOccurs="0" name="SearchResult" nillable="true" type="q25:ArrayOfSearchResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalTextDocResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Search" minOccurs="0" name="searchModel" nillable="true" type="q26:SearchModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalTextDocResultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTotalTextDocResultsResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformFilterSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stream" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="count" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformFilterSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PerformFilterSearchResult" nillable="true" type="q27:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformSelectMatching">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stream" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ObjectIDs" nillable="true" type="q28:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformSelectMatchingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PerformSelectMatchingResult" nillable="true" type="q29:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjectIDs" nillable="true" type="q30:ArrayOflong" />
+        <xs:element minOccurs="0" name="totalResultsThreshold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedEntitiesResult" nillable="true" type="q31:RelationshipBasedResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjectIDs" nillable="true" type="q32:ArrayOflong" />
+        <xs:element minOccurs="0" name="totalResultsThreshold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedDocumentsResult" nillable="true" type="q33:RelationshipBasedResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjectIDs" nillable="true" type="q34:ArrayOflong" />
+        <xs:element minOccurs="0" name="totalResultsThreshold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedEventsResult" nillable="true" type="q35:RelationshipBasedResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntitiesAppearedInEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjectIDs" nillable="true" type="q36:ArrayOflong" />
+        <xs:element minOccurs="0" name="totalResultsThreshold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntitiesAppearedInEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedEntitiesAppearedInEventsResult" nillable="true" type="q37:EventBasedResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPropertiesSameWith">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="properties" nillable="true" type="q38:ArrayOfKProperty" />
+        <xs:element minOccurs="0" name="loadNResults" type="xs:int" />
+        <xs:element minOccurs="0" name="totalResultsThreshold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPropertiesSameWithResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindPropertiesSameWithResult" nillable="true" type="q39:PropertyBasedResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformCustomSearchAround">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q40:ArrayOflong" />
+        <xs:element minOccurs="0" name="serializedCustomSearchAroundCriteria" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="totalResultsThreshold" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformCustomSearchAroundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GPAS.SearchAround" minOccurs="0" name="PerformCustomSearchAroundResult" nillable="true" type="q41:CustomSearchAroundResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeBasedResolutionCandidates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve" minOccurs="0" name="linkingProperties" nillable="true" type="q42:ArrayOfLinkingProperty" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" minOccurs="0" name="importingObjects" nillable="true" type="q43:ArrayOfImportingObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTypeBasedResolutionCandidatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve" minOccurs="0" name="GetTypeBasedResolutionCandidatesResult" nillable="true" type="q44:ArrayOfGlobalResolutionCandidates" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoCircleSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" minOccurs="0" name="circleSearchCriteria" nillable="true" type="q45:CircleSearchCriteria" />
+        <xs:element minOccurs="0" name="maxResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoCircleSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PerformGeoCircleSearchResult" nillable="true" type="q46:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoPolygonSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" minOccurs="0" name="polygonSearchCriteria" nillable="true" type="q47:PolygonSearchCriteria" />
+        <xs:element minOccurs="0" name="maxResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoPolygonSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PerformGeoPolygonSearchResult" nillable="true" type="q48:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoCircleFilterSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" minOccurs="0" name="circleSearchCriteria" nillable="true" type="q49:CircleSearchCriteria" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GPAS.FilterSearch" minOccurs="0" name="filterSearchCriteria" nillable="true" type="q50:CriteriaSet" />
+        <xs:element minOccurs="0" name="maxResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoCircleFilterSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PerformGeoCircleFilterSearchResult" nillable="true" type="q51:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoPolygonFilterSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GPAS.GeoSearch" minOccurs="0" name="polygonSearchCriteria" nillable="true" type="q52:PolygonSearchCriteria" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GPAS.FilterSearch" minOccurs="0" name="filterSearchCriteria" nillable="true" type="q53:CriteriaSet" />
+        <xs:element minOccurs="0" name="maxResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformGeoPolygonFilterSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PerformGeoPolygonFilterSearchResult" nillable="true" type="q54:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Publish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="addedConcept" nillable="true" type="q55:AddedConcepts" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="modifiedConcept" nillable="true" type="q56:ModifiedConcepts" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="resolvedObjects" nillable="true" type="q57:ArrayOfResolvedObject" />
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="isContinousPublish" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="PublishResult" nillable="true" type="q58:PublishResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinalizeContinousPublish">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinalizeContinousPublishResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanPerformNewPublish">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CanPerformNewPublishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CanPerformNewPublishResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewDataSourceToRepositoryServer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dsId" type="xs:long" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="type" type="q59:DataSourceType" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="acl" nillable="true" type="q60:ACL" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewDataSourceToRepositoryServerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SynchronizeNewDataSourceInSearchServer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dsId" type="xs:long" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="type" type="q61:DataSourceType" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="acl" nillable="true" type="q62:ACL" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SynchronizeNewDataSourceInSearchServerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishGraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GraphImage" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="GraphArrangement" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="nodesCount" type="xs:int" />
+        <xs:element minOccurs="0" name="timeCreated" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishGraphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="PublishGraphResult" nillable="true" type="q63:KGraphArrangement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePublishedGraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="graphID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePublishedGraphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePublishedGraphResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewObjectId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewObjectIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewObjectIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewObjectIdRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="count" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewObjectIdRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewObjectIdRangeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewPropertyId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewPropertyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewPropertyIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewPropertyIdRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="count" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewPropertyIdRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewPropertyIdRangeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewRelationId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewRelationIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewRelationIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewRelationIdRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="count" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewRelationIdRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewRelationIdRangeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMediaId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMediaIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewMediaIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMediaIdRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="count" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMediaIdRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewMediaIdRangeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewGraphId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewGraphIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewGraphIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewInvestigationId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewInvestigationIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewInvestigationIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewDataSourceId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewDataSourceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewDataSourceIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewImportRequests">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="requestsData" nillable="true" type="q64:ArrayOfSemiStructuredDataImportRequestMetadata" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewImportRequestsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobRequests">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobRequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Jobs" minOccurs="0" name="GetJobRequestsResult" nillable="true" type="q65:ArrayOfJobRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="RemoveGlobalResolutionSuite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" minOccurs="0" name="accessDetail" nillable="true" type="q66:AccessDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveGlobalResolutionSuiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveGlobalResolutionSuiteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGlobalResolutionSuite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="resolutionSuiteFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGlobalResolutionSuiteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" minOccurs="0" name="accessDetail" nillable="true" type="q67:AccessDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGlobalResolutionSuiteResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuiteList">
+=======
+  <xs:element name="SaveGlobalResolutionSuite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="resolutionSuiteFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGlobalResolutionSuiteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" minOccurs="0" name="accessDetail" nillable="true" type="q66:AccessDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGlobalResolutionSuiteResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuiteList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGlobalResolutionSuiteListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" minOccurs="0" name="GetGlobalResolutionSuiteListResult" nillable="true" type="q67:ArrayOfAccessDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUriOfDatabasesForImport">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetGlobalResolutionSuiteListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" minOccurs="0" name="GetGlobalResolutionSuiteListResult" nillable="true" type="q68:ArrayOfAccessDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUriOfDatabasesForImport">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUriOfDatabasesForImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUriOfDatabasesForImportResult" nillable="true" type="q69:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTablesAndViewsOfDatabaseForImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dbForImportURI" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTablesAndViewsOfDatabaseForImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTablesAndViewsOfDatabaseForImportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartStreamingIngestion">
+=======
+  <xs:element name="GetUriOfDatabasesForImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUriOfDatabasesForImportResult" nillable="true" type="q68:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTablesAndViewsOfDatabaseForImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dbForImportURI" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTablesAndViewsOfDatabaseForImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTablesAndViewsOfDatabaseForImportResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartStreamingIngestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q69:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartStreamingIngestionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopStreamingIngestion">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q70:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="StartStreamingIngestionResponse">
+=======
+  <xs:element name="StopStreamingIngestionResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="StopStreamingIngestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q71:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StopStreamingIngestionResponse">
+=======
+  <xs:element name="GetJobsStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobsStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetJobsStatusResult" nillable="true" type="q71:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStreamJobsStatus">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetJobsStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobsStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetJobsStatusResult" nillable="true" type="q72:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStreamJobsStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStreamJobsStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetStreamJobsStatusResult" nillable="true" type="q73:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviewDataFromDatalake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviewDataFromDatalakeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPreviewDataFromDatalakeResult" nillable="true" type="q74:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSlice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:string" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="searchCriterias" nillable="true" type="q75:ArrayOfSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSliceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatalakeSliceResult" nillable="true" type="q76:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatalakeCategoriesResult" nillable="true" type="q77:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSliceHeaders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSliceHeadersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatalakeSliceHeadersResult" nillable="true" type="q78:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertFileIngestionJobStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="ingestionFile" nillable="true" type="q79:IngestionFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertFileIngestionJobStatusResponse">
+=======
+  <xs:element name="GetStreamJobsStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetStreamJobsStatusResult" nillable="true" type="q72:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviewDataFromDatalake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPreviewDataFromDatalakeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPreviewDataFromDatalakeResult" nillable="true" type="q73:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSlice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:string" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="searchCriterias" nillable="true" type="q74:ArrayOfSearchCriteria" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSliceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatalakeSliceResult" nillable="true" type="q75:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatalakeCategoriesResult" nillable="true" type="q76:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSliceHeaders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDatalakeSliceHeadersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDatalakeSliceHeadersResult" nillable="true" type="q77:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertFileIngestionJobStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="ingestionFile" nillable="true" type="q78:IngestionFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertFileIngestionJobStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertStreamIngestionStartStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q79:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertStreamIngestionStartStatusResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="InsertStreamIngestionStartStatus">
+=======
+  <xs:element name="InsertStreamIngestionStopStatus">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q80:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="InsertStreamIngestionStartStatusResponse">
+=======
+  <xs:element name="InsertStreamIngestionStopStatusResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="InsertStreamIngestionStopStatus">
+=======
+  <xs:element name="IsListenProcessorExist">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q81:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="InsertStreamIngestionStopStatusResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsListenProcessorExist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" minOccurs="0" name="streamingIngestion" nillable="true" type="q82:StreamingIngestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsListenProcessorExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsListenProcessorExistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authenticate">
+=======
+  <xs:element name="IsListenProcessorExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsListenProcessorExistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthenticateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDispatchCurrentDateTime">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AuthenticateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDispatchCurrentDateTime">
+=======
+  <xs:element name="GetDispatchCurrentDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDispatchCurrentDateTimeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroups">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetDispatchCurrentDateTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDispatchCurrentDateTimeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroups">
+=======
+  <xs:element name="GetGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/GPAS.AccessControl.Groups" minOccurs="0" name="GetGroupsResult" nillable="true" type="q82:ArrayOfGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClassificationBasedPermissionForGroups">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="groupNames" nillable="true" type="q83:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/GPAS.AccessControl.Groups" minOccurs="0" name="GetGroupsResult" nillable="true" type="q83:ArrayOfGroupInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClassificationBasedPermissionForGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="groupNames" nillable="true" type="q84:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetClassificationBasedPermissionForGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetClassificationBasedPermissionForGroupsResult" nillable="true" type="q85:ArrayOfGroupClassificationBasedPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsOfUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsOfUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetGroupsOfUserResult" nillable="true" type="q86:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourceACL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dataSourceIDs" nillable="true" type="q87:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourceACLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetDataSourceACLResult" nillable="true" type="q88:ArrayOfDataSourceACL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReadableSubsetOfConcepts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objIDs" nillable="true" type="q89:ArrayOflong" />
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="relationshipIDs" nillable="true" type="q90:ArrayOflong" />
+        <xs:element xmlns:q91="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="groupNames" nillable="true" type="q91:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReadableSubsetOfConceptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetReadableSubsetOfConceptsResult" nillable="true" type="q92:TupleOfArrayOflongArrayOflong0dMmj3_Sh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaPathContent">
+=======
+  <xs:element name="GetClassificationBasedPermissionForGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetClassificationBasedPermissionForGroupsResult" nillable="true" type="q84:ArrayOfGroupClassificationBasedPermission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsOfUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupsOfUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetGroupsOfUserResult" nillable="true" type="q85:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourceACL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dataSourceIDs" nillable="true" type="q86:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourceACLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetDataSourceACLResult" nillable="true" type="q87:ArrayOfDataSourceACL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReadableSubsetOfConcepts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objIDs" nillable="true" type="q88:ArrayOflong" />
+        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="relationshipIDs" nillable="true" type="q89:ArrayOflong" />
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="groupNames" nillable="true" type="q90:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReadableSubsetOfConceptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="GetReadableSubsetOfConceptsResult" nillable="true" type="q91:TupleOfArrayOflongArrayOflong0dMmj3_Sh" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaPathContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaPathContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetMediaPathContentResult" nillable="true" type="q92:ArrayOfDirectoryContent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMediaDirectory">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetMediaPathContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetMediaPathContentResult" nillable="true" type="q93:ArrayOfDirectoryContent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMediaDirectory">
+=======
+  <xs:element name="DeleteMediaDirectoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMediaDirectoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMediaDirectory">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="DeleteMediaDirectoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMediaDirectoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMediaDirectory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMediaDirectoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMediaDirectoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameMediaDirectory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sourcePath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameMediaDirectoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RenameMediaDirectoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMediaFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMediaFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadMediaFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMediaFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileToUpload" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMediaFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadMediaFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+        <xs:element minOccurs="0" name="docContent" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFileResponse">
+=======
+  <xs:element name="CreateMediaDirectoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMediaDirectoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameMediaDirectory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sourcePath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameMediaDirectoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RenameMediaDirectoryResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMediaFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadMediaFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadMediaFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMediaFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileToUpload" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="targetPath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMediaFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadMediaFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+        <xs:element minOccurs="0" name="docContent" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDataSourceFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="dataSourceContent" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDataSourceFileResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="UploadDataSourceFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="dataSourceContent" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDataSourceFileResponse">
+=======
+  <xs:element name="UploadFileAsDocumentAndDataSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileContent" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileAsDocumentAndDataSourceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFromJobShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+        <xs:element minOccurs="0" name="docJobSharePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFromJobShareResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="UploadFileAsDocumentAndDataSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileContent" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileAsDocumentAndDataSourceResponse">
+=======
+  <xs:element name="UploadDataSourceFromJobShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="dataSourceJobSharePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDataSourceFromJobShareResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="UploadDocumentFromJobShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+        <xs:element minOccurs="0" name="docJobSharePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDocumentFromJobShareResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDataSourceFromJobShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="dataSourceJobSharePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadDataSourceFromJobShareResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDocumentFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDocumentFileResponse">
+=======
+  <xs:element name="DownloadDocumentFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDocumentFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDocumentFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDataSourceFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDataSourceFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDataSourceFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOntology">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDocumentFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="DownloadDataSourceFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadDataSourceFileResponse">
+=======
+  <xs:element name="GetOntologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.microsoft.com/Message" name="GetOntologyResult" type="q93:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIcon">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadDataSourceFileResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetOntology">
+=======
+  <xs:element name="GetIconResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.microsoft.com/Message" name="GetIconResult" type="q94:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetOntologyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.microsoft.com/Message" name="GetOntologyResult" type="q94:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIcon">
+=======
+  <xs:element name="UpdateOntologyFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.microsoft.com/Message" name="reader" type="q95:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOntologyFileResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetIconResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.microsoft.com/Message" name="GetIconResult" type="q95:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOntologyFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.microsoft.com/Message" name="reader" type="q96:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOntologyFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tileSource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zoomLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="x" type="xs:long" />
+        <xs:element minOccurs="0" name="y" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMapTileImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeoLocationBaseOnIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeoLocationBaseOnIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetGeoLocationBaseOnIPResult" nillable="true" type="q97:GeographicalLocationModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGeoSpecialInformationBasedOnIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" type="xs:double" />
+        <xs:element minOccurs="0" name="longitude" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGeoSpecialInformationBasedOnIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertGeoSpecialInformationBasedOnIPResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileSources">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMapTileSourcesResult" nillable="true" type="q98:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentPlaneText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentPlaneTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDocumentPlaneTextResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetectLanguage">
+=======
+  <xs:element name="GetMapTileImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tileSource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="zoomLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="x" type="xs:long" />
+        <xs:element minOccurs="0" name="y" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMapTileImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeoLocationBaseOnIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeoLocationBaseOnIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetGeoLocationBaseOnIPResult" nillable="true" type="q96:GeographicalLocationModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGeoSpecialInformationBasedOnIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" type="xs:double" />
+        <xs:element minOccurs="0" name="longitude" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGeoSpecialInformationBasedOnIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertGeoSpecialInformationBasedOnIPResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileSources">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMapTileSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetMapTileSourcesResult" nillable="true" type="q97:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentPlaneText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="docID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentPlaneTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDocumentPlaneTextResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetectLanguage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DetectLanguageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="DetectLanguageResult" nillable="true" type="q98:ArrayOfDetectedLanguage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagCloud">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="DetectLanguageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="DetectLanguageResult" nillable="true" type="q99:ArrayOfDetectedLanguage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagCloud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagCloudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="GetTagCloudResult" nillable="true" type="q100:ArrayOfTagCloudKeyPhrase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageTagCloud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="language" type="q101:Language" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageTagCloudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="GetLanguageTagCloudResult" nillable="true" type="q102:ArrayOfTagCloudKeyPhrase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummarize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="summarizationRequest" nillable="true" type="q103:SummarizationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummarizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSummarizeResult" nillable="true" type="q104:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageSummarize">
+=======
+  <xs:element name="GetTagCloudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="GetTagCloudResult" nillable="true" type="q99:ArrayOfTagCloudKeyPhrase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageTagCloud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="language" type="q100:Language" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageTagCloudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="GetLanguageTagCloudResult" nillable="true" type="q101:ArrayOfTagCloudKeyPhrase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummarize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="summarizationRequest" nillable="true" type="q102:SummarizationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSummarizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSummarizeResult" nillable="true" type="q103:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageSummarize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="summarizationRequest" nillable="true" type="q104:SummarizationRequest" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="lang" type="q105:Language" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLanguageSummarizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetLanguageSummarizeResult" nillable="true" type="q106:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsNLPServiceInstalled">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="summarizationRequest" nillable="true" type="q105:SummarizationRequest" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" minOccurs="0" name="lang" type="q106:Language" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetLanguageSummarizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetLanguageSummarizeResult" nillable="true" type="q107:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsNLPServiceInstalled">
+=======
+  <xs:element name="IsNLPServiceInstalledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsNLPServiceInstalledResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSources">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceType" type="xs:long" />
+        <xs:element minOccurs="0" name="star" type="xs:int" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="IsNLPServiceInstalledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsNLPServiceInstalledResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dataSourceType" type="xs:long" />
+        <xs:element minOccurs="0" name="star" type="xs:int" />
+=======
+  <xs:element name="GetDataSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetDataSourcesResult" nillable="true" type="q107:ArrayOfDataSourceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataSources">
+    <xs:complexType>
+      <xs:sequence>
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetDataSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetDataSourcesResult" nillable="true" type="q108:ArrayOfDataSourceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataSources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllDataSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetAllDataSourcesResult" nillable="true" type="q109:ArrayOfDataSourceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceDetection">
+=======
+  <xs:element name="GetAllDataSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetAllDataSourcesResult" nillable="true" type="q108:ArrayOfDataSourceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceDetection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imageFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="extention" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceDetectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" minOccurs="0" name="FaceDetectionResult" nillable="true" type="q109:ArrayOfBoundingBox" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceRecognition">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imageFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="extention" nillable="true" type="xs:string" />
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceDetectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" minOccurs="0" name="FaceDetectionResult" nillable="true" type="q110:ArrayOfBoundingBox" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceRecognition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imageFile" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="extention" nillable="true" type="xs:string" />
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" minOccurs="0" name="boundingBoxs" nillable="true" type="q111:ArrayOfBoundingBox" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceRecognitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" minOccurs="0" name="FaceRecognitionResult" nillable="true" type="q112:ArrayOfRetrievedFaceKObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMachneVisonServiceInstalled">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMachneVisonServiceInstalledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsMachneVisonServiceInstalledResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunStatisticalQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunStatisticalQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" minOccurs="0" name="RunStatisticalQueryResult" nillable="true" type="q113:QueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveObjectIDsByStatisticalQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="PassObjectsCountLimit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveObjectIDsByStatisticalQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RetrieveObjectIDsByStatisticalQueryResult" nillable="true" type="q114:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyValueStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="statQueryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="exploredPropertyTypeUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startOffset" type="xs:int" />
+        <xs:element minOccurs="0" name="resultsLimit" type="xs:int" />
+        <xs:element minOccurs="0" name="minimumCount" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyValueStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" minOccurs="0" name="RetrievePropertyValueStatisticsResult" nillable="true" type="q115:PropertyValueStatistics" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyBarValuesStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="exploredPropertyTypeUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bucketCount" type="xs:long" />
+        <xs:element minOccurs="0" name="minValue" type="xs:double" />
+        <xs:element minOccurs="0" name="maxValue" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyBarValuesStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="RetrievePropertyBarValuesStatisticsResult" nillable="true" type="q116:PropertyBarValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkTypeStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkTypeStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" minOccurs="0" name="RetrieveLinkTypeStatisticsResult" nillable="true" type="q117:LinkTypeStatistics" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkedObjectIDsByStatisticalQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="PassObjectsCountLimit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkedObjectIDsByStatisticalQueryResponse">
+=======
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" minOccurs="0" name="boundingBoxs" nillable="true" type="q110:ArrayOfBoundingBox" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaceRecognitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.ImageProcessing" minOccurs="0" name="FaceRecognitionResult" nillable="true" type="q111:ArrayOfRetrievedFaceKObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMachneVisonServiceInstalled">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMachneVisonServiceInstalledResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsMachneVisonServiceInstalledResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunStatisticalQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RunStatisticalQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" minOccurs="0" name="RunStatisticalQueryResult" nillable="true" type="q112:QueryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveObjectIDsByStatisticalQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="PassObjectsCountLimit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveObjectIDsByStatisticalQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RetrieveObjectIDsByStatisticalQueryResult" nillable="true" type="q113:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyValueStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="statQueryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="exploredPropertyTypeUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startOffset" type="xs:int" />
+        <xs:element minOccurs="0" name="resultsLimit" type="xs:int" />
+        <xs:element minOccurs="0" name="minimumCount" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyValueStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" minOccurs="0" name="RetrievePropertyValueStatisticsResult" nillable="true" type="q114:PropertyValueStatistics" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyBarValuesStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="exploredPropertyTypeUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bucketCount" type="xs:long" />
+        <xs:element minOccurs="0" name="minValue" type="xs:double" />
+        <xs:element minOccurs="0" name="maxValue" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrievePropertyBarValuesStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="RetrievePropertyBarValuesStatisticsResult" nillable="true" type="q115:PropertyBarValues" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkTypeStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkTypeStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" minOccurs="0" name="RetrieveLinkTypeStatisticsResult" nillable="true" type="q116:LinkTypeStatistics" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkedObjectIDsByStatisticalQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="queryByteArray" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="PassObjectsCountLimit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveLinkedObjectIDsByStatisticalQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RetrieveLinkedObjectIDsByStatisticalQueryResult" nillable="true" type="q117:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveInvestigation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="kInvestigation" nillable="true" type="q118:KInvestigation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveInvestigationResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RetrieveLinkedObjectIDsByStatisticalQueryResult" nillable="true" type="q118:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="SaveInvestigation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="kInvestigation" nillable="true" type="q119:KInvestigation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveInvestigationResponse">
+=======
+  <xs:element name="GetSavedInvestigations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationsResponse">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetSavedInvestigationsResult" nillable="true" type="q119:ArrayOfInvestigationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetSavedInvestigations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" minOccurs="0" name="GetSavedInvestigationsResult" nillable="true" type="q120:ArrayOfInvestigationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationImage">
+=======
+  <xs:element name="GetSavedInvestigationImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSavedInvestigationImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationStatus">
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<<<<<<< HEAD:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service.xsd
+  <xs:element name="GetSavedInvestigationImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSavedInvestigationImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSavedInvestigationStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSavedInvestigationStatusResult" nillable="true" type="xs:base64Binary" />
+=======
+  <xs:element name="GetSavedInvestigationStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSavedInvestigationStatusResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformTextualSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stream" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformTextualSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/GPAS.TextualSearch" minOccurs="0" name="PerformTextualSearchResult" nillable="true" type="q120:ArrayOfBaseSearchResult" />
+>>>>>>> جستجوی_اسناد_متنی:Sources/Workspace/WorkspaceServiceAccess/Service References/RemoteService/service2.xsd
+>>>>>>> جستجوی_اسناد_متنی
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

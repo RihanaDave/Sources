@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="f3c7b417-a359-49ae-8497-440002063f2c"
+  name="Presentation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="7a792f27-68ef-4c61-960f-dda8885caa11">
+      <packageMoniker
+        Id="a8467933-2627-4daa-988a-19c4af23caba"
+        LastKnownName="Entities"
+        LastKnownLocation="Package2_1257.uml" />
+    </dependency>
+    <dependency
+      Id="f72b3dc0-7734-4c65-9162-fecb9092485a">
+      <packageMoniker
+        Id="f99e5022-5c96-4c7d-8bf1-0f47ce28fe2d"
+        LastKnownName="Logic"
+        LastKnownLocation="Package_1257.uml" />
+    </dependency>
+    <dependency
+      Id="f1271987-0de7-4d1a-8e16-8d8e4cbaa4a8">
+      <packageMoniker
+        Id="84f2713d-6c32-49e6-b34e-956f2d550d27"
+        LastKnownName="Ontology"
+        LastKnownLocation="Package_1259.uml" />
+    </dependency>
+    <dependency
+      Id="f520a551-c1f7-43c1-a9b4-ce8dcd2b785e">
+      <packageMoniker
+        Id="24aa4c2c-e937-4f97-b229-483d738a8c7b"
+        LastKnownName="GraphViewer"
+        LastKnownLocation="Package_1301.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="daab9749-ee21-416f-8df9-5c2022b5a4dc"
+        LastKnownName="Windows"
+        LastKnownLocation="Package_1339.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="411d067c-edd4-4ec2-b25e-59d391f5e81f"
+        LastKnownName="Applications"
+        LastKnownLocation="Package1_1339.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5a5bffbd-0dd2-4e66-9ba8-4759f2277eaf"
+        LastKnownName="Controls"
+        LastKnownLocation="Package_1340.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,323 @@
+﻿<UserControl x:Class="GPAS.Dispatch.AdminTools.View.UserControls.HorizonIndexManagerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters1="clr-namespace:GPAS.Dispatch.AdminTools.View.Converters"
+             xmlns:ontologypicker="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls.OntologyPicker"
+             xmlns:converters="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls.OntologyPicker.Converters" xmlns:usercontrols="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converters:StringToCollectionStringConverter x:Key="StringToCollectionStringConverter"/>
+        <converters:NullToBooleanConverter x:Key="NullToBooleanConverter"/>
+        <converters1:CollectionCountToVisibilityConverter x:Key="CollectionCountToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid Name="mainGrid" Background="{DynamicResource NormalBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition MinHeight="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition MinHeight="50"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Horizon Index Manager" Grid.Row="0" Style="{StaticResource TabHeader}" />
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Indexes" Grid.Row="0" Style="{StaticResource NormalHeader}" VerticalAlignment="Top"/>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 5">
+
+                <Button Content="Delete all" 
+                    Name="DeleteAllButton" Click="DeleteAllButton_Click">
+                    <Button.Style>
+                        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=IndexesDataGrid, Path=Items.Count}" Value="0">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Content="Refresh" Margin="5 0 0 0" Name="RefreshButton" Click="RefreshButton_Click"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="5"
+                       Visibility="{Binding AllIndexCollection.Count, Converter={StaticResource CollectionCountToVisibilityConverter}}">
+                <Hyperlink IsEnabled="False" Style="{StaticResource MaterialDesignHeadline6Hyperlink}">
+                    There is no index
+                </Hyperlink>
+            </TextBlock>
+
+            <DataGrid Grid.Row="1" Name="IndexesDataGrid" ItemsSource="{Binding AllIndexCollection}" CanUserAddRows="False" 
+                      AutoGenerateColumns="False" CanUserSortColumns="True" IsReadOnly="True" Margin="10 0">
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" 
+                       TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="{DynamicResource SecondBackground}" />
+                        <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="Padding" Value="5" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                    <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="" SortMemberPath="IdToShow">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding IdToShow}" VerticalAlignment="Center" FontSize="14"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Object" SortMemberPath="TypeUri" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" MaxWidth="25" MaxHeight="25" VerticalAlignment="Center"
+                                           Margin="0 0 5 0"  Source="{Binding Icon}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding TypeUriToShow}" 
+                                               VerticalAlignment="Center" FontSize="14"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Properties" Width="3*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ListView ItemsSource="{Binding Properties}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                                          VerticalAlignment="Center">
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel HorizontalAlignment="Left" Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                            <Setter Property="Padding" Value="5"/>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border CornerRadius="5" Background="{DynamicResource NormalBackground}">
+                                                <Grid Margin="5">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Image Grid.Column="1" MaxWidth="20" MaxHeight="20"
+                                                               VerticalAlignment="Center" Source="{Binding Icon}"/>
+
+                                                    <TextBlock Grid.Column="2" Text="{Binding TypeUriToShow}" 
+                                                       VerticalAlignment="Center" FontSize="12"/>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Actions" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}" ToolTip="Edit properties"
+                                            Name="EditButton" Click="EditButton_Click">
+                                        <materialDesign:PackIcon Kind="Edit" Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                                    </Button>
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}" Margin="5 0" ToolTip="Delete"
+                                            Name="IndexDeleteButton" Click="IndexDeleteButton_Click">
+                                        <materialDesign:PackIcon Kind="Multiply" Foreground="red"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <GridSplitter Grid.Row="2" Margin="10 5" Height="4"
+                      VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Create index" Grid.Row="0" Style="{StaticResource NormalHeader}" />
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="You must select an object" Grid.Row="0" Style="{StaticResource NormalTextBlock}" 
+                               Margin="10 10 10 0"/>
+
+                    <ontologypicker:ObjectPickerUserControl
+                        Grid.Row="1" Margin="10 5" x:Name="ObjectPickerUserControl" 
+                        DisplayMode="List" SelectedItemChanged="ObjectPickerUserControl_SelectedItemChanged"/>
+                </Grid>
+
+                <Separator Grid.Column="1" Margin="0 15">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Select one or more properties" Grid.Row="0" Style="{StaticResource NormalTextBlock}" 
+                               Margin="10 10 10 0"/>
+
+                    <ontologypicker:PropertyPickerUserControl 
+                        Grid.Row="1" Margin="10 5" DisplayMode="List"
+                        ObjectTypeUriCollection="{Binding ElementName=ObjectPickerUserControl, Path=SelectedItem.TypeUri,
+                        Converter={StaticResource StringToCollectionStringConverter}}"
+                        IsEnabled="{Binding ElementName=ObjectPickerUserControl, Path=SelectedItem,
+                        Converter={StaticResource NullToBooleanConverter}}"
+                        SelectedItemChanged="PropertyPickerUserControl_SelectedItemChanged"
+                        SelectedItemReselected="PropertyPickerUserControl_SelectedItemReselected"/>
+                </Grid>
+
+                <Separator Grid.Column="3" Margin="0 15">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+
+                <Grid Grid.Column="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Create Index for" Grid.Row="0" Style="{StaticResource NormalTextBlock}" 
+                               Margin="10 10 10 0"/>
+
+                    <Grid Grid.Row="1" Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" MaxWidth="25" MaxHeight="25" VerticalAlignment="Center" Margin="0 0 5 0"
+                               Source="{Binding NewIndex.Icon}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding NewIndex.TypeUriToShow}" 
+                                   VerticalAlignment="Center" FontSize="14"/>
+                    </Grid>
+
+                    <TextBlock Text="on below properties" Grid.Row="2" Style="{StaticResource NormalTextBlock}" 
+                               Margin="10 10 10 0"/>
+
+                    <Grid Grid.Row="3" Margin="10 5"  Background="{DynamicResource SecondBackground}">
+                        <ListView ItemsSource="{Binding NewIndex.Properties}" Name="PropertiesListView"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel HorizontalAlignment="Left" Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                    <Setter Property="Padding" Value="5"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="5" Background="{DynamicResource NormalBackground}">
+                                        <Grid Margin="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Button Style="{StaticResource MaterialDesignIconButton}" Height="25" Width="25"
+                                                    Name="DeletePropertyButton" Click="DeletePropertyButton_Click">
+                                                <materialDesign:PackIcon Kind="Multiply" Foreground="red" Height="20" Width="20"/>
+                                            </Button>
+
+                                            <Image Grid.Column="1" MaxWidth="20" MaxHeight="20"
+                                                   VerticalAlignment="Center" Margin="5 0" Source="{Binding Icon}"/>
+
+                                            <TextBlock Grid.Column="2" Text="{Binding TypeUriToShow}" 
+                                                       VerticalAlignment="Center" FontSize="12"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+
+                    <Button Grid.Row="4" HorizontalAlignment="Right" Content="Create" Margin="10 0 10 5"
+                            Name="CreateIndexButton" Click="CreateIndexButton_Click">
+                        <Button.Style>
+                            <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=PropertiesListView, Path=Items.Count}" Value="0">
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <usercontrols:WaitingUserControl Grid.Row="0" Grid.RowSpan="4" x:Name="WaitiningControl"/>        
+    </Grid>
+</UserControl>

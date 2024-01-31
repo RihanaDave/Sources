@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Storyboard x:Key="OpenMenu">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="SidebarMenu">
+            <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="205"/>
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Storyboard x:Key="CloseMenu">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="SidebarMenu">
+            <EasingDoubleKeyFrame KeyTime="0" Value="205"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="50"/>
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <Storyboard x:Key="EditUserBarExpand">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="UserDetailsGrid">
+            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="350"/>
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    <Storyboard x:Key="EditUserBarCollapse">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="UserDetailsGrid">
+            <EasingDoubleKeyFrame KeyTime="0" Value="350"/>
+            <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+
+</ResourceDictionary>

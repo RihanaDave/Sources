@@ -1,0 +1,119 @@
+﻿<ws:PresentationWindow x:Class="GPAS.Workspace.Presentation.Windows.TagCloudWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ws="clr-namespace:GPAS.Workspace.Presentation.Windows"
+        xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+        xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Windows"
+        xmlns:browser="clr-namespace:GPAS.Workspace.Presentation.Controls.Browser"
+        xmlns:tagCloud="clr-namespace:GPAS.Workspace.Presentation.Controls.TagCloud"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+        mc:Ignorable="d" ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner" 
+        Title="Tag cloud window" >
+    <ws:PresentationWindow.Resources>
+       
+    </ws:PresentationWindow.Resources>
+
+    <Grid Name="mainGrid" Background="{DynamicResource MaterialDesignCardBackground}" >
+        <Grid.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlock}" >
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="FontSize" Value="13"/>
+            </Style>
+            <Style TargetType="ToolTip">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid Name="ContentGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" MinWidth="230"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Name="propertiesGrid" Background="{DynamicResource MaterialDesignCardBackground}" Margin="2 5 2 1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="CheckItem" Margin="2 0 0 0" IsChecked="True"
+                              Grid.Column="0" Checked="CheckItem_Checked" Unchecked="CheckItem_Unchecked">
+                        <TextBlock Text="{x:Static resource:Resources.Properties_}" Margin="5 2"  
+                               VerticalAlignment="Center" Grid.Column="1" FontSize="16"/>
+                    </CheckBox>
+                </Grid>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="10 0">
+                    <ScrollViewer.Resources>
+                        <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+                    </ScrollViewer.Resources>
+                    <ItemsControl Name="peopertiesItemsControl" >
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.Resources>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                        </Style>
+                                    </Grid.Resources>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <CheckBox x:Name="propertySelectionCheckBox" 
+                                              Grid.Row="0" Margin="0 2"
+                                              HorizontalAlignment="Left" 
+                                              VerticalAlignment="Center"
+                                              IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                              Checked="propertySelectionCheckBox_Checked"
+                                              Unchecked="propertySelectionCheckBox_Unchecked"
+                                              VerticalContentAlignment="Center">
+                                        <StackPanel Orientation="Horizontal">
+
+                                            <Image Width="20" Height="20" Margin="5 0 7 0" Source="{Binding PropertyTypeFriendlyIcon, Mode=TwoWay, 
+                                        UpdateSourceTrigger=PropertyChanged}"/>
+
+                                            <TextBlock Text="{Binding PropertyTypeFriendlyTitle, Mode=TwoWay, 
+                                        UpdateSourceTrigger=PropertyChanged}"
+                                               Grid.Column="1" FontSize="14"
+                                               Grid.Row="0" ToolTip="{Binding PropertyTypeFriendlyTitle, Mode=TwoWay, 
+                                        UpdateSourceTrigger=PropertyChanged}"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"/>
+                                        </StackPanel>
+                                    </CheckBox>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+                <Button x:Name="BtnGenerate" Margin="5 5 5 6" Grid.Row="2"
+                        Click="BtnGenerate_Click" Content="{x:Static resource:Resources.Generate}"
+                        IsEnabled="{Binding CanGenerate}"/>
+
+                <waiting:WaitingControl x:Name="WaitingControl"  Grid.Row="0" 
+                                        Grid.RowSpan="3" Message="Loading..."/>
+            </Grid>
+            <Grid  Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <tagCloud:JsTagCloudControl x:Name="tagCloudControl" Grid.Row="0" Margin="10" />
+            </Grid>
+        </Grid> 
+    </Grid>
+</ws:PresentationWindow>

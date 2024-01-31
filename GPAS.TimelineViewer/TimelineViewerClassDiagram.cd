@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.TimelineViewer.BinSize">
+    <Position X="17.5" Y="6.75" Width="1.5" />
+    <Members>
+      <Field Name="daysOfMonth" Hidden="true" />
+      <Field Name="daysOfYear" Hidden="true" />
+      <Method Name="ProcessTimeDuration" Hidden="true" />
+      <Field Name="TicksPerMonth" Hidden="true" />
+      <Field Name="TicksPerYear" Hidden="true" />
+    </Members>
+    <AssociationLine Name="BinScale" Type="GPAS.TimelineViewer.BinScaleLevel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.312" Y="8.882" />
+        <Point X="18.312" Y="9.5" />
+        <Point X="20.5" Y="9.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.368" Y="-0.087" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="TimeAxisLabelsScale" Type="GPAS.TimelineViewer.BinScaleLevel" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.188" Y="8.882" />
+        <Point X="18.188" Y="10.688" />
+        <Point X="20.5" Y="10.688" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.833" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RelatedBinSizesEnum" Type="GPAS.TimelineViewer.BinSizesEnum" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.812" Y="8.882" />
+        <Point X="17.812" Y="11.722" />
+        <Point X="16.083" Y="11.722" Type="JumpStart" />
+        <Point X="15.917" Y="11.722" Type="JumpEnd" />
+        <Point X="14.958" Y="11.722" Type="JumpStart" />
+        <Point X="14.792" Y="11.722" Type="JumpEnd" />
+        <Point X="14.208" Y="11.722" Type="JumpStart" />
+        <Point X="14.042" Y="11.722" Type="JumpEnd" />
+        <Point X="12.25" Y="11.722" />
+        <Point X="12.25" Y="10.373" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-5.436" Y="1.235" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAABIAwAAAAAAAQgAAAgAAEAAAAAECAgAAAAAIAAAA=</HashCode>
+      <FileName>BinSize.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BinScale" />
+      <Property Name="TimeAxisLabelsScale" />
+      <Property Name="RelatedBinSizesEnum" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.BinSizes">
+    <Position X="19.75" Y="4.25" Width="1.5" />
+    <AssociationLine Name="Default" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="4.375" />
+        <Point X="17.562" Y="4.375" />
+        <Point X="17.562" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.755" Y="2.284" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FourHours" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="4.562" />
+        <Point X="17.688" Y="4.562" />
+        <Point X="17.688" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.927" Y="2.094" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="OneDay" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="4.75" />
+        <Point X="17.812" Y="4.75" />
+        <Point X="17.812" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.828" Y="1.913" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="OneHour" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="4.937" />
+        <Point X="17.938" Y="4.937" />
+        <Point X="17.938" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.873" Y="1.713" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="OneMonth" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="5.125" />
+        <Point X="18.062" Y="5.125" />
+        <Point X="18.062" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.954" Y="1.523" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="OneYear" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="5.312" />
+        <Point X="18.188" Y="5.312" />
+        <Point X="18.188" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.819" Y="1.333" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SixHours" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.188" Y="5.738" />
+        <Point X="21.188" Y="8.813" />
+        <Point X="19" Y="8.813" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.234" Y="-0.094" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SixMonths" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.125" Y="5.738" />
+        <Point X="21.125" Y="8.563" />
+        <Point X="19" Y="8.563" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.211" Y="-0.078" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="TenYears" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.062" Y="5.738" />
+        <Point X="21.062" Y="8.312" />
+        <Point X="19" Y="8.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.226" Y="-0.083" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ThreeMonths" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21" Y="5.738" />
+        <Point X="21" Y="8.063" />
+        <Point X="19" Y="8.063" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.224" Y="-0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="TwelveHours" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.938" Y="5.738" />
+        <Point X="20.938" Y="7.813" />
+        <Point X="19" Y="7.813" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.226" Y="-0.09" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="TwoDays" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.875" Y="5.738" />
+        <Point X="20.875" Y="7.562" />
+        <Point X="19" Y="7.562" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.239" Y="-0.083" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="TwoHours" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.812" Y="5.738" />
+        <Point X="20.812" Y="7.313" />
+        <Point X="19" Y="7.313" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.237" Y="-0.089" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="TwoYears" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.75" Y="5.738" />
+        <Point X="20.75" Y="7.062" />
+        <Point X="19" Y="7.062" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.218" Y="-0.093" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SevenDays" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.688" Y="5.738" />
+        <Point X="20.688" Y="6.812" />
+        <Point X="19" Y="6.812" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.232" Y="-0.093" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FifteenDays" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="5.687" />
+        <Point X="18.438" Y="5.687" />
+        <Point X="18.438" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.004" Y="0.957" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FourMonths" Type="GPAS.TimelineViewer.BinSize" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="5.5" />
+        <Point X="18.312" Y="5.5" />
+        <Point X="18.312" Y="6.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.027" Y="1.152" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAIAAAAAAAQoQACsAAFBABAAAAAAAAQAGAIAgA=</HashCode>
+      <FileName>BinSizes.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Default" />
+      <Property Name="FourHours" />
+      <Property Name="OneDay" />
+      <Property Name="OneHour" />
+      <Property Name="OneMonth" />
+      <Property Name="OneYear" />
+      <Property Name="SixHours" />
+      <Property Name="SixMonths" />
+      <Property Name="TenYears" />
+      <Property Name="ThreeMonths" />
+      <Property Name="TwelveHours" />
+      <Property Name="TwoDays" />
+      <Property Name="TwoHours" />
+      <Property Name="TwoYears" />
+      <Property Name="SevenDays" />
+      <Property Name="FifteenDays" />
+      <Property Name="FourMonths" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Category" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="13" Width="2.25" />
+    <Members>
+      <Field Name="dataItems" Hidden="true" />
+      <Method Name="DataItems_CollectionChanged" Hidden="true" />
+      <Field Name="icon" Hidden="true" />
+      <Field Name="identifier" Hidden="true" />
+      <Field Name="inBoundDataItems" Hidden="true" />
+      <Property Name="InBoundDataItems" Hidden="true" />
+      <Field Name="isChecked" Hidden="true" />
+      <Field Name="legendColor" Hidden="true" />
+      <Field Name="lowerBound" Hidden="true" />
+      <Method Name="NotifyPropertyChanged" Hidden="true" />
+      <Field Name="parent" Hidden="true" />
+      <Field Name="relatedChart" Hidden="true" />
+      <Property Name="RelatedChart" Hidden="true" />
+      <Field Name="relatedSeries" Hidden="true" />
+      <Property Name="RelatedSeries" Hidden="true" />
+      <Method Name="RemoveOutBoundDataItems" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Method Name="UpdateInBoundDataItems" Hidden="true" />
+      <Field Name="upperBound" Hidden="true" />
+    </Members>
+    <AssociationLine Name="DataItems" Type="GPAS.TimelineViewer.TimelineItemsSegment">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.244" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="GPAS.TimelineViewer.SuperCategory">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.215" Y="-0.087" Height="0.182" Width="0.683" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAICAAQCEgAMBDAAAAQiAEgIEgAABBIRQAQAUQAIA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DataItems" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Range">
+    <Position X="22" Y="13" Width="2" />
+    <Members>
+      <Field Name="from" Hidden="true" />
+      <Method Name="NotifyPropertyChanged" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="to" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgEAQCIAAABiAIAAAAAGAggBgAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Range.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.SuperCategory" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="13.25" Width="2" />
+    <Members>
+      <Field Name="isChecked" Hidden="true" />
+      <Method Name="NotifyPropertyChanged" Hidden="true" />
+      <Method Name="OnSubCategotiesChanged" Hidden="true" />
+      <Field Name="subCategories" Hidden="true" />
+      <Method Name="SubCategories_CollectionChanged" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+    </Members>
+    <AssociationLine Name="SubCategories" Type="GPAS.TimelineViewer.Category" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.938" Y="16.411" />
+        <Point X="13.938" Y="16.786" />
+        <Point X="16.062" Y="16.786" />
+        <Point X="16.062" Y="15.901" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.42" Y="0.793" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAAIGAAQCAgAOAAAAAAAAAAgAACAAAACAQCAAAQAAA=</HashCode>
+      <FileName>SuperCategory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SubCategories" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.TimelineItemsSegment">
+    <Position X="19.25" Y="13" Width="2" />
+    <Members>
+      <Field Name="frequencyCount" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Type" Type="GPAS.TimelineViewer.DataItemType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.301" Y="0.244" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAwAAAAEAAAAAAAAgAgAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TimelineItemsSegment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.TimelineViewer" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="3.5" Width="2.75" />
+    <Members>
+      <Field Name="ActualBinProperty" Hidden="true" />
+      <Field Name="ActualTotalLowerBoundProperty" Hidden="true" />
+      <Field Name="ActualTotalUpperBoundProperty" Hidden="true" />
+      <Method Name="AddExtraSeriesIfNeed" Hidden="true" />
+      <Method Name="AddFetchedItemsToChart" Hidden="true" />
+      <Method Name="AddPanPosition" Hidden="true" />
+      <Method Name="AddSubCategoriesToChart" Hidden="true" />
+      <Method Name="AddSuperCategories" Hidden="true" />
+      <Method Name="AfterCreateFilterWindow" Hidden="true" />
+      <Method Name="AssignActualTotalBounds" Hidden="true" />
+      <Method Name="AssignBin" Hidden="true" />
+      <Method Name="AssignBinForFilterWindows" Hidden="true" />
+      <Method Name="AssignDataSegment" Hidden="true" />
+      <Method Name="AssignLabelPropetiesForHorizontalAxis" Hidden="true" />
+      <Method Name="AssignLoadedBounds" Hidden="true" />
+      <Method Name="AssignSelectedBarColor" Hidden="true" />
+      <Method Name="AssignSubCategoriesBound" Hidden="true" />
+      <Method Name="AssignSubCategoriesRelatedChart" Hidden="true" />
+      <Method Name="AssignTotalBounds" Hidden="true" />
+      <Field Name="barSegmentsSelectorCounter" Hidden="true" />
+      <Field Name="barSelectMode" Hidden="true" />
+      <Method Name="BindToChartFilterWindow" Hidden="true" />
+      <Field Name="BinProperty" Hidden="true" />
+      <Method Name="BinSizeForAllDataInOneSegment" Hidden="true" />
+      <Method Name="btnClearFilters_Click" Hidden="true" />
+      <Method Name="btnSnapShot_Click" Hidden="true" />
+      <Method Name="btnZoomPanToAllEvents_Click" Hidden="true" />
+      <Method Name="cartesianChartGrid_MouseLeave" Hidden="true" />
+      <Method Name="cartesianChartGrid_PreviewMouseLeftButtonDown" Hidden="true" />
+      <Method Name="cartesianChartGrid_PreviewMouseLeftButtonUp" Hidden="true" />
+      <Method Name="cartesianChartGrid_PreviewMouseMove" Hidden="true" />
+      <Method Name="CategoriesInShown_CollectionChanged" Hidden="true" />
+      <Field Name="CategoriesInShownProperty" Hidden="true" />
+      <Method Name="ChangePanPosition" Hidden="true" />
+      <Method Name="ChartContainerMouseWheel" Hidden="true" />
+      <Method Name="ChartSelectionBehavior_SelectionChanged" Hidden="true" />
+      <Method Name="CreateNewFilterWindow" Hidden="true" />
+      <Field Name="currentItemsNeededEventArgs" Hidden="true" />
+      <Field Name="currentStrokeState" Hidden="true" />
+      <Field Name="cursorPosition" Hidden="true" />
+      <Field Name="cursorTime" Hidden="true" />
+      <Field Name="defaultMaximumCount" Hidden="true" />
+      <Field Name="defaultSelectedBarColor" Hidden="true" />
+      <Method Name="DeselectAllBar" Hidden="true" />
+      <Field Name="endDragFilterWindow" Hidden="true" />
+      <Method Name="FetchItems" Hidden="true" />
+      <Field Name="filterWindows" Hidden="true" />
+      <Method Name="FilterWindows_CollectionChanged" Hidden="true" />
+      <Method Name="GenerateFilterWindow" Hidden="true" />
+      <Method Name="GenerateSeriesCategory" Hidden="true" />
+      <Method Name="GetCenterDataPointHorizontalAxis" Hidden="true" />
+      <Method Name="GetDurationPerPixel" Hidden="true" />
+      <Method Name="GetExtraCategory" Hidden="true" />
+      <Method Name="HasExtraSeies" Hidden="true" />
+      <Method Name="HideCrosshair" Hidden="true" />
+      <Method Name="HighlightRelatedBarsWithSegments" Hidden="true" />
+      <Method Name="HighlightSelectedSegments" Hidden="true" />
+      <Field Name="lastMousePosition" Hidden="true" />
+      <Field Name="LowerBoundProperty" Hidden="true" />
+      <Method Name="mainChart_Loaded" Hidden="true" />
+      <Method Name="ManageSelectedSegments" Hidden="true" />
+      <Field Name="MaximumCountProperty" Hidden="true" />
+      <Method Name="mnuClearFilterWindow_Click" Hidden="true" />
+      <Method Name="mnuSnapshotOnlyTimeline_Click" Hidden="true" />
+      <Method Name="mnuSnapshotTimelineWithCategoryPan_Click" Hidden="true" />
+      <Field Name="moveDragFilterWindow" Hidden="true" />
+      <Field Name="movePanStatus" Hidden="true" />
+      <Property Name="MovePanStatus" Hidden="true" />
+      <Method Name="MovingFilterWindow" Hidden="true" />
+      <Field Name="movingFilterWindowStatus" Hidden="true" />
+      <Method Name="MovingPan" Hidden="true" />
+      <Method Name="OnCategoriesInShownChanged" Hidden="true" />
+      <Method Name="OnFilterWindowsChanged" Hidden="true" />
+      <Method Name="OnItemsNeeded" Hidden="true" />
+      <Method Name="OnSegmentSelectionChanged" Hidden="true" />
+      <Method Name="OnSetActualBinChanged" Hidden="true" />
+      <Method Name="OnSetBinChanged" Hidden="true" />
+      <Method Name="OnSetCategoriesInShownChanged" Hidden="true" />
+      <Method Name="OnSetLowerBoundChanged" Hidden="true" />
+      <Method Name="OnSetMaximumCountChanged" Hidden="true" />
+      <Method Name="OnSetSelectedBarColorChanged" Hidden="true" />
+      <Method Name="OnSetUpperBoundChanged" Hidden="true" />
+      <Method Name="OnSnapshotTaken" Hidden="true" />
+      <Field Name="plotAreaBorder" Hidden="true" />
+      <Field Name="random" Hidden="true" />
+      <Method Name="RemoveAllFilterWindows" Hidden="true" />
+      <Method Name="RemoveHighlightAllBars" Hidden="true" />
+      <Method Name="RenderSurface_MouseWheel" Hidden="true" />
+      <Field Name="renderSurfaceCanvas" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseLeave" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseMove" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseUp" Hidden="true" />
+      <Method Name="ResetHorizontalAxis" Hidden="true" />
+      <Method Name="ResizingFilterWindow" Hidden="true" />
+      <Field Name="resizingFilterWindowStatus" Hidden="true" />
+      <Field Name="SelectedBarColorProperty" Hidden="true" />
+      <Field Name="selectedBarStatus" Hidden="true" />
+      <Field Name="selectedFilterWindow" Hidden="true" />
+      <Method Name="SelectedFilterWindow_CloseButtonClicked" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseEnter" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseLeave" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseMove" Hidden="true" />
+      <Method Name="SelectedFilterWindow_StrokeMouseLeftButtonDown" Hidden="true" />
+      <Field Name="selectedSegments" Hidden="true" />
+      <Method Name="SelectRelatedDataItemsWithSegments" Hidden="true" />
+      <Method Name="Series_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="Series_MouseLeftButtonUp" Hidden="true" />
+      <Method Name="SetActualBinChanged" Hidden="true" />
+      <Method Name="SetAllFilterWindowsVerticalAxis" Hidden="true" />
+      <Method Name="SetCursorTime" Hidden="true" />
+      <Method Name="SetPanPositonFromDate" Hidden="true" />
+      <Method Name="ShowCrosshair" Hidden="true" />
+      <Field Name="sourcePointForCreateFilterWindow" Hidden="true" />
+      <Field Name="startDragFilterWindow" Hidden="true" />
+      <Method Name="StartMovingFilterWindow" Hidden="true" />
+      <Method Name="StartMovingPan" Hidden="true" />
+      <Method Name="StartResizeFilterWindow" Hidden="true" />
+      <Method Name="StopMoveFilterWindow" Hidden="true" />
+      <Method Name="StopResizeFilterWindow" Hidden="true" />
+      <Method Name="SubCategory_PropertyChanged" Hidden="true" />
+      <Field Name="subCategoryCounter" Hidden="true" />
+      <Method Name="SuperCategories_CollectionChanged" Hidden="true" />
+      <Field Name="SuperCategoriesProperty" Hidden="true" />
+      <Method Name="SuperCategory_SubCategotiesChanged" Hidden="true" />
+      <Method Name="TimelineViewer_FilterWindowsChanged" Hidden="true" />
+      <Field Name="TotalLowerBoundProperty" Hidden="true" />
+      <Field Name="TotalUpperBoundProperty" Hidden="true" />
+      <Field Name="UpperBoundProperty" Hidden="true" />
+      <Method Name="UserControl_MouseEnter" Hidden="true" />
+      <Method Name="UserControl_MouseUp" Hidden="true" />
+      <Method Name="ValidateFilterWindowInMoving" Hidden="true" />
+      <Method Name="ValidateFilterWindowInResizing" Hidden="true" />
+      <Method Name="ValidateLowerBound" Hidden="true" />
+      <Method Name="ValidateUpperBound" Hidden="true" />
+      <Method Name="zoomGrid_MouseUp" Hidden="true" />
+      <Method Name="zoomGrid_MouseWheel" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="GPAS.TimelineViewer.TimelineViewer.MoveStatus" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TimelineViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="GPAS.TimelineViewer.TimelineViewer.BarSelectionMode" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TimelineViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <AssociationLine Name="SuperCategories" Type="GPAS.TimelineViewer.SuperCategory">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.563" Y="0.714" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Bin" Type="GPAS.TimelineViewer.BinSizesEnum">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.204" Y="-0.087" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FilterWindows" Type="GPAS.TimelineViewer.FilterRange" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.25" Y="3.5" />
+        <Point X="14.25" Y="3.188" />
+        <Point X="13.646" Y="3.188" Type="JumpStart" />
+        <Point X="13.479" Y="3.188" Type="JumpEnd" />
+        <Point X="13.396" Y="3.188" Type="JumpStart" />
+        <Point X="13.229" Y="3.188" Type="JumpEnd" />
+        <Point X="11" Y="3.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.391" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SubCategories" Type="GPAS.TimelineViewer.Category">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.436" Y="0.417" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="CategoriesInShown" Type="GPAS.TimelineViewer.Category" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.875" Y="11.472" />
+        <Point X="14.875" Y="13.625" />
+        <Point X="15.5" Y="13.625" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.138" Y="0.762" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="SelectedSegments" Type="GPAS.TimelineViewer.Range" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.5" Y="9.625" />
+        <Point X="17.735" Y="9.625" />
+        <Point X="17.735" Y="12.625" />
+        <Point X="17.964" Y="12.625" Type="JumpStart" />
+        <Point X="18.13" Y="12.625" Type="JumpEnd" />
+        <Point X="22.729" Y="12.625" Type="JumpStart" />
+        <Point X="22.896" Y="12.625" Type="JumpEnd" />
+        <Point X="23.438" Y="12.625" />
+        <Point X="23.438" Y="13" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="3.896" Y="0.296" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BZQnXzTj5lLXBRwj//uwO5jUZDOpg6Cg9Y/d5JM55WQ=</HashCode>
+      <FileName>TimelineViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bin" />
+      <Property Name="ActualBin" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SuperCategories" />
+      <Property Name="FilterWindows" />
+      <Property Name="SubCategories" />
+      <Property Name="CategoriesInShown" />
+      <Property Name="SelectedSegments" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Utility">
+    <Position X="24.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAEAgAAAAAAAAAAAAACAAAAAAoAEAAACA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.FilterWindowsChangedEventArgs">
+    <Position X="12.5" Y="0.5" Width="2.5" />
+    <AssociationLine Name="AddedWindows" Type="GPAS.TimelineViewer.FilterRange" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.312" Y="1.733" />
+        <Point X="13.312" Y="3.625" />
+        <Point X="11" Y="3.625" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.391" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RemovedWindows" Type="GPAS.TimelineViewer.FilterRange" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.562" Y="1.733" />
+        <Point X="13.562" Y="4.125" />
+        <Point X="11" Y="4.125" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.364" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>EventArguments\FilterWindowsChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AddedWindows" />
+      <Property Name="RemovedWindows" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.ItemsNeededEventArgs">
+    <Position X="9" Y="14" Width="2" />
+    <Members>
+      <Property Name="FocusPosition" Hidden="true" />
+    </Members>
+    <AssociationLine Name="BinScaleLevel" Type="GPAS.TimelineViewer.BinScaleLevel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11" Y="14.562" />
+        <Point X="12.25" Y="14.562" />
+        <Point X="12.25" Y="11.879" />
+        <Point X="14.042" Y="11.879" Type="JumpStart" />
+        <Point X="14.208" Y="11.879" Type="JumpEnd" />
+        <Point X="14.792" Y="11.879" Type="JumpStart" />
+        <Point X="14.958" Y="11.879" Type="JumpEnd" />
+        <Point X="15.917" Y="11.879" Type="JumpStart" />
+        <Point X="16.083" Y="11.879" Type="JumpEnd" />
+        <Point X="17.652" Y="11.879" Type="JumpStart" />
+        <Point X="17.819" Y="11.879" Type="JumpEnd" />
+        <Point X="17.964" Y="11.879" Type="JumpStart" />
+        <Point X="18.13" Y="11.879" Type="JumpEnd" />
+        <Point X="21.375" Y="11.879" />
+        <Point X="21.375" Y="11.45" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="9.249" Y="3.017" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="FetchedItems" Type="GPAS.TimelineViewer.SuperCategory">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.311" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAAAAAAACCAAAABAAAAgAACACACAAAgAAAQ=</HashCode>
+      <FileName>EventArguments\ItemsNeededEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BinScaleLevel" />
+      <Property Name="Action" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="FetchedItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.RangeChangedEventArgs">
+    <Position X="22.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAUEAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>EventArguments\RangeChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.SegmentSelectionChangedEventArgs">
+    <Position X="22.25" Y="9.75" Width="2.75" />
+    <AssociationLine Name="AddedRanges" Type="GPAS.TimelineViewer.Range" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24.375" Y="10.983" />
+        <Point X="24.375" Y="15.312" />
+        <Point X="24" Y="15.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.205" Y="2.81" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RemovedRanges" Type="GPAS.TimelineViewer.Range" FixedFromPoint="true">
+      <Path>
+        <Point X="22.812" Y="10.983" />
+        <Point X="22.812" Y="13" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.737" Y="0.953" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>EventArguments\SegmentSelectionChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AddedRanges" />
+      <Property Name="RemovedRanges" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.SnapshotTakenEventArgs">
+    <Position X="10.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArguments\SnapshotTakenEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.FilterRange">
+    <Position X="8.25" Y="2.5" Width="2.75" />
+    <Members>
+      <Field Name="FromProperty" Hidden="true" />
+      <Method Name="OnRangeChanged" Hidden="true" />
+      <Method Name="OnSetFromChanged" Hidden="true" />
+      <Method Name="OnSetToChanged" Hidden="true" />
+      <Field Name="ToProperty" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgEAAAAAAABCAAAAAAAAAAAAAEAIAAAAAAAQAADABAA=</HashCode>
+      <FileName>FilterRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.FilterWindow">
+    <Position X="8.25" Y="5.25" Width="2.5" />
+    <Members>
+      <Field Name="BinProperty" Hidden="true" />
+      <Field Name="btnClose" Hidden="true" />
+      <Method Name="BtnClose_Click" Hidden="true" />
+      <Method Name="BtnClose_MouseEnter" Hidden="true" />
+      <Method Name="BtnClose_MouseLeave" Hidden="true" />
+      <Method Name="BtnClose_MouseMove" Hidden="true" />
+      <Method Name="CalculateBinEachPixel" Hidden="true" />
+      <Field Name="closeAnnotation" Hidden="true" />
+      <Field Name="ContextMenuProperty" Hidden="true" />
+      <Field Name="endLineAnnotation" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseEnter" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseLeave" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseMove" Hidden="true" />
+      <Field Name="FillProperty" Hidden="true" />
+      <Method Name="FilterWindow_RangeChanged" Hidden="true" />
+      <Field Name="HorizontalAxisProperty" Hidden="true" />
+      <Field Name="IsHitTestVisibleForFillProperty" Hidden="true" />
+      <Field Name="IsHitTestVisibleForStrokeProperty" Hidden="true" />
+      <Field Name="lblContentToolTip" Hidden="true" />
+      <Field Name="LowerBoundProperty" Hidden="true" />
+      <Field Name="mainAnnotation" Hidden="true" />
+      <Method Name="MainAnnotation_MouseEnter" Hidden="true" />
+      <Method Name="MainAnnotation_MouseLeave" Hidden="true" />
+      <Method Name="MainAnnotation_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="MainAnnotation_MouseMove" Hidden="true" />
+      <Field Name="minimumThicknessLineAnnotation" Hidden="true" />
+      <Method Name="MouseEnterInvoker" Hidden="true" />
+      <Method Name="MouseLeaveInvoker" Hidden="true" />
+      <Method Name="OnCloseButtonClicked" Hidden="true" />
+      <Method Name="OnMouseLeftButtonDown" Hidden="true" />
+      <Method Name="OnMouseMove" Hidden="true" />
+      <Method Name="OnSetBinChanged" Hidden="true" />
+      <Method Name="OnSetHorizontalAxisChanged" Hidden="true" />
+      <Method Name="OnSetLowerBoundChanged" Hidden="true" />
+      <Method Name="OnSetStrokeThicknessChanged" Hidden="true" />
+      <Method Name="OnSetToolTipStyleChanged" Hidden="true" />
+      <Method Name="OnSetUpperBoundChanged" Hidden="true" />
+      <Method Name="OnSetVerticalAxisChanged" Hidden="true" />
+      <Field Name="radCartesianChart" Hidden="true" />
+      <Method Name="RadCartesianChart_SizeChanged" Hidden="true" />
+      <Field Name="rangeEachPixel" Hidden="true" />
+      <Method Name="SetBindingsProperties" Hidden="true" />
+      <Method Name="SetChart" Hidden="true" />
+      <Method Name="SetCloseButtonLocation" Hidden="true" />
+      <Field Name="startLineAnnotation" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseEnter" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseLeave" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseMove" Hidden="true" />
+      <Field Name="StrokeProperty" Hidden="true" />
+      <Field Name="StrokeThicknessProperty" Hidden="true" />
+      <Field Name="ToolTipStyleProperty" Hidden="true" />
+      <Field Name="UpperBoundProperty" Hidden="true" />
+      <Field Name="VerticalAxisProperty" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="GPAS.TimelineViewer.FilterRange" FixedFromPoint="true">
+      <Path>
+        <Point X="9.5" Y="5.021" />
+        <Point X="9.5" Y="5.25" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Bin" Type="GPAS.TimelineViewer.BinSize" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.812" Y="11.809" />
+        <Point X="8.812" Y="17.107" />
+        <Point X="18.047" Y="17.107" />
+        <Point X="18.047" Y="8.882" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="8.702" Y="8.14" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gUA4DIFoACBAYQ6HSqjIBypFAFkoDpAIioBEoAKBQAs=</HashCode>
+      <FileName>FilterWindow.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Palette">
+    <Position X="22" Y="3.25" Width="2.25" />
+    <Members>
+      <Field Name="random" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CCAAAAAgAJAAAAEAGACIABAJAEAQIAAAAAQA0EAAAAA=</HashCode>
+      <FileName>Palette.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.FilterWindowStrokeMouseButtonEventArgs">
+    <Position X="18.5" Y="0.5" Width="3.25" />
+    <AssociationLine Name="StrokeState" Type="GPAS.TimelineViewer.EventArguments.FilterWindowStrokeMouseEventState">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.519" Y="0.247" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArguments\FilterWindowStrokeMouseButtonEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StrokeState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.FilterWindowStrokeMouseEventArgs">
+    <Position X="15.25" Y="0.5" Width="2.75" />
+    <AssociationLine Name="StrokeState" Type="GPAS.TimelineViewer.EventArguments.FilterWindowStrokeMouseEventState" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.312" Y="1.733" />
+        <Point X="17.312" Y="2.867" />
+        <Point X="18.5" Y="2.867" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.204" Y="-0.101" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArguments\FilterWindowStrokeMouseEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StrokeState" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Converter.BinScaleLevelToStringResourceConverter" BaseTypeListCollapsed="true">
+    <Position X="25" Y="3.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converter\BinScaleLevelToStringResourceConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Converter.BinSizesEnumToDoubleConverter" BaseTypeListCollapsed="true">
+    <Position X="25.5" Y="5.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converter\BinSizesEnumToDoubleConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Converter.DateTimeToHierarchyStringFormatConverter" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="6.75" Width="3.25" />
+    <Members>
+      <Field Name="counter" Hidden="true" />
+      <Method Name="IsChangedValueOfScale" Hidden="true" />
+      <Method Name="IsFirstLabelOfScale" Hidden="true" />
+      <Field Name="labelStep" Hidden="true" />
+      <Property Name="previousDateTime" Hidden="true" />
+    </Members>
+    <AssociationLine Name="BinSize" Type="GPAS.TimelineViewer.BinSize" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="26.375" Y="8.238" />
+        <Point X="26.375" Y="9.174" />
+        <Point X="18.688" Y="9.174" />
+        <Point X="18.688" Y="8.882" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-7.613" Y="0.2" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAEAAABBAAAIBAAAAAAAgAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Converter\DateTimeToHierarchyStringFormatConverter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BinSize" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Converter.DateTimeToStringConverter" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converter\DateTimeToStringConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="GPAS.TimelineViewer.BinScaleLevel">
+    <Position X="20.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJACAAAAAAAAAAAIAAAAAACIEAAAAAAAAABA=</HashCode>
+      <FileName>BinScaleLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.TimelineViewer.BinSizesEnum">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAoAAAAAAAQoQACkAAFBAAAAAAAAAAQAGAAAhA=</HashCode>
+      <FileName>BinSizesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.TimelineViewer.ItemsNeededAction">
+    <Position X="9" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAEAAAAAAAAAAAACAAAAAAAEAAAA=</HashCode>
+      <FileName>ItemsNeededAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.TimelineViewer.DataItemType">
+    <Position X="19.25" Y="15.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAABAAAAAAAEAAAAAAgAQAAAAAAAAA=</HashCode>
+      <FileName>DataItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.TimelineViewer.EventArguments.FilterWindowStrokeMouseEventState">
+    <Position X="18.5" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArguments\FilterWindowStrokeMouseEventState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,2172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8B124FD-D45C-45E5-A3A1-EE90FBBF0009}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Workspace.Presentation</RootNamespace>
+    <AssemblyName>GPAS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>GPAS.Workspace.Presentation.Debug.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+    <LangVersion>7.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DevelopDeployDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DevelopDeployDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>GPAS.Workspace.Presentation.DevelopDeployDebug.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="dotNetRDF, Version=2.1.0.0, Culture=neutral, PublicKeyToken=6055ffe4c97cc780, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\dotNetRDF.2.1.0\lib\net40\dotNetRDF.dll</HintPath>
+    </Reference>
+    <Reference Include="Dragablz, Version=0.0.3.203, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\..\packages - non-NuGet\GMap.Net.WPF.1.7.5.0\lib\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\..\packages - non-NuGet\GMap.Net.WPF.1.7.5.0\lib\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphX.PCL.Common, Version=2.3.6.0, Culture=neutral, PublicKeyToken=a6cdb671d651b60a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\GraphX.2.3.7.0\lib\net40-client\GraphX.PCL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphX.PCL.Logic, Version=2.3.6.0, Culture=neutral, PublicKeyToken=3b65ef85075e278f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\GraphX.2.3.7.0\lib\net40-client\GraphX.PCL.Logic.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphX.WPF.Controls, Version=2.3.6.0, Culture=neutral, PublicKeyToken=bab23663f80c9e76, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\GraphX.2.3.7.0\lib\net40-client\GraphX.WPF.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.10.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.8.10\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.4.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft-WindowsAPICodePack-Core.1.1.4\lib\net472\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.4.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft-WindowsAPICodePack-Shell.1.1.4\lib\net472\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors">
+      <HintPath>..\..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Notifications.Wpf, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Notifications.Wpf.Updated.0.1.1\lib\net461\Notifications.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Data, Version=3.6.61114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\QuickGraphPCL.3.6.61114.2\lib\net40-client\QuickGraph.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.Core.1.0.109.2\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.EF6.1.0.109.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Data.SQLite.Linq.1.0.109.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Cloud.Controls, Version=2018.2.620.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\Telerik UI for WPF R2 2018\Binaries\WPF45\Telerik.Windows.Cloud.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2018.2.620.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\Telerik UI for WPF R2 2018\Binaries\WPF45\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2018.2.620.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\Telerik UI for WPF R2 2018\Binaries\WPF45\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2018.2.620.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2018.2.620.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages - non-NuGet\Telerik UI for WPF R2 2018\Binaries\WPF45\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="VDS.Common, Version=1.10.0.0, Culture=neutral, PublicKeyToken=ab5f4eb908061bf0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\VDS.Common.1.10.0\lib\net40-client\VDS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="VirtualizingWrapPanel, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\VirtualizingWrapPanel.1.5.2\lib\net45\VirtualizingWrapPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WpfDocumentPreviewer">
+      <HintPath>..\..\packages - non-NuGet\WpfDocumentPreviewer\WpfDocumentPreviewer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="ApplicationButtonBorderBrushConverter.cs" />
+    <Compile Include="ApplicationContainers\ApplicationContainerBase.xaml.cs">
+      <DependentUpon>ApplicationContainerBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationContainers\BrowserApplicationContainer.cs" />
+    <Compile Include="ApplicationContainers\DataSourceApplicationContainer.cs" />
+    <Compile Include="ApplicationContainers\GraphApplicationContainer.cs" />
+    <Compile Include="ApplicationContainers\HomeApplicationContainer.cs" />
+    <Compile Include="ApplicationContainers\ImageAnalysisApplicatioinContainer.cs" />
+    <Compile Include="ApplicationContainers\MapApplicationContainer.cs" />
+    <Compile Include="ApplicationContainers\ObjectExplorerApplicatioinContainer.cs" />
+    <Compile Include="Applications\ApplicationViewModel\DataImport\DatabaseViewModel.cs" />
+    <Compile Include="Applications\ApplicationViewModel\DataImport\DataImportUtility Legacy.cs" />
+    <Compile Include="Applications\ApplicationViewModel\DataImport\DataImportUtility.cs" />
+    <Compile Include="Applications\ApplicationViewModel\DataImport\MappingViewModel.cs" />
+    <Compile Include="Applications\ApplicationViewModel\DataImport\ACLViewModel.cs" />
+    <Compile Include="Applications\Convertors\BitmapToVisibilityConverter.cs" />
+    <Compile Include="Applications\Convertors\BooleanToSelectionBackgroundColorConverter.cs" />
+    <Compile Include="Applications\Convertors\DistanceToBorderBrushConverter.cs" />
+    <Compile Include="Applications\Convertors\FaceExtractionToVisibilityConvertor.cs" />
+    <Compile Include="Applications\Convertors\ItemsourceToIsEnableConverter.cs" />
+    <Compile Include="Applications\Convertors\ObjectDisplayNameToTabItemHeaderConverter.cs" />
+    <Compile Include="Applications\Convertors\RawImageLoadingToVisibilityConvertor.cs" />
+    <Compile Include="Applications\Convertors\ResultPreviewToVisibilityConvertor.cs" />
+    <Compile Include="Applications\Convertors\TextToIsEnableConverter.cs" />
+    <Compile Include="Controls\Common\Converters\AnyValuesAreNotNullToBooleanConverter.cs" />
+    <Compile Include="Controls\Common\Converters\AllBooleanToVisibilityConverter.cs" />
+    <Compile Include="Controls\Common\Converters\FirstObjectToSecondObjectConverter.cs" />
+    <Compile Include="Controls\Common\Converters\StringToCollectionStringConverter.cs" />
+    <Compile Include="Controls\CustomSearchAround\Converter\PinnedStatusToIconConverter.cs" />
+    <Compile Include="Controls\CustomSearchAround\Converter\PinnedStatusToTooltipMessageConverter.cs" />
+    <Compile Include="Controls\CustomSearchAround\CSAGraphUserControl.xaml.cs">
+      <DependentUpon>CSAGraphUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomSearchAround\CustomSearchAroundUserControl.xaml.cs">
+      <DependentUpon>CustomSearchAroundUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomSearchAround\Model\CSAEventBaseLink.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\LoadedFileModel.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\RecentLoadedFilesManager.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\DateTimeValidationModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\GeoPointPropertyMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\ResolutionPolicy.cs" />
+    <Compile Include="Controls\DataImport\ShowOnGraphRequestedEventArgs.cs" />
+    <Compile Include="Applications\ApplicationViewModel\Graph\CustomSearchAroundViewModel.cs" />
+    <Compile Include="Applications\Validations\RequiredFieldValidation.cs" />
+    <Compile Include="Controls\Common\ButtonWithIcon.xaml.cs">
+      <DependentUpon>ButtonWithIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\Converters\BooleanAndImportStatusToBooleanConverter.cs" />
+    <Compile Include="Controls\Common\Converters\CollectionCountToEnableConverter.cs" />
+    <Compile Include="Controls\Common\Converters\CollectionCountToVisibilityConverter.cs" />
+    <Compile Include="Controls\Common\Converters\EnumDescriptionConverter.cs" />
+    <Compile Include="Controls\Common\Converters\EnumToBooleanConverter.cs" />
+    <Compile Include="Controls\Common\Converters\NullToBooleanConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ObjectToEnableConverter.cs" />
+    <Compile Include="Controls\Common\Converters\RowAndColumnConverter.cs" />
+    <Compile Include="Controls\Common\Converters\TypeUriToUserFriendlyNameConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ValueEqualityWithParameterToBooleanConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ValuesEqualityConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ValuesEqualityToVisibilityConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ValueEqualityWithParameterToVisibilityConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ValueTypeCompareParameterToVisibiltyConverter.cs" />
+    <Compile Include="Controls\Common\MessageSnackBarUserControl.xaml.cs">
+      <DependentUpon>MessageSnackBarUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\Converters\ValueTypeEqualityWithParameterTypeToVisibilityConverter.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\CSALink.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\CSAObject.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\CSAProperty.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\ICSAElement.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\LoadedResult.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\WarningModel.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\CustomSearchAroundModel.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\RelationalOperator.cs" />
+    <Compile Include="Controls\CustomSearchAround\Model\WarningType.cs" />
+    <Compile Include="Controls\DataImport\CardTemplateUserControl.xaml.cs">
+      <DependentUpon>CardTemplateUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\Converters\AddColonAtEndStringConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\BooleanIsValidToMultiConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\BooleanToBorderBrushConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\BooleanToForegrandConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\BooleanToTextConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ChangeForegrandTitleWithIsValisConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\CollectionImportStatusToBooleanConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ConvertZeroToNullConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\CsvDataSourceToActiveChangeSepratorConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\CsvDataSourceToShowCannotChangeSeparatorMessageConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourceImportingObjectCollectionToHistogramDescriptionConverer.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourceImportStatusToBooleanConverter.cs" />
+    <Compile Include="Controls\Common\Converters\ImportStatusToIsEnableConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourceValidationToForgroundConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourcesCountToForegroundConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\GroupDataSourceTypeToVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\OntologyPickerSelectedItemToEnabledConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\CollectionCountIToVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\HeaderContainCommaToCanSortConveretr.cs" />
+    <Compile Include="Controls\DataImport\Converters\MappingPropertiesToEnableConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourcsCountToDataSourceContainerVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourcsCountToDropBoxVisibilityConverter.cs" />
+    <Compile Include="Applications\ApplicationViewModel\DataImport\DataImportViewModel.cs" />
+    <Compile Include="Applications\BrowserApplication.xaml.cs">
+      <DependentUpon>BrowserApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\DataImportApplication.xaml.cs">
+      <DependentUpon>DataImportApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\DataSourceApplication.xaml.cs">
+      <DependentUpon>DataSourceApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\EventsArgs\RemoveObjectFromMapRequestEventArgs.cs" />
+    <Compile Include="Applications\ImageAnalysisApplication\ImageAnalysisApplicatioin.xaml.cs">
+      <DependentUpon>ImageAnalysisApplicatioin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\ImageAnalysisApplication\ImageAnalysisStep.cs" />
+    <Compile Include="Applications\ImageAnalysisApplication\ShowingObject.cs" />
+    <Compile Include="Applications\ObjectExplorerApplication.xaml.cs">
+      <DependentUpon>ObjectExplorerApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\ObjectToBrowsModel.cs" />
+    <Compile Include="Applications\ShowingDataSource.cs" />
+    <Compile Include="Applications\ShowingDataSources.cs" />
+    <Compile Include="ApplicationVisibilityConverter.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Controls\LocationPropertyValueControl.xaml.cs">
+      <DependentUpon>LocationPropertyValueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OntologyPickers\DisplayMode.cs" />
+    <Compile Include="Controls\DataImport\Converters\ContextMenuItemVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\FieldTypeToVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\MemoryStreamToBooleanConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\MetaDataValueToStringConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\MultiCountToEnableOrDisableConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ObjectMapToVisibilitySetPathButtonConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataTypePropertyToVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ItemsNumberToTextConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\DataSourceTypeToVisibilityControlConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\PropertyTypeToControlVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\PropertyValueEnableConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\SelectedDataSourcesNumberToTextConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ShowCustonSepratorConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ShowOnGrafhMenuItemVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\SortTypeToBooleanConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\TextToColorTextBoxCustomConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\TextToTrueFalseTextBoxCustomConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\TypeUriToIconConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ValidationStatusToForegroundConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\ValidationStatusToVisibilityConverter.cs" />
+    <Compile Include="Controls\DataImport\Converters\WarningTypeToBooleanConverter.cs" />
+    <Compile Include="Controls\DataImport\DataImportUserControl.xaml.cs">
+      <DependentUpon>DataImportUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\DataSourceContextMenuItem.cs" />
+    <Compile Include="Controls\DataImport\DataSourceDetailsUserControl.xaml.cs">
+      <DependentUpon>DataSourceDetailsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\DataSourceHistogramUserControl.xaml.cs">
+      <DependentUpon>DataSourceHistogramUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\DraggingDataSourceFieldUserControl.xaml.cs">
+      <DependentUpon>DraggingDataSourceFieldUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\DraggingDataSourceUserControl.xaml.cs">
+      <DependentUpon>DraggingDataSourceUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\EventArguments\AddFilesEventArgs.cs" />
+    <Compile Include="Controls\DataImport\EventArguments\AddLinkEventArgs.cs" />
+    <Compile Include="Controls\DataImport\ImportingObjectBrowser.xaml.cs">
+      <DependentUpon>ImportingObjectBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\Model\DatabaseModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DefectionModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DefectionType.cs" />
+    <Compile Include="Controls\DataImport\Model\GroupDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\IDataSource.cs" />
+    <Compile Include="Controls\DataImport\Model\IGroupDataSource.cs" />
+    <Compile Include="Controls\DataImport\Model\ImportingRelationship.cs" />
+    <Compile Include="Controls\DataImport\Model\ISingleDataSource.cs" />
+    <Compile Include="Controls\DataImport\Model\ITabularDataSource.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\DocumentPathOption.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\SavedMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Permission\ACIModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Permission\ACLModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Permission\ClassificationModel.cs" />
+    <Compile Include="Controls\DataImport\Model\TabularGroupDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\UngroupDataSourceEventArgs.cs" />
+    <Compile Include="Controls\DataImport\MappingControlType.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceImportStatus.cs" />
+    <Compile Include="Controls\DataImport\Model\ImportingObject.cs" />
+    <Compile Include="Controls\DataImport\Model\ImportingProperty.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\DocumentMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\MapElement.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\MapWarningModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\MapWarningType.cs" />
+    <Compile Include="Controls\DataImport\Model\MatchModel.cs" />
+    <Compile Include="Controls\DataImport\Model\SimpleTextBaseDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\ComplexTextBaseDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\SetMappingPropertiesValueUserControl.xaml.cs">
+      <DependentUpon>SetMappingPropertiesValueUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\BaseMappingUserControl.cs" />
+    <Compile Include="Controls\DataImport\MappingUserControl.xaml.cs">
+      <DependentUpon>MappingUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\MapPropertyTemplateUserControl.xaml.cs">
+      <DependentUpon>MapPropertyTemplateUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\Model\AccessDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\AudioBaseDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\CsvDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\ConstFieldModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\DataSourceFieldCategoryModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\FieldType.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\MetaDataFieldModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\PathPartFieldModel.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\PathPartType.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\TableFieldModel.cs" />
+    <Compile Include="Controls\DataImport\Model\SingleDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\EmlDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\ExcelDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\FileInfoModel.cs" />
+    <Compile Include="Controls\DataImport\Model\ImageBaseDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\IPreviewableDataSource.cs" />
+    <Compile Include="Controls\DataImport\Model\DataSourceField\DataSourceFieldModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\DateTimeConfiguration.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\DateTimePropertyMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\GeoTimeFormat.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\GeoTimePropertyMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\MapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\MultiPropertyMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\ObjectMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\PropertyMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\ValueMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\SinglePropertyMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\Map\RelationshipMapModel.cs" />
+    <Compile Include="Controls\DataImport\Model\MetaData\MetaDataItemModel.cs" />
+    <Compile Include="Controls\DataImport\Model\MetaData\MetaDataType.cs" />
+    <Compile Include="Controls\DataImport\Model\SemiStructuredDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\SQLServerDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\StructuredDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\TabularDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\UnstructuredDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\DataSourcePreviewUserControl.xaml.cs">
+      <DependentUpon>DataSourcePreviewUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\Model\TextBaseDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\Model\VideoBaseDataSourceModel.cs" />
+    <Compile Include="Controls\DataImport\SetPermissionUserControl.xaml.cs">
+      <DependentUpon>SetPermissionUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\SortPriority.cs" />
+    <Compile Include="Controls\DataImport\SortOrder.cs" />
+    <Compile Include="Controls\DataImport\TabularMappingFirstStepUserControl.xaml.cs">
+      <DependentUpon>TabularMappingFirstStepUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\BindableMappingGraphUserControl.xaml.cs">
+      <DependentUpon>BindableMappingGraphUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\MappingGraphUserControl.xaml.cs">
+      <DependentUpon>MappingGraphUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\TabularMappingSecondStepUserControl.xaml.cs">
+      <DependentUpon>TabularMappingSecondStepUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataImport\UnstructuredMappingUserControl.xaml.cs">
+      <DependentUpon>UnstructuredMappingUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterSearchCriterias\Converters\ValidationStatusToForegroundConverter.cs" />
+    <Compile Include="Controls\Graph\DocumentCreationRequestSubmited.cs" />
+    <Compile Include="Controls\Map\GeoSearch\Converters\EnumToStringConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\BeginExecutingStatisticalQueryEventArgs.cs" />
+    <Compile Include="Controls\ObjectExplorer\Histograms\FilterMatchingType.cs" />
+    <Compile Include="Controls\ObjectExplorer\Histograms\FilterType.cs" />
+    <Compile Include="Controls\OntologyPickers\Converters\WorkspaceDisplayModeToTreeViewPickerDisplayModeConverter.cs" />
+    <Compile Include="Controls\PropertyValueTemplates\ValidationStatusToForegroundConverter.cs" />
+    <Compile Include="Controls\Publish\ChangeTypeToForegroundConverter.cs" />
+    <Compile Include="Controls\Publish\ChangeTypeToIconConverter.cs" />
+    <Compile Include="Controls\Publish\PublishUserControl.xaml.cs">
+      <DependentUpon>PublishUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sesrch\Converters\AsceOrDesConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\CombineTextBoxValueMultiConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\ConvertAllSearchStateToForgroungConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\ConverterIsEnableToVisibilityConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\ConvertSearchStateToIsCheckConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\ConvertTextDocSearchStateToForgroungConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\CreateBorderConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\SelectResultTemplateConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\ShowHideAdvanseSearchButtonConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\ShowTextblockORSelectedItemConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\SliderValueToStringConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\VisibilityControlConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\VisibilityLableControlConverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\VisibilityNotResultControlCoverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\VisibilityResultCountControlCoverter.cs" />
+    <Compile Include="Controls\Sesrch\Converters\VisibilityStateSearchCoverter.cs" />
+    <Compile Include="Controls\Sesrch\Enum\ControlEnum.cs" />
+    <Compile Include="Controls\Sesrch\Enum\SortOrderEnum.cs" />
+    <Compile Include="Controls\Sesrch\Model\SearchModel.cs" />
+    <Compile Include="Controls\Sesrch\Model\SearchResultModel.cs" />
+    <Compile Include="Controls\Sesrch\Model\SearchState.cs" />
+    <Compile Include="Controls\Sesrch\Validation\DatePickerValidation.cs" />
+    <Compile Include="Controls\Sesrch\Validation\FileSizeValidator.cs" />
+    <Compile Include="Controls\Sesrch\Validation\NotEmptyRuleValidation.cs" />
+    <Compile Include="Controls\Sesrch\ViewModel\SearchViewModel.cs" />
+    <Compile Include="Controls\Sesrch\View\AdvanceSearchControl.xaml.cs">
+      <DependentUpon>AdvanceSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sesrch\View\BasicSearchControl.xaml.cs">
+      <DependentUpon>BasicSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sesrch\View\PreviewHighlightesResultsUserControl.xaml.cs">
+      <DependentUpon>PreviewHighlightesResultsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sesrch\View\SearchResultUserControl.xaml.cs">
+      <DependentUpon>SearchResultUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sesrch\View\SearchUserControl.xaml.cs">
+      <DependentUpon>SearchUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagCloud\KeyPhraseModel.cs" />
+    <Compile Include="Controls\Timeline\ObjectsSelectionRequestEventArgs.cs" />
+    <Compile Include="Controls\TreeViewWithIcons.cs" />
+    <Compile Include="Controls\Waiting\ProgressShape.cs" />
+    <Compile Include="Controls\Waiting\ProgressShapeToVisibilityConverter.cs" />
+    <Compile Include="Controls\Waiting\ProgressValueDisplayMode.cs" />
+    <Compile Include="Controls\Waiting\ProgressDisplayModeToVisibilityConverter.cs" />
+    <Compile Include="Helpers\HelperPosition.cs" />
+    <Compile Include="Helpers\IsSelectedAndTagToBorderBrushConverter.cs" />
+    <Compile Include="Helpers\IsSelectedAndTagToForegroundConverter.cs" />
+    <Compile Include="ICheckable.cs" />
+    <Compile Include="IProgressive.cs" />
+    <Compile Include="ISelectable.cs" />
+    <Compile Include="KWMessageBox.cs" />
+    <Compile Include="PresentationApplications.cs" />
+    <Compile Include="PropertyChangedExtendedEventArgs.cs" />
+    <Compile Include="RelayNotifyPropertyChanged.cs" />
+    <Compile Include="Controls\BrowseMenuItemVisibilityConverter.cs" />
+    <Compile Include="Controls\Browser\BrowseMenuItemTypes.cs" />
+    <Compile Include="Controls\Browser\BrowserMenuItemModel.cs" />
+    <Compile Include="Controls\Browser\ContentAnalysisInfo.cs" />
+    <Compile Include="Controls\Browser\EventsArgs\AddRelationshipToGraphEventArgs.cs" />
+    <Compile Include="Controls\Browser\EventsArgs\LoadInImageAnalysisRequestedEventArgs.cs" />
+    <Compile Include="Controls\Browser\EventsArgs\ShowOnMapRequestedEventArgs.cs" />
+    <Compile Include="Controls\TagCloud\JSTagCloudControl.xaml.cs">
+      <DependentUpon>JSTagCloudControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Browser\ObjectDisplayNameConverter.cs" />
+    <Compile Include="Controls\Browser\PieChartItem.cs" />
+    <Compile Include="Controls\Browser\PropertyModel.cs" />
+    <Compile Include="Controls\Browser\RelatedDocumentForShowInBrowser.cs" />
+    <Compile Include="Controls\Browser\RelatedEntityForShowInBrowser.cs" />
+    <Compile Include="Controls\Browser\RelatedEventForShowInBrowser.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\EndDateToLastTickOfEndDateConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\IsSelectedToHighlightBrushConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\KeywordToCorrectKeywordConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\PropertyCriteriaOperatorToComboBoxEnableConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\PropertyCriteriaOperatorToComboBoxItemsConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\ValidationStatusToBrushConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\Converters\ValidationStatusToVisibilityErrorBoxConverter.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\DateFilterSearchControl.xaml.cs">
+      <DependentUpon>DateFilterSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterSearchCriterias\EventsArgs\BooleanOperatorEventArgs.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\ContainerFilterSearchControl.xaml.cs">
+      <DependentUpon>ContainerFilterSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterSearchCriterias\EventsArgs\CriteriaItemsChangedEventArgs.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\EventsArgs\ValidationStatusChangedEventArgs.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\BaseFilterSearchControl.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\KeywordFilterSearchControl.xaml.cs">
+      <DependentUpon>KeywordFilterSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterSearchCriterias\IBaseFilterSearchControl.cs" />
+    <Compile Include="Controls\FilterSearchCriterias\ObjectTypeFilterSearchControl.xaml.cs">
+      <DependentUpon>ObjectTypeFilterSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterSearchCriterias\PropertyFilterSearchControl.xaml.cs">
+      <DependentUpon>PropertyFilterSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilterSearchCriterias\RelationalOperator.cs" />
+    <Compile Include="Controls\Graph\Flows\DataSourceType.cs" />
+    <Compile Include="Controls\Graph\Flows\RelationshipBasedLinksPerEvent.cs" />
+    <Compile Include="Controls\Graph\Flows\SourceObjects.cs" />
+    <Compile Include="Controls\Graph\GraphControl Flows.cs" />
+    <Compile Include="Controls\Graph\GraphControl Unmerge Links.cs" />
+    <Compile Include="Controls\Graph\Flows\DataSource.cs" />
+    <Compile Include="Controls\Graph\ShowLinkEffects.cs" />
+    <Compile Include="Controls\Graph\ShowMetadata\EdgeMetadata.cs" />
+    <Compile Include="Controls\Graph\ShowMetadata\FlowPathMetaData.cs" />
+    <Compile Include="Controls\Graph\ShowMetadata\ObjectShowMetadata.cs" />
+    <Compile Include="Controls\Graph\ShowMetadata\RelationshipShowMetadata.cs" />
+    <Compile Include="Controls\Histograms\IntToHistogramPropertyNodeOrderByConverter.cs" />
+    <Compile Include="Controls\Histograms\HistogramCategoryValueCountAddedEventArgs.cs" />
+    <Compile Include="Controls\Link\Converters\LinkTypeToEnableConverter.cs" />
+    <Compile Include="Controls\Map\Heatmap\SpectrumSliderControl.xaml.cs">
+      <DependentUpon>SpectrumSliderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImageProcessing\BoundingBoxControl.xaml.cs">
+      <DependentUpon>BoundingBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\SimpleMarkerDoubleClickEventArgs.cs" />
+    <Compile Include="Controls\ObjectExplorer\BranchingHistoryControl.xaml.cs">
+      <DependentUpon>BranchingHistoryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\Charts\BarChartControl.xaml.cs">
+      <DependentUpon>BarChartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\Convertor\LogAxisCheckBoxToVerticalAxisModeConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\MergeTypeToVisibilityConvertor.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\NoneTypeToVisibilityConvertor.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\ObjectTypeToVisibilityConvertor.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\PropertyTypeToVisibilityConvertor.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\PropertyTypeURIToValidateForChartConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\PropertyTypeURIToValidateForHistogramValueTypeConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\ScreenStatusToIconPathConvertor.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\ScreenStatusToToolTipStringConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\ShowCrosshairsCheckBoxToCrosshairsModeConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\SinglePropertyTypeToVisibilityConvertor.cs" />
+    <Compile Include="Controls\ObjectExplorer\Convertor\VisualizationPanelToolControlsLocationToStartMotionConverter.cs" />
+    <Compile Include="Controls\ObjectExplorer\FormulaPanel\FormulaItem.xaml.cs">
+      <DependentUpon>FormulaItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\FormulaPanel\FormulaPanel.xaml.cs">
+      <DependentUpon>FormulaPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\Histograms\HistogramControl.xaml.cs">
+      <DependentUpon>HistogramControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\Histograms\LinkTypeHistogramControl.xaml.cs">
+      <DependentUpon>LinkTypeHistogramControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\Histograms\PropertyValueHistogramControl.xaml.cs">
+      <DependentUpon>PropertyValueHistogramControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\TimelineControl.xaml.cs">
+      <DependentUpon>TimelineControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\VisualizationPanel.xaml.cs">
+      <DependentUpon>VisualizationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectExplorer\VisualizationToolControl.xaml.cs">
+      <DependentUpon>VisualizationToolControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OntologyPickers\LinkTypePicker.xaml.cs">
+      <DependentUpon>LinkTypePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OntologyPickers\ObjectTypePicker.xaml.cs">
+      <DependentUpon>ObjectTypePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OntologyPickers\Converters\TreeViewPickerItemTagPropertyToOntologyNodeConverter.cs" />
+    <Compile Include="Controls\OntologyPickers\PropertyTypePicker.xaml.cs">
+      <DependentUpon>PropertyTypePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyValueControl\PropertyValueControl.xaml.cs">
+      <DependentUpon>PropertyValueControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateRangeAndLocationControl.xaml.cs">
+      <DependentUpon>DateRangeAndLocationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\GeoSearch\BufferChangedEventArgs.cs" />
+    <Compile Include="Controls\Map\GeoSearch\CircleSearchControl.xaml.cs">
+      <DependentUpon>CircleSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\GeoSearch\PolygonSearchControl.xaml.cs">
+      <DependentUpon>PolygonSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\GeoSearch\RouteSearchControl.xaml.cs">
+      <DependentUpon>RouteSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graph\EventArgs\GraphContentRightClickEventArgs.cs" />
+    <Compile Include="Controls\Graph\GraphContent.cs" />
+    <Compile Include="Controls\Graph\EventArgs\AnimatingCollapseGroupCompletedEventArgs.cs" />
+    <Compile Include="Controls\Graph\EventArgs\AnimatingExpandGroupCompletedEventArgs.cs" />
+    <Compile Include="Controls\Graph\CollapsedGroupNode.cs" />
+    <Compile Include="Controls\Graph\EventArgs\DoubleClickedVertexEventArgs.cs" />
+    <Compile Include="Controls\Graph\EventBasedLinksPerEnds.cs" />
+    <Compile Include="Controls\Graph\EventsWithTwoRelationships.cs" />
+    <Compile Include="Controls\Graph\GraphControl Add New Objects Arrangement.cs" />
+    <Compile Include="Controls\Graph\GraphControl Save-Load operations.cs" />
+    <Compile Include="Controls\Graph\KWPropertiesPerPropertyBasedLink.cs" />
+    <Compile Include="Controls\Graph\MergeProvider.cs" />
+    <Compile Include="Controls\Graph\EventBasedLinksUnmergeProvider.cs" />
+    <Compile Include="Controls\Browser\LanguageSpectrumControl.xaml.cs">
+      <DependentUpon>LanguageSpectrumControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Map\Heatmap\LayerShowState.cs" />
+    <Compile Include="Controls\Map\Heatmap\PointsValueSourceType.cs" />
+    <Compile Include="Controls\Map\Heatmap\TargetPoints.cs" />
+    <Compile Include="Controls\Map\ObjectsSelectionChangedArgs.cs" />
+    <Compile Include="Controls\PropertyValueTemplates\PropertyBooleanValueConverter.cs" />
+    <Compile Include="Controls\PropertyValueTemplates\PropertyDateValueConverter.cs" />
+    <Compile Include="Controls\PropertyValueTemplates\PropertyValueTemplatesVisibilityConverter.cs" />
+    <Compile Include="Controls\PropertyValueTemplates\PropertyValueTemplatesControl.xaml.cs">
+      <DependentUpon>PropertyValueTemplatesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyValueTemplates\ValidationResultEventArgs.cs" />
+    <Compile Include="Controls\Timeline\KTProperty.cs" />
+    <Compile Include="Controls\Timeline\TimelineControl.xaml.cs">
+      <DependentUpon>TimelineControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Timeline\TimeRange.cs" />
+    <Compile Include="Controls\Waiting\ElementType.cs" />
+    <Compile Include="Controls\Waiting\WaitingControl.xaml.cs">
+      <DependentUpon>WaitingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\BranchingHistoryHelper.xaml.cs">
+      <DependentUpon>BranchingHistoryHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Filter\Converters\CountOfResultComboBoxSelectedIndexToCountOfResultConverter.cs" />
+    <Compile Include="Helpers\Filter\EventsArgs\FilterAppliedEventArgs.cs" />
+    <Compile Include="Helpers\Filter\EventsArgs\FilterSearchCompletedEventArgs.cs" />
+    <Compile Include="Helpers\Filter\FilterHelperVM.cs" />
+    <Compile Include="Helpers\Graph\FlowPathCollectionToValueRangePairCollectionConverter.cs" />
+    <Compile Include="Helpers\Graph\FlowsHelper.xaml.cs">
+      <DependentUpon>FlowsHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Graph\FlowsSourceObjectsToAllObjectsIsCheckedConverter.cs" />
+    <Compile Include="Helpers\Graph\FlowsSourceObjectsToSelectedObjectsIsCheckedConverter.cs" />
+    <Compile Include="Helpers\Graph\FlowsVisualStyleToAnimateIsCheckedConverter.cs" />
+    <Compile Include="Helpers\Graph\FlowsVisualStyleToNoneIsCheckedConverter.cs" />
+    <Compile Include="Helpers\Graph\FlowsVisualStyleToStaticIsCheckedConverter.cs" />
+    <Compile Include="Helpers\Graph\ShowHideToggleButtonIsCheckedToTitleConverter.cs" />
+    <Compile Include="Helpers\Graph\SpeedToMiliSecondsConverter.cs" />
+    <Compile Include="Helpers\Map\HeatmapHelper.xaml.cs">
+      <DependentUpon>HeatmapHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Map\OptionsHelper.xaml.cs">
+      <DependentUpon>OptionsHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Map\PropertyNodeToTypeUriConverter.cs" />
+    <Compile Include="Helpers\PresentationHelperViewModel.cs" />
+    <Compile Include="Helpers\TimelineHelper.xaml.cs">
+      <DependentUpon>TimelineHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Observers\ObjectsRemoving\IObjectsRemovableListener.cs" />
+    <Compile Include="Observers\ObjectsRemoving\ObjectsRemovingArgs.cs" />
+    <Compile Include="Observers\ObjectsRemoving\ObjectsRemovingObserver.cs" />
+    <Compile Include="Observers\Properties\IPropertiesChangeableListener.cs" />
+    <Compile Include="Observers\Properties\PropertiesChangedArgs.cs" />
+    <Compile Include="Observers\Properties\PropertiesChangeableObserver.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\Resources.fa1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fa.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="Applications\HomeApplication.xaml.cs">
+      <DependentUpon>HomeApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\MapApplication.xaml.cs">
+      <DependentUpon>MapApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\PresentationApplication.cs" />
+    <Compile Include="Controls\Browser\BrowseControl.xaml.cs">
+      <DependentUpon>BrowseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Histograms\HistogramControl.xaml.cs">
+      <DependentUpon>HistogramControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Histograms\NewerShowObjectsRequestRegisteredException.cs" />
+    <Compile Include="Controls\Histograms\ObjectPropertiesHistogramCategory.cs" />
+    <Compile Include="Controls\Histograms\ObjectPropertiesHistogramGroup.cs" />
+    <Compile Include="Controls\Histograms\ObjectPropertiesHistogramValueCountPair.cs" />
+    <Compile Include="Controls\Histograms\ObjectTypesHistogramCategory.cs" />
+    <Compile Include="Controls\Histograms\ObjectTypesHistogramGroup.cs" />
+    <Compile Include="Controls\Histograms\ObjectTypesHistogramTypeCountPair.cs" />
+    <Compile Include="Controls\Map\MapControl.xaml.cs">
+      <DependentUpon>MapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Filter\FilterHelper.xaml.cs">
+      <DependentUpon>FilterHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graph\GraphControl.xaml.cs">
+      <DependentUpon>GraphControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graph\GraphControlEdgeManager.cs" />
+    <Compile Include="Applications\GraphApplication.xaml.cs">
+      <DependentUpon>GraphApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectCreationControl.xaml.cs">
+      <DependentUpon>ObjectCreationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ObjectLabelControl.xaml.cs">
+      <DependentUpon>ObjectLabelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PresentationControl.cs" />
+    <Compile Include="Controls\QuickSearch\QuickSearchControl.xaml.cs">
+      <DependentUpon>QuickSearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuickSearch\QuickSearchResultViewerControl.xaml.cs">
+      <DependentUpon>QuickSearchResultViewerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graph\GraphControlVertexManager.cs" />
+    <Compile Include="Utility\TakeSnapshotEventArgs.cs" />
+    <Compile Include="Utility\Utility.cs" />
+    <Compile Include="Utility\BooleanToSelectionColorConvertor.cs" />
+    <Compile Include="Utility\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Utility\BoolToTextDecorationsConverter.cs" />
+    <Compile Include="Utility\DoubleToDistanceConvertor.cs" />
+    <Compile Include="Utility\EnumToVisibilityConverter.cs" />
+    <Compile Include="Utility\EnumUtitlities.cs" />
+    <Compile Include="Helpers\HistogramHelper.xaml.cs">
+      <DependentUpon>HistogramHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PresentationHelper.cs" />
+    <Compile Include="Observers\Base\ObserverBase.cs" />
+    <Compile Include="Observers\LinksShowing\ILinksShowableListener.cs" />
+    <Compile Include="Observers\ObjectsSelection\IObjectsSelectableListener.cs" />
+    <Compile Include="Observers\ObjectsShowing\IObjectsShowableListener.cs" />
+    <Compile Include="Observers\LinksShowing\LinksShowingArgs.cs" />
+    <Compile Include="Observers\LinksShowing\LinksShowingObserver.cs" />
+    <Compile Include="Observers\ObjectsFiltering\ObjectsFilteringArgs.cs" />
+    <Compile Include="Observers\ObjectsFiltering\IObjectsFilterableListener.cs" />
+    <Compile Include="Observers\ObjectsFiltering\ObjectsFilteringObserver.cs" />
+    <Compile Include="Observers\ObjectsSelection\ObjectsSelectionChangedArgs.cs" />
+    <Compile Include="Observers\ObjectsSelection\ObjectsSelectionObserver.cs" />
+    <Compile Include="Observers\ObjectsShowing\ObjectsShowingArgs.cs" />
+    <Compile Include="Observers\ObjectsShowing\ObjectsShowingObserver.cs" />
+    <Compile Include="Properties\Resources.fa.Designer.cs" />
+    <Compile Include="Utility\PersianCalander.cs" />
+    <Compile Include="Utility\ZoomBorder.cs" />
+    <Compile Include="Controls\CustomSearchAround\CustomSearchAroundSearchRequestEventArgs.cs" />
+    <Compile Include="Windows\CustomSearchAround\CustomSearchAroundWindow.xaml.cs">
+      <DependentUpon>CustomSearchAroundWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\CalendarType.cs" />
+    <Compile Include="Windows\DataImport\Converters\DataSourceImportStatusToColorConverter.cs" />
+    <Compile Include="Windows\DataImport\DisplayDatabasesWindow.xaml.cs">
+      <DependentUpon>DisplayDatabasesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\Converters\DataSourceImportStatusToIconConverter.cs" />
+    <Compile Include="Windows\DataImport\Converters\DataSourceImportStatusToIconVisibilityConverter.cs" />
+    <Compile Include="Windows\DataImport\Converters\DataSourceImportStatusToMessageConverter.cs" />
+    <Compile Include="Windows\DataImport\Converters\DataSourceIsGenerateImportingObjectsToShowWaitingConverter.cs" />
+    <Compile Include="Windows\DataImport\Converters\DataSourcesCountToBooleanConverter.cs" />
+    <Compile Include="Windows\DataImport\DateTimeConfigWindow.xaml.cs">
+      <DependentUpon>DateTimeConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\GeoSpecialFormatWindow.xaml.cs">
+      <DependentUpon>GeoSpecialFormatWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\GroupDataSourcesWindow.xaml.cs">
+      <DependentUpon>GroupDataSourcesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\MappingWindow.xaml.cs">
+      <DependentUpon>MappingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\RegularExpressionWindow.xaml.cs">
+      <DependentUpon>RegularExpressionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\SetPathWindow.xaml.cs">
+      <DependentUpon>SetPathWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\SetPermissionWindow.xaml.cs">
+      <DependentUpon>SetPermissionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Link\CreateLinkUserControl.xaml.cs">
+      <DependentUpon>CreateLinkUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DataImport\SelectorCsvSepratorWindow.xaml.cs">
+      <DependentUpon>SelectorCsvSepratorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Link\Converters\DirectionToBooleanConverter.cs" />
+    <Compile Include="Controls\Link\Converters\LinkTypeToOpacityConverter.cs" />
+    <Compile Include="Controls\Link\Converters\PropertiesToVisibilityConverter.cs" />
+    <Compile Include="Controls\Link\Converters\SourceTypeToSourceTypeCollectionConverter.cs" />
+    <Compile Include="Controls\Link\Converters\TreeNodeToTypeUri.cs" />
+    <Compile Include="Windows\Graph\Converters\DirectionToButtonEnableConverter.cs" />
+    <Compile Include="Windows\Graph\CreateLinkWindow.xaml.cs">
+      <DependentUpon>CreateLinkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Graph\EditLinkWindow.xaml.cs">
+      <DependentUpon>EditLinkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Graph\LinkModel.cs" />
+    <Compile Include="Windows\Graph\LinkViewModel.cs" />
+    <Compile Include="Windows\Graph\SearchAroundLoadMoreResultsWindow.xaml.cs">
+      <DependentUpon>SearchAroundLoadMoreResultsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Graph\SearchAroundLoadMoreResultsWindowEventArgs.cs" />
+    <Compile Include="Windows\Graph\ShareGraphWindow.xaml.cs">
+      <DependentUpon>ShareGraphWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Graph\UnmergeMoreLinksWindow.xaml.cs">
+      <DependentUpon>UnmergeMoreLinksWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Graph\UnmergeMoreLinksWindowEventArgs.cs" />
+    <Compile Include="Windows\Graph\UpdateLinksEventArgs.cs" />
+    <Compile Include="Windows\InputDialogWindow.xaml.cs">
+      <DependentUpon>InputDialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Investigation\Converters\VisibilityPopupConverter.cs" />
+    <Compile Include="Windows\Investigation\Enums\ShowInvestigationPopupEnum.cs" />
+    <Compile Include="Windows\Investigation\EventArguments\LoadInvestigationEventArgs.cs" />
+    <Compile Include="Windows\Investigation\Models\InvestigationModel.cs" />
+    <Compile Include="Windows\Investigation\Validations\NotEmptyValidationRuleValidation.cs" />
+    <Compile Include="Windows\Investigation\ViewModels\InvestigationViewModel.cs" />
+    <Compile Include="Windows\Investigation\View\InvestigationManagerWindow.xaml.cs">
+      <DependentUpon>InvestigationManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MapLinkCreationRequestEventArgs.cs" />
+    <Compile Include="Windows\MessageBoxes\KWMessageBoxWindow.xaml.cs">
+      <DependentUpon>KWMessageBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MessageBoxes\MessageBoxButtonToVisibilityConverter.cs" />
+    <Compile Include="Windows\MessageBoxes\MessageBoxImageToForegroundConverter.cs" />
+    <Compile Include="Windows\MessageBoxes\MessageBoxImageToIconConverter.cs" />
+    <Compile Include="Windows\ObjectExplorer\PropertyMatchedValueFilterWindow.xaml.cs">
+      <DependentUpon>PropertyMatchedValueFilterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ObjectExplorer\SetAlgebraDialogResult.cs" />
+    <Compile Include="Windows\ObjectExplorer\SetAlgebraWindow.xaml.cs">
+      <DependentUpon>SetAlgebraWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PublishConcepts\ComponentType.cs" />
+    <Compile Include="Windows\PublishConcepts\ConceptType.cs" />
+    <Compile Include="Windows\PublishConcepts\PercentageConverter.cs" />
+    <Compile Include="Windows\PublishConcepts\TreeViewItemBase.cs" />
+    <Compile Include="Windows\PublishConcepts\UnpublishConcept.cs" />
+    <Compile Include="Windows\PublishConcepts\ChangeType.cs" />
+    <Compile Include="Windows\PublishConcepts\UnpublishedObject.cs" />
+    <Compile Include="Windows\PublishConcepts\UnpublishObjectComponent.cs" />
+    <Compile Include="Windows\PublishConcepts\UnpublishObjectComponentValue.cs" />
+    <Compile Include="Windows\Graph\GetGraphWindow.xaml.cs">
+      <DependentUpon>GetGraphWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Help\ShortcutKeys.xaml.cs">
+      <DependentUpon>ShortcutKeys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdPartyClasses\IconToAvgColorBrushConverter.cs" />
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\PresentationWindow.cs" />
+    <Compile Include="Windows\PublishConcepts\PublishWindow.xaml.cs">
+      <DependentUpon>PublishWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ShortcutKeyCommands.cs" />
+    <Compile Include="ThirdPartyClasses\WaitSpin.cs" />
+    <Compile Include="ThirdPartyClasses\Win7ColorHotTrackExtension.cs" />
+    <Compile Include="Windows\SnapshotRequestEventArgs.cs" />
+    <Compile Include="Windows\TagCloudWindow.xaml.cs">
+      <DependentUpon>TagCloudWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ThemeApplication.cs" />
+    <Compile Include="Windows\ThemeChangedEventArgs.cs" />
+    <Page Include="ApplicationContainers\ApplicationContainerBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\BrowserApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\DataImportApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\DataSourceApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\HomeApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\ImageAnalysisApplication\ImageAnalysisApplicatioin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\MapApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\ObjectExplorerApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppStyleResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Browser\BrowseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Common\ButtonWithIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Common\MessageSnackBarUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CustomSearchAround\CSAGraphUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CustomSearchAround\CustomSearchAroundUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\CardTemplateUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\DataImportUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\DataSourceDetailsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\DataSourceHistogramUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\DraggingDataSourceFieldUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\DataSourcePreviewUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\DraggingDataSourceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\ImportingObjectBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\SetMappingPropertiesValueUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\MappingUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\MapPropertyTemplateUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\SetPermissionUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\TabularMappingFirstStepUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\BindableMappingGraphUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\MappingGraphUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\TabularMappingSecondStepUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataImport\UnstructuredMappingUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LocationPropertyValueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Publish\PublishUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Sesrch\ResourceDictionary\SearchResultTemplateDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sesrch\View\AdvanceSearchControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sesrch\View\BasicSearchControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sesrch\View\PreviewHighlightesResultsUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sesrch\View\SearchResultUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Sesrch\View\SearchUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TagCloud\JSTagCloudControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilterSearchCriterias\ContainerFilterSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilterSearchCriterias\DateFilterSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilterSearchCriterias\KeywordFilterSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilterSearchCriterias\ObjectTypeFilterSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilterSearchCriterias\PropertyFilterSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilterSearchCriterias\Templates\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Map\Heatmap\SpectrumSliderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImageProcessing\BoundingBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\BranchingHistoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\Charts\BarChartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\FormulaPanel\FormulaItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\FormulaPanel\FormulaPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\Histograms\HistogramControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\Histograms\LinkTypeHistogramControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\Histograms\PropertyValueHistogramControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\MainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\TimelineControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\VisualizationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectExplorer\VisualizationToolControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OntologyPickers\LinkTypePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OntologyPickers\ObjectTypePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OntologyPickers\PropertyTypePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PropertyValueControl\PropertyValueControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DateRangeAndLocationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Map\GeoSearch\CircleSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Map\GeoSearch\PolygonSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Map\GeoSearch\RouteSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Histograms\HistogramControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Browser\LanguageSpectrumControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Map\MapControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PropertyValueTemplates\PropertyValueTemplatesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Timeline\TimelineControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Waiting\WaitingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\BranchingHistoryHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Filter\FilterHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Graph\GraphControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Applications\GraphApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectCreationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ObjectLabelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QuickSearch\QuickSearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QuickSearch\QuickSearchResultViewerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Graph\FlowsHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\HistogramHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Map\OptionsHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\Map\HeatmapHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Helpers\TimelineHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\DataGridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ScrollViewerStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ContextMenuStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ExpanderAndGroupStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\HyperlinkStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\IconStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ListViewAndListBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Storyboards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TabItemStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBlockStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\WindowStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Light.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CustomSearchAround\CustomSearchAroundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\DisplayDatabasesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThirdPartyClasses\ColorHotTrackButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\DateTimeConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\GeoSpecialFormatWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\GroupDataSourcesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\MappingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\RegularExpressionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\SetPathWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\SetPermissionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Link\CreateLinkUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DataImport\SelectorCsvSepratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Graph\CreateLinkWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Graph\EditLinkWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Graph\SearchAroundLoadMoreResultsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Graph\ShareGraphWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Graph\UnmergeMoreLinksWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\InputDialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Investigation\Styles\ButtonsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Investigation\Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Investigation\Styles\GridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Investigation\Styles\IconsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Investigation\Styles\Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Investigation\Styles\TextBoxsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Investigation\View\InvestigationManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\MessageBoxes\KWMessageBoxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ObjectExplorer\PropertyMatchedValueFilterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ObjectExplorer\SetAlgebraWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Graph\GetGraphWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Help\ShortcutKeys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PublishConcepts\PublishWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThirdPartyClasses\WaitSpin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TagCloudWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.fa.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fa1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="app.Debug.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.DevelopDeployDebug.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="app.Release.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="Applications\ApplicationViewModel\DataImport\MappingDiagram.cd" />
+    <None Include="Applications\ApplicationViewModel\DataImport\DataImportDiagram.cd" />
+    <None Include="Controls\DataImport\Model\DataImprtDiagram.cd" />
+    <None Include="Controls\DataImport\Model\DataSourceField\DataSourceFieldDiagram.cd" />
+    <None Include="Controls\DataImport\Model\DataSourceDiagram.cd" />
+    <None Include="Controls\DataImport\Model\Map\MapDiagram.cd" />
+    <None Include="Controls\DataImport\Model\MetaData\MetadataDiagram.cd" />
+    <None Include="Controls\DataImport\Model\Permission\PermissionDiagram.cd" />
+    <None Include="Controls\Graph\Flows\Model.dgml" />
+    <None Include="Controls\Graph\Graph Control - Edges &amp; Vertices Selection Calls.dgml" />
+    <None Include="Controls\Histograms\HistogramFillingTypes.cd" />
+    <None Include="Controls\OntologyPickers\OntologyPickerDiagram.cd" />
+    <None Include="Controls\Sesrch\ClassDiagram1.cd" />
+    <None Include="Controls\Sesrch\Model\SearchModel.cd" />
+    <None Include="Controls\Timeline\TimelineControlClassDiagram.cd" />
+    <None Include="GPAS.Workspace.Presentation.Debug.ruleset" />
+    <None Include="GPAS.Workspace.Presentation.DevelopDeployDebug.ruleset" />
+    <None Include="packages.config" />
+    <None Include="Presentation Model.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33FBBF9B-C7F4-4F91-99D9-335A18C2609D}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataImport\GPAS.DataImport.csproj">
+      <Project>{73a6e9cf-a4f9-45d3-84ad-b149c488ff6f}</Project>
+      <Name>GPAS.DataImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FilterSearch\GPAS.FilterSearch.csproj">
+      <Project>{7fc50142-43a1-4ada-8aa0-c0869d2f793c}</Project>
+      <Name>GPAS.FilterSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FtpServiceAccess\GPAS.FtpServiceAccess.csproj">
+      <Project>{d78569e5-4442-4087-8d8f-ed793a487fcd}</Project>
+      <Name>GPAS.FtpServiceAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.BarChartViewer\GPAS.BarChartViewer.csproj">
+      <Project>{e41a5429-e03e-45bf-ac77-664dc51d4c27}</Project>
+      <Name>GPAS.BarChartViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.BranchingHistoryViewer\GPAS.BranchingHistoryViewer.csproj">
+      <Project>{4e0a11d9-d768-44c3-aa77-2767ab678f28}</Project>
+      <Name>GPAS.BranchingHistoryViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.ColorPickerViewer\GPAS.ColorPickerViewer.csproj">
+      <Project>{19196356-bb61-45ff-b531-12697f3b9e45}</Project>
+      <Name>GPAS.ColorPickerViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.DateTimePicker\GPAS.DateTimePicker.csproj">
+      <Project>{20072ba5-554d-414e-b039-bbc7d47d0819}</Project>
+      <Name>GPAS.DateTimePicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.GeoSearch\GPAS.GeoSearch.csproj">
+      <Project>{DC917467-DE53-4BAC-90A2-B241BB44623E}</Project>
+      <Name>GPAS.GeoSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.Histogram\GPAS.Histogram.csproj">
+      <Project>{d9fe795a-4e70-48c6-bb8c-f09c6968074b}</Project>
+      <Name>GPAS.Histogram</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.Logger\GPAS.Logger.csproj">
+      <Project>{7905da86-186f-4d3b-8d13-68df6ed7c31b}</Project>
+      <Name>GPAS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.ObjectExplorerHistogramViewer\GPAS.ObjectExplorerHistogramViewer.csproj">
+      <Project>{06f166e1-c224-41ab-a39c-0dd588ad1272}</Project>
+      <Name>GPAS.ObjectExplorerHistogramViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Gpas.Pagination\Gpas.Pagination.csproj">
+      <Project>{550fe373-6bce-4c87-afed-95ab28623cb9}</Project>
+      <Name>Gpas.Pagination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.SearchAround\GPAS.SearchAround.csproj">
+      <Project>{fcb286b8-af82-4f5d-ac9e-fd0a5a311289}</Project>
+      <Name>GPAS.SearchAround</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.StatisticalQuery\GPAS.StatisticalQuery.csproj">
+      <Project>{DCB8746E-EEBB-43C4-A220-804E45D32C27}</Project>
+      <Name>GPAS.StatisticalQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.TextualSearch\GPAS.TextualSearch.csproj">
+      <Project>{73D4F456-EDFB-4CAF-8F7A-6B535C6FCCA9}</Project>
+      <Name>GPAS.TextualSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.TimelineViewer\GPAS.TimelineViewer.csproj">
+      <Project>{13881ae2-56ab-4b4e-9876-7fe57889c663}</Project>
+      <Name>GPAS.TimelineViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.TreeViewPicker\GPAS.TreeViewPicker.csproj">
+      <Project>{bbf40ef0-b41f-4775-bf15-6f15a0e840cc}</Project>
+      <Name>GPAS.TreeViewPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.Utility\GPAS.Utility.csproj">
+      <Project>{000A2D3B-E6FE-4A50-BB93-FE589E3421EF}</Project>
+      <Name>GPAS.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.Workspace.Entities.Investigation\GPAS.Workspace.Entities.Investigation.csproj">
+      <Project>{10BA32F1-5C08-4D19-BF32-0FF35D0E15C9}</Project>
+      <Name>GPAS.Workspace.Entities.Investigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PropertiesValidation\GPAS.PropertiesValidation\GPAS.PropertiesValidation.csproj">
+      <Project>{7EB45CF8-E353-4284-AC19-AA1C14B525DD}</Project>
+      <Name>GPAS.PropertiesValidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\Dispatch\Entities.Concepts\GPAS.Dispatch.Entities.Concepts.csproj">
+      <Project>{2960b31e-4c0b-485b-a5f9-614f121faa5b}</Project>
+      <Name>GPAS.Dispatch.Entities.Concepts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\Dispatch\Entities.Publish\GPAS.Dispatch.Entities.Publish.csproj">
+      <Project>{b19384b4-aa82-4a77-91ad-d094d31c994b}</Project>
+      <Name>GPAS.Dispatch.Entities.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\Dispatch\GPAS.Dispatch.Entities.NLP\GPAS.Dispatch.Entities.NLP.csproj">
+      <Project>{08693780-9df6-42fa-bf54-808de898acc1}</Project>
+      <Name>GPAS.Dispatch.Entities.NLP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicOntology\GPAS.Workspace.DynamicOntology.csproj">
+      <Project>{10c004f6-0d11-47f3-9d19-d0ec57ad1cba}</Project>
+      <Name>GPAS.Workspace.DynamicOntology</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.BrowserViewer\GPAS.BrowserViewer.csproj">
+      <Project>{af1b7ec1-eb1b-4137-a66d-7e09e68a94aa}</Project>
+      <Name>GPAS.BrowserViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.DataBarViewer\GPAS.DataBarViewer.csproj">
+      <Project>{95802115-efc5-4742-8a18-a3cf87a3e51a}</Project>
+      <Name>GPAS.DataBarViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.HistogramViewer\GPAS.HistogramViewer.csproj">
+      <Project>{a4c0e0a3-b5f5-41fd-b690-adce779bcaab}</Project>
+      <Name>GPAS.HistogramViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.JSTagCloudViewer\GPAS.JSTagCloudViewer.csproj">
+      <Project>{08958E59-B072-4507-B1EF-6347A39F29FA}</Project>
+      <Name>GPAS.JSTagCloudViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.LanguageSpectrumViewer\GPAS.LanguageSpectrumViewer.csproj">
+      <Project>{fad0f523-2525-48ab-a048-d9f6a093634e}</Project>
+      <Name>GPAS.LanguageSpectrumViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.MapViewer\GPAS.MapViewer.csproj">
+      <Project>{39c34bd5-efee-432c-9040-fea6562df0d8}</Project>
+      <Name>GPAS.MapViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.PieChartViewer\GPAS.PieChartViewer.csproj">
+      <Project>{1ab5b5a6-ba54-4e2b-8517-15dcc92184e2}</Project>
+      <Name>GPAS.PieChartViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.RightClickMenu\GPAS.RightClickMenu.csproj">
+      <Project>{0a177cf3-a6cb-46a7-a851-b398dde4d66b}</Project>
+      <Name>GPAS.RightClickMenu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Workspace.Model\GPAS.Workspace.Model.csproj">
+      <Project>{55F36470-4BD2-4058-B908-E10BA13F421C}</Project>
+      <Name>GPAS.Workspace.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Workspace.ViewModel\GPAS.Workspace.ViewModel.csproj">
+      <Project>{472ea548-bb62-43ba-9648-3633a92cbcb2}</Project>
+      <Name>GPAS.Workspace.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphViewer\GPAS.Graph.GraphViewer.csproj">
+      <Project>{c19df40c-ba4e-42c8-bdb4-671cdaabbc2d}</Project>
+      <Name>GPAS.Graph.GraphViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.Ontology\GPAS.Ontology.csproj">
+      <Project>{c7c4f25f-18cf-4f2f-8638-39deb1caff1a}</Project>
+      <Name>GPAS.Ontology</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceEntities\GPAS.Workspace.Entities.csproj">
+      <Project>{f05d7ab8-c202-4557-9e61-ad47cbda0fef}</Project>
+      <Name>GPAS.Workspace.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceLogic\GPAS.Workspace.Logic.csproj">
+      <Project>{1cb132cd-73c7-4427-9eca-afc09e499d32}</Project>
+      <Name>GPAS.Workspace.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceServiceAccess\GPAS.Workspace.ServiceAccess.csproj">
+      <Project>{C3907774-BF75-4C98-96C5-C802279CDCED}</Project>
+      <Name>GPAS.Workspace.ServiceAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\SelectedArrowIcon.png" />
+    <Resource Include="Resources\DynamicOntologyIcons\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DynamicOntologyIcons\Forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Csv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JobsStatus\Done.png" />
+    <Resource Include="Resources\JobsStatus\Pending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JobsStatus\Busy.png" />
+    <Resource Include="Resources\JobsStatus\Terminated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JobsStatus\Timeout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\JobsStatus\Failed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cassandra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\Add Elbow.png" />
+    <Resource Include="Resources\LinkRightClickMenuIcons\Publish.png" />
+    <Resource Include="Resources\LinkRightClickMenuIcons\Rdit Link.png" />
+    <Resource Include="Resources\LinkRightClickMenuIcons\Remove Elbow.png" />
+    <Resource Include="Resources\LinkRightClickMenuIcons\Remove.png" />
+    <Resource Include="Resources\LinkRightClickMenuIcons\Unmerge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Links\Unmerge.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Links\Unmerge_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Incoming Nodes.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Invert Nodes.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Linked Nodes.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Links Between.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Outgoing Nodes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Events.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Linked Document.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Linked Entities.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\More....png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Paths.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Make Group.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Links.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Publish.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Remove.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Resolve.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Search Around.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectBrowserIcons\RelatedDocuments.png" />
+    <Resource Include="Resources\ObjectBrowserIcons\RelatedEntities.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectBrowserIcons\RelatedEvents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Links_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Make Group_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Publish_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Remove_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Resolve_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Search Around_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Ungroup_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\View_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Events_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Linked Document_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Linked Entities_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\More..._Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Paths_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\Properties_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Incoming Nodes_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Invert Nodes_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Linked Nodes_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Links Between_Disable.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Select\Outgoing Nodes_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\Bigdata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\Browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\DataSource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\graph-selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\home-mouseOver1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\Summery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\AddElbow_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\Publish_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\RditLink_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\Remove_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\RemoveElbow_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\Ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\Ungroup_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\Unmerge_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\View_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\RemoveLinkFromGraph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\RemoveLinkFromGraph_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\HardDeleteLink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\RemoveLinkFromGraph1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LinkRightClickMenuIcons\RemoveLinkFromGraph1_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Links\Merge.png" />
+    <Resource Include="Resources\ObjectRightClickMenuIcons\Links\Merge_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectResolutionWizardIcons\Histogram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectResolutionWizardIcons\Browser - Copy.png" />
+    <Resource Include="Resources\ObjectResolutionWizardIcons\Browser.png" />
+    <Resource Include="Resources\ObjectResolutionWizardIcons\DisabledBrowser.png" />
+    <Resource Include="Resources\ObjectResolutionWizardIcons\ResolutionCloseIcon.png" />
+    <Resource Include="Resources\ObjectResolutionWizardIcons\SelectedBrowser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectResolutionWizardIcons\DisabledHistogram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectResolutionWizardIcons\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\InputdialogWindowQuestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LoginIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddDatabaseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AddedDatabase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tables.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Views.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ImportDatabaseIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CautionIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MapApplicationIcons\CircleSearch.png" />
+    <Resource Include="Resources\MapApplicationIcons\PolygonSearch.png" />
+    <Resource Include="Resources\MapApplicationIcons\RouteSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MapApplicationIcons\PolygonSearch_Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MapApplicationIcons\CircleSearch_Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MapApplicationIcons\RouteSearch_Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cursors\dragDropObject.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cursors\dragDropGroup.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Excel2013File.png" />
+    <Resource Include="Resources\spreadsheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\SearchAround\CustomSearchAround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GraphDataSource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ManualEntedredDataSource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DocumentDataSource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DownloadIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectRightClickMenuIcons\TagCloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\ImageAnalysisApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UploadImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationIcons\objectExplorer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectExplorerIcons\histogram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectExplorerIcons\ApplyFormula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectExplorerIcons\ExclusiveOr.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\Intersection.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\SubtractLeft.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\SubtractRight.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\Union.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectExplorerIcons\Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ObjectExplorerIcons\chart2.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\link_type_histogram.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\pie_chart.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\property_value_histogram.png" />
+    <Resource Include="Resources\ObjectExplorerIcons\timeline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AccessDB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AccessTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Graph\Show Edges on Graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AppIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Group.png" />
+    <Resource Include="Resources\Table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DarkThemeSample.png" />
+    <Resource Include="Resources\LightThemeSample.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Eml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <!--================================-->
+  <!--Following part is added manually-->
+  <!--================================-->
+  <!--Force the Project to store needed Font(s) in OutputPath-->
+  <!--
+  <ItemGroup>
+	<Content Include="FontAwesome.otf">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+  </ItemGroup>
+   -->
+  <!--================================-->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+    <Error Condition="!Exists('..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)..\GPAS.JSTagCloudViewer\Resources\JavaScript" "$(TargetDir)Resources\JavaScript\" /E /Y</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>@Echo Updating Feature Tests' config files
+@cd $(ProjectDir)..\..\GPAS.FeatureTest\
+FOR /D %25%25P in ("*Tests") DO @XCOPY /R /Y /F "$(ProjectDir)app.config" ".\%25%25~nxP\App.config"
+FOR /D %25%25P in ("*Tests") DO ATTRIB +R ".\%25%25~nxP\App.config"
+
+@Echo Overwriting config files of Presentation-based Tests
+@XCOPY /R /Y /F "$(ProjectDir)app.config" "$(ProjectDir)..\GPAS.Workspace.DataAccessManagerTests\App.config"
+ATTRIB +R "$(ProjectDir)..\GPAS.Workspace.DataAccessManagerTests\App.config"
+@XCOPY /R /Y /F "$(ProjectDir)app.config" "$(ProjectDir)..\GPAS.Workspace.PresentationTest\App.config"
+ATTRIB +R "$(ProjectDir)..\GPAS.Workspace.PresentationTest\App.config"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Import Project="..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

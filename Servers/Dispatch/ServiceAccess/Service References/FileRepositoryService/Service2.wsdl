@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dispatchserver:5041/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dispatchserver:5041/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dispatchserver:5041/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GPAS.FileRepository.Logic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_test_InputMessage">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="IService_test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPathContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathContent" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPathContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPathContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RenameDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService_RenameDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsHadoopAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsHadoopAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsHadoopAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsHadoopAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileSize" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileSizeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/test" message="tns:IService_test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/testResponse" message="tns:IService_test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPathContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPathContent" message="tns:IService_GetPathContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPathContentResponse" message="tns:IService_GetPathContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteDirectory" message="tns:IService_DeleteDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteDirectoryResponse" message="tns:IService_DeleteDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateDirectory" message="tns:IService_CreateDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateDirectoryResponse" message="tns:IService_CreateDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RenameDirectory" message="tns:IService_RenameDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RenameDirectoryResponse" message="tns:IService_RenameDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadFile" message="tns:IService_UploadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadFileResponse" message="tns:IService_UploadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadFile" message="tns:IService_DownloadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadFileResponse" message="tns:IService_DownloadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsHadoopAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsHadoopAvailable" message="tns:IService_IsHadoopAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsHadoopAvailableResponse" message="tns:IService_IsHadoopAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetFileSize" message="tns:IService_GetFileSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetFileSizeResponse" message="tns:IService_GetFileSize_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/IService/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPathContent">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPathContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService/RenameDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHadoopAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsHadoopAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSize">
+      <soap:operation soapAction="http://tempuri.org/IService/GetFileSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://dispatchserver:5041/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

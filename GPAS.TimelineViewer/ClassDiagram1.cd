@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.TimelineViewer.BinSize">
+    <Position X="16.25" Y="1" Width="2" />
+    <Members>
+      <Method Name="ProcessTimeDuration" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAABIAwAAAAAAAQAAAAgAAEAAAAAECAgAAAAAIAAAA=</HashCode>
+      <FileName>BinSize.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RelatedBinSizesEnum" />
+      <Property Name="TimeAxisLabelsScale" />
+      <Property Name="BinScale" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.BinSizes">
+    <Position X="20.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAIAAAAAAAQoQACsAAFBABAAAAAAAAQAGAAAgA=</HashCode>
+      <FileName>BinSizes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Category" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="6.75" Width="2.25" />
+    <Members>
+      <Field Name="dataItems" Hidden="true" />
+      <Method Name="DataItems_CollectionChanged" Hidden="true" />
+      <Field Name="icon" Hidden="true" />
+      <Field Name="identifier" Hidden="true" />
+      <Field Name="inBoundDataItems" Hidden="true" />
+      <Property Name="InBoundDataItems" Hidden="true" />
+      <Field Name="isChecked" Hidden="true" />
+      <Property Name="IsChecked" Hidden="true" />
+      <Field Name="legendColor" Hidden="true" />
+      <Field Name="lowerBound" Hidden="true" />
+      <Method Name="NotifyPropertyChanged" Hidden="true" />
+      <Field Name="parent" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Field Name="relatedChart" Hidden="true" />
+      <Property Name="RelatedChart" Hidden="true" />
+      <Field Name="relatedSeries" Hidden="true" />
+      <Method Name="RemoveOutBoundDataItems" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Method Name="UpdateInBoundDataItems" Hidden="true" />
+      <Field Name="upperBound" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAICAAQCEgAMBDAAAAQiAEgIEgAABBIRQAQAUQAIA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DataItems" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Orientation="Right" Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.FilterWindow">
+    <Position X="1.75" Y="0.75" Width="3.25" />
+    <Members>
+      <Method Name="AddAnnotationsToChart" Hidden="true" />
+      <Property Name="Bin" Hidden="true" />
+      <Field Name="BinProperty" Hidden="true" />
+      <Field Name="btnClose" Hidden="true" />
+      <Method Name="BtnClose_Click" Hidden="true" />
+      <Method Name="BtnClose_MouseEnter" Hidden="true" />
+      <Method Name="BtnClose_MouseLeave" Hidden="true" />
+      <Method Name="BtnClose_MouseMove" Hidden="true" />
+      <Method Name="CalculateBinEachPixel" Hidden="true" />
+      <Field Name="closeAnnotation" Hidden="true" />
+      <Field Name="ContextMenuProperty" Hidden="true" />
+      <Field Name="endLineAnnotation" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseEnter" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseLeave" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="EndLineAnnotation_MouseMove" Hidden="true" />
+      <Property Name="Fill" Hidden="true" />
+      <Field Name="FillProperty" Hidden="true" />
+      <Method Name="FilterWindow_RangeChanged" Hidden="true" />
+      <Field Name="FromProperty" Hidden="true" />
+      <Method Name="HasAnnotation" Hidden="true" />
+      <Property Name="HorizontalAxis" Hidden="true" />
+      <Field Name="HorizontalAxisProperty" Hidden="true" />
+      <Property Name="IsHitTestVisibleForFill" Hidden="true" />
+      <Field Name="IsHitTestVisibleForFillProperty" Hidden="true" />
+      <Property Name="IsHitTestVisibleForStroke" Hidden="true" />
+      <Field Name="IsHitTestVisibleForStrokeProperty" Hidden="true" />
+      <Field Name="lblContentToolTip" Hidden="true" />
+      <Property Name="LowerBound" Hidden="true" />
+      <Field Name="LowerBoundProperty" Hidden="true" />
+      <Field Name="mainAnnotation" Hidden="true" />
+      <Method Name="MainAnnotation_MouseEnter" Hidden="true" />
+      <Method Name="MainAnnotation_MouseLeave" Hidden="true" />
+      <Method Name="MainAnnotation_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="MainAnnotation_MouseMove" Hidden="true" />
+      <Property Name="MaximumLength" Hidden="true" />
+      <Field Name="MaximumLengthProperty" Hidden="true" />
+      <Property Name="MinimumLength" Hidden="true" />
+      <Field Name="MinimumLengthProperty" Hidden="true" />
+      <Field Name="minimumThicknessLineAnnotation" Hidden="true" />
+      <Method Name="MouseEnterInvoker" Hidden="true" />
+      <Method Name="MouseLeaveInvoker" Hidden="true" />
+      <Method Name="OnSetBinChanged" Hidden="true" />
+      <Method Name="OnSetFromChanged" Hidden="true" />
+      <Method Name="OnSetHorizontalAxisChanged" Hidden="true" />
+      <Method Name="OnSetLowerBoundChanged" Hidden="true" />
+      <Method Name="OnSetMaximumLengthChanged" Hidden="true" />
+      <Method Name="OnSetMinimumLengthChanged" Hidden="true" />
+      <Method Name="OnSetStrokeThicknessChanged" Hidden="true" />
+      <Method Name="OnSetToChanged" Hidden="true" />
+      <Method Name="OnSetToolTipStyleChanged" Hidden="true" />
+      <Method Name="OnSetUpperBoundChanged" Hidden="true" />
+      <Method Name="OnSetVerticalAxisChanged" Hidden="true" />
+      <Field Name="radCartesianChart" Hidden="true" />
+      <Method Name="RadCartesianChart_SizeChanged" Hidden="true" />
+      <Field Name="rangeEachPixel" Hidden="true" />
+      <Method Name="RemoveAnnotationsToChart" Hidden="true" />
+      <Method Name="SetBinChanged" Hidden="true" />
+      <Method Name="SetBindingsProperties" Hidden="true" />
+      <Method Name="SetChart" Hidden="true" />
+      <Method Name="SetCloseButtonLocation" Hidden="true" />
+      <Field Name="startLineAnnotation" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseEnter" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseLeave" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="StartLineAnnotation_MouseMove" Hidden="true" />
+      <Property Name="Stroke" Hidden="true" />
+      <Field Name="StrokeProperty" Hidden="true" />
+      <Property Name="StrokeThickness" Hidden="true" />
+      <Field Name="StrokeThicknessProperty" Hidden="true" />
+      <Property Name="ToolTipStyle" Hidden="true" />
+      <Field Name="ToolTipStyleProperty" Hidden="true" />
+      <Field Name="ToProperty" Hidden="true" />
+      <Property Name="UpperBound" Hidden="true" />
+      <Field Name="UpperBoundProperty" Hidden="true" />
+      <Property Name="VerticalAxis" Hidden="true" />
+      <Field Name="VerticalAxisProperty" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>g0E4DIFoCCBCYQ6HSrjIBypFAFkoDpAYioBkoALBRAs=</HashCode>
+      <FileName>FilterWindow.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.Range">
+    <Position X="5.75" Y="0.75" Width="2" />
+    <Members>
+      <Field Name="from" Hidden="true" />
+      <Method Name="Intersect" Hidden="true" />
+      <Method Name="NotifyPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Method Name="Subtract" Hidden="true" />
+      <Field Name="to" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgEAAAIAAABCAIAAAAAGAAgAgAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Range.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.SuperCategory" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="6.75" Width="2.5" />
+    <Members>
+      <Field Name="isChecked" Hidden="true" />
+      <Property Name="IsChecked" Hidden="true" />
+      <Method Name="NotifyPropertyChanged" Hidden="true" />
+      <Event Name="PropertyChanged" Hidden="true" />
+      <Field Name="subCategories" Hidden="true" />
+      <Method Name="SubCategories_CollectionChanged" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAIGAAQCAgAMAAAAAAAAAAgAACAAAAAAACAAAQAAA=</HashCode>
+      <FileName>SuperCategory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SubCategories" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="1.567" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.TimelineItemsSegment">
+    <Position X="5.5" Y="4" Width="2" />
+    <Members>
+      <Field Name="frequencyCount" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Property Name="IsSelected" Hidden="true" />
+      <Property Name="PaddedFrom" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAACAwAAAgEAAAAAAAAgAgAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TimelineItemsSegment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.TimelineViewer" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="0.75" Width="2.75" />
+    <Members>
+      <Property Name="ActualBin" Hidden="true" />
+      <Field Name="ActualBinProperty" Hidden="true" />
+      <Property Name="ActualTotalLowerBound" Hidden="true" />
+      <Field Name="ActualTotalLowerBoundProperty" Hidden="true" />
+      <Property Name="ActualTotalUpperBound" Hidden="true" />
+      <Field Name="ActualTotalUpperBoundProperty" Hidden="true" />
+      <Method Name="AddExtraSeriesIfNeed" Hidden="true" />
+      <Method Name="AddFetchedItemsToChart" Hidden="true" />
+      <Method Name="AddPanPosition" Hidden="true" />
+      <Method Name="AddSubCategoriesToChart" Hidden="true" />
+      <Method Name="AddSuperCategories" Hidden="true" />
+      <Method Name="AfterCreateFilterWindow" Hidden="true" />
+      <Method Name="AssignActualTotalBounds" Hidden="true" />
+      <Method Name="AssignBin" Hidden="true" />
+      <Method Name="AssignBinForFilterWindows" Hidden="true" />
+      <Method Name="AssignDataSegment" Hidden="true" />
+      <Method Name="AssignLabelPropetiesForHorizontalAxis" Hidden="true" />
+      <Method Name="AssignLoadedBounds" Hidden="true" />
+      <Method Name="AssignSelectedBarColor" Hidden="true" />
+      <Method Name="AssignSubCategoriesBound" Hidden="true" />
+      <Method Name="AssignSubCategoriesRelatedChart" Hidden="true" />
+      <Method Name="AssignTotalBounds" Hidden="true" />
+      <Field Name="barSegmentsSelectorCounter" Hidden="true" />
+      <Field Name="barSelectMode" Hidden="true" />
+      <Method Name="BindToChartFilterWindow" Hidden="true" />
+      <Field Name="BinProperty" Hidden="true" />
+      <Method Name="BinSizeForAllDataInOneSegment" Hidden="true" />
+      <Method Name="btnClearFilters_Click" Hidden="true" />
+      <Method Name="btnSnapShot_Click" Hidden="true" />
+      <Method Name="btnZoomPanToAllEvents_Click" Hidden="true" />
+      <Method Name="cartesianChartGrid_MouseLeave" Hidden="true" />
+      <Method Name="cartesianChartGrid_PreviewMouseLeftButtonDown" Hidden="true" />
+      <Method Name="cartesianChartGrid_PreviewMouseLeftButtonUp" Hidden="true" />
+      <Method Name="cartesianChartGrid_PreviewMouseMove" Hidden="true" />
+      <Method Name="ChangePanPosition" Hidden="true" />
+      <Method Name="ChartContainerMouseWheel" Hidden="true" />
+      <Method Name="ChartSelectionBehavior_SelectionChanged" Hidden="true" />
+      <Method Name="CoveringSegments" Hidden="true" />
+      <Method Name="CreateNewFilterWindow" Hidden="true" />
+      <Field Name="currentItemsNeededEventArgs" Hidden="true" />
+      <Field Name="currentStrokeState" Hidden="true" />
+      <Field Name="cursorPosition" Hidden="true" />
+      <Field Name="cursorTime" Hidden="true" />
+      <Field Name="defaultMaximumCount" Hidden="true" />
+      <Field Name="defaultSelectedBarColor" Hidden="true" />
+      <Method Name="DeselectAllBar" Hidden="true" />
+      <Field Name="endDragFilterWindow" Hidden="true" />
+      <Method Name="FetchItems" Hidden="true" />
+      <Method Name="FilterWindows_CollectionChanged" Hidden="true" />
+      <Method Name="GenerateFilterWindow" Hidden="true" />
+      <Method Name="GenerateSeriesCategory" Hidden="true" />
+      <Method Name="GetActualBin" Hidden="true" />
+      <Method Name="GetCenterDataPointHorizontalAxis" Hidden="true" />
+      <Method Name="GetDurationPerPixel" Hidden="true" />
+      <Method Name="GetExtraCategory" Hidden="true" />
+      <Method Name="HasExtraSeies" Hidden="true" />
+      <Method Name="HideCrosshair" Hidden="true" />
+      <Method Name="HighlightCoveringSegments" Hidden="true" />
+      <Method Name="HighlightSelectedSegments" Hidden="true" />
+      <Field Name="lastMousePosition" Hidden="true" />
+      <Field Name="LowerBoundProperty" Hidden="true" />
+      <Method Name="mainChart_Loaded" Hidden="true" />
+      <Method Name="ManageSelectedSegments" Hidden="true" />
+      <Field Name="MaximumCountProperty" Hidden="true" />
+      <Method Name="mnuClearFilterWindow_Click" Hidden="true" />
+      <Method Name="mnuSnapshotOnlyTimeline_Click" Hidden="true" />
+      <Method Name="mnuSnapshotTimelineWithCategoryPan_Click" Hidden="true" />
+      <Field Name="moveDragFilterWindow" Hidden="true" />
+      <Field Name="movePanStatus" Hidden="true" />
+      <Property Name="MovePanStatus" Hidden="true" />
+      <Method Name="MovingFilterWindow" Hidden="true" />
+      <Field Name="movingFilterWindowStatus" Hidden="true" />
+      <Method Name="MovingPan" Hidden="true" />
+      <Method Name="OnSetActualBinChanged" Hidden="true" />
+      <Method Name="OnSetBinChanged" Hidden="true" />
+      <Method Name="OnSetLowerBoundChanged" Hidden="true" />
+      <Method Name="OnSetMaximumCountChanged" Hidden="true" />
+      <Method Name="OnSetSelectedBarColorChanged" Hidden="true" />
+      <Method Name="OnSetUpperBoundChanged" Hidden="true" />
+      <Method Name="OnTotalBoundsNeeded" Hidden="true" />
+      <Field Name="plotAreaBorder" Hidden="true" />
+      <Field Name="random" Hidden="true" />
+      <Method Name="RemoveHighlightAllBars" Hidden="true" />
+      <Method Name="RenderSurface_MouseWheel" Hidden="true" />
+      <Field Name="renderSurfaceCanvas" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseLeave" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseMove" Hidden="true" />
+      <Method Name="RenderSurfaceCanvas_MouseUp" Hidden="true" />
+      <Method Name="ResetHorizontalAxis" Hidden="true" />
+      <Method Name="ResizingFilterWindow" Hidden="true" />
+      <Field Name="resizingFilterWindowStatus" Hidden="true" />
+      <Field Name="SelectedBarColorProperty" Hidden="true" />
+      <Field Name="selectedBarStatus" Hidden="true" />
+      <Field Name="selectedFilterWindow" Hidden="true" />
+      <Method Name="SelectedFilterWindow_CloseButtonClicked" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseEnter" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseLeave" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="SelectedFilterWindow_MouseMove" Hidden="true" />
+      <Method Name="SelectedFilterWindow_StrokeMouseLeftButtonDown" Hidden="true" />
+      <Field Name="selectedSegments" Hidden="true" />
+      <Method Name="Series_MouseLeftButtonDown" Hidden="true" />
+      <Method Name="Series_MouseLeftButtonUp" Hidden="true" />
+      <Method Name="SetActualBinChanged" Hidden="true" />
+      <Method Name="SetAllFilterWindowsVerticalAxis" Hidden="true" />
+      <Method Name="SetCursorTime" Hidden="true" />
+      <Method Name="SetPanPositonFromDate" Hidden="true" />
+      <Method Name="ShowCrosshair" Hidden="true" />
+      <Field Name="sourcePointForCreateFilterWindow" Hidden="true" />
+      <Field Name="startDragFilterWindow" Hidden="true" />
+      <Method Name="StartMovingFilterWindow" Hidden="true" />
+      <Method Name="StartMovingPan" Hidden="true" />
+      <Method Name="StartResizeFilterWindow" Hidden="true" />
+      <Method Name="StopMoveFilterWindow" Hidden="true" />
+      <Method Name="StopResizeFilterWindow" Hidden="true" />
+      <Field Name="subCategoryCounter" Hidden="true" />
+      <Method Name="SuperCategories_CollectionChanged" Hidden="true" />
+      <Field Name="SuperCategoriesProperty" Hidden="true" />
+      <Method Name="SuperCategory_SubCategotiesChanged" Hidden="true" />
+      <Method Name="TimelineViewer_FilterWindowsChanged" Hidden="true" />
+      <Event Name="TotalBoundsNeeded" Hidden="true" />
+      <Field Name="TotalLowerBoundProperty" Hidden="true" />
+      <Field Name="TotalUpperBoundProperty" Hidden="true" />
+      <Field Name="UpperBoundProperty" Hidden="true" />
+      <Method Name="UserControl_MouseEnter" Hidden="true" />
+      <Method Name="UserControl_MouseUp" Hidden="true" />
+      <Method Name="ValidateFilterWindowInMoving" Hidden="true" />
+      <Method Name="ValidateFilterWindowInResizing" Hidden="true" />
+      <Method Name="ValidateLowerBound" Hidden="true" />
+      <Method Name="ValidateUpperBound" Hidden="true" />
+      <Method Name="zoomGrid_MouseUp" Hidden="true" />
+      <Method Name="zoomGrid_MouseWheel" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Enum Name="GPAS.TimelineViewer.TimelineViewer.MoveStatus">
+        <Members>
+          <Field Name="Moving" Hidden="true" />
+          <Field Name="Ready" Hidden="true" />
+          <Field Name="Start" Hidden="true" />
+          <Field Name="Stop" Hidden="true" />
+        </Members>
+        <TypeIdentifier>
+          <NewMemberFileName>TimelineViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="GPAS.TimelineViewer.TimelineViewer.BarSelectionMode">
+        <Members>
+          <Field Name="OnlyHighlight" Hidden="true" />
+          <Field Name="SendEvent" Hidden="true" />
+        </Members>
+        <TypeIdentifier>
+          <NewMemberFileName>TimelineViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>DJAnXzDr5lLXBBwj/vuwO5nUZDOpg6Ag1Q/ZpIM54WQ=</HashCode>
+      <FileName>TimelineViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ActualBin" />
+      <Property Name="Bin" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="FilterWindows" />
+      <Property Name="SelectedSegments" />
+      <Property Name="SubCategories" />
+      <Property Name="SuperCategories" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.FilterWindowsChangedEventArgs">
+    <Position X="19" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAA=</HashCode>
+      <FileName>EventArguments\FilterWindowsChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.ItemsNeededEventArgs">
+    <Position X="13.25" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAAAAAAACCAAAABAAAAgAACACACAAAgAAAQ=</HashCode>
+      <FileName>EventArguments\ItemsNeededEventArgs.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Action" />
+      <Property Name="BinScaleLevel" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="FetchedItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.SegmentSelectionChangedEventArgs">
+    <Position X="16.25" Y="8.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>EventArguments\SegmentSelectionChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.TimelineViewer.EventArguments.SnapshotTakenEventArgs">
+    <Position X="19" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EventArguments\SnapshotTakenEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GPAS.TimelineViewer.BinScaleLevel">
+    <Position X="18.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJACAAAAAAAAAAAIAAAAAACIEAAAAAAAAABA=</HashCode>
+      <FileName>BinScaleLevel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.TimelineViewer.BinSizesEnum">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAoAAAAAAAQoQACkAAFBAAAAAAAAAAQAGAAAhA=</HashCode>
+      <FileName>BinSizesEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.TimelineViewer.ItemsNeededAction">
+    <Position X="13.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAEAAAAAAAAEAAAAAAAAAAAACAAAAAAAEAAAA=</HashCode>
+      <FileName>ItemsNeededAction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEA358C1-7576-40C7-9530-1E96CA78551A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Dispatch.ServiceAccess</RootNamespace>
+    <AssemblyName>GPAS.Dispatch.ServiceAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.5.4.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\RestSharp.106.5.4\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="NlpServiceClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchSynchronizationServiceClient.cs" />
+    <Compile Include="Service References\DataLakeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FileRepositoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HorizonService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\JobService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RepositoryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SearchService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="..\..\..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo1.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo2.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo3.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo4.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.Groups.GroupInfo.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates1.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.IndexChecking.SearchIndexCheckingResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KObject.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedNotLoadedResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResultsPerSearchedObjects1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResultsPerSearchedObjects2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResultsPerSearchedObjects3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedNotLoadedResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResultsPerSearchedObjects1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResultsPerSearchedObjects2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResultsPerSearchedObjects3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Publish.PublishResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Publish.SynchronizationResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.LinkTypeStatistics.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.PropertyValueStatistics.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.QueryResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.ResultNode.PropertyBarValues.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\DataLakeService\DatalakeOperationImplService.wsdl" />
+    <None Include="Service References\DataLakeService\DatalakeService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.GetDatalakeCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.GetDatalakeSliceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.GetHeadersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.GetJobsStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.GetPreviewDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.GetStreamJobsStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.InsertFileIngestionJobStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.InsertStreamIngestionStartStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.InsertStreamIngestionStopStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.IsListenProcessorExistResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.StartStreamingIngestionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DataLakeService\GPAS.Dispatch.ServiceAccess.DataLakeService.StopStreamingIngestionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FileRepositoryService\GPAS.Dispatch.ServiceAccess.FileRepositoryService.DirectoryContent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FileRepositoryService\GPAS.FileRepository.Logic.Entities1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileRepositoryService\service.wsdl" />
+    <None Include="Service References\FileRepositoryService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FileRepositoryService\service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.AccessControl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Dispatch.Entities.Concepts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Dispatch.Entities.Publish.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Dispatch.ServiceAccess.HorizonService.CustomSearchAroundResultIDs.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Dispatch.ServiceAccess.HorizonService.HorizonIndexCheckingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Dispatch.ServiceAccess.HorizonService.IndexModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Horizon.Entities.IndexChecking.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\GPAS.Horizon.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\service1.wsdl" />
+    <None Include="Service References\HorizonService\service9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HorizonService\service91.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\GPAS.Dispatch.ServiceAccess.JobService.JobRequest1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\JobService\GPAS.JobServer.Logic.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\Service1.wsdl" />
+    <None Include="Service References\JobService\service2.wsdl" />
+    <None Include="Service References\JobService\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\Service51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\Service52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\Service53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\Service54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JobService\service8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RepositoryService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.AccessControl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.Dispatch.ServiceAccess.RepositoryService.DBDataSourceACL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.Dispatch.ServiceAccess.RepositoryService.DBGraphArrangement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.Dispatch.ServiceAccess.RepositoryService.DBMedia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.Dispatch.ServiceAccess.RepositoryService.DBObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.Dispatch.ServiceAccess.RepositoryService.DBProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.Dispatch.ServiceAccess.RepositoryService.DBRelationship.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.RepositoryServer.Entities.Publish.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RepositoryService\GPAS.RepositoryServer.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RepositoryService\service.wsdl" />
+    <None Include="Service References\RepositoryService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RepositoryService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.AccessControl.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.Entities.Concepts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.Entities.Publish.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.BaseSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.BoundingBox.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.PropertiesMatchingResults.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.RetrievedFace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.SearchDataSourceACL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.SearchGraphArrangement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.SearchIndexCheckingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.SearchObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.SearchProperty.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.Dispatch.ServiceAccess.SearchService.SearchRelationship.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SearchService\GPAS.FilterSearch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.GeoSearch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.SearchServer.Entities.IndexChecking.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.SearchServer.Entities.SearchEngine.Documents.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.SearchServer.Entities.Sync.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.SearchServer.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.StatisticalQuery.ResultNode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.StatisticalQuery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\GPAS.TextualSearch1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\service1.wsdl" />
+    <None Include="Service References\SearchService\service11.wsdl" />
+    <None Include="Service References\SearchService\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\service141.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\service142.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SearchService\System.Drawing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataLakeService\" />
+    <WCFMetadataStorage Include="Service References\FileRepositoryService\" />
+    <WCFMetadataStorage Include="Service References\HorizonService\" />
+    <WCFMetadataStorage Include="Service References\JobService\" />
+    <WCFMetadataStorage Include="Service References\RepositoryService\" />
+    <WCFMetadataStorage Include="Service References\SearchService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33fbbf9b-c7f4-4f91-99d9-335a18c2609d}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DataImport\GPAS.DataImport.csproj">
+      <Project>{73a6e9cf-a4f9-45d3-84ad-b149c488ff6f}</Project>
+      <Name>GPAS.DataImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FilterSearch\GPAS.FilterSearch.csproj">
+      <Project>{7fc50142-43a1-4ada-8aa0-c0869d2f793c}</Project>
+      <Name>GPAS.FilterSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.GeoSearch\GPAS.GeoSearch.csproj">
+      <Project>{dc917467-de53-4bac-90a2-b241bb44623e}</Project>
+      <Name>GPAS.GeoSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.SearchAround\GPAS.SearchAround.csproj">
+      <Project>{fcb286b8-af82-4f5d-ac9e-fd0a5a311289}</Project>
+      <Name>GPAS.SearchAround</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.StatisticalQuery\GPAS.StatisticalQuery.csproj">
+      <Project>{dcb8746e-eebb-43c4-a220-804e45d32c27}</Project>
+      <Name>GPAS.StatisticalQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Workspace\WorkspaceEntities\GPAS.Workspace.Entities.csproj">
+      <Project>{F05D7AB8-C202-4557-9E61-AD47CBDA0FEF}</Project>
+      <Name>GPAS.Workspace.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities.Concepts\GPAS.Dispatch.Entities.Concepts.csproj">
+      <Project>{2960b31e-4c0b-485b-a5f9-614f121faa5b}</Project>
+      <Name>GPAS.Dispatch.Entities.Concepts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities.Publish\GPAS.Dispatch.Entities.Publish.csproj">
+      <Project>{b19384b4-aa82-4a77-91ad-d094d31c994b}</Project>
+      <Name>GPAS.Dispatch.Entities.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\GPAS.Dispatch.Entities.csproj">
+      <Project>{37efb87c-d994-4ab5-bfac-0f491223026b}</Project>
+      <Name>GPAS.Dispatch.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Dispatch.Entities.NLP\GPAS.Dispatch.Entities.NLP.csproj">
+      <Project>{08693780-9DF6-42FA-BF54-808DE898ACC1}</Project>
+      <Name>GPAS.Dispatch.Entities.NLP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FileRepositoryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FileRepositoryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FileRepositoryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\JobService\service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataLakeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataLakeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataLakeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RepositoryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RepositoryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RepositoryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SearchService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SearchService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SearchService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HorizonService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HorizonService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HorizonService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

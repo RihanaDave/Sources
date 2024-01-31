@@ -1,0 +1,289 @@
+﻿<Window x:Class="GPAS.Workspace.Presentation.Windows.DataImport.DisplayDataBasesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+        xmlns:commonconverters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+        xmlns:userControlItem="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport"
+        xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+        xmlns:defectios="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Model"
+        xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"   
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Foreground="{DynamicResource MaterialDesignBody}"
+        Title="Display Databases" Height="700" Width="1000"
+        Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+            <system:Double x:Key="{x:Static SystemParameters.HorizontalScrollBarHeightKey}">5</system:Double>
+            <materialDesign:BooleanToVisibilityConverter x:Key="RevertBooleanToVisibilityConverter" FalseValue="Visible" TrueValue="Collapsed"/>
+            <converters:BooleanToBorderBrushConverter x:Key="BooleanToBorderBrushConverter"/>
+            <converters:BooleanToForegrandConverter x:Key="BooleanToForegrandConverter"/>
+            <commonconverters:CollectionCountToVisibilityConverter x:Key="CollectionCountToVisibilityConverter"/>
+            <commonconverters:CollectionCountToVisibilityConverter x:Key="ReverseCollectionCountToVisibilityConverter"
+                                                                   ZeroValue="Visible" MoreThanZero="Collapsed"/>
+
+            <Style x:Key="TabHeader" TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignTabRadioButton}">
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Margin" Value="5 5"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="{DynamicResource MaterialDesignCardBackground}">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="DatabasesGrid" Grid.Row="0" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Background="{DynamicResource MaterialDesignPaper}">
+                    <TextBlock Text="Databases list" Grid.Column="0" Style="{StaticResource SecondHeader}" VerticalAlignment="Center"/>
+
+                    <common:ButtonWithIcon x:Name="ReloadDatabasesButton" ToolTip="Reload databases list"
+                                           Click="ReloadDatabasesButton_Click" HorizontalAlignment="Right"
+                                           Content="Reload" Icon="Reload" ContentMargin="5" />
+                </Grid>
+
+                <ListBox x:Name="DatabasesListBox" Grid.Row="1" SelectionMode="Single"
+                         ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0 5"
+                         ItemsSource="{Binding DatabaseCollection}"
+                         Visibility="{Binding DatabaseCollection.Count, Converter={StaticResource CollectionCountToVisibilityConverter}}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ToolTip="{Binding FullPath}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <materialDesign:PackIcon Grid.Column="0" Kind="Database" Width="25" Height="25" VerticalAlignment="Center"
+                                                         HorizontalAlignment="Center" Margin="0 0 5 0"
+                                             Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                                <TextBlock Grid.Column="1" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"
+                                               Text="{Binding FullPath}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                           Text="There is no database"
+                           Visibility="{Binding DatabaseCollection.Count, Converter={StaticResource ReverseCollectionCountToVisibilityConverter}}"/>
+            </Grid>
+
+            <Separator Grid.Column="1" Margin="5 0" BorderBrush="{DynamicResource MaterialDesignBody}">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <Grid x:Name="TablesAndViewsGrid" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Background="{DynamicResource MaterialDesignPaper}">
+                    <TextBlock Text="Tables and views" Style="{StaticResource SecondHeader}" VerticalAlignment="Center"/>
+
+                    <common:ButtonWithIcon x:Name="AddAllCheckedButton" Click="AddAllCheckedButton_Click" HorizontalAlignment="Right"
+                                   Content="Add all checked" Icon="DatabaseAdd" ContentMargin="5" IsEnabled="{Binding CanAddAllChecked}" />
+                </Grid>
+
+                <DataGrid x:Name="TablesAndViewsDataGrid" Grid.Row="2" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                          IsReadOnly="True" SelectionMode="Extended" CanUserAddRows="False" AutoGenerateColumns="False" 
+                          Background="{DynamicResource MaterialDesignCardBackground}" Margin="0 5"
+                          SelectionChanged="TablesAndViewsDataGrid_SelectionChanged" 
+                          ItemsSource="{Binding SelectedDatabase.TablesAndViewsCollection}"
+                          Visibility="{Binding SelectedDatabase.TablesAndViewsCollection.Count,
+                    Converter={StaticResource CollectionCountToVisibilityConverter}}">
+
+                    <DataGrid.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel />
+                        </ItemsPanelTemplate>
+                    </DataGrid.ItemsPanel>
+
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                            <Setter Property="FontSize" Value="13" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                            <Setter Property="BorderThickness" Value="0" />
+                        </Style>
+                        <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource MaterialDesignDataGridRow}">
+                            <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <CheckBox IsChecked="{Binding DataContext.SelectedDatabase.IsChecked,
+                                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"/>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Name="ItemsCheckBox"
+                                              IsChecked="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <materialDesign:PackIcon Kind="Table" Width="24" Height="24" VerticalAlignment="Center"
+                                                             HorizontalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Title" SortMemberPath="Title" Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title }" Foreground="{Binding IsValid,Converter={StaticResource BooleanToForegrandConverter}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Defections" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Name="DefectiosButton" Padding="0" Click="DefectiosButton_Click" 
+                                                    VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1"
+                                                    Style="{StaticResource MaterialDesignFlatButton}" 
+                                              Visibility="{Binding IsValid, Converter={StaticResource RevertBooleanToVisibilityConverter}}">
+
+                                        <materialDesign:PopupBox Name="DefectionsToolBar" StaysOpen="True"  HorizontalAlignment="Left" 
+                                                                         PopupMode="Click" PlacementMode="BottomAndAlignLeftEdges">
+                                            <materialDesign:PopupBox.ToggleContent>
+                                                <materialDesign:PackIcon Kind="BellAlert" 
+                                                                                 Foreground="OrangeRed" HorizontalAlignment="Center" VerticalAlignment="Center" Width="18" Height="18"/>
+                                            </materialDesign:PopupBox.ToggleContent>
+
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal" Margin="5">
+                                                    <TextBlock Text="Defections" Margin="5" Opacity="0.7"
+                                                                       Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+                                                </StackPanel>
+
+                                                <ListView Name="DefectionsListView" Margin="10 5" >
+                                                    <ListView.ItemContainerStyle>
+                                                        <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                                            <Setter Property="Tag" Value="{Binding RelatedElement}"/>
+                                                            <EventSetter Event="PreviewMouseDown" Handler="DefectionsListItemOnMouseDown"/>
+                                                            <EventSetter Event="PreviewMouseDoubleClick" Handler="ListViewItem_MouseDoubleClick"/>
+                                                        </Style>
+                                                    </ListView.ItemContainerStyle>
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <materialDesign:PackIcon Kind="{Binding Icon}" Height="20" Width="20"
+                                                                         VerticalAlignment="Center"/>
+                                                                <TextBlock Text="{Binding Message}" VerticalAlignment="Center" Margin="5 0"/>
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                            </StackPanel>
+                                        </materialDesign:PopupBox>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Style="{StaticResource MaterialDesignSubtitle2TextBlock}"
+                           Text="There are no tables or views"
+                           Visibility="{Binding SelectedDatabase.TablesAndViewsCollection.Count,
+                    Converter={StaticResource ReverseCollectionCountToVisibilityConverter}}"/>
+            </Grid>
+
+            <Separator Grid.Row="1" Grid.ColumnSpan="3" Margin="0 10" BorderBrush="{DynamicResource MaterialDesignBody}"/>
+
+            <Grid Name="PreviewGrid" Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5 0 5 5">
+                    <TextBlock Text="Preview" Background="Transparent" Padding="5"
+                               VerticalAlignment="Center">
+                        <TextBlock.Style>
+                        <Style BasedOn="{StaticResource SecondHeader}" TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedDefectionType,
+                                        RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                             Value="{x:Static defectios:DefectionType.PreviewHasAnError}">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource ItemListWarningBackgroundStoryboard}"/>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                    </TextBlock>
+
+                </StackPanel>
+                <Grid Background="Transparent" Grid.Row="1">
+                    <Grid.Style>
+                        <Style  TargetType="Grid">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=SelectedDefectionType,
+                                        RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                             Value="{x:Static defectios:DefectionType.PreviewHasAnError}">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource ItemListWarningBackgroundStoryboard}"/>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <userControlItem:DataSourcePreviewUserControl 
+                    x:Name="DataSourcePreviewUserControl" 
+                    Background="Transparent" Margin="5"
+                    DataSource="{Binding SelectedDatabase.SelectedTableOrView}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <waiting:WaitingControl x:Name="MainWaitingControl"/>
+    </Grid>
+</Window>

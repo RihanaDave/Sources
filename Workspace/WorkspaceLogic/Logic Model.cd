@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Logic.LinkManager">
+    <Position X="4.25" Y="1" Width="3.75" />
+    <NestedTypes>
+      <Class Name="GPAS.Workspace.Logic.LinkManager.RelationshipBasedKWLinkFromEventBaseKWLink" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Entities\LinkManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ABIAABAAAACAAAAoAEEAAgIQAAAABAAAABAAAAAIAAA=</HashCode>
+      <FileName>Entities\LinkManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.ObjectManager">
+    <Position X="1" Y="1" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAEIEAIMAACAAAAAAgABAEAAABCACQAA=</HashCode>
+      <FileName>Entities\ObjectManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.OntologyProvider">
+    <Position X="1" Y="5.5" Width="4" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABiIAAAIAEBgAAAQAASABAAAgEAACDAgAAAAFACAAAA=</HashCode>
+      <FileName>Ontology\OntologyProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.System">
+    <Position X="12.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAgAAAAAAAAAAAAAAgAAAAAAAEAAAAAAAAAARAA=</HashCode>
+      <FileName>System.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.WorkspaceTemperoryFiles">
+    <Position X="12" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkspaceTemperoryFiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.BigDataSearchProvider">
+    <Position X="5.25" Y="11.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="GPAS.Workspace.Logic.BigDataSearchProvider.BigDataSearchResultPreview" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BigDataSearchProvider.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Class Name="GPAS.Workspace.Logic.BigDataSearchProvider.logicJobRequest" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BigDataSearchProvider.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Enum Name="GPAS.Workspace.Logic.BigDataSearchProvider.JobRequestStatusWS" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BigDataSearchProvider.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="GPAS.Workspace.Logic.BigDataSearchProvider.JobRequestTypeWS" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BigDataSearchProvider.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAAAABAgAAAIAQAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>BigDataSearchProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.PropertyManager">
+    <Position X="8.25" Y="1" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEQAAAAAAAAAAAAAAABAAAAggAAgAEABAE=</HashCode>
+      <FileName>Entities\PropertyManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.GraphRepositoryManager">
+    <Position X="9" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAIAAAAEAAIAAAAAAAAAAAAUAAEAAAAAREAAAA=</HashCode>
+      <FileName>GraphRepositoryManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.IconProvider">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IconProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.ImportProvider">
+    <Position X="12" Y="10.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAABAAAAAAAAAAAAAAICAAAAAgAAAEAAAAAAAAA=</HashCode>
+      <FileName>DataImport\ImportProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.MediaManager">
+    <Position X="11.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAEAAAAAAAAAAAAAAAEAAEAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\MediaManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.Search.SearchProvider">
+    <Position X="5.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Search\SearchProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.Search.SearchAround">
+    <Position X="5.5" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ICAACAAAAAAEAAAAAAAACEAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Search\SearchAround.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.Search.FilterSearch">
+    <Position X="5.5" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Search\FilterSearch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Logic.FileProvider">
+    <Position X="9" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CCAAAgAAAAAAAAAACCAAgAACAAAIEAAgABgCAAAAAAA=</HashCode>
+      <FileName>FileProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

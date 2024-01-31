@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GPAS.PeripheralTools.All2CsvConverter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PluginsFolderRelativePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\Plugins\</Value>
+    </Setting>
+    <Setting Name="PluginFilesExtension" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.exe</Value>
+    </Setting>
+    <Setting Name="UserManualDocumentRelativePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Manuals\User Manual.jpg</Value>
+    </Setting>
+    <Setting Name="PluginsDevelopMaunalDocumentRelativePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Manuals\Plug-ins Develop Manual.jpg</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

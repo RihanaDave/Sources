@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP.Summarization" />
+  <xs:complexType name="ArrayOfDetectedLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetectedLanguage" nillable="true" type="tns:DetectedLanguage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetectedLanguage" nillable="true" type="tns:ArrayOfDetectedLanguage" />
+  <xs:complexType name="DetectedLanguage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LanguageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percent" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetectedLanguage" nillable="true" type="tns:DetectedLanguage" />
+  <xs:complexType name="ArrayOfTagCloudKeyPhrase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TagCloudKeyPhrase" nillable="true" type="tns:TagCloudKeyPhrase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTagCloudKeyPhrase" nillable="true" type="tns:ArrayOfTagCloudKeyPhrase" />
+  <xs:complexType name="TagCloudKeyPhrase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Score" type="xs:float" />
+      <xs:element minOccurs="0" name="TextOfKeyPhrase" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagCloudKeyPhrase" nillable="true" type="tns:TagCloudKeyPhrase" />
+  <xs:simpleType name="Language">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fa" />
+      <xs:enumeration value="en" />
+      <xs:enumeration value="ar" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Language" nillable="true" type="tns:Language" />
+  <xs:complexType name="SummarizationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP.Summarization" minOccurs="0" name="Rate" nillable="true" type="q1:SummarizationRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SummarizationRequest" nillable="true" type="tns:SummarizationRequest" />
+</xs:schema>

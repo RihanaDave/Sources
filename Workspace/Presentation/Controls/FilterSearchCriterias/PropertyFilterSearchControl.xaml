@@ -1,0 +1,82 @@
+﻿<local:BaseFilterSearchControl x:Class="GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.PropertyFilterSearchControl"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+                               xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias"
+                               xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.Converters"
+                               xmlns:op="clr-namespace:GPAS.Workspace.Presentation.Controls.OntologyPickers"
+                               xmlns:propertyValueTemplates="clr-namespace:GPAS.Workspace.Presentation.Controls.PropertyValueTemplates"
+                               xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                               mc:Ignorable="d" Foreground="{DynamicResource MaterialDesignBody}" Margin="0 5 0 0"
+                               d:DesignHeight="300" d:DesignWidth="300">
+    
+    <local:BaseFilterSearchControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:IsSelectedToHighlightBrushConverter x:Key="IsSelectedToHighlightBrushConverter"/>
+            <converters:ValidationStatusToVisibilityErrorBoxConverter x:Key="ValidationStatusToVisibilityErrorBoxConverter"/>
+            <converters:ValidationStatusToBrushConverter x:Key="ValidationStatusToBrushConverter"/>
+            <converters:PropertyCriteriaOperatorToComboBoxItemsConverter x:Key="PropertyCriteriaOperatorToComboBoxItemsConverter"/>
+            <converters:PropertyCriteriaOperatorToComboBoxEnableConverter x:Key="PropertyCriteriaOperatorToComboBoxEnableConverter"/>
+        </ResourceDictionary>
+    </local:BaseFilterSearchControl.Resources>
+
+    <GroupBox x:Name="groupBox" Grid.ColumnSpan="2" Grid.RowSpan="2" Style="{DynamicResource MainGroupBox}">
+        <GroupBox.BorderBrush>
+            <MultiBinding Converter="{StaticResource IsSelectedToHighlightBrushConverter}" UpdateSourceTrigger="PropertyChanged" >
+                <Binding Path="IsSelected"/>
+                <Binding Path="CurrentTheme"/>
+            </MultiBinding>
+        </GroupBox.BorderBrush>
+        <GroupBox.Header>
+            <TextBlock Text="{x:Static resource:Resources.Property}" FontWeight="Bold"
+                       Foreground="{Binding ElementName=groupBox, Path=BorderBrush}"/>
+        </GroupBox.Header>
+
+        <Grid x:Name="ContentGrid" Grid.Row="1" Margin="0 5 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <common:ButtonWithIcon x:Name="RemoveButton" Click="RemoveButton_Click" HorizontalAlignment="Right"
+                                       Grid.Row="0" Padding="0" Margin="0" Icon="Close" IconMargin="5" Foreground="red"/>
+
+            <op:PropertyTypePicker x:Name="propertyTypePickerControl" Grid.Row="1" Margin="2"
+                                   Background="{DynamicResource MaterialDesignCardBackground}"
+                                   SelectedItemChanged="PropertyTypePickerControl_SelectedItemChanged"/>
+
+            <Border Grid.Row="2" Margin="5" CornerRadius="2" Padding="5" HorizontalAlignment="Center"
+                            MinWidth="60" IsEnabled="{Binding OperatorValuePair, Mode=OneWay, 
+                        Converter={StaticResource PropertyCriteriaOperatorToComboBoxEnableConverter}}"
+                            Background="{DynamicResource MaterialDesignCardBackground}"
+                            BorderBrush="{DynamicResource MaterialDesignCardBackground}">
+
+                <ComboBox SelectedIndex="0" Foreground="{DynamicResource MaterialDesignBody}" BorderThickness="0" Padding="0"
+                          materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource PrimaryHueMidBrush}" 
+                          materialDesign:TextFieldAssist.DecorationVisibility="Hidden" FontSize="14"
+                          SelectionChanged="RelationalOperatorComboBox_SelectionChanged"
+                          Name="RelationalOperatorComboBox" 
+                          ItemsSource="{Binding OperatorValuePair, Mode=OneWay,
+                    Converter={StaticResource PropertyCriteriaOperatorToComboBoxItemsConverter}}">
+                </ComboBox>
+            </Border>
+
+            <propertyValueTemplates:PropertyValueTemplatesControl
+                x:Name="PropertyValueTemplatesControl" Grid.Row="3" IsEnabled="False" Margin="2 5"
+                SearchMode="True"
+                PropertyValueChanged="PropertyValueTemplatesControl_PropertyValueChanged"
+                Foreground="{DynamicResource MaterialDesignBody}"
+                CheckValidation="PropertyValueTemplatesControl_CheckValidation"
+                PreviewMouseLeftButtonDown="PropertyValueTemplatesControl_PreviewMouseLeftButtonDown"/>
+        </Grid>
+    </GroupBox>
+</local:BaseFilterSearchControl>

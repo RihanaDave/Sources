@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.FileRepository.Logic.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_test_InputMessage">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="IService_test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsServiceAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsServiceAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsServiceAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsServiceAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveAllFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAllFiles" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveAllFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAllFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaPathContent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaPathContent" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaPathContent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaPathContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateMediaDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMediaDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateMediaDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMediaDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RenameMediaDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameMediaDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService_RenameMediaDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameMediaDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteMediaDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMediaDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteMediaDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMediaDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadMediaFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadMediaFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadMediaFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadMediaFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadMediaFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMediaFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadMediaFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadMediaFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaFileSizeInBytes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaFileSizeInBytes" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaFileSizeInBytes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaFileSizeInBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFileByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFileByName" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFileByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFileByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDataSourceFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDataSourceFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadFileAsDocumentAndDataSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileAsDocumentAndDataSource" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadFileAsDocumentAndDataSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileAsDocumentAndDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFromJobShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFromJobShare" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDocumentFromJobShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDocumentFromJobShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDataSourceFromJobShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFromJobShare" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadDataSourceFromJobShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadDataSourceFromJobShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadDocumentFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocumentFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadDocumentFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocumentFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadDataSourceFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDataSourceFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadDataSourceFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDataSourceFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataSourceAndDocumentFileSizeInBytes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourceAndDocumentFileSizeInBytes" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataSourceAndDocumentFileSizeInBytes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourceAndDocumentFileSizeInBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadDataSourceFileByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDataSourceFileByName" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadDataSourceFileByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDataSourceFileByNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/test" message="tns:IService_test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/testResponse" message="tns:IService_test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsServiceAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsServiceAvailable" message="tns:IService_IsServiceAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsServiceAvailableResponse" message="tns:IService_IsServiceAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveAllFiles" message="tns:IService_RemoveAllFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveAllFilesResponse" message="tns:IService_RemoveAllFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaPathContent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMediaPathContent" message="tns:IService_GetMediaPathContent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMediaPathContentResponse" message="tns:IService_GetMediaPathContent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMediaDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateMediaDirectory" message="tns:IService_CreateMediaDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateMediaDirectoryResponse" message="tns:IService_CreateMediaDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameMediaDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RenameMediaDirectory" message="tns:IService_RenameMediaDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RenameMediaDirectoryResponse" message="tns:IService_RenameMediaDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMediaDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteMediaDirectory" message="tns:IService_DeleteMediaDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteMediaDirectoryResponse" message="tns:IService_DeleteMediaDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadMediaFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadMediaFile" message="tns:IService_UploadMediaFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadMediaFileResponse" message="tns:IService_UploadMediaFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadMediaFile" message="tns:IService_DownloadMediaFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadMediaFileResponse" message="tns:IService_DownloadMediaFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaFileSizeInBytes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMediaFileSizeInBytes" message="tns:IService_GetMediaFileSizeInBytes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMediaFileSizeInBytesResponse" message="tns:IService_GetMediaFileSizeInBytes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFileByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadDocumentFileByName" message="tns:IService_UploadDocumentFileByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadDocumentFileByNameResponse" message="tns:IService_UploadDocumentFileByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadDocumentFile" message="tns:IService_UploadDocumentFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadDocumentFileResponse" message="tns:IService_UploadDocumentFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadDataSourceFile" message="tns:IService_UploadDataSourceFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadDataSourceFileResponse" message="tns:IService_UploadDataSourceFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileAsDocumentAndDataSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadFileAsDocumentAndDataSource" message="tns:IService_UploadFileAsDocumentAndDataSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadFileAsDocumentAndDataSourceResponse" message="tns:IService_UploadFileAsDocumentAndDataSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFromJobShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadDocumentFromJobShare" message="tns:IService_UploadDocumentFromJobShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadDocumentFromJobShareResponse" message="tns:IService_UploadDocumentFromJobShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFromJobShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadDataSourceFromJobShare" message="tns:IService_UploadDataSourceFromJobShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadDataSourceFromJobShareResponse" message="tns:IService_UploadDataSourceFromJobShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDocumentFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadDocumentFile" message="tns:IService_DownloadDocumentFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadDocumentFileResponse" message="tns:IService_DownloadDocumentFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDataSourceFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadDataSourceFile" message="tns:IService_DownloadDataSourceFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadDataSourceFileResponse" message="tns:IService_DownloadDataSourceFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourceAndDocumentFileSizeInBytes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataSourceAndDocumentFileSizeInBytes" message="tns:IService_GetDataSourceAndDocumentFileSizeInBytes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataSourceAndDocumentFileSizeInBytesResponse" message="tns:IService_GetDataSourceAndDocumentFileSizeInBytes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsAvailable" message="tns:IService_IsAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsAvailableResponse" message="tns:IService_IsAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDataSourceFileByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadDataSourceFileByName" message="tns:IService_DownloadDataSourceFileByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadDataSourceFileByNameResponse" message="tns:IService_DownloadDataSourceFileByName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/IService/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsServiceAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsServiceAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAllFiles">
+      <soap:operation soapAction="http://tempuri.org/IService/RemoveAllFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaPathContent">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMediaPathContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateMediaDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateMediaDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameMediaDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService/RenameMediaDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMediaDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteMediaDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMediaFile">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadMediaFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMediaFile">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadMediaFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaFileSizeInBytes">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMediaFileSizeInBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFileByName">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadDocumentFileByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFile">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadDocumentFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFile">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadDataSourceFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileAsDocumentAndDataSource">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadFileAsDocumentAndDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentFromJobShare">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadDocumentFromJobShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataSourceFromJobShare">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadDataSourceFromJobShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDocumentFile">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadDocumentFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDataSourceFile">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadDataSourceFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourceAndDocumentFileSizeInBytes">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataSourceAndDocumentFileSizeInBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDataSourceFileByName">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadDataSourceFileByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://core-kavosh:9041/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

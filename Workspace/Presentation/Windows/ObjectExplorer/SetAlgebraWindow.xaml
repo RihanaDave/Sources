@@ -1,0 +1,173 @@
+﻿<ws:PresentationWindow x:Class="GPAS.Workspace.Presentation.Windows.ObjectExplorer.SetAlgebraWindow"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                       xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                       xmlns:ws="clr-namespace:GPAS.Workspace.Presentation.Windows"
+                       mc:Ignorable="d" ResizeMode="NoResize" Height="600" Width="360"
+                       ShowInTaskbar="False" WindowStyle="None"
+                       WindowStartupLocation="CenterOwner"
+                       AllowsTransparency="True"
+                       Background="Transparent">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="gridItem" TargetType="Grid">
+                <Setter Property="Margin" Value="10 0"/>
+            </Style>
+
+            <Style x:Key="stpContent" TargetType="StackPanel">
+                <Setter Property="Margin" Value="5 0 0 0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Orientation" Value="Vertical"/>
+            </Style>
+            <Style x:Key="buttons" BasedOn="{StaticResource MaterialDesignFlatButton}" TargetType="Button">
+                <Setter Property="Margin" Value="0 0 5 0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Height" Value="80"/>
+                <Setter Property="Width" Value="130"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="imageButton" TargetType="Image" >
+                <Setter Property="Height" Value="80"/>
+                <Setter Property="Width" Value="130"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="title" TargetType="TextBlock">
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Foreground" Value="{StaticResource MaterialDesignBody}"/>
+            </Style>
+            <Style x:Key="subTitle" TargetType="TextBlock">
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="Foreground" Value="{StaticResource MaterialDesignBody}"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border x:Name="MainBorder" CornerRadius="10" Background="{DynamicResource MaterialDesignCardBackground}"
+            BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+            BorderThickness="2" MouseLeftButtonDown="MainBorder_MouseLeftButtonDown">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Margin="10" Text="{x:Static resource:Resources.Set_Algebra}"
+                       Style="{StaticResource SecondHeader}" HorizontalAlignment="Center"/>
+
+            <Grid Style="{StaticResource gridItem}" Grid.Row="1" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource buttons}" x:Name="btnApplyFormula" Click="btnApplyFormula_Click">
+                    <Image Style="{StaticResource imageButton}"  Source="{StaticResource SetAlgebraApplyFormulaIcon}"/>
+                </Button>
+                <StackPanel Grid.Column="1" Style="{StaticResource stpContent}">
+                    <TextBlock Style="{StaticResource title}" Text="{x:Static resource:Resources.Apply_Formula}"/>
+                    <TextBlock Style="{StaticResource subTitle}" Text="{x:Static resource:Resources.Apply_formula_that_generated_second_set_to_first_set_}"/>
+                </StackPanel>
+            </Grid>
+
+            <Separator Margin="10" Grid.Row="2" Visibility="Collapsed"/>
+            
+            <Grid  Style="{StaticResource gridItem}" Grid.Row="3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"   Style="{StaticResource buttons}"  x:Name="btnUnion" Click="btnUnion_Click">
+                    <Image Style="{StaticResource imageButton}" Source="{StaticResource SetAlgebraUnionIcon}" />
+                </Button>
+                <StackPanel Grid.Column="1" Style="{StaticResource stpContent}">
+                    <TextBlock Style="{StaticResource title}" Text="{x:Static resource:Resources.Union}"/>
+                    <TextBlock Style="{StaticResource subTitle}" Text="{x:Static resource:Resources.Combines_both_sets_into_one_}"/>
+                </StackPanel>
+            </Grid>
+
+            <Separator Margin="10" Grid.Row="4"/>
+
+            <Grid  Style="{StaticResource gridItem}" Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource buttons}" x:Name="btnIntersection" Click="btnIntersection_Click">
+                    <Image Style="{StaticResource imageButton}" Source="{StaticResource SetAlgebraIntersectionIcon}"/>
+                </Button>
+                <StackPanel Grid.Column="1" Style="{StaticResource stpContent}">
+                    <TextBlock Style="{StaticResource title}" Text="{x:Static resource:Resources.Intersection}"/>
+                    <TextBlock Style="{StaticResource subTitle}" Text="{x:Static resource:Resources.Finds_all_items_in_both_sets_}"/>
+                </StackPanel>
+            </Grid>
+
+            <Separator Margin="10" Grid.Row="6"/>
+
+            <Grid  Style="{StaticResource gridItem}" Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource buttons}" x:Name="btnSubtractRight" Click="btnSubtractRight_Click">
+                    <Image Style="{StaticResource imageButton}" Source="{StaticResource SetAlgebraSubtractRightIcon}"/>
+                </Button>
+                <StackPanel Grid.Column="1" Style="{StaticResource stpContent}">
+                    <TextBlock Style="{StaticResource title}" Text="{x:Static resource:Resources.Subtract_Right}"/>
+                    <TextBlock Style="{StaticResource subTitle}" Text="{x:Static resource:Resources.Finds_all_of_the_items_in_the_first_set_that_aren_t_in_the_second_set_}"/>
+                </StackPanel>
+            </Grid>
+
+            <Separator Margin="10" Grid.Row="8"/>
+
+            <Grid  Style="{StaticResource gridItem}" Grid.Row="9">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource buttons}" x:Name="btnSubtractLeft" Click="btnSubtractLeft_Click">
+                    <Image Style="{StaticResource imageButton}" Source="{StaticResource SetAlgebraSubtractLeftIcon}"/>
+                </Button>
+                <StackPanel Grid.Column="1" Style="{StaticResource stpContent}">
+                    <TextBlock Style="{StaticResource title}" Text="{x:Static resource:Resources.Subtract_Left}"/>
+                    <TextBlock Style="{StaticResource subTitle}" Text="{x:Static resource:Resources.Finds_all_of_the_items_in_the_second_set_that_aren_t_in_the_first_set_}"/>
+                </StackPanel>
+            </Grid>
+
+            <Separator Margin="10" Grid.Row="10"/>
+
+            <Grid  Style="{StaticResource gridItem}" Grid.Row="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource buttons}" x:Name="btnExclusiveOr" Click="btnExclusiveOr_Click">
+                    <Image Style="{StaticResource imageButton}" Source="{StaticResource SetAlgebraExclusiveOrIcon}"/>
+                </Button>
+                <StackPanel Grid.Column="1" Style="{StaticResource stpContent}">
+                    <TextBlock Style="{StaticResource title}" Text="{x:Static resource:Resources.Exclusive_Or}"/>
+                    <TextBlock Style="{StaticResource subTitle}" Text="{x:Static resource:Resources.Finds_all_of_the_items_that_are_in_either_set_but_not_both_}"/>
+                </StackPanel>
+            </Grid>
+
+            <Button x:Name="btnCancel" Grid.Row="12" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                    Content="{x:Static resource:Resources.Cancel}" Margin="10" Click="btnCancel_Click"/>
+        </Grid>
+    </Border>
+</ws:PresentationWindow>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.TextualSearch" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.TextualSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfBaseSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BaseSearchResult" nillable="true" type="tns:BaseSearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBaseSearchResult" nillable="true" type="tns:ArrayOfBaseSearchResult" />
+  <xs:complexType name="BaseSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FoundNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalRow" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseSearchResult" nillable="true" type="tns:BaseSearchResult" />
+  <xs:complexType name="DocumentBasedSearchResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseSearchResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FileSize" type="xs:long" />
+          <xs:element minOccurs="0" name="TextResult" nillable="true" type="tns:TextResult" />
+          <xs:element minOccurs="0" name="TypeURI" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DocumentBasedSearchResult" nillable="true" type="tns:DocumentBasedSearchResult" />
+  <xs:complexType name="TextResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PartOfText" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TextResult" nillable="true" type="tns:TextResult" />
+  <xs:complexType name="ObjectBasedSearchResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseSearchResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TextResult" nillable="true" type="tns:TextResult" />
+          <xs:element minOccurs="0" name="TypeURI" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectBasedSearchResult" nillable="true" type="tns:ObjectBasedSearchResult" />
+</xs:schema>

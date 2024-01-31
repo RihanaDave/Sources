@@ -1,0 +1,29 @@
+﻿<control:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.OntologyPickers.PropertyTypePicker"
+                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                             xmlns:tvp="clr-namespace:GPAS.TreeViewPicker;assembly=GPAS.TreeViewPicker"
+                             xmlns:control="clr-namespace:GPAS.Workspace.Presentation.Controls"
+                             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.OntologyPickers.Converters"
+                             mc:Ignorable="d" Foreground="{DynamicResource MaterialDesignBody}"
+                             d:DesignHeight="200" d:DesignWidth="300">
+    
+    <control:PresentationControl.Resources>
+        <converters:TreeViewPickerItemTagPropertyToOntologyNodeConverter x:Key="OntologyItemTagPropertyToOntologyNodeConverter"/>
+        <converters:WorkspaceDisplayModeToTreeViewPickerDisplayModeConverter x:Key="WorkspaceDisplayModeToTreeViewPickerDisplayModeConverter"/>
+    </control:PresentationControl.Resources>
+    <Grid>
+        <tvp:TreeViewPicker Name="MainTreeViewPicker" VerticalAlignment="Top" ShowExpanderButton="False"
+                            ItemsSource="{Binding ItemCollection, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                            IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                            Text="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                            DisplayMode="{Binding DisplayMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},
+            Converter={StaticResource WorkspaceDisplayModeToTreeViewPickerDisplayModeConverter}}"
+                            SelectedItemReselected="MainTreeViewPicker_SelectedItemReselected" 
+                            Background="{Binding Background,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                            Foreground="{Binding Foreground,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                            DisplayCheckIconForSelectableItems="{Binding DisplayCheckIconForSelectableItems, 
+            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+    </Grid>
+</control:PresentationControl>

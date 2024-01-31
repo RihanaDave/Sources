@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GPAS.CassandraServer.Logic.Entities" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/GPAS.JobServer.Logic.Entities" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd8" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve.Suite" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" />
+      <xsd:import schemaLocation="http://dispatchserver:9011/Service.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.NLP" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetObjectListById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectListById" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetObjectListById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectListByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertyForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyForObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertyForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertyListById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyListById" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertyListById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertyListByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpecifiedPropertiesOfObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifiedPropertiesOfObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpecifiedPropertiesOfObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifiedPropertiesOfObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLinksSourcedByObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinksSourcedByObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLinksSourcedByObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinksSourcedByObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipListById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipListById" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipListById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipListByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExistingRelationship_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingRelationship" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExistingRelationship_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaUrisForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaUrisForObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaUrisForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaUrisForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_QuickSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:QuickSearch" />
+  </wsdl:message>
+  <wsdl:message name="IService_QuickSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QuickSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PerformFilterSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerformFilterSearch" />
+  </wsdl:message>
+  <wsdl:message name="IService_PerformFilterSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerformFilterSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PerformSelectMatching_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerformSelectMatching" />
+  </wsdl:message>
+  <wsdl:message name="IService_PerformSelectMatching_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerformSelectMatchingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntities_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntities" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntitiesAppearedInEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntitiesAppearedInEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindRelatedEntitiesAppearedInEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRelatedEntitiesAppearedInEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindProperiesByTypeAndValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProperiesByTypeAndValue" />
+  </wsdl:message>
+  <wsdl:message name="IService_FindProperiesByTypeAndValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProperiesByTypeAndValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUriOfDatabasesForImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUriOfDatabasesForImport" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUriOfDatabasesForImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUriOfDatabasesForImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTablesAndViewsOfDatabaseForImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesAndViewsOfDatabaseForImport" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTablesAndViewsOfDatabaseForImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesAndViewsOfDatabaseForImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_BigDataSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:BigDataSearch" />
+  </wsdl:message>
+  <wsdl:message name="IService_BigDataSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BigDataSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetKeyspaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyspaces" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetKeyspaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyspacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetKeyIndexes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyIndexes" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetKeyIndexes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyIndexesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetColumnNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnNames" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetColumnNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColumnNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsBigDataAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsBigDataAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsBigDataAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsBigDataAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RegisterNewImportRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewImportRequests" />
+  </wsdl:message>
+  <wsdl:message name="IService_RegisterNewImportRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewImportRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetJobRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobRequests" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetJobRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOntology_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOntology" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetOntology_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOntologyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetIcon_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIcon" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetIcon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIconResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateOntologyFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOntologyFile" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateOntologyFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOntologyFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileRepositoryDirectories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileRepositoryDirectories" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetFileRepositoryDirectories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileRepositoryDirectoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteDirectoryFromFileRepository_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectoryFromFileRepository" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteDirectoryFromFileRepository_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDirectoryFromFileRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateDirectoryInFileRepository_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectoryInFileRepository" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateDirectoryInFileRepository_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDirectoryInFileRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RenameDirectoryInFileRepository_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameDirectoryInFileRepository" />
+  </wsdl:message>
+  <wsdl:message name="IService_RenameDirectoryInFileRepository_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameDirectoryInFileRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFileFromFileRepository_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileFromFileRepository" />
+  </wsdl:message>
+  <wsdl:message name="IService_DownloadFileFromFileRepository_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileFromFileRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadToFileRepository_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadToFileRepository" />
+  </wsdl:message>
+  <wsdl:message name="IService_UploadToFileRepository_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadToFileRepositoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PublishGraph_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublishGraph" />
+  </wsdl:message>
+  <wsdl:message name="IService_PublishGraph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishGraphResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPublishedGraphs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishedGraphs" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPublishedGraphs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishedGraphsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPublishedGraphImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishedGraphImage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPublishedGraphImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishedGraphImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPublishedGraph_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishedGraph" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPublishedGraph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublishedGraphResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeletePublishedGraph_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePublishedGraph" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeletePublishedGraph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePublishedGraphResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMapTileImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapTileImage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMapTileImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapTileImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGeoLocationBaseOnIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeoLocationBaseOnIP" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGeoLocationBaseOnIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGeoLocationBaseOnIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertGeoSpecialInformationBasedOnIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGeoSpecialInformationBasedOnIP" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertGeoSpecialInformationBasedOnIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGeoSpecialInformationBasedOnIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewObjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewObjectId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewObjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewObjectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewPropertyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPropertyId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewPropertyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPropertyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewRelationId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewRelationId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewRelationId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewRelationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewMediaId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMediaId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewMediaId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMediaIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewObjectIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewObjectIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewObjectIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewObjectIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewPropertyIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPropertyIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewPropertyIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewPropertyIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewRelationIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewRelationIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewRelationIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewRelationIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewMediaIdRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMediaIdRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNewMediaIdRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMediaIdRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAssignedObjectID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedObjectID" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAssignedObjectID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedObjectIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAssignedRelatioshshipID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedRelatioshshipID" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAssignedRelatioshshipID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAssignedRelatioshshipIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTypeBasedResolutionCandidates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeBasedResolutionCandidates" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTypeBasedResolutionCandidates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeBasedResolutionCandidatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveGlobalResolutionSuite_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGlobalResolutionSuite" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveGlobalResolutionSuite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGlobalResolutionSuiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGlobalResolutionSuite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalResolutionSuite" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGlobalResolutionSuite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalResolutionSuiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGlobalResolutionSuiteList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalResolutionSuiteList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGlobalResolutionSuiteList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalResolutionSuiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Publish_InputMessage">
+    <wsdl:part name="parameters" element="tns:Publish" />
+  </wsdl:message>
+  <wsdl:message name="IService_Publish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_FinalizeContinousPublish_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizeContinousPublish" />
+  </wsdl:message>
+  <wsdl:message name="IService_FinalizeContinousPublish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinalizeContinousPublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OptimizeDeployment_InputMessage">
+    <wsdl:part name="parameters" element="tns:OptimizeDeployment" />
+  </wsdl:message>
+  <wsdl:message name="IService_OptimizeDeployment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OptimizeDeploymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDispatchCurrentDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDispatchCurrentDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDispatchCurrentDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDispatchCurrentDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDocumentPlaneText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentPlaneText" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDocumentPlaneText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentPlaneTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DetectLanguage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetectLanguage" />
+  </wsdl:message>
+  <wsdl:message name="IService_DetectLanguage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetectLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTagCloud_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagCloud" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTagCloud_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTagCloudResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetObjectListById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetObjectListById" message="tns:IService_GetObjectListById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetObjectListByIdResponse" message="tns:IService_GetObjectListById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyForObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPropertyForObject" message="tns:IService_GetPropertyForObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPropertyForObjectResponse" message="tns:IService_GetPropertyForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyListById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPropertyListById" message="tns:IService_GetPropertyListById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPropertyListByIdResponse" message="tns:IService_GetPropertyListById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedPropertiesOfObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSpecifiedPropertiesOfObject" message="tns:IService_GetSpecifiedPropertiesOfObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectResponse" message="tns:IService_GetSpecifiedPropertiesOfObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinksSourcedByObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLinksSourcedByObject" message="tns:IService_GetLinksSourcedByObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLinksSourcedByObjectResponse" message="tns:IService_GetLinksSourcedByObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipListById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationshipListById" message="tns:IService_GetRelationshipListById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipListByIdResponse" message="tns:IService_GetRelationshipListById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceObject" message="tns:IService_GetRelationshipsBySourceObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceObjectResponse" message="tns:IService_GetRelationshipsBySourceObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingRelationship">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetExistingRelationship" message="tns:IService_GetExistingRelationship_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetExistingRelationshipResponse" message="tns:IService_GetExistingRelationship_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaUrisForObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMediaUrisForObject" message="tns:IService_GetMediaUrisForObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMediaUrisForObjectResponse" message="tns:IService_GetMediaUrisForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QuickSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/QuickSearch" message="tns:IService_QuickSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/QuickSearchResponse" message="tns:IService_QuickSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerformFilterSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PerformFilterSearch" message="tns:IService_PerformFilterSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PerformFilterSearchResponse" message="tns:IService_PerformFilterSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerformSelectMatching">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PerformSelectMatching" message="tns:IService_PerformSelectMatching_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PerformSelectMatchingResponse" message="tns:IService_PerformSelectMatching_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedEntities" message="tns:IService_FindRelatedEntities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedEntitiesResponse" message="tns:IService_FindRelatedEntities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedDocuments" message="tns:IService_FindRelatedDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedDocumentsResponse" message="tns:IService_FindRelatedDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedEvents" message="tns:IService_FindRelatedEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedEventsResponse" message="tns:IService_FindRelatedEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntitiesAppearedInEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindRelatedEntitiesAppearedInEvents" message="tns:IService_FindRelatedEntitiesAppearedInEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindRelatedEntitiesAppearedInEventsResponse" message="tns:IService_FindRelatedEntitiesAppearedInEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProperiesByTypeAndValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FindProperiesByTypeAndValue" message="tns:IService_FindProperiesByTypeAndValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FindProperiesByTypeAndValueResponse" message="tns:IService_FindProperiesByTypeAndValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUriOfDatabasesForImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUriOfDatabasesForImport" message="tns:IService_GetUriOfDatabasesForImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUriOfDatabasesForImportResponse" message="tns:IService_GetUriOfDatabasesForImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesAndViewsOfDatabaseForImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTablesAndViewsOfDatabaseForImport" message="tns:IService_GetTablesAndViewsOfDatabaseForImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTablesAndViewsOfDatabaseForImportResponse" message="tns:IService_GetTablesAndViewsOfDatabaseForImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BigDataSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/BigDataSearch" message="tns:IService_BigDataSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/BigDataSearchResponse" message="tns:IService_BigDataSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyspaces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetKeyspaces" message="tns:IService_GetKeyspaces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetKeyspacesResponse" message="tns:IService_GetKeyspaces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyIndexes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetKeyIndexes" message="tns:IService_GetKeyIndexes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetKeyIndexesResponse" message="tns:IService_GetKeyIndexes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetColumnNames" message="tns:IService_GetColumnNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetColumnNamesResponse" message="tns:IService_GetColumnNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBigDataAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsBigDataAvailable" message="tns:IService_IsBigDataAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsBigDataAvailableResponse" message="tns:IService_IsBigDataAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewImportRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RegisterNewImportRequests" message="tns:IService_RegisterNewImportRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RegisterNewImportRequestsResponse" message="tns:IService_RegisterNewImportRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetJobRequests" message="tns:IService_GetJobRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetJobRequestsResponse" message="tns:IService_GetJobRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOntology">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetOntology" message="tns:IService_GetOntology_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetOntologyResponse" message="tns:IService_GetOntology_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIcon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIcon" message="tns:IService_GetIcon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetIconResponse" message="tns:IService_GetIcon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOntologyFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateOntologyFile" message="tns:IService_UpdateOntologyFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateOntologyFileResponse" message="tns:IService_UpdateOntologyFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileRepositoryDirectories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetFileRepositoryDirectories" message="tns:IService_GetFileRepositoryDirectories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetFileRepositoryDirectoriesResponse" message="tns:IService_GetFileRepositoryDirectories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectoryFromFileRepository">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteDirectoryFromFileRepository" message="tns:IService_DeleteDirectoryFromFileRepository_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteDirectoryFromFileRepositoryResponse" message="tns:IService_DeleteDirectoryFromFileRepository_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectoryInFileRepository">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateDirectoryInFileRepository" message="tns:IService_CreateDirectoryInFileRepository_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateDirectoryInFileRepositoryResponse" message="tns:IService_CreateDirectoryInFileRepository_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameDirectoryInFileRepository">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RenameDirectoryInFileRepository" message="tns:IService_RenameDirectoryInFileRepository_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RenameDirectoryInFileRepositoryResponse" message="tns:IService_RenameDirectoryInFileRepository_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileFromFileRepository">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DownloadFileFromFileRepository" message="tns:IService_DownloadFileFromFileRepository_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DownloadFileFromFileRepositoryResponse" message="tns:IService_DownloadFileFromFileRepository_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadToFileRepository">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UploadToFileRepository" message="tns:IService_UploadToFileRepository_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UploadToFileRepositoryResponse" message="tns:IService_UploadToFileRepository_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishGraph">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PublishGraph" message="tns:IService_PublishGraph_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PublishGraphResponse" message="tns:IService_PublishGraph_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedGraphs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPublishedGraphs" message="tns:IService_GetPublishedGraphs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPublishedGraphsResponse" message="tns:IService_GetPublishedGraphs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedGraphImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPublishedGraphImage" message="tns:IService_GetPublishedGraphImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPublishedGraphImageResponse" message="tns:IService_GetPublishedGraphImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedGraph">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPublishedGraph" message="tns:IService_GetPublishedGraph_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPublishedGraphResponse" message="tns:IService_GetPublishedGraph_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublishedGraph">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeletePublishedGraph" message="tns:IService_DeletePublishedGraph_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeletePublishedGraphResponse" message="tns:IService_DeletePublishedGraph_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMapTileImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMapTileImage" message="tns:IService_GetMapTileImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMapTileImageResponse" message="tns:IService_GetMapTileImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoLocationBaseOnIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGeoLocationBaseOnIP" message="tns:IService_GetGeoLocationBaseOnIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGeoLocationBaseOnIPResponse" message="tns:IService_GetGeoLocationBaseOnIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertGeoSpecialInformationBasedOnIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertGeoSpecialInformationBasedOnIP" message="tns:IService_InsertGeoSpecialInformationBasedOnIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertGeoSpecialInformationBasedOnIPResponse" message="tns:IService_InsertGeoSpecialInformationBasedOnIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewObjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewObjectId" message="tns:IService_GetNewObjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewObjectIdResponse" message="tns:IService_GetNewObjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPropertyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewPropertyId" message="tns:IService_GetNewPropertyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewPropertyIdResponse" message="tns:IService_GetNewPropertyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewRelationId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewRelationId" message="tns:IService_GetNewRelationId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewRelationIdResponse" message="tns:IService_GetNewRelationId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMediaId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewMediaId" message="tns:IService_GetNewMediaId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewMediaIdResponse" message="tns:IService_GetNewMediaId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewObjectIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewObjectIdRange" message="tns:IService_GetNewObjectIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewObjectIdRangeResponse" message="tns:IService_GetNewObjectIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPropertyIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewPropertyIdRange" message="tns:IService_GetNewPropertyIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewPropertyIdRangeResponse" message="tns:IService_GetNewPropertyIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewRelationIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewRelationIdRange" message="tns:IService_GetNewRelationIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewRelationIdRangeResponse" message="tns:IService_GetNewRelationIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMediaIdRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNewMediaIdRange" message="tns:IService_GetNewMediaIdRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNewMediaIdRangeResponse" message="tns:IService_GetNewMediaIdRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedObjectID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAssignedObjectID" message="tns:IService_GetLastAssignedObjectID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAssignedObjectIDResponse" message="tns:IService_GetLastAssignedObjectID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedRelatioshshipID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAssignedRelatioshshipID" message="tns:IService_GetLastAssignedRelatioshshipID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAssignedRelatioshshipIDResponse" message="tns:IService_GetLastAssignedRelatioshshipID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeBasedResolutionCandidates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTypeBasedResolutionCandidates" message="tns:IService_GetTypeBasedResolutionCandidates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTypeBasedResolutionCandidatesResponse" message="tns:IService_GetTypeBasedResolutionCandidates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGlobalResolutionSuite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveGlobalResolutionSuite" message="tns:IService_SaveGlobalResolutionSuite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveGlobalResolutionSuiteResponse" message="tns:IService_SaveGlobalResolutionSuite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalResolutionSuite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGlobalResolutionSuite" message="tns:IService_GetGlobalResolutionSuite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGlobalResolutionSuiteResponse" message="tns:IService_GetGlobalResolutionSuite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalResolutionSuiteList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGlobalResolutionSuiteList" message="tns:IService_GetGlobalResolutionSuiteList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGlobalResolutionSuiteListResponse" message="tns:IService_GetGlobalResolutionSuiteList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Publish" message="tns:IService_Publish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PublishResponse" message="tns:IService_Publish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinalizeContinousPublish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/FinalizeContinousPublish" message="tns:IService_FinalizeContinousPublish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/FinalizeContinousPublishResponse" message="tns:IService_FinalizeContinousPublish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OptimizeDeployment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OptimizeDeployment" message="tns:IService_OptimizeDeployment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OptimizeDeploymentResponse" message="tns:IService_OptimizeDeployment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Authenticate" message="tns:IService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AuthenticateResponse" message="tns:IService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDispatchCurrentDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDispatchCurrentDateTime" message="tns:IService_GetDispatchCurrentDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDispatchCurrentDateTimeResponse" message="tns:IService_GetDispatchCurrentDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentPlaneText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDocumentPlaneText" message="tns:IService_GetDocumentPlaneText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDocumentPlaneTextResponse" message="tns:IService_GetDocumentPlaneText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetectLanguage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DetectLanguage" message="tns:IService_DetectLanguage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DetectLanguageResponse" message="tns:IService_DetectLanguage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagCloud">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTagCloud" message="tns:IService_GetTagCloud_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTagCloudResponse" message="tns:IService_GetTagCloud_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetObjectListById">
+      <soap:operation soapAction="http://tempuri.org/IService/GetObjectListById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyForObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPropertyForObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertyListById">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPropertyListById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedPropertiesOfObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSpecifiedPropertiesOfObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinksSourcedByObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLinksSourcedByObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipListById">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationshipListById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationshipsBySourceObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingRelationship">
+      <soap:operation soapAction="http://tempuri.org/IService/GetExistingRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaUrisForObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMediaUrisForObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QuickSearch">
+      <soap:operation soapAction="http://tempuri.org/IService/QuickSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerformFilterSearch">
+      <soap:operation soapAction="http://tempuri.org/IService/PerformFilterSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerformSelectMatching">
+      <soap:operation soapAction="http://tempuri.org/IService/PerformSelectMatching" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntities">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedDocuments">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEvents">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindRelatedEntitiesAppearedInEvents">
+      <soap:operation soapAction="http://tempuri.org/IService/FindRelatedEntitiesAppearedInEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProperiesByTypeAndValue">
+      <soap:operation soapAction="http://tempuri.org/IService/FindProperiesByTypeAndValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUriOfDatabasesForImport">
+      <soap:operation soapAction="http://tempuri.org/IService/GetUriOfDatabasesForImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesAndViewsOfDatabaseForImport">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTablesAndViewsOfDatabaseForImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BigDataSearch">
+      <soap:operation soapAction="http://tempuri.org/IService/BigDataSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyspaces">
+      <soap:operation soapAction="http://tempuri.org/IService/GetKeyspaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyIndexes">
+      <soap:operation soapAction="http://tempuri.org/IService/GetKeyIndexes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnNames">
+      <soap:operation soapAction="http://tempuri.org/IService/GetColumnNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBigDataAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsBigDataAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewImportRequests">
+      <soap:operation soapAction="http://tempuri.org/IService/RegisterNewImportRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobRequests">
+      <soap:operation soapAction="http://tempuri.org/IService/GetJobRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOntology">
+      <soap:operation soapAction="http://tempuri.org/IService/GetOntology" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIcon">
+      <soap:operation soapAction="http://tempuri.org/IService/GetIcon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOntologyFile">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateOntologyFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileRepositoryDirectories">
+      <soap:operation soapAction="http://tempuri.org/IService/GetFileRepositoryDirectories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectoryFromFileRepository">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteDirectoryFromFileRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDirectoryInFileRepository">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateDirectoryInFileRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameDirectoryInFileRepository">
+      <soap:operation soapAction="http://tempuri.org/IService/RenameDirectoryInFileRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileFromFileRepository">
+      <soap:operation soapAction="http://tempuri.org/IService/DownloadFileFromFileRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadToFileRepository">
+      <soap:operation soapAction="http://tempuri.org/IService/UploadToFileRepository" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishGraph">
+      <soap:operation soapAction="http://tempuri.org/IService/PublishGraph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedGraphs">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPublishedGraphs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedGraphImage">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPublishedGraphImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishedGraph">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPublishedGraph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublishedGraph">
+      <soap:operation soapAction="http://tempuri.org/IService/DeletePublishedGraph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMapTileImage">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMapTileImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoLocationBaseOnIP">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGeoLocationBaseOnIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGeoSpecialInformationBasedOnIP">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertGeoSpecialInformationBasedOnIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewObjectId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewObjectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPropertyId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewPropertyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewRelationId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewRelationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMediaId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewMediaId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewObjectIdRange">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewObjectIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewPropertyIdRange">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewPropertyIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewRelationIdRange">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewRelationIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMediaIdRange">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNewMediaIdRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedObjectID">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAssignedObjectID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAssignedRelatioshshipID">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAssignedRelatioshshipID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeBasedResolutionCandidates">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTypeBasedResolutionCandidates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGlobalResolutionSuite">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveGlobalResolutionSuite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalResolutionSuite">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGlobalResolutionSuite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalResolutionSuiteList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGlobalResolutionSuiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap:operation soapAction="http://tempuri.org/IService/Publish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinalizeContinousPublish">
+      <soap:operation soapAction="http://tempuri.org/IService/FinalizeContinousPublish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptimizeDeployment">
+      <soap:operation soapAction="http://tempuri.org/IService/OptimizeDeployment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/IService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDispatchCurrentDateTime">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDispatchCurrentDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentPlaneText">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDocumentPlaneText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetectLanguage">
+      <soap:operation soapAction="http://tempuri.org/IService/DetectLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTagCloud">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTagCloud" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://dispatchserver:9011/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

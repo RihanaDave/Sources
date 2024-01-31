@@ -1,0 +1,37 @@
+<UserControl x:Class="GPAS.HistogramViewer.HistogramItemsExpandRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:histogramProperties="clr-namespace:GPAS.HistogramViewer.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="5">
+            <Hyperlink x:Name="hypShowAll" Click="hypShowAll_Click">
+                <!--مقداردهی محتوای لینک‌ها به صورت زیر، باعث بروز خطای زمان اجرا می‌شود؛-->
+                <!--این مقداردهی به درون کد منتقل شد.-->
+                <!--<Run Text="{x:Static histogramProperties:Resources.ExpandRowCommands_ShowAll}"/>-->
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Margin="5">
+            <Hyperlink x:Name="hypLess" Click="hypLess_Click">
+                <!--<Run Text="{x:Static histogramProperties:Resources.ExpandRowCommands_Less}"/>-->
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" Margin="5">
+            <Hyperlink x:Name="hypMore" Click="hypMore_Click">
+                <!--<Run Text="{x:Static histogramProperties:Resources.ExpandRowCommands_More}"/>-->
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</UserControl>

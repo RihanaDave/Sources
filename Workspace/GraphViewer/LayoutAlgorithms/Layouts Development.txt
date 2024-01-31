@@ -1,0 +1,11 @@
+﻿Auto					-> LinLog + SimpleER + FSA
+	Grid				-> ساخته شد
+Hierarchy			-> EfficientSugiyama + OverlapRemoving + فاصله بیشتر
+	Circle				-> استفاده از Circle
+	Sorted Liner	-> ساخته شد
+Minimum Crossing	-> CompoundFDP اگر فاصله ها بیشتر شود بهتر است
+Elbows					-
+	[جمع شدن در یک نقطه]-> ساخته شد
+-----
+... \Palantir Gotham 3.12.4 Library\Offline Content\allhelp\en_US\workspace-graph\graphcontent.4.10.html
+... \Palantir Gotham 3.12.4 Library\Offline Content\allhelp\en_US\workspace-graph\uigraph.8.3.html

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="GPAS.Dispatch.AdminTools.View.UserControls.OntologyPicker.PropertyPickerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:GPAS.Dispatch.AdminTools.View.Converters"
+             xmlns:tvp="clr-namespace:GPAS.TreeViewPicker;assembly=GPAS.TreeViewPicker"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converters:AdminToolsDisplayModeToTreeViewPickerDisplayModeConverter x:Key="DisplayModeConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <tvp:TreeViewPicker Name="MainTreeViewPicker" VerticalAlignment="Top" ShowExpanderButton="False"
+                            ItemsSource="{Binding ItemCollection, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                            IsExpanded="{Binding IsExpanded, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                            Text="{Binding Text, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                            DisplayMode="{Binding DisplayMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl},
+            Converter={StaticResource DisplayModeConverter}}"
+                            SelectedItemReselected="MainTreeViewPicker_SelectedItemReselected" 
+                            Background="{Binding Background,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                            Foreground="{Binding Foreground,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" />
+    </Grid>
+</UserControl>

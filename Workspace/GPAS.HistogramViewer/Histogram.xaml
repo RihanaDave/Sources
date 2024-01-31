@@ -1,0 +1,45 @@
+<UserControl x:Class="GPAS.HistogramViewer.Histogram"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:histogram="clr-namespace:GPAS.Histogram;assembly=GPAS.Histogram"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" MouseRightButtonDown="UserControl_MouseRightButtonDown">   
+
+    <Grid x:Name="grdControlMainGrid" Background="{DynamicResource MaterialDesignCardBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.RowSpan="3" Panel.ZIndex="20" Name="NoItemToShowGrid" 
+              Background="{DynamicResource MaterialDesignCardBackground}">
+            <TextBlock Text="No item to show" 
+                       VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"/>
+        </Grid>
+
+        <histogram:Histogram Grid.Row="0" x:Name="MainHistogram" Title="Histogram"
+                             SelectedItemsChanged="MainHistogram_SelectedItemsChanged"
+                             SnapshotTaken="MainHistogram_SnapshotTaken"/>       
+
+        <ProgressBar Name="prgWaiting" Height="5" Margin="5 0" Grid.Row="1" IsIndeterminate="True"
+                     Background="{DynamicResource PrimaryHueDarkBrush}"
+                     Foreground="{DynamicResource PrimaryHueLightBrush}"
+                     BorderBrush="{DynamicResource PrimaryHueDarkBrush}"/>
+        
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Name="HistogramStatusTextBlock" Grid.Column="0" Foreground="{DynamicResource MaterialDesignBody}" 
+                       Text="..." Style="{StaticResource MaterialDesignCaptionTextBlock}"
+                       VerticalAlignment="Center"/>
+            <Button Name="CancelHistogramRequestButton" Grid.Column="1" Margin="5 0 0 0" Click="CancelHistogramRequestButton_Click"
+                    Content="Cancel"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" />
+  <xs:complexType name="QueryResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="ObjectTypePreview" nillable="true" type="q1:ArrayOfTypeBasedStatistic" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="PropertyTypePreview" nillable="true" type="q2:ArrayOfTypeBasedStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResult" nillable="true" type="tns:QueryResult" />
+  <xs:complexType name="PropertyValueStatistics">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="Results" nillable="true" type="q3:ArrayOfPropertyValueStatistic" />
+      <xs:element minOccurs="0" name="TotalResultsCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertyValueStatistics" nillable="true" type="tns:PropertyValueStatistics" />
+  <xs:complexType name="LinkTypeStatistics">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="LinkTypes" nillable="true" type="q4:ArrayOfTypeBasedStatistic" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GPAS.StatisticalQuery.ResultNode" minOccurs="0" name="LinkedObjectTypes" nillable="true" type="q5:ArrayOfTypeBasedStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkTypeStatistics" nillable="true" type="tns:LinkTypeStatistics" />
+</xs:schema>

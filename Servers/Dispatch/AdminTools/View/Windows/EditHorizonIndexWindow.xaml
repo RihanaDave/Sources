@@ -1,0 +1,118 @@
+﻿<Window x:Class="GPAS.Dispatch.AdminTools.View.Windows.EditHorizonIndexWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ontologypicker="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls.OntologyPicker"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Title="Edit horizon index" Height="450" Width="900">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Margin="5 10" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" MaxWidth="25" MaxHeight="25" VerticalAlignment="Center" Margin="0 0 5 0"
+                               Source="{Binding EditedIndex.Icon}"/>
+                <TextBlock Grid.Column="1" Text="{Binding EditedIndex.TypeUriToShow}" 
+                                   VerticalAlignment="Center" FontSize="14"/>
+            </Grid>
+
+            <ontologypicker:PropertyPickerUserControl 
+                Grid.Row="1" Grid.Column="0" Margin="5" DisplayMode="List" x:Name="PropertyPickerUserControl"                        
+                SelectedItemChanged="PropertyPickerUserControl_SelectedItemChanged"
+                SelectedItemReselected="PropertyPickerUserControl_SelectedItemReselected"/>
+
+            <Separator Grid.Row="1" Grid.Column="1" Margin="0 5">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <Grid Grid.Row="1" Grid.Column="2" Margin="5" Background="{DynamicResource SecondBackground}">
+                <ListView ItemsSource="{Binding EditedIndex.Properties}" Name="PropertiesListView"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel HorizontalAlignment="Left" Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                            <Setter Property="Padding" Value="5"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="5" Background="{DynamicResource NormalBackground}">
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Style="{StaticResource MaterialDesignIconButton}" Height="25" Width="25"
+                                                    Name="DeletePropertyButton" Click="DeletePropertyButton_Click">
+                                        <materialDesign:PackIcon Kind="Multiply" Foreground="red" Height="20" Width="20"/>
+                                    </Button>
+
+                                    <Image Grid.Column="1" MaxWidth="20" MaxHeight="20"
+                                                   VerticalAlignment="Center" Margin="5 0" Source="{Binding Icon}"/>
+
+                                    <TextBlock Grid.Column="2" Text="{Binding TypeUriToShow}" 
+                                                       VerticalAlignment="Center" FontSize="12"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5 0 10 5" HorizontalAlignment="Right">
+            <Button Name="CancelButton" Content="Cancel" Style="{StaticResource MaterialDesignFlatButton}" Margin="5 0"
+                    Click="CancelButton_Click"/>
+
+            <Button Name="DoneButton" Content="Done" Click="DoneButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=PropertiesListView, Path=Items.Count}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+
+        <Grid Grid.Row="0" Grid.RowSpan="2" Name="WaitiningGrid" Visibility="Collapsed" >
+            <Grid.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.5"/>
+            </Grid.Background>
+            <ProgressBar Height="50" Width="50"
+                         Style="{StaticResource MaterialDesignCircularProgressBar}"
+                         Value="0" IsIndeterminate="True"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.Timeline.TimelineControl">
+    <Position X="6" Y="1.75" Width="2.75" />
+    <Members>
+      <Method Name="AddItemsToCategory" Hidden="true" />
+      <Field Name="CheckedPropertyTypeUriListProperty" Hidden="true" />
+      <Method Name="ConvertDateTimeToTimeRange" Hidden="true" />
+      <Method Name="ConvertGeoTimeEntityToTimeRange" Hidden="true" />
+      <Method Name="ConvertKWPropertyToKTProperty" Hidden="true" />
+      <Method Name="ConvertObjectToTimeRangeList" Hidden="true" />
+      <Method Name="CreateDefaultSuperCategory" Hidden="true" />
+      <Method Name="CreateFilterQuery" Hidden="true" />
+      <Method Name="CreatePropertyTypeUriWithBaseDataType" Hidden="true" />
+      <Method Name="CreateSubCategories" Hidden="true" />
+      <Method Name="CreateSubCategory" Hidden="true" />
+      <Method Name="CreateSuperCategories" Hidden="true" />
+      <Method Name="CreateTotalProperties" Hidden="true" />
+      <Field Name="DefaultSuperCategory" Hidden="true" />
+      <Property Name="EffectiveObjects" Hidden="true" />
+      <Field Name="FilterQueryProperty" Hidden="true" />
+      <Field Name="FilterWindowsProperty" Hidden="true" />
+      <Method Name="GetMaxFrequency" Hidden="true" />
+      <Method Name="GetMaxFrequencyAsync" Hidden="true" />
+      <Method Name="GetObjectCollectionTypeUriList" Hidden="true" />
+      <Method Name="GetPropertiesList" Hidden="true" />
+      <Method Name="GetRelatedPropertiesInShown" Hidden="true" />
+      <Method Name="GetTotalLowerBound" Hidden="true" />
+      <Method Name="GetTotalUpperBound" Hidden="true" />
+      <Method Name="HighlightRangesRelatedObjects" Hidden="true" />
+      <Method Name="HighlightRangesRelatedProperties" Hidden="true" />
+      <Method Name="HighlightRangesRelatedTimeRanges" Hidden="true" />
+      <Method Name="InitProperties" Hidden="true" />
+      <Method Name="IsValidValue" Hidden="true" />
+      <Method Name="LoadNewData" Hidden="true" />
+      <Method Name="ObjectCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ObjectCollectionProperty" Hidden="true" />
+      <Property Name="ObjectTypeUris" Hidden="true" />
+      <Method Name="OnCheckedPropertyTypeUriListChanged" Hidden="true" />
+      <Method Name="OnFilterQueryChanged" Hidden="true" />
+      <Method Name="OnFilterWindowsChanged" Hidden="true" />
+      <Method Name="OnObjectCollectionChanged" Hidden="true" />
+      <Method Name="OnObjectsSelectionRequested" Hidden="true" />
+      <Method Name="OnSelectedRangesChanged" Hidden="true" />
+      <Method Name="OnSetCheckedPropertyTypeUriListChanged" Hidden="true" />
+      <Method Name="OnSetFilterQueryChanged" Hidden="true" />
+      <Method Name="OnSetFilterWindowsChanged" Hidden="true" />
+      <Method Name="OnSetObjectCollectionChanged" Hidden="true" />
+      <Method Name="OnSetSelectedRangesChanged" Hidden="true" />
+      <Method Name="OnSnapshotRequested" Hidden="true" />
+      <Property Name="Ontology" Hidden="true" />
+      <Field Name="PropertyTypeUrisWithBaseDataTypes" Hidden="true" />
+      <Method Name="ProvidingItems" Hidden="true" />
+      <Method Name="ResetDefaultSuperCategory" Hidden="true" />
+      <Field Name="SelectedObjectList" Hidden="true" />
+      <Field Name="SelectedRangesProperty" Hidden="true" />
+      <Method Name="SetEffectivePropertyTypeUriWithBaseDataTypeList" Hidden="true" />
+      <Field Name="SuperCategories" Hidden="true" />
+      <Method Name="TimelineViewer_CategoriesInShownChanged" Hidden="true" />
+      <Method Name="TimelineViewer_FilterWindowsChanged" Hidden="true" />
+      <Method Name="TimelineViewer_ItemsNeeded" Hidden="true" />
+      <Method Name="timelineViewer_SegmentSelectionChanged" Hidden="true" />
+      <Method Name="TimelineViewer_SnapshotTaken" Hidden="true" />
+      <Field Name="TitleDefaultSuperCategory" Hidden="true" />
+      <Property Name="TotalPropertiesInShown" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>FBAQQHgABYNBmIABComIBAWEKAwyAQAYMIQJQR9wJcA=</HashCode>
+      <FileName>Controls\Timeline\TimelineControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FilterQuery" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="FilterWindows" />
+      <Property Name="SelectedRanges" />
+      <Property Name="TotalProperties" />
+      <Property Name="ObjectCollection" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Timeline.KTProperty">
+    <Position X="10" Y="1" Width="2" />
+    <Members>
+      <Field Name="relatedKWProperty" Hidden="true" />
+      <Field Name="typeUri" Hidden="true" />
+      <Field Name="value" Hidden="true" />
+    </Members>
+    <AssociationLine Name="RelatedKWProperty" Type="GPAS.Workspace.Entities.KWProperty">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.341" Y="0.495" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAACAAAAAAAGAAAAAgAAAAQAA=</HashCode>
+      <FileName>Controls\Timeline\KTProperty.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RelatedKWProperty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Timeline.ObjectsSelectionRequestEventArgs">
+    <Position X="1.75" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Timeline\ObjectsSelectionRequestEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Timeline.TimeRange">
+    <Position X="1.75" Y="3.5" Width="2.5" />
+    <Members>
+      <Field Name="from" Hidden="true" />
+      <Field Name="tag" Hidden="true" />
+      <Field Name="to" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAASIAABAiAAAAAAAEAwwBAAAIAIAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controls\Timeline\TimeRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.FilterSearch.Query">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.KWObject">
+    <Position X="10" Y="5" Width="1.75" />
+    <AssociationLine Name="ResolvedTo" Type="GPAS.Workspace.Entities.KWObject" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.75" Y="6.688" />
+        <Point X="12.745" Y="6.688" />
+        <Point X="12.745" Y="6.375" />
+        <Point X="11.75" Y="6.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.05" Y="-0.234" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="ResolvedTo" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Entities.KWProperty">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <Members>
+      <Method Name="OnValueChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Owner" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

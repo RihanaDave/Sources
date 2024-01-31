@@ -1,0 +1,25 @@
+<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.GraphControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                
+             xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+             xmlns:graphviwr="clr-namespace:GPAS.Graph.GraphViewer;assembly=GPAS.Graph.GraphViewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <controls:PresentationControl.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </controls:PresentationControl.Resources>
+    <Grid>
+        <graphviwr:GraphViewer x:Name="graphviewerMain"
+                               VertexDoubleClick="graphviewerMain_VertexDoubleClicked"
+                               VertexRightClick="graphviewerMain_VertexRightClick"
+                               EdgeRightClick="graphviewerMain_EdgeRightClick"
+                               IsFlowsShown="{Binding IsFlowsShown, Mode=TwoWay}"
+                               MinFlowPathWeight="{Binding MinFlowPathWeight, Mode=TwoWay}"
+                               MaxFlowPathWeight="{Binding MaxFlowPathWeight, Mode=TwoWay}"
+                               ViewerInitializationCompleted="graphviewerMain_ViewerInitializationCompleted"/>
+    </Grid>
+</controls:PresentationControl>

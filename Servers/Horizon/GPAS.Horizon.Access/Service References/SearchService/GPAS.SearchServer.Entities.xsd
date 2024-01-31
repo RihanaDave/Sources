@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.SearchServer.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.SearchServer.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.SearchServer.Entities.SearchEngine.Documents" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfSearchObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchObject" nillable="true" type="tns:SearchObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchObject" nillable="true" type="tns:ArrayOfSearchObject" />
+  <xs:complexType name="SearchObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsMaster" type="xs:int" />
+      <xs:element minOccurs="0" name="LabelPropertyID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SearchObjectMaster" nillable="true" type="tns:SearchObjectMaster" />
+      <xs:element minOccurs="0" name="Slaves" nillable="true" type="tns:ArrayOfSearchObject" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchObject" nillable="true" type="tns:SearchObject" />
+  <xs:complexType name="SearchObjectMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="MasterId" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResolveTo" nillable="true" type="q1:ArrayOflong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchObjectMaster" nillable="true" type="tns:SearchObjectMaster" />
+  <xs:complexType name="ArrayOfPropertiesMatchingResults">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PropertiesMatchingResults" nillable="true" type="tns:PropertiesMatchingResults" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPropertiesMatchingResults" nillable="true" type="tns:ArrayOfPropertiesMatchingResults" />
+  <xs:complexType name="PropertiesMatchingResults">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResultPropertiesID" nillable="true" type="q2:ArrayOflong" />
+      <xs:element minOccurs="0" name="SearchedPropertyID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PropertiesMatchingResults" nillable="true" type="tns:PropertiesMatchingResults" />
+  <xs:complexType name="ArrayOfSearchMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchMedia" nillable="true" type="tns:SearchMedia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchMedia" nillable="true" type="tns:ArrayOfSearchMedia" />
+  <xs:complexType name="SearchMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="OwnerObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="URI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchMedia" nillable="true" type="tns:SearchMedia" />
+  <xs:complexType name="ArrayOfSearchProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchProperty" nillable="true" type="tns:SearchProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchProperty" nillable="true" type="tns:ArrayOfSearchProperty" />
+  <xs:complexType name="SearchProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="OwnerObject" nillable="true" type="tns:SearchObject" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchProperty" nillable="true" type="tns:SearchProperty" />
+  <xs:complexType name="ArrayOfSearchRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchRelationship" nillable="true" type="tns:SearchRelationship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchRelationship" nillable="true" type="tns:ArrayOfSearchRelationship" />
+  <xs:complexType name="SearchRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Direction" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="SourceObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="SourceObjectTypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="TargetObjectTypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchRelationship" nillable="true" type="tns:SearchRelationship" />
+  <xs:complexType name="ArrayOfRetrievedFace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RetrievedFace" nillable="true" type="tns:RetrievedFace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRetrievedFace" nillable="true" type="tns:ArrayOfRetrievedFace" />
+  <xs:complexType name="RetrievedFace">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.SearchServer.Entities.SearchEngine.Documents" minOccurs="0" name="boundingBox" nillable="true" type="q3:BoundingBox" />
+      <xs:element minOccurs="0" name="distance" type="xs:double" />
+      <xs:element minOccurs="0" name="imageId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetrievedFace" nillable="true" type="tns:RetrievedFace" />
+  <xs:complexType name="ArrayOfSearchDataSourceACL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchDataSourceACL" nillable="true" type="tns:SearchDataSourceACL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchDataSourceACL" nillable="true" type="tns:ArrayOfSearchDataSourceACL" />
+  <xs:complexType name="SearchDataSourceACL">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="Acl" nillable="true" type="q4:ACL" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchDataSourceACL" nillable="true" type="tns:SearchDataSourceACL" />
+  <xs:complexType name="SearchGraphArrangement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GraphArrangementXML" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="GraphImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NodesCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeCreated" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchGraphArrangement" nillable="true" type="tns:SearchGraphArrangement" />
+  <xs:complexType name="ArrayOfSearchGraphArrangement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchGraphArrangement" nillable="true" type="tns:SearchGraphArrangement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchGraphArrangement" nillable="true" type="tns:ArrayOfSearchGraphArrangement" />
+  <xs:simpleType name="ConceptType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Property">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Relationship">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Media">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Object">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConceptType" nillable="true" type="tns:ConceptType" />
+</xs:schema>

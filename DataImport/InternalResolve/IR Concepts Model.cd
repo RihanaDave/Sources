@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.DataImport.InternalResolve.IRObject">
+    <Position X="1" Y="1.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAkAAAAACAAAAAgAAAAACAAQABAIAAAABAAAAAIAA=</HashCode>
+      <FileName>InternalResolve\IRObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.DataImport.InternalResolve.IRRelationshipEnd">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAgAAAAAAAAAAAAIAAAABAAAAAAAA=</HashCode>
+      <FileName>InternalResolve\IRRelationshipEnd.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.DataImport.InternalResolve.IRRelationshipObjectBasedEnd">
+    <Position X="9" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAQAgAAAAAAAAAAAAIAAAABAAAAAAAA=</HashCode>
+      <FileName>InternalResolve\IRRelationshipObjectBasedEnd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.InternalResolve.IRRelationshipPropertyBasedEnd">
+    <Position X="11.5" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAQAgAAAAAAAIABAAIAAAABAAAAAAAA=</HashCode>
+      <FileName>InternalResolve\IRRelationshipPropertyBasedEnd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="GPAS.DataImport.InternalResolve.IRIgnorableProperty">
+    <Position X="4.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAAA=</HashCode>
+      <FileName>InternalResolve\IRIgnorableProperty.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GPAS.DataImport.InternalResolve.IRMustMatchProperty">
+    <Position X="4.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAIQAgAAAAAAAAAAAAMAAABBgAAAAAAA=</HashCode>
+      <FileName>InternalResolve\IRMustMatchProperty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="GPAS.DataImport.InternalResolve.IRRelationship">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <AssociationLine Name="SourceEnd" Type="GPAS.DataImport.InternalResolve.IRRelationshipEnd" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="2.125" />
+        <Point X="10.75" Y="2.125" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="TargetEnd" Type="GPAS.DataImport.InternalResolve.IRRelationshipEnd" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="1.734" />
+        <Point X="10.75" Y="1.734" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAACAAAAAAAAAAAEAAAAAAEAAAAEA=</HashCode>
+      <FileName>InternalResolve\IRRelationship.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Direction" />
+      <Field Name="SourceEnd" />
+      <Field Name="TargetEnd" />
+    </ShowAsAssociation>
+  </Struct>
+  <Enum Name="GPAS.DataImport.InternalResolve.IRRelationshipDirection">
+    <Position X="6.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAABAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InternalResolve\IRRelationshipDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

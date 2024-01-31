@@ -1,0 +1,260 @@
+﻿<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.ObjectExplorer.VisualizationPanel"
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                              xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+                              xmlns:OEControls="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer"
+                              xmlns:convertors="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer.Convertor"
+                              xmlns:OEHisControls="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer.Histograms"
+                              xmlns:OEChartControls="clr-namespace:GPAS.Workspace.Presentation.Controls.ObjectExplorer.Charts"
+                              xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+                              xmlns:system="clr-namespace:System;assembly=mscorlib"
+                              xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                              Foreground="{DynamicResource MaterialDesignBody}"                              
+                              mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <convertors:ScreenStatusToIconPathConvertor x:Key="screenStatusToIconPathConvertor"/>
+            <convertors:ScreenStatusToToolTipStringConverter x:Key="screenStatusToToolTipStringConverter"/>
+            <convertors:VisualizationPanelToolControlsLocationToStartMotionConverter x:Key="Moving"/>
+            <KeyTime x:Key="durationMotion">
+                00:00:0.5
+            </KeyTime>
+
+            <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+            <system:Double x:Key="{x:Static SystemParameters.HorizontalScrollBarHeightKey}">5</system:Double>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="{DynamicResource MaterialDesignCardBackground}">
+
+        <TextBlock Name="NothingToPreviewPromptLabelForSearchResults" Visibility="Collapsed"
+               Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"
+               FontStyle="Italic" FontSize="14"
+               Text="{x:Static resource:Resources.No_Preview_Data_Available}"/>
+
+        <Button Name="btnChangeScreenSize" Padding="0" Margin="5" HorizontalAlignment="Right"
+                BorderThickness="0" VerticalAlignment="Top" Click="btnChangeScreenSize_Click" 
+                Background="#00FFFFFF"
+                ToolTip="{Binding VisualizationScreenStatus, Converter={StaticResource screenStatusToToolTipStringConverter}}">
+            <materialDesign:PackIcon
+                Kind="{Binding VisualizationScreenStatus, Converter={StaticResource screenStatusToIconPathConvertor}, 
+                FallbackValue=FullScreenExit}" Foreground="{DynamicResource MaterialDesignBody}"
+                Height="30" Width="30" />
+        </Button>
+
+        <materialDesign:DialogHost Name="DialogHost" CloseOnClickAwayParameter="True" CloseOnClickAway="True" >
+
+            <Grid Name="visualizationBorderGrid" SizeChanged="visualizationBorderGrid_SizeChanged" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Name="startStepStackPanel" Orientation="Vertical" Grid.Row="0" Margin="5" >
+
+                    <CheckBox Name="cbMoving" IsChecked="{Binding ToolControlsLocation, Converter={StaticResource Moving}}"
+                          Visibility="Hidden" />
+
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="StarFourPoints" VerticalAlignment="Center" Height="20" Width="20"
+                                                 Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                        <TextBlock Margin="5 0" Style="{StaticResource MaterialDesignSubtitle1TextBlock}" 
+                                   Text="{x:Static resource:Resources.Select_a_visualization_of_filter_below_to_visualize_of_filter_the_current_set_of_objects}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="StarFourPoints" VerticalAlignment="Center" Height="20" Width="20"
+                                                 Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+                        <TextBlock Margin="5" Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                   Text="{x:Static resource:Resources.Use_the_types_menu_at_right_to_select_specific_object_of_property_types_for_viewing}"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <WrapPanel Grid.Row="0">
+                    <b:Interaction.Behaviors>
+                        <b:FluidMoveBehavior AppliesTo="Children" Duration="00:00:00.70"/>
+                    </b:Interaction.Behaviors>
+                    <WrapPanel.Style>
+                        <Style TargetType="WrapPanel">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                    <Setter Property="Margin" Value="5"/>
+                                    <Setter Property="Height" Value="80"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="False">
+                                    <Setter Property="Margin" Value="5 100 200 5"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </WrapPanel.Style>
+
+                    <OEControls:VisualizationToolControl 
+                    Grid.Row="0" Grid.Column="0" x:Name="chartToolControl" Margin="5"
+                    Title="{x:Static resource:Resources.Chart}" Icon="ChartBar"
+                    Description="{x:Static resource:Resources.Chart_of_numeric_values_for_a_specific_property}"
+                    DropDownMenuItemClicked="chartToolControl_DropDownMenuItemClicked">
+                        <OEControls:VisualizationToolControl.Style>
+                            <Style TargetType="OEControls:VisualizationToolControl">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                        <Setter Property="ViewMode" Value="ToolbarView"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </OEControls:VisualizationToolControl.Style>
+                    </OEControls:VisualizationToolControl>
+
+                    <OEControls:VisualizationToolControl 
+                    Grid.Row="1" Grid.Column="0" x:Name="propertyValueToolControl" Margin="5"
+                    Title="{x:Static resource:Resources.Property_Value_Histogram}" Icon="ChartBarStacked"
+                    Description="{x:Static resource:Resources.Histogram_of_property_values_in_this_data_set}"
+                    DropDownMenuItemClicked="propertyValueToolControl_DropDownMenuItemClicked">
+                        <OEControls:VisualizationToolControl.Style>
+                            <Style TargetType="OEControls:VisualizationToolControl">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                        <Setter Property="ViewMode" Value="ToolbarView"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </OEControls:VisualizationToolControl.Style>
+                    </OEControls:VisualizationToolControl>
+
+                    <OEControls:VisualizationToolControl 
+                    Grid.Row="2" Grid.Column="0" x:Name="groupByToolControl" Margin="5"
+                    Title="{x:Static resource:Resources.Group_By}" Icon="Group"
+                    Description="{x:Static resource:Resources.Histogram_of_aggregated_values_grouped_by_a_second_value}"
+                    ButtonClicked="groupByToolControl_ButtonClicked" IsEnabled="False">
+                        <OEControls:VisualizationToolControl.Style>
+                            <Style TargetType="OEControls:VisualizationToolControl">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                        <Setter Property="ViewMode" Value="ToolbarView"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </OEControls:VisualizationToolControl.Style>
+                    </OEControls:VisualizationToolControl>
+
+                    <OEControls:VisualizationToolControl 
+                    Grid.Row="0" Grid.Column="1" x:Name="linkTypeHistogramToolControl" Margin="5"
+                    Title="{x:Static resource:Resources.Link_Type_Histogram}" Icon="VectorLink"
+                    Description="{x:Static resource:Resources.Histogram_of_link_types_from_objects_in_this_data_set}"
+                    ButtonClicked="linkTypeHistogramToolControl_ButtonClicked">
+                        <OEControls:VisualizationToolControl.Style>
+                            <Style TargetType="OEControls:VisualizationToolControl">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                        <Setter Property="ViewMode" Value="ToolbarView"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </OEControls:VisualizationToolControl.Style>
+                    </OEControls:VisualizationToolControl>
+
+
+                    <OEControls:VisualizationToolControl 
+                    Grid.Row="1" Grid.Column="1" x:Name="pieChartToolControl" Margin="5"
+                    Title="{x:Static resource:Resources.Pie_Chart}" Icon="ChartPie"
+                    Description="{x:Static resource:Resources.Pie_Chart_of_the_values_for_an_enumerable_property}"
+                    DropDownMenuItemClicked="pieChartToolControl_DropDownMenuItemClicked" IsEnabled="False">
+                        <OEControls:VisualizationToolControl.Style>
+                            <Style TargetType="OEControls:VisualizationToolControl">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                        <Setter Property="ViewMode" Value="ToolbarView"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </OEControls:VisualizationToolControl.Style>
+                    </OEControls:VisualizationToolControl>
+
+                    <OEControls:VisualizationToolControl 
+                    Grid.Row="2" Grid.Column="1" x:Name="timeLineToolControl" Margin="5"
+                    Title="{x:Static resource:Resources.Tile_Line}" Icon="ProgressClock"
+                    Description="{x:Static resource:Resources.Timeline_showing_event_document_and_property_times_in_this_data_set}"
+                    ButtonClicked="timeLineToolControl_ButtonClicked" IsEnabled="False">
+                        <OEControls:VisualizationToolControl.Style>
+                            <Style TargetType="OEControls:VisualizationToolControl">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                        <Setter Property="ViewMode" Value="ToolbarView"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </OEControls:VisualizationToolControl.Style>
+                    </OEControls:VisualizationToolControl>
+                </WrapPanel>
+
+                <Grid Grid.Row="1" Name="visualizationToolsGrid" Margin="5" Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=cbMoving, Path=IsChecked}" Value="True">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ThicknessAnimationUsingKeyFrames Storyboard.Target="{Binding visualizationToolsGrid}"
+                                                                              Storyboard.TargetProperty="Margin"
+                                                                              BeginTime="00:00:00"
+                                                                              FillBehavior="Stop"
+                                                                              Duration="0:0:0.5">
+                                                    <SplineThicknessKeyFrame KeyTime="{StaticResource durationMotion}"
+                                                                         Value="0 -80 0 0" />
+                                                </ThicknessAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+
+
+                </Grid>
+
+                <OEHisControls:PropertyValueHistogramControl
+                    x:Name="propertyValueHistogramControl" Grid.Row="1" Margin="10" Visibility="Collapsed"
+                    DrillDownRequested="propertyValueHistogramControl_DrillDownRequested"
+                    ShowRetrievedObjectsOnGraphRequested="propertyValueHistogramControl_ShowRetrievedObjectsOnGraphRequested"
+                    ShowRetrievedObjectsOnMapRequested="propertyValueHistogramControl_ShowRetrievedObjectsOnMapRequested"
+                    SnapshotTaken="PropertyValueHistogramControl_OnSnapshotTaken"/>
+
+                <OEHisControls:LinkTypeHistogramControl 
+                    x:Name="linkTypeHistogramControl"
+                    Grid.Row="1" Margin="10" Visibility="Collapsed"
+                    ShowRetrievedObjectsOnGraphRequested="linkTypeHistogramControl_ShowRetrievedObjectsOnGraphRequested"
+                    SnapshotTaken="linkTypeHistogramControl_SnapshotTaken"/>
+
+                <OEChartControls:BarChartControl
+                    x:Name="barChartControl" Grid.Row="1" Visibility="Collapsed"
+                    DrillDownRequested="barChartControl_DrillDownRequested"
+                    ShowRetrievedObjectsOnGraphRequested="barChartControl_ShowRetrievedObjectsOnGraphRequested"
+                    ShowRetrievedObjectsOnMapRequested="barChartControl_ShowRetrievedObjectsOnMapRequested"
+                    SnapshotRequested="barChartControl_SnapshotRequested"/>
+
+                <OEControls:TimelineControl Grid.Row="1" Visibility="Collapsed"/>
+
+                <waiting:WaitingControl x:Name="ChartsWaitingControl" Grid.Row="0" Grid.RowSpan="2" />
+            </Grid>
+        </materialDesign:DialogHost>
+    </Grid>
+</controls:PresentationControl>

@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.Link.CreateLinkUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:kwLinks="clr-namespace:GPAS.Workspace.Entities.KWLinks;assembly=GPAS.Workspace.Entities"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.Link.Converters"
+             xmlns:ontologyPickers="clr-namespace:GPAS.Workspace.Presentation.Controls.OntologyPickers"
+             Foreground="{DynamicResource MaterialDesignBody}" 
+             x:Name="CreateLinkControl">
+
+    <UserControl.Resources>
+        <converters:DirectionToBooleanConverter x:Key="DirectionToBooleanConverter"/>
+        <converters:PropertiesToVisibilityConverter x:Key="PropertiesToVisibilityConverter"/>
+        <converters:LinkTypeToOpacityConverter x:Key="LinkTypeToOpacityConverter"/>
+        <converters:LinkTypeToEnableConverter x:Key="LinkTypeToEnableConverter"/>
+        <converters:SourceTypeToSourceTypeCollectionConverter x:Key="SourceTypeToSourceTypeCollectionConverter"/>
+        <converters:TreeNodeToTypeUri x:Key="TreeNodeToTypeUri"/>
+
+        <Style TargetType="StackPanel" x:Key="LinkDirectionStyle">
+            <Setter Property="Visibility">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource PropertiesToVisibilityConverter}">
+                        <Binding ElementName="CreateLinkControl" Path="LinkTypeUri"/>
+                        <Binding ElementName="CreateLinkControl" Path="SourceTypeUri"/>
+                        <Binding ElementName="CreateLinkControl" Path="TargetTypeUri"/>
+                        <Binding RelativeSource="{RelativeSource Mode=Self}" Path="Tag"/>
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="5 10"/>
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+
+        <Style TargetType="RadioButton" x:Key="RadioButtonStyle" BasedOn="{StaticResource MaterialDesignRadioButton}">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="GroupName" Value="LinkType"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <EventSetter Event="Checked" Handler="RadioButton_OnChecked"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--کنترل انتخاب نوع لینک-->
+        <ontologyPickers:LinkTypePicker x:Name="LinkTypePicker"  Grid.Row="0" Margin="5 10"
+                                        Background="{DynamicResource MaterialDesignPaper}"
+                                        Foreground="{DynamicResource MaterialDesignBody}" 
+                                        SelectedItemChanged="LinkTypePicker_OnSelectedItemChanged"
+                                        SourceTypeCollection="{Binding ElementName=CreateLinkControl,Path=SourceTypeUri,
+            Converter={StaticResource SourceTypeToSourceTypeCollectionConverter}}"
+                                        TargetTypeUri="{Binding ElementName=CreateLinkControl,Path=TargetTypeUri}"
+                                        SelectedItem="{Binding ElementName=CreateLinkControl,Path=LinkTypeUri, Mode=OneWayToSource,
+            Converter={StaticResource TreeNodeToTypeUri}}"/>
+
+        <!--بخش دکمه‌های رادیویی-->
+        <StackPanel Grid.Row="1" x:Name="DirectionStackPanel" 
+                    Opacity="{Binding ElementName=CreateLinkControl, Path=LinkTypeUri, Mode=OneWay,
+            Converter={StaticResource LinkTypeToOpacityConverter}}"
+                    IsEnabled="{Binding ElementName=CreateLinkControl, Path=LinkTypeUri, Mode=OneWay, 
+            Converter={StaticResource LinkTypeToEnableConverter}}">
+
+            <TextBlock Text="Direction" Margin="10" FontSize="16"/>
+
+            <StackPanel x:Name="SourceToTargetStackPanel" Tag="{x:Static kwLinks:LinkDirection.SourceToTarget}"
+                        Style="{StaticResource LinkDirectionStyle}" 
+                        PreviewMouseLeftButtonDown="SourceToTargetStackPanel_OnPreviewMouseLeftButtonDown">
+                <RadioButton x:Name="SourceRadioButton" Style="{StaticResource RadioButtonStyle}"
+                             IsChecked="{Binding ElementName=CreateLinkControl,Path=Direction, Mode=TwoWay,
+                    Converter={StaticResource DirectionToBooleanConverter},
+                    ConverterParameter={x:Static kwLinks:LinkDirection.SourceToTarget}}"/>
+                <TextBlock Text="{Binding ElementName=CreateLinkControl, Path=SourceDisplayName}"
+                    VerticalAlignment="Center" Margin="5" FontSize="14"/>
+                <materialDesign:PackIcon Kind="ArrowRight" Height="20" Width="20" VerticalAlignment="Center" Margin="5" />
+                <TextBlock
+                    Text="{Binding ElementName=CreateLinkControl,Path=TargetDisplayName}"
+                    VerticalAlignment="Center" Margin="5" FontSize="14"/>
+            </StackPanel>
+
+            <StackPanel x:Name="TargetToSourceStackPanel" Tag="{x:Static kwLinks:LinkDirection.TargetToSource}"
+                        Style="{StaticResource LinkDirectionStyle}"  
+                        PreviewMouseLeftButtonDown="TargetToSourceStackPanel_OnPreviewMouseLeftButtonDown">
+                <RadioButton x:Name="TargetRadioButton" Style="{StaticResource RadioButtonStyle}"
+                             IsChecked="{Binding ElementName=CreateLinkControl,Path=Direction, Mode=TwoWay,
+                    Converter={StaticResource DirectionToBooleanConverter},
+                    ConverterParameter={x:Static kwLinks:LinkDirection.TargetToSource}}"/>
+                <TextBlock Text="{Binding ElementName=CreateLinkControl,Path=SourceDisplayName}"
+                           VerticalAlignment="Center" Margin="5" FontSize="14"/>
+                <materialDesign:PackIcon Kind="ArrowLeft" Height="20" Width="20" VerticalAlignment="Center" Margin="5" />
+                <TextBlock Text="{Binding ElementName=CreateLinkControl,Path=TargetDisplayName}"
+                           VerticalAlignment="Center" Margin="5" FontSize="14"/>
+            </StackPanel>
+
+            <StackPanel x:Name="BridgeStackPanel" Tag="{x:Static kwLinks:LinkDirection.Bidirectional}"
+                        Style="{StaticResource LinkDirectionStyle}" 
+                        PreviewMouseLeftButtonDown="BridgeStackPanel_OnPreviewMouseLeftButtonDown">
+                <RadioButton x:Name="BridgeRadioButton" Style="{StaticResource RadioButtonStyle}"
+                             IsChecked="{Binding ElementName=CreateLinkControl,Path=Direction, Mode=TwoWay,
+                    Converter={StaticResource DirectionToBooleanConverter},
+                    ConverterParameter={x:Static kwLinks:LinkDirection.Bidirectional}}"/>
+                <TextBlock Text="{Binding ElementName=CreateLinkControl,Path=SourceDisplayName}"
+                           VerticalAlignment="Center" Margin="5" FontSize="14"/>
+                <materialDesign:PackIcon Kind="ArrowLeftRight" Height="20" Width="20" VerticalAlignment="Center" Margin="5" />
+                <TextBlock Text="{Binding ElementName=CreateLinkControl,Path=TargetDisplayName}"
+                           VerticalAlignment="Center" Margin="5" FontSize="14"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!--قسمت توضیحات لینک-->
+        <TextBox Grid.Row="2" Margin="5 10 5 0" FontSize="14"
+                 Name="DescriptionTextBox" TextChanged="DescriptionTextBox_OnTextChanged"
+                 Text="{Binding ElementName=CreateLinkControl,Path=Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                 materialDesign:HintAssist.Hint="Description" AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Service/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="DatalakeOperationImplService" targetNamespace="http://Service/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://datalake.dev.kavosh.it.sh:9071/DatalakeService?xsd=1" namespace="http://Service/" />
+    </xsd:schema>
+  </types>
+  <message name="IsListenProcessorExist">
+    <part name="parameters" element="tns:IsListenProcessorExist" />
+  </message>
+  <message name="IsListenProcessorExistResponse">
+    <part name="parameters" element="tns:IsListenProcessorExistResponse" />
+  </message>
+  <message name="StartStreamingIngestion">
+    <part name="parameters" element="tns:StartStreamingIngestion" />
+  </message>
+  <message name="StartStreamingIngestionResponse">
+    <part name="parameters" element="tns:StartStreamingIngestionResponse" />
+  </message>
+  <message name="StopStreamingIngestion">
+    <part name="parameters" element="tns:StopStreamingIngestion" />
+  </message>
+  <message name="StopStreamingIngestionResponse">
+    <part name="parameters" element="tns:StopStreamingIngestionResponse" />
+  </message>
+  <message name="GetDatalakeCategories">
+    <part name="parameters" element="tns:GetDatalakeCategories" />
+  </message>
+  <message name="GetDatalakeCategoriesResponse">
+    <part name="parameters" element="tns:GetDatalakeCategoriesResponse" />
+  </message>
+  <message name="GetStreamJobsStatus">
+    <part name="parameters" element="tns:GetStreamJobsStatus" />
+  </message>
+  <message name="GetStreamJobsStatusResponse">
+    <part name="parameters" element="tns:GetStreamJobsStatusResponse" />
+  </message>
+  <message name="GetPreviewData">
+    <part name="parameters" element="tns:GetPreviewData" />
+  </message>
+  <message name="GetPreviewDataResponse">
+    <part name="parameters" element="tns:GetPreviewDataResponse" />
+  </message>
+  <message name="InsertFileIngestionJobStatus">
+    <part name="parameters" element="tns:InsertFileIngestionJobStatus" />
+  </message>
+  <message name="InsertFileIngestionJobStatusResponse">
+    <part name="parameters" element="tns:InsertFileIngestionJobStatusResponse" />
+  </message>
+  <message name="InsertStreamIngestionStartStatus">
+    <part name="parameters" element="tns:InsertStreamIngestionStartStatus" />
+  </message>
+  <message name="InsertStreamIngestionStartStatusResponse">
+    <part name="parameters" element="tns:InsertStreamIngestionStartStatusResponse" />
+  </message>
+  <message name="InsertStreamIngestionStopStatus">
+    <part name="parameters" element="tns:InsertStreamIngestionStopStatus" />
+  </message>
+  <message name="InsertStreamIngestionStopStatusResponse">
+    <part name="parameters" element="tns:InsertStreamIngestionStopStatusResponse" />
+  </message>
+  <message name="GetHeaders">
+    <part name="parameters" element="tns:GetHeaders" />
+  </message>
+  <message name="GetHeadersResponse">
+    <part name="parameters" element="tns:GetHeadersResponse" />
+  </message>
+  <message name="GetJobsStatus">
+    <part name="parameters" element="tns:GetJobsStatus" />
+  </message>
+  <message name="GetJobsStatusResponse">
+    <part name="parameters" element="tns:GetJobsStatusResponse" />
+  </message>
+  <message name="GetDatalakeSlice">
+    <part name="parameters" element="tns:GetDatalakeSlice" />
+  </message>
+  <message name="GetDatalakeSliceResponse">
+    <part name="parameters" element="tns:GetDatalakeSliceResponse" />
+  </message>
+  <message name="test">
+    <part name="parameters" element="tns:test" />
+  </message>
+  <message name="testResponse">
+    <part name="parameters" element="tns:testResponse" />
+  </message>
+  <portType name="DatalakeOperation">
+    <operation name="IsListenProcessorExist">
+      <input wsam:Action="http://Service/DatalakeOperation/IsListenProcessorExistRequest" message="tns:IsListenProcessorExist" />
+      <output wsam:Action="http://Service/DatalakeOperation/IsListenProcessorExistResponse" message="tns:IsListenProcessorExistResponse" />
+    </operation>
+    <operation name="StartStreamingIngestion">
+      <input wsam:Action="http://Service/DatalakeOperation/StartStreamingIngestionRequest" message="tns:StartStreamingIngestion" />
+      <output wsam:Action="http://Service/DatalakeOperation/StartStreamingIngestionResponse" message="tns:StartStreamingIngestionResponse" />
+    </operation>
+    <operation name="StopStreamingIngestion">
+      <input wsam:Action="http://Service/DatalakeOperation/StopStreamingIngestionRequest" message="tns:StopStreamingIngestion" />
+      <output wsam:Action="http://Service/DatalakeOperation/StopStreamingIngestionResponse" message="tns:StopStreamingIngestionResponse" />
+    </operation>
+    <operation name="GetDatalakeCategories">
+      <input wsam:Action="http://Service/DatalakeOperation/GetDatalakeCategoriesRequest" message="tns:GetDatalakeCategories" />
+      <output wsam:Action="http://Service/DatalakeOperation/GetDatalakeCategoriesResponse" message="tns:GetDatalakeCategoriesResponse" />
+    </operation>
+    <operation name="GetStreamJobsStatus">
+      <input wsam:Action="http://Service/DatalakeOperation/GetStreamJobsStatusRequest" message="tns:GetStreamJobsStatus" />
+      <output wsam:Action="http://Service/DatalakeOperation/GetStreamJobsStatusResponse" message="tns:GetStreamJobsStatusResponse" />
+    </operation>
+    <operation name="GetPreviewData">
+      <input wsam:Action="http://Service/DatalakeOperation/GetPreviewDataRequest" message="tns:GetPreviewData" />
+      <output wsam:Action="http://Service/DatalakeOperation/GetPreviewDataResponse" message="tns:GetPreviewDataResponse" />
+    </operation>
+    <operation name="InsertFileIngestionJobStatus">
+      <input wsam:Action="http://Service/DatalakeOperation/InsertFileIngestionJobStatusRequest" message="tns:InsertFileIngestionJobStatus" />
+      <output wsam:Action="http://Service/DatalakeOperation/InsertFileIngestionJobStatusResponse" message="tns:InsertFileIngestionJobStatusResponse" />
+    </operation>
+    <operation name="InsertStreamIngestionStartStatus">
+      <input wsam:Action="http://Service/DatalakeOperation/InsertStreamIngestionStartStatusRequest" message="tns:InsertStreamIngestionStartStatus" />
+      <output wsam:Action="http://Service/DatalakeOperation/InsertStreamIngestionStartStatusResponse" message="tns:InsertStreamIngestionStartStatusResponse" />
+    </operation>
+    <operation name="InsertStreamIngestionStopStatus">
+      <input wsam:Action="http://Service/DatalakeOperation/InsertStreamIngestionStopStatusRequest" message="tns:InsertStreamIngestionStopStatus" />
+      <output wsam:Action="http://Service/DatalakeOperation/InsertStreamIngestionStopStatusResponse" message="tns:InsertStreamIngestionStopStatusResponse" />
+    </operation>
+    <operation name="GetHeaders">
+      <input wsam:Action="http://Service/DatalakeOperation/GetHeadersRequest" message="tns:GetHeaders" />
+      <output wsam:Action="http://Service/DatalakeOperation/GetHeadersResponse" message="tns:GetHeadersResponse" />
+    </operation>
+    <operation name="GetJobsStatus">
+      <input wsam:Action="http://Service/DatalakeOperation/GetJobsStatusRequest" message="tns:GetJobsStatus" />
+      <output wsam:Action="http://Service/DatalakeOperation/GetJobsStatusResponse" message="tns:GetJobsStatusResponse" />
+    </operation>
+    <operation name="GetDatalakeSlice">
+      <input wsam:Action="http://Service/DatalakeOperation/GetDatalakeSliceRequest" message="tns:GetDatalakeSlice" />
+      <output wsam:Action="http://Service/DatalakeOperation/GetDatalakeSliceResponse" message="tns:GetDatalakeSliceResponse" />
+    </operation>
+    <operation name="test">
+      <input wsam:Action="http://Service/DatalakeOperation/testRequest" message="tns:test" />
+      <output wsam:Action="http://Service/DatalakeOperation/testResponse" message="tns:testResponse" />
+    </operation>
+  </portType>
+  <binding name="DatalakeOperationImplPortBinding" type="tns:DatalakeOperation">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="IsListenProcessorExist">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StartStreamingIngestion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StopStreamingIngestion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDatalakeCategories">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetStreamJobsStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPreviewData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertFileIngestionJobStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertStreamIngestionStartStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertStreamIngestionStopStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetHeaders">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetJobsStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDatalakeSlice">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="test">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DatalakeOperationImplService">
+    <port name="DatalakeOperationImplPort" binding="tns:DatalakeOperationImplPortBinding">
+      <soap:address location="http://datalake.dev.kavosh.it.sh:9071/DatalakeService" />
+    </port>
+  </service>
+</definitions>

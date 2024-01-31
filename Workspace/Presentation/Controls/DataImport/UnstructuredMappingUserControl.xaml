@@ -1,0 +1,200 @@
+﻿<local:BaseMappingUserControl x:Class="GPAS.Workspace.Presentation.Controls.DataImport.UnstructuredMappingUserControl"
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                              xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+                              xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+                              xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport"
+                              xmlns:converters1="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+                              xmlns:ontologyPickers="clr-namespace:GPAS.Workspace.Presentation.Controls.OntologyPickers"
+                              mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converters:StringToCollectionStringConverter x:Key="StringToCollectionStringConverter"/>
+        <converters1:PropertyValueEnableConverter x:Key="PropertyValueEnableConverter"/>
+        <converters:CollectionCountToEnableConverter x:Key="CollectionCountToEnableConverter"/>
+        <converters:CollectionCountToEnableConverter x:Key="CountToEnableConverter"/>
+        <converters:ObjectToEnableConverter x:Key="ObjectToEnableConverter"/>
+        <converters:ImportStatusToIsEnableConverter x:Key="ImportStatusToIsEnableConverter"/>
+    </UserControl.Resources>
+
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--ذخیره و بازیابی نگاشت-->
+        <Grid Name="RecentMapGrid" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0 0 5 0"
+              Background="{DynamicResource MaterialDesignCardBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <common:ButtonWithIcon Grid.Row="0" x:Name="SaveButton" HorizontalAlignment="Left" 
+                                   Click="SaveButtonOnClick" Icon="ContentSave" Content="Save map"
+                                   ContentMargin="5"
+                                   IsEnabled="{Binding Map.IsValid}"/>
+
+            <common:ButtonWithIcon Grid.Row="1" x:Name="LoadMapButton" HorizontalAlignment="Left"
+                                   Click="LoadMapButtonOnClick" Icon="FolderOpen" Content="Open other map" ContentMargin="5"
+                                   IsEnabled="{Binding Map.OwnerDataSource.ImportStatus, Converter={StaticResource ImportStatusToIsEnableConverter}}"/>
+
+            <TextBlock Grid.Row="2" Text="Recent map" FontSize="16" FontWeight="Bold" Margin="10"
+                       Foreground="{DynamicResource MaterialDesignBody}"/>
+
+            <ListView Grid.Row="3" Name="RecentMapListView" ItemsSource="{Binding RecentMapCollection}"
+                      SelectionMode="Single" Margin="10 5"
+                      IsEnabled="{Binding Map.OwnerDataSource.ImportStatus, Converter={StaticResource ImportStatusToIsEnableConverter}}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <Setter Property="BorderThickness" Value="0 0 0 1" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignDivider}" />
+                        <EventSetter Event="MouseDoubleClick" Handler="RecentMapListViewOnMouseDoubleClick"/>
+                        <EventSetter Event="KeyDown" Handler="RecentMapListViewOnKeyDown"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <materialDesign:PackIcon Kind="FileOutline" Height="25" Width="25" Margin="2"
+                                                             Foreground="{DynamicResource MaterialDesignBody}"/>
+                                <Border CornerRadius="1" Background="{DynamicResource MaterialDesignBody}"  Height="8" Width="15" 
+                                            HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11 13 10 10">
+                                    <TextBlock Text="IMM" Foreground="{DynamicResource MaterialDesignBackground}" Margin="1 0"
+                                                   FontSize="6" FontWeight="Regular"/>
+                                </Border>
+                            </Grid>
+
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" Foreground="{DynamicResource MaterialDesignBody}"
+                                           Style="{StaticResource MaterialDesignSubtitle2TextBlock}" MaxWidth="150"
+                                           ToolTip="{Binding Name}" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                           TextTrimming="CharacterEllipsis"/>
+
+                            <Button Grid.Column="2" Name="DeleteButton" ToolTip="Delete" Width="25" Height="25" 
+                                        Style="{StaticResource MaterialDesignIconButton}" HorizontalAlignment="Right"
+                                        Click="DeleteButtonOnClick">
+                                <materialDesign:PackIcon Height="20" Width="20" Kind="Close" Foreground="Red"/>
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>      
+
+        <!--افزودن ویژگی-->
+        <Grid Name="SelectPropertyGrid" Grid.Row="0" Grid.Column="2" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Add Property" HorizontalAlignment="Center" Style="{StaticResource SecondHeader}"/>
+
+            <Border Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}"
+                    CornerRadius="15 0 0 0">
+
+                <Grid Margin="5" 
+                      IsEnabled="{Binding Map.OwnerDataSource.ImportStatus, Converter={StaticResource ImportStatusToIsEnableConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Available properties" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   Margin="5" Grid.Row="0" Style="{StaticResource MaterialDesignBody2TextBlock}"
+                                   Foreground="{DynamicResource MaterialDesignBody}"/>
+
+                    <Separator Grid.Row="1" Grid.Column="0" Margin="5 0"/>
+
+                    <ontologyPickers:PropertyTypePicker
+                        Grid.Row="2" x:Name="PropertyPicker" Margin="5"
+                        DisplayMode="List" Foreground="{DynamicResource MaterialDesignBody}"
+                        SelectedItemChanged="PropertyPickerOnSelectedItemChanged"
+                        SelectedItemReselected="PropertyPicker_SelectedItemReselected"
+                        DisplayCheckIconForSelectableItems="False"
+                        IsEnabled="{Binding Map.SelectedObject, Converter={StaticResource ObjectToEnableConverter}}"
+                        ObjectTypeUriCollection="{Binding Map.SelectedObject.TypeUri, Converter={StaticResource StringToCollectionStringConverter}}"
+                        ExceptTypeUriCollection="{Binding Map.SelectedObject.UsedTypeUriProperties, IsAsync=True}"
+                        />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!--لیست ویژگی‌ها-->
+        <Grid  Name="PropertiesGrid" Margin="5" Grid.Row="0" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Properties" HorizontalAlignment="Center" Style="{StaticResource SecondHeader}"/>
+
+            <Border Grid.Row="1" BorderThickness="1" CornerRadius="0 15 0 0" 
+                    BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}">
+                <local:MapPropertiesListUserControl x:Name="ReadyPropertiesListView" Margin="5"/>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" BorderThickness="1" CornerRadius="0 0 15 15"
+                BorderBrush="{DynamicResource MaterialDesignTextBoxBorder}" Margin="5 0 5 5">
+            <Grid  Name="SetPropertyValueGrid" 
+                  Background="{DynamicResource MaterialDesignPaper}" Margin="5">
+                <Grid.IsEnabled>
+                    <MultiBinding Converter="{StaticResource PropertyValueEnableConverter}">
+                        <Binding Path="Map.SelectedObject"/>
+                        <Binding Path="Map.SelectedObject.SelectedProperty"/>
+                    </MultiBinding>
+                </Grid.IsEnabled>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Set value" HorizontalAlignment="Center" Style="{StaticResource SecondHeader}"/>
+
+                <local:SetMappingPropertiesValueUserControl Grid.Row="1" 
+                                                            SelectedProperty="{Binding Map.SelectedObject.SelectedProperty}"
+                                                            x:Name="MappingPropertyValueUserControl"/>
+            </Grid>
+        </Border>
+
+        <!--پیش نمایش-->
+        <Grid Name="PreviewGrid" Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" Margin="5 0 0 0"
+              Background="{DynamicResource MaterialDesignCardBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Data source preview" HorizontalAlignment="Center" Style="{StaticResource SecondHeader}"/>
+
+            <local:DataSourcePreviewUserControl Grid.Row="1" x:Name="DataSourcePreviewUserControl" Margin="5"
+                                                DataSource="{Binding Map.OwnerDataSource}"/>
+        </Grid>
+    </Grid>
+</local:BaseMappingUserControl>

@@ -1,0 +1,160 @@
+﻿<Window x:Class="GPAS.Workspace.Presentation.Windows.Graph.EditLinkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:link="clr-namespace:GPAS.Workspace.Presentation.Controls.Link"
+        xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+        xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Windows.Graph"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Foreground="{DynamicResource MaterialDesignBody}"
+        Background="Transparent"
+        Width="500"
+        MaxHeight="600"
+        WindowStartupLocation="CenterScreen"
+        materialDesign:ShadowAssist.CacheMode="{x:Null}"
+        DataContext="{DynamicResource EditLinkViewModel}">
+
+    <Window.Resources>
+        <local:LinkViewModel x:Key="EditLinkViewModel"/>
+        <materialDesign:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" TrueValue="Visible" FalseValue="Collapsed"/>
+    </Window.Resources>
+
+    <Border Name="MainBorder" CornerRadius="10"  Background="{DynamicResource MaterialDesignCardBackground}" 
+            BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+            BorderThickness="2" MouseLeftButtonDown="MainBorder_OnMouseLeftButtonDown">
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--عنوان پنجره-->
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Text="Edit Links" HorizontalAlignment="Center" Style="{StaticResource NormalHeader}"/>
+
+            <Separator Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Margin="5"/>
+
+            <!--کنترل ایجاد و ویرایش لینک-->
+            <link:CreateLinkUserControl x:Name="CreateLinkUserControl" Grid.Column="1" Grid.Row="1"
+                                         Grid.RowSpan="2"
+                                         ValidationChanged="CreateLinkUserControl_OnLinkValidation"
+                                         IsEnabled="{Binding SelectedLinkModel.IsUnpublished}"
+                                         Margin="10 20 5 5"
+                                         LinkTypeUri="{Binding SelectedLinkModel.LinkType, Mode=TwoWay}"
+                                         SourceTypeUri="{Binding SelectedLinkModel.SourceTypeUri}"
+                                         TargetTypeUri="{Binding SelectedLinkModel.TargetTypeUri}"
+                                         SourceDisplayName="{Binding SelectedLinkModel.SourceDisplayName}"
+                                         TargetDisplayName="{Binding SelectedLinkModel.TargetDisplayName}"
+                                         Direction="{Binding SelectedLinkModel.Direction, Mode=TwoWay}"
+                                         Description="{Binding SelectedLinkModel.Description,
+                                         Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+            <!--عنوان لیست لینک های منتشر نشده-->
+            <TextBlock Text="Unpublished links" Grid.Column="0" Grid.Row="1" Margin="5 10 5 5" Style="{StaticResource SecondHeader}"
+                       VerticalAlignment="Top"/>
+
+            <!--لیست لینک های منتشر نشده-->
+            <ScrollViewer Grid.Column="0" Grid.Row="1" Margin="5 35 5 5" 
+                          x:Name="UnpublishedListScrollViewer" PreviewMouseWheel="UnpublishedListScrollViewer_OnPreviewMouseWheel">
+                <ScrollViewer.Resources>
+                    <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+                </ScrollViewer.Resources>
+                <ListBox x:Name="UnpublishedLinksListView" ItemsSource="{Binding UnpublishedLinksToShow}"
+                         SelectedItem="{Binding SelectedLinkModel}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Setter Property="ToolTip" Value="{Binding LinkTypeToShow}"/>
+                            <EventSetter Event="Selected" Handler="UnpublishedEventSetter_OnHandler"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding LinkTypeToShow}" Grid.Column="0" VerticalAlignment="Center"
+                                           FontSize="14"/>
+                                <materialDesign:PackIcon 
+                                    Kind="Multiplication" Margin="5" Grid.Column="1"
+                                    Foreground="Red" Width="10" Height="10"
+                                    Visibility="{Binding Edited,
+                                    Converter={StaticResource BooleanToVisibilityConverter},Mode=TwoWay}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+
+            <!--عنوان لیست لینک های منتشر شده-->
+            <TextBlock Text="Published links" Grid.Column="0" Grid.Row="2" Margin="5 10 5 5" Style="{StaticResource SecondHeader}"
+                       VerticalAlignment="Top"/>
+
+            <!--لیست لینک های منتشر شده-->
+            <ScrollViewer Grid.Column="0" Grid.Row="2" Margin="5 35 5 5"
+                          x:Name="PublishedListScrollViewer"
+                          PreviewMouseWheel="PublishedListScrollViewer_OnPreviewMouseWheel">
+                <ScrollViewer.Resources>
+                    <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+                </ScrollViewer.Resources>
+                <ListBox x:Name="PublishedLinksListView" ItemsSource="{Binding PublishedLinksToShow}"
+                         SelectedItem="{Binding SelectedLinkModel}" >
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Setter Property="ToolTip" Value="{Binding LinkTypeToShow}"/>
+                            <Setter Property="IsEnabled" Value="{Binding Selectable}"/>
+                            <EventSetter Event="Selected" Handler="EventSetter_OnHandler"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="Auto">
+                                <TextBlock Text="{Binding LinkTypeToShow}" Grid.Column="0"
+                                           VerticalAlignment="Center" FontSize="14"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+
+            <Separator Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0 10">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <Separator Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" VerticalAlignment="Top" Margin="5"/>
+
+            <!--دکمه های کنترلی-->
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="CancelButton" Content="{x:Static resource:Resources.Cancel}" Margin="5 10 5 0"
+                        Grid.Column="0" Click="CancelButton_Click"/>
+                <Button x:Name="ApplyButton" Content="{x:Static resource:Resources.Apply}"  Grid.Column="1"
+                        Margin="5 10 5 0"
+                        Click="ApplyButton_OnClick" IsEnabled="{Binding ApplyButtonIsEnable}"/>
+                <Button x:Name="OkButton" Content="{x:Static resource:Resources.Ok}" Grid.Column="2"
+                        Margin="5 10 5 0" Click="OkButton_OnClick"/>
+            </Grid>
+
+
+            <waiting:WaitingControl x:Name="MainWaitingControl"  Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Border>
+</Window>

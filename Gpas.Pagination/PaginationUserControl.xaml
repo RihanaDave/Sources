@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="Gpas.Pagination.PaginationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"              
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Gpas.Pagination"
+             xmlns:converter="clr-namespace:Gpas.Pagination.Converters"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:PageCountConverter x:Key="PageCountConverter"/>
+            <converter:PlusPageNumberConverter x:Key="PlusPageNumberConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/IconsStyle.xaml"/>
+                <!--<ResourceDictionary Source="Styles/ComboBoxsStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TextBlocksStyle.xaml"/>
+                <ResourceDictionary Source="Styles/Themes/LightThemes.xaml"/>-->
+                <!-- MaterialDesign -->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/materialdesigntheme.defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/materialdesigntheme.Flipper.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/materialdesigntheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/primary/MaterialDesignColor.Indigo.xaml" />-->
+
+                <!-- secondary colour -->
+                <ResourceDictionary>
+                    <!-- include your secondary pallette -->
+                    <ResourceDictionary.MergedDictionaries>
+                        <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/materialdesigncolor.amber.accent.xaml" />-->
+                    </ResourceDictionary.MergedDictionaries>                 
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <!--پنل پیمایش و صفحه‌بندی-->
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+        <StackPanel.Resources>
+            <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+        </StackPanel.Resources>
+
+        <!--رفتن به اولین صفحه-->
+        <Button Name="FirstButton" Click="FirstButton_Click" ToolTip="First page"
+                Width="35" Height="25"  
+                IsEnabled="{Binding Path=IsEnableFirstPage,RelativeSource={RelativeSource 
+            FindAncestor, AncestorType={x:Type UserControl}}}">
+            <materialDesign:PackIcon Kind="ChevronDoubleLeft"  />
+        </Button>
+
+        <!--صفحه قبل-->
+        <Button Name="PreviousButton" Click="PreviousButton_Click" ToolTip="Previous"
+                Width="35" Height="25"  
+                IsEnabled="{Binding Path=IsEnablePrevPage,RelativeSource={RelativeSource 
+                                              FindAncestor, AncestorType={x:Type UserControl}}}">
+            
+            <materialDesign:PackIcon Kind="ChevronLeft" />
+        </Button>
+        <!--شماره صفحه جاری و تعدا کل صفحات-->
+            <Label x:Name="PageOgAllPage" 
+                   Width="auto" VerticalAlignment="Center" FontSize="12" 
+                   Content="{Binding Path=PageNumber,RelativeSource={RelativeSource 
+                                              FindAncestor, AncestorType={x:Type UserControl}},
+                                              Converter={StaticResource PlusPageNumberConverter}  }"/>
+            <Label x:Name="of" 
+                   Width="auto" VerticalAlignment="Center" Margin=" 10 0 10 0" FontSize="12" 
+                   Content="of"/>
+        <Label x:Name="PageInformationLabel" 
+                  Width="auto" VerticalAlignment="Center" FontSize="12" 
+                   Content="{Binding Path=TotalPageCount,RelativeSource={RelativeSource 
+                                              FindAncestor, AncestorType={x:Type UserControl}}}"/>
+
+        <!--صفخه بعد-->
+        <Button Name="NextButton" Click="NextButton_Click" 
+                Width="35" Height="25"  
+                IsEnabled="{Binding Path=IsEnableNextPage,RelativeSource={RelativeSource 
+                                              FindAncestor, AncestorType={x:Type UserControl}}}"
+                ToolTip="Next">
+            <materialDesign:PackIcon Kind="ChevronRight" />
+        </Button>
+
+        <!--رفتن به صفحه آخر-->
+        <Button Name="LastButton" Click="LastButton_Click" ToolTip="Last page"
+                Width="35" Height="25"  
+                IsEnabled="{Binding Path=IsEnableLastPage,RelativeSource={RelativeSource 
+                                              FindAncestor, AncestorType={x:Type UserControl}}}">
+            
+            <materialDesign:PackIcon Kind="ChevronDoubleRight" />
+        </Button>
+        <Label  Content="Item per page:" Margin="5" 
+                       VerticalAlignment="Center" FontSize="12"/>
+
+        <!--تعداد آیتم‌های صفحه-->
+        <ComboBox x:Name="NumberOfRecordsComboBox" Width="50" FontSize="12" IsEditable="False" Margin="5" Foreground="{DynamicResource MaterialDesignBody}"
+                  SelectedItem="{Binding Path=ItemPerPage,RelativeSource={RelativeSource 
+                                              FindAncestor, AncestorType={x:Type UserControl}},Converter={StaticResource PageCountConverter}}"
+                  SelectedIndex="0">            
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="50"/>
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+    </StackPanel>
+</UserControl>

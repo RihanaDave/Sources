@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="GPAS.DataSynchronization.SynchronizingConcepts.AllStoredConcpts">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConcepts\AllStoredConcpts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.SynchronizingConcepts.ConceptsWithIDsInSpecificCollection">
+    <Position X="10" Y="2.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConcepts\ConceptsWithIDsInSpecificCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.SynchronizingConcepts.ConceptsWithIDsInSpecificRange">
+    <Position X="13" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConcepts\ConceptsWithIDsInSpecificRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.SynchronizingConcepts.SpecificConcepts">
+    <Position X="7.5" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConcepts\SpecificConcepts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.SynchronizingConcepts.SynchronizingConceptsBase" Collapsed="true">
+    <Position X="10.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConcepts\SynchronizingConceptsBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.SynchronizingConcepts.UnsynchronizeConcepts">
+    <Position X="15.75" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConcepts\UnsynchronizeConcepts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.CachedConcepts">
+    <Position X="12.75" Y="7.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAEAAAAgAAAAAAAAECAAIAAAAAAQA=</HashCode>
+      <FileName>CachedConcepts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.Synchronizer">
+    <Position X="5.75" Y="4.75" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPAS.DataSynchronization.Synchronizer.SynchronizeRetrievedConceptsMode">
+        <TypeIdentifier>
+          <NewMemberFileName>Synchronizer.SynchronizeRetrievedConceptsMode.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AFAAAAAgCEJgAAJCAEgCAAAAAAAAAQBAIBAAAACAAAA=</HashCode>
+      <FileName>Synchronizer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Adaptor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.DataSynchronization.SynchronizingConceptsBatch">
+    <Position X="9.5" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAgAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>SynchronizingConceptsBatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GPAS.DataSynchronization.ISynchronizationAdaptor">
+    <Position X="12.75" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAABAAgAAAgAAAAAAACAgAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ISynchronizationAdaptor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

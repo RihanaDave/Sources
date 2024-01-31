@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.ObjectExplorerHistogramViewer.TreeViewItemBase">
+    <Position X="14" Y="3.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>TreeViewItemBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.ObjectExplorerHistogramViewer.HistogramSuperCategory">
+    <Position X="7.5" Y="3.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAoAAAAKAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HistogramSuperCategory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="HistogramSubCategories" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.ObjectExplorerHistogramViewer.HistogramSubCategory">
+    <Position X="10.25" Y="5.75" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="GPAS.ObjectExplorerHistogramViewer.TreeViewItemBase" FixedToPoint="true">
+      <Path>
+        <Point X="14.875" Y="5.766" />
+        <Point X="14.875" Y="6.312" />
+        <Point X="13" Y="6.312" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="NotShowingHistogramKeyValuePairs" Type="GPAS.ObjectExplorerHistogramViewer.HistogramKeyValuePair" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.5" Y="8.271" />
+        <Point X="10.5" Y="9.611" />
+        <Point X="13.5" Y="9.611" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ShowingHistogramKeyValuePairs" Type="GPAS.ObjectExplorerHistogramViewer.HistogramKeyValuePair" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.062" Y="8.271" />
+        <Point X="11.062" Y="8.774" />
+        <Point X="13.5" Y="8.774" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAAAQAABAgEAAQAACAAAAAgAAAAAAAEAAAA=</HashCode>
+      <FileName>HistogramSubCategory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="NotShowingHistogramKeyValuePairs" />
+      <Property Name="ShowingHistogramKeyValuePairs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.ObjectExplorerHistogramViewer.HistogramKeyValuePair">
+    <Position X="13.5" Y="8" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAEAAQABAAECAAAAAAAAEAAAARBCAAEQAgAAEAICA=</HashCode>
+      <FileName>HistogramKeyValuePair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

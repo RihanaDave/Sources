@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.TypeMapping">
+    <Position X="0.75" Y="1" Width="2.75" />
+    <AssociationLine Name="RelationshipsMapping" Type="GPAS.DataImport.DataMapping.SemiStructured.RelationshipMapping">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.058" Y="0.529" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EACAIUQAAEAAAIIEAAAAEAgAAgAAAgAggAAACAACQAE=</HashCode>
+      <FileName>DataMapping\SemiStructured\TypeMapping.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="ObjectsMapping" />
+      <Field Name="RelationshipsMapping" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.PropertyMapping">
+    <Position X="8.25" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAiAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\PropertyMapping.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Value" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.ObjectMapping">
+    <Position X="5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAEAQkAADAAAAAAAAAAAAAIAYAIAAAAACAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\ObjectMapping.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="Properties" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.MappingNodeItem">
+    <Position X="12.75" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\MappingNodeItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.OntologyTypeMappingItem">
+    <Position X="15.25" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\OntologyTypeMappingItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.ValueMappingItem">
+    <Position X="12.5" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\ValueMappingItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.RelationshipMapping">
+    <Position X="1" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABAIAAAACAAAAgABAAAAAAIAAAAAAAAABAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\RelationshipMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.ConstValueMappingItem">
+    <Position X="9" Y="5.75" Width="2" />
+    <InheritanceLine Type="GPAS.DataImport.DataMapping.SemiStructured.SingleValueMappingItem" FixedToPoint="true">
+      <Path>
+        <Point X="11.875" Y="4.997" />
+        <Point X="11.875" Y="5.45" />
+        <Point X="9.875" Y="5.45" />
+        <Point X="9.875" Y="5.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\SingleValue\ConstValueMappingItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.TableColumnMappingItem">
+    <Position X="11.25" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAEgAAAAAAAAAAAAAAAAAEAAAAAAEA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\SingleValue\TableColumnMappingItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="2.05" Collapsed="true" />
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.SingleValueMappingItem">
+    <Position X="11" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\SingleValue\SingleValueMappingItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.MultiValueMappingItem">
+    <Position X="13.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\CompositeValue\MultiValueMappingItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.137" />
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.DocumentMapping">
+    <Position X="4.5" Y="6.75" Width="2.75" />
+    <AssociationLine Name="DocumentPathMapping" Type="GPAS.DataImport.DataMapping.SemiStructured.ValueMappingItem" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.188" Y="6.75" />
+        <Point X="6.188" Y="4.988" />
+        <Point X="7" Y="4.988" />
+        <Point X="7" Y="3.25" />
+        <Point X="12.125" Y="3.25" />
+        <Point X="12.125" Y="3.147" />
+        <Point X="12.5" Y="3.147" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAQAAABAAAAAABAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\DocumentMapping.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DocumentPathMapping" />
+      <Property Name="PathOptions" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.DocumentPathOptions">
+    <Position X="4.75" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>DataMapping\SemiStructured\DocumentPathOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.GeoTimePropertyMapping">
+    <Position X="8" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\GeoTimePropertyMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.GeoTimeValueMappingItem">
+    <Position X="16" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAEAAAAAAgABIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\CompositeValue\GeoTimeValueMappingItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.117" />
+  </Class>
+  <Class Name="GPAS.DataImport.DataMapping.SemiStructured.DateTimeTableColumnMappingItem">
+    <Position X="11" Y="8.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAARAAAgAAAAAAAAAAgAAAAAAAAAACEAAAAAAAQAAAI=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\SingleValue\DateTimeTableColumnMappingItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GPAS.DataImport.DataMapping.SemiStructured.IResolvableValueMappingItem">
+    <Position X="15.25" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\InternalResolution\IResolvableValueMappingItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ResolutionOption" />
+    </ShowAsAssociation>
+  </Interface>
+  <Enum Name="GPAS.DataImport.DataMapping.SemiStructured.PropertyInternalResolutionOption">
+    <Position X="15" Y="8.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>DataMapping\SemiStructured\PropertyMapping\ValueMapping\InternalResolution\PropertiesInternalResolutionCriteria.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

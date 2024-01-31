@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="GPAS.Graph.GraphViewer.GraphViewer">
+    <Position X="1.25" Y="0.75" Width="5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.MouseRightButtonClickOnGraphViewerVertexEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.DoubleClickedVertexEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.ImageOfGraphTakenEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.VertexRemovedEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.EdgeRemovedEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.AnimatingCollapseGroupCompletedEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="GPAS.Graph.GraphViewer.GraphViewer.AnimatingExpandGroupCompletedEventArgs" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GraphViewer.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>cIQPwW4NLguVqVAue2P0ArlbeNqhnSWTeZF0TJFtyhY=</HashCode>
+      <FileName>GraphViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

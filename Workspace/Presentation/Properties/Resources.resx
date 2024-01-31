@@ -1,0 +1,3266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Adding_File_To_Object" xml:space="preserve">
+    <value>Adding file to Object...</value>
+  </data>
+  <data name="Adding_File_To_Object_Was_Failed" xml:space="preserve">
+    <value>Adding File to Object Was Failed:
+{0}</value>
+  </data>
+  <data name="Add_New_Concept_To_Ontology" xml:space="preserve">
+    <value>Add new concept to ontology...</value>
+  </data>
+  <data name="Apply_Layout" xml:space="preserve">
+    <value>Apply Layout</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Objects_From_Graph" xml:space="preserve">
+    <value>Are you sure want to remove {0} Object(s) from Graph?</value>
+  </data>
+  <data name="Check_Big_Data_Search_Service" xml:space="preserve">
+    <value>Check big-data search service...</value>
+  </data>
+  <data name="Control_Is_Data_Initialized_Before" xml:space="preserve">
+    <value>Control is Data-Initialized before</value>
+  </data>
+  <data name="Control_Is_Not_Initialized" xml:space="preserve">
+    <value>Control is not initialized</value>
+  </data>
+  <data name="Create_Directory_Failed" xml:space="preserve">
+    <value>Create Directory Failed:
+{0}</value>
+  </data>
+  <data name="Create_Link" xml:space="preserve">
+    <value>Create Link</value>
+  </data>
+  <data name="Create_new_Group" xml:space="preserve">
+    <value>Create new group</value>
+  </data>
+  <data name="Create_New_Link" xml:space="preserve">
+    <value>Create new link</value>
+  </data>
+  <data name="Create_New_Object" xml:space="preserve">
+    <value>Create new object</value>
+  </data>
+  <data name="Creating_Directory" xml:space="preserve">
+    <value>Creating Directory...</value>
+  </data>
+  <data name="Creating_New_Group_In_Repository" xml:space="preserve">
+    <value>Creating new group in repository...</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Deleting_Operation_Was_Failed" xml:space="preserve">
+    <value>Deleting Operation Was Failed</value>
+  </data>
+  <data name="Directed_First_To_Second" xml:space="preserve">
+    <value>Directed First to Second</value>
+  </data>
+  <data name="Directed_Second_To_First" xml:space="preserve">
+    <value>Directed Second to First</value>
+  </data>
+  <data name="Directory_Was_Created" xml:space="preserve">
+    <value>Directory Was Created</value>
+  </data>
+  <data name="Download_Successfull" xml:space="preserve">
+    <value>Download Successfull</value>
+  </data>
+  <data name="Download_Was_Failed" xml:space="preserve">
+    <value>Download Was Failed:
+{0}</value>
+  </data>
+  <data name="Do_You_Want_To_Delete_File" xml:space="preserve">
+    <value>Do you want to delete file?</value>
+  </data>
+  <data name="Entered_Keyword_Is_Too_Long" xml:space="preserve">
+    <value>Entered keyword is too long</value>
+  </data>
+  <data name="Entered_Keyword_Is_Too_Short" xml:space="preserve">
+    <value>Entered keyword is too short</value>
+  </data>
+  <data name="Entered_Values_Characters_Are_More_Than_50_Try_Again" xml:space="preserve">
+    <value>entered value's characters are more than 50, try again...</value>
+  </data>
+  <data name="Event_Relationship_Types_Hierarchy_Or_Icons_Loading_Failed" xml:space="preserve">
+    <value>Event/Relationship Types hierarchy (or icons) loading failed
+{0}</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="Exit_Confirmation" xml:space="preserve">
+    <value>Exit Confirmation</value>
+  </data>
+  <data name="File_Is_Empty" xml:space="preserve">
+    <value>File Is Empty</value>
+  </data>
+  <data name="File_Not_Found" xml:space="preserve">
+    <value>File Not Found</value>
+  </data>
+  <data name="File_Was_Deleted" xml:space="preserve">
+    <value>File Was Deleted</value>
+  </data>
+  <data name="Get_Graph" xml:space="preserve">
+    <value>Get graph</value>
+  </data>
+  <data name="Graph_Arrangment_Exchange_Error" xml:space="preserve">
+    <value>Graph arrangment exchange error:
+ {0}</value>
+  </data>
+  <data name="Graph_Shared" xml:space="preserve">
+    <value>Graph Shared</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="Loading_File_Repository_Directories_" xml:space="preserve">
+    <value>Loading File Repository Directories...</value>
+    <comment>_</comment>
+  </data>
+  <data name="Import_Data" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="Initaizing_Big_Data_Search" xml:space="preserve">
+    <value>Initaizing Big-Data Search</value>
+  </data>
+  <data name="Invalid_Argument" xml:space="preserve">
+    <value>Invalid argument</value>
+  </data>
+  <data name="Invalid_Graph_Arrangemt_XML" xml:space="preserve">
+    <value>Invalid Graph arrangemt XML</value>
+  </data>
+  <data name="Invalid_Object_Type_Null_Empty_Or_Whitespase" xml:space="preserve">
+    <value>Invalid Object type (null, empty or whitespase)</value>
+  </data>
+  <data name="Invalid_Search_Keyword" xml:space="preserve">
+    <value>Invalid search keyword</value>
+  </data>
+  <data name="Invalid_Server_Response" xml:space="preserve">
+    <value>Invalid server response</value>
+  </data>
+  <data name="Loading_Indexes" xml:space="preserve">
+    <value>Loading indexes...</value>
+  </data>
+  <data name="Loading_Jobs_Status" xml:space="preserve">
+    <value>Loading Jobs Status...</value>
+  </data>
+  <data name="Loading_keyspaces" xml:space="preserve">
+    <value>Loading keyspaces...</value>
+  </data>
+  <data name="Loading_Properties" xml:space="preserve">
+    <value>Loading properties...</value>
+  </data>
+  <data name="Loading_Published_Graph" xml:space="preserve">
+    <value>Loading published graph...</value>
+  </data>
+  <data name="Loading_Published_Graph_Image" xml:space="preserve">
+    <value>Loading graph image...</value>
+  </data>
+  <data name="Main_Window" xml:space="preserve">
+    <value>Main Window</value>
+  </data>
+  <data name="Main_Window_Initialization_Error" xml:space="preserve">
+    <value>'Main Window' initialization error:
+{0}</value>
+  </data>
+  <data name="Mapping_Not_Exist" xml:space="preserve">
+    <value>Mapping not exist</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="Nothing_To_Import" xml:space="preserve">
+    <value>Nothing To Import</value>
+  </data>
+  <data name="No_Direction" xml:space="preserve">
+    <value>No Direction</value>
+  </data>
+  <data name="No_Direction_Selected" xml:space="preserve">
+    <value>No direction selected</value>
+  </data>
+  <data name="No_Edge_Exist_For_Mapping" xml:space="preserve">
+    <value>No edge exist for mapping</value>
+  </data>
+  <data name="No_Event" xml:space="preserve">
+    <value>(No Event)</value>
+  </data>
+  <data name="No_Preview" xml:space="preserve">
+    <value>(No preview)</value>
+  </data>
+  <data name="No_Property" xml:space="preserve">
+    <value>(No Property)</value>
+  </data>
+  <data name="No_Published_Graph" xml:space="preserve">
+    <value>No Published Graph</value>
+  </data>
+  <data name="No_Relationship" xml:space="preserve">
+    <value>(No Relationship)</value>
+  </data>
+  <data name="No_Vertex_Exist_For_Mapping" xml:space="preserve">
+    <value>No vertex exist for mapping</value>
+  </data>
+  <data name="Object_Types_Hierarchy_Or_Icons_Loading_Failed" xml:space="preserve">
+    <value>Object Types hierarchy (or icons) loading failed</value>
+  </data>
+  <data name="Of_Type" xml:space="preserve">
+    <value>Of type: {0}</value>
+  </data>
+  <data name="Ontology_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Ontology_Already_Contains_This_Property_For" xml:space="preserve">
+    <value>Ontology already contains this property for ({0})</value>
+  </data>
+  <data name="Ontology_Customize" xml:space="preserve">
+    <value>Customize</value>
+  </data>
+  <data name="Ontology_Intersect" xml:space="preserve">
+    <value>Intersect</value>
+  </data>
+  <data name="Ontology_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Ontology_Tree_Already_Contains_A_Concept_Named" xml:space="preserve">
+    <value>Ontology tree already contains a concept named ({0})</value>
+  </data>
+  <data name="Ontology_Union" xml:space="preserve">
+    <value>Union</value>
+  </data>
+  <data name="Preform_Big_Data_Search" xml:space="preserve">
+    <value>Preform big-data search...</value>
+  </data>
+  <data name="Properties_Types_Hierarchy_Or_Icons_Loading_Failed" xml:space="preserve">
+    <value>Properties Types hierarchy (or icons) loading failed:
+{0}</value>
+  </data>
+  <data name="Property_Values_Characters_Are_More_Than_NUM_Try_Again" xml:space="preserve">
+    <value>Property value's characters are more than {0}</value>
+  </data>
+  <data name="Published_Graph" xml:space="preserve">
+    <value>Published Graph(s)</value>
+  </data>
+  <data name="Quick_Search" xml:space="preserve">
+    <value>Quick Search</value>
+  </data>
+  <data name="Quit_Workspace" xml:space="preserve">
+    <value>Quit Workspace</value>
+  </data>
+  <data name="Relayout_Context_Menu_Not_Presented" xml:space="preserve">
+    <value>Relayout context-menu not presented</value>
+  </data>
+  <data name="Remove_Object" xml:space="preserve">
+    <value>Remove object</value>
+  </data>
+  <data name="Remove_Objects" xml:space="preserve">
+    <value>Remove objects</value>
+  </data>
+  <data name="Retriving_Published_Graphs_Information" xml:space="preserve">
+    <value>Retriving published graph(s) information...</value>
+  </data>
+  <data name="Saving_Property_" xml:space="preserve">
+    <value>Saving property...</value>
+  </data>
+  <data name="Creating_New_Link_" xml:space="preserve">
+    <value>Creating new link...</value>
+  </data>
+  <data name="Creating_New_Object_" xml:space="preserve">
+    <value>Creating new object...</value>
+  </data>
+  <data name="Search_Failed" xml:space="preserve">
+    <value>Search failed</value>
+  </data>
+  <data name="Select_A_Type" xml:space="preserve">
+    <value>(Select a type)</value>
+  </data>
+  <data name="Showing_Published_Graph" xml:space="preserve">
+    <value>Showing published graph...</value>
+  </data>
+  <data name="Show_Link" xml:space="preserve">
+    <value>Show link</value>
+  </data>
+  <data name="Show_Links" xml:space="preserve">
+    <value>Show links</value>
+  </data>
+  <data name="Show_Object" xml:space="preserve">
+    <value>Show object</value>
+  </data>
+  <data name="Show_Objects" xml:space="preserve">
+    <value>Show objects</value>
+  </data>
+  <data name="Source_Object_Mapping_Is_Not_Exist" xml:space="preserve">
+    <value>Source object mapping is not exist</value>
+  </data>
+  <data name="Source_Object_Of_The_Link_May_Be_Added_To_Graph" xml:space="preserve">
+    <value>Source object of the Link may be added to Graph</value>
+  </data>
+  <data name="Step_1_Select_Data_Sources" xml:space="preserve">
+    <value>Step 1: Select Data Sources</value>
+  </data>
+  <data name="Step_2_Create_New_Mappings" xml:space="preserve">
+    <value>Step 2: Create New Mappings</value>
+  </data>
+  <data name="Step_3_Review_Your_Import" xml:space="preserve">
+    <value>Step 3: Review Your Import</value>
+  </data>
+  <data name="Target_Object_Mapping_Is_Not_Exist" xml:space="preserve">
+    <value>Target object mapping is not exist</value>
+  </data>
+  <data name="Target_Object_Of_The_Link_May_Be_Added_To_Graph" xml:space="preserve">
+    <value>Target object of the Link may be added to Graph</value>
+  </data>
+  <data name="The_File_Was_Added" xml:space="preserve">
+    <value>The File Was Added</value>
+  </data>
+  <data name="Unable_To_Apply_Return_Newly_Created_Link_To_Its_Group" xml:space="preserve">
+    <value>Unable to apply return newly created Link to it's Group:
+{0}</value>
+  </data>
+  <data name="Unable_To_Clear_Graph_Mappings" xml:space="preserve">
+    <value>Unable to clear graph mappings</value>
+  </data>
+  <data name="Unable_To_Collapse_Group_Vertex" xml:space="preserve">
+    <value>Unable to collapse Group-Vertex:
+{0}</value>
+  </data>
+  <data name="Unable_To_Create_Group_Before_Data_Initialization" xml:space="preserve">
+    <value>Unable to create Group before Data-Initialization</value>
+  </data>
+  <data name="Unable_To_Create_New_Group" xml:space="preserve">
+    <value>Unable to create new group:
+{0}</value>
+  </data>
+  <data name="Unable_To_Create_New_Object" xml:space="preserve">
+    <value>Unable to create new Object:
+{0}</value>
+  </data>
+  <data name="Unable_To_Creat_A_Link_With_A_Type_Except_Children_Of_Relationship_Or_Event_types" xml:space="preserve">
+    <value>Unable to creat a link with a type except children of 'Relationship' or 'Event' types.</value>
+  </data>
+  <data name="Unable_To_Discover_Related_Vertex" xml:space="preserve">
+    <value>Unable to discover related vertex:
+{0}</value>
+  </data>
+  <data name="Unable_To_Expand_Group_Vertex" xml:space="preserve">
+    <value>Unable to expand Group-Vertex:
+{0}</value>
+  </data>
+  <data name="Unable_To_Get_Related_Vertex" xml:space="preserve">
+    <value>Unable to get related Vertex</value>
+  </data>
+  <data name="Unable_To_Initiate_Big_Data_Search_Application" xml:space="preserve">
+    <value>Unable to initiate Big-Data Search Application:
+{0}</value>
+  </data>
+  <data name="Unable_To_Initiate_Link_Creation_control" xml:space="preserve">
+    <value>Unable to initiate 'Link Creation' control:</value>
+  </data>
+  <data name="Unable_To_Load_Published_Graph" xml:space="preserve">
+    <value>Unable published graph:
+{0}</value>
+  </data>
+  <data name="Unable_To_Prepairing_Exit" xml:space="preserve">
+    <value>Unable to prepairing exit:
+{0}</value>
+  </data>
+  <data name="Unable_To_Reach_Unique_Mapping_For_The_Edge" xml:space="preserve">
+    <value>Unable to reach unique mapping for the edge</value>
+  </data>
+  <data name="Unable_To_Reach_Unique_Mapping_For_The_Vertex" xml:space="preserve">
+    <value>Unable to reach unique mapping for the vertex</value>
+  </data>
+  <data name="Unable_To_Remove_Link_Form_Graph_Title_Source_Object_ID_Target_Object_ID" xml:space="preserve">
+    <value>Unable to remove Link form Graph; Title: {0}, Source Object ID: {1}, Target Object ID: {2}</value>
+  </data>
+  <data name="Unable_To_Remove_Mapping" xml:space="preserve">
+    <value>Unable to remove mapping</value>
+  </data>
+  <data name="Unable_To_Remove_Objects_From_The_Graph" xml:space="preserve">
+    <value>Unable to remove Object(s) from the Graph:
+{0}</value>
+  </data>
+  <data name="Unable_To_Remove_Object_Form_Graph_ID_Display_Name" xml:space="preserve">
+    <value>Unable to remove Object form Graph; ID: {0}, Display name: {1}</value>
+  </data>
+  <data name="Unable_To_Remove_Object_Mapping" xml:space="preserve">
+    <value>Unable to remove object mapping</value>
+  </data>
+  <data name="Unable_To_Retrive_Graph_Content_From_Repository" xml:space="preserve">
+    <value>Unable to retrive Graph content from Repository: {0}</value>
+  </data>
+  <data name="Unable_To_Show_Create_New_Link_Window" xml:space="preserve">
+    <value>Unable to show 'Create new Link' window:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Create_New_Object_Window" xml:space="preserve">
+    <value>Unable to show 'Create new Object' window:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Links_On_The_Graph" xml:space="preserve">
+    <value>Unable to show Links on the Graph:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Link_Between_On_The_Graph" xml:space="preserve">
+    <value>Unable to show Link '{0}' (between: '{1}' (ID: {2}) and '{3}' (ID: {4})) on the Graph:
+{5}</value>
+  </data>
+  <data name="Unable_To_Show_Objects_In_Browser_Application" xml:space="preserve">
+    <value>Unable to show objects in Browser Application:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Objects_On_Graph" xml:space="preserve">
+    <value>Unable to show objects on Graph:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Objects_On_The_Graph" xml:space="preserve">
+    <value>Unable to show Objects on the Graph:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Object_On_The_Graph" xml:space="preserve">
+    <value>Unable to show Object '{0}' (ID: '{1}') on the Graph:
+{2}</value>
+  </data>
+  <data name="Unable_To_Show_Quick_Search_Result" xml:space="preserve">
+    <value>Unable to show Quick Search result:
+{0}</value>
+  </data>
+  <data name="Unable_To_show_Retived_Objects_links_On_Graph" xml:space="preserve">
+    <value>Unable to show retived object(s)/link(s) on Graph:
+{0}</value>
+  </data>
+  <data name="Unknown_Job_Status" xml:space="preserve">
+    <value>Unknown job status</value>
+  </data>
+  <data name="Unknown_Mapping_Item_Type" xml:space="preserve">
+    <value>Unknown mapping item type</value>
+  </data>
+  <data name="Unknown_Property_Type" xml:space="preserve">
+    <value>Unknown property type</value>
+  </data>
+  <data name="Unknown_State" xml:space="preserve">
+    <value>Unknown State</value>
+  </data>
+  <data name="Unknown_Value_Item_Type" xml:space="preserve">
+    <value>Unknown value item type</value>
+  </data>
+  <data name="Unknow_Relationship_Direction" xml:space="preserve">
+    <value>Unknow relationship direction</value>
+  </data>
+  <data name="Upload_Operation_Was_Failed" xml:space="preserve">
+    <value>Upload Operation Was Failed.</value>
+  </data>
+  <data name="Upload_Successfull" xml:space="preserve">
+    <value>Upload Successfull</value>
+  </data>
+  <data name="Uploding_File" xml:space="preserve">
+    <value>Uploding File...</value>
+  </data>
+  <data name="The_test_sample_contains_0_cells" xml:space="preserve">
+    <value>The test sample contains {0} cells.</value>
+  </data>
+  <data name="The_test_sample_contains_0_rows" xml:space="preserve">
+    <value>The test sample contains {0} rows.</value>
+  </data>
+  <data name="Your_Graph_Has_Content_That_May_Be_Needed_Later_Do_You_Want_To_Save_Your_Graph" xml:space="preserve">
+    <value>Your Graph has content that may be needed later.
+Do you want to save your Graph?</value>
+  </data>
+  <data name="You_Must_Restart_Your_Application_To_Apply_These_Changes_Restart_Now" xml:space="preserve">
+    <value>You must restart your application to apply these changes.
+Restart Now?</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Add_Concept" xml:space="preserve">
+    <value>Add Concept</value>
+  </data>
+  <data name="Add_Property" xml:space="preserve">
+    <value>Add Property</value>
+  </data>
+  <data name="Assign_Existing_Property" xml:space="preserve">
+    <value>Assign Existing Property</value>
+  </data>
+  <data name="Assign_Property" xml:space="preserve">
+    <value>Assign Property</value>
+  </data>
+  <data name="BASIC_INFO" xml:space="preserve">
+    <value>BASIC INFO</value>
+  </data>
+  <data name="Begin_Time" xml:space="preserve">
+    <value>Begin Time</value>
+  </data>
+  <data name="Browse_Selected_Objects" xml:space="preserve">
+    <value>Browse selected objects</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Collapse_The_Group" xml:space="preserve">
+    <value>Collapse the Group</value>
+  </data>
+  <data name="Columns" xml:space="preserve">
+    <value>Columns</value>
+  </data>
+  <data name="Column_Name_WithColon" xml:space="preserve">
+    <value>Column Name:</value>
+  </data>
+  <data name="Concept" xml:space="preserve">
+    <value>Concept</value>
+  </data>
+  <data name="Concept_Name_WithColon" xml:space="preserve">
+    <value>Concept Name:</value>
+  </data>
+  <data name="Const_Value" xml:space="preserve">
+    <value>Const value</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Create_New_Property" xml:space="preserve">
+    <value>Create new property</value>
+  </data>
+  <data name="Description_WithColon" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="Deselect_All_Links" xml:space="preserve">
+    <value>Deselect all links</value>
+  </data>
+  <data name="Deselect_All_Objects" xml:space="preserve">
+    <value>Deselect all objects</value>
+  </data>
+  <data name="Dispaly_Name_WithColon" xml:space="preserve">
+    <value>Dispaly name:</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="End_Time" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="Enter_Group_name_WithColon" xml:space="preserve">
+    <value>Enter Group name:</value>
+  </data>
+  <data name="Expand_Node_Selection_To_Next_Linked_Level" xml:space="preserve">
+    <value>Expand node selection to next linked level</value>
+  </data>
+  <data name="Expand_The_Group" xml:space="preserve">
+    <value>Expand the group</value>
+  </data>
+  <data name="From_Column" xml:space="preserve">
+    <value>From column</value>
+  </data>
+  <data name="Invert_Selection_Links" xml:space="preserve">
+    <value>Invert selection (links)</value>
+  </data>
+  <data name="Invert_Selection_Objects" xml:space="preserve">
+    <value>Invert selection (objects)</value>
+  </data>
+  <data name="Jobs_Status" xml:space="preserve">
+    <value>Jobs Status</value>
+  </data>
+  <data name="List_Of_Properties" xml:space="preserve">
+    <value>List Of Properties</value>
+  </data>
+  <data name="Log_Name_WithColon" xml:space="preserve">
+    <value>Log Name:</value>
+  </data>
+  <data name="Make_A_Group" xml:space="preserve">
+    <value>Make a Group</value>
+  </data>
+  <data name="Mapping_Result_Sample_By_Preview_First_Row" xml:space="preserve">
+    <value>Mapping result sample (by preview first row):</value>
+  </data>
+  <data name="Media_Tab" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="Name_WithColon" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="New_Concept" xml:space="preserve">
+    <value>New concept</value>
+  </data>
+  <data name="New_Property" xml:space="preserve">
+    <value>New property:</value>
+  </data>
+  <data name="No_Preview_Data_Available" xml:space="preserve">
+    <value>No preview data available</value>
+  </data>
+  <data name="Ontology_Manager" xml:space="preserve">
+    <value>Ontology manager</value>
+  </data>
+  <data name="Ontology_Tree" xml:space="preserve">
+    <value>Ontology tree</value>
+  </data>
+  <data name="Properties_Tab" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Properties_WithColon" xml:space="preserve">
+    <value>Properties:</value>
+  </data>
+  <data name="PROPERTIES_WithUpperCase" xml:space="preserve">
+    <value>PROPERTIES</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="Publish_Graph" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="Register_Time" xml:space="preserve">
+    <value>Register Time</value>
+  </data>
+  <data name="Relayout_Vertices" xml:space="preserve">
+    <value>Relayout vertices</value>
+  </data>
+  <data name="Remove_An_Object_From_Graph" xml:space="preserve">
+    <value>Remove an object from graph</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="Results_Number_WithColon" xml:space="preserve">
+    <value>Results Number:</value>
+  </data>
+  <data name="Save_Ontology" xml:space="preserve">
+    <value>Save ontology</value>
+  </data>
+  <data name="Save_Property" xml:space="preserve">
+    <value>Save property</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search_Box_WithColon" xml:space="preserve">
+    <value>SearchBox:</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Select_All_Links" xml:space="preserve">
+    <value>Select all links</value>
+  </data>
+  <data name="Select_All_Links_Of_Selected_Objects" xml:space="preserve">
+    <value>Select all links of selected objects</value>
+  </data>
+  <data name="Select_All_Objects" xml:space="preserve">
+    <value>Select all objects</value>
+  </data>
+  <data name="Select_A_Search_Type_To_Begin" xml:space="preserve">
+    <value>Select a search type to begin. You must have the approximate security groups included in your Investigative Authorization list to see all models.</value>
+  </data>
+  <data name="Select_Inner_Links_Of_Selected_Objects" xml:space="preserve">
+    <value>Select inner links of selected objects</value>
+  </data>
+  <data name="Select_Orphans_Nodes" xml:space="preserve">
+    <value>Select orphans nodes</value>
+  </data>
+  <data name="Select_Outer_Links_Of_Selected_Objects" xml:space="preserve">
+    <value>Select outer links of selected objects</value>
+  </data>
+  <data name="Select_Properties_For_Concept" xml:space="preserve">
+    <value>Select Properties For Concept</value>
+  </data>
+  <data name="Set_Node_Selection_To_Next_Linked_Level" xml:space="preserve">
+    <value>Set node selection to next linked level</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Title_WithColon" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Type_WithColon" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="Upload_File" xml:space="preserve">
+    <value>Upload File</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="Create_Directory" xml:space="preserve">
+    <value>Create Directory</value>
+  </data>
+  <data name="Documents" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="Entities" xml:space="preserve">
+    <value>Entities</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="Not_Initialized" xml:space="preserve">
+    <value>(Not Initialized)</value>
+  </data>
+  <data name="No_Document_Result" xml:space="preserve">
+    <value>(No document result)</value>
+  </data>
+  <data name="No_Entity_Result" xml:space="preserve">
+    <value>(No entity result)</value>
+  </data>
+  <data name="No_Event_Result" xml:space="preserve">
+    <value>(No event result)</value>
+  </data>
+  <data name="Path_withColon" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="Select_A_Relationship_Event_Type_withColon" xml:space="preserve">
+    <value>Select a Relationship/Event type:</value>
+  </data>
+  <data name="Select_A_Type_For_The_New_Object_WithColon" xml:space="preserve">
+    <value>Select a type for the new object:</value>
+  </data>
+  <data name="Add_File" xml:space="preserve">
+    <value>Add File</value>
+  </data>
+  <data name="Add_Media" xml:space="preserve">
+    <value>Add Media</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Data_Import_Window" xml:space="preserve">
+    <value>Data Import Window</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Destination_WithColon" xml:space="preserve">
+    <value>Destination:</value>
+  </data>
+  <data name="Dynamic_Ontology" xml:space="preserve">
+    <value>Dynamic Ontology</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Get_Directory_Name" xml:space="preserve">
+    <value>Get directory name</value>
+  </data>
+  <data name="Get_Graph_Window" xml:space="preserve">
+    <value>Get graph window</value>
+  </data>
+  <data name="Graph_Name" xml:space="preserve">
+    <value>Graph Name</value>
+  </data>
+  <data name="Graph_Preview" xml:space="preserve">
+    <value>Graph Preview</value>
+  </data>
+  <data name="New_Group" xml:space="preserve">
+    <value>New group</value>
+  </data>
+  <data name="New_Link" xml:space="preserve">
+    <value>New link</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Not_Initialized_Yet" xml:space="preserve">
+    <value>(Not Initialized yet)</value>
+  </data>
+  <data name="Object_Count" xml:space="preserve">
+    <value>Object Count</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Please_Wait" xml:space="preserve">
+    <value>Please Wait...</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Property_Count" xml:space="preserve">
+    <value>Property Count</value>
+  </data>
+  <data name="Review_These_Summary_Statistics_For_Your_Import" xml:space="preserve">
+    <value>1. Review these summary statistics for your import.</value>
+  </data>
+  <data name="Select_Directory" xml:space="preserve">
+    <value>Select directory</value>
+  </data>
+  <data name="Share_Graph" xml:space="preserve">
+    <value>Share graph</value>
+  </data>
+  <data name="Show_In_Graph" xml:space="preserve">
+    <value>Show in graph</value>
+  </data>
+  <data name="Sources" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="Source_Import" xml:space="preserve">
+    <value>Source Import</value>
+  </data>
+  <data name="Source_WithColon" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="New_Object" xml:space="preserve">
+    <value>New object</value>
+  </data>
+  <data name="Structured_Data_Sources" xml:space="preserve">
+    <value>Structured Data Sources</value>
+  </data>
+  <data name="Nodes_WithColon" xml:space="preserve">
+    <value>Nodes:</value>
+  </data>
+  <data name="Time_Created_WithColon" xml:space="preserve">
+    <value>Time Created:</value>
+  </data>
+  <data name="Initializing_Workspace" xml:space="preserve">
+    <value>Initializing workspace...</value>
+  </data>
+  <data name="Cannot_Retrive_Directory_Information" xml:space="preserve">
+    <value>Cannot Retrive Directory Information:
+{0}</value>
+  </data>
+  <data name="Cannot_Show_Directory" xml:space="preserve">
+    <value>Cannot Show Directory:
+{0}</value>
+  </data>
+  <data name="Unable_To_Get_Selected_File" xml:space="preserve">
+    <value>Unable To Get Selected File:
+{0}</value>
+  </data>
+  <data name="Unable_To_Share_Graph" xml:space="preserve">
+    <value>Unable To Share Graph:
+{0}</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Downloading...</value>
+  </data>
+  <data name="Search_Around_Objects_With_Same_Properties" xml:space="preserve">
+    <value>Search-Around for objects with the same properties</value>
+  </data>
+  <data name="Atleast_one_centeral_object_was_not_previously_on_graph" xml:space="preserve">
+    <value>Atleast one centeral object was not previously on graph</value>
+  </data>
+  <data name="Performing_SearchAround_" xml:space="preserve">
+    <value>Performing search around...</value>
+  </data>
+  <data name="Related_Documents" xml:space="preserve">
+    <value>Related Documents</value>
+  </data>
+  <data name="Related_Entities" xml:space="preserve">
+    <value>Related Entities</value>
+  </data>
+  <data name="Related_Events" xml:space="preserve">
+    <value>Related Events</value>
+  </data>
+  <data name="Related_Tab" xml:space="preserve">
+    <value>Related</value>
+  </data>
+  <data name="Search_Around_Related_Entities" xml:space="preserve">
+    <value>Search-Around for related Entities</value>
+  </data>
+  <data name="Search_Around_Related_Objects_By_Mediator_Events" xml:space="preserve">
+    <value>Search-Around Related Objects By Mediator Events</value>
+  </data>
+  <data name="The_Service_Operation_Timed_Out" xml:space="preserve">
+    <value>The Service Operation Timed Out</value>
+  </data>
+  <data name="Invert_Nodes" xml:space="preserve">
+    <value>Invert Nodes</value>
+  </data>
+  <data name="Linked_Entities" xml:space="preserve">
+    <value>Linked Entities</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Links_Between" xml:space="preserve">
+    <value>Links Between</value>
+  </data>
+  <data name="Loading_Object_Information" xml:space="preserve">
+    <value>Loading Object Information...</value>
+  </data>
+  <data name="Make_Group" xml:space="preserve">
+    <value>Make Group</value>
+  </data>
+  <data name="No_Mapping_For_The_Tab" xml:space="preserve">
+    <value>No mapping for the Tab</value>
+  </data>
+  <data name="Outgoing_Nodes" xml:space="preserve">
+    <value>Outgoing Nodes</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Search_Around" xml:space="preserve">
+    <value>Search Around</value>
+  </data>
+  <data name="Unable_To_Load_Object_Information" xml:space="preserve">
+    <value>Unable to load Object Information</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Unable_To_Show_Links_On_Graph" xml:space="preserve">
+    <value>Unable to show links on Graph</value>
+  </data>
+  <data name="Add_To_Graph" xml:space="preserve">
+    <value>Add to Graph</value>
+  </data>
+  <data name="Related_Entities_Date_Begin" xml:space="preserve">
+    <value>Date Begin</value>
+  </data>
+  <data name="Related_Entities_Date_End" xml:space="preserve">
+    <value>Date End</value>
+  </data>
+  <data name="Related_Entities_Related" xml:space="preserve">
+    <value>Related</value>
+  </data>
+  <data name="Related_Entities_Relationship" xml:space="preserve">
+    <value>Relationship</value>
+  </data>
+  <data name="Related_Entities_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Related_Events_Relationship" xml:space="preserve">
+    <value>Relationship</value>
+  </data>
+  <data name="Related_Events_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Related_Events_Time_Begin" xml:space="preserve">
+    <value>Time Begin</value>
+  </data>
+  <data name="Related_Events_Time_End" xml:space="preserve">
+    <value>Time End</value>
+  </data>
+  <data name="Related_Events_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Relate_Events_Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="Collapse_Group" xml:space="preserve">
+    <value>Collapse Group</value>
+  </data>
+  <data name="Expand_Group" xml:space="preserve">
+    <value>Expand group</value>
+  </data>
+  <data name="Incoming_Nodes" xml:space="preserve">
+    <value>Incoming Nodes</value>
+  </data>
+  <data name="Linked_Document" xml:space="preserve">
+    <value>Linked Document</value>
+  </data>
+  <data name="Grouping" xml:space="preserve">
+    <value>Grouping</value>
+  </data>
+  <data name="Related_Documents_Count" xml:space="preserve">
+    <value>Related Documents Count</value>
+  </data>
+  <data name="Related_Entities_Count" xml:space="preserve">
+    <value>Related Entities Count</value>
+  </data>
+  <data name="Related_Events_Count" xml:space="preserve">
+    <value>Related Events Count</value>
+  </data>
+  <data name="Filter_Search" xml:space="preserve">
+    <value>Filter search</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Add_Criterion" xml:space="preserve">
+    <value>Add Criterion</value>
+  </data>
+  <data name="Date_Filter" xml:space="preserve">
+    <value>Date filter</value>
+  </data>
+  <data name="Filter_Criteria" xml:space="preserve">
+    <value>Filter Criteria:</value>
+  </data>
+  <data name="Filter_Search_Title" xml:space="preserve">
+    <value>Filter Search Title:</value>
+  </data>
+  <data name="Keyword_Filter" xml:space="preserve">
+    <value>Keyword filter</value>
+  </data>
+  <data name="Object_Type_Filter" xml:space="preserve">
+    <value>Object type filter</value>
+  </data>
+  <data name="Property_Filter" xml:space="preserve">
+    <value>Property filter</value>
+  </data>
+  <data name="Graph_Application" xml:space="preserve">
+    <value>Graph Application</value>
+  </data>
+  <data name="CriteriaSet_Filter" xml:space="preserve">
+    <value>CriteriaSet Filter</value>
+  </data>
+  <data name="Home_Application" xml:space="preserve">
+    <value>Home Application</value>
+  </data>
+  <data name="Nested_Filter" xml:space="preserve">
+    <value>Nested_Filter</value>
+  </data>
+  <data name="BigData_Search_Application" xml:space="preserve">
+    <value>Big-Data Search Application</value>
+  </data>
+  <data name="Performing_FilterSearch_" xml:space="preserve">
+    <value>Performing filter search</value>
+  </data>
+  <data name="Browser_Application" xml:space="preserve">
+    <value>Browser Application</value>
+  </data>
+  <data name="Unknown_Relational_Operator_Type" xml:space="preserve">
+    <value>Unknown Relational Operator Type</value>
+  </data>
+  <data name="Some_Of_FilterSearch_Fields_are_empty_Please_Try_Again" xml:space="preserve">
+    <value>Some of filter search fields or some of nested controls are empty.</value>
+  </data>
+  <data name="Apply_As_Filter" xml:space="preserve">
+    <value>Apply as filter</value>
+  </data>
+  <data name="Clear_Filter" xml:space="preserve">
+    <value>Clear filter</value>
+  </data>
+  <data name="Select_Matching" xml:space="preserve">
+    <value>Select matching</value>
+  </data>
+  <data name="Performing_Selection_By_Filter_Criteria" xml:space="preserve">
+    <value>Performing selection by filter criteria</value>
+  </data>
+  <data name="Unable_To_Apply_Filter" xml:space="preserve">
+    <value>Unable to apply filter:
+{0}</value>
+  </data>
+  <data name="Unable_To_Perform_Selection_By_Filter_Criteria" xml:space="preserve">
+    <value>Unable to perform selection by filter criteria:
+{0}</value>
+  </data>
+  <data name="Unable_To_Show_Filter_Search_Result_On_Graph" xml:space="preserve">
+    <value>Unable to show filter search result on Graph:
+{0}</value>
+  </data>
+  <data name="Apply_Filter" xml:space="preserve">
+    <value>Apply filter</value>
+  </data>
+  <data name="Unable_To_Clear_Filter" xml:space="preserve">
+    <value>Unable to clear filter:
+{0}</value>
+  </data>
+  <data name="Apply_Search_Results" xml:space="preserve">
+    <value>Apply search results</value>
+  </data>
+  <data name="Start_time_is_later_than_End_time" xml:space="preserve">
+    <value>Start time is later than end time</value>
+  </data>
+  <data name="Number_Of_The_Nested_Criteria_Is_Greater_Than_20" xml:space="preserve">
+    <value>Number of the nested criteria is greater than 20.</value>
+  </data>
+  <data name="Reset_Criterion" xml:space="preserve">
+    <value>Reset Criterion</value>
+  </data>
+  <data name="Mapping_not_completed_for_selected_sources" xml:space="preserve">
+    <value>Mapping not completed for selected source(s); Make sure that right mapping(s) defined for selected source(s) and display names are defined for all object mapping(s).</value>
+  </data>
+  <data name="Document_Types" xml:space="preserve">
+    <value>Document Types</value>
+  </data>
+  <data name="Entity_Types" xml:space="preserve">
+    <value>Entity Types</value>
+  </data>
+  <data name="Event_Types" xml:space="preserve">
+    <value>Event Types</value>
+  </data>
+  <data name="Object_Types" xml:space="preserve">
+    <value>Object types</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Histogram" xml:space="preserve">
+    <value>Histogram</value>
+  </data>
+  <data name="Unable_To_Apply_Selection" xml:space="preserve">
+    <value>Unable to apply selection.
+{0}</value>
+  </data>
+  <data name="All_Documents" xml:space="preserve">
+    <value>All Documents</value>
+  </data>
+  <data name="All_Entities" xml:space="preserve">
+    <value>All Entities</value>
+  </data>
+  <data name="All_Evevnts" xml:space="preserve">
+    <value>All Events</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Unable_to_load_Histogram" xml:space="preserve">
+    <value>Unable to load Histogram</value>
+  </data>
+  <data name="Document_Properties" xml:space="preserve">
+    <value>Document Properties</value>
+  </data>
+  <data name="Entity_Properties" xml:space="preserve">
+    <value>Entity Properties</value>
+  </data>
+  <data name="Event_Properties" xml:space="preserve">
+    <value>Event Properties</value>
+  </data>
+  <data name="Loading_objects" xml:space="preserve">
+    <value>Loading objects...</value>
+  </data>
+  <data name="Keyword" xml:space="preserve">
+    <value>Keyword</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Any" xml:space="preserve">
+    <value>Any</value>
+  </data>
+  <data name="Begin" xml:space="preserve">
+    <value>Begin:</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End:</value>
+  </data>
+  <data name="Enter_keyword" xml:space="preserve">
+    <value>Enter keyword</value>
+  </data>
+  <data name="Filter_with_semicolon" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="Include_Child_Types" xml:space="preserve">
+    <value>Include child types</value>
+  </data>
+  <data name="Object_Type" xml:space="preserve">
+    <value>Object Type</value>
+  </data>
+  <data name="of_the_following_are_true" xml:space="preserve">
+    <value>of the following are true</value>
+  </data>
+  <data name="Property_Value" xml:space="preserve">
+    <value>Property_value</value>
+  </data>
+  <data name="Property_with_SemiColon" xml:space="preserve">
+    <value>Property:</value>
+  </data>
+  <data name="Search_with_semicolon" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="Close_All_But_This" xml:space="preserve">
+    <value>Close All But This</value>
+  </data>
+  <data name="Close_All_Tabs" xml:space="preserve">
+    <value>Close All Tabs</value>
+  </data>
+  <data name="Publish_Concepts" xml:space="preserve">
+    <value>Publish Concepts</value>
+  </data>
+  <data name="Some_concepts_have_changed_Do_you_want_to_publish_them" xml:space="preserve">
+    <value>Some concepts have changed. Do you want to publish them?</value>
+  </data>
+  <data name="Save_DisplayName" xml:space="preserve">
+    <value>Save DisplayName</value>
+  </data>
+  <data name="Your_Data_Is_Published_But_Horizon_Server_Is_Not_Updated" xml:space="preserve">
+    <value>Your data is published but horizon server is not updated.</value>
+  </data>
+  <data name="Resolve_Conflict" xml:space="preserve">
+    <value>Resolve conflict</value>
+  </data>
+  <data name="Publish_was_completed" xml:space="preserve">
+    <value>Publish was completed.</value>
+  </data>
+  <data name="Publish_inprogress" xml:space="preserve">
+    <value>Publish in-progress...</value>
+  </data>
+  <data name="Concepts_Conflict_Resolution" xml:space="preserve">
+    <value>Concepts conflict resolution</value>
+  </data>
+  <data name="Media_Conflict_Resolution_Prompt" xml:space="preserve">
+    <value>Media assignment conflict detected for media with:{0}{0}{1}ID: {2}{0}{1}and URI: {3}{0}{1}that belongs to Object: {4} (ID: {5} | Type: {6}).{0}{0}The media is deleted locally (unpublished) but it's already exist in Repository.{0}Do you want to keep unpublished changes (as a deleted media)?</value>
+  </data>
+  <data name="Object_Conflict_Resolution_Prompt" xml:space="preserve">
+    <value>Object data conflict detected for object with:{0}{0}{1}ID: {2}{0}{1}Of type: {3}{0}{0}{1}Published display name is: "{4}"{0}{1}but Unpublished Display name is: "{5}".{0}{0}Do you want to keep unpublished changes?</value>
+  </data>
+  <data name="Property_Conflict_Resolution_Prompt" xml:space="preserve">
+    <value>Property data conflict detected for property with:{0}{0}{1}ID: {2}{0}{1}Of type: {3}{0}{1}that belongs to Object: {4} (ID: {5} | Type: {6}){0}{0}{1}Published value is: "{7}"{0}{1}but Unpublished value is: "{8}".{0}{0}Do you want to keep unpublished changes?</value>
+  </data>
+  <data name="by_relevance" xml:space="preserve">
+    <value>by Relevance</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Hundred" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Ten" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="Ten_Thousand" xml:space="preserve">
+    <value>10000</value>
+  </data>
+  <data name="Thousand" xml:space="preserve">
+    <value>1000</value>
+  </data>
+  <data name="fifty" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Thirty" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Set_DisplayName" xml:space="preserve">
+    <value>Set as display name</value>
+  </data>
+  <data name="Column_Name_s_" xml:space="preserve">
+    <value>Column Name(s)</value>
+  </data>
+  <data name="Property_Type" xml:space="preserve">
+    <value>Property Type</value>
+  </data>
+  <data name="Resolution_Option" xml:space="preserve">
+    <value>Resolution Option</value>
+  </data>
+  <data name="Internal_Resolution_Options" xml:space="preserve">
+    <value>Internal Resolution Options</value>
+  </data>
+  <data name="Set_Internal_Resolution_Options" xml:space="preserve">
+    <value>Set internal resolution options</value>
+  </data>
+  <data name="Map_of_data_source_0_has_same_type_object_mappings_that_not_ignored_for_internal_resolution_Perform_auto_resolve" xml:space="preserve">
+    <value>Map of Data Source #{0} (by data source selection order) has same type object mappings that not ignored for internal resolution. Do you want to perform automatic inter-type resolution for the mapping?</value>
+  </data>
+  <data name="Automatic_Resolution_Window" xml:space="preserve">
+    <value>Automatic Resolution Window</value>
+  </data>
+  <data name="Invalid_Internal_Resolution_Options" xml:space="preserve">
+    <value>Invalid internal resolution options (At least one of the resolution options must be Find matches)</value>
+  </data>
+  <data name="Internal_Resolve_Summery_For_Find_And_Must_Match_Options" xml:space="preserve">
+    <value>For all objects that have the same {0} the import process will resolve them together if they also have the same {1}.</value>
+  </data>
+  <data name="Internal_Resolve_Summery_For_Only_Find_Match_Options" xml:space="preserve">
+    <value>For all objects that have the same {0} the import process will resolve them together.</value>
+  </data>
+  <data name="Objects_will_import_without_any_internal_resolution" xml:space="preserve">
+    <value>Objects will import without any internal resolution</value>
+  </data>
+  <data name="Summary_with_colon" xml:space="preserve">
+    <value>Summary: </value>
+  </data>
+  <data name="SemiStructured_source_s_import_completed_and_result_published" xml:space="preserve">
+    <value>Semi-Structured source(s) import completed and it's result were published.</value>
+  </data>
+  <data name="Selected_file_0_is_too_large_for_import_process" xml:space="preserve">
+    <value>Selected file '{0}' is too large for import process.</value>
+  </data>
+  <data name="Next_Data_Source" xml:space="preserve">
+    <value>Next Data Source</value>
+  </data>
+  <data name="There_Is_No_Items_To_Publish_" xml:space="preserve">
+    <value>There is no items to publish.</value>
+  </data>
+  <data name="Enter_Const_Value" xml:space="preserve">
+    <value>Const Value</value>
+  </data>
+  <data name="By_Selecting_This_Option_You_Can_Enter_Const_Value_For_Property" xml:space="preserve">
+    <value>By selecting this option you can enter const value for property</value>
+  </data>
+  <data name="Registering_ServerSide_Import_Request" xml:space="preserve">
+    <value>Registering Server-side Import Request</value>
+  </data>
+  <data name="Uploading_0" xml:space="preserve">
+    <value>Uploading: {0}</value>
+  </data>
+  <data name="Upload_file_0_failed_with_exception_1_Do_you_want_to_retry" xml:space="preserve">
+    <value>Upload file "{0}" failed:
+{1}.
+Do you want to retry uploading (Select "No", means ignore importing the file data)?</value>
+  </data>
+  <data name="Import_Process" xml:space="preserve">
+    <value>Import Process</value>
+  </data>
+  <data name="SemiStructured_source_s_import_process_is_too_large_and_passed_to_server" xml:space="preserve">
+    <value>Semi-Structured source(s) import process is too large, so it will passed to the servers.</value>
+  </data>
+  <data name="Prepair_server_side_import" xml:space="preserve">
+    <value>Prepairing server-side import</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_A_Operation_on_Graph_Application" xml:space="preserve">
+    <value>Select all objects</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_A_Title" xml:space="preserve">
+    <value>Ctrl + A</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_S_Operation_on_Graph_Application" xml:space="preserve">
+    <value>Share current Graph</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_S_Title" xml:space="preserve">
+    <value>Ctrl + S</value>
+  </data>
+  <data name="General_shortcutkey_category" xml:space="preserve">
+    <value>(General)</value>
+  </data>
+  <data name="Operation_of_shortcutkey" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_B_Operation_on_Graph_Application" xml:space="preserve">
+    <value>View selected object(s) (in Browser Application)</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_B_Title" xml:space="preserve">
+    <value>Ctrl + B</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_F_Operation" xml:space="preserve">
+    <value>Quick Search</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_F_Title" xml:space="preserve">
+    <value>Ctrl + F</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_L_Operation" xml:space="preserve">
+    <value>Filter Search on Graph Application</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_L_Title" xml:space="preserve">
+    <value>Ctrl + L</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_N_Operation_on_Browser_Application" xml:space="preserve">
+    <value>Create new property</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_N_Operation_on_Graph_Application" xml:space="preserve">
+    <value>Create new object</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_N_Title" xml:space="preserve">
+    <value>Ctrl + N</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_Shift_I_Operation_on_Graph_Application" xml:space="preserve">
+    <value>Invert select objects</value>
+  </data>
+  <data name="ShortcutKey_Ctrl_Shift_I_Title" xml:space="preserve">
+    <value>Ctrl + Shift + I</value>
+  </data>
+  <data name="ShortcutKey_F1_Operation" xml:space="preserve">
+    <value>Shortcut keys help window</value>
+  </data>
+  <data name="ShortcutKey_F1_Title" xml:space="preserve">
+    <value>F1</value>
+  </data>
+  <data name="Shortcut_Key" xml:space="preserve">
+    <value>Shortcut Key</value>
+  </data>
+  <data name="Shortcut_Keys" xml:space="preserve">
+    <value>Shortcut Keys</value>
+  </data>
+  <data name="New_Graph" xml:space="preserve">
+    <value>New graph</value>
+  </data>
+  <data name="SemiStructured_source_s_import_completed_with_some_fails_and_result_published" xml:space="preserve">
+    <value>Semi-Structured source(s) import completed with some fails and it's result were published.
+{0} line(s) is/are invalid.
+for more details refer to "Import Log" path</value>
+  </data>
+  <data name="Synchronization_Done" xml:space="preserve">
+    <value>Synchronization done</value>
+  </data>
+  <data name="Synchronization_Is_Not_Required" xml:space="preserve">
+    <value>Synchronization is not required</value>
+  </data>
+  <data name="Hard_Delete" xml:space="preserve">
+    <value>Hard Delete</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Remove_Elbow" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ungroup" xml:space="preserve">
+    <value>Ungroup</value>
+  </data>
+  <data name="Unmerge" xml:space="preserve">
+    <value>Unmerge</value>
+  </data>
+  <data name="No_Data_Import_Preview_Field" xml:space="preserve">
+    <value>(No Data)</value>
+  </data>
+  <data name="Import_preview_invalid_lines_prompt" xml:space="preserve">
+    <value>{0} line(s) of sample, contains invalid data.</value>
+  </data>
+  <data name="This_Feature_Is_Not_Supported" xml:space="preserve">
+    <value>This feature is not supported</value>
+  </data>
+  <data name="Clear_map_content" xml:space="preserve">
+    <value>Clear map content</value>
+  </data>
+  <data name="Map_Application" xml:space="preserve">
+    <value>Map Application</value>
+  </data>
+  <data name="Show_on_map" xml:space="preserve">
+    <value>Show on map</value>
+  </data>
+  <data name="Timeline" xml:space="preserve">
+    <value>Timeline</value>
+  </data>
+  <data name="Save_Graph" xml:space="preserve">
+    <value>Save graph</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Objects_From_Cache" xml:space="preserve">
+    <value>Are You Sure Want To Remove Objects From Cache?</value>
+  </data>
+  <data name="Unable_To_Remove_Objects_From_The_Cache" xml:space="preserve">
+    <value>Unable To Remove Objects From The Cache.</value>
+  </data>
+  <data name="Load_a_mapping_will_remove_currently_defined_mapping" xml:space="preserve">
+    <value>Load a mapping will remove currently defined mapping; Are you sure you want to ignore the defined mapping?</value>
+  </data>
+  <data name="Load_successfull" xml:space="preserve">
+    <value>Load successfull</value>
+  </data>
+  <data name="Save_successfull" xml:space="preserve">
+    <value>Save successfull</value>
+  </data>
+  <data name="Unable_To_Save_Import_Mapping" xml:space="preserve">
+    <value>Unable to save import mapping to file;
+{0}</value>
+  </data>
+  <data name="FiveHundred" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="Do_you_want_to_publish_your_Graph_Click_Yes_to_publish_And_Clear_Graph" xml:space="preserve">
+    <value>Do you want to publish your graph? Click Yes to publish and clear graph, No to only clear graph or Cancel to do nothing.</value>
+  </data>
+  <data name="PublishGraphOrClear" xml:space="preserve">
+    <value>publish graph or clear</value>
+  </data>
+  <data name="Loading_something_" xml:space="preserve">
+    <value>Loading "{0}"...</value>
+  </data>
+  <data name="Count_of_unmerged_links_is_greater_than_0_Do_you_want_to_show" xml:space="preserve">
+    <value>Count of unmerged links is greater than {0}; Do you want to show unmerged links?</value>
+  </data>
+  <data name="Unable_To_Show_More_Object_On_Graph" xml:space="preserve">
+    <value>Unable to show more object on graph; Some object(s) can not show on graph</value>
+  </data>
+  <data name="Unable_to_merge_selected_objects_as_a_link" xml:space="preserve">
+    <value>Unable to merge selected objects as a link</value>
+  </data>
+  <data name="Merge" xml:space="preserve">
+    <value>Merge</value>
+  </data>
+  <data name="timebased_properties" xml:space="preserve">
+    <value>time-based properties</value>
+  </data>
+  <data name="Add_New_Linking_Term" xml:space="preserve">
+    <value>Add new linking term</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Exact_Match" xml:space="preserve">
+    <value>Exact Match</value>
+  </data>
+  <data name="Learn_More" xml:space="preserve">
+    <value>learn more</value>
+  </data>
+  <data name="Linking_on" xml:space="preserve">
+    <value>Linking on:</value>
+  </data>
+  <data name="ResultsWithColon" xml:space="preserve">
+    <value>Results:</value>
+  </data>
+  <data name="Targeting" xml:space="preserve">
+    <value>Targeting:</value>
+  </data>
+  <data name="Choose_Matching_Criteria_For_Pass_Number" xml:space="preserve">
+    <value>Choose matching criteria for pass number</value>
+  </data>
+  <data name="Select_Object_For_Resolution" xml:space="preserve">
+    <value>Select object for resolution - showing</value>
+  </data>
+  <data name="Check_And_Finalize" xml:space="preserve">
+    <value>Check and finalize</value>
+  </data>
+  <data name="Choose_Matching_Criteria" xml:space="preserve">
+    <value>Choose matching criteria</value>
+  </data>
+  <data name="Deselect_All" xml:space="preserve">
+    <value>deselect all</value>
+  </data>
+  <data name="Find_Successful_Matches_And_Resolve" xml:space="preserve">
+    <value>Find successful matches and resolve</value>
+  </data>
+  <data name="Select_All" xml:space="preserve">
+    <value>select all</value>
+  </data>
+  <data name="Select_Highlighted" xml:space="preserve">
+    <value>select highlighted</value>
+  </data>
+  <data name="Unresolved_Objects" xml:space="preserve">
+    <value>unresolved objects.</value>
+  </data>
+  <data name="Add_New_Target_Term" xml:space="preserve">
+    <value>Add New Target Term</value>
+  </data>
+  <data name="Concepts" xml:space="preserve">
+    <value>Concepts</value>
+  </data>
+  <data name="Select_Property_Type" xml:space="preserve">
+    <value>select property type</value>
+  </data>
+  <data name="Select_Unique" xml:space="preserve">
+    <value>select unique</value>
+  </data>
+  <data name="Collapse_All" xml:space="preserve">
+    <value>Collapse all</value>
+  </data>
+  <data name="Expand_All" xml:space="preserve">
+    <value>Expand all</value>
+  </data>
+  <data name="Match_Number" xml:space="preserve">
+    <value>Match Number</value>
+  </data>
+  <data name="Property_Conflicts" xml:space="preserve">
+    <value>Property Conflicts</value>
+  </data>
+  <data name="Property_Matches" xml:space="preserve">
+    <value>Property Matches</value>
+  </data>
+  <data name="Contain" xml:space="preserve">
+    <value>Contain</value>
+  </data>
+  <data name="No_Conflict" xml:space="preserve">
+    <value>No Conflict</value>
+  </data>
+  <data name="Match_Criteria" xml:space="preserve">
+    <value>Match Criteria:</value>
+  </data>
+  <data name="Match" xml:space="preserve">
+    <value>Match</value>
+  </data>
+  <data name="Choose_an_object_resolution_setting" xml:space="preserve">
+    <value>3. Choose an object resolution setting.</value>
+  </data>
+  <data name="Dont_perform_object_resolution_on_my_imported_data" xml:space="preserve">
+    <value>Don't perform object resolution on my imported data.</value>
+  </data>
+  <data name="For_more_details_see_Import_logs" xml:space="preserve">
+    <value>For more details see Import logs.</value>
+  </data>
+  <data name="SemiStructured_source_s_import_completed_but_at_least_one_without_peripheral_servers_sync" xml:space="preserve">
+    <value>Semi-Structured source(s) import completed for all data sources but at least one of them done without peripheral servers synchronization.</value>
+  </data>
+  <data name="Import_size_is_too_big_you_can_not_specify_new_resolution_criteria" xml:space="preserve">
+    <value>Import size is too big and may performed server-side, so you can not specify new resolution criteria.</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="None_Recommanded" xml:space="preserve">
+    <value>None (Recommanded)</value>
+  </data>
+  <data name="Specify_new_resolution_criteria_in_the_Object_Resolution_Wizard_after_my_import" xml:space="preserve">
+    <value>Specify new resolution criteria in the Object Resolution Wizard after my import.</value>
+  </data>
+  <data name="Use_preexisting_resolution_criteria_from_an_Object_Resolution_Suite" xml:space="preserve">
+    <value>Use preexisting resolution criteria from an Object Resolution Suite:</value>
+  </data>
+  <data name="Failed_lines_" xml:space="preserve">
+    <value>Failed lines:</value>
+  </data>
+  <data name="Continue_Resolution" xml:space="preserve">
+    <value>Continue Resolution</value>
+  </data>
+  <data name="Existing_Objects" xml:space="preserve">
+    <value>Existing Objects</value>
+  </data>
+  <data name="Resolved_Objects" xml:space="preserve">
+    <value>Resolved Objects</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Save_and_Import" xml:space="preserve">
+    <value>Save &amp; import</value>
+  </data>
+  <data name="Selected_Targeting_Type_Is_Not_Exist_In_Selected_Unresolve_Objects" xml:space="preserve">
+    <value>Note: Selected targeting type(s) is(are) not exist in the importing object set.</value>
+  </data>
+  <data name="No_Matches" xml:space="preserve">
+    <value>No Matches</value>
+  </data>
+  <data name="Resolve" xml:space="preserve">
+    <value>Resolve</value>
+  </data>
+  <data name="No_Match_Objects" xml:space="preserve">
+    <value>No Match Objects</value>
+  </data>
+  <data name="Objects_Resolution_is_irreversible_are_you_sure" xml:space="preserve">
+    <value>Object Resolution Operation is an irrevesible operation in this version; Are you sure you want to Resolve selected objects?</value>
+  </data>
+  <data name="Are_you_sure_you_want_to_close_object_resolution_wizard" xml:space="preserve">
+    <value>Are you sure  you want to close object resolution wizard?</value>
+  </data>
+  <data name="Continue_Resolution_Prompt" xml:space="preserve">
+    <value>Continue Resolution Prompt</value>
+  </data>
+  <data name="Finish_Prompt" xml:space="preserve">
+    <value>Finish Prompt</value>
+  </data>
+  <data name="Global_resolution_performed_on_all_objects_that_have_been_selected_for_global_resolution_and_all_objects_will_be_published" xml:space="preserve">
+    <value>Global resolution performed on all objects that have been selected for global resolution and all objects will be published.</value>
+  </data>
+  <data name="Global_resolution_performed_on_all_objects_that_have_been_selected_for_global_resolution_and_these_objects_will_be_published_with_no_Relationships_then_all_remaining_objects_will_passed_to_the_next_global_resolution_cycle" xml:space="preserve">
+    <value>Global resolution performed on {0} objects that have been selected for global resolution and these objects will be published with no relationships. Then all remaining objects ({1} objects) will be passed to the next global resolution cycle (pass </value>
+  </data>
+  <data name="Quit_Resolution_Wizard" xml:space="preserve">
+    <value>Quit Object Resolution Wizard</value>
+  </data>
+  <data name="Get_Resolution_Candidates_" xml:space="preserve">
+    <value>Get resolution randidates...</value>
+  </data>
+  <data name="Performing_Global_Resolution_" xml:space="preserve">
+    <value>Performing global resolution...</value>
+  </data>
+  <data name="Pass" xml:space="preserve">
+    <value>Pass</value>
+  </data>
+  <data name="Semicolon" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="Object_Filters" xml:space="preserve">
+    <value>Object Filters</value>
+  </data>
+  <data name="Search_Terms" xml:space="preserve">
+    <value>Search terms</value>
+  </data>
+  <data name="Step_One" xml:space="preserve">
+    <value>Step 1</value>
+  </data>
+  <data name="Step_Three" xml:space="preserve">
+    <value>Step 3</value>
+  </data>
+  <data name="Step_Two" xml:space="preserve">
+    <value>Step 2</value>
+  </data>
+  <data name="Resolution_Scope" xml:space="preserve">
+    <value>Resolution Scope</value>
+  </data>
+  <data name="Resolution_Types" xml:space="preserve">
+    <value>Resolution Types</value>
+  </data>
+  <data name="All_Selected" xml:space="preserve">
+    <value>all selected</value>
+  </data>
+  <data name="Due_to_publishing_the_selected_objects_in_the_previous_pass_you_must_publish_the_remaining_objects_even_without_Global_Resolution_to_retain_consistency_of_stored_objects" xml:space="preserve">
+    <value>Due to publishing the selected objects in the previous pass(es), you must publish the remaining objects even without Global Resolution to retain consistency of stored objects.</value>
+  </data>
+  <data name="Please_Enter_Your_Suite_Name" xml:space="preserve">
+    <value>Please enter your suite name:</value>
+  </data>
+  <data name="Resolve_All" xml:space="preserve">
+    <value>Resolve All</value>
+  </data>
+  <data name="Resolve_Unique" xml:space="preserve">
+    <value>Resolve Unique</value>
+  </data>
+  <data name="Publish_Prompt" xml:space="preserve">
+    <value>Publish Prompt</value>
+  </data>
+  <data name="No_Saved_Suite_Selected" xml:space="preserve">
+    <value>No saved suite selected</value>
+  </data>
+  <data name="Saving_new_resolution_suite_" xml:space="preserve">
+    <value>Saving new resolution suite...</value>
+  </data>
+  <data name="Nothing" xml:space="preserve">
+    <value>Nothing</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="ChangesColon" xml:space="preserve">
+    <value>Changes:</value>
+  </data>
+  <data name="CreateColon" xml:space="preserve">
+    <value>Create:</value>
+  </data>
+  <data name="AddedColon" xml:space="preserve">
+    <value>Added:</value>
+  </data>
+  <data name="Loading_resolution_suite_" xml:space="preserve">
+    <value>Loading resolution suite ...</value>
+  </data>
+  <data name="Unstructured_data_file_0_is_too_large_for_import" xml:space="preserve">
+    <value>Unstructured data file '{0}' is too large for import.</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName:</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="UserName_Or_Password_Is_Incorrect" xml:space="preserve">
+    <value>Username or password is incorrect.</value>
+  </data>
+  <data name="Upload_Failed" xml:space="preserve">
+    <value>Upload Failed. File already Exist.</value>
+  </data>
+  <data name="Unstructured_Data_Sources" xml:space="preserve">
+    <value>Unstructured Data Sources</value>
+  </data>
+  <data name="Unstructured_File_Count" xml:space="preserve">
+    <value>Unstructured File Count</value>
+  </data>
+  <data name="Publishing_Document_And_Showing_In_Graph" xml:space="preserve">
+    <value>Publishing document and showing in graph</value>
+  </data>
+  <data name="No_Document_SubType_Defined_In_Ontology" xml:space="preserve">
+    <value>No Document sub-type defined in ontology</value>
+  </data>
+  <data name="Add_folder_files" xml:space="preserve">
+    <value>Add Folder Files</value>
+  </data>
+  <data name="Select_the_folder_you_want_to_import_supported_files" xml:space="preserve">
+    <value>Select the folder you want to import supported files form it and it's sub-folders</value>
+  </data>
+  <data name="No_supported_file_found_in_selected_folder_and_its_subfolders" xml:space="preserve">
+    <value>No supported file found in selelcted folder (and it's subfolder(s))</value>
+  </data>
+  <data name="Path_is_not_exist_or_accessable" xml:space="preserve">
+    <value>Path is not exist or is not accessable</value>
+  </data>
+  <data name="You_can_not_define_Global_Resolution_for_unstructured_files_import" xml:space="preserve">
+    <value>You can not define Global Resolution for unstructured file(s) import</value>
+  </data>
+  <data name="All_Data_Sources" xml:space="preserve">
+    <value>All Data Sources</value>
+  </data>
+  <data name="One_or_more_unstructured_data_sources_not_published" xml:space="preserve">
+    <value>One or more unstructured data sources not published; For more details see error logs</value>
+  </data>
+  <data name="Publish_unstructured_data_source_s_" xml:space="preserve">
+    <value>Publish unstructured data source(s)</value>
+  </data>
+  <data name="File_0_Is_Empty" xml:space="preserve">
+    <value>File '{0}' is empty!</value>
+  </data>
+  <data name="File_Downloading_Prompt" xml:space="preserve">
+    <value>File Downloading Prompt</value>
+  </data>
+  <data name="There_is_no_file_for_the_document" xml:space="preserve">
+    <value>There is no file for the document.</value>
+  </data>
+  <data name="There_is_no_candidate_for_selected_type_but_resolotion_method_will_be_saved_in_global_resolution_suite" xml:space="preserve">
+    <value>There is no candidate for selected type but resolotion method will be saved in global resolution suite.</value>
+  </data>
+  <data name="Database_Selection_Window" xml:space="preserve">
+    <value>Database Selection Window</value>
+  </data>
+  <data name="Input_Dialog_Window" xml:space="preserve">
+    <value>Input Dialog Window</value>
+  </data>
+  <data name="Select_Database" xml:space="preserve">
+    <value>Select Database:</value>
+  </data>
+  <data name="Add_Database" xml:space="preserve">
+    <value>Add Database</value>
+  </data>
+  <data name="Database_Tables_And_Views_Are_Loading" xml:space="preserve">
+    <value>Database tables and views are loading.</value>
+  </data>
+  <data name="Database_URIs_Are_Loading" xml:space="preserve">
+    <value>Database URIs are loading.</value>
+  </data>
+  <data name="Selected_Map_Is_Not_Match_With_Selected_Data_Source" xml:space="preserve">
+    <value>Selected map is not match with selected data source.</value>
+  </data>
+  <data name="Are_you_sure_you_want_to_resolve_these_3_objects" xml:space="preserve">
+    <value>Are you sure you want to resolve these {0} objects?</value>
+  </data>
+  <data name="Select_the_object_whose_title_you_wish_to_keep" xml:space="preserve">
+    <value>Select the object whose title you wish to keep:</value>
+  </data>
+  <data name="This_operation_may_take_a_long_time" xml:space="preserve">
+    <value>This operation may take a long time.</value>
+  </data>
+  <data name="Graph_Resolution_Prompt" xml:space="preserve">
+    <value>Graph Resolution Prompt</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="Assign_Media" xml:space="preserve">
+    <value>Assign Media</value>
+  </data>
+  <data name="Do_You_Want_To_Remove_All_Objects_From_Map" xml:space="preserve">
+    <value>Do You Want To Remove Selected Objects From The Map?</value>
+  </data>
+  <data name="No_Database_Has_Been_Assigned_To_Import_By_Administrator" xml:space="preserve">
+    <value>No Database Has Been Assigned To Import By Administrator.</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Links_From_Graph" xml:space="preserve">
+    <value>Are you sure want to remove {0} Link(s) from Graph?</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Links_From_Cache" xml:space="preserve">
+    <value>Are you sure want to remove {0} Link(s) from Cache?</value>
+  </data>
+  <data name="Remove_Link" xml:space="preserve">
+    <value>Remove link</value>
+  </data>
+  <data name="Remove_Links" xml:space="preserve">
+    <value>Remove links</value>
+  </data>
+  <data name="Unable_To_Remove_Links_From_The_Graph" xml:space="preserve">
+    <value>Unable to remove Link(s) from the Graph:
+{0}</value>
+  </data>
+  <data name="CSV_files_separator_unicode_char_decimal_code" xml:space="preserve">
+    <value>CSV files separator unicode character decimal code:</value>
+  </data>
+  <data name="Change_" xml:space="preserve">
+    <value>Change...</value>
+  </data>
+  <data name="Csv_Separator" xml:space="preserve">
+    <value>CSV Separator</value>
+  </data>
+  <data name="Enter_a_Unicode_character_code_to_use_as_CSV_fields_separator_" xml:space="preserve">
+    <value>Enter a Unicode character code to use as CSV fields' separator:</value>
+  </data>
+  <data name="Preview_" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="Changing_the_CSV_field_separator_will_remove_any_probably_defined_mapping_in_Step_2" xml:space="preserve">
+    <value>Changing the CSV field separator will remove any probably mapping you defined in Step 2; Are you sure to change the separator?</value>
+  </data>
+  <data name="Representable_preview_" xml:space="preserve">
+    <value>Representable preview:</value>
+  </data>
+  <data name="Mismatch_Object_types_0" xml:space="preserve">
+    <value>Mismatch Object types: {0}</value>
+  </data>
+  <data name="Mismatch_Property_types_0" xml:space="preserve">
+    <value>Mismatch Property types: {0}</value>
+  </data>
+  <data name="Mismatch_Relationship_types_0" xml:space="preserve">
+    <value>Mismatch Relationship types: {0}</value>
+  </data>
+  <data name="Selected_Map_Is_Not_Match_With_Current_Ontology_" xml:space="preserve">
+    <value>Selected map is not match with current ontology;</value>
+  </data>
+  <data name="Are_You_Sure_Want_To_Remove_Objects_And_Links_From_Graph" xml:space="preserve">
+    <value>Are you sure want to remove {0} Object(s) and {1} Link(s) from Graph?</value>
+  </data>
+  <data name="Multi_Value" xml:space="preserve">
+    <value>Multi value property</value>
+  </data>
+  <data name="Sharing_Graph_" xml:space="preserve">
+    <value>Sharing Graph...</value>
+  </data>
+  <data name="Table_Value" xml:space="preserve">
+    <value>Table value</value>
+  </data>
+  <data name="Unable_To_Load_Published_Graphs_Inforamtion" xml:space="preserve">
+    <value>Unable to load published graphs informations:\n{0}</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Example" xml:space="preserve">
+    <value>Example:</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Output:</value>
+  </data>
+  <data name="Regular_Expression" xml:space="preserve">
+    <value>Regular Expression:</value>
+  </data>
+  <data name="Regular_Expression_Definition" xml:space="preserve">
+    <value>Regular Expression Definition</value>
+  </data>
+  <data name="Defined_criterias_for_the_importing_objects_results_too_many_candidates_" xml:space="preserve">
+    <value>Defined criterias for the importing objects results too many candidates; Check the criterias to be sufficiently precise.</value>
+  </data>
+  <data name="ContentAnalysis_Tab" xml:space="preserve">
+    <value>Content Analysis</value>
+  </data>
+  <data name="Loading_Tag_Cloud_" xml:space="preserve">
+    <value>Loading tag cloud...</value>
+  </data>
+  <data name="Retrieve_Document_Content_" xml:space="preserve">
+    <value>Retrieve document content...</value>
+  </data>
+  <data name="Invalid_Key_Phrase_Score" xml:space="preserve">
+    <value>Invalid key phrase score</value>
+  </data>
+  <data name="Invalid_Key_Phrase_Title" xml:space="preserve">
+    <value>Invalid key phrase title</value>
+  </data>
+  <data name="Detecting_Language_" xml:space="preserve">
+    <value>Detecting language...</value>
+  </data>
+  <data name="Loading_" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Unable_to_load_document_content" xml:space="preserve">
+    <value>Unable to load document content; For more details, see error logs.</value>
+  </data>
+  <data name="Unable_to_load_language_statistics" xml:space="preserve">
+    <value>Unable to load language statistics; for more details, see error logs.</value>
+  </data>
+  <data name="Unable_to_load_tag_cloud" xml:space="preserve">
+    <value>Unable to load Tag Cloud; For more details, see error logs.</value>
+  </data>
+  <data name="Path_Optioins" xml:space="preserve">
+    <value>Path Options</value>
+  </data>
+  <data name="Document_Path" xml:space="preserve">
+    <value>Document Path</value>
+  </data>
+  <data name="Column_Name" xml:space="preserve">
+    <value>Column Name</value>
+  </data>
+  <data name="Document_Path_Colon" xml:space="preserve">
+    <value>Document Path:</value>
+  </data>
+  <data name="Object_Properties_Colon" xml:space="preserve">
+    <value>Object Properties:</value>
+  </data>
+  <data name="Document_Numbers_Colon" xml:space="preserve">
+    <value>Document Numbers: </value>
+  </data>
+  <data name="Document_Path_Number_Colon" xml:space="preserve">
+    <value>Document Path {0}:</value>
+  </data>
+  <data name="Defined_import_is_too_large_and_also_includes_definitions_for_import_document_automatically" xml:space="preserve">
+    <value>Defined import is too large and also includes definitions for import document automatically; This kind of import must done server-side and INFRASTRUCTURE MUST HAS ACCESS THE PATH OF DOCUMENTS DEFINED IN YOUR IMPORT SOURCE OTHERWISE, DOCUMENTS WILL NOT IMPORT; To ensure the access, contact your admin.
+Are you sure starting this process?</value>
+  </data>
+  <data name="Mapping_is_not_completed_make_sure_defined_mapping_s_are_right" xml:space="preserve">
+    <value>Mapping is not completed; Make sure defined mapping(s) are right and display name is selected for all object maps.</value>
+  </data>
+  <data name="Unable_to_transform_selected_sample_data_row" xml:space="preserve">
+    <value>Unable to transform selected sample data row</value>
+  </data>
+  <data name="No_object_will_generate" xml:space="preserve">
+    <value>No object will generate</value>
+  </data>
+  <data name="Unable_to_show_more_than_one_object_" xml:space="preserve">
+    <value>Unable to show more than one object!</value>
+  </data>
+  <data name="No_document_will_generate" xml:space="preserve">
+    <value>No document will generate</value>
+  </data>
+  <data name="Defined_import_is_too_large_and_also_includes_definitions_for_import_from_data_lake" xml:space="preserve">
+    <value>Defined import is too large and also includes definitions for import from Data Lake; Currently your workspace will provide this kind of imports that may take long time and large anount of workspace resources.
+Are you sure starting this process?</value>
+  </data>
+  <data name="Busy" xml:space="preserve">
+    <value>Busy</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Category_Colon" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="Choose_a_Feed_Input" xml:space="preserve">
+    <value>Choose a Feed Input:</value>
+  </data>
+  <data name="Choose_File" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
+  <data name="Conditions" xml:space="preserve">
+    <value>Conditions:</value>
+  </data>
+  <data name="DataHeaders" xml:space="preserve">
+    <value>Data Headers:</value>
+  </data>
+  <data name="Data_Separator" xml:space="preserve">
+    <value>Data Separator</value>
+  </data>
+  <data name="Data_Streaming_Ingestioin" xml:space="preserve">
+    <value>Data Streaming Ingestioin:</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Executing_Query" xml:space="preserve">
+    <value>Executing Query</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="File_Ingestion" xml:space="preserve">
+    <value>File Ingestion:</value>
+  </data>
+  <data name="File_Path" xml:space="preserve">
+    <value>Selected file path:</value>
+  </data>
+  <data name="File_Separator" xml:space="preserve">
+    <value>File Separator:</value>
+  </data>
+  <data name="Import_To_Datalake" xml:space="preserve">
+    <value>Import to data lake</value>
+  </data>
+  <data name="Ingesting_File" xml:space="preserve">
+    <value>Ingesting File</value>
+  </data>
+  <data name="IP_Address" xml:space="preserve">
+    <value>IP Address:</value>
+  </data>
+  <data name="Job_Status" xml:space="preserve">
+    <value>Job Status</value>
+  </data>
+  <data name="Loading_Categories" xml:space="preserve">
+    <value>Loading Categories</value>
+  </data>
+  <data name="Loading_Preview_Data" xml:space="preserve">
+    <value>Loading Preview Data</value>
+  </data>
+  <data name="Loading_Related_Headers" xml:space="preserve">
+    <value>Loading related headers</value>
+  </data>
+  <data name="Not_Defined" xml:space="preserve">
+    <value>Not Defined</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port Number:</value>
+  </data>
+  <data name="Refresh_jobs_status" xml:space="preserve">
+    <value>Refresh jobs status</value>
+  </data>
+  <data name="SearchWithColon" xml:space="preserve">
+    <value>Search:</value>
+  </data>
+  <data name="Selected_File_Path" xml:space="preserve">
+    <value>Selected File Path:</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_Listenig_To_Streaaming_Data" xml:space="preserve">
+    <value>Start Listenig To Streaaming Data</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Stop_Listenig_To_Streaaming_Data" xml:space="preserve">
+    <value>Stop Listenig To Streaaming Data</value>
+  </data>
+  <data name="Streaming_Data_Separator" xml:space="preserve">
+    <value>Data Separator:</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="_0_objects_added_or_resolved_during_your_import_Do_you_want_to_show_them_on_graph" xml:space="preserve">
+    <value>{0} objects added/resolved during your import; Do you want to show them on graph?</value>
+  </data>
+  <data name="Already_a_processor_with_Port_Number_is_running" xml:space="preserve">
+    <value>Already a processor with Port Number = {0} is running.</value>
+  </data>
+  <data name="Processor_with_port_number_is_not_exist" xml:space="preserve">
+    <value>Processor with port number = {0} is not exist.</value>
+  </data>
+  <data name="Datalake" xml:space="preserve">
+    <value>Datalake</value>
+  </data>
+  <data name="Please_select_appropriate_category" xml:space="preserve">
+    <value>Please select appropriate category.</value>
+  </data>
+  <data name="Please_select_appropriate_category_and_date_time" xml:space="preserve">
+    <value>Please select appropriate category and date time.</value>
+  </data>
+  <data name="There_is_no_result_to_show" xml:space="preserve">
+    <value>There is no result to show.</value>
+  </data>
+  <data name="Headers_separator_must_be_separator" xml:space="preserve">
+    <value>Note: Headers separator must be ',' character</value>
+  </data>
+  <data name="Edit_Permisions" xml:space="preserve">
+    <value>Edit Permisions</value>
+  </data>
+  <data name="Manually_Entered_Data" xml:space="preserve">
+    <value>Manually Entered Data</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Owner:</value>
+  </data>
+  <data name="Read" xml:space="preserve">
+    <value>Rread:</value>
+  </data>
+  <data name="Write" xml:space="preserve">
+    <value>Write:</value>
+  </data>
+  <data name="User_Account_Control_Prompt" xml:space="preserve">
+    <value>User Account Control Prompt</value>
+  </data>
+  <data name="Classification" xml:space="preserve">
+    <value>Classification:</value>
+  </data>
+  <data name="No_Permissions" xml:space="preserve">
+    <value>No Permissions:</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Edit_Permissions" xml:space="preserve">
+    <value>Edit Permissions</value>
+  </data>
+  <data name="Set_user_access_permissions_on_the_data_you_re_importing" xml:space="preserve">
+    <value>2. Set user access permissions on the data you're importing.</value>
+  </data>
+  <data name="Publish_completed_but_search_indexes_were_not_updated_" xml:space="preserve">
+    <value>Publish completed but search indexes were not updated completely; It might affects the searches on imported data.</value>
+  </data>
+  <data name="Use_this_window_to_change_the_permissions_applied_by_the_Data_Importer_to_all_data_sources_you_import_into_your_investigation" xml:space="preserve">
+    <value>Use this window to change the permissions applied by the Data Importer to all data sources you import into your investigation.</value>
+  </data>
+  <data name="Make_Visible_To_This_Groups" xml:space="preserve">
+    <value>Make visible to this groups:</value>
+  </data>
+  <data name="Securing_Connection_" xml:space="preserve">
+    <value>Securing connection...</value>
+  </data>
+  <data name="Summarization_Tab" xml:space="preserve">
+    <value>Summarization</value>
+  </data>
+  <data name="Login_Failed" xml:space="preserve">
+    <value>Login failed</value>
+  </data>
+  <data name="Make_sure_the_Username_and_Password_are_correct_and_Time_of_your_computer_is_synchronized_with_the_server" xml:space="preserve">
+    <value>Make sure the 'User name' and 'Password' you used are correct and 'Time' of your computer is synchronized with the server</value>
+  </data>
+  <data name="Begin_Label" xml:space="preserve">
+    <value>Begin Time:</value>
+  </data>
+  <data name="End_Label" xml:space="preserve">
+    <value>End Time:</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude:</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude:</value>
+  </data>
+  <data name="Latitude_Label" xml:space="preserve">
+    <value>Latitude:</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Longitude_Label" xml:space="preserve">
+    <value>Longitude:</value>
+  </data>
+  <data name="Polygon_Search" xml:space="preserve">
+    <value>Polygon search</value>
+  </data>
+  <data name="Click_to_draw_polygon_" xml:space="preserve">
+    <value>Click to draw polygon.</value>
+  </data>
+  <data name="Date_Range_" xml:space="preserve">
+    <value>Date range: </value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="Object_Types_" xml:space="preserve">
+    <value>Object types: </value>
+  </data>
+  <data name="perimeter__" xml:space="preserve">
+    <value>perimeter: </value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="Property_Types_" xml:space="preserve">
+    <value>Property types: </value>
+  </data>
+  <data name="_points_with_comma_" xml:space="preserve">
+    <value> points, </value>
+  </data>
+  <data name="Circle_Search_Map" xml:space="preserve">
+    <value>Circle search</value>
+  </data>
+  <data name="Polygon_Search_Map" xml:space="preserve">
+    <value>Polygon search</value>
+  </data>
+  <data name="Route_Search_Map" xml:space="preserve">
+    <value>Route search</value>
+  </data>
+  <data name="Buffer_" xml:space="preserve">
+    <value>Buffer:</value>
+  </data>
+  <data name="Center_" xml:space="preserve">
+    <value>Center:</value>
+  </data>
+  <data name="Click_to_draw_route" xml:space="preserve">
+    <value>Click to draw route.</value>
+  </data>
+  <data name="Drag_to_move_or_resize_circle" xml:space="preserve">
+    <value>Drag to move or resize circle.</value>
+  </data>
+  <data name="length_" xml:space="preserve">
+    <value>length:</value>
+  </data>
+  <data name="Radious_" xml:space="preserve">
+    <value>Radious:</value>
+  </data>
+  <data name="Radius_Search" xml:space="preserve">
+    <value>Radius search</value>
+  </data>
+  <data name="Route_Search" xml:space="preserve">
+    <value>Route search</value>
+  </data>
+  <data name="Search_Setting" xml:space="preserve">
+    <value>Search setting</value>
+  </data>
+  <data name="Geo_Search" xml:space="preserve">
+    <value>Geo search</value>
+  </data>
+  <data name="Paragraph_s" xml:space="preserve">
+    <value>Paragraph(s)</value>
+  </data>
+  <data name="Performing_Geographical_Search_" xml:space="preserve">
+    <value>Performing geographical search...</value>
+  </data>
+  <data name="Percent_s" xml:space="preserve">
+    <value>Percent(s)</value>
+  </data>
+  <data name="Summarization_Rate" xml:space="preserve">
+    <value>Summarization rate:</value>
+  </data>
+  <data name="Unable_to_load_language_summarization" xml:space="preserve">
+    <value>Unable to load language summarization.</value>
+  </data>
+  <data name="loading_Summarize" xml:space="preserve">
+    <value>Loading Summarize</value>
+  </data>
+  <data name="_No_Title_" xml:space="preserve">
+    <value>[No Title]</value>
+  </data>
+  <data name="Set_Document_Name_As_Display_Name" xml:space="preserve">
+    <value>Set file name as display name</value>
+  </data>
+  <data name="Can_not_import_file" xml:space="preserve">
+    <value>Can not import file: {0}.</value>
+  </data>
+  <data name="InvariantCultureName" xml:space="preserve">
+    <value>&lt;Invariant&gt;</value>
+  </data>
+  <data name="DateTime_Patterns" xml:space="preserve">
+    <value>DateTime Patterns:</value>
+  </data>
+  <data name="Unable_to_load_saved_global_resolution_suite_s_" xml:space="preserve">
+    <value>Unable to load saved Global Resolution Suite(s).</value>
+  </data>
+  <data name="Continue_anyway_" xml:space="preserve">
+    <value>Continue anyway?</value>
+  </data>
+  <data name="Loading_Global_Resolution_Suite_s_" xml:space="preserve">
+    <value>Loading Global Resolution Suite(s)...</value>
+  </data>
+  <data name="Property_Value_Criterias" xml:space="preserve">
+    <value>Property value criterias:</value>
+  </data>
+  <data name="Like_Operator" xml:space="preserve">
+    <value>Like</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="SaveAndSearch" xml:space="preserve">
+    <value>Save &amp; search</value>
+  </data>
+  <data name="Custom_Search_Around_Mapping" xml:space="preserve">
+    <value>Custom Search Around Mapping</value>
+  </data>
+  <data name="Unable_To_Save_Custom_Search_Around_Mapping" xml:space="preserve">
+    <value>Unable to save custom search around mapping.</value>
+  </data>
+  <data name="Performing_Custom_SearchAround" xml:space="preserve">
+    <value>Performing custom search around.</value>
+  </data>
+  <data name="Prepare_SearchAround_Results_" xml:space="preserve">
+    <value>Prepare Search-Around results...</value>
+  </data>
+  <data name="Source_Set" xml:space="preserve">
+    <value>Source Set</value>
+  </data>
+  <data name="Unable_to_load_saved_Custom_Search_Around_Mapping" xml:space="preserve">
+    <value>Unable to load saved custom search around mapping.</value>
+  </data>
+  <data name="Mismatch_Link_types_0" xml:space="preserve">
+    <value>Mismatch Link (Relationship/Event) types: {0}</value>
+  </data>
+  <data name="Imagery" xml:space="preserve">
+    <value>Map server</value>
+  </data>
+  <data name="Source_" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="No_map_tile_source_defined" xml:space="preserve">
+    <value>No map tile source defined!</value>
+  </data>
+  <data name="Loading_map_tiles_" xml:space="preserve">
+    <value>Loading map tiles...</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Loading_Data_Sources" xml:space="preserve">
+    <value>Loading {0} data sources.</value>
+  </data>
+  <data name="Loading_More_Data_Sources" xml:space="preserve">
+    <value>Loading more data sources.</value>
+  </data>
+  <data name="Loading_All_Data_Sources" xml:space="preserve">
+    <value>Loading data sources.</value>
+  </data>
+  <data name="Created_Time" xml:space="preserve">
+    <value>Created time</value>
+  </data>
+  <data name="DataSource_Download" xml:space="preserve">
+    <value>DataSource Download</value>
+  </data>
+  <data name="Unable_to_load_saved_mapping_because_selected_objecs_are_not_match_with_saved_mapping" xml:space="preserve">
+    <value>Unable to load saved mapping because selected objects are not match with saved mapping.</value>
+  </data>
+  <data name="No_Object" xml:space="preserve">
+    <value>No Object</value>
+  </data>
+  <data name="Loading_objects_geo_loacations" xml:space="preserve">
+    <value>Loading objects geo loacations.</value>
+  </data>
+  <data name="Showing_objects_on_map_application" xml:space="preserve">
+    <value>Showing objects on map application.</value>
+  </data>
+  <data name="Loading_custom_search_around_map" xml:space="preserve">
+    <value>Loading custom search around map</value>
+  </data>
+  <data name="Saving_custom_search_around_map" xml:space="preserve">
+    <value>Saving custom search around map</value>
+  </data>
+  <data name="Unpublished_concepts_can_not_be_searched" xml:space="preserve">
+    <value>Unpublished concepts can not be searched.</value>
+  </data>
+  <data name="Unpublish_Concepts_Notification" xml:space="preserve">
+    <value>Unpublish Concepts Notification</value>
+  </data>
+  <data name="Heatmap" xml:space="preserve">
+    <value>Heatmap</value>
+  </data>
+  <data name="Advanced_Settings" xml:space="preserve">
+    <value>Advanced settings</value>
+  </data>
+  <data name="All_data_points" xml:space="preserve">
+    <value>All data points</value>
+  </data>
+  <data name="Areal_Unit" xml:space="preserve">
+    <value>Areal Unit   </value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="data_points_contributing_values" xml:space="preserve">
+    <value>data points contributing values</value>
+  </data>
+  <data name="Density_Radius" xml:space="preserve">
+    <value>Density radius</value>
+  </data>
+  <data name="Hide_Heatmap" xml:space="preserve">
+    <value>Hide heatmap</value>
+  </data>
+  <data name="least_dense" xml:space="preserve">
+    <value>least dense</value>
+  </data>
+  <data name="Legend" xml:space="preserve">
+    <value>Legend</value>
+  </data>
+  <data name="most_dense" xml:space="preserve">
+    <value>most dense</value>
+  </data>
+  <data name="Opacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="Property_value_2" xml:space="preserve">
+    <value>Property value:</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="scale" xml:space="preserve">
+    <value>scale</value>
+  </data>
+  <data name="Selected_data_points" xml:space="preserve">
+    <value>Selected data points</value>
+  </data>
+  <data name="Show_Heatmap" xml:space="preserve">
+    <value>Show heatmap</value>
+  </data>
+  <data name="Spectrum" xml:space="preserve">
+    <value>Spectrum</value>
+  </data>
+  <data name="There_is_no_data_to_generate_a_Heatmap" xml:space="preserve">
+    <value>There is no data to generate a heatmap</value>
+  </data>
+  <data name="The_Density_Radius_does_not_match_the_Areal_Unit" xml:space="preserve">
+    <value>The density radius does not match the areal unit</value>
+  </data>
+  <data name="Value_for_each_data_points" xml:space="preserve">
+    <value>Value for each data points</value>
+  </data>
+  <data name="Custum_Search_Around_Result_More_Than_Threshold_OK_Cancel" xml:space="preserve">
+    <value>Custum Search-Around results are more than threshold and some results will not retrieve at all;
+Click 'OK' to ignore the deficiency, or
+Click 'Cancel' to continue Search-Around definition.</value>
+  </data>
+  <data name="Tag_Cloud" xml:space="preserve">
+    <value>Tag Cloud</value>
+  </data>
+  <data name="Generate" xml:space="preserve">
+    <value>Generate tag cloud</value>
+  </data>
+  <data name="Properties_" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="The_Number_Of_Objects_With_GeoTime_Property_Is_Less_Than_Objects_Retrieved" xml:space="preserve">
+    <value>{0} Object(s) retrieved and {1} object(s) has(have) GeoDate property.</value>
+  </data>
+  <data name="Loading_heatmap_" xml:space="preserve">
+    <value>Loading heatmap...</value>
+  </data>
+  <data name="There_is_no_result_for_this_query" xml:space="preserve">
+    <value>There is no result for this query.</value>
+  </data>
+  <data name="Best_Slow" xml:space="preserve">
+    <value>Best/Slow</value>
+  </data>
+  <data name="Good_Fast" xml:space="preserve">
+    <value>Good/Fast</value>
+  </data>
+  <data name="Hide_map_points_and_labels" xml:space="preserve">
+    <value>Hide map points and labels</value>
+  </data>
+  <data name="Numbersign_Colors" xml:space="preserve">
+    <value># Colors</value>
+  </data>
+  <data name="Show_scale_on_map" xml:space="preserve">
+    <value>Show scale on map</value>
+  </data>
+  <data name="Smoothing" xml:space="preserve">
+    <value>Smoothing</value>
+  </data>
+  <data name="Color_Scale" xml:space="preserve">
+    <value>Color Scale</value>
+  </data>
+  <data name="Heatmap_Type" xml:space="preserve">
+    <value>Heatmap type</value>
+  </data>
+  <data name="Choose_Image_Files_To_Upload" xml:space="preserve">
+    <value>Choose image files to upload</value>
+  </data>
+  <data name="Image_Analysis_Application" xml:space="preserve">
+    <value>Image Analysis Application</value>
+  </data>
+  <data name="or_drag_and_drop_them_here" xml:space="preserve">
+    <value>or drag and drop them here</value>
+  </data>
+  <data name="Extracting_Faces" xml:space="preserve">
+    <value>Extracting faces</value>
+  </data>
+  <data name="Recognizing_Faces" xml:space="preserve">
+    <value>Recognizing Faces</value>
+  </data>
+  <data name="Retrieved_Image_" xml:space="preserve">
+    <value>Retrieved image</value>
+  </data>
+  <data name="Search_Results_" xml:space="preserve">
+    <value>Search results</value>
+  </data>
+  <data name="Load_In_Image_Analysis_Application" xml:space="preserve">
+    <value>Image analysis</value>
+  </data>
+  <data name="Linear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="Percentile" xml:space="preserve">
+    <value>Percentile</value>
+  </data>
+  <data name="Presentation" xml:space="preserve">
+    <value>Presentation</value>
+  </data>
+  <data name="Scale2" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="Only_positive_and_valid_numerical_values_are_effective" xml:space="preserve">
+    <value>Only positive and valid numerical values are effective.</value>
+  </data>
+  <data name="Search_Around_Result_More_Than_Threshold_" xml:space="preserve">
+    <value>Search-Around results are more than threshold and some results will not retrieve at all.</value>
+  </data>
+  <data name="For_each_searched_object__a_maximum_of_NUMBER_results_are_loaded_and_there_are_more_results_to_display_" xml:space="preserve">
+    <value>For each searched object, a maximum of {0} results are loaded and there are more results to display.</value>
+  </data>
+  <data name="Load_more_" xml:space="preserve">
+    <value>Load more</value>
+  </data>
+  <data name="No__That_s_enough_" xml:space="preserve">
+    <value>No! That's enough.</value>
+  </data>
+  <data name="NUMBER_links_have_been_unmerged_from_links_between_two_objects_and_there_are_more_links_to_unmerge_" xml:space="preserve">
+    <value>{0} links have been unmerged from links between two objects and there are more links to unmerge.</value>
+  </data>
+  <data name="Unmerge_more_" xml:space="preserve">
+    <value>Unmerge more</value>
+  </data>
+  <data name="Would_you_like_to_load_more_results_" xml:space="preserve">
+    <value>Would you like to load more results?</value>
+  </data>
+  <data name="Would_you_like_to_unmerge_more_links_" xml:space="preserve">
+    <value>Would you like to unmerge more links?</value>
+  </data>
+  <data name="Yes__Unmerge_all_links___Up_to_NUMBER_links_" xml:space="preserve">
+    <value>Yes! Unmerge all links. (Up to {0} links)</value>
+  </data>
+  <data name="Yes__Load_all_results___Up_to_NUMBER_results_" xml:space="preserve">
+    <value>Yes! Load all results. (Up to {0} results)</value>
+  </data>
+  <data name="Yes__Load_up_to_NUMBER_results_" xml:space="preserve">
+    <value>Yes! Load up to {0} results.</value>
+  </data>
+  <data name="Yes__Unmerge_up_to_NUMBER_links_" xml:space="preserve">
+    <value>Yes! Unmerge up to {0} links.</value>
+  </data>
+  <data name="Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="Show_All" xml:space="preserve">
+    <value>Show all</value>
+  </data>
+  <data name="There_are_more_relationships_that_can_not_be_displayed_" xml:space="preserve">
+    <value>There are more relationships that can not be displayed.</value>
+  </data>
+  <data name="objects" xml:space="preserve">
+    <value>objects</value>
+  </data>
+  <data name="Preparing_Unmerge_" xml:space="preserve">
+    <value>Preparing Unmerge...</value>
+  </data>
+  <data name="Recompute_Set_Contents" xml:space="preserve">
+    <value>Recompute set contents</value>
+  </data>
+  <data name="Select_this_Set" xml:space="preserve">
+    <value>Select this set</value>
+  </data>
+  <data name="Object_Explorer_Application" xml:space="preserve">
+    <value>Object Explorer Application</value>
+  </data>
+  <data name="Recomputing_statistics_by_executing_statistical_query" xml:space="preserve">
+    <value>Recomputing statistics by executing statistical query.</value>
+  </data>
+  <data name="Executing_statistical_query" xml:space="preserve">
+    <value>Executing statistical query</value>
+  </data>
+  <data name="Apply_Formula" xml:space="preserve">
+    <value>Apply Formula</value>
+  </data>
+  <data name="Apply_formula_that_generated_second_set_to_first_set_" xml:space="preserve">
+    <value>Apply formula that generated second set to first set.</value>
+  </data>
+  <data name="Combines_both_sets_into_one_" xml:space="preserve">
+    <value>Combines both sets into one.</value>
+  </data>
+  <data name="Exclusive_Or" xml:space="preserve">
+    <value>Exclusive Or</value>
+  </data>
+  <data name="Finds_all_items_in_both_sets_" xml:space="preserve">
+    <value>Finds all items in both sets.</value>
+  </data>
+  <data name="Finds_all_of_the_items_in_the_first_set_that_aren_t_in_the_second_set_" xml:space="preserve">
+    <value>Finds all of the items in the first set that aren't in the second set.</value>
+  </data>
+  <data name="Finds_all_of_the_items_in_the_second_set_that_aren_t_in_the_first_set_" xml:space="preserve">
+    <value>Finds all of the items in the second set that aren't in the first set.</value>
+  </data>
+  <data name="Finds_all_of_the_items_that_are_in_either_set_but_not_both_" xml:space="preserve">
+    <value>Finds all of the items that are in either set but not both.</value>
+  </data>
+  <data name="Intersection" xml:space="preserve">
+    <value>Intersection</value>
+  </data>
+  <data name="Set_Algebra" xml:space="preserve">
+    <value>Set algebra</value>
+  </data>
+  <data name="Subtract_Left" xml:space="preserve">
+    <value>Subtract Left</value>
+  </data>
+  <data name="Subtract_Right" xml:space="preserve">
+    <value>Subtract Right</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>Union</value>
+  </data>
+  <data name="Filter_Property_of_Type_" xml:space="preserve">
+    <value>Filter property of type:</value>
+  </data>
+  <data name="Property_Matched_Value_Filter" xml:space="preserve">
+    <value>Property matched value filter</value>
+  </data>
+  <data name="Select_a_visualization_of_filter_below_to_visualize_of_filter_the_current_set_of_objects" xml:space="preserve">
+    <value>Select a visualization of filter below to visualize of filter the current set of objects</value>
+  </data>
+  <data name="Use_the_types_menu_at_right_to_select_specific_object_of_property_types_for_viewing" xml:space="preserve">
+    <value>Use the types menu at right to select specific object of property types for viewing</value>
+  </data>
+  <data name="Chart" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+  <data name="Chart_of_numeric_values_for_a_specific_property" xml:space="preserve">
+    <value>Chart of numeric values for a specific property</value>
+  </data>
+  <data name="Group_By" xml:space="preserve">
+    <value>Group by</value>
+  </data>
+  <data name="Histogram_of_aggregated_values_grouped_by_a_second_value" xml:space="preserve">
+    <value>Histogram of aggregated values grouped by a second value</value>
+  </data>
+  <data name="Histogram_of_link_types_from_objects_in_this_data_set" xml:space="preserve">
+    <value>Histogram of link types from objects in this data set</value>
+  </data>
+  <data name="Histogram_of_property_values_in_this_data_set" xml:space="preserve">
+    <value>Histogram of property values in this data set</value>
+  </data>
+  <data name="Link_Type_Histogram" xml:space="preserve">
+    <value>Link type histogram</value>
+  </data>
+  <data name="Pie_Chart" xml:space="preserve">
+    <value>Pie chart</value>
+  </data>
+  <data name="Pie_Chart_of_the_values_for_an_enumerable_property" xml:space="preserve">
+    <value>Pie chart of the values for an enumerable property</value>
+  </data>
+  <data name="Property_Value_Histogram" xml:space="preserve">
+    <value>Property value histogram</value>
+  </data>
+  <data name="Tile_Line" xml:space="preserve">
+    <value>Timeline</value>
+  </data>
+  <data name="Timeline_showing_event_document_and_property_times_in_this_data_set" xml:space="preserve">
+    <value>Timeline showing event document and property times in this data set</value>
+  </data>
+  <data name="Note__Matching_is_not_Case_Sensitive_" xml:space="preserve">
+    <value>Note: Matching is not Case-Sensitive.</value>
+  </data>
+  <data name="With_matched_value__" xml:space="preserve">
+    <value>With matched value:</value>
+  </data>
+  <data name="Drill_Down" xml:space="preserve">
+    <value>Drill down</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>And</value>
+  </data>
+  <data name="Has_property_type" xml:space="preserve">
+    <value>Has property type</value>
+  </data>
+  <data name="No_set" xml:space="preserve">
+    <value>No set</value>
+  </data>
+  <data name="ObjectsMatchingOneOfTheDefinedPropertyValues_" xml:space="preserve">
+    <value>Objects matching one of the defined Property-Values:</value>
+  </data>
+  <data name="Of_type_" xml:space="preserve">
+    <value>Of type:</value>
+  </data>
+  <data name="No_singgle_value_occurs_more_than_times_in_this_data_set" xml:space="preserve">
+    <value>No singgle value occurs more than {0} times in this data set.</value>
+  </data>
+  <data name="matching" xml:space="preserve">
+    <value>matching</value>
+  </data>
+  <data name="not_matching" xml:space="preserve">
+    <value>not matching</value>
+  </data>
+  <data name="regex" xml:space="preserve">
+    <value>regex</value>
+  </data>
+  <data name="string_" xml:space="preserve">
+    <value>string</value>
+  </data>
+  <data name="Showing_Link_Type_Histogram" xml:space="preserve">
+    <value>Showing link type histogram.</value>
+  </data>
+  <data name="Drag_an_area_on_the_chart_for_drill_down_" xml:space="preserve">
+    <value>Drag an area on the chart for drill down.</value>
+  </data>
+  <data name="Showing_Property_Value_Histogram" xml:space="preserve">
+    <value>Showing property value histogram.</value>
+  </data>
+  <data name="Log_axis" xml:space="preserve">
+    <value>Log axis</value>
+  </data>
+  <data name="Selected_range__" xml:space="preserve">
+    <value>Selected range: </value>
+  </data>
+  <data name="Show_crosshairs" xml:space="preserve">
+    <value>Show crosshairs</value>
+  </data>
+  <data name="buckets_from" xml:space="preserve">
+    <value>buckets from</value>
+  </data>
+  <data name="Recalculate_Buckets" xml:space="preserve">
+    <value>Recalculate buckets</value>
+  </data>
+  <data name="Restore_Default" xml:space="preserve">
+    <value>Restore default</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="Add_Current_Selection_to_Graph" xml:space="preserve">
+    <value>Add Current Selection to Graph</value>
+  </data>
+  <data name="Add_Current_Selection_to_Map" xml:space="preserve">
+    <value>Add Current Selection to Map</value>
+  </data>
+  <data name="Clear_All_Selections" xml:space="preserve">
+    <value>Clear all selections</value>
+  </data>
+  <data name="Drill_Down_on_Current_Selections___N__Group_" xml:space="preserve">
+    <value>Drill Down on Current Selections ({0} Group)</value>
+  </data>
+  <data name="Saved_Investigation" xml:space="preserve">
+    <value>Saved investigation</value>
+  </data>
+  <data name="Save_Current_Investigation" xml:space="preserve">
+    <value>Save Current Investigation</value>
+  </data>
+  <data name="Saved_Investigation_Window" xml:space="preserve">
+    <value>Saved investigation Window</value>
+  </data>
+  <data name="Save_Current_Investigation_Window" xml:space="preserve">
+    <value>Save Current Investigation Window</value>
+  </data>
+  <data name="Current_Investigation_Saved" xml:space="preserve">
+    <value>Current investigation saved.</value>
+  </data>
+  <data name="Investigation_Description" xml:space="preserve">
+    <value>Investigation description:</value>
+  </data>
+  <data name="Investigation_Title" xml:space="preserve">
+    <value>Investigation title:</value>
+  </data>
+  <data name="Save_Investigation" xml:space="preserve">
+    <value>Save investigation</value>
+  </data>
+  <data name="Saving_Current_Investigation" xml:space="preserve">
+    <value>Saving investigation</value>
+  </data>
+  <data name="Unable_To_Save_Current_Investigation" xml:space="preserve">
+    <value>Unable to save current investigation.</value>
+  </data>
+  <data name="Load_Investigation" xml:space="preserve">
+    <value>Load investigation</value>
+  </data>
+  <data name="Loading_Saved_Investigations" xml:space="preserve">
+    <value>Loading saved investigations.</value>
+  </data>
+  <data name="Loading_Saved_Investigation_Graph_Image" xml:space="preserve">
+    <value>Loading saved investigation graph image.</value>
+  </data>
+  <data name="Loading_Saved_Investigation_Status" xml:space="preserve">
+    <value>Loading saved investigation status.</value>
+  </data>
+  <data name="CreatedBy_" xml:space="preserve">
+    <value>CreatedBy:</value>
+  </data>
+  <data name="There_is_not_any_saved_investigation" xml:space="preserve">
+    <value>There is not any saved investigation.</value>
+  </data>
+  <data name="Selected_Investigation_Loaded_Successfully" xml:space="preserve">
+    <value>Selected investigation loaded successfully.</value>
+  </data>
+  <data name="Checking_Conditions_To_Open_Right_Click_Menu" xml:space="preserve">
+    <value>Checking conditions ...</value>
+  </data>
+  <data name="Upload__eml_files_failed_with_exception_0_Do_you_want_to_retry" xml:space="preserve">
+    <value>Upload .eml file(s) failed:
+{0}.
+Do you want to retry uploading (Select "No", means ignore importing the file data)?</value>
+  </data>
+  <data name="Take_Snapshot" xml:space="preserve">
+    <value>Take snapshot</value>
+  </data>
+  <data name="Snapshot_saved_successfully_" xml:space="preserve">
+    <value>Snapshot saved successfully.</value>
+  </data>
+  <data name="Do_you_want_to_display_image_" xml:space="preserve">
+    <value>Do you want to display image?</value>
+  </data>
+  <data name="All_supported_unstructured_files" xml:space="preserve">
+    <value>All supported unstructured files</value>
+  </data>
+  <data name="Email_s_" xml:space="preserve">
+    <value>E-Mail(s)</value>
+  </data>
+  <data name="Email_s_datasource" xml:space="preserve">
+    <value>E-Mail(s) Data Source</value>
+  </data>
+  <data name="Unable_to_define_New_Global_Resolution_for_multiple_import_sources" xml:space="preserve">
+    <value>Unable to define New Global Resolution for multiple import sources</value>
+  </data>
+  <data name="Opening_0" xml:space="preserve">
+    <value>Opening {0}</value>
+  </data>
+  <data name="Unable_to_load_configuration_0_" xml:space="preserve">
+    <value>Unable to load configuration '{0}'.</value>
+  </data>
+  <data name="Add_a_new_directory_to_the_beginning_of_the_path" xml:space="preserve">
+    <value>Add a new directory to the beginning of the path</value>
+  </data>
+  <data name="Add_a_new_directory_to_the_end_of_the_path" xml:space="preserve">
+    <value>Add a new directory to the end of the path</value>
+  </data>
+  <data name="Apply_regular_expression" xml:space="preserve">
+    <value>Apply regular expression</value>
+  </data>
+  <data name="Computer_name" xml:space="preserve">
+    <value>Computer name</value>
+  </data>
+  <data name="Directory" xml:space="preserve">
+    <value>Directory</value>
+  </data>
+  <data name="Drive_name" xml:space="preserve">
+    <value>Drive name</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="File_name" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="Full_path" xml:space="preserve">
+    <value>Full path</value>
+  </data>
+  <data name="Path_" xml:space="preserve">
+    <value>Path:</value>
+  </data>
+  <data name="Path_part_from_begin" xml:space="preserve">
+    <value>Path-part from begin</value>
+  </data>
+  <data name="Path_part_from_end" xml:space="preserve">
+    <value>Path-part from end</value>
+  </data>
+  <data name="Path_Part_Selection_Window" xml:space="preserve">
+    <value>Path Part Selection Window</value>
+  </data>
+  <data name="Result_" xml:space="preserve">
+    <value>Result:</value>
+  </data>
+  <data name="Select_the_part_of_the_path_you_want_to_extract_from_the_metadata_" xml:space="preserve">
+    <value>Select the part of the path you want to extract from the metadata.</value>
+  </data>
+  <data name="This_directory_is_not_in_the_current_path" xml:space="preserve">
+    <value>This directory is not in the current path</value>
+  </data>
+  <data name="This_value_will_be_determined_by_the_source_file_address_on_your_computer_" xml:space="preserve">
+    <value>This value will be determined by the source file address on your computer.</value>
+  </data>
+  <data name="Load_Mapping" xml:space="preserve">
+    <value>Load mapping</value>
+  </data>
+  <data name="Load_Mapping_For_All" xml:space="preserve">
+    <value>Load mapping for all semi structured data sources</value>
+  </data>
+  <data name="Data_source_path_based_value" xml:space="preserve">
+    <value>Data source path-based value</value>
+  </data>
+  <data name="Unable_to_get_direction_for_links_with_different_source_and_target" xml:space="preserve">
+    <value>Unable to get direction for links with different source and target</value>
+  </data>
+  <data name="_0_event" xml:space="preserve">
+    <value>{0} event</value>
+  </data>
+  <data name="_0_events" xml:space="preserve">
+    <value>{0} events</value>
+  </data>
+  <data name="_0_relationship" xml:space="preserve">
+    <value>{0} relationship</value>
+  </data>
+  <data name="_0_relationships" xml:space="preserve">
+    <value>{0} relationships</value>
+  </data>
+  <data name="_0_same_properties" xml:space="preserve">
+    <value>{0} same properties</value>
+  </data>
+  <data name="_0_same_property" xml:space="preserve">
+    <value>{0} same property</value>
+  </data>
+  <data name="_and_0_more_event" xml:space="preserve">
+    <value>, and {0} more event</value>
+  </data>
+  <data name="_and_0_more_events" xml:space="preserve">
+    <value>, and {0} more events</value>
+  </data>
+  <data name="_and_0_more_relationship" xml:space="preserve">
+    <value>, and {0} more relationship</value>
+  </data>
+  <data name="_and_0_more_relationships" xml:space="preserve">
+    <value>, and {0} more relationships</value>
+  </data>
+  <data name="_and_0_more_same_properties" xml:space="preserve">
+    <value>, and {0} more same properties</value>
+  </data>
+  <data name="_and_0_more_same_property" xml:space="preserve">
+    <value>, and {0} more same property</value>
+  </data>
+  <data name="__0_" xml:space="preserve">
+    <value>, {0}</value>
+  </data>
+  <data name="Link_ends_are_not_match_with_the_edge" xml:space="preserve">
+    <value>Link ends are not match with the Edge</value>
+  </data>
+  <data name="All_objects" xml:space="preserve">
+    <value>All objects</value>
+  </data>
+  <data name="Animated" xml:space="preserve">
+    <value>Animated</value>
+  </data>
+  <data name="Animation" xml:space="preserve">
+    <value>Animation</value>
+  </data>
+  <data name="Flow_" xml:space="preserve">
+    <value>Flow:</value>
+  </data>
+  <data name="Flow_Color_" xml:space="preserve">
+    <value>Flow color</value>
+  </data>
+  <data name="Flow_Options" xml:space="preserve">
+    <value>Flow options</value>
+  </data>
+  <data name="Hide_Flows" xml:space="preserve">
+    <value>Hide flows</value>
+  </data>
+  <data name="Scale_visualization_to_flow_value" xml:space="preserve">
+    <value>Scale visualization to flow value</value>
+  </data>
+  <data name="Selected_objects" xml:space="preserve">
+    <value>Selected objects</value>
+  </data>
+  <data name="Show_Flows" xml:space="preserve">
+    <value>Show flows</value>
+  </data>
+  <data name="Show_flows_for_" xml:space="preserve">
+    <value>Show flows for:</value>
+  </data>
+  <data name="Speed_" xml:space="preserve">
+    <value>Speed:</value>
+  </data>
+  <data name="Static" xml:space="preserve">
+    <value>Static</value>
+  </data>
+  <data name="Visualization_" xml:space="preserve">
+    <value>Visualization</value>
+  </data>
+  <data name="Total_Events_Count" xml:space="preserve">
+    <value>Total events count</value>
+  </data>
+  <data name="Value__Count_" xml:space="preserve">
+    <value>Value (count)</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Untitled</value>
+  </data>
+  <data name="Flows" xml:space="preserve">
+    <value>Flows</value>
+  </data>
+  <data name="Branching_History" xml:space="preserve">
+    <value>Branching History</value>
+  </data>
+  <data name="According_to_applied_settings_you_have_not_write_permission_on_imported_data" xml:space="preserve">
+    <value>Note: According to applied settings you haven't "write" permission on imported data.</value>
+  </data>
+  <data name="Only_one_object_will_generate_by_the_mapping" xml:space="preserve">
+    <value>Only one object will generate by the mapping.</value>
+  </data>
+  <data name="Unable_to_load_saved_mapping_because_selected_datasource_are_not_match_with_saved_mapping" xml:space="preserve">
+    <value>Unable to load saved mapping because selected data source are not match with saved mapping.</value>
+  </data>
+  <data name="Unable_to_load_saved_mapping_for_datasources_because_are_not_match_with_saved_mapping" xml:space="preserve">
+    <value>Unable to load saved mapping for {0} data sources because they are not match with saved mapping.</value>
+  </data>
+  <data name="Service_is_not_available" xml:space="preserve">
+    <value>Service is not available</value>
+  </data>
+  <data name="Choose_a_character" xml:space="preserve">
+    <value>Choose a character</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="Select_a_character_to_use_as_CSV_fields_separator" xml:space="preserve">
+    <value>Select a character to use as CSV fields separator</value>
+  </data>
+  <data name="Click_the_button_to_load_related_links" xml:space="preserve">
+    <value>Click the button to load related links</value>
+  </data>
+  <data name="Load_All_Links" xml:space="preserve">
+    <value>Load all links</value>
+  </data>
+  <data name="Begin_date_must_be_smaller_than_end_date_" xml:space="preserve">
+    <value>Begin date must be smaller than end date.</value>
+  </data>
+  <data name="End_date_must_be_greater_than_begin_date_" xml:space="preserve">
+    <value>End date must be greater than begin date.</value>
+  </data>
+  <data name="InValid" xml:space="preserve">
+    <value>InValid</value>
+  </data>
+  <data name="Select_an_object_type_from_list_" xml:space="preserve">
+    <value>Select an object type from list.</value>
+  </data>
+  <data name="Select_a_property_type_from_list_" xml:space="preserve">
+    <value>Select a property type from list.</value>
+  </data>
+  <data name="Container_" xml:space="preserve">
+    <value>Container</value>
+  </data>
+  <data name="Container_Filter" xml:space="preserve">
+    <value>Container filter</value>
+  </data>
+  <data name="String_Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="String_Target" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="String_GettingTheInvestigationListFailed" xml:space="preserve">
+    <value>Getting the investigation list failed</value>
+  </data>
+  <data name="String_LoadInvestigation" xml:space="preserve">
+    <value>Load investigation</value>
+  </data>
+  <data name="StringRemoveDataSources" xml:space="preserve">
+    <value>Are you sure you want to remove the selected data sources?</value>
+  </data>
+  <data name="String_ClearAllMapping" xml:space="preserve">
+    <value>Are you sure you want to clear all objects and relations?</value>
+  </data>
+  <data name="Enter_Character" xml:space="preserve">
+    <value>Enter Character</value>
+  </data>
+  <data name="Preview_the_result" xml:space="preserve">
+    <value>Preview the result of the selected character</value>
+  </data>
+  <data name="String_MapModelHasNoObject" xml:space="preserve">
+    <value>No object has been created</value>
+  </data>
+  <data name="String_MapObjectHasNoAnyProperty" xml:space="preserve">
+    <value>No property has been created for {0}</value>
+  </data>
+  <data name="String_MapObjectHasNoDisplayName" xml:space="preserve">
+    <value>No display name set for {0}</value>
+  </data>
+  <data name="String_MapPropertyHasNoValue" xml:space="preserve">
+    <value>The {0} of {1} has no value</value>
+  </data>
+  <data name="String_SetValueForAllSubMapProperty" xml:space="preserve">
+    <value>Set value for all sub-properties of {0}</value>
+  </data>
+  <data name="String_SubMapPropertyHasNoValue" xml:space="preserve">
+    <value>No value is set for {0} of the {1} property belonging to {2}</value>
+  </data>
+  <data name="String_GobalResolutionModelHasNoObject" xml:space="preserve">
+    <value>No object types has been created in step of selecting matching criteria</value>
+  </data>
+  <data name="String_GobalResolutionModelHasNoProperties" xml:space="preserve">
+    <value>No property types has been created for {0} object in step of selecting matching criteria</value>
+  </data>
+  <data name="String_GobalResolutionUncheckedFilteritems" xml:space="preserve">
+    <value>No objects are filtered</value>
+  </data>
+  <data name="String_GobalResolutionUncheckedPreviewItems" xml:space="preserve">
+    <value>No object is selected in the preview step</value>
+  </data>
+  <data name="string_GlobalResolution_There_are_no_defections" xml:space="preserve">
+    <value>There are no defections</value>
+  </data>
+  <data name="String_Added" xml:space="preserve">
+    <value>Added</value>
+  </data>
+  <data name="String_MapObjectHasInValidInternalResolution" xml:space="preserve">
+    <value>Internal resolution status At least one of {0}'s properties should be a `Find matches`</value>
+  </data>
+  <data name="StringRemoveAllDataSources" xml:space="preserve">
+    <value>Are you sure you want to remove All data sources?</value>
+  </data>
+  <data name="String_ShortcutDoseNotExist" xml:space="preserve">
+    <value>The item '{0}' that this shortcut refers to has been changed or removed, so this shortcut will no longer work properly.
+
+Do you want to delete this item?</value>
+  </data>
+  <data name="StringRemoveSavedGr" xml:space="preserve">
+    <value>Are you sure you want to delete this item?</value>
+  </data>
+  <data name="Make_sure_your_computer_s_Time__is_synchronized_with_the_server" xml:space="preserve">
+    <value>Make sure your computer's 'Time' is synchronized with the server</value>
+  </data>
+  <data name="Make_sure_your_computer_s_Time__is_synchronized_with_the_server1" xml:space="preserve">
+    <value>Make sure your computer's 'Time' is synchronized with the server</value>
+  </data>
+  <data name="Loading_ontology___" xml:space="preserve">
+    <value>Loading ontology...</value>
+  </data>
+  <data name="Object_Has_Number_Properties_Of_Property" xml:space="preserve">
+    <value>{0} has {1} properties of {2}</value>
+  </data>
+</root>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfKObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KObject" nillable="true" type="tns:KObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKObject" nillable="true" type="tns:ArrayOfKObject" />
+  <xs:complexType name="KObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LabelPropertyID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ResolvedTo" nillable="true" type="tns:KObject" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KObject" nillable="true" type="tns:KObject" />
+  <xs:complexType name="ArrayOfKProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KProperty" nillable="true" type="tns:KProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKProperty" nillable="true" type="tns:ArrayOfKProperty" />
+  <xs:complexType name="KProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="tns:KObject" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KProperty" nillable="true" type="tns:KProperty" />
+  <xs:complexType name="ArrayOfRelationshipBaseKlink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationshipBaseKlink" nillable="true" type="tns:RelationshipBaseKlink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelationshipBaseKlink" nillable="true" type="tns:ArrayOfRelationshipBaseKlink" />
+  <xs:complexType name="RelationshipBaseKlink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Relationship" nillable="true" type="tns:KRelationship" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:KObject" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="tns:KObject" />
+      <xs:element minOccurs="0" name="TypeURI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationshipBaseKlink" nillable="true" type="tns:RelationshipBaseKlink" />
+  <xs:complexType name="KRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direction" type="tns:LinkDirection" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="TimeBegin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeEnd" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KRelationship" nillable="true" type="tns:KRelationship" />
+  <xs:simpleType name="LinkDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SourceToTarget">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TargetToSource">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bidirectional">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LinkDirection" nillable="true" type="tns:LinkDirection" />
+  <xs:complexType name="ArrayOfKMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KMedia" nillable="true" type="tns:KMedia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKMedia" nillable="true" type="tns:ArrayOfKMedia" />
+  <xs:complexType name="KMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="OwnerObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="URI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KMedia" nillable="true" type="tns:KMedia" />
+</xs:schema>

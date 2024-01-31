@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.Sesrch.Model.SearchModel">
+    <Position X="9.5" Y="4.25" Width="1.75" />
+    <Members>
+      <Field Name="anyWord" Hidden="true" />
+      <Field Name="creationDateOF" Hidden="true" />
+      <Field Name="creationDateUntil" Hidden="true" />
+      <Field Name="exactKeyWord" Hidden="true" />
+      <Field Name="fileSizeOF" Hidden="true" />
+      <Field Name="fileSizeUnti" Hidden="true" />
+      <Field Name="fileType" Hidden="true" />
+      <Field Name="importDateOf" Hidden="true" />
+      <Field Name="importDateUntil" Hidden="true" />
+      <Field Name="keyWordSearch" Hidden="true" />
+      <Field Name="language" Hidden="true" />
+      <Field Name="noneWord" Hidden="true" />
+      <Field Name="searchIn" Hidden="true" />
+      <Field Name="sortOrder" Hidden="true" />
+      <Field Name="sortOrderType" Hidden="true" />
+      <Field Name="topic" Hidden="true" />
+      <Field Name="typeSearch" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>oEAwBtBAOAcAYAgAwGAAABAAAAAAAACUwAAAgDAAAAA=</HashCode>
+      <FileName>Controls\Sesrch\Model\SearchModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Sesrch.Model.SearchResultModel">
+    <Position X="6" Y="4.25" Width="1.75" />
+    <Members>
+      <Field Name="countOfFind" Hidden="true" />
+      <Field Name="fileName" Hidden="true" />
+      <Field Name="fileSize" Hidden="true" />
+      <Field Name="image" Hidden="true" />
+      <Field Name="partOfText" Hidden="true" />
+      <Field Name="publishDate" Hidden="true" />
+      <Field Name="relatedWord" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CBAAAggQAEAIAABACAAAAAAAEAABABAAAUAAAABAAAI=</HashCode>
+      <FileName>Controls\Sesrch\Model\SearchResultModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.Sesrch.ViewModel.SearchViewModel">
+    <Position X="1.75" Y="5.75" Width="3" />
+    <Members>
+      <Field Name="controlsEnum" Hidden="true" />
+      <Method Name="ConvertKWObjectToSearchResultModel" Hidden="true" />
+      <Field Name="modelSearch" Hidden="true" />
+      <Field Name="searchResultModels" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAABAAAAEAAAAAQAEAAAABAAgAAE=</HashCode>
+      <FileName>Controls\Sesrch\ViewModel\SearchViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ModelSearch" />
+      <Property Name="ControlsEnum" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SearchResultModels" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.BaseViewModel" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.BaseModel" Collapsed="true">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.Sesrch.Enum.ControlsEnum">
+    <Position X="2.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Controls\Sesrch\Enum\ControlEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

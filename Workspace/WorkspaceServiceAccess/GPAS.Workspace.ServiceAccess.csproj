@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3907774-BF75-4C98-96C5-C802279CDCED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Workspace.ServiceAccess</RootNamespace>
+    <AssemblyName>GPAS.Workspace.ServiceAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteServiceClientFactory.cs" />
+    <Compile Include="Service References\RemoteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo1.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo2.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.DataSourceInfo3.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.GroupClassificationBasedPermission.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.GroupClassificationBasedPermission1.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.GroupClassificationBasedPermission2.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.GroupClassificationBasedPermission3.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.Groups.GroupInfo.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.Groups.GroupInfo1.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.Groups.GroupInfo2.datasource" />
+    <None Include="Properties\DataSources\GPAS.AccessControl.Groups.GroupInfo3.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates1.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates2.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.GlobalResolutionCandidates3.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.Suite.AccessDetail.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.Suite.AccessDetail1.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.Suite.AccessDetail2.datasource" />
+    <None Include="Properties\DataSources\GPAS.DataImport.GlobalResolve.Suite.AccessDetail3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.EventBaseKlink.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.BoundingBox.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.BoundingBox1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.BoundingBox2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.BoundingBox3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.RetrievedFaceKObject.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.RetrievedFaceKObject1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.RetrievedFaceKObject2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.ImageProcessing.RetrievedFaceKObject3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KMedia.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KMedia1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KMedia2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KMedia3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KObject.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KObject1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KObject2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KObject3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KProperty.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KProperty1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KProperty2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.KProperty3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.RelationshipBaseKlink.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.RelationshipBaseKlink1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.RelationshipBaseKlink2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.RelationshipBaseKlink3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResult1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResult2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.EventBasedResult3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.PropertyBasedResult1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.PropertyBasedResult2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.PropertyBasedResult3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.PropertyBasedResult4.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResult1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResult2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.RelationshipBasedResult3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.DetectedLanguage.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.DetectedLanguage1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.DetectedLanguage2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.DetectedLanguage3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.TagCloudKeyPhrase.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.TagCloudKeyPhrase1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.TagCloudKeyPhrase2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.NLP.TagCloudKeyPhrase3.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Publish.PublishResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Publish.PublishResult1.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Publish.PublishResult2.datasource" />
+    <None Include="Properties\DataSources\GPAS.Dispatch.Entities.Publish.PublishResult3.datasource" />
+    <None Include="Properties\DataSources\GPAS.SearchAround.CustomSearchAroundResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.SearchAround.CustomSearchAroundResult1.datasource" />
+    <None Include="Properties\DataSources\GPAS.SearchAround.CustomSearchAroundResult2.datasource" />
+    <None Include="Properties\DataSources\GPAS.SearchAround.CustomSearchAroundResult3.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.LinkTypeStatistics.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.LinkTypeStatistics1.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.PropertyValueStatistics.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.PropertyValueStatistics1.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.QueryResult.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.QueryResult1.datasource" />
+    <None Include="Properties\DataSources\GPAS.StatisticalQuery.ResultNode.PropertyBarValues.datasource" />
+    <None Include="Properties\DataSources\GPAS.Workspace.Entities.Search.SearchResultModel.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\RemoteService\Arrays1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.AccessControl.Groups1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.AccessControl1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.Concepts.ImageProcessing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.Concepts.SearchAroundResult.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.Concepts1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.DatalakeEntities1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.Jobs.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.NLP.Summarization.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.NLP.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities.Publish1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Dispatch.Entities1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.FilterSearch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.GeoSearch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.SearchAround.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.StatisticalQuery.ResultNode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.StatisticalQuery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.TextualSearch.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.BaseSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.DataSourceACL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.DirectoryContent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.GeographicalLocationModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.InvestigationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.JobRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\GPAS.Workspace.ServiceAccess.RemoteService.KGraphArrangement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteService\Message1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\service1.wsdl" />
+    <None Include="Service References\RemoteService\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\service21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\service22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\System.Drawing.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\System.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService1.wsdl" />
+    <None Include="Service References\RemoteService\WorkspaceService24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService241.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2410.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2411.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2412.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2413.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2414.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2415.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2416.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2417.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2418.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2419.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService242.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2420.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2421.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2422.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2423.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2424.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2425.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService2426.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService243.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService244.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService245.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService246.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService247.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService248.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteService\WorkspaceService249.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33fbbf9b-c7f4-4f91-99d9-335a18c2609d}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataImport\GPAS.DataImport.csproj">
+      <Project>{73a6e9cf-a4f9-45d3-84ad-b149c488ff6f}</Project>
+      <Name>GPAS.DataImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.GeoSearch\GPAS.GeoSearch.csproj">
+      <Project>{dc917467-de53-4bac-90a2-b241bb44623e}</Project>
+      <Name>GPAS.GeoSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.SearchAround\GPAS.SearchAround.csproj">
+      <Project>{fcb286b8-af82-4f5d-ac9e-fd0a5a311289}</Project>
+      <Name>GPAS.SearchAround</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.StatisticalQuery\GPAS.StatisticalQuery.csproj">
+      <Project>{dcb8746e-eebb-43c4-a220-804e45d32c27}</Project>
+      <Name>GPAS.StatisticalQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\Dispatch\Entities.Concepts\GPAS.Dispatch.Entities.Concepts.csproj">
+      <Project>{2960b31e-4c0b-485b-a5f9-614f121faa5b}</Project>
+      <Name>GPAS.Dispatch.Entities.Concepts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\Dispatch\Entities.Publish\GPAS.Dispatch.Entities.Publish.csproj">
+      <Project>{b19384b4-aa82-4a77-91ad-d094d31c994b}</Project>
+      <Name>GPAS.Dispatch.Entities.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\Dispatch\GPAS.Dispatch.Entities.NLP\GPAS.Dispatch.Entities.NLP.csproj">
+      <Project>{08693780-9df6-42fa-bf54-808de898acc1}</Project>
+      <Name>GPAS.Dispatch.Entities.NLP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceEntities\GPAS.Workspace.Entities.csproj">
+      <Project>{F05D7AB8-C202-4557-9E61-AD47CBDA0FEF}</Project>
+      <Name>GPAS.Workspace.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RemoteService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteService\WorkspaceService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

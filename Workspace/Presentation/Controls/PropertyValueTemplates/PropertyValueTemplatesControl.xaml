@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.PropertyValueTemplates.PropertyValueTemplatesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:DateTimePicker="clr-namespace:GPAS.DateTimePicker;assembly=GPAS.DateTimePicker"
+             xmlns:ontology="clr-namespace:GPAS.Ontology;assembly=GPAS.Ontology"
+             xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.PropertyValueTemplates"
+             x:Name="TemplatesControl" >
+
+    <UserControl.Resources>
+        <converters:PropertyValueTemplatesVisibilityConverter x:Key="PropertyValueTemplatesVisibilityConverter"/>
+        <converters:PropertyBooleanValueConverter x:Key="PropertyBooleanValueConverter"/>
+        <converters:PropertyDateValueConverter x:Key="PropertyDateValueConverter"/>
+        <converters:ValidationStatusToForegroundConverter x:Key="ValidationToForegroundConverter"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="MainGrid" KeyDown="MainGrid_OnKeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>         
+
+            <!--String-->
+            <TextBox Name="PropertyValueTxtBox" MaxHeight="400"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                     Visibility="{Binding ElementName=TemplatesControl, Path=DataType,   
+                     Converter={StaticResource PropertyValueTemplatesVisibilityConverter},
+                     ConverterParameter={x:Static ontology:BaseDataTypes.String} ,UpdateSourceTrigger=PropertyChanged}"
+                     Text="{Binding ElementName=TemplatesControl, Path=PropertyValue, UpdateSourceTrigger=PropertyChanged}"
+                     IsReadOnly="{Binding ReadOnly}"
+                     Margin="3" AcceptsReturn="True"
+                     TextWrapping="Wrap" TextChanged="PropertyValueTxtBox_TextChanged" >
+                <TextBox.Foreground>
+                    <MultiBinding Converter="{StaticResource ValidationToForegroundConverter}">
+                        <Binding Path="ValidationStatus" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                        <Binding Path="Foreground" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                    </MultiBinding>
+                </TextBox.Foreground>
+            </TextBox>
+
+            <!--Boolean-->
+
+            <Border  x:Name="BooleanBorder" Visibility="{Binding ElementName=TemplatesControl, Path=DataType, 
+                     Converter={StaticResource PropertyValueTemplatesVisibilityConverter},
+                     ConverterParameter={x:Static ontology:BaseDataTypes.Boolean} ,UpdateSourceTrigger=PropertyChanged}"                     
+                     BorderThickness="1" CornerRadius="5">
+                <Border.BorderBrush>
+                    <MultiBinding Converter="{StaticResource ValidationToForegroundConverter}">
+                        <Binding Path="ValidationStatus" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                        <Binding Path="Foreground" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                    </MultiBinding>
+                </Border.BorderBrush>
+
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="TrueRadioButton" VerticalAlignment="Center" Grid.Column="0" Content="True" Margin="5" 
+                                 Checked="TrueRadioButton_Checked"  
+                                 Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                                 IsChecked="{Binding ElementName=TemplatesControl, Path=PropertyValue, Converter={StaticResource PropertyBooleanValueConverter},
+                                             ConverterParameter=True}"/>
+                    <RadioButton x:Name="FalseRadioButton" VerticalAlignment="Center" Grid.Column="1" Content="False" Margin="5" 
+                                 Checked="FalseRadioButton_Checked" 
+                                 Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                                 IsChecked="{Binding ElementName=TemplatesControl, Path=PropertyValue, Converter={StaticResource PropertyBooleanValueConverter},
+                                             ConverterParameter=False}"/>
+                </Grid>
+            </Border>
+
+            <!--Date Time-->
+            <DateTimePicker:DateTimePicker x:Name="PropertyValueDateTimePicker" DiplayErrorMessage="False"
+                                           Visibility="{Binding ElementName=TemplatesControl, Path=DataType,                    
+                                        Converter={StaticResource PropertyValueTemplatesVisibilityConverter},
+                                        ConverterParameter={x:Static ontology:BaseDataTypes.DateTime} 
+                                        ,UpdateSourceTrigger=PropertyChanged}"
+                                           SelectedDateTime="{Binding ElementName=TemplatesControl, 
+                Path=PropertyValue, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, 
+                Converter={StaticResource PropertyDateValueConverter}}"
+                                           Text="{Binding ElementName=TemplatesControl, 
+                Path=PropertyValue, UpdateSourceTrigger=PropertyChanged}"
+                                           TextChanged="DateTimeDatePicker_OnSelectedDateChanged"                                          
+                                           NewBackground="{Binding Background,
+                                        RelativeSource= {RelativeSource FindAncestor,AncestorType=UserControl}}">
+                <DateTimePicker:DateTimePicker.NewForeground>
+                    <MultiBinding Converter="{StaticResource ValidationToForegroundConverter}">
+                        <Binding Path="ValidationStatus" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                        <Binding Path="Foreground" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                    </MultiBinding>
+                </DateTimePicker:DateTimePicker.NewForeground>
+            </DateTimePicker:DateTimePicker>
+
+            <!--GeoPoint-->
+            <controls:LocationPropertyValueControl 
+                x:Name="LocationPropertyValueControl"
+                ValidationChanged="LocationPropertyValueControl_ValidationChanged"
+                Visibility="{Binding ElementName=TemplatesControl, Path=DataType,
+                Converter={StaticResource PropertyValueTemplatesVisibilityConverter},
+                ConverterParameter={x:Static ontology:BaseDataTypes.GeoPoint} ,UpdateSourceTrigger=PropertyChanged}" 
+                ValueChanged="LocationPropertyValueControl_ValueChanged"
+                SearchMode="{Binding SearchMode, RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}}"
+                >
+                <controls:LocationPropertyValueControl.Foreground>
+                    <MultiBinding Converter="{StaticResource ValidationToForegroundConverter}">
+                        <Binding Path="ValidationStatus" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                        <Binding Path="Foreground" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                    </MultiBinding>
+                </controls:LocationPropertyValueControl.Foreground>
+            </controls:LocationPropertyValueControl>
+
+            <!--GeoTime-->
+            <controls:DateRangeAndLocationControl 
+                    x:Name="DateRangeAndLocationControl"                 
+                    ValidationChecked="DateRangeAndLocationControl_ValidationChecked"
+                    Visibility="{Binding ElementName=TemplatesControl, Path=DataType,
+                Converter={StaticResource PropertyValueTemplatesVisibilityConverter},
+                    ConverterParameter={x:Static ontology:BaseDataTypes.GeoTime} ,UpdateSourceTrigger=PropertyChanged}"                
+                  NewBackground="{Binding Background,
+                     RelativeSource= {RelativeSource FindAncestor,AncestorType=UserControl}}">
+                <controls:DateRangeAndLocationControl.NewForeground>
+                    <MultiBinding Converter="{StaticResource ValidationToForegroundConverter}">
+                        <Binding Path="ValidationStatus" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                        <Binding Path="Foreground" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                    </MultiBinding>
+                </controls:DateRangeAndLocationControl.NewForeground>
+            </controls:DateRangeAndLocationControl>
+        </Grid>
+
+        <!--Error message-->
+        <StackPanel Grid.Row="1">
+            <TextBlock Name="WarningInvalidDateTextBlock" TextWrapping="Wrap" Margin="0 2" Visibility="Collapsed">
+                <TextBlock.Foreground>
+                    <MultiBinding Converter="{StaticResource ValidationToForegroundConverter}">
+                        <Binding Path="ValidationStatus" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                        <Binding Path="Foreground" RelativeSource="{RelativeSource FindAncestor,AncestorType=UserControl}"/>
+                    </MultiBinding>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <StackPanel Margin="5 2" x:Name="InvalidValueStackPanel" Visibility="Collapsed" Orientation="Horizontal">
+                <TextBlock Text="Current value:" Margin="2"/>
+                <TextBlock Name="InvalidValueTextBlock" Margin="2" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

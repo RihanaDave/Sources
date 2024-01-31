@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities.Publish" />
+  <xs:element name="GetObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbObjectIDs" nillable="true" type="q1:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetObjectsResult" nillable="true" type="q2:ArrayOfDBObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveObjectsSequentialByIDRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstID" type="xs:long" />
+        <xs:element minOccurs="0" name="lastID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveObjectsSequentialByIDRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="RetrieveObjectsSequentialByIDRangeResult" nillable="true" type="q3:ArrayOfDBObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesOfObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="dbObject" nillable="true" type="q4:DBObject" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q5:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesOfObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetPropertiesOfObjectResult" nillable="true" type="q6:ArrayOfDBProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesOfObjectsWithoutAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q7:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesOfObjectsWithoutAuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetPropertiesOfObjectsWithoutAuthorizationResult" nillable="true" type="q8:ArrayOfDBProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesOfObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q9:ArrayOflong" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q10:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesOfObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetPropertiesOfObjectsResult" nillable="true" type="q11:ArrayOfDBProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectsId" nillable="true" type="q12:ArrayOflong" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="propertiesType" nillable="true" type="q13:ArrayOfstring" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q14:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetSpecifiedPropertiesOfObjectsByTypesResult" nillable="true" type="q15:ArrayOfDBProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypeAndValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q16:ArrayOflong" />
+        <xs:element minOccurs="0" name="propertyTypeUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="propertyValue" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q17:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSpecifiedPropertiesOfObjectsByTypeAndValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetSpecifiedPropertiesOfObjectsByTypeAndValueResult" nillable="true" type="q18:ArrayOfDBProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbPropertyIDs" nillable="true" type="q19:ArrayOflong" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q20:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPropertiesByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetPropertiesByIDResult" nillable="true" type="q21:ArrayOfDBProperty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationships">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbRelationshipIDs" nillable="true" type="q22:ArrayOflong" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q23:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetRelationshipsResult" nillable="true" type="q24:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveRelationships">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dbRelationshipIDs" nillable="true" type="q25:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveRelationshipsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="RetrieveRelationshipsResult" nillable="true" type="q26:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveRelationshipsSequentialByIDRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstID" type="xs:long" />
+        <xs:element minOccurs="0" name="lastID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveRelationshipsSequentialByIDRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="RetrieveRelationshipsSequentialByIDRangeResult" nillable="true" type="q27:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSourceLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="dbObject" nillable="true" type="q28:DBObject" />
+        <xs:element minOccurs="0" name="typeURI" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q29:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSourceLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetSourceLinkResult" nillable="true" type="q30:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectID" type="xs:long" />
+        <xs:element minOccurs="0" name="typeURI" nillable="true" type="xs:string" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q31:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetRelationshipsBySourceObjectResult" nillable="true" type="q32:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceOrTargetObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q33:ArrayOflong" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q34:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceOrTargetObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetRelationshipsBySourceOrTargetObjectResult" nillable="true" type="q35:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceObjectWithoutAuthParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q36:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceObjectWithoutAuthParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetRelationshipsBySourceObjectWithoutAuthParamsResult" nillable="true" type="q37:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceOrTargetObjectWithoutAuthParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q38:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelationshipsBySourceOrTargetObjectWithoutAuthParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetRelationshipsBySourceOrTargetObjectWithoutAuthParamsResult" nillable="true" type="q39:ArrayOfDBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingRelationship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="typeURI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="source" type="xs:long" />
+        <xs:element minOccurs="0" name="target" type="xs:long" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="direction" type="q40:RepositoryLinkDirection" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q41:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistingRelationshipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetExistingRelationshipResult" nillable="true" type="q42:DBRelationship" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaForObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="objectID" type="xs:long" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q43:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediaForObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetMediaForObjectResult" nillable="true" type="q44:ArrayOfDBMedia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediasForObjectsWithoutAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q45:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediasForObjectsWithoutAuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetMediasForObjectsWithoutAuthorizationResult" nillable="true" type="q46:ArrayOfDBMedia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediasForObjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="objectIDs" nillable="true" type="q47:ArrayOflong" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q48:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMediasForObjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetMediasForObjectsResult" nillable="true" type="q49:ArrayOfDBMedia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Publish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="addedConcept" nillable="true" type="q50:DBAddedConcepts" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="modifiedConcept" nillable="true" type="q51:DBModifiedConcepts" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities.Publish" minOccurs="0" name="resolvedObjects" nillable="true" type="q52:ArrayOfDBResolvedObject" />
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublishResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewGraphArrangment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="dbGraphArrangement" nillable="true" type="q53:DBGraphArrangement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewGraphArrangmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="CreateNewGraphArrangmentResult" nillable="true" type="q54:DBGraphArrangement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphArrangements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q55:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphArrangementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="GetGraphArrangementsResult" nillable="true" type="q56:ArrayOfDBGraphArrangement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dbGraphArrangementID" type="xs:int" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q57:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGraphImageResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphArrangementXML">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dbGraphArrangementID" type="xs:int" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authParams" nillable="true" type="q58:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGraphArrangementXMLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetGraphArrangementXMLResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGraph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGraphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteGraphResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedObjectId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedObjectIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastAsignedObjectIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedPropertyId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedPropertyIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastAsignedPropertyIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedRelationshipId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedRelationshipIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastAsignedRelationshipIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedMediaId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedMediaIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastAsignedMediaIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedGraphId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedGraphIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastAsignedGraphIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedDataSourceId">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastAsignedDataSourceIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastAsignedDataSourceIdResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Optimize">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OptimizeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TruncateDatabase">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TruncateDatabaseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewDataSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dsId" type="xs:long" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="type" type="q59:DataSourceType" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="acl" nillable="true" type="q60:ACL" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="createdTime" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewDataSourceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubsetOfConceptsByPermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="conceptType" type="q61:ConceptType" />
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IDs" nillable="true" type="q62:ArrayOflong" />
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="groupNames" nillable="true" type="q63:ArrayOfstring" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="minimumPermission" type="q64:Permission" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSubsetOfConceptsByPermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSubsetOfConceptsByPermissionResult" nillable="true" type="q65:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveDataSourceACLs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DataSourceIDs" nillable="true" type="q66:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveDataSourceACLsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="RetrieveDataSourceACLsResult" nillable="true" type="q67:ArrayOfDBDataSourceACL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveTopNDataSourceACLs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="topN" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveTopNDataSourceACLsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" minOccurs="0" name="RetrieveTopNDataSourceACLsResult" nillable="true" type="q68:ArrayOfDBDataSourceACL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetriveDataSourcesSequentialIDByIDRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstID" type="xs:long" />
+        <xs:element minOccurs="0" name="lastID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetriveDataSourcesSequentialIDByIDRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="RetriveDataSourcesSequentialIDByIDRangeResult" nillable="true" type="q69:ArrayOfDataSourceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesByIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ids" nillable="true" type="q70:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataSourcesByIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="GetDataSourcesByIDsResult" nillable="true" type="q71:ArrayOfDataSourceInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAvailable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAvailableResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

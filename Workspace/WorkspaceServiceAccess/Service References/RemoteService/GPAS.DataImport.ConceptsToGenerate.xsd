@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfImportingObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportingObject" nillable="true" type="tns:ImportingObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportingObject" nillable="true" type="tns:ArrayOfImportingObject" />
+  <xs:complexType name="ImportingObject">
+    <xs:sequence>
+      <xs:element name="Properties" nillable="true" type="tns:ArrayOfImportingProperty" />
+      <xs:element name="_x003C_LabelProperty_x003E_k__BackingField" nillable="true" type="tns:ImportingProperty" />
+      <xs:element name="_x003C_TypeUri_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="hashCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportingObject" nillable="true" type="tns:ImportingObject" />
+  <xs:complexType name="ArrayOfImportingProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImportingProperty" nillable="true" type="tns:ImportingProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImportingProperty" nillable="true" type="tns:ArrayOfImportingProperty" />
+  <xs:complexType name="ImportingProperty">
+    <xs:sequence>
+      <xs:element name="_x003C_TypeURI_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Value_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImportingProperty" nillable="true" type="tns:ImportingProperty" />
+</xs:schema>

@@ -1,0 +1,392 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.DataImport.SetMappingPropertiesValueUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:go="clr-namespace:GPAS.Ontology;assembly=GPAS.Ontology"
+             xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+             xmlns:commonConverters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+             xmlns:datasourcefield="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField"
+             xmlns:map="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Model.Map"
+             IsEnabled="{Binding SelectedSingleProperty.Editable, RelativeSource={RelativeSource Mode=Self}}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <converters:FieldTypeToVisibilityConverter x:Key="FieldTypeToVisibility"/>
+        <converters:PropertyTypeToControlVisibilityConverter x:Key="VisibilityConverter"/>
+
+        <converters:DataTypePropertyToVisibilityConverter x:Key="PropertyTypeToVisibilityConverter">
+            <converters:DataTypePropertyToVisibilityConverter.VisibleDataTypes>
+                <x:Array Type="{x:Type go:BaseDataTypes}">
+                    <go:BaseDataTypes>DateTime</go:BaseDataTypes>
+                </x:Array>
+            </converters:DataTypePropertyToVisibilityConverter.VisibleDataTypes>
+        </converters:DataTypePropertyToVisibilityConverter>
+        
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:ValidationStatusToVisibilityConverter x:Key="ValidationStatusToVisibilityConverter"/>
+        <converters:ValidationStatusToForegroundConverter x:Key="ValidationStatusToForegroundConverter"/>
+        <commonConverters:ImportStatusToIsEnableConverter x:Key="ImportStatusToIsEnableConverter"/>
+
+        <!--منوی راست کلیک برای مقادیر-->
+        <ContextMenu x:Key="ValueContextMenu" Style="{StaticResource ContextMenuStyle}">
+            <ContextMenu.Resources>
+                <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+                    <Setter Property="FontSize" Value="13"/>
+                    <Setter Property="Padding" Value="10 5"/>
+                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                </Style>
+                <Style TargetType="materialDesign:PackIcon" BasedOn="{StaticResource ContextMenuItemsIcon}"/>
+            </ContextMenu.Resources>
+
+            <MenuItem x:Name="RegularExpression" Header="Regular expression..." Click="RegularExpressionMenuItemOnClick">
+                <MenuItem.Icon>
+                    <materialDesign:PackIcon Kind="Regex" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ContextMenu>
+
+        <!--استایل برای لیست مقادیر-->
+        <Style TargetType="ListView" BasedOn="{StaticResource {x:Type ListView}}" x:Key="ValuesListViewStyle">
+            <Setter Property="AllowDrop" Value="{Binding Map.OwnerDataSource.ImportStatus,
+                Converter={StaticResource ImportStatusToIsEnableConverter}}"/>
+            <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+            <EventSetter Event="Drop" Handler="ValuesListViewOnDrop"/>
+            <EventSetter Event="DragOver" Handler="ValuesListViewOnDragOver"/>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Focusable" Value="false"/>
+                        <Setter Property="AllowDrop" Value="{Binding OwnerProperty.OwnerObject.OwnerMap.OwnerDataSource.ImportStatus,
+                            Converter={StaticResource ImportStatusToIsEnableConverter}}"/>
+                        <Setter Property="BorderThickness" Value="0 1 0 0"/>
+                        <!--<Setter Property="ContextMenu" Value="{StaticResource ValueContextMenu}"/>-->
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ValueListViewPreviewMouseLeftButtonDownOnHandler"/>
+                        <EventSetter Event="DragOver" Handler="ValueListViewDragOverOnHandler"/>
+                        <EventSetter Event="Drop" Handler="ValueListViewDropOnHandler"/>
+                        <EventSetter Event="MouseUp" Handler="ValueListViewMouseUpOnHandler"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Field.Type}" Value="{x:Static datasourcefield:FieldType.Const}">
+                                <Setter Property="ContextMenuService.IsEnabled" Value="False" />
+                            </DataTrigger>
+                            <EventTrigger RoutedEvent="DragEnter">
+                                <BeginStoryboard x:Name="DragHoverStoryboard">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0" To="Gray" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="DragLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0" To="Transparent" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="PreviewDrop">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" Duration="0:0:0" To="Transparent" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid IsEnabled="{Binding OwnerProperty.OwnerObject.OwnerMap.OwnerDataSource.ImportStatus,
+                            Converter={StaticResource ImportStatusToIsEnableConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0" x:Name="DeleteButton" ToolTip="Remove" Width="25" Height="25" 
+                                            Style="{StaticResource MaterialDesignIconButton}"
+                                            PreviewMouseLeftButtonDown="DeleteButtonOnPreviewMouseLeftButtonDown">
+                                <materialDesign:PackIcon Height="20" Width="20" Kind="Close" Foreground="Red"/>
+                            </Button>
+
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Binding Field.Title}" Margin="5 0" 
+                                           Style="{StaticResource MaterialDesignSubtitle2TextBlock}"/>
+
+                                <!--برای نمایش مقادیر غیر ‌ثابت-->
+                                <TextBlock Text="{Binding SampleValue}" ToolTip="{Binding SampleValue}" Margin="5 0" 
+                                           Style="{StaticResource MaterialDesignBody2TextBlock}"
+                                           Visibility="{Binding Field.Type, Converter={StaticResource FieldTypeToVisibility},
+                                    ConverterParameter={x:Static datasourcefield:FieldType.None}}"
+                                           VerticalAlignment="Center" MaxHeight="30"
+                                           ToolTipService.Placement="MousePoint"
+                                           ToolTipService.IsEnabled="{Binding SampleValue.Length, FallbackValue=false, TargetNullValue=0}"/>
+
+                                <!--برای نمایش مقادیر ثابت-->
+                                <TextBox Text="{Binding SampleValue, UpdateSourceTrigger=PropertyChanged}" Margin="5 0" 
+                                         Visibility="{Binding Field.Type, Converter={StaticResource FieldTypeToVisibility},
+                                    ConverterParameter={x:Static datasourcefield:FieldType.Const}}"/>
+                            </StackPanel>
+
+                            <materialDesign:PackIcon VerticalAlignment="Center" Margin="2" ToolTip="Has regular expression"
+                                                     Grid.Column="2" Kind="Regex" Height="20" Width="20" 
+                                                     Foreground="{DynamicResource PrimaryHueDarkBrush}"
+                                                     Visibility="{Binding HasRegularExpression, 
+                                Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <materialDesign:PackIcon Kind="ArrowUpDown" Grid.Column="3" Width="18" Height="18"
+                                                     VerticalAlignment="Center" Margin="2" Opacity=".3"/>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}"
+               x:Key="AddButtonStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding SelectedItem, ElementName=DataSourceFieldsTreeView}" Value="{x:Null}">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}" x:Key="ClearButtonStyle">
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=MultiPropertyInnerPropertyValuesListView,
+                            Path=HasItems}" Value="false"/>
+                        <Condition Binding="{Binding ElementName=SinglePropertyValuesListView,
+                            Path=HasItems}" Value="false"/>
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Name="MainGrid" PreviewMouseMove="MainGridOnPreviewMouseMove">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--دکمه حذف نمام مقادیر-->
+            <common:ButtonWithIcon x:Name="ClearButton" Content="Clear all" Icon="Eraser" Grid.Row="0"
+                                   HorizontalAlignment="Right"
+                                   ContentMargin="5" Click="ClearButtonOnClick"
+                                   IsEnabled="{Binding Map.OwnerDataSource.ImportStatus,
+                Converter={StaticResource ImportStatusToIsEnableConverter}}"
+                                   Style="{StaticResource ClearButtonStyle}"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Available fields" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Margin="5" Grid.Row="0" Grid.Column="0" Style="{StaticResource MaterialDesignBody2TextBlock}"
+                               Foreground="{DynamicResource MaterialDesignBody}"/>
+
+                <TextBlock Text="Values" VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Margin="5" Grid.Row="0" Grid.Column="4" Style="{StaticResource MaterialDesignBody2TextBlock}"
+                           Foreground="{DynamicResource MaterialDesignBody}"/>
+
+                <Separator Grid.Column="0" Grid.Row="1" Margin="5 0"/>
+                <Separator Grid.Column="4" Grid.Row="1" Margin="5 0"/>
+
+                <!--منوی درختی که نشان‌دهنده فیلدهای منبع‌داده می‌باشند-->
+                <TreeView Name="DataSourceFieldsTreeView" ItemsSource="{Binding CategoryFieldCollection}"
+                          Grid.Row="2" Grid.Column="0" Margin="5" Background="Transparent"
+                          IsEnabled="{Binding Map.OwnerDataSource.ImportStatus,
+                Converter={StaticResource ImportStatusToIsEnableConverter}}">
+                    <TreeView.Style>
+                        <Style TargetType="TreeView" BasedOn="{StaticResource {x:Type TreeView}}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Map.SelectedWarning.WarningType}"
+                                         Value="{x:Static map:MapWarningType.NotSetValue}">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource ItemListWarningBackgroundStoryboard}"/>
+                                    </DataTrigger.EnterActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TreeView.Style>
+                    <TreeView.ItemContainerStyle>
+                        <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="DataSourceFieldsTreeViewOnPreviewMouseLeftButtonDown"/>
+                            <EventSetter Event="MouseUp" Handler="DataSourceFieldsTreeViewOnMouseUp"/>
+                            <EventSetter Event="MouseDoubleClick" Handler="DataSourceFieldsTreeViewOnMouseDoubleClick"/>
+                        </Style>
+                    </TreeView.ItemContainerStyle>
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding DataSourceCollection}">
+                            <TextBlock Text="{Binding Category}" />
+                            <HierarchicalDataTemplate.ItemContainerStyle>
+                                <Style TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
+                                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="DataSourceFieldsTreeViewOnPreviewMouseLeftButtonDown"/>
+                                    <EventSetter Event="MouseUp" Handler="DataSourceFieldsTreeViewOnMouseUp"/>
+                                    <EventSetter Event="MouseDoubleClick" Handler="DataSourceFieldsTreeViewOnMouseDoubleClick"/>
+                                </Style>
+                            </HierarchicalDataTemplate.ItemContainerStyle>
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Title}" VerticalAlignment="Center"/>
+
+                                        <Button x:Name="RecalculateButton" Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+                                                Visibility="{Binding RelatedMetaDataItem.NeedsRecalculation,
+                                            Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
+                                                Width="18" Height="18" HorizontalAlignment="Left" BorderBrush="Transparent" Background="Transparent"
+                                                Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                                Margin="5 1"
+                                                materialDesign:ButtonProgressAssist.IsIndicatorVisible="False"
+                                                materialDesign:ButtonProgressAssist.Value="-1"
+                                                materialDesign:ButtonProgressAssist.IsIndeterminate="True"
+                                                ToolTip="Calculate exact value" Click="RecalculateButton_Click"
+                                                >
+                                            <materialDesign:PackIcon Kind="Refresh" Width="16" Height="16" />
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+
+                <Separator Grid.Row="2" Grid.Column="1" Margin="0 5">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+
+                <!--دکمه افزودن مقدار به ویژگی-->
+                <Grid Grid.Row="2" Grid.Column="2" VerticalAlignment="Center">
+                    <common:ButtonWithIcon x:Name="AddButton" Content="Add" Icon="ArrowRight"
+                                           IconPosition="Right" ContentMargin="7 5 7 5" Click="AddButtonOnClick"
+                                           IsEnabled="{Binding Map.OwnerDataSource.ImportStatus,
+                        Converter={StaticResource ImportStatusToIsEnableConverter}}"
+                                       Style="{StaticResource AddButtonStyle}"/>
+                </Grid>
+
+                <Separator Grid.Row="2" Grid.Column="3" Margin="0 5">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+
+                <Grid Grid.Row="2" Grid.Column="4" Margin="5">
+                    <!--لیست مقادیر برای ویژگی‌های تک مقداری-->
+                    <ListView Name="SinglePropertyValuesListView" 
+                              Style="{StaticResource ValuesListViewStyle}"
+                              ItemsSource="{Binding SelectedSingleProperty.ValueCollection, RelativeSource={RelativeSource findAncestor,AncestorType=UserControl}}"
+                              />
+                </Grid>
+
+                <Grid Name="InnerPropertiesGrid" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5"
+                      Visibility="{Binding SelectedProperty,
+                    RelativeSource={RelativeSource findAncestor,AncestorType=UserControl}, Converter={StaticResource VisibilityConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Separator Grid.Row="0" Margin="5 0"/>
+
+                    <!--لیست ویژگی‌های داخلی برای ویژگی‌های چند مقداری-->
+                    <ListView Grid.Row="1" Name="LeafPropertiesListView" SelectedIndex="0"
+                              ItemsSource="{Binding SelectedProperty.LeafProperties,
+                        RelativeSource={RelativeSource findAncestor,AncestorType=UserControl}}"
+                              >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                                <Setter Property="Margin" Value="5"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListViewItem">
+                                            <Border BorderThickness="1" BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+                                                CornerRadius="5">
+                                                <Border.Resources>
+                                                    <Style TargetType="Border">
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsSelected}" Value="true">
+                                                                <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding IsSelected}" Value="false">
+                                                                <Setter Property="Background" Value="Transparent" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding WarningSelected}" Value="True">
+                                                                <DataTrigger.EnterActions>
+                                                                    <BeginStoryboard Storyboard="{StaticResource WarningBackgroundStoryboard}"/>
+                                                                </DataTrigger.EnterActions>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Border.Resources>
+                                                <ContentPresenter/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Title}" VerticalAlignment="Center" 
+                                           Style="{StaticResource MaterialDesignSubtitle2TextBlock}"/>
+
+                                    <materialDesign:PackIcon
+                                        Grid.Column="1" Kind="Warning" Height="18" Width="18" Background="#00FFFFFF"
+                                        VerticalAlignment="Center" Margin="2"
+                                        ToolTip="{Binding SampleValueValidationStatus.Message}"
+                                        Foreground="{Binding SampleValueValidationStatus.Status,
+                                        Converter={StaticResource ValidationStatusToForegroundConverter}}"
+                                        Visibility="{Binding SampleValueValidationStatus.Status,
+                                        Converter={StaticResource ValidationStatusToVisibilityConverter}, 
+                                        FallbackValue=Collapsed}"/>
+
+                                    <Button Grid.Column="2" Name="PropertyConfigButton" ToolTip="Config..." Width="25" Height="25" 
+                                        Style="{StaticResource MaterialDesignIconButton}" Margin="0"
+                                        Click="PropertyConfigButtonOnClick"
+                                        Visibility="{Binding ., Converter={StaticResource PropertyTypeToVisibilityConverter}}">
+                                        <materialDesign:PackIcon Height="20" Width="20" Kind="DotsVertical" 
+                                                                 Foreground="{DynamicResource MaterialDesignBody}"/>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.DateTimeConfiguration">
+    <Position X="8.25" Y="14" Width="2" />
+    <Members>
+      <Field Name="culture" Hidden="true" />
+      <Field Name="cultureName" Hidden="true" />
+      <Property Name="CultureName" Hidden="true" />
+      <Property Name="DefaultCulture" Hidden="true" />
+      <Property Name="DefaultStringFormat" Hidden="true" />
+      <Method Name="OnCultureChanged" Hidden="true" />
+      <Method Name="OnStringFormatChanged" Hidden="true" />
+      <Field Name="stringFormat" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAACAAAAAAAIAIBCAAAAQAAAAAACQAAAAEAAgA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\DateTimeConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.DateTimePropertyMapModel">
+    <Position X="12.5" Y="14.25" Width="2.25" />
+    <Members>
+      <Field Name="configuration" Hidden="true" />
+      <Method Name="ConfigurationOnCultureChanged" Hidden="true" />
+      <Method Name="ConfigurationOnStringFormatChanged" Hidden="true" />
+      <Field Name="hasDefaultConfig" Hidden="true" />
+      <Method Name="SetHasDefaultConfig" Hidden="true" />
+      <Method Name="SetValidationForSampleValue" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAoAAAQAAAAAAACAAAAAgACAAAAAQAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\DateTimePropertyMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Configuration" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.DocumentMapModel">
+    <Position X="10" Y="11.5" Width="1.75" />
+    <Members>
+      <Method Name="AfterOwnerMapChanged" Hidden="true" />
+      <Method Name="CreateValue" Hidden="true" />
+      <Method Name="OnPathChanged" Hidden="true" />
+      <Field Name="ontology" Hidden="true" />
+      <Field Name="path" Hidden="true" />
+      <Method Name="Path_InternalResolutionChanged" Hidden="true" />
+      <Method Name="Path_SampleValueChanged" Hidden="true" />
+      <Method Name="Path_ScenarioChanged" Hidden="true" />
+      <Field Name="pathOption" Hidden="true" />
+      <Method Name="SetDisplayNameProperty" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAQCIAAAICAIADAAAAAAhABAAAAAAAAAQ=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\DocumentMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Path" />
+      <Property Name="PathOption" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.GeoTimePropertyMapModel">
+    <Position X="17.25" Y="14.25" Width="2.5" />
+    <Members>
+      <Method Name="AfterInnerPropertiesChanged" Hidden="true" />
+      <Method Name="CompareGeoTimeValue" Hidden="true" />
+      <Field Name="endDateTypeUri" Hidden="true" />
+      <Field Name="format" Hidden="true" />
+      <Field Name="latConvertedDoubleValue" Hidden="true" />
+      <Field Name="latitudeTypeUri" Hidden="true" />
+      <Field Name="longConvertedDoubleValue" Hidden="true" />
+      <Field Name="longitudeTypeUri" Hidden="true" />
+      <Method Name="SetValidationForSampleValue" Hidden="true" />
+      <Field Name="startDateTypeUri" Hidden="true" />
+      <Method Name="ToJson" Hidden="true" />
+    </Members>
+    <AssociationLine Name="EndDate" Type="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.DateTimePropertyMapModel" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="15.25" />
+        <Point X="14.75" Y="15.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Latitude" Type="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.SinglePropertyMapModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="14.375" />
+        <Point X="16.715" Y="14.375" />
+        <Point X="16.715" Y="12.213" />
+        <Point X="15.021" Y="12.213" Type="JumpStart" />
+        <Point X="14.854" Y="12.213" Type="JumpEnd" />
+        <Point X="14.5" Y="12.213" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Longitude" Type="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.SinglePropertyMapModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="14.688" />
+        <Point X="16.437" Y="14.688" />
+        <Point X="16.437" Y="12.6" />
+        <Point X="15.021" Y="12.6" Type="JumpStart" />
+        <Point X="14.854" Y="12.6" Type="JumpEnd" />
+        <Point X="14.5" Y="12.6" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="StartDate" Type="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.DateTimePropertyMapModel" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="14.812" />
+        <Point X="14.75" Y="14.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAJAAAAEgAQAAAAAAICAAgAAgAAAAAIASBAEAEAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\GeoTimePropertyMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Format" />
+      <Property Name="EndDate" />
+      <Property Name="Latitude" />
+      <Property Name="Longitude" />
+      <Property Name="StartDate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.MapElement">
+    <Position X="11" Y="1" Width="2.25" />
+    <Members>
+      <Method Name="AfterSelected" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Method Name="MapElement" Hidden="true" />
+      <Method Name="OnDeselected" Hidden="true" />
+      <Method Name="OnScenarioChanged" Hidden="true" />
+      <Method Name="OnSelected" Hidden="true" />
+      <Method Name="OnWarningCollectionChanged" Hidden="true" />
+      <Field Name="warningCollection" Hidden="true" />
+      <Method Name="WarningCollectionOnCollectionChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAIgEAAAgaAAEAAgAAAAEAAAAAABAAAAAAY=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\MapElement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="WarningCollection" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.MapModel">
+    <Position X="2" Y="4.5" Width="2.75" />
+    <Members>
+      <Method Name="AddObjectToSelectedObjects" Hidden="true" />
+      <Method Name="AddRelationshipToSelectedRelationships" Hidden="true" />
+      <Field Name="autoInternalResolutionIsActive" Hidden="true" />
+      <Field Name="isValid" Hidden="true" />
+      <Field Name="objectCollection" Hidden="true" />
+      <Method Name="ObjectCollection_CollectionChanged" Hidden="true" />
+      <Method Name="ObjectMap_Deselected" Hidden="true" />
+      <Method Name="ObjectMap_IsValidChanged" Hidden="true" />
+      <Method Name="ObjectMap_ScenarioChanged" Hidden="true" />
+      <Method Name="ObjectMap_Selected" Hidden="true" />
+      <Method Name="ObjectMapOnWarningCollectionChanged" Hidden="true" />
+      <Method Name="OnDataSourceFieldCollectionChanged" Hidden="true" />
+      <Method Name="OnIsValidChanged" Hidden="true" />
+      <Method Name="OnObjectCollectionChanged" Hidden="true" />
+      <Method Name="OnRelationshipCollectionChanged" Hidden="true" />
+      <Method Name="OnSelectedObjectChanged" Hidden="true" />
+      <Method Name="OnSelectedObjectsChanged" Hidden="true" />
+      <Method Name="OnSelectedRelationshipChanged" Hidden="true" />
+      <Method Name="OnSelectedRelationshipsChanged" Hidden="true" />
+      <Method Name="OnSelectedWarningChanged" Hidden="true" />
+      <Field Name="ownerDataSource" Hidden="true" />
+      <Method Name="OwnerDataSource_FieldCollectionChanged" Hidden="true" />
+      <Method Name="PrepareWarnings" Hidden="true" />
+      <Method Name="Relationship_Deselected" Hidden="true" />
+      <Method Name="Relationship_Selected" Hidden="true" />
+      <Field Name="relationshipCollection" Hidden="true" />
+      <Method Name="RelationshipCollection_CollectionChanged" Hidden="true" />
+      <Method Name="RelationshipMap_ScenarioChanged" Hidden="true" />
+      <Method Name="RemoveObjectFromSelectedObjects" Hidden="true" />
+      <Method Name="RemoveRelationshipFromSelectedRelationships" Hidden="true" />
+      <Field Name="selectedObject" Hidden="true" />
+      <Property Name="SelectedObject" Hidden="true" />
+      <Field Name="selectedObjects" Hidden="true" />
+      <Property Name="SelectedObjects" Hidden="true" />
+      <Method Name="SelectedObjects_CollectionChanged" Hidden="true" />
+      <Field Name="selectedRelationship" Hidden="true" />
+      <Property Name="SelectedRelationship" Hidden="true" />
+      <Field Name="selectedRelationships" Hidden="true" />
+      <Property Name="SelectedRelationships" Hidden="true" />
+      <Method Name="SelectedRelationships_CollectionChanged" Hidden="true" />
+      <Field Name="selectedWarning" Hidden="true" />
+      <Property Name="SelectedWarning" Hidden="true" />
+      <Method Name="SetValidation" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IIBAALggsiCIGREEWohYAAlAUgCoABLgIQAAADBAADk=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\MapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnerDataSource" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ObjectCollection" />
+      <Property Name="RelationshipCollection" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.MapWarningModel">
+    <Position X="15.25" Y="1" Width="1.75" />
+    <Members>
+      <Field Name="icon" Hidden="true" />
+      <Field Name="message" Hidden="true" />
+      <Field Name="relatedElement" Hidden="true" />
+      <Field Name="warningType" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAICAAAAAgAAAAAAAAAAAAQAAIAEAACA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\MapWarningModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WarningType" />
+      <Property Name="RelatedElement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.MultiPropertyMapModel">
+    <Position X="17.25" Y="11.5" Width="2.5" />
+    <Members>
+      <Method Name="AfterInnerPropertiesChanged" Hidden="true" />
+      <Method Name="AfterSelected" Hidden="true" />
+      <Field Name="innerProperties" Hidden="true" />
+      <Method Name="InnerProperties_CollectionChanged" Hidden="true" />
+      <Method Name="InnerProperty_IsValidChanged" Hidden="true" />
+      <Method Name="InnerProperty_SampleValueChanged" Hidden="true" />
+      <Method Name="InnerProperty_SampleValueValidationStatusChanged" Hidden="true" />
+      <Method Name="InnerProperty_ScenarioChanged" Hidden="true" />
+      <Method Name="InnerPropertyOnWarningCollectionChanged" Hidden="true" />
+      <Method Name="InnerPropertyProperty_Selected" Hidden="true" />
+      <Method Name="OnSelectedInnerPropertyChanged" Hidden="true" />
+      <Method Name="PrepareWarnings" Hidden="true" />
+      <Method Name="PreSelectedPropertyChanged" Hidden="true" />
+      <Field Name="selectedInnerProperty" Hidden="true" />
+      <Property Name="SelectedInnerProperty" Hidden="true" />
+      <Method Name="SetOwnerObjectForInnerProperties" Hidden="true" />
+      <Method Name="SetSampleValue" Hidden="true" />
+      <Method Name="SetValidation" Hidden="true" />
+    </Members>
+    <AssociationLine Name="InnerProperties" Type="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.PropertyMapModel" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.25" Y="12.062" />
+        <Point X="16.188" Y="12.062" />
+        <Point X="16.188" Y="9.713" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAQAAEAEAAgAAAIQAEAAAABEIAAAABAABBZAEAAE=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\MultiPropertyMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="InnerProperties" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.ObjectMapModel">
+    <Position X="9.75" Y="4.5" Width="2.25" />
+    <Members>
+      <Method Name="AfterOwnerMapChanged" Hidden="true" />
+      <Field Name="displayNameChangeable" Hidden="true" />
+      <Field Name="displayNameProperty" Hidden="true" />
+      <Field Name="iconPath" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Field Name="isResolvable" Hidden="true" />
+      <Field Name="isValid" Hidden="true" />
+      <Method Name="IsValidInternalResolution" Hidden="true" />
+      <Method Name="OnIsValidChanged" Hidden="true" />
+      <Method Name="OnPropertiesChanged" Hidden="true" />
+      <Field Name="ownerMap" Hidden="true" />
+      <Method Name="PreDisplayNamePropertyChanged" Hidden="true" />
+      <Method Name="PreSelectedPropertyChanged" Hidden="true" />
+      <Field Name="properties" Hidden="true" />
+      <Method Name="Properties_CollectionChanged" Hidden="true" />
+      <Method Name="Property_Deselected" Hidden="true" />
+      <Method Name="Property_InternalResolutionChanged" Hidden="true" />
+      <Method Name="Property_IsDisplayNameChanged" Hidden="true" />
+      <Method Name="Property_IsValidChanged" Hidden="true" />
+      <Method Name="Property_ScenarioChanged" Hidden="true" />
+      <Method Name="Property_Selected" Hidden="true" />
+      <Method Name="PropertyWarningCollectionChanged" Hidden="true" />
+      <Field Name="selectedProperty" Hidden="true" />
+      <Property Name="SelectedProperty" Hidden="true" />
+      <Method Name="SetValidation" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="typeUri" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gIICAIEAQAJICsAEhIhQTBUCEEAAAJAABABAgJACQgA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\ObjectMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DisplayNameProperty" />
+      <Property Name="OwnerMap" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Properties" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.PropertyMapModel">
+    <Position X="14" Y="4.5" Width="2.75" />
+    <Members>
+      <Field Name="canSetAsForDisplayName" Hidden="true" />
+      <Field Name="dataType" Hidden="true" />
+      <Field Name="editable" Hidden="true" />
+      <Field Name="iconPath" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Field Name="internalResolution" Hidden="true" />
+      <Field Name="isDisplayName" Hidden="true" />
+      <Field Name="isResolvable" Hidden="true" />
+      <Field Name="isValid" Hidden="true" />
+      <Method Name="OnInternalResolutionChanged" Hidden="true" />
+      <Method Name="OnIsDisplayNameChanged" Hidden="true" />
+      <Method Name="OnIsValidChanged" Hidden="true" />
+      <Method Name="OnSampleValueChanged" Hidden="true" />
+      <Method Name="OnSampleValueValidationStatusChanged" Hidden="true" />
+      <Method Name="OnTitleChanged" Hidden="true" />
+      <Field Name="ownerObject" Hidden="true" />
+      <Field Name="parentProperty" Hidden="true" />
+      <Method Name="PrepareWarnings" Hidden="true" />
+      <Method Name="PropertyMapModel" Hidden="true" />
+      <Field Name="sampleValue" Hidden="true" />
+      <Field Name="sampleValueValidationStatus" Hidden="true" />
+      <Method Name="SetOwnerObjectForInnerProperties" Hidden="true" />
+      <Method Name="SetSampleValue" Hidden="true" />
+      <Method Name="SetValidation" Hidden="true" />
+      <Method Name="SetValidationForSampleValue" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="typeUri" Hidden="true" />
+    </Members>
+    <AssociationLine Name="DataType" Type="GPAS.Ontology.BaseDataTypes" FixedFromPoint="true">
+      <Path>
+        <Point X="16.75" Y="9.188" />
+        <Point X="19.292" Y="9.188" Type="JumpStart" />
+        <Point X="19.458" Y="9.188" Type="JumpEnd" />
+        <Point X="22.75" Y="9.188" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SampleValueValidationStatus" Type="GPAS.PropertiesValidation.ValidationProperty" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.75" Y="9.312" />
+        <Point X="18.327" Y="9.312" />
+        <Point X="18.327" Y="10.125" />
+        <Point X="19.292" Y="10.125" Type="JumpStart" />
+        <Point X="19.458" Y="10.125" Type="JumpEnd" />
+        <Point X="20.5" Y="10.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACA4AAQAKLCFAAopyRQAAQEEiMAJIBAFTKGBAAQhg=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\PropertyMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DataType" />
+      <Property Name="InternalResolution" />
+      <Property Name="OwnerObject" />
+      <Property Name="ParentProperty" />
+      <Property Name="SampleValueValidationStatus" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.RelationshipMapModel">
+    <Position X="6.5" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="description" Hidden="true" />
+      <Field Name="direction" Hidden="true" />
+      <Field Name="iconPath" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Field Name="ownerMap" Hidden="true" />
+      <Field Name="source" Hidden="true" />
+      <Field Name="target" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="typeUri" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQgAgIEIApCAAACQAEAAAAJAAAABAAAAAQgA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\RelationshipMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Direction" />
+      <Property Name="OwnerMap" />
+      <Property Name="Source" />
+      <Property Name="Target" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.SinglePropertyMapModel">
+    <Position X="12.75" Y="11.5" Width="1.75" />
+    <Members>
+      <Method Name="PrepareWarnings" Hidden="true" />
+      <Method Name="PreSelectedValueChanged" Hidden="true" />
+      <Field Name="selectedValue" Hidden="true" />
+      <Property Name="SelectedValue" Hidden="true" />
+      <Method Name="SetOwnerObjectForInnerProperties" Hidden="true" />
+      <Method Name="SetSampleValue" Hidden="true" />
+      <Method Name="SetValidation" Hidden="true" />
+      <Method Name="Value_SampleValueChanged" Hidden="true" />
+      <Method Name="Value_ScenarioChanged" Hidden="true" />
+      <Method Name="Value_Selected" Hidden="true" />
+      <Field Name="valueCollection" Hidden="true" />
+      <Method Name="ValueCollection_CollectionChanged" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAAQACAAAAAAAAAIQACAAEAAAIAAAYIAQAABAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\SinglePropertyMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ValueCollection" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.ValueMapModel">
+    <Position X="18" Y="4.5" Width="2.25" />
+    <Members>
+      <Field Name="field" Hidden="true" />
+      <Method Name="Field_SampleValueChanged" Hidden="true" />
+      <Field Name="hasRegularExpression" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Method Name="OnSampleValueChanged" Hidden="true" />
+      <Field Name="ownerProperty" Hidden="true" />
+      <Field Name="regularExpressionPattern" Hidden="true" />
+      <Field Name="sampleValue" Hidden="true" />
+      <Method Name="SetRegularExpression" Hidden="true" />
+      <Method Name="SetSampleValueFromField" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACCAABAAAACQABBogAAAAACAAAAAIAAIEEAAAACggI=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\ValueMapModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Field" />
+      <Property Name="OwnerProperty" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.PropertiesValidation.ValidationProperty">
+    <Position X="20.5" Y="9.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.DataSourceFieldModel" Collapsed="true">
+    <Position X="21.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQQACiEEAAooAAAAAAAACBAIAAAUAAAAAAAgI=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\DataSourceFieldModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IDataSource" Collapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCDAAyAABAAAlMAAAgwAQAhAAABEAACQQAAAAADAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\IDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.DocumentPathOption">
+    <Position X="6.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\DocumentPathOption.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.GeoTimeFormat">
+    <Position X="21.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAIAAACAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\GeoTimeFormat.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.InternalResolutionRole">
+    <Position X="21" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAABAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\InternalResolutionRole.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Map.MapWarningType">
+    <Position X="18.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAQAAAACAAAAAAAAAAAAAAAAIAEABAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Map\MapWarningType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Entities.KWLinks.LinkDirection">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="GPAS.Ontology.BaseDataTypes">
+    <Position X="22.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

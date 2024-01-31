@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapTilesExporter.Logic", "MapTilesExporter.Logic\MapTilesExporter.Logic.csproj", "{09C94466-D91C-40F5-A38A-AE37691A1544}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapTilesExporter", "MapTilesExporter\MapTilesExporter.csproj", "{CFF49357-854E-4B59-850A-EDFE2DEA4950}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Debug|x64.Build.0 = Debug|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Debug|x86.Build.0 = Debug|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Release|x64.ActiveCfg = Release|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Release|x64.Build.0 = Release|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Release|x86.ActiveCfg = Release|Any CPU
+		{09C94466-D91C-40F5-A38A-AE37691A1544}.Release|x86.Build.0 = Release|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Debug|x64.Build.0 = Debug|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Release|x64.ActiveCfg = Release|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Release|x64.Build.0 = Release|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFF49357-854E-4B59-850A-EDFE2DEA4950}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.Sesrch.View.SearchUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.Sesrch.View"
+             mc:Ignorable="d" 
+             xmlns:converter="clr-namespace:GPAS.Workspace.Presentation.Controls.Sesrch.Converters"
+             xmlns:search="clr-namespace:GPAS.Workspace.Presentation.Controls.Sesrch.Enum"
+             xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:VisibilityControlConverter x:Key="VisibilityConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Background="{DynamicResource MaterialDesignPaper}">
+        <local:BasicSearchControl x:Name="basicsearchuserControl"  
+                                  SearchAllRequest="AllSearch_Click" 
+                                  Visibility="{Binding ControlsEnum,Converter={StaticResource VisibilityConverter} , ConverterParameter={x:Static search:ControlsEnum.Search},UpdateSourceTrigger=PropertyChanged}" />
+        <local:SearchResultUserControl 
+            Visibility="{Binding ControlsEnum,Converter={StaticResource VisibilityConverter},ConverterParameter={x:Static search:ControlsEnum.Result},UpdateSourceTrigger=PropertyChanged}"
+            x:Name="SearchResultUserControl"
+            SortEvent="AllSearch_Click"       
+            ItemPerPageChanged="SearchResultUserControl_ItemPerPageChanged"
+            PageNumberChanged="SearchResultUserControl_PageNumberChanged"
+            SortByAscOrDescEvent="SearchResultUserControl_SortByAscOrDescEvent_1" 
+            ShowObjectOnBrowser="SearchResultUserControl_ShowObjectOnBrowser"/>
+
+        <waiting:WaitingControl x:Name="MainWaitingControl" Message="Loading..."/>
+    </Grid>
+</UserControl>

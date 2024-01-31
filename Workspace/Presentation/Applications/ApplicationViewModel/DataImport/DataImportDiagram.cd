@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Applications.ApplicationViewModel.DataImport.DataImportViewModel">
+    <Position X="7.25" Y="0.75" Width="2.5" />
+    <Members>
+      <Method Name="CreateAccessDataSourceModel" Hidden="true" />
+      <Method Name="CreateAudioDataSourceModel" Hidden="true" />
+      <Method Name="CreateCsvDataSourceModel" Hidden="true" />
+      <Method Name="CreateEmlDataSourceModel" Hidden="true" />
+      <Method Name="CreateExcelDataSourceModel" Hidden="true" />
+      <Method Name="CreateImageDataSourceModel" Hidden="true" />
+      <Method Name="CreateTextBaseDataSourceModel" Hidden="true" />
+      <Method Name="CreateVideoDataSourceModel" Hidden="true" />
+      <Method Name="DataSourceCollectionOnCollectionChanged" Hidden="true" />
+      <Method Name="DataSourceModel_PropertyChanged" Hidden="true" />
+      <Field Name="removeDataSourceAfterImport" Hidden="true" />
+      <Field Name="selectedDataSource" Hidden="true" />
+      <Field Name="selectedDataSources" Hidden="true" />
+      <Method Name="SortDataSourceCollection" Hidden="true" />
+      <Field Name="sortOrder" Hidden="true" />
+      <Field Name="sortPriority" Hidden="true" />
+      <Method Name="SpecifyDataSourceType" Hidden="true" />
+      <Field Name="supportedAudioFileExtensions" Hidden="true" />
+      <Field Name="supportedDocumentFileExtensions" Hidden="true" />
+      <Field Name="supportedImageFileExtensions" Hidden="true" />
+      <Field Name="supportedStructuredFileExtensions" Hidden="true" />
+      <Field Name="supportedVideoFileExtensions" Hidden="true" />
+    </Members>
+    <AssociationLine Name="SortOrder" Type="GPAS.Workspace.Presentation.Controls.DataImport.SortOrder" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="2.25" />
+        <Point X="3.5" Y="2.25" />
+        <Point X="3.5" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="SortPriority" Type="GPAS.Workspace.Presentation.Controls.DataImport.SortPriority" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="2.5" />
+        <Point X="5.5" Y="2.5" />
+        <Point X="5.5" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>hYACBAMASAQBCAgAAAAQBgCARAIhQEICAIAEAAEAAAA=</HashCode>
+      <FileName>Applications\ApplicationViewModel\DataImport\DataImportViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedDataSource" />
+      <Property Name="SortOrder" />
+      <Property Name="SortPriority" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DataSourceCollection" />
+      <Property Name="SelectedDataSources" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceModel">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <Members>
+      <Field Name="acl" Hidden="true" />
+      <Method Name="AddConstField" Hidden="true" />
+      <Method Name="AddDirectoryPathFields" Hidden="true" />
+      <Field Name="addedTime" Hidden="true" />
+      <Method Name="AddMetaDataFields" Hidden="true" />
+      <Method Name="AddPathFields" Hidden="true" />
+      <Method Name="DataSourceModel" Hidden="true" />
+      <Field Name="fieldCollection" Hidden="true" />
+      <Method Name="FieldCollection_CollectionChanged" Hidden="true" />
+      <Field Name="fileInfo" Hidden="true" />
+      <Method Name="FileInfo_FullPathChanged" Hidden="true" />
+      <Method Name="GetExtensionField" Hidden="true" />
+      <Method Name="GetFileNameField" Hidden="true" />
+      <Method Name="GetFullPathField" Hidden="true" />
+      <Method Name="GetRootField" Hidden="true" />
+      <Field Name="isHighlighted" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Field Name="largeIcon" Hidden="true" />
+      <Field Name="map" Hidden="true" />
+      <Method Name="OnFieldCollectionChanged" Hidden="true" />
+      <Method Name="RemoveMetaDataFields" Hidden="true" />
+      <Method Name="RemovePathFields" Hidden="true" />
+      <Method Name="ResetFieldCollection" Hidden="true" />
+      <Method Name="ResetMetaDataFieldCollection" Hidden="true" />
+      <Method Name="ResetPathFieldCollection" Hidden="true" />
+      <Field Name="smallIcon" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAABUAAQQBgAEEFEADBBmIAgAICBMAAAAVIAAABBATI=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.SortOrder">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\SortOrder.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.SortPriority">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAEAAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\SortPriority.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

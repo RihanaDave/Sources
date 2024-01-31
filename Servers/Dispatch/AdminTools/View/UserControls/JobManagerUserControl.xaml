@@ -1,0 +1,273 @@
+﻿<UserControl
+    x:Class="GPAS.Dispatch.AdminTools.View.UserControls.JobManagerUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="clr-namespace:GPAS.Dispatch.AdminTools.View.Converters"
+    xmlns:base="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls"
+    xmlns:userControls="clr-namespace:GPAS.Dispatch.AdminTools.View.UserControls"
+    xmlns:pagination="clr-namespace:Gpas.Pagination;assembly=Gpas.Pagination"
+    mc:Ignorable="d" 
+    DataContextChanged="BaseUserControl_DataContextChanged"
+    >
+
+    <UserControl.Resources>
+        <converter:JobStateIconConverter x:Key="JobStateIconConverter"/>
+        <converter:JobStateIconColorConverter x:Key="JobStateIconColorConverter"/>
+        <converter:JobRestartableConverter x:Key="JobRestartableConverter"/>
+        <converter:JobStateToPackIconKindConverter x:Key="JobStateToPackIconKindConverter"/>
+        <converter:JobResumableConverter x:Key="JobResumableConverter"/>
+        <converter:JobRestatableStateToVisibility x:Key="JobRestatableStateToVisibility"/>
+        <converter:JobPauseOrResumeColorIconConverter x:Key="JobPauseOrResumeColorIconConverter"/>
+        <converter:ShowToolTipPauseResumConverter x:Key="ShowToolTipPauseResumConverter"/>
+    </UserControl.Resources>
+
+    <Grid Background="{DynamicResource NormalBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Job Manager" Style="{StaticResource TabHeader}" />
+        <Button Grid.Row="1" x:Name="RefreshButton" Style="{StaticResource NormalButton}"
+                Content="Refresh" ToolTip="Refresh" HorizontalAlignment="Right" Click="RefreshButton_Click"/>
+
+        <Grid Grid.Row="2" x:Name="GridShowDialogHost" >
+
+            <materialDesign:DialogHost
+                CloseOnClickAway="True" 
+                x:Name="ShowDialogHostForShowStatusMessage"  >
+
+                <materialDesign:DialogHost.DialogContent >
+                    <Grid Margin="5 10 0 0"  Width="500" Height="500">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Column="0"    Margin="0 5 0 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <materialDesign:PackIcon Kind="Information"
+                                                 HorizontalAlignment="Left"
+                                                 Width="30"
+                                                     Margin="0 0 10 0"
+                                                 Foreground="#FF3F51B5"
+                                                 Height="30" />
+                            <TextBlock Text="Status message" 
+                                    Grid.Column="1"
+                                   Foreground="#FF3F51B5"
+                                   FontSize="22"
+                                   HorizontalAlignment="Left"/>
+
+                            <Button 
+                             Grid.Column="2"
+                            x:Name="ClosePopupShowImage"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Click="ClosePopup_Click">
+                                <materialDesign:PackIcon Kind="Close" Width="25" Height="25" Foreground="Red"/>
+                            </Button>
+                        </Grid>
+                        <Separator    Grid.Row="1" Margin="5"/>
+                        <TextBox 
+                            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                            BorderThickness="0"
+                            VerticalAlignment="Top"
+                            IsReadOnly="True"
+                            Grid.Row="2"
+                            Margin="15"
+                            FontSize="12"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto"  
+                            Text="{Binding SelectedJobRequest.StatusMessage,Mode=TwoWay}"/>
+
+
+                    </Grid>
+                </materialDesign:DialogHost.DialogContent>
+                
+                <DataGrid ItemsSource="{Binding JobsRequestList}" x:Name="JobsList"                          
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          SelectedItem="{Binding SelectedJobRequest,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  Background="{DynamicResource NormalBackground}" SelectionMode="Single"                  
+                  AutoGenerateColumns="False" CanUserSortColumns="True" IsReadOnly="True"  ColumnWidth="Auto">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" 
+                       TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="{DynamicResource SecondBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource NormalForeground}" />
+                            <Setter Property="Padding" Value="5" />
+                            <Setter Property="FontSize" Value="16" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="Indigo"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource NormalForeground}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                        <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+
+                        <DataGridTemplateColumn Header="State" SortMemberPath="State" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <materialDesign:PackIcon Kind="{Binding State,Converter={StaticResource JobStateIconConverter}}"
+                                                     Foreground="{Binding State,Converter={StaticResource JobStateIconColorConverter}}"
+                                                     Width="25" Height="25"
+                                                             HorizontalAlignment="Center" 
+                                                             ToolTip="{Binding State}"
+                                                             VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="ID" SortMemberPath="Id" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Id}" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Type" SortMemberPath="Type" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Type}" VerticalAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Begin Time" SortMemberPath="BeginTime">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding BeginTime}" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="End Time" SortMemberPath="EndTime">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding EndTime}" VerticalAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Restart" SortMemberPath="Restartable">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Visibility="{Binding State,Converter={StaticResource JobRestartableConverter}}"                                    
+                                            HorizontalAlignment="Left"
+                                             Background="Transparent"
+                                             Foreground="Transparent"
+                                             BorderBrush="Transparent"
+                                             Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                    x:Name="RestartJobButton" Click="RestartJobButton_Click">
+                                        <materialDesign:PackIcon Kind="Restart" ToolTip="Restart" Width="25" Height="25" Foreground="Indigo"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Pause/Resume" SortMemberPath="Restartable">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button  Visibility="{Binding State,Converter={StaticResource JobRestatableStateToVisibility}}"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Bottom"
+                                             Background="Transparent"
+                                             Foreground="Transparent"
+                                             BorderBrush="Transparent"
+                                             Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                                    x:Name="PuaseResumeJobButton" Click="PuaseResumeJobButton_Click">
+                                        <materialDesign:PackIcon ToolTip="{Binding State,Converter={StaticResource ShowToolTipPauseResumConverter}}" 
+                                                                 Kind="{Binding State,Converter={StaticResource JobStateToPackIconKindConverter}}" 
+                                                                 Width="20" Height="20" 
+                                          Foreground="{Binding State,Converter={StaticResource JobPauseOrResumeColorIconConverter}}"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Header="Status Message" SortMemberPath="Restartable">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="StatusButton"
+                                            Padding="0"
+                                            BorderBrush="Transparent"
+                                            Background="Transparent"
+                                            HorizontalAlignment="Center"
+                                            Click="StatusButton_Click">
+                                        <materialDesign:PackIcon  Kind="Information" 
+                                                                  ToolTip="Show Status Message"
+                                                              VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"                                                             
+                                                             Foreground="DodgerBlue"
+                                                             Width="25" Height="25"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="Status Import" Width="*" SortMemberPath="Restartable">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ProgressBar
+                                            Grid.Column="0"                                          
+                                            Value="{Binding PercentageRateDone}"
+                                            VerticalAlignment="Center"
+                                            ToolTip="Status Import"
+                                            Foreground="Green"
+                                            Background="#5500BB00"
+                                            BorderBrush="#5500BB00"
+                                            materialDesign:TransitionAssist.DisableTransitions="True"/>
+
+
+
+                                        <StackPanel Margin="10 0 0 0" VerticalAlignment="Center" Orientation="Horizontal" Grid.Column="1">
+                                            <TextBlock Text="%" FontSize="14" Foreground="Indigo" VerticalAlignment="Bottom"/>
+                                            <TextBlock FontSize="16"  Foreground="Indigo" Text="{Binding PercentageRateDone}"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </materialDesign:DialogHost>
+
+        </Grid>
+        <pagination:PaginationUserControl Grid.Row="3" 
+                                          Background="{DynamicResource SecondBackground}"
+                                          ItemPerPage="{Binding ItemPerPage,Mode=TwoWay}"                                          
+                                          TotalNumberCollection="{Binding AllItemNumber,Mode=TwoWay}"
+                                          PageNumber="{Binding PageNumber,Mode=TwoWay}"
+                                          ItemPerPageChanged="PaginationUserControl_ItemPerPageChanged"
+                                          PageNumberChanged="PaginationUserControl_PageNumberChanged"/>
+    </Grid>
+</UserControl>

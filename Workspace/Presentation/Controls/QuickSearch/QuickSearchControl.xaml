@@ -1,0 +1,76 @@
+<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.QuickSearchControl"
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+                              Foreground="{DynamicResource MaterialDesignBody}">
+
+    <UserControl.Resources>
+        <materialDesign:BooleanToVisibilityConverter x:Key="RevertBooleanToVisibilityConverter" FalseValue="Visible" TrueValue="Collapsed"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>       
+
+        <Border Grid.Row="0" BorderThickness="1" Background="{DynamicResource MaterialDesignPaper}" CornerRadius="15">
+
+            <Grid Name="SearchGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox materialDesign:HintAssist.Hint="Search kavosh..." 
+                         materialDesign:TextFieldAssist.UnderlineBrush="Transparent"
+                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                         BorderThickness="0" Name="SearchKeywordTextBox" 
+                         TextChanged="SearchKeywordTextbox_TextChanged" 
+                         KeyDown="SearchKeywordTextbox_KeyDown" Margin="15 2 5 0"
+                         Foreground="{DynamicResource MaterialDesignBody}" FontSize="13"
+                         BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+                         VerticalContentAlignment="Center" Grid.Column="0" />               
+
+                <Border Grid.Column="1" PreviewMouseDown="Border_PreviewMouseDown"
+                        CornerRadius="0 18 18 0" Margin="-1"
+                        Visibility="{Binding ShowSearchORProgressButton,UpdateSourceTrigger=PropertyChanged,
+                    Converter={StaticResource RevertBooleanToVisibilityConverter}}">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="false">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+
+                    <Button Background="Transparent" BorderBrush="Transparent" Name="SearchButton" 
+                                        Style="{StaticResource MaterialDesignFlatButton}" Click="SearchButton_Click"
+                                        Height="35" Width="31" Padding="3" Margin="0 0 5 0">
+                        <materialDesign:PackIcon Kind="Search" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}" />
+                    </Button>
+                </Border>
+
+                <ProgressBar Grid.Column="1" Height="25" Width="25" Value="0" IsIndeterminate="True" Margin="5"
+                             Name="WaitProgressBar" Style="{StaticResource MaterialDesignCircularProgressBar}"/>
+            </Grid>
+        </Border>
+
+        <TextBlock Name="StatusTextBlock" Grid.Row="1" Foreground="OrangeRed" Margin="15 0"
+                   HorizontalAlignment="Left" FontSize="11" Visibility="Collapsed" VerticalAlignment="Bottom"/>
+
+        <Popup x:Name="ResultPopup" Grid.Row="1" IsOpen="False" StaysOpen="False"
+            PlacementTarget="{Binding ElementName=SearchKeywordTextBox}" 
+            Placement="Bottom" MaxHeight="650"
+            Width="{Binding ElementName=SearchGrid, Path=ActualWidth}">
+            <controls:QuickSearchResultViewerControl x:Name="ResultViewer" 
+                                                     QuickSearchResultChoosen="ResultViewer_QuickSearchResultChoosen"/>
+        </Popup>
+    </Grid>
+</controls:PresentationControl>

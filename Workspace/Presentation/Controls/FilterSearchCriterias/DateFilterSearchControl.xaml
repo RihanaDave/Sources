@@ -1,0 +1,101 @@
+﻿<local:BaseFilterSearchControl x:Class="GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.DateFilterSearchControl"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:DateTimePicker="clr-namespace:GPAS.DateTimePicker;assembly=GPAS.DateTimePicker"
+                               xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+                               xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias"
+                               xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.Converters"
+                               xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                               mc:Ignorable="d" Foreground="{DynamicResource MaterialDesignBody}" Margin="0 5 0 0"
+                         d:DesignHeight="300" d:DesignWidth="300">
+
+    <local:BaseFilterSearchControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:IsSelectedToHighlightBrushConverter x:Key="IsSelectedToHighlightBrushConverter"/>
+            <converters:ValidationStatusToVisibilityErrorBoxConverter x:Key="ValidationStatusToVisibilityErrorBoxConverter"/>
+            <converters:ValidationStatusToBrushConverter x:Key="ValidationStatusToBrushConverter"/>
+            <converters:EndDateToLastTickOfEndDateConverter x:Key="EndDateToLastTickOfEndDateConverter"/>
+            <converters:ValidationStatusToForegroundConverter x:Key="ValidationStatusToForegroundConverter"/>
+        </ResourceDictionary>
+    </local:BaseFilterSearchControl.Resources>
+
+    <GroupBox x:Name="groupBox" Style="{DynamicResource MainGroupBox}">
+        <GroupBox.BorderBrush>
+            <MultiBinding Converter="{StaticResource IsSelectedToHighlightBrushConverter}" UpdateSourceTrigger="PropertyChanged" >
+                <Binding Path="IsSelected"/>
+                <Binding Path="CurrentTheme"/>
+            </MultiBinding>
+        </GroupBox.BorderBrush>
+        <GroupBox.Header>
+            <TextBlock Name="DateLabel" Text="{x:Static resource:Resources.Date}" FontWeight="Bold" 
+                       Foreground="{Binding ElementName=groupBox, Path=BorderBrush}"/>
+        </GroupBox.Header>
+
+        <Grid Name="ContentGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <common:ButtonWithIcon x:Name="RemoveButton" Grid.Column="1" VerticalAlignment="Top" Padding="0" Margin="0"
+                                       Click="RemoveButton_Click" Icon="Close" IconMargin="5" Foreground="red"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <DateTimePicker:DateTimePicker x:Name="startDatePicker" Grid.Row="0" FontSize="14"                                               
+                                               Hint="{x:Static resource:Resources.Begin}" DiplayErrorMessage="False"
+                                               SelectedDateTime="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               Text="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               PreviewMouseLeftButtonDown="StartDatePicker_PreviewMouseLeftButtonDown"
+                                               IsValidChanged="StartDatePicker_IsValidChanged"
+                                               NewForeground="{DynamicResource MaterialDesignBody}"
+                                               NewBackground="{Binding Background,
+                                        RelativeSource= {RelativeSource FindAncestor,AncestorType=UserControl}}"/>
+
+                <TextBlock Name="ErrorLabelStart" Grid.Row="1" Margin="2 2 2 5" TextWrapping="Wrap" Text="{Binding ValidationMessageStartDate}"
+                       Visibility="{Binding Path=ValidationStatusStartDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged,
+                    Converter={StaticResource ValidationStatusToVisibilityErrorBoxConverter}}">
+                    <TextBlock.Foreground>
+                        <MultiBinding Converter="{StaticResource ValidationStatusToForegroundConverter}" UpdateSourceTrigger="PropertyChanged" >
+                            <Binding Path="ValidationStatusStartDate"/>
+                            <Binding Path="CurrentTheme"/>
+                        </MultiBinding>
+                    </TextBlock.Foreground>
+                </TextBlock>
+
+                <DateTimePicker:DateTimePicker x:Name="endDatePicker" Grid.Row="2" FontSize="14"
+                                               Hint="{x:Static resource:Resources.End}" DiplayErrorMessage="False"
+                                               SelectedDateTime="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               Text="{Binding EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               PreviewMouseLeftButtonDown="EndDatePicker_PreviewMouseLeftButtonDown"
+                                               IsValidChanged="EndDatePicker_IsValidChanged"
+                                               NewForeground="{DynamicResource MaterialDesignBody}"
+                                               NewBackground="{Binding Background,
+                                        RelativeSource= {RelativeSource FindAncestor,AncestorType=UserControl}}"/>
+
+                <TextBlock Name="ErrorBorderEnd" Grid.Row="3" Margin="2" TextWrapping="Wrap" Text="{Binding ValidationMessageEndDate}"
+                       Visibility="{Binding Path=ValidationStatusEndDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged,
+                    Converter={StaticResource ValidationStatusToVisibilityErrorBoxConverter}}">
+                    <TextBlock.Foreground>
+                        <MultiBinding Converter="{StaticResource ValidationStatusToForegroundConverter}" UpdateSourceTrigger="PropertyChanged" >
+                            <Binding Path="ValidationStatusEndDate"/>
+                            <Binding Path="CurrentTheme"/>
+                        </MultiBinding>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </Grid>
+        </Grid>
+    </GroupBox>
+</local:BaseFilterSearchControl>

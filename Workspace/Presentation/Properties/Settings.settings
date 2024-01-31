@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GPAS.Workspace.Presentation.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultWorkspaceLastRunCulture" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en</Value>
+    </Setting>
+    <Setting Name="WorkspaceLastRunCulture" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="QuickSearchUnpublishedResultMaxCount" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="WorkspaceSideImport_MaximumImportingFilesCount" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="WorkspaceSideImport_MaximumSemiStructuredImportingFilesSizeInMegaBytes" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="WorkspaceSideImport_MaximumImportingObjects" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="ImportPreview_MaximumSampleRows" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="ImportProcess_SingleImportingFileMaximumSizeInMegaBytes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">512</Value>
+    </Setting>
+    <Setting Name="WorkspaceSideImport_MaximumUnstructuredImportingFilesSizeInMegaBytes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="SavedMapFolder" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{0}\SavedMap</Value>
+    </Setting>
+    <Setting Name="CustomSearchAroundRecentLoadedFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">{0}\RecentCSA.xml</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

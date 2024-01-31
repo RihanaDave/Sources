@@ -1,0 +1,200 @@
+﻿<UserControl x:Class="GPAS.BarChartViewer.BarChartViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converters="clr-namespace:GPAS.BarChartViewer.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" 
+             PreviewMouseUp="UserControl_PreviewMouseUp" MouseEnter="UserControl_MouseEnter">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converters:VerticalAxisModePropertyToVerticalAxisTypeConverter x:Key="chooseVerticalAxisMode"/>
+            <converters:OrientationStatusToHorizontalVisibilityConverter x:Key="chooseHorizontalModeVisibility"/>
+            <converters:OrientationStatusToVerticalVisibilityConverter x:Key="chooseVerticalModeVisibility"/>
+            <converters:OrientationToMainControlLayoutTransformConverter x:Key="OrientationToMainControlLayoutTransform"/>
+            <converters:OrientationToTextControlLayoutTransformConverter x:Key="OrientationToTextControlLayoutTransform"/>
+            <converters:OrientationToAxisLabelTemplateConverter x:Key="OrientationToAxisLabelTemplate"/>
+            <converters:SelectionModeToChartSelectionModeConverter x:Key="SelectionModeToChartSelectionMode"/>
+
+            <LinearGradientBrush x:Key="BarBrush" EndPoint="0, 0.5" StartPoint="1, 0.5">
+                <GradientStop Color="DarkGoldenrod" Offset="0"/>
+                <GradientStop Color="Gold" Offset="0.5"/>
+                <GradientStop Color="DarkGoldenrod" Offset="1"/>
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="SelectedBarBrush" EndPoint="0, 0.5" StartPoint="1, 0.5">
+                <GradientStop Color="{DynamicResource PrimaryHueDarkBrush}" Offset="0"/>
+                <GradientStop Color="{DynamicResource PrimaryHueLightBrush}" Offset="0.5"/>
+                <GradientStop Color="{DynamicResource PrimaryHueDarkBrush}" Offset="1"/>
+            </LinearGradientBrush>
+
+            <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+            </Style>
+
+            <Style TargetType="ToolTip">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+
+            <Style TargetType="ToolTip" x:Key="styleToolTip">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+
+            <Style TargetType="Label" x:Key="styleBarToolTip">
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="#FF2C2C2C"/>
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+
+            <TextBlock x:Key="txbVerticalAxisLabel" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="14" Padding="2"  
+                   Visibility="{Binding AxisLabelMode, Converter={StaticResource chooseVerticalModeVisibility}}"
+                   Text="{Binding VerticalAxisLabel}">
+                <TextBlock.LayoutTransform>
+                    <Binding Path="Orientation" Converter="{StaticResource OrientationToTextControlLayoutTransform}" Mode="OneWay"/>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.LayoutTransform>
+        <Binding Path="Orientation" Converter="{StaticResource OrientationToMainControlLayoutTransform}" Mode="OneWay"/>
+    </UserControl.LayoutTransform>
+
+    <Grid Background="{DynamicResource MaterialDesignCardBackground}">
+        <telerik:RadCartesianChart x:Name="chart" >
+            <telerik:RadCartesianChart.EmptyContent>
+                <TextBlock Name="txbEmptyContentLabel" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" Text="{Binding EmptyContent}">
+                    <TextBlock.LayoutTransform>
+                        <Binding Path="Orientation" Converter="{StaticResource OrientationToTextControlLayoutTransform}" Mode="OneWay"/>
+                    </TextBlock.LayoutTransform>
+                </TextBlock>
+            </telerik:RadCartesianChart.EmptyContent>
+            <telerik:RadCartesianChart.HorizontalAxis>
+                <telerik:LinearAxis Visibility="Visible" x:Name="linearHorizontalAxis" TickOrigin="0" DesiredTickCount="15"
+                                    LabelTemplate="{Binding Orientation, Mode=OneWay, Converter={StaticResource OrientationToAxisLabelTemplate}}">
+                    <telerik:LinearAxis.LabelStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                        </Style>
+                    </telerik:LinearAxis.LabelStyle>
+                    <telerik:LinearAxis.Title>
+                        <TextBlock x:Name="txbHorizontalAxisLabel" Foreground="{DynamicResource MaterialDesignBody}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontSize="14" Padding="2"
+                                   Visibility="{Binding AxisLabelMode, Converter={StaticResource chooseHorizontalModeVisibility}}"
+                                   Text="{Binding HorizontalAxisLabel}">
+                            <TextBlock.LayoutTransform>
+                                <Binding Path="Orientation" Converter="{StaticResource OrientationToTextControlLayoutTransform}" Mode="OneWay"/>
+                            </TextBlock.LayoutTransform>
+                        </TextBlock>                        
+                    </telerik:LinearAxis.Title>
+                </telerik:LinearAxis>
+            </telerik:RadCartesianChart.HorizontalAxis>
+            
+            <telerik:RadCartesianChart.VerticalAxis>
+                <telerik:LinearAxis   LineThickness="3"  LineStroke="{DynamicResource MaterialDesignBody}" >
+                    <telerik:LinearAxis.LabelStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                        </Style>
+                    </telerik:LinearAxis.LabelStyle>
+                </telerik:LinearAxis>
+            </telerik:RadCartesianChart.VerticalAxis>
+
+            <telerik:RadCartesianChart.Grid>
+                <telerik:CartesianChartGrid MajorLinesVisibility="Y" StripLinesVisibility="XY" IsHitTestVisible="True"
+                                            PreviewMouseLeftButtonDown="CartesianChartGrid_PreviewMouseLeftButtonDown"
+                                            PreviewMouseLeftButtonUp="CartesianChartGrid_PreviewMouseLeftButtonUp"
+                                            PreviewMouseMove="CartesianChartGrid_PreviewMouseMove"
+                                            MouseLeave="CartesianChartGrid_MouseLeave">
+                    <telerik:CartesianChartGrid.MajorYLineStyle>
+                        <Style TargetType="Line">
+                            <Setter Property="Stroke" Value="{DynamicResource MaterialDesignBody}"/>
+                        </Style>
+                    </telerik:CartesianChartGrid.MajorYLineStyle>
+                    <telerik:CartesianChartGrid.YStripeBrushes>
+                        <SolidColorBrush Color="Transparent" />
+                    </telerik:CartesianChartGrid.YStripeBrushes>
+                    <telerik:CartesianChartGrid.XStripeBrushes>
+                        <SolidColorBrush Color="Transparent" />
+                    </telerik:CartesianChartGrid.XStripeBrushes>
+                </telerik:CartesianChartGrid>
+            </telerik:RadCartesianChart.Grid>
+
+            <telerik:RadCartesianChart.Behaviors>
+                <telerik:ChartCrosshairBehavior
+                    HorizontalLineVisibility="{Binding CrosshairLineMode, Converter={StaticResource chooseHorizontalModeVisibility}}"
+                    VerticalLineVisibility="{Binding CrosshairLineMode, Converter={StaticResource chooseVerticalModeVisibility}}"
+                    HorizontalLineLabelVisibility="{Binding CrosshairLabelMode, Converter={StaticResource chooseHorizontalModeVisibility}}"
+                    VerticalLineLabelVisibility="{Binding CrosshairLabelMode, Converter={StaticResource chooseVerticalModeVisibility}}"
+                    >
+                    <telerik:ChartCrosshairBehavior.VerticalLineLabelDefinition>
+                        <telerik:ChartAnnotationLabelDefinition Location="Top" 
+                                                                HorizontalAlignment="Center" Format='{}{0:N4}' >
+                            <telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+                                </Style>
+                            </telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                        </telerik:ChartAnnotationLabelDefinition>
+                    </telerik:ChartCrosshairBehavior.VerticalLineLabelDefinition>
+
+
+                    <telerik:ChartCrosshairBehavior.HorizontalLineLabelDefinition>
+                        <telerik:ChartAnnotationLabelDefinition Location="Bottom" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                                <Style TargetType="Label">
+                                    <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                    <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+                                </Style>
+                            </telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                        </telerik:ChartAnnotationLabelDefinition>
+                    </telerik:ChartCrosshairBehavior.HorizontalLineLabelDefinition>
+
+                </telerik:ChartCrosshairBehavior>
+                <telerik:ChartTooltipBehavior Placement="Top"/>
+                <telerik:ChartSelectionBehavior x:Name="chartSelectionBehavior"
+                                                DataPointSelectionMode="{Binding BarSelectionMode, Mode=OneWay, Converter={StaticResource SelectionModeToChartSelectionMode}}"
+                                                SelectionChanged="ChartSelectionBehavior_SelectionChanged"/>
+            </telerik:RadCartesianChart.Behaviors>
+
+            <telerik:RadCartesianChart.SelectionPalette>
+                <telerik:ChartPalette x:Name="SelectionChartPalette">
+                    <telerik:ChartPalette.GlobalEntries>
+                        
+                    </telerik:ChartPalette.GlobalEntries>
+                </telerik:ChartPalette>
+            </telerik:RadCartesianChart.SelectionPalette>
+
+            <telerik:RadCartesianChart.Series>
+                <telerik:BarSeries x:Name="barSeries" CategoryBinding="End" ValueBinding="Value" 
+                                   ItemsSource="{Binding ValueRangeCollection}" IsHitTestVisible="True">
+                    <telerik:BarSeries.TooltipTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding DataItem.Label}" Style="{StaticResource styleBarToolTip}" />
+                        </DataTemplate>
+                    </telerik:BarSeries.TooltipTemplate>
+                    <telerik:BarSeries.DefaultVisualStyle>
+                        <Style TargetType="Border">
+                            <Setter Property="Background" Value="{StaticResource BarBrush}"/>
+                        </Style>
+                    </telerik:BarSeries.DefaultVisualStyle>
+                    <telerik:BarSeries.HorizontalAxis>
+                        <telerik:CategoricalAxis x:Name="horizontalAxisCategorical" MajorTickInterval="1" GapLength="0" PlotMode="BetweenTicks"
+                                                 SmartLabelsMode="SmartStep" Visibility="Collapsed"/>
+                    </telerik:BarSeries.HorizontalAxis>
+                </telerik:BarSeries>
+            </telerik:RadCartesianChart.Series>
+        </telerik:RadCartesianChart>
+    </Grid>
+</UserControl>

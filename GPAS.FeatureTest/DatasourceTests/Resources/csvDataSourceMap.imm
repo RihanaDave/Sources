@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<TypeMapping xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectsMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>نام</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>0</ColumnIndex>
+            <ColumnTitle>Caller Name</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>شماره_تلفن_همراه</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>1</ColumnIndex>
+            <ColumnTitle>Caller Phone Number</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>FindMatch</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>شخص1</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>شخص</TypeUri>
+      </ObjectType>
+      <ID>5eb8d987-4943-4546-842f-44c7542cf86c</ID>
+    </ObjectMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>نام</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>2</ColumnIndex>
+            <ColumnTitle>Receiver Name</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>شماره_تلفن_همراه</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>3</ColumnIndex>
+            <ColumnTitle>Receiver Phone Number</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>FindMatch</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>شخص2</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>شخص</TypeUri>
+      </ObjectType>
+      <ID>c4b02ef3-69e6-410a-8bff-23452994c151</ID>
+    </ObjectMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>شماره_حساب</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>5</ColumnIndex>
+            <ColumnTitle>Caller Account Number</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>FindMatch</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>حساب بانکی1</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>حساب_بانکی</TypeUri>
+      </ObjectType>
+      <ID>c53d6cde-4897-4d3a-85e4-9ac0e835dcb2</ID>
+    </ObjectMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>مدت_زمان_مکالمه</TypeUri>
+          </PropertyType>
+          <Value xsi:type="DateTimeTableColumnMappingItem">
+            <ColumnIndex>4</ColumnIndex>
+            <ColumnTitle>Call Duration</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+            <DateTimeCultureName />
+            <DateTimeStyles>None</DateTimeStyles>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>مکالمه تلفنی1</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>مکالمه_تلفنی</TypeUri>
+      </ObjectType>
+      <ID>0df196df-6302-46ec-9dbb-dc6915ed6d24</ID>
+    </ObjectMapping>
+  </ObjectsMapping>
+  <RelationshipsMapping>
+    <RelationshipMapping>
+      <RelationshipDirection>Bidirectional</RelationshipDirection>
+      <RelationshipDescription xsi:type="ConstValueMappingItem">
+        <ConstValue>مکالمه تلفنی</ConstValue>
+      </RelationshipDescription>
+      <RelationshipType>
+        <TypeUri>حضور_در</TypeUri>
+      </RelationshipType>
+      <SourceId>5eb8d987-4943-4546-842f-44c7542cf86c</SourceId>
+      <TargetId>0df196df-6302-46ec-9dbb-dc6915ed6d24</TargetId>
+    </RelationshipMapping>
+    <RelationshipMapping>
+      <RelationshipDirection>Bidirectional</RelationshipDirection>
+      <RelationshipDescription xsi:type="ConstValueMappingItem">
+        <ConstValue>مکالمه تلفنی</ConstValue>
+      </RelationshipDescription>
+      <RelationshipType>
+        <TypeUri>حضور_در</TypeUri>
+      </RelationshipType>
+      <SourceId>0df196df-6302-46ec-9dbb-dc6915ed6d24</SourceId>
+      <TargetId>c4b02ef3-69e6-410a-8bff-23452994c151</TargetId>
+    </RelationshipMapping>
+    <RelationshipMapping>
+      <RelationshipDirection>PrimaryToSecondary</RelationshipDirection>
+      <RelationshipDescription xsi:type="ConstValueMappingItem">
+        <ConstValue>مالک</ConstValue>
+      </RelationshipDescription>
+      <RelationshipType>
+        <TypeUri>مالک</TypeUri>
+      </RelationshipType>
+      <SourceId>5eb8d987-4943-4546-842f-44c7542cf86c</SourceId>
+      <TargetId>c53d6cde-4897-4d3a-85e4-9ac0e835dcb2</TargetId>
+    </RelationshipMapping>
+  </RelationshipsMapping>
+  <InterTypeAutoInternalResolution>false</InterTypeAutoInternalResolution>
+</TypeMapping>

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+  <xs:complexType name="ArrayOfDBObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBObject" nillable="true" type="tns:DBObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBObject" nillable="true" type="tns:ArrayOfDBObject" />
+  <xs:complexType name="DBObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsGroup" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LabelPropertyID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="ResolvedTo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBObject" nillable="true" type="tns:DBObject" />
+  <xs:complexType name="ArrayOfDBProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBProperty" nillable="true" type="tns:DBProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBProperty" nillable="true" type="tns:ArrayOfDBProperty" />
+  <xs:complexType name="DBProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="tns:DBObject" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBProperty" nillable="true" type="tns:DBProperty" />
+  <xs:complexType name="ArrayOfDBRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBRelationship" nillable="true" type="tns:DBRelationship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBRelationship" nillable="true" type="tns:ArrayOfDBRelationship" />
+  <xs:complexType name="DBRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direction" type="tns:RepositoryLinkDirection" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="tns:DBObject" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="tns:DBObject" />
+      <xs:element minOccurs="0" name="TimeBegin" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeURI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBRelationship" nillable="true" type="tns:DBRelationship" />
+  <xs:simpleType name="RepositoryLinkDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SourceToTarget">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TargetToSource">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bidirectional">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RepositoryLinkDirection" nillable="true" type="tns:RepositoryLinkDirection" />
+  <xs:complexType name="ArrayOfDBMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBMedia" nillable="true" type="tns:DBMedia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBMedia" nillable="true" type="tns:ArrayOfDBMedia" />
+  <xs:complexType name="DBMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element minOccurs="0" name="URI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBMedia" nillable="true" type="tns:DBMedia" />
+  <xs:complexType name="DBAddedConcepts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddedMediaList" nillable="true" type="tns:ArrayOfDBMedia" />
+      <xs:element minOccurs="0" name="AddedObjectList" nillable="true" type="tns:ArrayOfDBObject" />
+      <xs:element minOccurs="0" name="AddedPropertyList" nillable="true" type="tns:ArrayOfDBProperty" />
+      <xs:element minOccurs="0" name="AddedRelationshipList" nillable="true" type="tns:ArrayOfDBRelationship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBAddedConcepts" nillable="true" type="tns:DBAddedConcepts" />
+  <xs:complexType name="DBModifiedConcepts">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DeletedMediaIDList" nillable="true" type="q1:ArrayOflong" />
+      <xs:element minOccurs="0" name="ModifiedPropertyList" nillable="true" type="tns:ArrayOfDBModifiedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBModifiedConcepts" nillable="true" type="tns:DBModifiedConcepts" />
+  <xs:complexType name="ArrayOfDBModifiedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBModifiedProperty" nillable="true" type="tns:DBModifiedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBModifiedProperty" nillable="true" type="tns:ArrayOfDBModifiedProperty" />
+  <xs:complexType name="DBModifiedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBModifiedProperty" nillable="true" type="tns:DBModifiedProperty" />
+  <xs:complexType name="DBGraphArrangement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataSourceID" type="xs:long" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GraphArrangementXML" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="GraphImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NodesCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeCreated" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBGraphArrangement" nillable="true" type="tns:DBGraphArrangement" />
+  <xs:complexType name="ArrayOfDBGraphArrangement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBGraphArrangement" nillable="true" type="tns:DBGraphArrangement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBGraphArrangement" nillable="true" type="tns:ArrayOfDBGraphArrangement" />
+  <xs:simpleType name="ConceptType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Property">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Relationship">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Media">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Object">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConceptType" nillable="true" type="tns:ConceptType" />
+  <xs:complexType name="ArrayOfDBDataSourceACL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBDataSourceACL" nillable="true" type="tns:DBDataSourceACL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBDataSourceACL" nillable="true" type="tns:ArrayOfDBDataSourceACL" />
+  <xs:complexType name="DBDataSourceACL">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="Acl" nillable="true" type="q2:ACL" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBDataSourceACL" nillable="true" type="tns:DBDataSourceACL" />
+</xs:schema>

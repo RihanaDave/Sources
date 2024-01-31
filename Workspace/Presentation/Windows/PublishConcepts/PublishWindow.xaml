@@ -1,0 +1,30 @@
+<ws:PresentationWindow  x:Class="GPAS.Workspace.Presentation.Windows.PublishWindow"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:publish="clr-namespace:GPAS.Workspace.Presentation.Controls.Publish"
+                        xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                        xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                        xmlns:ws="clr-namespace:GPAS.Workspace.Presentation.Windows"
+                        Closing="PublishWindow_Closing"
+                        Title="Publish window" Height="600" Width="1000"
+        Background="{DynamicResource MaterialDesignCardBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <publish:PublishUserControl x:Name="PublishUserControl" Grid.Row="0"
+                                    BeginOfAccessLevelChecking="PublishUserControl_BeginOfAccessLevelChecking"
+                                    EndOfAccessLevelChecking="PublishUserControl_EndOfAccessLevelChecking"/>
+
+        <StackPanel Grid.Row="1" Margin="5" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="BtnCancel" Content="{x:Static resource:Resources.Cancel}" Click="BtnCancel_Click"/>
+            <Button Name="BtnPublish" Content="{x:Static resource:Resources.Publish}" Margin="5 0 0 0" Click="BtnPublish_Click"/>
+        </StackPanel>
+
+        <waiting:WaitingControl x:Name="MainWaitingControl" Grid.Row="0" Grid.RowSpan="2"/>
+    </Grid>
+
+</ws:PresentationWindow>

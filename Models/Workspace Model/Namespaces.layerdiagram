@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a5ee9609-8e77-47dc-875d-e541179e8d85" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="44251fbd-233d-4355-97b4-b28c1adf23f9" name="Comment1">
+      <body>راهنما:
+خاکستری:فضاهای نامی بدون پیاده‌سازی
+آبی پررنگ: کتابخانه/اسمبلی
+آبی: فضاهای نامی
+سبز: فضاهای نامی کمکی
+
+بعضی کتابخانه‌ها دارای یک فضای نامی
+Property
+هستند که در این نمودار آورده نشده‌اند
+
+فضاهای نامی هم نام با کتابخانه ذکر نشده‌اند</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="11086a83-04cd-4588-95db-352f47342365" name="GPAS">
+      <childLayers>
+        <layer Id="5939e98b-61cc-4fce-b202-77b59584a242" name="Workspace">
+          <comments>
+            <comment Id="3554cc6e-aff0-4c6f-a094-d05a6369f779" name="Comment1">
+              <body>محیط کاربری دارای چهار فضای نامی دیگر می‌باشد که به خاطر کنترل‌های خارجی استفاده شده در آن، نامگذاری‌شان مدیریت نشده است</body>
+            </comment>
+          </comments>
+          <childLayers>
+            <layer Id="25e0e878-67a8-4742-a4d5-9552347406a6" name="Entities">
+              <references>
+                <reference Id="42022b0c-8ac3-4d31-b976-3402008ec9f9" name="GPAS.Workspace.Entities">
+                  <ArtifactNode Label="GPAS.Workspace.Entities" Category="CodeSchema_Project" Id="(Assembly=../WorkspaceEntities/GPAS.Workspace.Entities.csproj)">
+                    <Category Ref="File" />
+                  </ArtifactNode>
+                  <ExpandedNode Id="(Assembly=GPAS.Workspace.Entities)" Label="GPAS.Workspace.Entities.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Produces" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="d0f6bb4a-0135-49ff-9cb8-2246a80c1cbe" name="DataAccessManager">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="71562407-9eac-43c4-b6ab-75fcd3d87385" direction="Forward">
+                  <layerMoniker Id="25e0e878-67a8-4742-a4d5-9552347406a6" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="9b4b3f4c-585a-4459-8819-2f2e5415e772" direction="Forward">
+                  <layerMoniker Id="d2aed1e7-4558-473e-baa6-9125c6f50081" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="24524912-a212-4671-8db9-040eaf36084c" direction="Forward">
+                  <layerMoniker Id="0869bdf2-7056-4773-86e4-b2016fc102bf" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="40e78234-eb76-4be1-8551-7ad10727e200" direction="Forward">
+                  <layerMoniker Id="f0456601-bf0c-4cca-aa60-a3910b03dac5" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="f08bf036-42d8-4d73-8e97-da324f2adda4" direction="Forward">
+                  <layerMoniker Id="e00f2807-b7a3-4378-bfef-b618b3db848b" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+              <childLayers>
+                <layer Id="39b7f5b1-ab01-4678-9fcf-f492b75fd975" name="Search">
+                  <references>
+                    <reference Id="a4c4e650-dbac-4433-a2c5-ad32d157d0ba" name="GPAS.Workspace.DataAccessManager.Search">
+                      <ArtifactNode Label="GPAS.Workspace.DataAccessManager.Search" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.DataAccessManager.Search)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.DataAccessManager.Search)" Label="GPAS.Workspace.DataAccessManager.Search" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+              </childLayers>
+              <references>
+                <reference Id="5a0661a7-422a-4171-b6bd-e6423eb2d9e0" name="GPAS.Workspace.DataAccessManager">
+                  <ArtifactNode Label="GPAS.Workspace.DataAccessManager" Category="CodeSchema_Project" Id="(Assembly=../GPAS.Workspace.DataAccessManager/GPAS.Workspace.DataAccessManager.csproj)">
+                    <Category Ref="File" />
+                  </ArtifactNode>
+                  <ExpandedNode Id="(Assembly=GPAS.Workspace.DataAccessManager)" Label="GPAS.Workspace.DataAccessManager.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Produces" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="7abb7527-68cd-4c16-8536-8bfaf567a5e6" name="Logic">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="d84779b6-5c87-480f-8160-21fd8dc0401b" direction="Forward">
+                  <layerMoniker Id="d0f6bb4a-0135-49ff-9cb8-2246a80c1cbe" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="a94591cb-d2f7-43aa-9b78-ed793858f16a" direction="Forward">
+                  <layerMoniker Id="25e0e878-67a8-4742-a4d5-9552347406a6" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="62d0d9be-8330-4cb2-acb3-d5c3079b9242" direction="Forward">
+                  <layerMoniker Id="c433495c-2a6b-43e6-ae3b-7391ff3e611c" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="9b2f667d-22e0-4e65-90f4-dd860bc5bcd3" direction="Forward">
+                  <layerMoniker Id="d2aed1e7-4558-473e-baa6-9125c6f50081" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="08f937f8-678a-4e66-be1d-9d48569220c4" direction="Forward">
+                  <layerMoniker Id="0869bdf2-7056-4773-86e4-b2016fc102bf" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="036d19a6-1605-4bb9-a5cb-93f4c55b5c04" direction="Forward">
+                  <layerMoniker Id="7ada5a2b-eae5-444e-9c2c-4db66f40336a" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="eeb899ea-4233-48f7-a0e4-8850de546504" direction="Forward">
+                  <layerMoniker Id="f0456601-bf0c-4cca-aa60-a3910b03dac5" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="c5e4c164-57ee-4516-9704-3831a53eafb4" direction="Forward">
+                  <layerMoniker Id="c58fc388-569a-496b-a7ba-e8a5cf2caa6d" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="c223889c-c6ff-4c89-a2e8-5f41a0493c2f" direction="Forward">
+                  <layerMoniker Id="e00f2807-b7a3-4378-bfef-b618b3db848b" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+              <childLayers>
+                <layer Id="5b40de4c-0180-4410-921d-64904d93d24b" name="PublishManger">
+                  <references>
+                    <reference Id="331791dc-d216-4a71-9546-2a9507b65199" name="GPAS.Workspace.Logic.PublishManger">
+                      <ArtifactNode Label="GPAS.Workspace.Logic.PublishManger" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Logic.PublishManger)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Logic.PublishManger)" Label="GPAS.Workspace.Logic.PublishManger" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="9d543dff-7dcf-410c-9d31-b4e3e315f66d" name="Search">
+                  <references>
+                    <reference Id="b66787c1-355b-4641-83c8-e62486638ad0" name="GPAS.Workspace.Logic.Search">
+                      <ArtifactNode Label="GPAS.Workspace.Logic.Search" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Logic.Search)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Logic.Search)" Label="GPAS.Workspace.Logic.Search" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+              </childLayers>
+              <references>
+                <reference Id="96c5a6e6-6726-4633-82c8-a506c87961b5" name="GPAS.Workspace.Logic">
+                  <ArtifactNode Label="GPAS.Workspace.Logic" Category="CodeSchema_Project" Id="(Assembly=../WorkspaceLogic/GPAS.Workspace.Logic.csproj)">
+                    <Category Ref="File" />
+                  </ArtifactNode>
+                  <ExpandedNode Id="(Assembly=GPAS.Workspace.Logic)" Label="GPAS.Workspace.Logic.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Produces" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="27727d0c-6d62-4969-b2b7-6d079b2088cd" name="Presentation">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="1055aa95-8d2c-4823-8bc0-9e0420c1747d" direction="Forward">
+                  <layerMoniker Id="25e0e878-67a8-4742-a4d5-9552347406a6" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="e6e06778-4551-40ed-9816-b57c225a23d5" direction="Forward">
+                  <layerMoniker Id="7abb7527-68cd-4c16-8536-8bfaf567a5e6" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="7527c785-89f4-4a56-9f90-21030e85182a" direction="Forward">
+                  <layerMoniker Id="e25c6603-2ee1-476d-b54b-3566e7b3de8d" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="91229847-bd55-4aa5-9e89-9d8bc118b055" direction="Forward">
+                  <layerMoniker Id="7ada5a2b-eae5-444e-9c2c-4db66f40336a" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="e3d6eefb-c7be-4806-a6fe-7f0a06b537a6" direction="Forward">
+                  <layerMoniker Id="770f8877-4702-441d-853b-83867e9e2d24" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="27fb7c1d-72f1-4a67-bd36-d63f7472cd13" direction="Forward">
+                  <layerMoniker Id="2ce2481c-b72a-4584-adaf-6ce22dd161d2" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="d5a2d833-3ecf-4752-b2af-904f715de886" direction="Forward">
+                  <layerMoniker Id="f0456601-bf0c-4cca-aa60-a3910b03dac5" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="6d07ef5d-6964-498b-9227-eeae55d2c4a9" direction="Forward">
+                  <layerMoniker Id="c58fc388-569a-496b-a7ba-e8a5cf2caa6d" />
+                </dependencyFromLayerToLayer>
+                <dependencyFromLayerToLayer Id="95679007-f76a-43aa-9320-6104d5e5aeca" direction="Forward">
+                  <layerMoniker Id="e00f2807-b7a3-4378-bfef-b618b3db848b" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+              <childLayers>
+                <layer Id="fdc86b8a-745c-40f0-95d8-ce72d8f588d9" name="ApplicationContainers">
+                  <references>
+                    <reference Id="4c987980-cf9c-41b6-9e75-7d61438203cb" name="GPAS.Workspace.Presentation.ApplicationContainers">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.ApplicationContainers" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.ApplicationContainers)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.ApplicationContainers)" Label="GPAS.Workspace.Presentation.ApplicationContainers" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="e3f850eb-bc66-47a5-b5af-5f10cfe48a7b" name="Applications">
+                  <references>
+                    <reference Id="53fb506a-6b41-4a53-bf17-c6cfd8fcffb4" name="GPAS.Workspace.Presentation.Applications">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.Applications" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.Applications)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.Applications)" Label="GPAS.Workspace.Presentation.Applications" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="e3fa0dba-11ed-464a-ba7e-971a1d231bb4" name="Controls">
+                  <references>
+                    <reference Id="dd9105ca-4cff-45b4-8d1c-1289505d55bd" name="GPAS.Workspace.Presentation.Controls">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.Controls" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.Controls)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.Controls)" Label="GPAS.Workspace.Presentation.Controls" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="79fde07b-5654-481a-8613-e816c09f2ae8" name="Helpers">
+                  <references>
+                    <reference Id="9b0ef143-4ef7-4c80-9cb9-5487b51940c3" name="GPAS.Workspace.Presentation.Helpers">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.Helpers" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.Helpers)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.Helpers)" Label="GPAS.Workspace.Presentation.Helpers" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="76fdfea0-8ed1-4c0e-8d52-e03a8c257d79" name="Observers">
+                  <references>
+                    <reference Id="c739c33d-5f2b-4641-ab31-55a207aaff54" name="GPAS.Workspace.Presentation.Observers">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.Observers" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.Observers)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.Observers)" Label="GPAS.Workspace.Presentation.Observers" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="552bdc4f-e2ca-4df4-8b31-a76c068e4dc1" name="Windows">
+                  <references>
+                    <reference Id="90ec884a-a482-4ff1-8371-282f37c13d4d" name="GPAS.Workspace.Presentation.Windows">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.Windows" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.Windows)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.Windows)" Label="GPAS.Workspace.Presentation.Windows" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="8fb87d68-8389-4215-8034-b89af70b1a0c" name="Utility">
+                  <references>
+                    <reference Id="5ae7af65-1f4a-44fa-9857-c97c265d620c" name="GPAS.Workspace.Presentation.Utility">
+                      <ArtifactNode Label="GPAS.Workspace.Presentation.Utility" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Presentation.Utility)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Presentation.Utility)" Label="GPAS.Workspace.Presentation.Utility" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="0d4f6faa-89c3-48c2-95e1-e8a6fe95929f" name="App">
+                  <references>
+                    <reference Id="4b9d4114-73b7-498a-b820-35c2bbae8d71" name="App.xaml">
+                      <ArtifactNode Label="App.xaml" Category="CodeSchema_ProjectItem" Id="(Assembly=../Presentation/GPAS.Workspace.Presentation.csproj File=../Presentation/App.xaml)">
+                        <Category Ref="File" />
+                      </ArtifactNode>
+                      <ExpandedNode Id="(Assembly=GPAS Namespace=GPAS.Workspace.Presentation Type=App)" Label="App" Category="CodeSchema_Class">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                    <reference Id="1fdcc631-f0ac-4aab-acfc-c0ee73b0fb25" name="App.xaml.cs">
+                      <ArtifactNode Label="App.xaml.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../Presentation/GPAS.Workspace.Presentation.csproj File=../Presentation/App.xaml.cs)">
+                        <Category Ref="File" />
+                      </ArtifactNode>
+                      <ExpandedNode Id="(Assembly=GPAS Namespace=GPAS.Workspace.Presentation Type=App)" Label="App" Category="CodeSchema_Class">
+                        <LinkCategory Ref="Contains" />
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+              </childLayers>
+              <references>
+                <reference Id="0d4c818e-79cf-4c5d-bfc0-a6255bbc037b" name="GPAS.Workspace.Presentation">
+                  <ArtifactNode Label="GPAS.Workspace.Presentation" Category="CodeSchema_Project" Id="(Assembly=../Presentation/GPAS.Workspace.Presentation.csproj)">
+                    <Category Ref="File" />
+                  </ArtifactNode>
+                  <ExpandedNode Id="(Assembly=GPAS)" Label="GPAS.exe" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.exe" />
+                    <LinkCategory Ref="Produces" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="d2aed1e7-4558-473e-baa6-9125c6f50081" name="ServiceAccess">
+              <childLayers>
+                <layer Id="bf77e60c-f23c-4e37-b4d1-e530ec3d720a" name="RemoteService">
+                  <dependencyToLayers>
+                    <dependencyFromLayerToLayer Id="c8da8278-099f-4b03-a7f9-0595b8ea9cbc" direction="Forward">
+                      <layerMoniker Id="6ee5c092-3ad6-41b6-9f24-99e4addf0895" />
+                    </dependencyFromLayerToLayer>
+                  </dependencyToLayers>
+                  <references>
+                    <reference Id="66520efc-a97c-4291-aeaf-c6f147844904" name="GPAS.Workspace.ServiceAccess.RemoteService">
+                      <ArtifactNode Label="GPAS.Workspace.ServiceAccess.RemoteService" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.ServiceAccess.RemoteService)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.ServiceAccess.RemoteService)" Label="GPAS.Workspace.ServiceAccess.RemoteService" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+              </childLayers>
+              <references>
+                <reference Id="cb8c6002-de98-4ab4-b5c9-3306fcbea22d" name="GPAS.Workspace.ServiceAccess">
+                  <ArtifactNode Label="GPAS.Workspace.ServiceAccess" Category="CodeSchema_Project" Id="(Assembly=../WorkspaceServiceAccess/GPAS.Workspace.ServiceAccess.csproj)">
+                    <Category Ref="File" />
+                  </ArtifactNode>
+                  <ExpandedNode Id="(Assembly=GPAS.Workspace.ServiceAccess)" Label="GPAS.Workspace.ServiceAccess.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Produces" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="e00f2807-b7a3-4378-bfef-b618b3db848b" name="Ontology">
+              <references>
+                <reference Id="d70383e5-61e5-4c7d-bd9b-7760468af2df" name="GPAS.Workspace.Ontology.dll">
+                  <ArtifactNode Label="GPAS.Workspace.Ontology.dll" Category="CodeSchema_Assembly" Id="(Assembly=../Ontology/bin/Debug/GPAS.Workspace.Ontology.dll)" />
+                  <ExpandedNode Id="(Assembly=GPAS.Workspace.Ontology)" Label="GPAS.Workspace.Ontology.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="c58fc388-569a-496b-a7ba-e8a5cf2caa6d" name="DynamicOntology">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="812ae431-7ae5-4301-ad71-c9db40eda1b8" direction="Forward">
+                  <layerMoniker Id="e00f2807-b7a3-4378-bfef-b618b3db848b" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+              <references>
+                <reference Id="70e5de0d-ce4d-462c-98bb-16b1d9c9ff26" name="GPAS.Workspace.DynamicOntology.dll">
+                  <ArtifactNode Label="GPAS.Workspace.DynamicOntology.dll" Category="CodeSchema_Assembly" Id="(Assembly=../DynamicOntology/bin/Debug/GPAS.Workspace.DynamicOntology.dll)" />
+                  <ExpandedNode Id="(Assembly=GPAS.Workspace.DynamicOntology)" Label="GPAS.Workspace.DynamicOntology.dll" Category="CodeSchema_Assembly">
+                    <Category Ref="FileSystem.Category.FileOfType.dll" />
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+          </childLayers>
+        </layer>
+        <layer Id="326c5c08-13d7-4628-a921-5577dd5934c3" name="Job Share" />
+        <layer Id="0869bdf2-7056-4773-86e4-b2016fc102bf" name="PropertiesValidation">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="6b7c096c-cb14-4483-b8ce-455e91c809d1" direction="Forward">
+              <layerMoniker Id="e00f2807-b7a3-4378-bfef-b618b3db848b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="94ad6db9-3c7a-475b-8c95-15dbaa26d7ae" name="GPAS.PropertiesValidation.dll">
+              <ArtifactNode Label="GPAS.PropertiesValidation.dll" Category="CodeSchema_Assembly" Id="(Assembly=../../PropertiesValidation/GPAS.PropertiesValidation/bin/Debug/GPAS.PropertiesValidation.dll)" />
+              <ExpandedNode Id="(Assembly=GPAS.PropertiesValidation)" Label="GPAS.PropertiesValidation.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="7ada5a2b-eae5-444e-9c2c-4db66f40336a" name="DataImport">
+          <childLayers>
+            <layer Id="409aa63e-18ce-4e96-aa7b-6cb5542c7f20" name="DataMapping&#xD;&#xA;.SemiStructured">
+              <references>
+                <reference Id="36f7d7f9-f8bf-4810-9eca-02b49b26e21b" name="GPAS.DataImport.DataMapping.SemiStructured">
+                  <ArtifactNode Label="GPAS.DataImport.DataMapping.SemiStructured" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.DataImport.DataMapping.SemiStructured)" />
+                  <ExpandedNode Id="(Namespace=GPAS.DataImport.DataMapping.SemiStructured)" Label="GPAS.DataImport.DataMapping.SemiStructured" Category="CodeSchema_Namespace">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="dd2c1dd9-5d1f-4201-8482-f9916914089f" name="InternalResolve">
+              <references>
+                <reference Id="e9c134b5-d6a6-4e55-84e9-85d29e18147c" name="GPAS.DataImport.InternalResolve">
+                  <ArtifactNode Label="GPAS.DataImport.InternalResolve" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.DataImport.InternalResolve)" />
+                  <ExpandedNode Id="(Namespace=GPAS.DataImport.InternalResolve)" Label="GPAS.DataImport.InternalResolve" Category="CodeSchema_Namespace">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="61160cd3-076a-4ed7-8890-4028eca22a05" name="Material&#xD;&#xA;.SemiStructured">
+              <references>
+                <reference Id="a8b41d84-34cc-4093-8aab-78c18ec8fa61" name="GPAS.DataImport.Material.SemiStructured">
+                  <ArtifactNode Label="GPAS.DataImport.Material.SemiStructured" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.DataImport.Material.SemiStructured)" />
+                  <ExpandedNode Id="(Namespace=GPAS.DataImport.Material.SemiStructured)" Label="GPAS.DataImport.Material.SemiStructured" Category="CodeSchema_Namespace">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+            <layer Id="dec91d53-de04-4058-8d07-8f519cd03649" name="ConceptsToGenerate">
+              <dependencyToLayers>
+                <dependencyFromLayerToLayer Id="f6c637ee-f0e4-43bb-8007-622478879209" direction="Forward">
+                  <layerMoniker Id="dd2c1dd9-5d1f-4201-8482-f9916914089f" />
+                </dependencyFromLayerToLayer>
+              </dependencyToLayers>
+              <references>
+                <reference Id="eb669dca-a144-4db8-a249-29ce3fcf3563" name="GPAS.DataImport.ConceptsToGenerate">
+                  <ArtifactNode Label="GPAS.DataImport.ConceptsToGenerate" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.DataImport.ConceptsToGenerate)" />
+                  <ExpandedNode Id="(Namespace=GPAS.DataImport.ConceptsToGenerate)" Label="GPAS.DataImport.ConceptsToGenerate" Category="CodeSchema_Namespace">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+          </childLayers>
+          <references>
+            <reference Id="48290955-c762-493f-9ea1-7ef95748264a" name="GPAS.DataImport.dll">
+              <ArtifactNode Label="GPAS.DataImport.dll" Category="CodeSchema_Assembly" Id="(Assembly=../../DataImport/bin/Debug/GPAS.DataImport.dll)" />
+              <ExpandedNode Id="(Assembly=GPAS.DataImport)" Label="GPAS.DataImport.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="fa16a667-75ae-494e-b1a9-2810b3ef032b" name="DataBarViewer">
+          <references>
+            <reference Id="0fc7f482-585e-4865-aee5-a207f4d2c44b" name="GPAS.DataBarViewer.dll">
+              <ArtifactNode Label="GPAS.DataBarViewer.dll" Category="CodeSchema_Assembly" Id="(Assembly=../GPAS.DataBarViewer/bin/Debug/GPAS.DataBarViewer.dll)" />
+              <ExpandedNode Id="(Assembly=GPAS.DataBarViewer)" Label="GPAS.DataBarViewer.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="770f8877-4702-441d-853b-83867e9e2d24" name="HistogramViewer">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="3d8c393d-93a7-4a1f-855a-13e4b28d581b" direction="Forward">
+              <layerMoniker Id="fa16a667-75ae-494e-b1a9-2810b3ef032b" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="5ca2afbe-412d-4f94-83ba-f888d8487b4d" name="GPAS.HistogramViewer.dll">
+              <ArtifactNode Label="GPAS.HistogramViewer.dll" Category="CodeSchema_Assembly" Id="(Assembly=../GPAS.HistogramViewer/bin/Debug/GPAS.HistogramViewer.dll)" />
+              <ExpandedNode Id="(Assembly=GPAS.HistogramViewer)" Label="GPAS.HistogramViewer.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="2ce2481c-b72a-4584-adaf-6ce22dd161d2" name="RightClickMenu">
+          <references>
+            <reference Id="8efabfaa-f1e1-4fda-a9ae-4f3c6415306c" name="GPAS.RightClickMenu.dll">
+              <ArtifactNode Label="GPAS.RightClickMenu.dll" Category="CodeSchema_Assembly" Id="(Assembly=../GPAS.RightClickMenu/bin/Debug/GPAS.RightClickMenu.dll)" />
+              <ExpandedNode Id="(Assembly=GPAS.RightClickMenu)" Label="GPAS.RightClickMenu.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="f0456601-bf0c-4cca-aa60-a3910b03dac5" name="FilterSearch">
+          <references>
+            <reference Id="54d8081f-1ee4-4db8-a9f5-e79a26c9996e" name="GPAS.FilterSearch.dll">
+              <ArtifactNode Label="GPAS.FilterSearch.dll" Category="CodeSchema_Assembly" Id="(Assembly=../../FilterSearch/bin/Debug/GPAS.FilterSearch.dll)" />
+              <ExpandedNode Id="(Assembly=GPAS.FilterSearch)" Label="GPAS.FilterSearch.dll" Category="CodeSchema_Assembly">
+                <Category Ref="FileSystem.Category.FileOfType.dll" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="6ee5c092-3ad6-41b6-9f24-99e4addf0895" name="DispatchServer" />
+        <layer Id="c433495c-2a6b-43e6-ae3b-7391ff3e611c" name="FtpServiceProvider.cs">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="db26ab19-a7bc-4f08-bfcf-33d216463a7b" direction="Forward">
+              <layerMoniker Id="326c5c08-13d7-4628-a921-5577dd5934c3" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+          <references>
+            <reference Id="73df1b15-7c69-43e3-8a9f-ac11e3b030b0" name="FtpServiceProvider.cs">
+              <ArtifactNode Label="FtpServiceProvider.cs" Category="CodeSchema_ProjectItem" Id="(Assembly=../../FtpServiceAccess/GPAS.FtpServiceAccess.csproj File=../../FtpServiceAccess/FtpServiceProvider.cs)">
+                <Category Ref="File" />
+              </ArtifactNode>
+              <ExpandedNode Id="(Assembly=GPAS.FileServer.FtpService Namespace=GPAS.FtpServiceAccess Type=FtpServiceProvider)" Label="FtpServiceProvider" Category="CodeSchema_Class">
+                <LinkCategory Ref="Contains" />
+                <LinkCategory Ref="Represents" />
+              </ExpandedNode>
+            </reference>
+          </references>
+        </layer>
+        <layer Id="f16d3d8b-d369-4e3a-9693-602a5765a64f" name="Graph">
+          <childLayers>
+            <layer Id="e25c6603-2ee1-476d-b54b-3566e7b3de8d" name="GraphViewer">
+              <childLayers>
+                <layer Id="e7553e74-b3be-4cb4-a965-8623411d7fe8" name="Foundations">
+                  <references>
+                    <reference Id="528b3359-6870-46d8-bf87-bc50888e13a5" name="GPAS.Workspace.Graph.GraphViewer.Foundations">
+                      <ArtifactNode Label="GPAS.Workspace.Graph.GraphViewer.Foundations" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Graph.GraphViewer.Foundations)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Graph.GraphViewer.Foundations)" Label="GPAS.Workspace.Graph.GraphViewer.Foundations" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+                <layer Id="aac43575-f529-433f-82e5-2a87464565c5" name="Layout&#xD;&#xA;Algorithms">
+                  <references>
+                    <reference Id="f1b832e5-5ad3-4189-8f9b-ea9f97c4f6ad" name="GPAS.Workspace.Graph.GraphViewer.LayoutAlgorithms">
+                      <ArtifactNode Label="GPAS.Workspace.Graph.GraphViewer.LayoutAlgorithms" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Graph.GraphViewer.LayoutAlgorithms)" />
+                      <ExpandedNode Id="(Namespace=GPAS.Workspace.Graph.GraphViewer.LayoutAlgorithms)" Label="GPAS.Workspace.Graph.GraphViewer.LayoutAlgorithms" Category="CodeSchema_Namespace">
+                        <LinkCategory Ref="Represents" />
+                      </ExpandedNode>
+                    </reference>
+                  </references>
+                </layer>
+              </childLayers>
+              <references>
+                <reference Id="4e119b35-28e0-4320-99e2-4283773f3080" name="GPAS.Workspace.Graph.GraphViewer">
+                  <ArtifactNode Label="GPAS.Workspace.Graph.GraphViewer" Category="CodeSchema_Namespace" Id="(Namespace=GPAS.Workspace.Graph.GraphViewer)" />
+                  <ExpandedNode Id="(Namespace=GPAS.Workspace.Graph.GraphViewer)" Label="GPAS.Workspace.Graph.GraphViewer" Category="CodeSchema_Namespace">
+                    <LinkCategory Ref="Represents" />
+                  </ExpandedNode>
+                </reference>
+              </references>
+            </layer>
+          </childLayers>
+        </layer>
+      </childLayers>
+      <references>
+        <reference Id="566d0ff8-70cd-49b1-bf18-ce75c7861fc6" name="GPAS.FtpServiceAccess">
+          <ArtifactNode Label="GPAS.FtpServiceAccess" Category="CodeSchema_Project" Id="(Assembly=../../FtpServiceAccess/GPAS.FtpServiceAccess.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=GPAS.FileServer.FtpService)" Label="GPAS.FileServer.FtpService.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

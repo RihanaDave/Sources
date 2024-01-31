@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d287a700-ef89-446f-8461-261846cf4c0b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://core.dev.kavosh.it.sh:9041/Service.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="238835ae-99cf-45c1-a9a3-c47cede60f53" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9041/Service.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4aeeed23-3ffa-4098-bcd9-68c9413d2897" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9041/Service.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="2195f20c-88fc-4c26-b7de-7adb4e6120c6" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9041/Service.svc/mex" />
+    <MetadataFile FileName="GPAS.FileRepository.Logic.Entities1.xsd" MetadataType="Schema" ID="d6e4e3de-5d69-4c12-8b13-7bced9e7db7b" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9041/Service.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

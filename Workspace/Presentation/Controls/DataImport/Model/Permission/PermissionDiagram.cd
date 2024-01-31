@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Permission.ACIModel">
+    <Position X="3.5" Y="5.25" Width="1.75" />
+    <Members>
+      <Field Name="accessLevel" Hidden="true" />
+      <Field Name="groupName" Hidden="true" />
+      <Field Name="isSelectable" Hidden="true" />
+      <Method Name="OnAccessLevelChanged" Hidden="true" />
+      <Field Name="ownerACL" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAAQAAAAEAACAAAAAAAAAABAEAEASAAAAAAAAAAAE=</HashCode>
+      <FileName>Controls\DataImport\Model\Permission\ACIModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AccessLevel" />
+      <Property Name="OwnerACL" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Permission.ACLModel">
+    <Position X="5.5" Y="2" Width="2.25" />
+    <Members>
+      <Field Name="classification" Hidden="true" />
+      <Method Name="Item_AccessLevelChanged" Hidden="true" />
+      <Method Name="OnClassificationChanged" Hidden="true" />
+      <Method Name="OnGroupAccessLevelChanged" Hidden="true" />
+      <Method Name="OnPermissionsChanged" Hidden="true" />
+      <Field Name="ownerDataSource" Hidden="true" />
+      <Method Name="PermissionCollection_CollectionChanged" Hidden="true" />
+      <Field Name="permissions" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAACABAAAAAQAAAAACgCAAAAAEgAASBAQAiA=</HashCode>
+      <FileName>Controls\DataImport\Model\Permission\ACLModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Classification" />
+      <Property Name="OwnerDataSource" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Permissions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.Permission.ClassificationModel">
+    <Position X="8.75" Y="5" Width="1.75" />
+    <Members>
+      <Field Name="identifier" Hidden="true" />
+      <Field Name="isSelectable" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Method Name="OnSelectionChange" Hidden="true" />
+      <Field Name="ownerACL" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQQAEAEEAAgAAAAAAABAFAAARAAAAAQAACAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\Permission\ClassificationModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnerACL" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IDataSource" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCDAAyAABAAAlMAAAgwAQAhAAABEAACQQAAAAADAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\IDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="GPAS.AccessControl.Permission">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

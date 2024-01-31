@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="GPAS.Dispatch.AdminTools.View.UserControls.ServersSynchronizationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converter="clr-namespace:GPAS.Dispatch.AdminTools.View.Converters.ServersSynchronizationStatus"
+             xmlns:resource="clr-namespace:GPAS.Dispatch.AdminTools.Properties"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:ServersIconColorConverter x:Key="ServersIconColorConverter"/>
+            <converter:ServersIconConverter x:Key="ServersIconConverter"/>
+            <converter:OpacityConverter x:Key="OpacityConverter"/>          
+            <converter:BoolToGreenEllipseColorConverter x:Key="boolToGreenEllipseColorConverter"/>
+            <converter:BoolToRedEllipseColorConverter x:Key="boolToRedEllipseColorConverter"/>
+            <converter:IntToProgressColorConverter x:Key="intToProgressColorConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Name="mainGrid" Background="{DynamicResource NormalBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Synchronization" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top"
+                   Style="{StaticResource TabHeader}" />
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="50 20 50 50" HorizontalAlignment="Right">
+            <TextBlock Text="Search Server" Foreground="DimGray"
+                       HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0 0 0 100"/>
+
+            <materialDesign:PackIcon Kind="{Binding ServersSynchronization.IsSearchDataIndicesStable,
+                                            Converter={StaticResource ServersIconConverter}}" 
+                                     Height="150" Width="150" 
+                                     Foreground="{Binding ServersSynchronization.IsSearchDataIndicesStable,
+                                                  Converter={StaticResource ServersIconColorConverter}}"
+                                     HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                        Opacity="{Binding ServersSynchronization.IsSearchDataIndicesStable,
+                                  Converter={StaticResource OpacityConverter}}">
+                <TextBlock Text="Non Sync Objects :" Foreground="{StaticResource NormalForeground}"
+                           FontSize="16" FontWeight="Bold" Margin="10"/>
+                <TextBlock Text="{Binding ServersSynchronization.SearchNonSyncObjects}"
+                           Foreground="{StaticResource NormalForeground}"
+                           FontSize="16" FontWeight="Bold" Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Separator Grid.Row="1" Grid.Column="1" Margin="10">
+            <Separator.LayoutTransform>
+                <RotateTransform Angle="90" />
+            </Separator.LayoutTransform>
+        </Separator>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="50 20 50 50" HorizontalAlignment="Left">
+            <TextBlock Text="Horizon Server" Foreground="DimGray"
+                       HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0 0 0 100"/>
+            <materialDesign:PackIcon Kind="{Binding ServersSynchronization.IsHorizonDataIndicesStable,
+                                            Converter={StaticResource ServersIconConverter}}" 
+                                     Height="150" Width="150" 
+                                     Foreground="{Binding ServersSynchronization.IsHorizonDataIndicesStable,
+                                                  Converter={StaticResource ServersIconColorConverter}}"
+                                     HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                        Opacity="{Binding ServersSynchronization.IsHorizonDataIndicesStable,
+                                  Converter={StaticResource OpacityConverter}}">
+                <TextBlock Text="Non Sync Objects :" Foreground="{StaticResource NormalForeground}"
+                           FontSize="16" FontWeight="Bold" Margin="10"/>
+                <TextBlock Text="{Binding ServersSynchronization.HorizonNonSyncObjects}"
+                           Foreground="{StaticResource NormalForeground}"
+                           FontSize="16" FontWeight="Bold" Margin="10"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                        Opacity="{Binding ServersSynchronization.IsHorizonDataIndicesStable,
+                                  Converter={StaticResource OpacityConverter}}">
+                <TextBlock Text="Non Sync Relations :" Foreground="{StaticResource NormalForeground}"
+                           HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="10"/>
+                <TextBlock Text="{Binding ServersSynchronization.HorizonNonSyncRelations}"
+                           Foreground="{StaticResource NormalForeground}"
+                           HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+
+            <StackPanel Orientation="Horizontal" Opacity="{Binding ServersSynchronization.IsSearchDataIndicesStable,
+                                                           Converter={StaticResource OpacityConverter}}">
+                <Border Background="OrangeRed" Height="20" Width="20" HorizontalAlignment="Left" Margin="25 10 10 10"/>
+                <TextBlock Text="Search server" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Opacity="{Binding ServersSynchronization.IsHorizonDataIndicesStable,
+                                                           Converter={StaticResource OpacityConverter}}">
+                <Border Background="Green" Height="20" Width="20" HorizontalAlignment="Left" Margin="25 0 10 0"/>
+                <TextBlock Text="Horizon server" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="0" Margin="10"/>
+                <ProgressBar Grid.Column="1" Name="SearchProgressBar" Height="15" Minimum="0" Foreground="Green" 
+                             Maximum="{Binding ServersSynchronization.MaxNonSyncConcepts}" 
+                             Value="{Binding ServersSynchronization.HorizonNonSyncCount,UpdateSourceTrigger=PropertyChanged }" />
+                <ProgressBar Grid.Column="1" Name="HorizonProgressBar" Height="15" Minimum="0" Background="Transparent"
+                             Maximum="{Binding ServersSynchronization.MaxNonSyncConcepts}" 
+                             Value="{Binding ServersSynchronization.SearchNonSyncCount}" Foreground="OrangeRed"/>
+
+                <TextBlock Grid.Column="2" 
+                           Text="{Binding ServersSynchronization.MaxNonSyncConcepts, StringFormat='{}{0:0,0}'}" Margin="10"/>
+            </Grid>
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource NormalTextBlock}" 
+                           Text="{x:Static resource:Resources.Unsynchronized_Indexes}"/>
+
+                <TextBlock Style="{StaticResource NormalTextBlock}" 
+                           Text="{Binding ServersSynchronization.HorizonNonSyncCount}"/>
+
+
+            </StackPanel>
+        </StackPanel>
+
+        <Button Grid.Row="2" Grid.Column="1" x:Name="RefreshButton" Style="{StaticResource NormalButton}" 
+                HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                Padding="0" Click="RefreshButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Refresh" Height="25" Width="25" Foreground="White" Margin="5"/>
+                <TextBlock Text="Refresh" Margin="10" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>

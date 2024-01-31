@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<TypeMapping xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ObjectsMapping>
+    <ObjectMapping>
+      <Properties>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>آدرس</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>0</ColumnIndex>
+            <ColumnTitle>Address</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>true</IsSetAsDisplayName>
+        </PropertyMapping>
+        <PropertyMapping>
+          <PropertyType>
+            <TypeUri>شماره_تلفن_همراه</TypeUri>
+          </PropertyType>
+          <Value xsi:type="TableColumnMappingItem">
+            <ColumnIndex>1</ColumnIndex>
+            <ColumnTitle>CityID</ColumnTitle>
+            <RegularExpressionPattern />
+            <ResolutionOption>Ignorable</ResolutionOption>
+          </Value>
+          <IsSetAsDisplayName>false</IsSetAsDisplayName>
+        </PropertyMapping>
+      </Properties>
+      <MappingTitle>
+        <ConstValue>شخص1</ConstValue>
+      </MappingTitle>
+      <ObjectType>
+        <TypeUri>شخص</TypeUri>
+      </ObjectType>
+      <ID>a976f9f6-1cea-4a44-9790-390d49247761</ID>
+    </ObjectMapping>
+  </ObjectsMapping>
+  <RelationshipsMapping />
+  <InterTypeAutoInternalResolution>false</InterTypeAutoInternalResolution>
+</TypeMapping>

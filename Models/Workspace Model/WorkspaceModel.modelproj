@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b99d0c29-7fff-46e3-8790-3dabe9536821}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>WorkspaceModel</Name>
+    <RootNamespace>WorkspaceModel</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="ModelDefinition\Package1_1256.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1257.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1339.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1257.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1255.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1256.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1257.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1259.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1300.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1301.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1339.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1340.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="WorkspacePackages.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="WorkspacePackages.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>WorkspacePackages.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\WorkspaceModel.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="Namespaces.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Namespaces.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Namespaces.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Namespaces.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Namespaces.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Workspace Layers.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Workspace Layers.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Workspace Layers.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Workspace Layers.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Workspace Layers.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataImport\GPAS.DataImport.csproj">
+      <Name>GPAS.DataImport</Name>
+      <Project>{73a6e9cf-a4f9-45d3-84ad-b149c488ff6f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FilterSearch\GPAS.FilterSearch.csproj">
+      <Name>GPAS.FilterSearch</Name>
+      <Project>{7fc50142-43a1-4ada-8aa0-c0869d2f793c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FtpServiceAccess\GPAS.FtpServiceAccess.csproj">
+      <Name>GPAS.FtpServiceAccess</Name>
+      <Project>{d78569e5-4442-4087-8d8f-ed793a487fcd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PropertiesValidation\GPAS.PropertiesValidation\GPAS.PropertiesValidation.csproj">
+      <Name>GPAS.PropertiesValidation</Name>
+      <Project>{7eb45cf8-e353-4284-ac19-aa1c14b525dd}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\DynamicOntology\GPAS.Workspace.DynamicOntology.csproj">
+      <Name>GPAS.Workspace.DynamicOntology</Name>
+      <Project>{10c004f6-0d11-47f3-9d19-d0ec57ad1cba}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.DataBarViewer\GPAS.DataBarViewer.csproj">
+      <Name>GPAS.DataBarViewer</Name>
+      <Project>{95802115-efc5-4742-8a18-a3cf87a3e51a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.HistogramViewer\GPAS.HistogramViewer.csproj">
+      <Name>GPAS.HistogramViewer</Name>
+      <Project>{a4c0e0a3-b5f5-41fd-b690-adce779bcaab}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.RightClickMenu\GPAS.RightClickMenu.csproj">
+      <Name>GPAS.RightClickMenu</Name>
+      <Project>{0a177cf3-a6cb-46a7-a851-b398dde4d66b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Workspace.DataAccessManager\GPAS.Workspace.DataAccessManager.csproj">
+      <Name>GPAS.Workspace.DataAccessManager</Name>
+      <Project>{4320440b-9c48-48e6-92ea-a43c5509194d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.Ontology\GPAS.Ontology.csproj">
+      <Name>GPAS.Ontology</Name>
+      <Project>{c7c4f25f-18cf-4f2f-8638-39deb1caff1a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Presentation\GPAS.Workspace.Presentation.csproj">
+      <Name>GPAS.Workspace.Presentation</Name>
+      <Project>{f8b124fd-d45c-45e5-a3a1-ee90fbbf0009}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceEntities\GPAS.Workspace.Entities.csproj">
+      <Name>GPAS.Workspace.Entities</Name>
+      <Project>{f05d7ab8-c202-4557-9e61-ad47cbda0fef}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceLogic\GPAS.Workspace.Logic.csproj">
+      <Name>GPAS.Workspace.Logic</Name>
+      <Project>{1cb132cd-73c7-4427-9eca-afc09e499d32}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceServiceAccess\GPAS.Workspace.ServiceAccess.csproj">
+      <Name>GPAS.Workspace.ServiceAccess</Name>
+      <Project>{c3907774-bf75-4c98-96c5-c802279cdced}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

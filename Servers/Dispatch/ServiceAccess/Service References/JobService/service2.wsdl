@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.JobServer.Logic.Entities" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_test_InputMessage">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="IService_test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetJobRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobRequests" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetJobRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RegisterNewImportRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewImportRequests" />
+  </wsdl:message>
+  <wsdl:message name="IService_RegisterNewImportRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewImportRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUriOfDatabasesForImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUriOfDatabasesForImport" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetUriOfDatabasesForImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUriOfDatabasesForImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTablesAndViewsPreviewOfDatabaseForImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesAndViewsPreviewOfDatabaseForImport" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTablesAndViewsPreviewOfDatabaseForImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesAndViewsPreviewOfDatabaseForImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SetPauseStateForJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPauseStateForJob" />
+  </wsdl:message>
+  <wsdl:message name="IService_SetPauseStateForJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPauseStateForJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SetResumeStateForJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetResumeStateForJob" />
+  </wsdl:message>
+  <wsdl:message name="IService_SetResumeStateForJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetResumeStateForJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RestartJobMonitoringAgentService_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestartJobMonitoringAgentService" />
+  </wsdl:message>
+  <wsdl:message name="IService_RestartJobMonitoringAgentService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartJobMonitoringAgentServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetImprotingPercent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImprotingPercent" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetImprotingPercent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImprotingPercentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/test" message="tns:IService_test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/testResponse" message="tns:IService_test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetJobRequests" message="tns:IService_GetJobRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetJobRequestsResponse" message="tns:IService_GetJobRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewImportRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RegisterNewImportRequests" message="tns:IService_RegisterNewImportRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RegisterNewImportRequestsResponse" message="tns:IService_RegisterNewImportRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUriOfDatabasesForImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetUriOfDatabasesForImport" message="tns:IService_GetUriOfDatabasesForImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetUriOfDatabasesForImportResponse" message="tns:IService_GetUriOfDatabasesForImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesAndViewsPreviewOfDatabaseForImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTablesAndViewsPreviewOfDatabaseForImport" message="tns:IService_GetTablesAndViewsPreviewOfDatabaseForImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTablesAndViewsPreviewOfDatabaseForImportResponse" message="tns:IService_GetTablesAndViewsPreviewOfDatabaseForImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPauseStateForJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SetPauseStateForJob" message="tns:IService_SetPauseStateForJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SetPauseStateForJobResponse" message="tns:IService_SetPauseStateForJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetResumeStateForJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SetResumeStateForJob" message="tns:IService_SetResumeStateForJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SetResumeStateForJobResponse" message="tns:IService_SetResumeStateForJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsAvailable" message="tns:IService_IsAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsAvailableResponse" message="tns:IService_IsAvailable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartJobMonitoringAgentService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RestartJobMonitoringAgentService" message="tns:IService_RestartJobMonitoringAgentService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RestartJobMonitoringAgentServiceResponse" message="tns:IService_RestartJobMonitoringAgentService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImprotingPercent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetImprotingPercent" message="tns:IService_GetImprotingPercent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetImprotingPercentResponse" message="tns:IService_GetImprotingPercent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/IService/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobRequests">
+      <soap:operation soapAction="http://tempuri.org/IService/GetJobRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewImportRequests">
+      <soap:operation soapAction="http://tempuri.org/IService/RegisterNewImportRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUriOfDatabasesForImport">
+      <soap:operation soapAction="http://tempuri.org/IService/GetUriOfDatabasesForImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesAndViewsPreviewOfDatabaseForImport">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTablesAndViewsPreviewOfDatabaseForImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPauseStateForJob">
+      <soap:operation soapAction="http://tempuri.org/IService/SetPauseStateForJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetResumeStateForJob">
+      <soap:operation soapAction="http://tempuri.org/IService/SetResumeStateForJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestartJobMonitoringAgentService">
+      <soap:operation soapAction="http://tempuri.org/IService/RestartJobMonitoringAgentService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImprotingPercent">
+      <soap:operation soapAction="http://tempuri.org/IService/GetImprotingPercent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://core-kavosh:9021/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

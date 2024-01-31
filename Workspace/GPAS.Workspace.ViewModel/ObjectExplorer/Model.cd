@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="GPAS.Workspace.ViewModel.ObjectExplorer">
+    <Position X="4.167" Y="8.482" Height="0.291" Width="2.669" />
+  </Comment>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.FormulaBase">
+    <Position X="8.25" Y="8" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQBAAAAAAAIAAAAAAAACAAUAAAA=</HashCode>
+      <FileName>ObjectExplorer\Formula\FormulaBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.ObjectSet.DerivedObjectSet">
+    <Position X="7.75" Y="4.75" Width="3.25" />
+    <AssociationLine Name="ParentSet" Type="GPAS.Workspace.ViewModel.ObjectExplorer.ObjectSet.ObjectSetBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.312" Y="4.75" />
+        <Point X="8.312" Y="3.812" />
+        <Point X="10" Y="3.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAFACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\ObjectSet\DerivedObjectSet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ParentSet" />
+      <Property Name="AppliedFormula" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.ObjectSet.ObjectSetBase">
+    <Position X="10" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Preview" Type="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PreviewStatistics" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="3.25" />
+        <Point X="1.941" Y="3.25" />
+        <Point X="1.941" Y="18.25" />
+        <Point X="4.25" Y="18.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAABFBEAAAQDACEAEAAoABEABREQAACEsAAg=</HashCode>
+      <FileName>ObjectExplorer\ObjectSet\ObjectSetBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Preview" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.ObjectSet.StartingObjectSet.AllObjects">
+    <Position X="11.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\ObjectSet\StartingObjectSet\AllObjects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.ObjectSet.StartingObjectSet.StartingObjectSetBase">
+    <Position X="11.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\ObjectSet\StartingObjectSet\StartingObjectSetBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PreviewStatistic">
+    <Position X="4.25" Y="13" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AJAgABAAAAAAEEAAAAOBAAQgAAICAEAAAEgIAQGACEA=</HashCode>
+      <FileName>ObjectExplorer\Statistics\PreviewStatistic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PreviewStatistics">
+    <Position X="4.25" Y="17.25" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAkABBEAAAACAAAAAAAIAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjectExplorer\Statistics\PreviewStatistics.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Content" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyValueStatistic">
+    <Position X="8.25" Y="13" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAEAAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>ObjectExplorer\Statistics\PropertyValueStatistic.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyValueCategory">
+    <Position X="8" Y="17.25" Width="2.75" />
+    <AssociationLine Name="LoadedValues" Type="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyValueStatistic">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-2.33" Y="0.21" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAgAEAAAAAAAAAAAAAgAAAAAABAQAAAIAA=</HashCode>
+      <FileName>ObjectExplorer\Statistics\PropertyValueCategory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="LoadedValues" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.TypeBasedDrillDown">
+    <Position X="4.25" Y="10.5" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAICAQAAAACAAAAAAADAAAAAAAAAI=</HashCode>
+      <FileName>ObjectExplorer\Formula\TypeBasedDrillDown.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="FilteredBy" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.PropertyValueBasedDrillDown">
+    <Position X="8" Y="10.5" Width="2.5" />
+    <AssociationLine Name="FilteredBy" Type="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyValueStatistic">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.256" Y="0.206" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\Formula\PropertyValueBasedDrillDown.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="FilteredBy" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.PerformSetOperation">
+    <Position X="13.75" Y="10.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="JoinedSet" Type="GPAS.Workspace.ViewModel.ObjectExplorer.ObjectSet.ObjectSetBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.094" Y="10.5" />
+        <Point X="15.094" Y="3.25" />
+        <Point X="12.25" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ObjectExplorer\Formula\PerformSetOperation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="JoinedSet" />
+      <Property Name="Operator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.PropertyValueRangeDrillDown">
+    <Position X="11" Y="10.5" Width="2.25" />
+    <AssociationLine Name="ValueRanges" Type="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.NumericPropertyValueRange">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.517" Y="0.227" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ObjectExplorer\Formula\PropertyValueRangeDrillDown.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ValueRanges" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyBarValues">
+    <Position X="11.25" Y="15" Width="1.75" />
+    <AssociationLine Name="Bars" Type="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyBarValue">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.988" Y="0.255" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAACAAAEAAIAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\Statistics\PropertyBarValues.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Bars" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Statistics.PropertyBarValue">
+    <Position X="11.25" Y="17.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAEAAAAAAABAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\Statistics\PropertyBarValue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.NumericPropertyValueRange">
+    <Position X="11" Y="12.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectExplorer\Formula\NumericPropertyValueRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="GPAS.Workspace.ViewModel.ObjectExplorer.Formula.SetAlgebraOperator">
+    <Position X="13.75" Y="12.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAABAAAAAAAAAAABAAAAAAAAAAAAAAQAAAhA=</HashCode>
+      <FileName>ObjectExplorer\Formula\SetAlgebraOperator.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

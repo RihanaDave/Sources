@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Service/" targetNamespace="http://Service/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetDatalakeCategories" type="tns:GetDatalakeCategories" />
+  <xs:element name="GetDatalakeCategoriesResponse" type="tns:GetDatalakeCategoriesResponse" />
+  <xs:element name="GetDatalakeSlice" type="tns:GetDatalakeSlice" />
+  <xs:element name="GetDatalakeSliceResponse" type="tns:GetDatalakeSliceResponse" />
+  <xs:element name="GetHeaders" type="tns:GetHeaders" />
+  <xs:element name="GetHeadersResponse" type="tns:GetHeadersResponse" />
+  <xs:element name="GetJobsStatus" type="tns:GetJobsStatus" />
+  <xs:element name="GetJobsStatusResponse" type="tns:GetJobsStatusResponse" />
+  <xs:element name="GetPreviewData" type="tns:GetPreviewData" />
+  <xs:element name="GetPreviewDataResponse" type="tns:GetPreviewDataResponse" />
+  <xs:element name="GetStreamJobsStatus" type="tns:GetStreamJobsStatus" />
+  <xs:element name="GetStreamJobsStatusResponse" type="tns:GetStreamJobsStatusResponse" />
+  <xs:element name="InsertFileIngestionJobStatus" type="tns:InsertFileIngestionJobStatus" />
+  <xs:element name="InsertFileIngestionJobStatusResponse" type="tns:InsertFileIngestionJobStatusResponse" />
+  <xs:element name="InsertStreamIngestionStartStatus" type="tns:InsertStreamIngestionStartStatus" />
+  <xs:element name="InsertStreamIngestionStartStatusResponse" type="tns:InsertStreamIngestionStartStatusResponse" />
+  <xs:element name="InsertStreamIngestionStopStatus" type="tns:InsertStreamIngestionStopStatus" />
+  <xs:element name="InsertStreamIngestionStopStatusResponse" type="tns:InsertStreamIngestionStopStatusResponse" />
+  <xs:element name="IsListenProcessorExist" type="tns:IsListenProcessorExist" />
+  <xs:element name="IsListenProcessorExistResponse" type="tns:IsListenProcessorExistResponse" />
+  <xs:element name="StartStreamingIngestion" type="tns:StartStreamingIngestion" />
+  <xs:element name="StartStreamingIngestionResponse" type="tns:StartStreamingIngestionResponse" />
+  <xs:element name="StopStreamingIngestion" type="tns:StopStreamingIngestion" />
+  <xs:element name="StopStreamingIngestionResponse" type="tns:StopStreamingIngestionResponse" />
+  <xs:element name="test" type="tns:test" />
+  <xs:element name="testResponse" type="tns:testResponse" />
+  <xs:complexType name="InsertFileIngestionJobStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:ingestionFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ingestionFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" type="xs:string" />
+      <xs:element minOccurs="0" name="DataFlowDateTime" type="xs:string" />
+      <xs:element minOccurs="0" name="FilePath" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSeparator" type="xs:string" />
+      <xs:element minOccurs="0" name="Headers" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeBegin" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertFileIngestionJobStatusResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="test">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="testResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="InsertStreamIngestionStopStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:streamingIngestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="streamingIngestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" type="xs:string" />
+      <xs:element minOccurs="0" name="InputPortNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="Headers" type="xs:string" />
+      <xs:element minOccurs="0" name="dataFlowDateTime" type="xs:string" />
+      <xs:element minOccurs="0" name="startTime" type="xs:string" />
+      <xs:element minOccurs="0" name="Separator" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertStreamIngestionStopStatusResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="GetStreamJobsStatus">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="GetStreamJobsStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPreviewData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPreviewDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDatalakeSlice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:datalakeQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datalakeQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="xs:string" />
+      <xs:element minOccurs="0" name="DateTime" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCriterias" nillable="true" type="tns:searchCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:string" />
+      <xs:element minOccurs="0" name="Comparator" type="xs:string" />
+      <xs:element minOccurs="0" name="CriteriaDataType" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDatalakeSliceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IsListenProcessorExist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:streamingIngestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IsListenProcessorExistResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertStreamIngestionStartStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:streamingIngestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertStreamIngestionStartStatusResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="GetDatalakeCategories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDatalakeCategoriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetHeaders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetHeadersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StopStreamingIngestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:streamingIngestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StopStreamingIngestionResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="GetJobsStatus">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="GetJobsStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StartStreamingIngestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:streamingIngestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StartStreamingIngestionResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

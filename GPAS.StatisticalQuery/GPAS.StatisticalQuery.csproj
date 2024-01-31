@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCB8746E-EEBB-43C4-A220-804E45D32C27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.StatisticalQuery</RootNamespace>
+    <AssemblyName>GPAS.StatisticalQuery</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <CodeAnalysisRuleSet>..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="Formula\DrillDown\PropertyValueBased\HasPropertyWithTypeAndValue.cs" />
+    <Compile Include="Formula\DrillDown\PropertyValueBased\PropertyValueBasedDrillDown.cs" />
+    <Compile Include="Formula\DrillDown\PropertyValueBased\PropertyValueRangeDrillDown.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\LinkBasedDrillDown.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\LinkBasedDrillDownPortionBase.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\LinkedObjectTypeBasedDrillDown.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\LinkTypeBasedDrillDown.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\TypeBasedDrillDown.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\TypeBasedDrillDownPortionBase.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\HasPropertyWithType.cs" />
+    <Compile Include="Formula\DrillDown\TypeBased\OfObjectType.cs" />
+    <Compile Include="Formula\FormulaStep.cs" />
+    <Compile Include="Formula\PropertyValueRangeStatistic.cs" />
+    <Compile Include="Formula\PropertyValueRangeStatistics.cs" />
+    <Compile Include="Formula\SetAlgebra\Operator.cs" />
+    <Compile Include="Formula\SetAlgebra\PerformSetOperation.cs" />
+    <Compile Include="LinkTypeStatistics.cs" />
+    <Compile Include="ObjectSet\StartingObjectSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyValueStatistics.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="QueryResult.cs" />
+    <Compile Include="QuerySerializer.cs" />
+    <Compile Include="ResultNode\DateTimePropertyStackValues.cs" />
+    <Compile Include="ResultNode\DateTimePropertyBarValue.cs" />
+    <Compile Include="ResultNode\DateTimePropertyBarValues.cs" />
+    <Compile Include="ResultNode\DateTimePropertyStackValue.cs" />
+    <Compile Include="ResultNode\PropertyBarValue.cs" />
+    <Compile Include="ResultNode\PropertyBarValues.cs" />
+    <Compile Include="ResultNode\PropertyValueStatistic.cs" />
+    <Compile Include="ResultNode\TypeBasedStatistic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="Model.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

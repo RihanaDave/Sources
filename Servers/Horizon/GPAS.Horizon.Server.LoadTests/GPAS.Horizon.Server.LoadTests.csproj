@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA018F45-AEA2-482B-BACA-5172B84B5D85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Horizon.Server.LoadTests</RootNamespace>
+    <AssemblyName>GPAS.Horizon.Server.LoadTests</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GPAS.Horizon.Access.Fakes">
+      <HintPath>FakesAssemblies\GPAS.Horizon.Access.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="GPAS.Horizon.Logic.Fakes">
+      <HintPath>FakesAssemblies\GPAS.Horizon.Logic.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="GPAS.Ontology.Fakes">
+      <HintPath>FakesAssemblies\GPAS.Ontology.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MSTest.TestFramework.2.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MSTest.TestFramework.2.0.0\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseLoadTest.cs" />
+    <Compile Include="GetMultipleRelatedEntitiesLoadTest.cs" />
+    <Compile Include="GetRelatedDocumentsLoadTest.cs" />
+    <Compile Include="GetRelatedEntitiesAppearedInEventsLoadTest.cs" />
+    <Compile Include="GetRelatedEventsLoadTest.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PublishLoadTests.cs" />
+    <Compile Include="GetSingleRelatedEntitiesLoadTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <Fakes Include="Fakes\GPAS.Ontology.fakes" />
+    <Fakes Include="Fakes\GPAS.Horizon.Logic.fakes" />
+    <Fakes Include="Fakes\GPAS.Horizon.Access.fakes" />
+    <None Include="app.Debug.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.Release.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33FBBF9B-C7F4-4F91-99D9-335A18C2609D}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.LoadTest.Core\GPAS.LoadTest.Core.csproj">
+      <Project>{4E563B2A-4B04-4CF4-9D6F-44FCE6955CA7}</Project>
+      <Name>GPAS.LoadTest.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Logger\GPAS.Logger.csproj">
+      <Project>{7905DA86-186F-4D3B-8D13-68DF6ED7C31B}</Project>
+      <Name>GPAS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Ontology\GPAS.Ontology.csproj">
+      <Project>{c7c4f25f-18cf-4f2f-8638-39deb1caff1a}</Project>
+      <Name>GPAS.Ontology</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dispatch\Entities.Concepts\GPAS.Dispatch.Entities.Concepts.csproj">
+      <Project>{2960B31E-4C0B-485B-A5F9-614F121FAA5B}</Project>
+      <Name>GPAS.Dispatch.Entities.Concepts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dispatch\Entities.Publish\GPAS.Dispatch.Entities.Publish.csproj">
+      <Project>{B19384B4-AA82-4A77-91AD-D094D31C994B}</Project>
+      <Name>GPAS.Dispatch.Entities.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Horizon.Access\GPAS.Horizon.Access.csproj">
+      <Project>{5a88fdf4-f805-4ac2-93d2-7b242e18735c}</Project>
+      <Name>GPAS.Horizon.Access</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Horizon.Entities\GPAS.Horizon.Entities.csproj">
+      <Project>{06AA4252-4A10-484A-914D-271CAB82F72B}</Project>
+      <Name>GPAS.Horizon.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Horizon.Logic\GPAS.Horizon.Logic.csproj">
+      <Project>{13db3caa-8f54-4e75-a26c-0fb522bcf895}</Project>
+      <Name>GPAS.Horizon.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Horizon.Server\GPAS.Horizon.Server.csproj">
+      <Project>{b2c9b739-b90a-4fc6-a403-e9465ec22e6e}</Project>
+      <Name>GPAS.Horizon.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>attrib -R  "$(ProjectDir)App.config"
+copy /Y "$(ProjectDir)..\GPAS.Horizon.IISHost\Web.config" "$(ProjectDir)App.config"
+attrib +R  "$(ProjectDir)App.config"
+xcopy /Q /E /Y "$(ProjectDir)..\GPAS.Horizon.IISHost\bin\Plugins\*" "$(ProjectDir)$(OutDir)Plugins\"</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Import Project="..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\..\..\packages\MSTest.TestAdapter.2.0.0\build\net45\MSTest.TestAdapter.targets')" />
+</Project>

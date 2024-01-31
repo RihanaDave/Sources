@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ButtonsStyle.xaml"/>
+        <ResourceDictionary Source="TextBoxsStyle.xaml" />
+        <ResourceDictionary Source="IconsStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="UsersList" TargetType="Grid">
+        <Style.Resources>
+            <Style BasedOn="{StaticResource CardsTextBox}" TargetType="TextBox"/>
+            <Style BasedOn="{StaticResource ButtonsOnCards}" TargetType="Button"/>
+            <Style BasedOn="{StaticResource CardsIcon}" TargetType="materialDesign:PackIcon"/>
+        </Style.Resources>
+        <Setter Property="Height" Value="220"/>
+        <Setter Property="Width" Value="170"/>
+    </Style>
+</ResourceDictionary>

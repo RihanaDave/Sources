@@ -1,0 +1,3 @@
+Test project Config file is always a copy of testing project and are read-only
+	The copy must define as a pre-build task and done automatically
+	Overwriting setting must define in App\Web.Debug.config transform file

@@ -1,0 +1,74 @@
+﻿<local:BaseFilterSearchControl x:Class="GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.ObjectTypeFilterSearchControl"
+                               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                               xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+                               xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias"
+                               xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.FilterSearchCriterias.Converters"
+                               xmlns:op="clr-namespace:GPAS.Workspace.Presentation.Controls.OntologyPickers"
+                               xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                               mc:Ignorable="d" Foreground="{DynamicResource MaterialDesignBody}" Margin="0 5 0 0"
+                               d:DesignHeight="200" d:DesignWidth="300">
+    
+    <local:BaseFilterSearchControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:IsSelectedToHighlightBrushConverter x:Key="IsSelectedToHighlightBrushConverter"/>
+            <converters:ValidationStatusToVisibilityErrorBoxConverter x:Key="ValidationStatusToVisibilityErrorBoxConverter"/>
+            <converters:ValidationStatusToBrushConverter x:Key="ValidationStatusToBrushConverter"/>
+            <converters:ValidationStatusToForegroundConverter x:Key="ValidationStatusToForegroundConverter"/>
+        </ResourceDictionary>
+    </local:BaseFilterSearchControl.Resources>
+
+    <GroupBox x:Name="groupBox" Style="{DynamicResource MainGroupBox}">
+        <GroupBox.BorderBrush>
+            <MultiBinding Converter="{StaticResource IsSelectedToHighlightBrushConverter}" UpdateSourceTrigger="PropertyChanged" >
+                <Binding Path="IsSelected"/>
+                <Binding Path="CurrentTheme"/>
+            </MultiBinding>
+        </GroupBox.BorderBrush>
+        <GroupBox.Header>
+            <TextBlock Text="{x:Static resource:Resources.Object_Type}" FontWeight="Bold"
+                       Foreground="{Binding ElementName=groupBox, Path=BorderBrush}"/>
+        </GroupBox.Header>
+
+        <Grid x:Name="ContentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <common:ButtonWithIcon x:Name="RemoveButton" Click="RemoveButton_Click" HorizontalAlignment="Right"
+                                   Icon="Close" IconMargin="5" Foreground="red" Padding="0" Margin="0"
+                                   Panel.ZIndex="20"/>
+
+            <TextBlock Name="ValidationMessageLabel" Text="{Binding Path=ValidationMessage}" Grid.Row="0"
+                       VerticalAlignment="Center" Margin="2" HorizontalAlignment="Left"
+                       Visibility="{Binding Path=ValidationStatus, Mode=OneWay, 
+                Converter={StaticResource ValidationStatusToVisibilityErrorBoxConverter}}">
+                <TextBlock.Foreground>
+                    <MultiBinding Converter="{StaticResource ValidationStatusToForegroundConverter}" 
+                                  UpdateSourceTrigger="PropertyChanged" >
+                        <Binding Path="ValidationStatus"/>
+                        <Binding Path="CurrentTheme"/>
+                    </MultiBinding>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <op:ObjectTypePicker x:Name="objectTypeControl" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" 
+                                 Background="{DynamicResource MaterialDesignCardBackground}"
+                                 HorizontalAlignment="Stretch" Margin="2" 
+                                 SelectedItemChanged="ObjectTypeControl_SelectedItemChanged"                                
+                                 PreviewMouseLeftButtonDown="ObjectTypeControl_MouseLeftButtonDown"/>                
+
+            <CheckBox x:Name="ChildCheckBox" Content="{x:Static resource:Resources.Include_Child_Types}" FontWeight="Bold" 
+                          VerticalAlignment="Center"  PreviewMouseLeftButtonDown="ChildCheckBox_PreviewMouseLeftButtonDown"
+                          Grid.Row="2" Margin="2 5" />
+        </Grid>
+    </GroupBox>
+</local:BaseFilterSearchControl>

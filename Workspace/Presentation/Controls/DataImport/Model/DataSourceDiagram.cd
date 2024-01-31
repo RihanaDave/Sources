@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceModel" Collapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BRCrcEyQUTIoG3MAiPjxIQGxAQqDdBgi4RSICIEjE3o=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.BaseModel" Collapsed="true">
+    <Position X="16.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.RelayNotifyPropertyChanged" Collapsed="true">
+    <Position X="16" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAoAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RelayNotifyPropertyChanged.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="16.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.GroupDataSourceModel" Collapsed="true">
+    <Position X="10" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQADAUAAAQMQAAAJSAAgJAAgAAIDKAAoAYAAABEgEBA=</HashCode>
+      <FileName>Controls\DataImport\Model\GroupDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.SingleDataSourceModel" Collapsed="true">
+    <Position X="22.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAoAAABESDBCGIAAAAEBAgAgAEAAAABAABI=</HashCode>
+      <FileName>Controls\DataImport\Model\SingleDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.TabularGroupDataSourceModel" Collapsed="true">
+    <Position X="10" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAgEAiAIICABEQKgCAIAAQoAAABBAgIAQBAAgECAA=</HashCode>
+      <FileName>Controls\DataImport\Model\TabularGroupDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.AccessDataSourceModel" Collapsed="true">
+    <Position X="23.25" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAAAAACAAAIAAAAAAAAAAgIIAAAAgAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\AccessDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.AudioBaseDataSourceModel" Collapsed="true">
+    <Position X="12.25" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\AudioBaseDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.ComplexTextBaseDataSourceModel" Collapsed="true">
+    <Position X="19" Y="10.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\ComplexTextBaseDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.CsvDataSourceModel" Collapsed="true">
+    <Position X="28" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAAAAACAAAIAAAEAAAEBAgoIQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\CsvDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.EmlDataSourceModel" Collapsed="true">
+    <Position X="32.25" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAAAAACAAAIAAAAAAAAAAgIIAAEACIAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\EmlDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.ExcelDataSourceModel" Collapsed="true">
+    <Position X="30" Y="10.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAAAAACAAAIAAAAAAAAAAgIIAAAAAAAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\ExcelDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.ImageBaseDataSourceModel" Collapsed="true">
+    <Position X="20" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\ImageBaseDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.SemiStructuredDataSourceModel" Collapsed="true">
+    <Position X="32" Y="9" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\SemiStructuredDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.SimpleTextBaseDataSourceModel" Collapsed="true">
+    <Position X="16" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\SimpleTextBaseDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.SQLServerDataSourceModel" Collapsed="true">
+    <Position X="25.5" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAIAABAACAAAIAAAAAAAABAgIAQACAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\SQLServerDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.StructuredDataSourceModel" Collapsed="true">
+    <Position X="26.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\StructuredDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.TabularDataSourceModel" Collapsed="true">
+    <Position X="28.25" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAgEAiIIACABEQKiCAIAAAoAAABBAgIAQhAAgECAA=</HashCode>
+      <FileName>Controls\DataImport\Model\TabularDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.TextBaseDataSourceModel" Collapsed="true">
+    <Position X="17.75" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\TextBaseDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.UnstructuredDataSourceModel" Collapsed="true">
+    <Position X="17" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\UnstructuredDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.VideoBaseDataSourceModel" Collapsed="true">
+    <Position X="14.75" Y="9" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\VideoBaseDataSourceModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IDataSource">
+    <Position X="2" Y="3" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>ABCDAAyAABAAAlMAAAgwAQAhAAABEAACQQAAAAADAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\IDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IPreviewableDataSource">
+    <Position X="6.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\IPreviewableDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.ISelectable">
+    <Position X="0.75" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>ISelectable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.ICheckable">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICheckable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.IProgressive">
+    <Position X="4" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAIAAAAA=</HashCode>
+      <FileName>IProgressive.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IGroupDataSource">
+    <Position X="1.25" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AQABAAAAAQAAAAAACAAAAAAgAAIDCAAIAIAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\IGroupDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.ISingleDataSource">
+    <Position X="4" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\ISingleDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.ITabularDataSource">
+    <Position X="6.25" Y="11.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAIAAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\ITabularDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IPreviewableDataSource&lt;T&gt;">
+    <Position X="6.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\IPreviewableDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

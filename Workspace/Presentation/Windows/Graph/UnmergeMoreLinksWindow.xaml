@@ -1,0 +1,49 @@
+﻿<Window x:Class="GPAS.Workspace.Presentation.Windows.Graph.UnmergeMoreLinksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+        mc:Ignorable="d"
+        ShowInTaskbar="False"
+        WindowStyle="None" 
+        WindowStartupLocation="CenterOwner"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Height="290" Width="410" ShowActivated="False"  
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border x:Name="MainBorder" CornerRadius="10" 
+            BorderBrush="{DynamicResource PrimaryHueMidBrush}"  Background="{DynamicResource MaterialDesignPaper}"
+            BorderThickness="2" MouseLeftButtonDown="MainBorder_MouseLeftButtonDown">
+        <Grid >
+            <StackPanel>
+                <TextBlock Grid.Row="0" Margin="5" Text="{x:Static resource:Resources.Unmerge_more_}"  Style="{StaticResource SecondHeader}"/>
+                <StackPanel Orientation="Horizontal" Margin="10 10">
+                    <materialDesign:PackIcon Kind="InfoCircle" Margin="0 0 5 0" VerticalAlignment="Center"
+                                             Foreground="OrangeRed" Width="23" Height="23"/>
+                    <TextBlock x:Name="textBlockMessage" MaxWidth="350" TextWrapping="Wrap" HorizontalAlignment="Left"
+                           Foreground="{DynamicResource MaterialDesignBody}"
+                           Text="{x:Static resource:Resources.NUMBER_links_have_been_unmerged_from_links_between_two_objects_and_there_are_more_links_to_unmerge_}"/>
+                </StackPanel>
+                
+                <TextBlock Margin="10"  Foreground="{DynamicResource MaterialDesignBody}"  HorizontalAlignment="Left" Text="{x:Static resource:Resources.Would_you_like_to_unmerge_more_links_}"/>
+                <Button x:Name="PrimitiveNumberButton" Margin="70 3 70 3" Padding="5 7"
+                        Click="PrimitiveNumberButton_Click" Content="{x:Static resource:Resources.No__That_s_enough_}"/>
+                <Button x:Name="SecondaryNumberButton" Margin="70 3 70 3" Padding="5 7" 
+                        Click="SecondaryNumberButton_Click" Content="{x:Static resource:Resources.Yes__Unmerge_up_to_NUMBER_links_}"/>
+                <Button x:Name="ThirdNumberButton" Margin="70 3 70 3" Padding="5 7" 
+                        Click="ThirdNumberButton_Click" Content="{x:Static resource:Resources.Yes__Unmerge_up_to_NUMBER_links_}"/>
+                <Button x:Name="MaximumNumberButton" Margin="70 3 70 20" Padding="5 7"
+                        Click="MaximumNumberButton_Click" Content="{x:Static resource:Resources.Yes__Unmerge_all_links___Up_to_NUMBER_links_}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

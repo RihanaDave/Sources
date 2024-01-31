@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.DateTimePicker.DateTimePicker">
+    <Position X="3.75" Y="1" Width="2.25" />
+    <Members>
+      <Method Name="CloseDialog" Hidden="true" />
+      <Method Name="CombinedDialogClosingEventHandler" Hidden="true" />
+      <Method Name="CombinedDialogOpenedEventHandler" Hidden="true" />
+      <Field Name="DiplayErrorMessageProperty" Hidden="true" />
+      <Field Name="FirstDayOfWeekProperty" Hidden="true" />
+      <Method Name="GetValueValidation" Hidden="true" />
+      <Field Name="HintProperty" Hidden="true" />
+      <Field Name="InternalDiplayErorrMessageProperty" Hidden="true" />
+      <Field Name="IsOpenProperty" Hidden="true" />
+      <Field Name="IsValidProperty" Hidden="true" />
+      <Method Name="OnClosed" Hidden="true" />
+      <Method Name="OnIsValidChanged" Hidden="true" />
+      <Method Name="OnOpened" Hidden="true" />
+      <Method Name="OnSelectedDateTimeChanged" Hidden="true" />
+      <Method Name="OnSetDiplayErrorMessageChanged" Hidden="true" />
+      <Method Name="OnSetIsOpenChanged" Hidden="true" />
+      <Method Name="OnSetIsValidChanged" Hidden="true" />
+      <Method Name="OnSetSelectedDateTimeChanged" Hidden="true" />
+      <Method Name="OnSetTextChanged" Hidden="true" />
+      <Method Name="OnTextChanged" Hidden="true" />
+      <Method Name="OpenDialog" Hidden="true" />
+      <Method Name="RunButtonCommand" Hidden="true" />
+      <Field Name="SelectedDateTimeProperty" Hidden="true" />
+      <Method Name="SetInternalDiplayErorrMessage" Hidden="true" />
+      <Method Name="SetValidation" Hidden="true" />
+      <Field Name="TextProperty" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MAAAAAIRCAAYQAAQCIgwsAggEgQBASAAMABCiAyABAI=</HashCode>
+      <FileName>DateTimePicker.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IsValid" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.PropertiesValidation.ValidationProperty">
+    <Position X="7.25" Y="2.25" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type GroupItem}" x:Key="BrowsControlGroupStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Expander IsExpanded="True" Background="{DynamicResource MaterialDesignCardBackground}">
+                        <Expander.Header>
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Text="(" Margin="5 0 0 0"/>
+                                <TextBlock Text="{Binding ItemCount}" />
+                                <TextBlock Text=")"/>
+                            </StackPanel>
+                        </Expander.Header>
+                        <Grid Background="{DynamicResource MaterialDesignPaper}">
+                        <ItemsPresenter />
+                        </Grid>
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

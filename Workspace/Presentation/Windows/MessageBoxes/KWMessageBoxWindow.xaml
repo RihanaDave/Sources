@@ -1,0 +1,136 @@
+﻿<Window x:Class="GPAS.Workspace.Presentation.Windows.MessageBoxes.KWMessageBoxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:messageboxes="clr-namespace:GPAS.Workspace.Presentation.Windows.MessageBoxes"
+        MaxWidth="550"        
+        MinWidth="100"
+        ResizeMode="NoResize"
+        WindowStyle="None" 
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"
+        Topmost="True"
+        AllowsTransparency="True"
+        Background="Transparent">
+
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding EscapeCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+    </Window.InputBindings>
+
+    <Window.Resources>
+        <messageboxes:MessageBoxButtonToVisibilityConverter x:Key="ButtonVisibilityConverter"/>
+        <messageboxes:MessageBoxImageToIconConverter x:Key="IconTypeConverter"/>
+        <messageboxes:MessageBoxImageToForegroundConverter x:Key="IconTypeToForegroundConverter"/>
+
+        <Style x:Key="CustomFlatButton" TargetType="{x:Type ButtonBase}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>            
+            <Setter Property="TextBlock.FontWeight" Value="Medium"/>
+            <Setter Property="TextBlock.FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="16 4 16 4"/>
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" x:Name="border" 
+                                CornerRadius="{Binding Path=(materialDesign:ButtonAssist.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <Border.Resources>
+                                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{DynamicResource PrimaryHueMidBrushColor}" Opacity="0.16"/>
+                                </Border.Resources>
+                                <materialDesign:Ripple Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False"
+                                        ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Padding="{TemplateBinding Padding}"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                    <materialDesign:Ripple.Clip>
+                                        <MultiBinding Converter="{StaticResource BorderClipConverter}">
+                                            <Binding ElementName="border" Path="ActualWidth" />
+                                            <Binding ElementName="border" Path="ActualHeight" />
+                                            <Binding ElementName="border" Path="CornerRadius" />
+                                            <Binding ElementName="border" Path="BorderThickness" />
+                                        </MultiBinding>
+                                    </materialDesign:Ripple.Clip>
+                                </materialDesign:Ripple>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource PrimaryHueMidBrush}" />
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource PrimaryHueMidBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource PrimaryHueMidBrush}" />
+                                <Setter Property="Background" TargetName="border" Value="{DynamicResource PrimaryHueMidBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" Value="0.23"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border x:Name="MainBorder" CornerRadius="10" Background="{DynamicResource MaterialDesignCardBackground}" 
+            BorderBrush="{DynamicResource PrimaryHueMidBrush}"
+            BorderThickness="2" MouseLeftButtonDown="MainBorder_MouseLeftButtonDown">
+
+        <Grid Name="MainGrid" Margin="5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:PackIcon Name="Icon" Width="50" Height="50" VerticalAlignment="Top"
+                                         Kind="{Binding IconType, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window},
+                    Converter={StaticResource IconTypeConverter}}"
+                                         Foreground="{Binding IconType, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window},
+                    Converter={StaticResource IconTypeToForegroundConverter}}"
+                                         Margin="5"/>
+
+                <TextBlock Name="MessageTextBlock" Grid.Row="1" Grid.Column="1" Foreground="{DynamicResource MaterialDesignBody}"
+                           TextWrapping="Wrap" Margin="10 15 10 10" Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+            </Grid>
+
+            <DockPanel Grid.Row="1"  HorizontalAlignment="Right" Margin="50 0 0 0">
+
+                <Button Name="CancelButton" Content="Cancel" Margin="5" Width="75"
+                        Style="{StaticResource CustomFlatButton}" Click="CancelButtonOnClick"
+                        Visibility="{Binding ButtonType, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window},
+                    Converter={StaticResource ButtonVisibilityConverter}, ConverterParameter={x:Static MessageBoxResult.Cancel}}"/>
+
+                <Button Name="NoButton" Content="No" Margin="5" Width="75" 
+                        Style="{StaticResource CustomFlatButton}" Click="NoButtonOnClick"
+                        Visibility="{Binding ButtonType, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window},
+                    Converter={StaticResource ButtonVisibilityConverter}, ConverterParameter={x:Static MessageBoxResult.No}}"/>
+
+                <Button Name="YesButton" Content="Yes" Margin="5" Width="75"
+                        Style="{StaticResource CustomFlatButton}" Click="YesButtonOnClick"
+                        Visibility="{Binding ButtonType, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window},
+                    Converter={StaticResource ButtonVisibilityConverter}, ConverterParameter={x:Static MessageBoxResult.Yes}}"/>
+
+                <Button Name="OkButton" Content="Ok" Margin="5" Width="75"
+                        Style="{StaticResource CustomFlatButton}" Click="OkButtonOnClick"
+                        Visibility="{Binding ButtonType, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window},
+                    Converter={StaticResource ButtonVisibilityConverter}, ConverterParameter={x:Static MessageBoxResult.OK}}"/>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>

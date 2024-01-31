@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="مواد خام مورد نیاز جهت انواع مختلف ورود داده‌ها">
+    <Position X="3.333" Y="1" Height="0.75" Width="1.763" />
+  </Comment>
+  <Class Name="GPAS.DataImport.Material.SemiStructured.MaterialBase">
+    <Position X="5.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAACAAAAAAAACBAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Material\SemiStructured\MaterialBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.Material.SemiStructured.CsvFileMaterial">
+    <Position X="2.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Material\SemiStructured\CsvFileMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.Material.SemiStructured.AttachedDatabaseTableMaterial">
+    <Position X="6.5" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAACAQAAAAA=</HashCode>
+      <FileName>Material\SemiStructured\AttachedDatabaseTableMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.Material.SemiStructured.DataLakeSearchResultMaterial">
+    <Position X="9.25" Y="3.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Material\SemiStructured\DataLakeSearchResultMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.DataImport.Material.SemiStructured.ExcelSheet">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Material\SemiStructured\ExcelSheet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

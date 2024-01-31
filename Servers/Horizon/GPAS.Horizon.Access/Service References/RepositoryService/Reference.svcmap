@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3cdb2cbb-7280-4d00-ba78-608db3b2556c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="1a97f488-217b-4ce3-a5dd-54ef6aec0e0c" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+    <MetadataFile FileName="service5.xsd" MetadataType="Schema" ID="cc0e07a1-4f44-4275-9f33-e49484576eb5" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+    <MetadataFile FileName="service51.xsd" MetadataType="Schema" ID="e7ca2d84-545a-48f7-8eb0-46b6a929eb3d" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="38759edc-2a59-4517-848d-762c2aeefdab" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+    <MetadataFile FileName="GPAS.RepositoryServer.Entities.xsd" MetadataType="Schema" ID="cb89425b-fed4-4e8a-8432-aae727fa0505" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+    <MetadataFile FileName="GPAS.AccessControl.xsd" MetadataType="Schema" ID="d2f94170-3ed3-41fb-aafa-c2f321037f96" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+    <MetadataFile FileName="GPAS.RepositoryServer.Entities.Publish.xsd" MetadataType="Schema" ID="4c98eb8b-6b43-459e-8652-09b1fff1fb92" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9031/Service.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,211 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.DataImport.CardTemplateUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+             xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+             xmlns:converters1="clr-namespace:GPAS.Workspace.Presentation.Windows.DataImport.Converters">
+
+    <UserControl.Resources>
+
+        <converters1:DataSourceIsGenerateImportingObjectsToShowWaitingConverter x:Key="DataSourceIsGenerateImportingObjectsToShowWaitingConverter"/>
+        <converters1:DataSourceImportStatusToIconVisibilityConverter x:Key="DataSourceImportStatusToIconVisibilityConverter"/>
+        <converters1:DataSourceImportStatusToIconConverter x:Key="DataSourceImportStatusToIconConverter"/>
+        <converters1:DataSourceImportStatusToColorConverter x:Key="DataSourceImportStatusToColorConverter"/>
+        <converters1:DataSourceImportStatusToMessageConverter x:Key="DataSourceImportStatusToMessageConverter"/>
+        <converters:GroupDataSourceTypeToVisibilityConverter x:Key="GroupDataSourceTypeToVisibilityConverter"/>
+        <converters:DataSourcesCountToForegroundConverter x:Key="DataSourcesCountToForegroundConverter"/>
+        <converters:DataSourceValidationToForgroundConverter x:Key="DataSourceValidationToForgroundConverter"/>       
+        <converters:BooleanIsValidToMultiConverter x:Key="BooleanIsValidToMultiConverter"/>
+        <materialDesign:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" TrueValue="Visible" FalseValue="Collapsed"/>
+
+        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}" x:Key="CardButtonStyle">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Margin" Value="0"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Mode=Self},
+                        FallbackValue=true, TargetNullValue=true}" Value="true">
+                    <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Tag, RelativeSource={RelativeSource Mode=Self},
+                        FallbackValue=true, TargetNullValue=true}" Value="false">
+                    <Setter Property="Foreground" Value="OrangeRed" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
+
+    <materialDesign:Card x:Name="CardTemplate"  Margin="5"
+                         Width="{Binding CardWidth, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                         Height="{Binding CardHeight, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">        
+        <Border BorderThickness="1" >
+            <Border.Resources>
+                <Style TargetType="Border">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsValid}" Value="true">
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsValid}" Value="false">
+                            <Setter Property="BorderBrush" Value="Red"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Resources>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Background="{DynamicResource MaterialDesignPaper}" Margin="4 2">
+                    <Image Source="{Binding LargeIcon}" Stretch="Uniform" HorizontalAlignment="Center" Margin="10"
+                           Width="{Binding IconSize, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                           Height="{Binding IconSize, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"/>
+                </Grid>                
+
+                <TextBlock Text="{Binding Type}" Margin="1" HorizontalAlignment="Center"
+                           Grid.Row="1" Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                <TextBlock Grid.Row="2" Margin="5" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"
+                           Foreground="{Binding DataSourceCollection.Count,
+                    Converter={StaticResource DataSourcesCountToForegroundConverter}}"
+                           Visibility="{Binding ., Converter={StaticResource GroupDataSourceTypeToVisibilityConverter},
+                    ConverterParameter=true}">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="Contains {0} data sources">
+                            <Binding Path="DataSourceCollection.Count" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+
+                <TextBlock Text="{Binding Title}" ToolTip="{Binding Title}" Grid.Row="3" Margin="5" 
+                           TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"/>
+
+                <TextBlock Text="{Binding FileInfo.Name}" ToolTip="{Binding FileInfo.Name}" Grid.Row="4" Margin="5"
+                           TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"
+                           Visibility="{Binding ., Converter={StaticResource GroupDataSourceTypeToVisibilityConverter},
+                    ConverterParameter=false}"/>
+
+                <Grid Grid.Row="5" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                      Visibility="{Binding ShowActionButtons, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl},
+                    Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--دکمه نگاشت-->
+                    <Button Name="MappingButton" ToolTip="Mapping" Grid.Column="0" 
+                            Tag="{Binding Map.IsValid}" Click="MappingButtonOnClick"
+                            Style="{StaticResource CardButtonStyle}">
+                        <Grid>
+                            <materialDesign:PackIcon Kind="ApacheKafka" Height="22" Width="22" Margin="5 0 0 0"
+                                                     Foreground="{Binding ElementName=MappingButton, Path=Foreground}"/>
+                            <materialDesign:PackIcon Kind="ApacheKafka" Height="22" Width="22"
+                                                     Foreground="{Binding ElementName=MappingButton, Path=Foreground}">
+                                <materialDesign:PackIcon.LayoutTransform>
+                                    <RotateTransform Angle="180" />
+                                </materialDesign:PackIcon.LayoutTransform>
+                            </materialDesign:PackIcon>
+                        </Grid>
+                    </Button>
+
+                    <!--دکمه سطح دسترسی-->
+                    <Button Name="AclButton" ToolTip="Permission" Grid.Column="1"
+                            Style="{StaticResource CardButtonStyle}" Click="AclButtonOnClick">
+                        <materialDesign:PackIcon Kind="ShieldKeyOutline" Height="22" Width="22" 
+                                                 Foreground="{Binding ElementName=AclButton, Path=Foreground}"/>
+                    </Button>
+
+                    <Button Name="DefectiosButton" Style="{StaticResource CardButtonStyle}"
+                                                    PreviewMouseLeftButtonDown="DefectiosButton_PreviewMouseLeftButtonDown" 
+                                                    Grid.Column="2"
+                                                    PreviewMouseUp="DefectiosButton_MouseLeftButtonUp">
+                        <Button.Visibility>
+                            <MultiBinding Converter="{StaticResource BooleanIsValidToMultiConverter}">
+                                <Binding Path="IsValid" />
+                                <Binding Path="Map.IsValid" />
+                            </MultiBinding>
+                        </Button.Visibility>
+
+                        <materialDesign:PopupBox Name="DefectionsToolBar" StaysOpen="True"  
+                                                 PopupMode="Click" PlacementMode="BottomAndAlignLeftEdges">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PackIcon
+                                                            Kind="BellAlert" Foreground="OrangeRed" VerticalAlignment="Bottom"
+                                                            Width="22" Height="22"/>
+                            </materialDesign:PopupBox.ToggleContent>
+
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <TextBlock Text="Defections" Margin="5" Opacity="0.7"
+                                                                       Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+                                </StackPanel>
+
+                                <ListView Name="DefectionsListView" Margin="10 5" >
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem" BasedOn="{StaticResource {x:Type ListViewItem}}">
+                                            <Setter Property="Tag" Value="{Binding RelatedElement}"/>
+                                            <EventSetter Event="PreviewMouseDown" Handler="DefectionsListItemOnMouseDown"/>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="{Binding Icon}" Height="20" Width="20"
+                                                                         VerticalAlignment="Center"/>
+                                                <TextBlock Text="{Binding Message}" VerticalAlignment="Center" Margin="5 0"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </Button>
+                </Grid>
+
+                <waiting:WaitingControl x:Name="WaitingControl" Grid.Row="0" 
+                                        MessageFontSize="11"
+                                        MessageForeground="{DynamicResource PrimaryHueLightBrush}"
+                                        IsIndeterminate="{Binding IsIndeterminateProgress}"
+                                        ProgressValue="{Binding ProgressValue}"
+                                        MaxValue="{Binding MaximumProgress}"
+                                        Foreground="{DynamicResource PrimaryHueMidBrush}"
+                                        ProgressValueDisplayMode="Percentage">
+                    <waiting:WaitingControl.Visibility>
+                        <MultiBinding Converter="{StaticResource DataSourceIsGenerateImportingObjectsToShowWaitingConverter}" 
+                                      UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" FallbackValue="Visible" >
+                            <Binding Path="."/>
+                            <Binding Path="ImportingObjectsGenerationStatus" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=UserControl}" />
+                            <Binding Path="ImportStatus"/>
+                            <Binding ElementName="WaitingControl" Path=""/>
+                        </MultiBinding>
+                    </waiting:WaitingControl.Visibility>
+                </waiting:WaitingControl>
+
+                <Border Grid.Row="0" Background="#78000000"
+                        Visibility="{Binding ImportStatus, Converter={StaticResource DataSourceImportStatusToIconVisibilityConverter}}">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <materialDesign:PackIcon Grid.Row="0" Height="60" Width="60"
+                                                 Kind="{Binding ImportStatus, Converter={StaticResource DataSourceImportStatusToIconConverter}}"
+                                                 Foreground="{Binding ImportStatus, Converter={StaticResource DataSourceImportStatusToColorConverter}}"/>
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"
+                                   Foreground="{Binding ImportStatus, Converter={StaticResource DataSourceImportStatusToColorConverter}}"
+                                   Text="{Binding ImportStatus, Converter={StaticResource DataSourceImportStatusToMessageConverter}}"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </materialDesign:Card>
+</UserControl>

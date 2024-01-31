@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b4ef4e4-7370-4cf8-82f6-8cd134ffe4b2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="9d902483-fdc6-4bb3-9ee7-f7fde89104f0" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" />
+    <MetadataFile FileName="service6.xsd" MetadataType="Schema" ID="5b4c1ba3-6e7e-4545-addb-feaa9d3b54de" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" />
+    <MetadataFile FileName="service7.xsd" MetadataType="Schema" ID="1797791d-2a3e-4142-be2e-9009076e2859" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" />
+    <MetadataFile FileName="GPAS.JobServer.Logic.Entities.xsd" MetadataType="Schema" ID="e8e822b1-744d-4167-8024-1e1cafd34dde" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="5456db18-26e4-4100-ad9b-53d1f0f7d87f" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" />
+    <MetadataFile FileName="service8.xsd" MetadataType="Schema" ID="267e0d72-13c4-4872-8249-a7c488915037" SourceId="1" SourceUrl="http://core.dev.kavosh.it.sh:9021/Service.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,13 @@
+﻿References (Needed to external use):
+	GraphX.PCL.Common
+	GraphX.PCL.Logic
+	GraphX.WPF.Controls
+	QuickGraph
+	YAXLib
+
+	این کنترل انتزاعی از گره و یال را به استفاده کننده ارائه می دهد
+	و الستفاده کننده با این دو مفهوم با کنرتل ارتبط دارد
+
+	برخی کاربردهای جزپی تر برای ارث برندگان در دسترس اند
+	(internal)
+

@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3168C66F-FCCB-4E41-87FB-0493B4A3A36B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Dispatch.AdminTools</RootNamespace>
+    <AssemblyName>Administrator Tools</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\172.16.8.198\Dispatch Admin Tools\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>185095 - settings streamline.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DevelopDeployDebug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DevelopDeployDebug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TestDeployRelease|AnyCPU'">
+    <OutputPath>bin\TestDeployRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>303BCD315B8C12AD6BED409BE47F2E9A6D30EB05</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GPAS.Dispatch.AdminTools_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dragablz, Version=0.0.3.203, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.6.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MaterialDesignColors.1.2.6\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.1.3.1513, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MaterialDesignThemes.3.1.3\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Notifications.Wpf, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Notifications.Wpf.0.1.1\lib\net461\Notifications.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="..\..\..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="Model\AccessControlLimitModel.cs" />
+    <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="Model\GeoInfoModel.cs" />
+    <Compile Include="Model\GroupProfileInfo.cs" />
+    <Compile Include="Model\HorizonIndexModel.cs" />
+    <Compile Include="Model\JobModel.cs" />
+    <Compile Include="Model\JobToShowModel.cs" />
+    <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="Model\ObjectModel.cs" />
+    <Compile Include="Model\PermissionModel.cs" />
+    <Compile Include="Model\PropertiesModel.cs" />
+    <Compile Include="Model\RelationModel.cs" />
+    <Compile Include="Model\ServersSynchronizationModel.cs" />
+    <Compile Include="Model\ServerStatusModel.cs" />
+    <Compile Include="Model\SidebarItem.cs" />
+    <Compile Include="Model\UserAccountsControl\GroupsToShow.cs" />
+    <Compile Include="Model\UserAccountsControl\UserPersonalInfoModel.cs" />
+    <Compile Include="Model\UserAccountsControl\Windows\ACL\ClassificationToShowModel.cs" />
+    <Compile Include="Model\UserAccountsControl\Windows\ACL\ClickTreeEnableOrDisableCombo.cs" />
+    <Compile Include="Model\UserAccountsControl\Windows\ACL\ShowingPermissionModel.cs" />
+    <Compile Include="Model\UserAccountsControl\Windows\ACL\ShowTreeNodeModel.cs" />
+    <Compile Include="Model\UserAccountsControl\Windows\ACL\TreeViewItemBaseModel.cs" />
+    <Compile Include="Model\UserAndGroup\GroupUserInfo.cs" />
+    <Compile Include="Model\UserAndGroup\GroupModel.cs" />
+    <Compile Include="Model\UserAndGroup\UserModel.cs" />
+    <Compile Include="Model\UserAndGroup\UsersToShowInListViewModel.cs" />
+    <Compile Include="OntologyProvider.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\DataManagementViewModel.cs" />
+    <Compile Include="ViewModel\HorizonIndexManagerViewModel.cs" />
+    <Compile Include="ViewModel\IpToGeoSpacialViewModel.cs" />
+    <Compile Include="ViewModel\JobManagerViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\ObjectViewer\ObjectViewerViewModel.cs" />
+    <Compile Include="ViewModel\ObjectViewer\PermissionsViewModel.cs" />
+    <Compile Include="ViewModel\ServersStatusViewModel.cs" />
+    <Compile Include="ViewModel\ServersSynchronizationViewModel.cs" />
+    <Compile Include="ViewModel\UsersAndGroupManagement\ClassificationBasedGroupPermissionsDataAccess.cs" />
+    <Compile Include="ViewModel\UsersAndGroupManagement\UsersManagementViewModel.cs" />
+    <Compile Include="View\Converters\CollectionCountToVisibilityConverter.cs" />
+    <Compile Include="View\Converters\IndexStatusIconColorConverter.cs" />
+    <Compile Include="View\Converters\IndexStatusIconConverter.cs" />
+    <Compile Include="View\Converters\IndexStatusVisibilityConverter.cs" />
+    <Compile Include="View\Converters\JobPauseOrResumeColorIconConverter.cs" />
+    <Compile Include="View\Converters\JobRestartableConverter.cs" />
+    <Compile Include="View\Converters\JobRestatableStateToVisibility.cs" />
+    <Compile Include="View\Converters\JobResumableConverter.cs" />
+    <Compile Include="View\Converters\JobStateIconColorConverter.cs" />
+    <Compile Include="View\Converters\JobStateIconConverter.cs" />
+    <Compile Include="View\Converters\JobStateToPackIconKindConverter.cs" />
+    <Compile Include="View\Converters\PageCountConverter.cs" />
+    <Compile Include="View\Converters\ResolveToValueConverter.cs" />
+    <Compile Include="View\Converters\ServersStatus\ServerStatusIconColorConverter.cs" />
+    <Compile Include="View\Converters\ServersStatus\ServerStatusIconConverter.cs" />
+    <Compile Include="View\Converters\ServersStatus\ServerStatusMessageForegroundConverter.cs" />
+    <Compile Include="View\Converters\ServersStatus\ServerStatusMessageIconConverter.cs" />
+    <Compile Include="View\Converters\ServersSynchronizationStatus\BoolToGreenEllipseColorConverter.cs" />
+    <Compile Include="View\Converters\ServersSynchronizationStatus\BoolToRedEllipseColorConverter.cs" />
+    <Compile Include="View\Converters\ServersSynchronizationStatus\IntToProgressColorConverter.cs" />
+    <Compile Include="View\Converters\ServersSynchronizationStatus\OpacityConverter.cs" />
+    <Compile Include="View\Converters\ServersSynchronizationStatus\ServersIconColorConverter.cs" />
+    <Compile Include="View\Converters\ServersSynchronizationStatus\ServersIconConverter.cs" />
+    <Compile Include="View\Converters\ShowToolTipPauseResumConverter.cs" />
+    <Compile Include="View\Converters\TreeViewPickerItemTagPropertyToOntologyNodeConverter.cs" />
+    <Compile Include="View\Converters\UserAccountsControlConverter\BackgroundConverter.cs" />
+    <Compile Include="View\Converters\UserAccountsControlConverter\DeleteGroupVisibilityConverter.cs" />
+    <Compile Include="View\Converters\UserAccountsControlConverter\PercentageConverter.cs" />
+    <Compile Include="View\Converters\VisibilityConverter.cs" />
+    <Compile Include="View\Converters\AdminToolsDisplayModeToTreeViewPickerDisplayModeConverter.cs" />
+    <Compile Include="View\Modules.cs" />
+    <Compile Include="View\UserControls\DataManagementUserControl.xaml.cs">
+      <DependentUpon>DataManagementUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\HorizonIndexManagerUserControl.xaml.cs">
+      <DependentUpon>HorizonIndexManagerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\IPToGeoSpecialControlUserControl.xaml.cs">
+      <DependentUpon>IPToGeoSpecialControlUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\JobManagerUserControl.xaml.cs">
+      <DependentUpon>JobManagerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\MainUserControl.xaml.cs">
+      <DependentUpon>MainUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ObjectViewerUserControl.xaml.cs">
+      <DependentUpon>ObjectViewerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PasswordBoxAssistant.cs" />
+    <Compile Include="View\SidebarItemsEvent.cs" />
+    <Compile Include="View\UserControls\OntologyPicker\Converters\NullToBooleanConverter.cs" />
+    <Compile Include="View\UserControls\OntologyPicker\Converters\StringToCollectionStringConverter.cs" />
+    <Compile Include="View\UserControls\OntologyPicker\DisplayMode.cs" />
+    <Compile Include="View\UserControls\OntologyPicker\ObjectPickerUserControl.xaml.cs">
+      <DependentUpon>ObjectPickerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\OntologyPicker\PropertyPickerUserControl.xaml.cs">
+      <DependentUpon>PropertyPickerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ServersStatusUserControl.xaml.cs">
+      <DependentUpon>ServersStatusUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\ServersSynchronizationUserControl.xaml.cs">
+      <DependentUpon>ServersSynchronizationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\SidebarMenuTemplateUserControl.xaml.cs">
+      <DependentUpon>SidebarMenuTemplateUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\UsersAndGroupManagement\GroupManagerUserControl.xaml.cs">
+      <DependentUpon>GroupManagerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\UsersAndGroupManagement\UsersManagerUserControl.xaml.cs">
+      <DependentUpon>UsersManagerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\WaitingUserControl.xaml.cs">
+      <DependentUpon>WaitingUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ValidationRules\IpValidationRule.cs" />
+    <Compile Include="View\ValidationRules\LatitudeValidationRule.cs" />
+    <Compile Include="View\ValidationRules\LongitudeValidationRule.cs" />
+    <Compile Include="View\ValidationRules\RequiredFieldValidationRule.cs" />
+    <Compile Include="View\VisibilityConverter.cs" />
+    <Compile Include="View\Windows\EditHorizonIndexWindow.xaml.cs">
+      <DependentUpon>EditHorizonIndexWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\IpToGeoSpecialMainWindow.cs" />
+    <Compile Include="View\Windows\JobManagerMainWindow.cs" />
+    <Compile Include="View\Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\ObjectViewerMainWindow.cs" />
+    <Compile Include="View\Windows\PermissionsWindow.xaml.cs">
+      <DependentUpon>PermissionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\ServersStatusMainWindow.cs" />
+    <Compile Include="View\Windows\UsersAndGroupMainWindow.cs" />
+    <Compile Include="View\Windows\UsersAndGroupManagement\ChangePasswordWindow.xaml.cs">
+      <DependentUpon>ChangePasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\UsersAndGroupManagement\ClassificationPermissionSettingWindow.xaml.cs">
+      <DependentUpon>ClassificationPermissionSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\UsersAndGroupManagement\CreateNewUserWindow.xaml.cs">
+      <DependentUpon>CreateNewUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\UsersAndGroupManagement\CreateNewGroupWindow.xaml.cs">
+      <DependentUpon>CreateNewGroupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Windows\UsersAndGroupManagement\EditUserGroupsWindow.xaml.cs">
+      <DependentUpon>EditUserGroupsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Styles\GridStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\DataManagementUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\HorizonIndexManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\IPToGeoSpecialControlUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\JobManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\MainUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\ObjectViewerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\ButtonsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\ComboBoxsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\IconsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\ListViewsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\Storyboards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\TextBoxsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\Themes\Light.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Styles\ToolBarsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\OntologyPicker\ObjectPickerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\OntologyPicker\PropertyPickerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\ServersStatusUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\ServersSynchronizationUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\SidebarMenuTemplateUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\UsersAndGroupManagement\GroupManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\UsersAndGroupManagement\UsersManagerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\WaitingUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\EditHorizonIndexWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\PermissionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UsersAndGroupManagement\ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UsersAndGroupManagement\ClassificationPermissionSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UsersAndGroupManagement\CreateNewUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UsersAndGroupManagement\CreateNewGroupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Windows\UsersAndGroupManagement\EditUserGroupsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="..\..\..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="App.DevelopDeployDebug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="App.TestDeployRelease.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="GPAS.Dispatch.AdminTools_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33fbbf9b-c7f4-4f91-99d9-335a18c2609d}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Logger\GPAS.Logger.csproj">
+      <Project>{7905DA86-186F-4D3B-8D13-68DF6ED7C31B}</Project>
+      <Name>GPAS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.OntologyLoader\GPAS.OntologyLoader.csproj">
+      <Project>{4186327C-550F-43B7-A0FC-9590F010BBE8}</Project>
+      <Name>GPAS.OntologyLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Ontology\GPAS.Ontology.csproj">
+      <Project>{C7C4F25F-18CF-4F2F-8638-39DEB1CAFF1A}</Project>
+      <Name>GPAS.Ontology</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Gpas.Pagination\Gpas.Pagination.csproj">
+      <Project>{550fe373-6bce-4c87-afed-95ab28623cb9}</Project>
+      <Name>Gpas.Pagination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.TreeViewPicker\GPAS.TreeViewPicker.csproj">
+      <Project>{BBF40EF0-B41F-4775-BF15-6F15A0E840CC}</Project>
+      <Name>GPAS.TreeViewPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities.Concepts\GPAS.Dispatch.Entities.Concepts.csproj">
+      <Project>{2960B31E-4C0B-485B-A5F9-614F121FAA5B}</Project>
+      <Name>GPAS.Dispatch.Entities.Concepts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\GPAS.Dispatch.Entities.csproj">
+      <Project>{37efb87c-d994-4ab5-bfac-0f491223026b}</Project>
+      <Name>GPAS.Dispatch.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeographicalStaticLocation\GPAS.Dispatch.GeographicalStaticLocation.csproj">
+      <Project>{04ee808f-cffb-44f7-ac65-a61b7de9e71f}</Project>
+      <Name>GPAS.Dispatch.GeographicalStaticLocation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\GPAS.Dispatch.Logic.csproj">
+      <Project>{5837e65b-fffa-492c-9df8-fe1285aeae0e}</Project>
+      <Name>GPAS.Dispatch.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="185095 - settings streamline.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets" Condition="Exists('..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.VisualStudio.SlowCheetah.3.2.26\build\Microsoft.VisualStudio.SlowCheetah.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets'))" />
+  </Target>
+  <Import Project="..\..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('..\..\..\packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

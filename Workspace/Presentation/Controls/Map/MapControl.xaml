@@ -1,0 +1,58 @@
+<controls:PresentationControl x:Class="GPAS.Workspace.Presentation.Controls.MapControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls"
+             xmlns:notifications="clr-namespace:Notifications.Wpf.Controls;assembly=Notifications.Wpf"
+             xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+             xmlns:wpf="clr-namespace:Notifications.Wpf;assembly=Notifications.Wpf"
+             xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+             xmlns:Heatmap="clr-namespace:GPAS.Workspace.Presentation.Controls.Map.Heatmap"
+             xmlns:mapviewer="clr-namespace:GPAS.MapViewer;assembly=GPAS.MapViewer"
+                              xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                              MouseLeftButtonDown="PresentationControl_MouseLeftButtonDown"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="mainGrid">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <local:TargetPointsMapControlToTargetPointsMapViewerConverter x:Key="HeatmapTargetConverter" />
+                <local:LayerShowStateMapControlToLayerShowStateMapViewerConverter x:Key="HeatmapStatusConverter" />
+                <local:PointsValueSourceTypeMapControlToPointsValueSourceTypeMapViewerConverter x:Key="HeatmapPointsSourceConverter" />
+            </ResourceDictionary>
+        </Grid.Resources>
+        <mapviewer:MapViewer x:Name="mainMapViewer"
+                             AllowDrop="True"
+                             FlowDirection="LeftToRight" 
+                             MapTileImageNeeded="mainMapViewer_MapTileImageNeeded"
+                             PolygonDrawn ="mainMapViewer_PolygonDrawn"
+                             CircleDrawn="mainMapViewer_CircleDrawn"
+                             RouteDrawn="mainMapViewer_RouteDrawn"
+                             HeatmapOpacity="{Binding Path=HeatmapOpacity, Mode=TwoWay}"
+                             HeatmapColorSpectrum="{Binding Path=HeatmapColorSpectrum, Mode=TwoWay}"
+                             HeatmapDensityRadiusInMeters="{Binding Path=HeatmapDensityRadiusInMeters, Mode=TwoWay}"
+                             HeatmapStatus="{Binding Path=HeatmapStatus, Mode=TwoWay, Converter={StaticResource HeatmapStatusConverter}}"
+                             HeatmapTarget="{Binding Path=HeatmapTarget, Mode=TwoWay, Converter={StaticResource HeatmapTargetConverter}}"
+                             HeatmapPointsSource="{Binding Path=HeatmapPointsSource, Mode=TwoWay, Converter={StaticResource HeatmapPointsSourceConverter}}"
+                             HeatmapArealUnitInSquareMeters="{Binding Path=HeatmapArealUnitInSquareMeters, Mode=TwoWay}"
+                             HeatmapPointsCount ="{Binding Path=HeatmapPointsCount, Mode=OneWayToSource}"
+                             HeatmapWarningArealUnitNotMatchRadius="{Binding Path=HeatmapWarningArealUnitNotMatchRadius, Mode=OneWayToSource}"
+                             HeatmapLeastDensity="{Binding Path=HeatmapLeastDensity, Mode=OneWayToSource}"
+                             HeatmapMostDensity="{Binding Path=HeatmapMostDensity, Mode=OneWayToSource}"
+                             HeatmapProgressPercent="{Binding Path=HeatmapProgressPercent, Mode=OneWayToSource}"                             
+                             HeatmapShowMapPointsAndLabels="{Binding Path=HeatmapShowMapPointsAndLabels, Mode=TwoWay, Converter={StaticResource HeatmapStatusConverter}}"
+                             HeatmapHintedPixel="{Binding Path=HeatmapHintedPixel, Mode=TwoWay}"
+                />
+        <Heatmap:SpectrumSliderControl x:Name="sscSpectrum" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="300" Visibility="Collapsed" Background="#66ffffff"
+                                       Minimum="0" Margin="5"
+                                       Maximum="{Binding ElementName=mainMapViewer, Path=HeatmapMostDensity, Mode=TwoWay}"
+                                       MinimumText="{x:Static resource:Resources.least_dense}" MaximumText="{x:Static resource:Resources.most_dense}"
+                                       ColorSpectrum="{Binding ElementName=mainMapViewer, Path=HeatmapColorSpectrum, Mode=TwoWay}" 
+                                       ScaleText="{x:Static resource:Resources.scale}" ValueMode="False" TickVisibility="Collapsed"/>
+
+        <notifications:NotificationArea x:Name="WindowArea" Position="BottomRight" MaxItems="1"/>
+        <waiting:WaitingControl Grid.Row="0" Grid.RowSpan="3" x:Name="WaitingControl" 
+                                                Message="Please wait..."/>
+    </Grid>
+</controls:PresentationControl>

@@ -1,0 +1,307 @@
+<ws:PresentationWindow x:Class="GPAS.Workspace.Presentation.Windows.MainWindow"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                       xmlns:hottrackbtn="clr-namespace:ColorHotTrackButton"
+                       xmlns:presentation="clr-namespace:GPAS.Workspace.Presentation"
+                       xmlns:appContainer="clr-namespace:GPAS.Workspace.Presentation.ApplicationContainers"
+                       xmlns:applications="clr-namespace:GPAS.Workspace.Presentation.Applications"
+                       xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+                       xmlns:common="clr-namespace:GPAS.Workspace.Presentation.Controls.Common"
+                       xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                       xmlns:ws="clr-namespace:GPAS.Workspace.Presentation.Windows"
+                       Height="768" Width="1500" WindowStartupLocation="CenterScreen" 
+                       MinHeight="700" MinWidth="1200"
+                       materialDesign:ShadowAssist.CacheMode="{x:Null}"
+                       FontFamily="{materialDesign:MaterialDesignFont}" 
+                       Closing="PresentationWindow_Closing"                        
+                       MouseLeftButtonDown="PresentationWindow_MouseLeftButtonDown"   
+                       Deactivated="PresentationWindow_Deactivated" 
+                       Background="{DynamicResource MaterialDesignBackground}"
+                       MouseDown="PresentationWindow_MouseDown"
+                       IsVisibleChanged="PresentationWindow_IsVisibleChanged" 
+                       Loaded="PresentationWindow_Loaded">
+
+    <Window.InputBindings>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="A" Modifiers="Ctrl" CommandParameter="Ctrl_A"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="S" Modifiers="Ctrl" CommandParameter="Ctrl_S"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="I" Modifiers="Ctrl+Shift" CommandParameter="Ctrl_Shift_I"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="Apps" CommandParameter="RightClickKey"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="F" Modifiers="Ctrl" CommandParameter="Ctrl_F"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="L" Modifiers="Ctrl" CommandParameter="Ctrl_L"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="B" Modifiers="Ctrl" CommandParameter="Ctrl_B"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="N" Modifiers="Ctrl" CommandParameter="Ctrl_N"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="Delete" Modifiers="Shift" CommandParameter="Shift_Del"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="d" Modifiers="Ctrl" CommandParameter="Ctrl_D"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="F1" CommandParameter="F1"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="Escape" CommandParameter="Esc"/>
+        <KeyBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" Key="Delete" CommandParameter="Del"/>
+    </Window.InputBindings>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static ws:ShortcutKeyCommands.AllShortcutKeyCommand}" 
+                        Executed="PresentationWindow_Executed_allShortcutKeys"
+                        PreviewExecuted="PresentationWindow_Executed_allShortcutKeys"
+                        CanExecute="CommandBinding_CanExecute_allShortcutKeys"
+                        PreviewCanExecute="CommandBinding_CanExecute_allShortcutKeys"/>
+    </Window.CommandBindings>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="/Resources/Icons.xaml" />-->
+                <ResourceDictionary Source="../ThirdPartyClasses/ColorHotTrackButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <hottrackbtn:IconToAvgColorBrushConverter x:Key="iconToAvgColorBrushConverter"/>
+            <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+
+            <presentation:ApplicationVisibilityConverter x:Key="ApplicationVisibilityConverter"/>
+            <presentation:ApplicationButtonBorderBrushConverter x:Key="ApplicationButtonBorderBrushConverter"/>
+
+            <Style x:Key="NewHeaderButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                <Setter Property="Height" Value="Auto"/>
+                <Setter Property="Width" Value="Auto"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" Background="#00293742"
+                                    Padding="5" CornerRadius="5" BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="False">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="ApplicationButtonStyle" TargetType="common:ButtonWithIcon" BasedOn="{StaticResource NewHeaderButtonStyle}">
+                <!--IconPosition="Top" IconHeight="25" IconWidth="25" ContentFontSize="12"-->
+                <Setter Property="IconPosition" Value="Top"/>
+                <Setter Property="IconHeight" Value="25"/>
+                <Setter Property="IconWidth" Value="25"/>
+                <Setter Property="ContentFontSize" Value="12"/>
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <MultiBinding Converter="{StaticResource ApplicationButtonBorderBrushConverter}">
+                            <Binding Path="CurrentApplication"/>
+                            <Binding Path="Tag" RelativeSource="{RelativeSource Mode=Self}"/>
+                            <Binding Path="CurrentTheme" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=Window}"/>
+                        </MultiBinding>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>   
+
+    <Grid >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!--نوار کلیدهای عنوان کاربردها-->
+                <RowDefinition/>
+                <!--فضای نمایشی کاربردهای مختلف-->
+            </Grid.RowDefinitions>
+            <!--<DockPanel>-->
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Name="ApplicationStackPanel" Orientation="Horizontal" Grid.Column="0"
+                        PreviewMouseLeftButtonDown="ApplicationStackPanel_PreviewMouseLeftButtonDown">
+
+                    <common:ButtonWithIcon 
+                        x:Name="HomeAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.Home}"
+                        PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown"
+                        Icon="CloudSearch" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Search" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="BrowserAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.Browser}"
+                        PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown_2"
+                        DragDrop.Drop="BrowserApplicationButton_Drop"
+                        Icon="FileDocumentBoxes" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Browser" AllowDrop="True" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="GraphAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.Graph}"
+                        AllowDrop="True" DragDrop.Drop="GraphApplicationButton_Drop"
+                        PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown_1"
+                        Icon="Graph" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Graph" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="MapAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.Map}"
+                        PreviewMouseLeftButtonDown="MapAppButton_PreviewMouseLeftButtonDown"
+                        Icon="Earth" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Map" ContentFontSize="12"/>
+
+
+                    <common:ButtonWithIcon 
+                        x:Name="ObjectExplorerAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.ObjectExplorer}"
+                        PreviewMouseLeftButtonDown="ObjectExplorerAppButton_PreviewMouseLeftButtonDown"
+                        Icon="ChartAreaspline" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Explorer" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="DataSourceAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.DataSource}"
+                        PreviewMouseLeftButtonDown="DataSourceAppButton_PreviewMouseLeftButtonDown"
+                        Icon="Database" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Data sources" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="ImgAnalysisAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.ImageAnalysis}"
+                        PreviewMouseLeftButtonDown="ImgAnalysisAppButton_PreviewMouseLeftButtonDown"
+                        Visibility="{Binding Path=ShowImageAnalysisApp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVisConverter}}"
+                        Icon="ImageSearch" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Image analysis" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="DataLakeAppButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Visibility="Collapsed"
+                        PreviewMouseLeftButtonDown="DatalakeAppButton_PreviewMouseLeftButtonDown"
+                        Icon="Lake" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Data lake" ContentFontSize="12"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                    <common:ButtonWithIcon 
+                        x:Name="PublishButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.DataPublish}"
+                        PreviewMouseLeftButtonDown="PublishButton_PreviewMouseLeftButtonDown"                        
+                        Icon="CloudUpload" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Data publish" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="NewDataImportButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.DataImport}"
+                        PreviewMouseLeftButtonDown="NewDataImportButton_OnPreviewMouseLeftButtonDown"                        
+                        Icon="CloudDownload" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Data import" ContentFontSize="12"/>    
+
+                    <Separator Margin="5 15">
+                        <Separator.LayoutTransform>
+                            <RotateTransform Angle="90" />
+                        </Separator.LayoutTransform>
+                    </Separator>
+                </StackPanel>
+
+                <Grid Grid.Column="2" Name="ImportStackPanel" 
+                      PreviewMouseLeftButtonDown="ApplicationStackPanel_PreviewMouseLeftButtonDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>                  
+
+                    <common:ButtonWithIcon 
+                        x:Name="InvestigationButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.Investigation}"
+                        Grid.Column="0" PreviewMouseLeftButtonDown="InvestigationButton_PreviewMouseLeftButtonDown"                        
+                        Icon="Camera" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Investigation" ContentFontSize="12"/>
+
+                    <common:ButtonWithIcon 
+                        x:Name="EditPermissionsButton" Style="{StaticResource ApplicationButtonStyle}"
+                        Tag="{x:Static presentation:PresentationApplications.Settings}"
+                        Grid.Column="1" PreviewMouseLeftButtonDown="EditPermisionsButton_PreviewMouseLeftButtonDown"                        
+                        Icon="Settings" IconPosition="Top" IconHeight="25" IconWidth="25"
+                        Content="Settings" ContentFontSize="12"/>
+
+                    <controls:QuickSearchControl x:Name="MainWindowQuickSearchControl" Grid.Column="2" Margin="5"
+                                                 VerticalAlignment="Center"
+                                                 QuickSearchResultChoosen="mainWindowQuickSearchControl_QuickSearchResultChoosen"/>
+
+                    <common:ButtonWithIcon x:Name="LogOutButton" Content="Log out" Grid.Column="3" Icon="ExitToApp"
+                                           Style="{StaticResource ApplicationButtonStyle}"
+                                           Tag="{x:Static presentation:PresentationApplications.LogOut}"
+                                           Click="LogOutButton_Click"/>
+                </Grid>
+            </Grid>
+
+            <!--</DockPanel>-->
+            <!--نمایش کاربرهای موجود شامل خانه (عکس)، نمایشگر شی، گراف، جستجو داده های حجیم در صفحه اصلی-->
+            <!--این کاربردها (بجز خانه) همه از دید کاربر مخفی اند و یا کلیک روی کلیک های نوار کاربردها، به نمایش در می آیند -->
+            <Grid Grid.Row="1">
+                <appContainer:HomeApplicationContainer x:Name="HomeApplicationContainer" 
+                                                       Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.Home}}"/>
+                
+                <appContainer:BrowserApplicationContainer x:Name="BrowserApplicationContainer" 
+                                                          Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.Browser}}"/>
+                <appContainer:GraphApplicationContainer 
+                    x:Name="GraphApplicationContainer" 
+                    SnapshotRequested="graphApplicationContainer_SnapshotRequested"
+                    DocumentCreationRequestSubmited="GraphApplicationContainer_DocumentCreationRequestSubmited"
+                    SnapshotTaken="GraphApplicationContainer_SnapshotTaken"
+                    Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.Graph}}"/>
+                <appContainer:MapApplicationContainer
+                    x:Name="MapApplicationContainer" 
+                    SnapshotRequested="mapApplicationContainer_SnapshotRequested"
+                    SnapshotTaken="MapApplicationContainer_SnapshotTaken"
+                    Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.Map}}"/>
+              
+                <appContainer:DataSourceApplicationContainer x:Name="DataSourceApplicationContainer" 
+                                                             Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.DataSource}}"/>
+                <appContainer:ImageAnalysisApplicatioinContainer x:Name="ImageAnalysisApplicationContainer" 
+                                                                 Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.ImageAnalysis}}"/>
+                
+                <appContainer:ObjectExplorerApplicationContainer 
+                    x:Name="ObjectExplorerApplicationContainer" 
+                    SnapshotRequested="objectExplorerApplicationContainer_SnapshotRequested"
+                    SnapshotTaken="ObjectExplorerApplicationContainer_SnapshotTaken"
+                    Visibility="{Binding CurrentApplication,
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.ObjectExplorer}}"/>
+
+                <applications:DataImportApplication Grid.Column="0" x:Name="DataImportApplication" 
+                                                    Visibility="{Binding CurrentApplication, 
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=Window},                    
+                    Converter={StaticResource ApplicationVisibilityConverter}, 
+                    ConverterParameter={x:Static presentation:PresentationApplications.DataImport}}"/>                
+            </Grid>
+        </Grid>
+
+
+        <!--گرید قفل و باز کردن پنجره اصلی-->
+        <Grid Name="LockGrid" Visibility="Hidden" >
+            <Border>
+                <Border.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.4"/>
+                </Border.Background>
+            </Border>
+        </Grid>
+        
+        <waiting:WaitingControl x:Name="MainWaitingControl"  Grid.Row="0" MessageFontSize="16" ProgressSize="60"/>
+
+    </Grid>
+</ws:PresentationWindow>

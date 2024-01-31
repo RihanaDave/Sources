@@ -1,0 +1,159 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage x:Key="ApplicationIcon" UriSource="../AppIcon.ico" />
+    <BitmapImage x:Key="CsvFileImage" UriSource="./Csv.png" />
+    <BitmapImage x:Key="EmlFileImage" UriSource="./Eml.png" />
+    <BitmapImage x:Key="ExcelFileImage" UriSource="./Excel2013File.png" />
+    <BitmapImage x:Key="AccessFileImage" UriSource="./AccessDB.png" />
+    <BitmapImage x:Key="AccessTableImage" UriSource="./AccessTable.png" />
+    <BitmapImage x:Key="ExcelSheetImage" UriSource="./spreadsheet.png" />
+    <BitmapImage x:Key="CassandraImage" UriSource="./cassandra.png" />
+    <BitmapImage x:Key="InputdialogWindowQuestionImage" UriSource="./InputdialogWindowQuestion.png" />
+    <BitmapImage x:Key="UserIcon" UriSource="./LoginIcon.png" />
+    <BitmapImage x:Key="ApplicationLogo" UriSource="./AppIcon.png" />
+    <BitmapImage x:Key="AddDatabaseIcon" UriSource="./AddDatabaseIcon.png" />
+    <BitmapImage x:Key="AddedDatabaseIcon" UriSource="./ImportDatabaseIcon.png" />
+    <BitmapImage x:Key="AddedTableIcon" UriSource="./Tables.png" />
+    <BitmapImage x:Key="CautionIcon" UriSource="./CautionIcon.png" />
+    <BitmapImage x:Key="Group" UriSource="./Group.png" />
+    <BitmapImage x:Key="Table" UriSource="./Table.png" />
+    <BitmapImage x:Key="DarkThemeSample" UriSource="./DarkThemeSample.png" />
+    <BitmapImage x:Key="LightThemeSample" UriSource="./LightThemeSample.png" />
+    
+    <!--Utility-->
+    <BitmapImage x:Key="CloseIcon" UriSource="./ObjectResolutionWizardIcons/ResolutionCloseIcon.png"/>
+    
+    <!-- Objects R-Click Menu -->
+    <BitmapImage x:Key="RightClickMakeGroupImage" UriSource="./ObjectRightClickMenuIcons/Make Group.png" />
+    <BitmapImage x:Key="RightClickMakeGroupImage_Disable" UriSource="./ObjectRightClickMenuIcons/Make Group_Disable.png" />
+    <BitmapImage x:Key="RightClickExpandGroupImage" UriSource="./ObjectRightClickMenuIcons/Ungroup.png" />
+    <BitmapImage x:Key="RightClickExpandGroupImage_Disable" UriSource="./ObjectRightClickMenuIcons/Ungroup_Disable.png" />
+    <BitmapImage x:Key="RightClickPublishImage" UriSource="./ObjectRightClickMenuIcons/Publish.png" />
+    <BitmapImage x:Key="RightClickPublishImage_Disable" UriSource="./ObjectRightClickMenuIcons/Publish_Disable.png" />
+    <BitmapImage x:Key="RightClickTagCloudImage" UriSource="./ObjectRightClickMenuIcons/TagCloud.png" />
+    <BitmapImage x:Key="RightClickTagCloudImage_Disable" UriSource="./ObjectRightClickMenuIcons/TagCloud_Disable.png" />
+    <BitmapImage x:Key="RightClickRemoveImage" UriSource="./ObjectRightClickMenuIcons/Remove.png" />
+    <BitmapImage x:Key="RightClickRemoveImage_Disable" UriSource="./ObjectRightClickMenuIcons/Remove_Disable.png" />
+    <BitmapImage x:Key="RightClickSearchAroundImage" UriSource="./ObjectRightClickMenuIcons/Search Around.png" />
+    <BitmapImage x:Key="RightClickSearchAroundImage_Disable" UriSource="./ObjectRightClickMenuIcons/Search Around_Disable.png" />
+    <BitmapImage x:Key="RightClickSelectImage" UriSource="./ObjectRightClickMenuIcons/Select.png" />
+    <BitmapImage x:Key="RightClickSelectImage_Disable" UriSource="./ObjectRightClickMenuIcons/Select_Disable.png" />
+    <BitmapImage x:Key="RightClickViewImage" UriSource="./ObjectRightClickMenuIcons/View.png" />
+    <BitmapImage x:Key="RightClickViewImage_Disable" UriSource="./ObjectRightClickMenuIcons/View_Disable.png" />
+    <BitmapImage x:Key="RightClickLinksImage" UriSource="./ObjectRightClickMenuIcons/Links.png" />
+    <BitmapImage x:Key="RightClickLinksImage_Disable" UriSource="./ObjectRightClickMenuIcons/Links_Disable.png" />
+    <BitmapImage x:Key="RightClickResolveImage" UriSource="./ObjectRightClickMenuIcons/Resolve.png" />
+    <BitmapImage x:Key="RightClickResolveImage_Disable" UriSource="./ObjectRightClickMenuIcons/Resolve_Disable.png" />
+    <!-- Objects R-Click Menu, Search-Around sub menu-->
+    <BitmapImage x:Key="RightClickSearchAroundLinkedEntitiesImage" UriSource="./ObjectRightClickMenuIcons/SearchAround/Linked Entities.png" />
+    <BitmapImage x:Key="RightClickSearchAroundLinkedEntitiesImage_Disable" UriSource="./ObjectRightClickMenuIcons/SearchAround/Linked Entities_Disable.png" />
+    <BitmapImage x:Key="RightClickSearchAroundLinkedDocumentImage" UriSource="./ObjectRightClickMenuIcons/SearchAround/Linked Document.png" />
+    <BitmapImage x:Key="RightClickSearchAroundLinkedDocumentImage_Disable" UriSource="./ObjectRightClickMenuIcons/SearchAround/Linked Document_Disable.png" />
+    <BitmapImage x:Key="RightClickSearchAroundEventsImage" UriSource="./ObjectRightClickMenuIcons/SearchAround/Events.png" />
+    <BitmapImage x:Key="RightClickSearchAroundEventsImage_Disable" UriSource="./ObjectRightClickMenuIcons/SearchAround/Events_Disable.png" />
+    <BitmapImage x:Key="RightClickSearchAroundPropertiesImage" UriSource="./ObjectRightClickMenuIcons/SearchAround/Properties.png"/>
+    <BitmapImage x:Key="RightClickSearchAroundPropertiesImage_Disable" UriSource="./ObjectRightClickMenuIcons/SearchAround/Properties_Disable.png"/>
+    <BitmapImage x:Key="RightClickCustomSearchAroundImage" UriSource="./ObjectRightClickMenuIcons/SearchAround/CustomSearchAround.png"/>
+    <!-- Objects R-Click Menu, Select sub menu-->
+    <BitmapImage x:Key="RightClickSelectLinkedNodesImage" UriSource="./ObjectRightClickMenuIcons/Select/Linked Nodes.png" />
+    <BitmapImage x:Key="RightClickSelectLinkedNodesImage_Disable" UriSource="./ObjectRightClickMenuIcons/Select/Linked Nodes_Disable.png" />
+    <BitmapImage x:Key="RightClickSelectLinksBetweenImage" UriSource="./ObjectRightClickMenuIcons/Select/Links Between.png" />
+    <BitmapImage x:Key="RightClickSelectLinksBetweenImage_Disable" UriSource="./ObjectRightClickMenuIcons/Select/Links Between_Disable.png" />
+    <BitmapImage x:Key="RightClickSelectIncomingNodesImage" UriSource="./ObjectRightClickMenuIcons/Select/Incoming Nodes.png" />
+    <BitmapImage x:Key="RightClickSelectIncomingNodesImage_Disable" UriSource="./ObjectRightClickMenuIcons/Select/Incoming Nodes_Disable.png" />
+    <BitmapImage x:Key="RightClickSelectInvertNodesImage" UriSource="./ObjectRightClickMenuIcons/Select/Invert Nodes.png" />
+    <BitmapImage x:Key="RightClickSelectInvertNodesImage_Disable" UriSource="./ObjectRightClickMenuIcons/Select/Invert Nodes_Disable.png" />
+    <BitmapImage x:Key="RightClickSelectOutgoingNodesImage" UriSource="./ObjectRightClickMenuIcons/Select/Outgoing Nodes.png" />
+    <BitmapImage x:Key="RightClickSelectOutgoingNodesImage_Disable" UriSource="./ObjectRightClickMenuIcons/Select/Outgoing Nodes_Disable.png" />
+    <!-- Objects R-Click Menu, Links sub menu-->
+    <BitmapImage x:Key="RightClickObjectsUnMergeImage_Disable" UriSource="./ObjectRightClickMenuIcons/Links/Unmerge_Disable.png" />
+    <BitmapImage x:Key="RightClickObjectsUnMergeImage" UriSource="./ObjectRightClickMenuIcons/Links/Unmerge.png" />
+    <BitmapImage x:Key="RightClickObjectsMergeImage_Disable" UriSource="./ObjectRightClickMenuIcons/Links/Merge_Disable.png" />
+    <BitmapImage x:Key="RightClickObjectsMergeImage" UriSource="./ObjectRightClickMenuIcons/Links/Merge.png" />
+
+    <!-- Links R-Click Menu -->
+    <BitmapImage x:Key="RightClickEditLinkImage_Disable" UriSource="./LinkRightClickMenuIcons/Edit_Disable.png" />
+    <BitmapImage x:Key="RightClickEditImage" UriSource="./LinkRightClickMenuIcons/Edit.png" />
+    <BitmapImage x:Key="RightClickRemoveElbowLinkImage_Disable" UriSource="./LinkRightClickMenuIcons/RemoveElbow_Disable.png" />
+    <BitmapImage x:Key="RightClickRemoveElbowImage" UriSource="./LinkRightClickMenuIcons/Remove Elbow.png" />
+    <BitmapImage x:Key="RightClickUnMergeLinkImage_Disable" UriSource="./LinkRightClickMenuIcons/Unmerge_Disable.png" />
+    <BitmapImage x:Key="RightClickUnMergeImage" UriSource="./LinkRightClickMenuIcons/Unmerge.png" />
+    <BitmapImage x:Key="RightClickUnGroupLinkImage_Disable" UriSource="./LinkRightClickMenuIcons/Ungroup_Disable.png" />
+    <BitmapImage x:Key="RightClickUnGroupImage" UriSource="./LinkRightClickMenuIcons/Ungroup.png" />
+    <BitmapImage x:Key="RightClickRemoveFromGraphImage_Disable" UriSource="./LinkRightClickMenuIcons/RemoveLinkFromGraph_Disable.png" />
+    <BitmapImage x:Key="RightClickRemoveFromGraphImage" UriSource="./LinkRightClickMenuIcons/RemoveLinkFromGraph.png" />
+    <BitmapImage x:Key="RightClickHardDeleteImage" UriSource="./LinkRightClickMenuIcons/HardDeleteLink.png" />
+    <BitmapImage x:Key="RightClickRditLinkImage_Disable" UriSource="./LinkRightClickMenuIcons/RditLink_Disable.png" />
+    <BitmapImage x:Key="RightClickRditLinkImage" UriSource="./LinkRightClickMenuIcons/Rdit Link.png" />
+
+
+    <BitmapImage x:Key="RelatedEntitiesCountIcon" UriSource="./ObjectBrowserIcons/RelatedEntities.png" />
+    <BitmapImage x:Key="RelatedEventsCountIcon" UriSource="./ObjectBrowserIcons/RelatedEvents.png"/>
+    <BitmapImage x:Key="RelatedDocumentsCountIcon" UriSource="./ObjectBrowserIcons/RelatedDocuments.png" />
+
+    <BitmapImage x:Key="DynamicOntologyBackIcon" UriSource="./DynamicOntologyIcons/Back.png" />
+    <BitmapImage x:Key="DynamicOntologyForwardIcon" UriSource="./DynamicOntologyIcons/Forward.png"/>
+
+    <BitmapImage x:Key="JobsStatusBusyIcon" UriSource="./JobsStatus/Busy.png" />
+    <BitmapImage x:Key="JobsStatusDoneIcon" UriSource="./JobsStatus/Done.png"/>
+    <BitmapImage x:Key="JobsStatusFailedIcon" UriSource="./JobsStatus/Failed.png" />
+    <BitmapImage x:Key="JobsStatusPendingIcon" UriSource="./JobsStatus/Pending.png"/>
+    <BitmapImage x:Key="JobsStatusTerminatedIcon" UriSource="./JobsStatus/Terminated.png" />
+    <BitmapImage x:Key="JobsStatusTimeoutIcon" UriSource="./JobsStatus/Timeout.png"/>
+
+    <BitmapImage x:Key="HomeApplicationIcon" UriSource="./ApplicationIcons/home-mouseOver1.png"/>
+    <BitmapImage x:Key="BrowserApplicationIcon" UriSource="./ApplicationIcons/Browser.png"/>
+    <BitmapImage x:Key="GraphApplicationIcon" UriSource="./ApplicationIcons/graph.png"/>
+    <BitmapImage x:Key="MapApplicationIcon" UriSource="./ApplicationIcons/map.png"/>
+    <BitmapImage x:Key="ObjectExplorerApplicationIcon" UriSource="./ApplicationIcons/objectExplorer.png"/>
+    <!--<BitmapImage x:Key="ObjectExplorerApplicationIcon" UriSource="./ApplicationIcons/object Explorer.png"/>-->
+    <BitmapImage x:Key="BigDataSearchApplicationIcon" UriSource="./ApplicationIcons/Bigdata.png"/>
+    <BitmapImage x:Key="DataSourceApplicationIcon" UriSource="./ApplicationIcons/DataSource.png"/>
+    <BitmapImage x:Key="ImageAnalysisApplicationIcon" UriSource="./ApplicationIcons/ImageAnalysisApp.png"/>
+    <!--<BitmapImage x:Key="SummeryApplicationIcon" UriSource="./ApplicationIcons/Summery.png"/>-->
+    <BitmapImage x:Key="SelectedArrowIcon" UriSource="./ApplicationIcons/SelectedArrowIcon.png"/>
+
+    <!-- Object Resolution Wizard Icons -->
+    <BitmapImage x:Key="LinkingAndTargetingCloseIcon" UriSource="./ObjectResolutionWizardIcons/ResolutionCloseIcon.png"/>
+    <BitmapImage x:Key="BrowserIcon" UriSource="./ObjectResolutionWizardIcons/Browser.png"/>
+    <BitmapImage x:Key="DisabledBrowserIcon" UriSource="./ObjectResolutionWizardIcons/DisabledBrowser.png"/>
+    <BitmapImage x:Key="SelectedBrowserIcon" UriSource="./ObjectResolutionWizardIcons/SelectedBrowser.png"/>
+    <BitmapImage x:Key="HistogramIcon" UriSource="./ObjectResolutionWizardIcons/Histogram.png"/>
+    <BitmapImage x:Key="DisabledHistogramIcon" UriSource="./ObjectResolutionWizardIcons/DisabledHistogram.png"/>
+    <BitmapImage x:Key="InfoIcon" UriSource="./ObjectResolutionWizardIcons/Info.png"/>
+    <BitmapImage x:Key="DateTimeInfoIcon" UriSource="./Info.png"/>
+
+    <!-- Map Applications Icons -->
+    <BitmapImage x:Key="CircleSearchIcon" UriSource="./MapApplicationIcons/CircleSearch.png"/>
+    <BitmapImage x:Key="CircleSearch_PurpleIcon" UriSource="./MapApplicationIcons/CircleSearch_Purple.png"/>
+    <BitmapImage x:Key="PolygonSearchIcon" UriSource="./MapApplicationIcons/PolygonSearch.png"/>
+    <BitmapImage x:Key="PolygonSearch_PurpleIcon" UriSource="./MapApplicationIcons/PolygonSearch_Purple.png"/>
+    <BitmapImage x:Key="RouteSearchIcon" UriSource="./MapApplicationIcons/RouteSearch.png"/>
+    <BitmapImage x:Key="RouteSearch_PurpleIcon" UriSource="./MapApplicationIcons/RouteSearch_Purple.png"/>
+
+    <!-- DataSource Applications Icons -->
+    <BitmapImage x:Key="DocumentDataSourceIcon" UriSource="./DocumentDataSource.png"/>
+    <BitmapImage x:Key="GraphDataSourceIcon" UriSource="./GraphDataSource.png"/>
+    <BitmapImage x:Key="ManualEntedredDataSource" UriSource="./ManualEntedredDataSource.png"/>
+    <BitmapImage x:Key="DownloadDataSourceIcon" UriSource="./DownloadIcon.png"/>
+    
+    <!--ImageAnalysis Application Icons-->
+    <BitmapImage x:Key="UploadImageIcon" UriSource="./UploadImage.png"/>
+
+    <!-- ObjectExplorer Applications Icons -->
+    <BitmapImage x:Key="ObjectExplorerHistogramIcon" UriSource="./ObjectExplorerIcons/histogram.png"/>
+    <BitmapImage x:Key="ObjectExplorerChart2Icon" UriSource="./ObjectExplorerIcons/chart2.png"/>
+    <BitmapImage x:Key="ObjectExplorerLinkTypeHistogramIcon" UriSource="./ObjectExplorerIcons/link_type_histogram.png"/>
+    <BitmapImage x:Key="ObjectExplorerPieChartIcon" UriSource="./ObjectExplorerIcons/pie_chart.png"/>
+    <BitmapImage x:Key="ObjectExplorerPropertyValueHistogramIcon" UriSource="./ObjectExplorerIcons/property_value_histogram.png"/>
+    <BitmapImage x:Key="ObjectExplorerTimelineIcon" UriSource="./ObjectExplorerIcons/timeline.png"/>
+
+    <!-- ObjectExplorer Set Algebra Icons -->
+    <BitmapImage x:Key="SetAlgebraApplyFormulaIcon" UriSource="./ObjectExplorerIcons/ApplyFormula.png"/>
+    <BitmapImage x:Key="SetAlgebraUnionIcon" UriSource="./ObjectExplorerIcons/Union.png"/>
+    <BitmapImage x:Key="SetAlgebraIntersectionIcon" UriSource=".\ObjectExplorerIcons\Intersection.png"/>
+    <BitmapImage x:Key="SetAlgebraSubtractLeftIcon" UriSource=".\ObjectExplorerIcons\SubtractLeft.png"/>
+    <BitmapImage x:Key="SetAlgebraSubtractRightIcon" UriSource=".\ObjectExplorerIcons\SubtractRight.png"/>
+    <BitmapImage x:Key="SetAlgebraExclusiveOrIcon" UriSource=".\ObjectExplorerIcons\ExclusiveOr.png"/>
+    <BitmapImage x:Key="ChartIcon" UriSource=".\ObjectExplorerIcons\Chart.png"/>
+</ResourceDictionary>

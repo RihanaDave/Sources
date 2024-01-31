@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6a4765f2-9f75-4a6d-a63f-f9620f59bf5f" name="Presentation" linkedPackageId="dfb0a005-d0fb-4225-a80a-2021e9f4005c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="8e6a3c43-3f4e-4a46-b7a6-ee55b03dd033" name="GPAS">
+        <elementDefinition Id="fc599842-eb7b-44b3-a24b-6c005573d177" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <package Id="cb554c61-83f0-4b86-8ba9-04d3b9543417" name="Workspace">
+              <elementDefinition Id="b1085f4d-b2e2-426c-b1c3-58df619fd513" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="45694086-3566-49cf-bc4d-28cd9a09cc61" name="Presentation">
+                    <elementDefinition Id="f3c7b417-a359-49ae-8497-440002063f2c" />
+                    <suppliersInternal>
+                      <dependency Id="f077d7ff-d8aa-4e3d-8936-418cfdd8546c">
+                        <packageMoniker Id="ad1a23fd-c058-4136-8ab8-dc3e41efc5d6" LastKnownName="Entities" />
+                        <elementDefinition Id="7a792f27-68ef-4c61-960f-dda8885caa11" />
+                      </dependency>
+                      <dependency Id="2907ae0c-c110-4622-a2f1-f2c4cb0e4beb">
+                        <packageMoniker Id="6d6ab8a7-0fb9-4df7-a25f-3ce03755273a" LastKnownName="Logic" />
+                        <elementDefinition Id="f72b3dc0-7734-4c65-9162-fecb9092485a" />
+                      </dependency>
+                      <dependency Id="873df35f-1f4d-41e7-8ead-78fdd12bb654">
+                        <packageMoniker Id="49c08d8c-9a74-42ef-9cf5-9e81fde9f914" LastKnownName="Ontology" />
+                        <elementDefinition Id="f1271987-0de7-4d1a-8e16-8d8e4cbaa4a8" />
+                      </dependency>
+                      <dependency Id="c0931f91-ab1a-430b-89ca-13968809a55e">
+                        <packageMoniker Id="7b4eb21f-ada1-4ba7-b616-e4cb5a652ecd" LastKnownName="GraphViewer" />
+                        <elementDefinition Id="f520a551-c1f7-43c1-a9b4-ce8dcd2b785e" />
+                      </dependency>
+                    </suppliersInternal>
+                    <packagedElements>
+                      <packageHasNamedElement>
+                        <package Id="44148efc-89ad-4420-acba-6f149ece867b" name="Windows">
+                          <elementDefinition Id="daab9749-ee21-416f-8df9-5c2022b5a4dc" />
+                          <suppliersInternal>
+                            <dependency Id="013f52c3-3979-4c36-b502-bd30334776c9">
+                              <packageMoniker Id="ae5817ae-b0f5-49df-8df3-472dda4ed7d8" LastKnownName="Controls" />
+                              <elementDefinition Id="3bbbdf64-c6a4-4f81-b98a-a96e40221bd0" />
+                            </dependency>
+                          </suppliersInternal>
+                        </package>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <package Id="6a0932a6-47a3-46ea-96af-2049e710e880" name="Applications">
+                          <elementDefinition Id="411d067c-edd4-4ec2-b25e-59d391f5e81f" />
+                          <suppliersInternal>
+                            <dependency Id="879de0a0-b485-4d01-ae46-edbd4ed3a3f0">
+                              <packageMoniker Id="ae5817ae-b0f5-49df-8df3-472dda4ed7d8" LastKnownName="Controls" />
+                              <elementDefinition Id="8b1fc487-13f4-41be-9414-d27095f5b6aa" />
+                            </dependency>
+                          </suppliersInternal>
+                        </package>
+                      </packageHasNamedElement>
+                      <packageHasNamedElement>
+                        <package Id="ae5817ae-b0f5-49df-8df3-472dda4ed7d8" name="Controls">
+                          <elementDefinition Id="5a5bffbd-0dd2-4e66-9ba8-4759f2277eaf" />
+                        </package>
+                      </packageHasNamedElement>
+                    </packagedElements>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="6d6ab8a7-0fb9-4df7-a25f-3ce03755273a" name="Logic">
+                    <elementDefinition Id="f99e5022-5c96-4c7d-8bf1-0f47ce28fe2d" />
+                    <suppliersInternal>
+                      <dependency Id="f014f039-ca15-46ef-9af5-6dacf2c3b05b">
+                        <packageMoniker Id="ad1a23fd-c058-4136-8ab8-dc3e41efc5d6" LastKnownName="Entities" />
+                        <elementDefinition Id="0ab4635f-33ce-4535-8f58-b3ba9193f0fd" />
+                      </dependency>
+                      <dependency Id="e8197185-4730-4067-806d-b31e17318a15">
+                        <packageMoniker Id="2af81257-65a5-4ec0-b3fc-11dc0b74ba01" LastKnownName="ServiceAccesss" />
+                        <elementDefinition Id="9ce549c1-a50c-4e5a-9004-e5045cfeb253" />
+                      </dependency>
+                      <dependency Id="aedd013b-a78f-45a9-91ce-a99b20aefc33">
+                        <packageMoniker Id="49c08d8c-9a74-42ef-9cf5-9e81fde9f914" LastKnownName="Ontology" />
+                        <elementDefinition Id="6a48fce4-d3bb-4dd6-b54b-b66730edaf96" />
+                      </dependency>
+                    </suppliersInternal>
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="2af81257-65a5-4ec0-b3fc-11dc0b74ba01" name="ServiceAccesss">
+                    <elementDefinition Id="4a213839-ae44-4022-acaa-40ae7889be68" />
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="ad1a23fd-c058-4136-8ab8-dc3e41efc5d6" name="Entities">
+                    <elementDefinition Id="a8467933-2627-4daa-988a-19c4af23caba" />
+                  </package>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <package Id="49c08d8c-9a74-42ef-9cf5-9e81fde9f914" name="Ontology">
+                    <elementDefinition Id="84f2713d-6c32-49e6-b34e-956f2d550d27" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <package Id="d760ec48-a26c-4fde-88d6-602304b2ab64" name="Graph">
+              <elementDefinition Id="9ac151cf-e7c4-4fa2-9e36-ab6d643b1dfe" />
+              <packagedElements>
+                <packageHasNamedElement>
+                  <package Id="7b4eb21f-ada1-4ba7-b616-e4cb5a652ecd" name="GraphViewer">
+                    <elementDefinition Id="24aa4c2c-e937-4f97-b229-483d738a8c7b" />
+                  </package>
+                </packageHasNamedElement>
+              </packagedElements>
+            </package>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="dfb0a005-d0fb-4225-a80a-2021e9f4005c" name="WorkspaceModel">
+    <elementDefinition Id="579a7689-ed98-4e4e-8759-4cb728f0f9fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="494f0357-5527-48fb-8e5e-ed7604b5c407">
+        <profileInstance Id="3217ce3b-ba07-4a9b-bbc8-734c79e1d51e" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7b330b69-40c8-4fb2-9333-4eaef40be58e">
+        <profileInstance Id="b5862b63-08d5-4fe9-a3d9-2315606dad5f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

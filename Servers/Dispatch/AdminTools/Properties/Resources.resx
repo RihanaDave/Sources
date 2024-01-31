@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Admin" xml:space="preserve">
+    <value>admin</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Are_You_Sure_You_Want_To_Delete_The_Group" xml:space="preserve">
+    <value>Are you sure you want to delete the group?</value>
+  </data>
+  <data name="Begin_Time" xml:space="preserve">
+    <value>Begin Time</value>
+  </data>
+  <data name="Busy" xml:space="preserve">
+    <value>Busy</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="Change_Password" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Change_User_Details" xml:space="preserve">
+    <value>Change User Details</value>
+  </data>
+  <data name="Classifications" xml:space="preserve">
+    <value>Classifications:</value>
+  </data>
+  <data name="Confidential" xml:space="preserve">
+    <value>Confidential</value>
+  </data>
+  <data name="Confirm_Password" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Created_By" xml:space="preserve">
+    <value>Created_By</value>
+  </data>
+  <data name="Created_Time" xml:space="preserve">
+    <value>Created Time</value>
+  </data>
+  <data name="Create_Group" xml:space="preserve">
+    <value>Create Group</value>
+  </data>
+  <data name="Create_User" xml:space="preserve">
+    <value>Create User</value>
+  </data>
+  <data name="Define_Permission" xml:space="preserve">
+    <value>Define Permission</value>
+  </data>
+  <data name="Delete_Group" xml:space="preserve">
+    <value>Delete Group</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Edit_Personal_Info" xml:space="preserve">
+    <value>Edit Personal Info</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="End_Time" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="E_Mail_Address" xml:space="preserve">
+    <value>E-Mail Address</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Failed</value>
+  </data>
+  <data name="First_Name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Full_Name" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Group_Description" xml:space="preserve">
+    <value>Group Description</value>
+  </data>
+  <data name="Group_Field_Can_Not_Be_Null_Or_Empty" xml:space="preserve">
+    <value>Group Field Can Not Be Null Or Empty</value>
+  </data>
+  <data name="Group_Name" xml:space="preserve">
+    <value>Group Name</value>
+  </data>
+  <data name="Group_Name_Colon" xml:space="preserve">
+    <value>Group Name:</value>
+  </data>
+  <data name="Horizon_Server" xml:space="preserve">
+    <value>Horizon Server</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="Jobs_Status" xml:space="preserve">
+    <value>Jobs Status:</value>
+  </data>
+  <data name="Last_Name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Loading_Jobs_Status" xml:space="preserve">
+    <value>Loading jobs status</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_Field_Can_Not_Be_Null_Or_Empty" xml:space="preserve">
+    <value>Login field can not be null or empty</value>
+  </data>
+  <data name="Member_Of" xml:space="preserve">
+    <value>Member Of</value>
+  </data>
+  <data name="Member_Users" xml:space="preserve">
+    <value>Member Users</value>
+  </data>
+  <data name="Name_WithColon" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="New_Password" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="Not_Member_Of" xml:space="preserve">
+    <value>Not Member Of</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordWithColon" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Password_And_Confirm_Password_Is_Not_Matched" xml:space="preserve">
+    <value>Password and Confirm password is not matched</value>
+  </data>
+  <data name="Password_Or_Confirm_Password_Is_Empty" xml:space="preserve">
+    <value>Password or Confirm password is empty</value>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Permission:</value>
+  </data>
+  <data name="Please_Wait" xml:space="preserve">
+    <value>Please Wait</value>
+  </data>
+  <data name="Refresh_jobs_status" xml:space="preserve">
+    <value>Refresh jobs status</value>
+  </data>
+  <data name="Register_Time" xml:space="preserve">
+    <value>Register Time</value>
+  </data>
+  <data name="Restricted" xml:space="preserve">
+    <value>Restricted</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search_Server" xml:space="preserve">
+    <value>Search Server</value>
+  </data>
+  <data name="Secret" xml:space="preserve">
+    <value>Secret:</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Indexes_Stability" xml:space="preserve">
+    <value>Indexes Stability:</value>
+  </data>
+  <data name="Terminated" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="The_groupname_is_already_exist" xml:space="preserve">
+    <value>The groupname is already exist</value>
+  </data>
+  <data name="The_username_is_already_exist" xml:space="preserve">
+    <value>The Login-Name is already exist.</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="Top_Secret" xml:space="preserve">
+    <value>Top Secret</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Unsynchronized_Indexes" xml:space="preserve">
+    <value>Unsynchronized Indexes :</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName:</value>
+  </data>
+  <data name="UserName_Or_Password_Is_Incorrect" xml:space="preserve">
+    <value>Username or password is incorrect</value>
+  </data>
+  <data name="User_Account_Control_Prompt" xml:space="preserve">
+    <value>UserAccountControlPrompt</value>
+  </data>
+  <data name="Add_IPGeo_Information" xml:space="preserve">
+    <value>Add IP-Geo Information</value>
+  </data>
+  <data name="Browse_File" xml:space="preserve">
+    <value>Browse File</value>
+  </data>
+  <data name="File_Path" xml:space="preserve">
+    <value>File Path:</value>
+  </data>
+  <data name="Import_IPGeo_Information_File" xml:space="preserve">
+    <value>Import IP-Geo Information File</value>
+  </data>
+  <data name="IP" xml:space="preserve">
+    <value>IP:</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude:</value>
+  </data>
+  <data name="Loading_Search_Servers_Synchronization_Status" xml:space="preserve">
+    <value>Loading Synchronization Status.</value>
+  </data>
+  <data name="Loading_User_Accounts_Information" xml:space="preserve">
+    <value>Loading User Accounts Information.</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude:</value>
+  </data>
+  <data name="Securing_Connection_" xml:space="preserve">
+    <value>Securing Connection...</value>
+  </data>
+  <data name="Administrator_Tools" xml:space="preserve">
+    <value>Administrator Tools</value>
+  </data>
+  <data name="Remove_All_Data" xml:space="preserve">
+    <value>Remove All Data</value>
+  </data>
+  <data name="Removing_All_Data" xml:space="preserve">
+    <value>Removing All Data ...</value>
+  </data>
+  <data name="Restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="Current_Page" xml:space="preserve">
+    <value>Current Page</value>
+  </data>
+  <data name="First_Page" xml:space="preserve">
+    <value>First Page</value>
+  </data>
+  <data name="Last_Page" xml:space="preserve">
+    <value>Last Page</value>
+  </data>
+  <data name="Next_Page" xml:space="preserve">
+    <value>Next Page</value>
+  </data>
+  <data name="Previous_Page" xml:space="preserve">
+    <value>Previous Page</value>
+  </data>
+  <data name="String_InvalidIpAddress" xml:space="preserve">
+    <value>invalid ip address</value>
+  </data>
+  <data name="String_InvalidValue" xml:space="preserve">
+    <value>invalid value</value>
+  </data>
+  <data name="String_RemoveAllData" xml:space="preserve">
+    <value>Are you sure you want to permanently remove all data?</value>
+  </data>
+  <data name="String_RemoveDataFailed" xml:space="preserve">
+    <value>Unable to remove data completely, read administrative event logs for more details.</value>
+  </data>
+  <data name="String_RemoveDataSuccess" xml:space="preserve">
+    <value>All Data remove from servers.</value>
+  </data>
+  <data name="String_ConfirmationPasswordDidNotMatch" xml:space="preserve">
+    <value>The password and confirmation password did not match.</value>
+  </data>
+  <data name="String_DeleteUser" xml:space="preserve">
+    <value>Are you sure you want to delete the user?</value>
+  </data>
+  <data name="String_DeleteUserTitle" xml:space="preserve">
+    <value>Delete user</value>
+  </data>
+  <data name="HorizonIndexManager" xml:space="preserve">
+    <value>Horizon index manager</value>
+  </data>
+  <data name="String_DeleteAllHorizonIndexes" xml:space="preserve">
+    <value>Are you sure you want to delete all indexes?</value>
+  </data>
+  <data name="String_DeleteHorizonIndex" xml:space="preserve">
+    <value>Are you sure you want to delete the index?</value>
+  </data>
+</root>

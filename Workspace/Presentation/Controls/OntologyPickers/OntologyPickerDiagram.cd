@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.OntologyPicker.LinkTypePicker">
+    <Position X="10.75" Y="2.25" Width="2.5" />
+    <Members>
+      <Method Name="ExceptLinkTypeCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ExceptLinkTypeCollectionProperty" Hidden="true" />
+      <Method Name="LinkItemCollection_CollectionChanged" Hidden="true" />
+      <Field Name="LinkItemCollectionProperty" Hidden="true" />
+      <Method Name="LinkTypePicker" Hidden="true" />
+      <Method Name="OnExceptLinkTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnLinkItemCollectionChanged" Hidden="true" />
+      <Method Name="OnSelectedLinkItemChanged" Hidden="true" />
+      <Method Name="OnSetExceptLinkTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnSetLinkItemCollectionChanged" Hidden="true" />
+      <Method Name="OnSetSelectedLinkItemChanged" Hidden="true" />
+      <Method Name="OnSetSourceTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnSetTargetTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnSourceTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnTargetTypeCollectionChanged" Hidden="true" />
+      <Field Name="SelectedLinkItemProperty" Hidden="true" />
+      <Method Name="SourceTypeCollection_CollectionChanged" Hidden="true" />
+      <Field Name="SourceTypeCollectionProperty" Hidden="true" />
+      <Method Name="TargetTypeCollection_CollectionChanged" Hidden="true" />
+      <Field Name="TargetTypeCollectionProperty" Hidden="true" />
+    </Members>
+    <AssociationLine Name="LinkItemCollection" Type="GPAS.Ontology.OntologyNode" FixedFromPoint="true">
+      <Path>
+        <Point X="10.75" Y="3.5" />
+        <Point X="8.75" Y="3.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAgQBACQlgAAIAEAgMAQAAAACgAATAGAQAEAAgABCAI=</HashCode>
+      <FileName>Controls\OntologyPicker\LinkTypePicker.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedLinkItem" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="LinkItemCollection" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.OntologyPicker.ObjectTypePicker">
+    <Position X="2" Y="1.25" Width="3" />
+    <Members>
+      <Method Name="ExceptObjectTypeUriCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ExceptObjectTypeUriCollectionProperty" Hidden="true" />
+      <Method Name="LinkTypeCollection_CollectionChanged" Hidden="true" />
+      <Field Name="LinkTypeCollectionProperty" Hidden="true" />
+      <Method Name="ObjectItemCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ObjectItemCollectionProperty" Hidden="true" />
+      <Method Name="ObjectTypePicker" Hidden="true" />
+      <Method Name="OnExceptObjectTypeUriCollectionChanged" Hidden="true" />
+      <Method Name="OnLinkTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnObjectItemCollectionChanged" Hidden="true" />
+      <Method Name="OnSelectedObjectItemChanged" Hidden="true" />
+      <Method Name="OnSetExceptObjectTypeUriCollectionChanged" Hidden="true" />
+      <Method Name="OnSetLinkTypeCollectionChanged" Hidden="true" />
+      <Method Name="OnSetObjectItemCollectionChanged" Hidden="true" />
+      <Method Name="OnSetSelectedObjectItemChanged" Hidden="true" />
+      <Field Name="SelectedObjectItemProperty" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIIAAICAAFwAAAGAAEAAEAmgAgAAAAEAAAIgAAAAACA=</HashCode>
+      <FileName>Controls\OntologyPicker\ObjectTypePicker.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedObjectItem" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ObjectItemCollection" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.OntologyPicker.PropertyTypePicker">
+    <Position X="2" Y="4.25" Width="3" />
+    <Members>
+      <Method Name="DataTypeFilterCollection_CollectionChanged" Hidden="true" />
+      <Field Name="DataTypeFilterCollectionProperty" Hidden="true" />
+      <Method Name="ExceptPropertyCategoryCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ExceptPropertyCategoryCollectionProperty" Hidden="true" />
+      <Method Name="ExceptPropertyTypeUriCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ExceptPropertyTypeUriCollectionProperty" Hidden="true" />
+      <Method Name="ObjectTypeUriCollection_CollectionChanged" Hidden="true" />
+      <Field Name="ObjectTypeUriCollectionProperty" Hidden="true" />
+      <Method Name="OnDataTypeFilterCollectionChanged" Hidden="true" />
+      <Method Name="OnExceptPropertyCategoryCollectionChanged" Hidden="true" />
+      <Method Name="OnExceptPropertyTypeUriCollectionChanged" Hidden="true" />
+      <Method Name="OnObjectTypeUriCollectionChanged" Hidden="true" />
+      <Method Name="OnPropertyItemCollectionChanged" Hidden="true" />
+      <Method Name="OnSelectedPropertyItemChanged" Hidden="true" />
+      <Method Name="OnSetDataTypeFilterCollectionChanged" Hidden="true" />
+      <Method Name="OnSetExceptPropertyCategoryCollectionChanged" Hidden="true" />
+      <Method Name="OnSetExceptPropertyTypeUriCollectionChanged" Hidden="true" />
+      <Method Name="OnSetObjectTypeUriCollectionChanged" Hidden="true" />
+      <Method Name="OnSetPropertyItemCollectionChanged" Hidden="true" />
+      <Method Name="OnSetSelectedPropertyItemChanged" Hidden="true" />
+      <Method Name="PropertyItemCollection_CollectionChanged" Hidden="true" />
+      <Field Name="PropertyItemCollectionProperty" Hidden="true" />
+      <Method Name="PropertyTypePicker" Hidden="true" />
+      <Field Name="SelectedPropertyItemProperty" Hidden="true" />
+    </Members>
+    <AssociationLine Name="PropertyItemCollection" Type="GPAS.Ontology.PropertyNode" FixedFromPoint="true">
+      <Path>
+        <Point X="5" Y="6.25" />
+        <Point X="7" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>lAAAAIAgJyQYQCAACAAAACAAUFARQMIAAABAgQAEAAI=</HashCode>
+      <FileName>Controls\OntologyPicker\PropertyTypePicker.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedPropertyItem" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PropertyItemCollection" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GPAS.Ontology.OntologyNode">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <Members>
+      <Method Name="OnChildrenChanged" Hidden="true" />
+      <Method Name="OnIconChanged" Hidden="true" />
+      <Method Name="OnParentChanged" Hidden="true" />
+      <Method Name="OnTitleChanged" Hidden="true" />
+      <Method Name="OntologyNode" Hidden="true" />
+      <Method Name="OnTypeUriChanged" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Children" Type="GPAS.Ontology.OntologyNode" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="2.062" />
+        <Point X="9.438" Y="2.062" />
+        <Point X="9.438" Y="2.438" />
+        <Point X="8.75" Y="2.438" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.252" Y="0.122" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="GPAS.Ontology.OntologyNode" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="3" />
+        <Point X="9.399" Y="3" />
+        <Point X="9.399" Y="2.688" />
+        <Point X="8.75" Y="2.688" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.192" Y="-0.225" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Parent" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Ontology.PropertyNode">
+    <Position X="7" Y="5.25" Width="2" />
+    <Members>
+      <Method Name="OnBaseDataTypeChanged" Hidden="true" />
+      <Method Name="PropertyNode" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

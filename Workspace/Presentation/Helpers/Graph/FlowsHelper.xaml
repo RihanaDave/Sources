@@ -1,0 +1,149 @@
+﻿<helpers:PresentationHelper x:Class="GPAS.Workspace.Presentation.Helpers.Graph.FlowsHelper"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+             xmlns:barChart="clr-namespace:GPAS.BarChartViewer;assembly=GPAS.BarChartViewer"
+             xmlns:colorPicker="clr-namespace:GPAS.ColorPickerViewer;assembly=GPAS.ColorPickerViewer"
+             xmlns:helpers="clr-namespace:GPAS.Workspace.Presentation.Helpers"
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Helpers.Graph"
+             mc:Ignorable="d"  Title="{x:Static resource:Resources.Flows}"
+             d:DesignWidth="270">
+    <helpers:PresentationHelper.Resources>
+        <ResourceDictionary>
+            <local:ShowHideToggleButtonIsCheckedToTitleConverter x:Key="ShowHideToggleTitle"/>
+
+            <Style x:Key="BordersStyle" TargetType="Border">
+                <Setter Property="Background" Value="DarkGray"/>
+                <Setter Property="BorderBrush" Value="WhiteSmoke"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Height" Value="Auto"/>
+                <Setter Property="Padding" Value="10 5"/>
+            </Style>
+            <Style x:Key="TitleBorder" TargetType="Label">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="5 5 0 0"/>
+            </Style>
+        </ResourceDictionary>
+    </helpers:PresentationHelper.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Background="{DynamicResource MaterialDesignCardBackground}">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+                <Grid>
+                    <TextBlock Grid.Column="0" Text="{x:Static resource:Resources.Flow_Options}" 
+                               Style="{StaticResource SecondHeader}"/>
+
+                </Grid>
+                <Grid Margin="5 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock VerticalAlignment="Center" Margin="5 0" Grid.Column="0" Visibility="Visible" HorizontalAlignment="Center"
+                                       Text="{Binding ElementName=ShowHideToggleButton, Path=IsChecked, Converter={StaticResource ShowHideToggleTitle}}" 
+                                       Foreground="{DynamicResource MaterialDesignBody}" />
+                    <ToggleButton x:Name="ShowHideToggleButton" HorizontalAlignment="Center" Margin="20 0 0 0" IsChecked="False"
+                                           Grid.Column="1"/>
+                </Grid>
+                <Separator Margin="8"/>
+
+                <StackPanel Orientation="Vertical">
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="{x:Static resource:Resources.Flow_}"/>
+                        <!--TODO-->
+                        <Label Grid.Column="1"   BorderThickness="1" Padding="5 2" Height="22" VerticalAlignment="Center"
+                                   Content="{x:Static resource:Resources.Total_Events_Count}"/>
+                    </Grid>
+
+                    <Separator Margin="8"/>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="1"  Orientation="Horizontal" VerticalAlignment="Center">
+                            <RadioButton x:Name="AllObjectsRadioButton" Checked="AllObjectsRadioButton_Checked" Foreground="{DynamicResource MaterialDesignBody}" Margin="2,0,40,0" Content="{x:Static resource:Resources.All_objects}" />
+                            <RadioButton x:Name="SelectedObjectsRadioButton" Checked="SelectedObjectsRadioButton_Checked"  Foreground="{DynamicResource MaterialDesignBody}" Content="{x:Static resource:Resources.Selected_objects}" Margin="0 0 0 5"/>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        
+                    </StackPanel>
+                    <TextBlock x:Name="ShowFlowsType" Text="Show flow for all object" Margin="10 5 0 0" Foreground="{DynamicResource MaterialDesignBody}"/>
+                    <Separator Margin="8"/>
+
+                    <Grid Margin="0 5">
+                        <barChart:BarChartViewer x:Name="mainChart" RenderTransformOrigin="0.5,0.5" MinWidth="240" Width="400" Padding="5" AxisLabelMode="Both"
+                                                     BucketCount="{Binding BucketCount}" EmptyContent="" Foreground="{DynamicResource MaterialDesignBody}" 
+                                                     VerticalAxisLabel="{x:Static resource:Resources.Count}"
+                                                     HorizontalAxisLabel="{x:Static resource:Resources.Value__Count_}" BarSelectionMode="Single"
+                                                     BarColor="{Binding ElementName=FlowColorPicker, Path=SelectedColor, Mode=TwoWay}" Orientation="Vertical"
+                                                     SelectionChanged="mainChart_SelectionChanged">
+
+                        </barChart:BarChartViewer>
+                    </Grid>
+                </StackPanel>
+
+                <Separator Margin="8 8 8 5"/>
+
+                <TextBlock Text="{x:Static resource:Resources.Animation}" Margin="5 10 5 0" FontSize="14"  Style="{StaticResource SecondHeader}"/>
+                <StackPanel Orientation="Vertical">
+                    <Grid Margin="10 7 10 8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Foreground="{DynamicResource MaterialDesignBody}"  Text="{x:Static resource:Resources.Speed_}"/>
+                        <Slider x:Name="SpeedSlider" Margin="5 0 0 0" Grid.Column="1" VerticalAlignment="Center" Minimum="500" Value="4000" Maximum="10000" LargeChange="100" TickFrequency="200" />
+                    </Grid>
+
+                    <TextBlock Grid.Column="0" Margin="5 7" Style="{StaticResource SecondHeader}"
+                                   Text="{x:Static resource:Resources.Visualization_}" FontSize="12" VerticalAlignment="Top"/>
+                    <Grid Grid.Column="1" Margin="12 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <RadioButton x:Name="AnimateRadioButton" Grid.Column="0" Foreground="{DynamicResource MaterialDesignBody}" Content="{x:Static resource:Resources.Animated}" IsChecked="True"/>
+                        <RadioButton x:Name="StaticRadioButton" Grid.Column="1" Foreground="{DynamicResource MaterialDesignBody}" Content="{x:Static resource:Resources.Static}" />
+                        <RadioButton x:Name="NoneRadioButton" Grid.Column="2" Foreground="{DynamicResource MaterialDesignBody}" Content="{x:Static resource:Resources.None}" />
+                    </Grid>
+                   
+                    
+                        <TextBlock Grid.Column="0" Margin="5 15 5 0" Text="{x:Static resource:Resources.Flow_Color_}" FontSize="13" Style="{StaticResource SecondHeader}"/>
+                    
+                    <StackPanel Orientation="Vertical" Margin="10 5">
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="Select flow color:" Foreground="{DynamicResource MaterialDesignBody}" VerticalAlignment="Center"/>
+                            <colorPicker:ColorPickerViewer x:Name="FlowColorPicker" Margin="10 0" Grid.Column="1" Background="White" VerticalAlignment="Center"
+                                                           HorizontalAlignment="Left" SelectedColor="Red" Click="FlowColorPicker_Click"/>
+                        </StackPanel>
+                      <Separator Margin="0 15"/>
+                        <Grid Margin="0 0 0 5">
+                            <CheckBox x:Name="ScaleToFlowValueCheckBox"  Foreground="{DynamicResource MaterialDesignBody}"
+                                  Content="{x:Static resource:Resources.Scale_visualization_to_flow_value}" IsChecked="True"/>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</helpers:PresentationHelper>

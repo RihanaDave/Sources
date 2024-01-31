@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="GPAS.PieChartViewer.PieChartViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:ScottLogic.Controls.PieChart"
+             mc:Ignorable="d"              
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <x:ArrayExtension Type="{x:Type Brush}" x:Key="brushes">
+            <SolidColorBrush Color="#9F15C3"/>
+            <SolidColorBrush Color="#FF8E01"/>
+            <SolidColorBrush Color="#339933"/>
+            <SolidColorBrush Color="#00AAFF"/>
+            <SolidColorBrush Color="#818183"/>
+            <SolidColorBrush Color="#000033"/>
+        </x:ArrayExtension>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <controls:PieChartLayout HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0"
+                                     x:Name="pieChartLayout"  Foreground="{DynamicResource MaterialDesignBody}"
+                                     PlottedProperty="Percent" Margin="10" Visibility="Hidden">
+                <controls:PieChartLayout.ColorSelector>
+                    <controls:IndexedColourSelector  Brushes="{StaticResource brushes}"/>
+                </controls:PieChartLayout.ColorSelector>
+            </controls:PieChartLayout>
+        </StackPanel>
+    </Grid>
+</UserControl>

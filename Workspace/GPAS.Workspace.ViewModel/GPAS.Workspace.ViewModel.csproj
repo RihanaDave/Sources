@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{472EA548-BB62-43BA-9648-3633A92CBCB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Workspace.ViewModel</RootNamespace>
+    <AssemblyName>GPAS.Workspace.ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="DataImport\AccessTableMaterialVM.cs" />
+    <Compile Include="DataImport\AttachedDatabaseTableMaterialVM.cs" />
+    <Compile Include="DataImport\CsvFileMaterialVM.cs" />
+    <Compile Include="DataImport\DataLakeSearchResultMaterialVM.cs" />
+    <Compile Include="DataImport\DataSourceVM.cs" />
+    <Compile Include="DataImport\EmlFileMaterialVM.cs" />
+    <Compile Include="DataImport\ExcelSheetMaterialVM.cs" />
+    <Compile Include="DataImport\ItemToImportVM.cs" />
+    <Compile Include="DataImport\MaterialBaseVM.cs" />
+    <Compile Include="DataImport\PathPartVM.cs" />
+    <Compile Include="DataImport\SemiStructuredMaterialVM.cs" />
+    <Compile Include="DataImport\UnstructuredMaterialVM.cs" />
+    <Compile Include="ObjectExplorer\Formula\FormulaBase.cs" />
+    <Compile Include="ObjectExplorer\Formula\PerformSetOperation.cs" />
+    <Compile Include="ObjectExplorer\Formula\PropertyValueBasedDrillDown.cs" />
+    <Compile Include="ObjectExplorer\Formula\NumericPropertyValueRange.cs" />
+    <Compile Include="ObjectExplorer\Formula\PropertyValueRangeDrillDown.cs" />
+    <Compile Include="ObjectExplorer\Formula\SetAlgebraOperator.cs" />
+    <Compile Include="ObjectExplorer\Formula\TypeBasedDrillDown.cs" />
+    <Compile Include="ObjectExplorer\ObjectSet\ObjectSetBase.cs" />
+    <Compile Include="ObjectExplorer\ObjectSet\DerivedObjectSet.cs" />
+    <Compile Include="ObjectExplorer\ObjectSet\RecomputeSetEventArgs.cs" />
+    <Compile Include="ObjectExplorer\ObjectSet\StartingObjectSet\AllObjects.cs" />
+    <Compile Include="ObjectExplorer\ObjectSet\StartingObjectSet\StartingObjectSetBase.cs" />
+    <Compile Include="ObjectExplorer\StatisticalQueryGenerator.cs" />
+    <Compile Include="ObjectExplorer\Statistics\PreviewStatistic.cs" />
+    <Compile Include="ObjectExplorer\Statistics\PreviewStatistics.cs" />
+    <Compile Include="ObjectExplorer\Statistics\PropertyBarValue.cs" />
+    <Compile Include="ObjectExplorer\Statistics\PropertyBarValues.cs" />
+    <Compile Include="ObjectExplorer\Statistics\PropertyValueCategory.cs" />
+    <Compile Include="ObjectExplorer\Statistics\PropertyValueStatistic.cs" />
+    <Compile Include="ObjectExplorer\VisualizationPanel\BarChartTool.cs" />
+    <Compile Include="ObjectExplorer\VisualizationPanel\LinkTypeHistogramTool.cs" />
+    <Compile Include="ObjectExplorer\VisualizationPanel\PropertyValueHistogramSortType.cs" />
+    <Compile Include="ObjectExplorer\VisualizationPanel\PropertyValueHistogramTool.cs" />
+    <Compile Include="ObjectExplorer\VisualizationPanel\VisualizationPanelToolBase.cs" />
+    <Compile Include="ObjectExplorer\VisualizationPanel\VisualizationPanelToolType.cs" />
+    <Compile Include="ObjectResolution\ObjectsToResolveVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Publish\PendingChanges\PublishingChangedConceptsListVm.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangedConceptsVm.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangedLinksVm.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangedMapping.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangedMediaVm.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangedObjectVm.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangedPropertyVm.cs" />
+    <Compile Include="Publish\PendingChanges\PublishingChangeType.cs" />
+    <Compile Include="Publish\unpublishConceptChangeType.cs" />
+    <Compile Include="Publish\UnpublishedLink.cs" />
+    <Compile Include="Publish\UnpublishedMedia.cs" />
+    <Compile Include="Publish\UnpublishedObject.cs" />
+    <Compile Include="Publish\UnpublishedProperty.cs" />
+    <Compile Include="DataImport\TableForImport.cs" />
+    <Compile Include="Properties\Resources.fa.Designer.cs">
+      <DependentUpon>Resources.fa.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataImport\GPAS.DataImport.csproj">
+      <Project>{73A6E9CF-A4F9-45D3-84AD-B149C488FF6F}</Project>
+      <Name>GPAS.DataImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GPAS.StatisticalQuery\GPAS.StatisticalQuery.csproj">
+      <Project>{DCB8746E-EEBB-43C4-A220-804E45D32C27}</Project>
+      <Name>GPAS.StatisticalQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkspaceEntities\GPAS.Workspace.Entities.csproj">
+      <Project>{f05d7ab8-c202-4557-9e61-ad47cbda0fef}</Project>
+      <Name>GPAS.Workspace.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+    <Content Include="Publish\PendingChanges\Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="ObjectExplorer\Model.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fa.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Search\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

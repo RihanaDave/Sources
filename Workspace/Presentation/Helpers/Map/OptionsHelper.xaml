@@ -1,0 +1,53 @@
+﻿<helpers:PresentationHelper x:Class="GPAS.Workspace.Presentation.Helpers.Map.OptionsHelper"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Helpers.Map"
+             xmlns:helpers="clr-namespace:GPAS.Workspace.Presentation.Helpers" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                            xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                            mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Title="{x:Static resource:Resources.Options}">
+    <helpers:PresentationHelper.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BordersStyle" TargetType="Border">
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignCardBackground}"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Margin" Value="0,0,0,6"/>
+                <Setter Property="Height" Value="Auto"/>
+                <Setter Property="Padding" Value="5"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+            </Style>
+        </ResourceDictionary>
+    </helpers:PresentationHelper.Resources>
+
+    <Grid Background="{DynamicResource MaterialDesignCardBackground}">
+        <StackPanel Orientation="Vertical">
+            <Border Style="{StaticResource BordersStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{x:Static resource:Resources.Imagery}" Grid.ColumnSpan="2" 
+                           FontWeight="ExtraBold" Margin="0 0 0 5" Style="{StaticResource SecondHeader}" />
+                    <Label Content="{x:Static resource:Resources.Source_}" VerticalContentAlignment="Bottom" Grid.Row="1"
+                           Margin="5 0" VerticalAlignment="Bottom"/>
+                    <ComboBox Name="MapTileSourceComboBox" Grid.Column="1" Background="{DynamicResource MaterialDesignCardBackground}" Foreground="{DynamicResource MaterialDesignBody}" Grid.Row="1" Margin="1,0"/>
+                </Grid>
+            </Border>
+        </StackPanel>      
+        
+        <waiting:WaitingControl Message="{x:Static resource:Resources.Loading_map_tiles_}" x:Name="WaitingControl"/>
+    </Grid>
+</helpers:PresentationHelper>

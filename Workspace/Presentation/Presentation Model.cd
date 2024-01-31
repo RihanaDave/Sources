@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="کاربردهای نرم افزار">
+    <Position X="3.103" Y="6.712" Height="0.291" Width="1.293" />
+  </Comment>
+  <Comment CommentText="پنجره های نرم افزار">
+    <Position X="11.093" Y="0.686" Height="0.291" Width="1.293" />
+  </Comment>
+  <Comment CommentText="کنترل های مورد استفاده توسط پنجره ها و کاربردها">
+    <Position X="18.891" Y="5.742" Height="0.603" Width="1.293" />
+  </Comment>
+  <Class Name="GPAS.Workspace.Presentation.Applications.BigDataSearchApplication" Collapsed="true">
+    <Position X="4.25" Y="11.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAg=</HashCode>
+      <FileName>Applications\BigDataSearchApplication.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Applications.BrowserApplication" Collapsed="true">
+    <Position X="4.25" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\BrowserApplication.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Applications.GraphApplication" Collapsed="true">
+    <Position X="4.25" Y="9.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QQNgBQCEoIJhAKImVSEABmIERAaRBNBAgCElAiBhABA=</HashCode>
+      <FileName>Applications\GraphApplication.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Applications.PresentationApplication" Collapsed="true">
+    <Position X="1.25" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\PresentationApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Windows.GroupCreationWindow" Collapsed="true">
+    <Position X="14.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAAAAAAAACAAAAAAEKAAAAAAAAAAAQAAAAEAAA=</HashCode>
+      <FileName>Windows\GroupCreationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Windows.LinkCreationWindow" Collapsed="true">
+    <Position X="12.5" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgASAAAAAEAAAAAAAAAEIAACAAAAACA=</HashCode>
+      <FileName>Windows\LinkCreationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Windows.MainWindow" Collapsed="true">
+    <Position X="4.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAACCAAAAAAAAAAAABAIAAAAAAAAEACAAAEAA=</HashCode>
+      <FileName>Windows\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Windows.ObjectCreationWindow" Collapsed="true">
+    <Position X="10.25" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAEABAAAEBAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\ObjectCreationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Windows.PresentationWindow" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\PresentationWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.BrowseTabControl" Collapsed="true">
+    <Position X="7" Y="7.75" Width="1.5" />
+    <InheritanceLine Type="GPAS.Workspace.Presentation.Controls.PresentationControl" FixedFromPoint="true">
+      <Path>
+        <Point X="18.312" Y="7.191" />
+        <Point X="18.312" Y="7.375" />
+        <Point X="7.75" Y="7.375" />
+        <Point X="7.75" Y="7.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\BrowseControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.GraphControl" Collapsed="true">
+    <Position X="7" Y="9.75" Width="1.5" />
+    <InheritanceLine Type="GPAS.Workspace.Presentation.Controls.PresentationControl" FixedFromPoint="true">
+      <Path>
+        <Point X="18.75" Y="7.191" />
+        <Point X="18.75" Y="9.375" />
+        <Point X="7.75" Y="9.375" />
+        <Point X="7.75" Y="9.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>0BiAQAgACgEAAQAKkAAABAAgAEABAAQAAAAAwAgCQDA=</HashCode>
+      <FileName>Controls\GraphControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.GroupCreationControl" Collapsed="true">
+    <Position X="14.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAQAIACAAAAAAACBAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\GroupCreationControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.LinkCreationControl" Collapsed="true">
+    <Position X="12.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAMBGAgBAhAAiMhJAAoAAEARABQAQAIABACgQAgiAI=</HashCode>
+      <FileName>Controls\LinkCreationControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.ObjectCreationControl" Collapsed="true">
+    <Position X="10.25" Y="3.75" Width="2" />
+    <InheritanceLine Type="GPAS.Workspace.Presentation.Controls.PresentationControl" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="6.5" />
+        <Point X="18.75" Y="4.816" />
+        <Point X="11.312" Y="4.816" />
+        <Point X="11.312" Y="4.441" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAEAAAAAAAAAAAAEAAAAAAAAgAAACAAAAAAAgAAI=</HashCode>
+      <FileName>Controls\ObjectCreationControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.ObjectTypeHierarchyControl" Collapsed="true">
+    <Position X="10.25" Y="5.25" Width="2" />
+    <InheritanceLine Type="GPAS.Workspace.Presentation.Controls.PresentationControl" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18" Y="6.812" />
+        <Point X="11.333" Y="6.812" />
+        <Point X="11.333" Y="5.941" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAQIAAAAAAAAAAAAABABAAAAAAAREACAQAACgAA=</HashCode>
+      <FileName>Controls\ObjectTypeHierarchyControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.PresentationControl" Collapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\PresentationControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.PropertyTypePickerControl" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQIAAAAAAAAAAAAABIBAAAABAAVEACCQAACgAA=</HashCode>
+      <FileName>Controls\PropertyTypePickerControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.LinkTypeHierarchyControl" Collapsed="true">
+    <Position X="12.5" Y="5.25" Width="2" />
+    <InheritanceLine Type="GPAS.Workspace.Presentation.Controls.PresentationControl" FixedFromPoint="true">
+      <Path>
+        <Point X="18.312" Y="6.5" />
+        <Point X="18.312" Y="6.316" />
+        <Point X="13.5" Y="6.316" />
+        <Point X="13.5" Y="5.941" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAQIAIAAAAAAAAAAABIBAAAAAAAVEACCQEACgAg=</HashCode>
+      <FileName>Controls\LinkTypeHierarchyControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

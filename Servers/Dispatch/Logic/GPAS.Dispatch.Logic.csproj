@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5837E65B-FFFA-492C-9DF8-FE1285AEAE0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GPAS.Dispatch.Logic</RootNamespace>
+    <AssemblyName>GPAS.Dispatch.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\.sonarlint\kavoshcsharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\AssemblyCopyright.cs">
+      <Link>Properties\AssemblyCopyright.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\AssemblyVersion.cs">
+      <Link>Properties\AssemblyVersion.cs</Link>
+    </Compile>
+    <Compile Include="Authentication.cs" />
+    <Compile Include="CheckingServersStatusProvider.cs" />
+    <Compile Include="Datalake\DataLakeProvider.cs" />
+    <Compile Include="Datalake\DirectoryContent.cs" />
+    <Compile Include="Datalake\DirectoryContentType.cs" />
+    <Compile Include="Datalake\HadoopManager.cs" />
+    <Compile Include="Datalake\JobProvider.cs" />
+    <Compile Include="DataSourceProvider.cs" />
+    <Compile Include="DispatchOntologyDownLoader.cs" />
+    <Compile Include="EntityConvertor.cs" />
+    <Compile Include="FilterSearchProvider.cs" />
+    <Compile Include="GeographicalStaticLocationProvider.cs" />
+    <Compile Include="GeoSearchProvider.cs" />
+    <Compile Include="GroupManagement.cs" />
+    <Compile Include="GroupMembershipManagement.cs" />
+    <Compile Include="HorizonIndexManagement.cs" />
+    <Compile Include="IdGenerators.cs" />
+    <Compile Include="ImageAnalyticsProvider.cs" />
+    <Compile Include="IndexCheckingProvider.cs" />
+    <Compile Include="Init\InitializePreparation.cs" />
+    <Compile Include="InvestigationManagement.cs" />
+    <Compile Include="MapProvider.cs" />
+    <Compile Include="DispatchFileProvider.cs" />
+    <Compile Include="GraphProvider.cs" />
+    <Compile Include="MediaProvider.cs" />
+    <Compile Include="ImportProvider.cs" />
+    <Compile Include="JobsProvider.cs" />
+    <Compile Include="NLPProvider.cs" />
+    <Compile Include="OptimizationProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublishProvider.cs" />
+    <Compile Include="RepositoryEntityCreator.cs" />
+    <Compile Include="RepositoryProvider.cs" />
+    <Compile Include="SearchAroundProvider.cs" />
+    <Compile Include="SearchIndexesSynchronization.cs" />
+    <Compile Include="SearchProvider.cs" />
+    <Compile Include="RemoveAllData.cs" />
+    <Compile Include="StatisticalQueryProvider.cs" />
+    <Compile Include="TimelineProvider.cs" />
+    <Compile Include="TextualSearchProvider.cs" />
+    <Compile Include="UserAccountControlProvider.cs" />
+    <Compile Include="UserAccountManagement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\AccessControl\GPAS.AccessControl\GPAS.AccessControl.csproj">
+      <Project>{33FBBF9B-C7F4-4F91-99D9-335A18C2609D}</Project>
+      <Name>GPAS.AccessControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DataImport\GPAS.DataImport.csproj">
+      <Project>{73A6E9CF-A4F9-45D3-84AD-B149C488FF6F}</Project>
+      <Name>GPAS.DataImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FilterSearch\GPAS.FilterSearch.csproj">
+      <Project>{7FC50142-43A1-4ADA-8AA0-C0869D2F793C}</Project>
+      <Name>GPAS.FilterSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.GeoSearch\GPAS.GeoSearch.csproj">
+      <Project>{DC917467-DE53-4BAC-90A2-B241BB44623E}</Project>
+      <Name>GPAS.GeoSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Logger\GPAS.Logger.csproj">
+      <Project>{7905DA86-186F-4D3B-8D13-68DF6ED7C31B}</Project>
+      <Name>GPAS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.OntologyLoader\GPAS.OntologyLoader.csproj">
+      <Project>{4186327C-550F-43B7-A0FC-9590F010BBE8}</Project>
+      <Name>GPAS.OntologyLoader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Ontology\GPAS.Ontology.csproj">
+      <Project>{C7C4F25F-18CF-4F2F-8638-39DEB1CAFF1A}</Project>
+      <Name>GPAS.Ontology</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.SearchAround\GPAS.SearchAround.csproj">
+      <Project>{fcb286b8-af82-4f5d-ac9e-fd0a5a311289}</Project>
+      <Name>GPAS.SearchAround</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.StatisticalQuery\GPAS.StatisticalQuery.csproj">
+      <Project>{DCB8746E-EEBB-43C4-A220-804E45D32C27}</Project>
+      <Name>GPAS.StatisticalQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.TextualSearch\GPAS.TextualSearch.csproj">
+      <Project>{73d4f456-edfb-4caf-8f7a-6b535c6fcca9}</Project>
+      <Name>GPAS.TextualSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GPAS.Utility\GPAS.Utility.csproj">
+      <Project>{000A2D3B-E6FE-4A50-BB93-FE589E3421EF}</Project>
+      <Name>GPAS.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities.Concepts\GPAS.Dispatch.Entities.Concepts.csproj">
+      <Project>{2960b31e-4c0b-485b-a5f9-614f121faa5b}</Project>
+      <Name>GPAS.Dispatch.Entities.Concepts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities.Publish\GPAS.Dispatch.Entities.Publish.csproj">
+      <Project>{B19384B4-AA82-4A77-91AD-D094D31C994B}</Project>
+      <Name>GPAS.Dispatch.Entities.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\GPAS.Dispatch.Entities.csproj">
+      <Project>{37efb87c-d994-4ab5-bfac-0f491223026b}</Project>
+      <Name>GPAS.Dispatch.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeographicalStaticLocation\GPAS.Dispatch.GeographicalStaticLocation.csproj">
+      <Project>{04EE808F-CFFB-44F7-AC65-A61B7DE9E71F}</Project>
+      <Name>GPAS.Dispatch.GeographicalStaticLocation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Dispatch.DataAccess\GPAS.Dispatch.DataAccess.csproj">
+      <Project>{5cfa635d-d5b7-453f-aebf-38dd02cd3719}</Project>
+      <Name>GPAS.Dispatch.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GPAS.Dispatch.Entities.NLP\GPAS.Dispatch.Entities.NLP.csproj">
+      <Project>{08693780-9df6-42fa-bf54-808de898acc1}</Project>
+      <Name>GPAS.Dispatch.Entities.NLP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceAccess\GPAS.Dispatch.ServiceAccess.csproj">
+      <Project>{aea358c1-7576-40c7-9530-1e96ca78551a}</Project>
+      <Name>GPAS.Dispatch.ServiceAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\.sonarlint\kavoshcsharp.ruleset">
+      <Link>kavoshcsharp.ruleset</Link>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\.sonarlint\kavosh\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="GPAS.Workspace.Presentation.Controls.Map.Heatmap.SpectrumSliderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Controls.Map.Heatmap"
+             xmlns:mscor="clr-namespace:System;assembly=mscorlib" 
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300" x:Name="root">
+    <Grid>
+        <Slider x:Name="mySlider" TickPlacement="BottomRight" Minimum="{Binding Minimum, Mode=TwoWay}" Maximum="{Binding Maximum, Mode=TwoWay}" Value="{Binding Value, Mode=TwoWay}">
+            <Slider.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Margin="30 20 0 0" >
+                            <Border Margin="3 1" Padding="0 0 30 0">
+                                <Label Grid.Row="0" Height="20" x:Name="lblSpectrum" VerticalAlignment="Top" BorderBrush="Black" BorderThickness="1" 
+                                       Background="{Binding ColorSpectrum}" SizeChanged="lblSpectrum_SizeChanged" Initialized="lblSpectrum_Initialized">
+                                </Label>
+                            </Border>
+                            <Label Grid.Row="0" x:Name="lblTick" Margin="0 -16 0 0" Visibility="{Binding TickVisibility, Mode=TwoWay}" Initialized="lblTick_Initialized">
+                                <Label.Template>
+                                    <ControlTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock x:Name="txbValue" HorizontalAlignment="Left" SizeChanged="txbValue_SizeChanged">
+                                                 <Run Text="{Binding ElementName=mySlider, Path=Value}"/>
+                                            </TextBlock>
+                                            <Rectangle Grid.Row="1" Width="3" Height="22" HorizontalAlignment="Left" Stroke="Black" StrokeThickness="1" Fill="Gray" />
+                                        </StackPanel>
+                                    </ControlTemplate>
+                                </Label.Template>
+                            </Label>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Width="60" HorizontalContentAlignment="Center" x:Name="lblMinimum" FontSize="10" Initialized="lblMinimum_Initialized"></Label>
+                            <Label Grid.Column="1" x:Name="lblScale" HorizontalAlignment="Center" FontSize="10" Content="{Binding ScaleText, Mode=TwoWay}"></Label>
+                            <Label Grid.Column="2" Width="60" HorizontalContentAlignment="Center" x:Name="lblMaximum" FontSize="10" Initialized="lblMaximum_Initialized"></Label>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Slider.Template>
+        </Slider>
+    </Grid>
+</UserControl>

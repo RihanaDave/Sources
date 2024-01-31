@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.GlobalResolve" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" />
+  <xs:complexType name="ArrayOfLinkingProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkingProperty" nillable="true" type="tns:LinkingProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLinkingProperty" nillable="true" type="tns:ArrayOfLinkingProperty" />
+  <xs:complexType name="LinkingProperty">
+    <xs:sequence>
+      <xs:element name="resolutionOption" type="tns:ResolutionOption" />
+      <xs:element name="typeURI" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkingProperty" nillable="true" type="tns:LinkingProperty" />
+  <xs:simpleType name="ResolutionOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ExactMatch" />
+      <xs:enumeration value="NoConflict" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResolutionOption" nillable="true" type="tns:ResolutionOption" />
+  <xs:complexType name="ArrayOfGlobalResolutionCandidates">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GlobalResolutionCandidates" nillable="true" type="tns:GlobalResolutionCandidates" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGlobalResolutionCandidates" nillable="true" type="tns:ArrayOfGlobalResolutionCandidates" />
+  <xs:complexType name="GlobalResolutionCandidates">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LinkingProperties" nillable="true" type="tns:ArrayOfLinkingProperty" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.DataImport.ConceptsToGenerate" minOccurs="0" name="Master" nillable="true" type="q1:ImportingObject" />
+      <xs:element minOccurs="0" name="ResolutionCandidates" nillable="true" type="tns:ArrayOfCandidateMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlobalResolutionCandidates" nillable="true" type="tns:GlobalResolutionCandidates" />
+  <xs:complexType name="ArrayOfCandidateMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CandidateMetadata" nillable="true" type="tns:CandidateMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCandidateMetadata" nillable="true" type="tns:ArrayOfCandidateMetadata" />
+  <xs:complexType name="CandidateMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CandidateID" type="xs:long" />
+      <xs:element minOccurs="0" name="DistinctProperties" nillable="true" type="tns:ArrayOfCandidateProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CandidateMetadata" nillable="true" type="tns:CandidateMetadata" />
+  <xs:complexType name="ArrayOfCandidateProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CandidateProperty" nillable="true" type="tns:CandidateProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCandidateProperty" nillable="true" type="tns:ArrayOfCandidateProperty" />
+  <xs:complexType name="CandidateProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CandidateProperty" nillable="true" type="tns:CandidateProperty" />
+</xs:schema>

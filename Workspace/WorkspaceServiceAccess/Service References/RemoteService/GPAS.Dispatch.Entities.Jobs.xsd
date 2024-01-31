@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Jobs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Jobs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfJobRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobRequest" nillable="true" type="tns:JobRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobRequest" nillable="true" type="tns:ArrayOfJobRequest" />
+  <xs:complexType name="JobRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastPublishedObjectIndex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastPublishedRelationIndex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegisterTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" type="tns:JobRequestStatus" />
+      <xs:element minOccurs="0" name="StatusMeesage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:JobRequestType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobRequest" nillable="true" type="tns:JobRequest" />
+  <xs:simpleType name="JobRequestStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Busy" />
+      <xs:enumeration value="Timeout" />
+      <xs:enumeration value="Terminated" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Pause" />
+      <xs:enumeration value="Resume" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="JobRequestStatus" nillable="true" type="tns:JobRequestStatus" />
+  <xs:simpleType name="JobRequestType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="ImportFromCsvFile" />
+      <xs:enumeration value="ImportFromExcelSheet" />
+      <xs:enumeration value="ImportFromAttachedDatabaseTableOrView" />
+      <xs:enumeration value="ImportFromEmlDirectory" />
+      <xs:enumeration value="ImportFromAccessTable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="JobRequestType" nillable="true" type="tns:JobRequestType" />
+</xs:schema>

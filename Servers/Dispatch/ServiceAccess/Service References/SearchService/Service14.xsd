@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.IndexChecking" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.IndexChecking" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://core.dev.kavosh.it.sh:9061/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:import schemaLocation="http://core.dev.kavosh.it.sh:9061/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SearchIndexCheckingInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentContent" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ObjectId" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="Properties" nillable="true" type="q1:ArrayOfKProperty" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RelationsIds" nillable="true" type="q2:ArrayOflong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchIndexCheckingInput" nillable="true" type="tns:SearchIndexCheckingInput" />
+  <xs:complexType name="SearchIndexCheckingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentIndexStatus" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ImageIndexStatus" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ObjectIndexStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PropertiesIndexStatus" nillable="true" type="tns:ArrayOfIndexCheckingStatus" />
+      <xs:element minOccurs="0" name="RelationsIndexStatus" nillable="true" type="tns:ArrayOfIndexCheckingStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchIndexCheckingResult" nillable="true" type="tns:SearchIndexCheckingResult" />
+  <xs:complexType name="ArrayOfIndexCheckingStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexCheckingStatus" nillable="true" type="tns:IndexCheckingStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexCheckingStatus" nillable="true" type="tns:ArrayOfIndexCheckingStatus" />
+  <xs:complexType name="IndexCheckingStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IndexStatus" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexCheckingStatus" nillable="true" type="tns:IndexCheckingStatus" />
+</xs:schema>

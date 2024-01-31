@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities.IndexChecking" />
+  <xs:element name="ResetIndexes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteExistingIndexes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetIndexesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncPublishChanges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="addedConcept" nillable="true" type="q1:AddedConcepts" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="modifiedConcept" nillable="true" type="q2:ModifiedConcepts" />
+        <xs:element minOccurs="0" name="dataSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="isContinousPublish" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SyncPublishChangesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" minOccurs="0" name="SyncPublishChangesResult" nillable="true" type="q3:SynchronizationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewGroupPropertiesToEdgeClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="newGroupsName" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewGroupPropertiesToEdgeClassResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjects" nillable="true" type="q5:ArrayOfKeyValueOfstringArrayOflongty7Ep6D1" />
+        <xs:element minOccurs="0" name="resultLimit" type="xs:long" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authorizationParametters" nillable="true" type="q6:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedEntitiesResult" nillable="true" type="q7:ArrayOfRelationshipBasedResultsPerSearchedObjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjects" nillable="true" type="q8:ArrayOfKeyValueOfstringArrayOflongty7Ep6D1" />
+        <xs:element minOccurs="0" name="resultLimit" type="xs:long" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authorizationParametters" nillable="true" type="q9:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedDocumentsResult" nillable="true" type="q10:ArrayOfRelationshipBasedResultsPerSearchedObjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjects" nillable="true" type="q11:ArrayOfKeyValueOfstringArrayOflongty7Ep6D1" />
+        <xs:element minOccurs="0" name="resultLimit" type="xs:long" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authorizationParametters" nillable="true" type="q12:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedEventsResult" nillable="true" type="q13:ArrayOfRelationshipBasedResultsPerSearchedObjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntitiesAppearedInEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjects" nillable="true" type="q14:ArrayOfKeyValueOfstringArrayOflongty7Ep6D1" />
+        <xs:element minOccurs="0" name="resultLimit" type="xs:long" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authorizationParametters" nillable="true" type="q15:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindRelatedEntitiesAppearedInEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts.SearchAroundResult" minOccurs="0" name="FindRelatedEntitiesAppearedInEventsResult" nillable="true" type="q16:ArrayOfEventBasedResultsPerSearchedObjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformCustomSearchAround">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="searchedObjects" nillable="true" type="q17:ArrayOfKeyValueOfstringArrayOflongty7Ep6D1" />
+        <xs:element minOccurs="0" name="serializedCustomSearchAroundCriteria" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="resultLimit" type="xs:long" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authorizationParametters" nillable="true" type="q18:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PerformCustomSearchAroundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" minOccurs="0" name="PerformCustomSearchAroundResult" nillable="true" type="q19:ArrayOfCustomSearchAroundResultIDs" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDataIndicesStable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsDataIndicesStableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsDataIndicesStableResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveHorizonIndexes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveHorizonIndexesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorizonIndexChecking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities.IndexChecking" minOccurs="0" name="input" nillable="true" type="q20:HorizonIndexCheckingInput" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" minOccurs="0" name="authorizationParameters" nillable="true" type="q21:AuthorizationParametters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HorizonIndexCheckingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities.IndexChecking" minOccurs="0" name="HorizonIndexCheckingResult" nillable="true" type="q22:HorizonIndexCheckingResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllIndexes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllIndexesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" minOccurs="0" name="GetAllIndexesResult" nillable="true" type="q23:ArrayOfIndexModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" minOccurs="0" name="index" nillable="true" type="q24:IndexModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateIndexResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" minOccurs="0" name="oldIndex" nillable="true" type="q25:IndexModel" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" minOccurs="0" name="newIndex" nillable="true" type="q26:IndexModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditIndexResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GPAS.Horizon.Entities" minOccurs="0" name="index" nillable="true" type="q27:IndexModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIndexResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllIndexes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllIndexesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAvailable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAvailableResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

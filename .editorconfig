@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# S3168: "async" methods should not return "void"
+dotnet_diagnostic.S3168.severity = none

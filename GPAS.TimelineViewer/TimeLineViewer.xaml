@@ -1,0 +1,335 @@
+﻿<UserControl x:Class="GPAS.TimelineViewer.TimelineViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:colorpickerviewer="clr-namespace:GPAS.ColorPickerViewer;assembly=GPAS.ColorPickerViewer"
+             xmlns:converter="clr-namespace:GPAS.TimelineViewer.Converter"
+             xmlns:p="clr-namespace:GPAS.TimelineViewer.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             MouseUp="UserControl_MouseUp" MouseEnter="UserControl_MouseEnter">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <converter:BinSizesEnumToDoubleConverter x:Key="BinToSliderValue"/>
+            <converter:DateTimeToStringConverter x:Key="DateTimeToString"/>
+            <converter:DateTimeToHierarchyStringFormatConverter x:Key="DateTimeToHierarchyStringFormat"/>
+            <converter:BinScaleLevelToStringResourceConverter x:Key="BinScaleToString"/>
+            <Storyboard x:Key="fadeIn">
+                <DoubleAnimation BeginTime="0:0:0.0" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+            </Storyboard>
+
+            <Storyboard x:Key="fadeOut">
+                <DoubleAnimation BeginTime="0:0:0.0" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+            </Storyboard>
+
+            <Storyboard x:Key="animate">
+                <ObjectAnimationUsingKeyFrames BeginTime="0:0:0" Storyboard.TargetProperty="Visibility">
+                    <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                            <Visibility>Visible</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+                <DoubleAnimation BeginTime="0:0:0.0" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2"/>
+                <DoubleAnimation BeginTime="0:0:5.0" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="0:0:5.5" Storyboard.TargetProperty="Visibility">
+                    <DiscreteObjectKeyFrame KeyTime="0">
+                        <DiscreteObjectKeyFrame.Value>
+                            <Visibility>Collapsed</Visibility>
+                        </DiscreteObjectKeyFrame.Value>
+                    </DiscreteObjectKeyFrame>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <Style TargetType="Label" x:Key="styleBarToolTip">
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+            </Style>
+            <Style TargetType="ToolTip">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+            <Style TargetType="materialDesign:PackIcon">
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+            </Style>
+
+            <ContextMenu x:Key="FilterWindowContextMenu" Style="{StaticResource ContextMenuStyle}">
+                <MenuItem x:Name="mnuClearFilterWindow"
+                          Background="{DynamicResource MaterialDesignCardBackground}"
+                          Foreground="{DynamicResource MaterialDesignBody}"
+                          Header="{x:Static p:Resources.Clear}" Click="mnuClearFilterWindow_Click"/>
+            </ContextMenu>           
+          
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid x:Name="mainGrid" Background="{DynamicResource MaterialDesignCardBackground}" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"  MinWidth="255" MaxWidth="300" />
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TreeView MinWidth="250" Grid.Column="0"   ItemsSource="{Binding SuperCategories, Mode=TwoWay}" 
+                    BorderThickness="1">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding SubCategories, Mode=TwoWay}" >
+                    <CheckBox Grid.Column="0"  Padding="0 1 0 1" VerticalContentAlignment="Center" IsChecked="{Binding IsChecked, Mode=TwoWay}">
+                        <CheckBox.Content>
+                            <TextBlock Grid.Column="1" Width="auto" Margin="5 0" Text="{Binding Title, Mode=TwoWay}" FontWeight="Bold" />
+                        </CheckBox.Content>
+                    </CheckBox>
+                    <HierarchicalDataTemplate.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" Margin="0 0 5 0" Padding="0 1" Width="135" VerticalContentAlignment="Center" 
+                                          HorizontalAlignment="Left" IsChecked="{Binding IsChecked, Mode=TwoWay}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" MaxWidth="16" MaxHeight="16" Margin="0 0 5 0" Source="{Binding Icon, Mode=TwoWay}"/>
+                                        <TextBlock Grid.Column="1"  ToolTip="{Binding Title}" Text="{Binding Title, Mode=TwoWay}" Margin="0 0 5 0" />
+                                    </Grid>
+                                </CheckBox>
+
+                                <Label x:Name="lblHide" Visibility="Collapsed" Background="{Binding LegendColor, Mode=TwoWay}"/>
+                                <colorpickerviewer:ColorPickerViewer Grid.Column="1" VerticalAlignment="Center"   
+                                                                      Background="{Binding LegendColor, Mode=TwoWay}"
+                                                                         HorizontalAlignment="Left" CustomColorIsActive="False"                                                                  
+                                                                        SelectedColor="{Binding ElementName=lblHide, Path=Background, Mode=TwoWay}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+
+        <GridSplitter  Grid.Column="1" Margin="2 0" BorderThickness="1" HorizontalAlignment="Stretch"  BorderBrush="{DynamicResource MaterialDesignBody}"/>
+        <Grid Grid.Column="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="chartGrid"  Grid.Row="0" Background="{DynamicResource MaterialDesignCardBackground}"  >
+                <telerik:RadCartesianChart x:Name="mainChart" Margin="10 23 0 0" Zoom="6,0" Loaded="mainChart_Loaded"
+                                           EmptyContent="{x:Static p:Resources.No_time_based_item_to_show}"  
+                                           Foreground="{DynamicResource MaterialDesignBody}">
+                    <telerik:RadCartesianChart.HorizontalAxis>
+                        <telerik:DateTimeContinuousAxis x:Name="hAxis" GapLength="0" PlotMode="OnTicks"  LineStroke="{DynamicResource MaterialDesignBody}" 
+                                                        SmartLabelsMode="None"  LastLabelVisibility="Hidden" MajorStep="6" MajorStepUnit="Hour"
+                                                        MajorTickLength="3">
+                            <telerik:DateTimeContinuousAxis.PanZoomBarStyle>
+                                <Style TargetType="telerik:PanZoomBar">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </Style>
+                            </telerik:DateTimeContinuousAxis.PanZoomBarStyle>
+                            <telerik:DateTimeContinuousAxis.LabelTemplate>
+                                <DataTemplate>
+                                    <TextBlock >
+                                        <TextBlock.Text>
+                                            <Binding  Converter="{StaticResource DateTimeToHierarchyStringFormat}" />
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </telerik:DateTimeContinuousAxis.LabelTemplate>
+                        </telerik:DateTimeContinuousAxis>
+                    </telerik:RadCartesianChart.HorizontalAxis>
+
+                    <telerik:RadCartesianChart.VerticalAxis>
+                        <telerik:LinearAxis x:Name="vAxis" Minimum="0"  LineThickness="3"  LineStroke="{DynamicResource MaterialDesignBody}" Maximum="{Binding MaximumCount}">
+                            <telerik:LinearAxis.LabelStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                </Style>
+                            </telerik:LinearAxis.LabelStyle>
+                        </telerik:LinearAxis>
+                    </telerik:RadCartesianChart.VerticalAxis>
+
+                    <telerik:RadCartesianChart.Grid>
+                        <telerik:CartesianChartGrid x:Name="cartesianChartGrid" MajorLinesVisibility="Y" 
+                                                    StripLinesVisibility="XY" 
+                                                    IsHitTestVisible="True" 
+                                                    PreviewMouseLeftButtonDown="cartesianChartGrid_PreviewMouseLeftButtonDown"
+                                                    PreviewMouseLeftButtonUp="cartesianChartGrid_PreviewMouseLeftButtonUp"
+                                                    MouseLeave="cartesianChartGrid_MouseLeave"
+                                                    PreviewMouseMove="cartesianChartGrid_PreviewMouseMove">
+                            <telerik:CartesianChartGrid.MajorYLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Stroke" Value="{DynamicResource MaterialDesignBody}"/>
+                                </Style>
+                            </telerik:CartesianChartGrid.MajorYLineStyle>
+                            <telerik:CartesianChartGrid.YStripeBrushes>
+                                <SolidColorBrush Color="Transparent" />
+                            </telerik:CartesianChartGrid.YStripeBrushes>
+                            <telerik:CartesianChartGrid.XStripeBrushes>
+                                <SolidColorBrush Color="Transparent" />
+                            </telerik:CartesianChartGrid.XStripeBrushes>
+                        </telerik:CartesianChartGrid>
+                    </telerik:RadCartesianChart.Grid>
+
+                    <telerik:RadCartesianChart.Behaviors>
+                        <telerik:ChartSelectionBehavior x:Name="timelineSeletionBehaviors" DataPointSelectionMode="Multiple" 
+                                                        SelectionChanged="ChartSelectionBehavior_SelectionChanged"/>
+                        <telerik:ChartCrosshairBehavior x:Name="CrosshairChart" >
+                            <telerik:ChartCrosshairBehavior.VerticalLineLabelDefinition>
+                                <telerik:ChartAnnotationLabelDefinition Location="Top" HorizontalAlignment="Center" 
+                                                                         Format="{}{0:ddd d, MMM. yyyy, H tt}">
+                                    <telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                                        <Style TargetType="Label">
+                                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                            <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+                                        </Style>
+                                    </telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>                                   
+                                </telerik:ChartAnnotationLabelDefinition>
+                            </telerik:ChartCrosshairBehavior.VerticalLineLabelDefinition>
+
+                            <telerik:ChartCrosshairBehavior.HorizontalLineLabelDefinition>
+                                <telerik:ChartAnnotationLabelDefinition Location="Bottom" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                                        <Style TargetType="Label">
+                                            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                                            <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+                                        </Style>
+                                    </telerik:ChartAnnotationLabelDefinition.DefaultVisualStyle>
+                                </telerik:ChartAnnotationLabelDefinition>
+                            </telerik:ChartCrosshairBehavior.HorizontalLineLabelDefinition>
+
+                        </telerik:ChartCrosshairBehavior>
+                        <telerik:ChartPanAndZoomBehavior x:Name="panAndZoomBehavior"  PanMode="Horizontal" ZoomMode="None" DragMode="None" 
+                                                         MouseWheelMode="None"  />
+                    </telerik:RadCartesianChart.Behaviors>
+
+                    <telerik:RadCartesianChart.Series>
+                    </telerik:RadCartesianChart.Series>
+                </telerik:RadCartesianChart>
+
+                <Label Margin="25 5" FontSize="10" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Text="{x:Static p:Resources.Starting}"/>
+                        <TextBlock x:Name="TotalLowerBoundTextBlock" Margin="0 0 5 0"
+                                   Text="{Binding ElementName=hAxis, Path=ActualVisibleRange.Minimum, Converter={StaticResource DateTimeToString}, ConverterParameter='ddd dd, MMM. yyyy'}"/>
+                        <TextBlock Margin="0 0 5 0" Text="{x:Static p:Resources.through}"/>
+                        <TextBlock x:Name="TotalUpperBoundTextBlock" Margin="0 0 5 0"
+                                   Text="{Binding  ElementName=hAxis, Path=ActualVisibleRange.Maximum, Converter={StaticResource DateTimeToString}, ConverterParameter='ddd dd, MMM. yyyy'}"/>
+                    </StackPanel>
+                </Label>
+
+                <Label Margin="10 0" FontSize="10" Padding="0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Static p:Resources.Bin_size_}" Padding="0 0 5 0"/>
+                        <TextBlock Text="{Binding Path=ActualBin.BinFactor}" Padding="0 0 5 0"/>
+                        <TextBlock Text="{Binding Path=ActualBin.BinScale, Converter={StaticResource BinScaleToString}}"/>
+                    </StackPanel>
+                </Label>
+
+                <Grid x:Name="zoomGrid" HorizontalAlignment="Right" VerticalAlignment="Center" MinHeight="150" Opacity="0" Margin="3"
+                          MouseWheel="zoomGrid_MouseWheel" MouseUp="zoomGrid_MouseUp">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter" >
+                                    <BeginStoryboard Storyboard="{StaticResource fadeIn}"/>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave" >
+                                    <BeginStoryboard Storyboard="{StaticResource fadeOut}"/>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Border x:Name="zoomBorder" CornerRadius="15" BorderThickness="1" Background="#40000000">
+                        <Slider x:Name="zoomSlider" Orientation="Vertical" Margin="10"
+                                 TickFrequency="5" TickPlacement="BottomRight"
+                                       MaxHeight="220" Minimum="1" Maximum="16" SmallChange="1" LargeChange="1"
+                                       Value="{Binding Bin, Mode=TwoWay, Converter={StaticResource BinToSliderValue}}"/>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Separator Grid.Row="1" Margin="1" BorderBrush="{DynamicResource MaterialDesignBody}" />
+
+            <Border Grid.Row="2" x:Name="ToolbarBottomBorder"  Margin="1"  BorderThickness="1">
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="btnClearFilters" Style="{StaticResource ButtonStyle}"
+                            Padding="5 4" Margin="3 0"  Click="btnClearFilters_Click" IsEnabled="False">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">                                
+                            <materialDesign:PackIcon Kind="Eraser"/>
+                                <TextBlock Text="{x:Static p:Resources.Clear_Filters}" Margin="5 0 0 0" Background="Transparent" />
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button x:Name="btnZoomPanToAllEvents" Style="{StaticResource ButtonStyle}"
+                            Padding="10 4" Margin="3 0" ToolTip="Zoom / Pan to all events" Click="btnZoomPanToAllEvents_Click">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Search" Width="20" Height="20"/>
+                                <TextBlock Text="Zoom / Pan" Background="Transparent" Margin="3 0 0 0"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button x:Name="btnSnapShot" Style="{StaticResource ButtonStyle}" 
+                            Padding="5 4"  Margin="3 0" Click="btnSnapShot_Click">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" Background="Transparent">
+                            <materialDesign:PackIcon Kind="CameraOutline"/>
+                                <TextBlock Text="{x:Static p:Resources.Snapshot}" Margin="5 0 0 0" Background="Transparent" />
+                            </StackPanel>
+                        </Button.Content>
+                        <Button.ContextMenu>
+                            <ContextMenu Name="SnapshotTimeline" Style="{StaticResource ContextMenuStyle}" Opened="SnapshotTimeline_Opened">
+                                <MenuItem x:Name="mnuSnapshotOnlyTimeline" Header="{x:Static p:Resources.Snapshot_only_timeline}"                                          
+                                          Click="mnuSnapshotOnlyTimeline_Click"/>
+                                <MenuItem x:Name="mnuSnapshotTimelineWithCategoryPan" Header="{x:Static p:Resources.Snapshot_timeline_with_category_pan}"
+                                          Click="mnuSnapshotTimelineWithCategoryPan_Click"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="waitingGrid" Grid.ColumnSpan="2" Background="#55000000" Visibility="Collapsed">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <fa:ImageAwesome Icon="Spinner" Width="48" RenderTransformOrigin="0.5, 0.5">
+                    <fa:ImageAwesome.RenderTransform>
+                        <!-- giving the transform a name tells the framework not to freeze it -->
+                        <RotateTransform x:Name="noFreeze" Angle="0"/>
+                    </fa:ImageAwesome.RenderTransform>
+                    <fa:ImageAwesome.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="noFreeze" Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                       From="0" To="360" Duration="0:0:2" RepeatBehavior="Forever" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </fa:ImageAwesome.Triggers>
+                </fa:ImageAwesome>
+                <TextBlock x:Name="waitingTextBlock" Text="{x:Static p:Resources.Waiting___}" Margin="0 5 0 0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

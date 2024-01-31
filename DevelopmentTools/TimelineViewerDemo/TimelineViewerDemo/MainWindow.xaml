@@ -1,0 +1,201 @@
+﻿<Window x:Class="TimelineViewerDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:colorpicker="clr-namespace:GPAS.ColorPickerViewer;assembly=GPAS.ColorPickerViewer"
+        xmlns:timelineviewer="clr-namespace:GPAS.TimelineViewer;assembly=GPAS.TimelineViewer"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:TimelineViewerDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1200">
+    <!--FlowDirection="RightToLeft"-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="433*"/>
+            <RowDefinition Height="236*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <timelineviewer:TimelineViewer Grid.Column="0" Grid.RowSpan="2" x:Name="timelineViewer" ItemsNeeded="timelineViewer_ItemsNeeded"
+                                       SnapshotTaken="timelineViewer_SnapshotTaken" SegmentSelectionChanged="timelineViewer_SegmentSelectionChanged"/>
+        
+        <Expander Grid.Column="1" ExpandDirection="Left" Background="#ccc" BorderBrush="#999" IsExpanded="True" Grid.RowSpan="2">
+            <Grid Width="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <GroupBox Grid.Row="0" Header="Add Property" Padding="5" VerticalAlignment="Top" Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Id: " HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Name="IdTextBox" MinWidth="100" Width="150" VerticalAlignment="Top"
+                                 Text="{Binding CurrentId}" IsEnabled="False"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Title: " HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Name="TitleTextBox" MinWidth="100" Width="150" VerticalAlignment="Top" Text="Title"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="2" Text="Parent: " HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Name="ParentTextBox" MinWidth="100" Width="150" VerticalAlignment="Top" Text="Properties"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Icon: " HorizontalAlignment="Right"/>
+                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                            <TextBox Name="IconPathTextBox" MinWidth="110" Width="100" VerticalAlignment="Top" Text="No image" IsEnabled="False"/>
+                            <Button Name="OpenDialogButton" Content="..." Width="20" Click="OpenDialogButton_Click" />
+                            <Image Name="IconImage" Width="20" Height="20" Source="pack://application:,,,/images/no-image.png"/>
+                        </StackPanel>
+
+                        <TextBlock Grid.Column="0" Grid.Row="4" Text="Number of Items: " HorizontalAlignment="Right"/>
+                        <TextBox Grid.Column="1" Grid.Row="4" Name="NumberOfItemsTextBox" MinWidth="100" Width="150" VerticalAlignment="Top"
+                                 Text="{Binding NumberOfItems , UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="5" Text="From: " HorizontalAlignment="Right"/>
+                        <DatePicker Grid.Column="1" Grid.Row="5" Name="FromDatePicker" MinWidth="100" Width="150" VerticalAlignment="Top"
+                                    SelectedDate="{Binding From , UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="6" Text="To: " HorizontalAlignment="Right"/>
+                        <DatePicker Grid.Column="1" Grid.Row="6" Name="ToDatePicker" MinWidth="100" Width="150" VerticalAlignment="Top"
+                                    SelectedDate="{Binding To , UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Button Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Name="GeneratePropertyButton" Content="Generate Property"
+                                IsEnabled="{Binding ValidateAddProperty}" Click="GeneratePropertyButton_Click"/>
+                        
+                        <Line  Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" Stroke="Black" StrokeThickness="2" X1="0" X2="250" Y1=" 0" Y2="0" Margin="10"/>
+                        
+                        <Button Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" Content="Clear All Data" VerticalAlignment="Bottom" 
+                                Click="Button_Click"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Row="1" Padding="5" VerticalAlignment="Top" Margin="10">
+                    <GroupBox.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Set Bar Selected Color" VerticalAlignment="Center" Margin="0 0 7 0"/>
+                            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="8" Height="12" VerticalAlignment="Bottom" Background="#ED4C67"/>
+                            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="8" Height="20" VerticalAlignment="Bottom"
+                               Background="{Binding ElementName=timelineViewer, Path=SelectedBarColor}"/>
+                            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="8" Height="24" VerticalAlignment="Bottom" Background="#ED4C67" />
+                            <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Width="8" Height="18" VerticalAlignment="Bottom" Background="#ED4C67" />
+                        </StackPanel>
+                    </GroupBox.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Color 1: " HorizontalAlignment="Right"/>
+                        <colorpicker:ColorPickerViewer Grid.Column="1" Grid.Row="0" MinWidth="100" Width="150" VerticalAlignment="Top" SelectedColor="DarkGoldenrod"
+                                                       Name="ColorPicker1" SelectedColorChanged="ColorPicker1_SelectedColorChanged"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Color 2: " HorizontalAlignment="Right"/>
+                        <colorpicker:ColorPickerViewer Grid.Column="1" Grid.Row="1" MinWidth="100" Width="150" VerticalAlignment="Top" SelectedColor="Gold"
+                                                       Name="ColorPicker2" SelectedColorChanged="ColorPicker2_SelectedColorChanged"/>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Row="2" Header="Set Language" Padding="5" VerticalAlignment="Top" Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Language: " HorizontalAlignment="Right"/>
+                        <ComboBox Grid.Column="1" Grid.Row="0" Name="LanguageComboBox" MinWidth="100" Width="150" VerticalAlignment="Top"
+                                  SelectedIndex="0" SelectionChanged="LanguageComboBox_SelectionChanged">
+                            <TextBlock Text="English"/>
+                            <TextBlock Text="فارسی"/>
+                        </ComboBox>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Grid.Row="3" Header="Simulate Select Object In Graph" Padding="5" VerticalAlignment="Top" Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Name="AddAnObjectToAllSelectedObjectsButton" Content="Add an object to all selected objects"
+                                Click="AddAnObjectToAllSelectedObjectsButton_Click"/>
+
+                        <Button Grid.Row="1" Name="DeselectAnObjectButton" Content="Deselect an object"
+                                Click="DeselectAnObjectButton_Click"/>
+
+                        <Button Grid.Row="2" Name="SelectOnlyAnObjectButton" Content="Select only an object (Deselect other objects)"
+                                Click="SelectOnlyAnObjectButton_Click"/>
+
+                        <Button Grid.Row="3" Name="DeselectAllObjectsButton" Content="Deselect all objects" Click="DeselectAllObjectsButton_Click"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Expander>
+
+        <Grid x:Name="waitingGrid" Grid.Column="1" Background="#55000000" Visibility="Collapsed" Grid.RowSpan="2">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <fa:ImageAwesome Icon="Spinner" Width="48" RenderTransformOrigin="0.5, 0.5">
+                    <fa:ImageAwesome.RenderTransform>
+                        <!-- giving the transform a name tells the framework not to freeze it -->
+                        <RotateTransform x:Name="noFreeze" Angle="0"/>
+                    </fa:ImageAwesome.RenderTransform>
+                    <fa:ImageAwesome.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="noFreeze" Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                       From="0" To="360" Duration="0:0:2" RepeatBehavior="Forever" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </fa:ImageAwesome.Triggers>
+                </fa:ImageAwesome>
+                <TextBlock Text="Waiting..." Margin="0 5 0 0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,111 @@
+﻿<controls:PresentationControl
+    x:Class="GPAS.Workspace.Presentation.Controls.DateRangeAndLocationControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dateTimePicker="clr-namespace:GPAS.DateTimePicker;assembly=GPAS.DateTimePicker"
+    xmlns:controls="clr-namespace:GPAS.Workspace.Presentation.Controls"
+    mc:Ignorable="d" 
+    d:DesignHeight="110" d:DesignWidth="400">
+
+    <Border  BorderBrush="Black" BorderThickness="2" CornerRadius="5">
+        <Grid  Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Name="LocationGrid" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBox Name="LatitudeTextBox" Grid.Row="0" 
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         Foreground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                         materialDesign:HintAssist.Hint="Latitude"                        
+                         materialDesign:HintAssist.Foreground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                         materialDesign:TextFieldAssist.UnderlineBrush="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                         TextChanged="LatitudeTextBox_TextChanged" Margin="5"/>
+
+                <TextBox Name="LongitudeTextBox" Grid.Row="1"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         materialDesign:HintAssist.Foreground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                         Foreground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                         materialDesign:HintAssist.Hint="Longitude"
+                         materialDesign:TextFieldAssist.UnderlineBrush="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                         TextChanged="LongitudeTextBox_TextChanged" Margin="5"/>
+
+            </Grid>
+
+            <Separator Grid.Column="1" Margin="5">
+                <Separator.LayoutTransform>
+                    <RotateTransform Angle="90" />
+                </Separator.LayoutTransform>
+            </Separator>
+
+            <Grid Name="DateRangeGrid" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid  Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <dateTimePicker:DateTimePicker x:Name="BeginDateTimePicker" Margin="5" Grid.Row="0" Grid.Column="1" 
+                                                   DiplayErrorMessage="True" Hint="Begin"
+                                                   NewBackground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                                                   NewForeground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                                                   
+                      materialDesign:HintAssist.Hint="{Binding Hint, RelativeSource={RelativeSource FindAncestor, 
+                    AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
+                         materialDesign:HintAssist.Foreground="{Binding NewForeground,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                         materialDesign:TextFieldAssist.UnderlineBrush="{Binding NewForeground,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                                   TextChanged="BeginDateTimePicker_TextChanged"/>
+
+                    <dateTimePicker:DateTimePicker x:Name="EndDateTimePicker" Margin="5" Grid.Row="1" Grid.Column="1"
+                                                   DiplayErrorMessage="True" Hint="End"                                                   
+                    materialDesign:HintAssist.Hint="{Binding Hint, RelativeSource={RelativeSource FindAncestor, 
+                    AncestorType=UserControl}, UpdateSourceTrigger=PropertyChanged}"
+                                                   
+                         materialDesign:HintAssist.Foreground="{Binding NewForeground,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                                   
+                         materialDesign:TextFieldAssist.UnderlineBrush="{Binding NewForeground,
+                    RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+                                                   
+                                                      NewBackground ="{Binding NewBackground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                                                   
+                                                   NewForeground="{Binding NewForeground,
+                        RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"
+                                                   
+                                                   TextChanged="EndDateTimePicker_TextChanged"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</controls:PresentationControl>

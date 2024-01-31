@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Publish" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" />
+  <xs:complexType name="AddedConcepts">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedMedias" nillable="true" type="q1:ArrayOfKMedia" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedObjects" nillable="true" type="q2:ArrayOfKObject" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedProperties" nillable="true" type="q3:ArrayOfKProperty" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="AddedRelationships" nillable="true" type="q4:ArrayOfRelationshipBaseKlink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddedConcepts" nillable="true" type="tns:AddedConcepts" />
+  <xs:complexType name="ModifiedConcepts">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.Concepts" minOccurs="0" name="DeletedMedias" nillable="true" type="q5:ArrayOfKMedia" />
+      <xs:element minOccurs="0" name="ModifiedProperties" nillable="true" type="tns:ArrayOfModifiedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifiedConcepts" nillable="true" type="tns:ModifiedConcepts" />
+  <xs:complexType name="ArrayOfModifiedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModifiedProperty" nillable="true" type="tns:ModifiedProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModifiedProperty" nillable="true" type="tns:ArrayOfModifiedProperty" />
+  <xs:complexType name="ModifiedProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NewValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerObjectID" type="xs:long" />
+      <xs:element minOccurs="0" name="TypeUri" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModifiedProperty" nillable="true" type="tns:ModifiedProperty" />
+  <xs:complexType name="SynchronizationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsCompletelySynchronized" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SyncronizationLog" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SynchronizationResult" nillable="true" type="tns:SynchronizationResult" />
+</xs:schema>

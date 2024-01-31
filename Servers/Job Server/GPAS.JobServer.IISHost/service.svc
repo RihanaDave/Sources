@@ -1,0 +1,1 @@
+<%@ ServiceHost Service="GPAS.JobServer.Service.Service" %>

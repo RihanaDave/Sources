@@ -1,0 +1,12 @@
+{
+  "ServerUri": "http://172.16.8.234:6060",
+  "Organization": null,
+  "ProjectKey": "kavosh",
+  "ProjectName": "kavosh",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AWiL2kgJfiDWCUNpicO_",
+      "ProfileTimestamp": "2019-01-26T20:29:24Z"
+    }
+  }
+}

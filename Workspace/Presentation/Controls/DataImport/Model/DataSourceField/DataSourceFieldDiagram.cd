@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.ConstFieldModel">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\ConstFieldModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.DataSourceFieldCategoryModel">
+    <Position X="10" Y="1.5" Width="2.5" />
+    <Members>
+      <Field Name="category" Hidden="true" />
+      <Field Name="dataSourceCollection" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAIAAAACAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\DataSourceFieldCategoryModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DataSourceCollection" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.DataSourceFieldModel">
+    <Position X="6" Y="1.5" Width="2" />
+    <Members>
+      <Method Name="DataSourceFieldModel" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Field Name="isSelected" Hidden="true" />
+      <Method Name="OnDeselected" Hidden="true" />
+      <Method Name="OnSampleValueChanged" Hidden="true" />
+      <Method Name="OnSelected" Hidden="true" />
+      <Field Name="ownerDataSource" Hidden="true" />
+      <Field Name="sampleValue" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAAQQACiEEAAooAAAAAAAACBAIAAAUAAAAAAAgI=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\DataSourceFieldModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnerDataSource" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.MetaDataFieldModel">
+    <Position X="4.75" Y="6" Width="2" />
+    <Members>
+      <Field Name="relatedMetaDataItem" Hidden="true" />
+      <Method Name="RelatedMetaDataItem_ValueChanged" Hidden="true" />
+      <Method Name="SetSampleValue" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAIAAAAAAAACAAAAAg=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\MetaDataFieldModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RelatedMetaDataItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.PathPartFieldModel">
+    <Position X="9.25" Y="6" Width="1.75" />
+    <Members>
+      <Field Name="directoryIndex" Hidden="true" />
+      <Field Name="partType" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\PathPartFieldModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PartType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.TableFieldModel">
+    <Position X="7.5" Y="6" Width="1.5" />
+    <Members>
+      <Field Name="columnIndex" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\TableFieldModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.MetaData.MetaDataItemModel">
+    <Position X="4.25" Y="8" Width="1.75" />
+    <Members>
+      <Field Name="_value" Hidden="true" />
+      <Field Name="id" Hidden="true" />
+      <Field Name="needsRecalculation" Hidden="true" />
+      <Method Name="OnValueChanged" Hidden="true" />
+      <Field Name="ownerDataSource" Hidden="true" />
+      <Field Name="shellMetaData" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABACQAAAQACAAEAAAAAQQAAAAECBEAEAAQAgAAAAAgA=</HashCode>
+      <FileName>Controls\DataImport\Model\MetaData\MetaDataItemModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OwnerDataSource" />
+      <Property Name="Type" />
+      <Property Name="ShellMetaData" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.IDataSource" Collapsed="true">
+    <Position X="1" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCDAAyAABAAAlMAAAgwAQAhAAABEAACQQAAAAADAEA=</HashCode>
+      <FileName>Controls\DataImport\Model\IDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Microsoft.WindowsAPICodePack.Shell.PropertySystem.IShellProperty" Collapsed="true">
+    <Position X="7.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.FieldType">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAJAAAAgAAAAAAAAAEAAAAAAAAEAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\FieldType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.DataSourceField.PathPartType">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAABAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAFAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\DataSourceField\PathPartType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GPAS.Workspace.Presentation.Controls.DataImport.Model.MetaData.MetaDataType">
+    <Position X="7" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DataImport\Model\MetaData\MetaDataType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

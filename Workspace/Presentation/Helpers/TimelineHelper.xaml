@@ -1,0 +1,22 @@
+<helpers:PresentationHelper x:Class="GPAS.Workspace.Presentation.Helpers.TimelineHelper"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:local="clr-namespace:GPAS.Workspace.Presentation.Helpers"
+                            xmlns:timeline="clr-namespace:GPAS.Workspace.Presentation.Controls.Timeline"
+                            xmlns:helpers="clr-namespace:GPAS.Workspace.Presentation.Helpers"
+                            xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                            mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="600" Title="{x:Static resource:Resources.Timeline}">
+    <Grid>
+        <timeline:TimelineControl x:Name="timelineControl" VerticalAlignment="Stretch"
+                                  ObjectCollection="{Binding ObjectCollection}"
+                                  SelectedRangesChanged="TimelineControl_SelectedRangesChanged" 
+                                  ObjectsSelectionRequested="TimelineControl_ObjectsSelectionRequested"
+                                  FilterWindowsChanged="TimelineControl_FilterWindowsChanged"
+                                  FilterQueryChanged="TimelineControl_FilterQueryChanged"
+                                  CheckedPropertyTypeUriListChanged="TimelineControl_CheckedPropertyTypeUriListChanged"
+                                  SnapshotRequested="TimelineControl_SnapshotRequested"/>
+    </Grid>
+</helpers:PresentationHelper>

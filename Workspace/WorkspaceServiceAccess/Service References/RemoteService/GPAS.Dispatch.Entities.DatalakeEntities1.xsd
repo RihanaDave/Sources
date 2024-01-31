@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GPAS.Dispatch.Entities.DatalakeEntities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="StreamingIngestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Headers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InputPort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelatedDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StreamingDataSeparator" type="tns:FileSeparator" />
+      <xs:element minOccurs="0" name="id" type="ser:guid" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StreamingIngestion" nillable="true" type="tns:StreamingIngestion" />
+  <xs:simpleType name="FileSeparator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Tab" />
+      <xs:enumeration value="Comma" />
+      <xs:enumeration value="Pipe" />
+      <xs:enumeration value="Sharp" />
+      <xs:enumeration value="Slash" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FileSeparator" nillable="true" type="tns:FileSeparator" />
+  <xs:complexType name="ArrayOfSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchCriteria" nillable="true" type="tns:ArrayOfSearchCriteria" />
+  <xs:complexType name="SearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comparator" type="tns:ComparatorType" />
+      <xs:element minOccurs="0" name="CriteriaDataType" type="tns:BaseDataType" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCriteria" nillable="true" type="tns:SearchCriteria" />
+  <xs:simpleType name="ComparatorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equal" />
+      <xs:enumeration value="Like" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="greatorThan" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ComparatorType" nillable="true" type="tns:ComparatorType" />
+  <xs:simpleType name="BaseDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Double" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="String" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BaseDataType" nillable="true" type="tns:BaseDataType" />
+  <xs:complexType name="IngestionFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataFlowDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSeparator" type="tns:FileSeparator" />
+      <xs:element minOccurs="0" name="Headers" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IngestionFile" nillable="true" type="tns:IngestionFile" />
+</xs:schema>

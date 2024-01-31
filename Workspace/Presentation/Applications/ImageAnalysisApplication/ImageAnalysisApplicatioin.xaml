@@ -1,0 +1,362 @@
+﻿<applications:PresentationApplication x:Class="GPAS.Workspace.Presentation.Applications.ImageAnalysisApplicatioin"
+                                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                      xmlns:applications="clr-namespace:GPAS.Workspace.Presentation.Applications"
+                                      xmlns:convertors="clr-namespace:GPAS.Workspace.Presentation.Applications.Convertors"
+                                      xmlns:waiting="clr-namespace:GPAS.Workspace.Presentation.Controls.Waiting"
+                                      xmlns:resource="clr-namespace:GPAS.Workspace.Presentation.Properties"
+                                      xmlns:utility="clr-namespace:GPAS.Workspace.Presentation.Utility"
+                                      mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700">
+
+    <applications:PresentationApplication.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <convertors:RawImageLoadingToVisibilityConvertor x:Key="rawImageLoadingToVisibilityConvertor"/>
+            <convertors:FaceExtractionToVisibilityConvertor x:Key="faceExtractionToVisibilityConvertor"/>
+            <convertors:ResultPreviewToVisibilityConvertor x:Key="resultPreviewToVisibilityConvertor"/>
+            <convertors:DistanceToBorderBrushConverter x:Key="DistanceToBorderBrushConverter"/>
+            <convertors:BooleanToSelectionBackgroundColorConverter x:Key="BooleanToSelectionBackgroundColorConverter"/>
+            <utility:BooleanToSelectionColorConvertor x:Key="booleanToSelectionColorConvertor"/>
+            <Style TargetType="ToolTip">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+                <Setter Property="Background" Value="{DynamicResource MaterialDesignCardBackground}"/>
+            </Style>
+        </ResourceDictionary>
+    </applications:PresentationApplication.Resources>
+
+    <Grid Name="mainGrid" Background="{DynamicResource MaterialDesignCardBackground}" >
+
+        <!--Step1 (Upload Image)-->
+        <Grid Name="uploadImageGrid" Margin="40" Grid.Row="0"
+              Visibility="{Binding Path=CurrentStep, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource rawImageLoadingToVisibilityConvertor}}" >
+
+            <Grid Name="dragableGrid" Background="{DynamicResource MaterialDesignPaper}" Margin="50" 
+                  AllowDrop="True" Drop="uploadImageGrid_Drop">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Grid.RowSpan="5" BorderThickness="2">
+                    <Border.BorderBrush>
+                        <DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="Gray">
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <RectangleGeometry Rect="0,0,50,50" />
+                                                <RectangleGeometry Rect="50,50,50,50" />
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Border.BorderBrush>
+                </Border>
+
+                <Image Name="uploadImageIcon"
+                       Source="{StaticResource UploadImageIcon}"
+                       Stretch="Fill"
+                       Margin="2 2 2 20"
+                       Height="200" 
+                       Width="200"
+                       Grid.Row="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       MouseDown="uploadImageIcon_MouseDown"/>
+
+                <Button Name="chooseImageFileButton"
+                    Grid.Row="2"
+                    Height="50"
+                    FontSize="18"
+                    Width="auto"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="chooseImageFileButton_Click">
+                    <TextBlock Margin="5" FontWeight="Bold" Text="{x:Static resource:Resources.Choose_Image_Files_To_Upload}"/>
+                </Button>
+
+                <TextBlock Name="dragDropLabel" 
+                       Grid.Row="3" Foreground="{DynamicResource MaterialDesignBody}"
+                       FontSize="18"
+                       Height="45"
+                       Width="auto"
+                       Text="{x:Static resource:Resources.or_drag_and_drop_them_here}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+
+        <!--Step2 (Face Extraction)-->
+        <Grid Name="FaceExtractionGrid" 
+              Margin="40"
+              Visibility="{Binding Path=CurrentStep, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,
+            Converter={StaticResource faceExtractionToVisibilityConvertor}}"
+              Background="{DynamicResource MaterialDesignPaper}"
+              Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Grid.RowSpan="2"/>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="CloseButton" Padding="0" ToolTip="Close" Grid.Column="1" Click="CloseButton_Click" Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="Close" Width="25" Height="25" Foreground="Red"/>
+                </Button>
+            </Grid>
+
+            <Border BorderThickness="2" 
+                    BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Grid.Row="1">
+                <Image Name="loadedImage"
+                       Margin="3" 
+                       Stretch="Uniform"
+                       SizeChanged="loadedImage_SizeChanged"/>
+            </Border>
+
+            <Canvas Name="loadedImageCanvas" 
+                    Grid.Row="1"
+                    Width="{Binding Path=ActualWidth, ElementName=loadedImage}"
+                    Height="{Binding Path=ActualHeight, ElementName=loadedImage}"/>
+
+
+            <StackPanel Name="buttons"
+                        Orientation="Horizontal" Margin="5 5 5 10"
+                        HorizontalAlignment="Right"
+                        Grid.Row="2">
+
+                <ComboBox Name="ResultCount"  Width="100"
+                        materialDesign:HintAssist.Hint="Result count"  SelectedIndex="0"
+                          Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.FloatingScale="1"
+                        materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource PrimaryHueMidBrush}"
+                         Foreground="{DynamicResource MaterialDesignBody}">
+                    <ComboBoxItem Content="{x:Static resource:Resources.Ten}"/>
+                    <ComboBoxItem Content="{x:Static resource:Resources.Thirty}"/>
+                    <ComboBoxItem Content="{x:Static resource:Resources.fifty}"/>
+                </ComboBox>
+
+                <Button x:Name="BtnSearch"
+                        IsEnabled="False" VerticalAlignment="Bottom"
+                        Margin="15 5 5 0" Content="{x:Static resource:Resources.Search}"
+                        Click="BtnSearch_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <!--Step3 (Result Preview)-->
+        <Grid Name="ResultPreviewGrid" 
+              Margin="40" Background="{DynamicResource MaterialDesignPaper}"
+              Visibility="{Binding Path=CurrentStep, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged, Converter={StaticResource resultPreviewToVisibilityConvertor}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Grid.RowSpan="2" />
+
+            <Grid Name="previewImageGrid" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition  Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="previewImgCloseIconButton" Padding="0" ToolTip="Close" Grid.Column="5"
+                        Click="PreviewImgCloseIconButton_Click" Style="{StaticResource MaterialDesignFlatButton}">
+                    <materialDesign:PackIcon Kind="Close" Width="25" Height="25" Foreground="Red"/>
+                </Button>
+
+                <Border BorderThickness="2" 
+                    BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Grid.Row="1" 
+                    Grid.Column="1">
+                    <Image Name="selectedFaceImage"                        
+                       Margin="3"
+                       Stretch="Uniform"/>
+                </Border>
+
+                <materialDesign:PackIcon Kind="ArrowRightBold" Width="35" Grid.Row="1" Grid.Column="2" Height="35"  HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                         Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                <Border BorderThickness="2" 
+                    BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Grid.Row="1" 
+                    Grid.Column="3">
+                    <Image Name="previewImage"                        
+                       Margin="3"
+                       Stretch="Uniform"
+                       MouseDown="previewImage_MouseDown"/>
+                </Border>
+
+            </Grid>
+
+
+            <Grid Name="mainSearchResultGrid" Margin="10" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Name="searchResultGrid" Margin="2" Grid.Column="0" Background="{DynamicResource MaterialDesignCardBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Name="searchResultTextBlock" Grid.Row="0" FontSize="15"
+                       Margin="5" Style="{StaticResource SecondHeader}" Text="{x:Static resource:Resources.Search_Results_}"/>
+
+                    <ScrollViewer Name="searchResultScrollViewer" VerticalScrollBarVisibility="Auto"  Width="180" Padding="5" Grid.Row="1" Margin="4 5 0 5">
+                        <ItemsControl Name="searchResultsItemControl" >
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border x:Name="ImageBorder" BorderThickness="3" 
+                                            CornerRadius="5"
+                                            BorderBrush="{Binding Distance,Converter={StaticResource DistanceToBorderBrushConverter}}"                                                                                                                             
+                                            Margin="2"
+                                            MouseDown="ShowingObject_MouseDown">
+                                        <Border.Background>
+                                            <MultiBinding Converter="{StaticResource BooleanToSelectionBackgroundColorConverter}">
+                                                <Binding Path="IsSelected" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                                                <Binding Path="CurrentTheme" RelativeSource="{RelativeSource Mode=FindAncestor,AncestorType=UserControl}"/>
+                                            </MultiBinding>
+                                        </Border.Background>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Name="resultIcon"
+                                                   Source="{Binding Icon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                   Stretch="Fill" 
+                                                   Grid.Row="0" Height="130" Width="105"
+                                                   Margin="2"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center"/>
+
+                                            <TextBlock Name="resultDescriptionLabel"
+                                                   Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                   Grid.Row="1" 
+                                                   Margin="1"
+                                                   HorizontalAlignment="Center" 
+                                                   TextAlignment="Center"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   ToolTip="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                   Foreground="{DynamicResource MaterialDesignBody}"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+
+                    <!--'No Preview' Prompt-->
+                    <Label Name="NothingToPreviewPromptLabelForSearchResults"
+                           Grid.Row="1"
+                           Margin="3"
+                           Background="White" 
+                           Foreground="Silver" 
+                           VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" 
+                           FontStyle="Italic" 
+                           Content="{x:Static resource:Resources.No_Preview_Data_Available}" 
+                           Visibility="Collapsed"/>
+
+
+
+                </Grid>
+
+                <Grid Name="retrivedImageResultGrid"  Margin="5 2 2 2" Grid.Column="2" Background="{DynamicResource MaterialDesignCardBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Name="retrievedImageTextBlock" 
+                       Grid.Row="0" Style="{StaticResource SecondHeader}"
+                       FontSize="15"
+                       Text="{x:Static resource:Resources.Retrieved_Image_}"
+                       HorizontalAlignment="Left"
+                       TextAlignment="Left"
+                       VerticalAlignment="Bottom"/>
+
+
+                    <Border Name="retrievedBorder"  Margin="0 0 0 10"
+                            BorderThickness="2"
+                            Visibility="Collapsed" 
+                            BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            Grid.Row="1"
+                            Grid.Column="0">
+                        <Image Name="retrievedImage"                               
+                               Stretch="Uniform"
+                               Margin="2"
+                               SizeChanged="retrievedImage_SizeChanged"/>
+                    </Border>
+
+
+                    <Canvas Name="retrievedImageCanvas" 
+                            Grid.Row="1"
+                            Width="{Binding Path=ActualWidth, ElementName=retrievedImage}"
+                            Height="{Binding Path=ActualHeight, ElementName=retrievedImage}"
+                            />
+
+                    <!--'No Preview' Prompt-->
+                    <Label Name="NothingToPreviewPromptLabel"
+                           Grid.Row="1"
+                           Margin="10"
+                           Background="White" 
+                           Foreground="Silver" 
+                           VerticalContentAlignment="Center" 
+                           HorizontalContentAlignment="Center" 
+                           FontStyle="Italic" 
+                           Content="{x:Static resource:Resources.No_Preview_Data_Available}" 
+                           Visibility="Collapsed"/>
+
+                    <Button x:Name="BtnShowOnGraph" Grid.Row="2" 
+                             Margin="8"  HorizontalAlignment="Right"
+                             Content="{x:Static resource:Resources.Show_In_Graph}"
+                            Click="BtnShowOnGraph_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <waiting:WaitingControl Grid.Row="0" Grid.RowSpan="3" x:Name="WaitingControl" Message="Please wait..."/>
+    </Grid>
+</applications:PresentationApplication>

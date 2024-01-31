@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="GPAS.Dispatch.AdminTools.View.UserControls.DataManagementUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resource="clr-namespace:GPAS.Dispatch.AdminTools.Properties"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+
+    <StackPanel Background="{DynamicResource NormalBackground}">
+
+        <StackPanel>
+            <TextBlock Text="Data Management" Style="{StaticResource TabHeader}" />
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon Kind="Warning" Foreground="OrangeRed" Margin="10 10 0 10"
+                                         VerticalAlignment="Center" Height="25"  Width="25"/>
+                <TextBlock Text="Warning" Margin="10" Foreground="OrangeRed" FontSize="18" />
+            </StackPanel>
+
+            <TextBlock TextWrapping="Wrap" FontSize="16" Margin="10" Foreground="{DynamicResource NormalForeground}"
+                       Text="Servers data are permanently removed, make sure you have backup from them."/>
+
+            <Button Name="RemoveAllDataButton" Style="{StaticResource NormalButton}" HorizontalAlignment="Center" Margin="10" 
+                    Content="{x:Static resource:Resources.Remove_All_Data}" Click="RemoveAllDataButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

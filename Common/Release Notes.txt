@@ -1,0 +1,246 @@
+Versioning Legend:
+	[Basic change].[Compatibility change].[Working Demo change]
+
+Versions:
+
+Inprogress:
+	Adding Offical User Manual (Textual)
+	Adding Windows-based Desktop Core Edition
+	Adding Plugin-based Data Repository infrastructure
+	Fixing some bugs / Perform some Improvements
+
+2.12.6 (beta) [1398-07-25 (Middle of Sprint 74!)]
+	Added Object-Viewer tool to Dispatch Admin Tools
+	Added Date-Time milisecond precision
+	Redesigned Dispatch Admin Tools UI
+	Fixed some critical & normal bugs / Performed some Improvements
+
+2.12.5	[1398-05-05 (Sprint 71)]
+	Added Plugin-based File Repository infrastructure
+	Added Plugin-based Horizon infrastructure
+	Added NTFS File Repository infra. plugin
+	Added OrientDB RestAPI Horizon infra. plugin
+	Disabled Grouping objects from Graph
+
+2.12.4	[1398-04-02 (Sprint 69)]
+	Added Flows helper for Graph
+	Added support of store and search on DateTime properties with MiliSecond precision
+	Improved & Integrated Search\Horizon Servers data Synchronization process
+	Changed File Repository Hadoop Service setup method from Docker-based to directly install
+	Changed "Job Monitoring Agent" application to Windows resident service
+	Fixed some bugs
+
+Hotfixes:
+	Fixed Publish Graph window calling exception
+	Fixed multiple objects generation for fully-const object mapping
+	Fixed ignoring data row import when a must-match property value was null or empty
+	Fixed Document with 'null' content sync. exception & face extraction service call problem with null/empty Image
+
+2.12.3	[1397-11-01 (Sprint 65)]
+	Added Take Snapshot for visual tools
+	Added ability of Import data from Access database file source
+	Added ability of assigning properties to documents during Import process
+	Added ability of using path parts as Import metadata
+	Added load mapping for all data sources in Import mapping step
+	Redesigned Links load and unmerge on Graph
+	Fixed .eml files import upload and resource allocation problem
+	Fixed Right-Click menu visual problem
+	Fixed some bugs
+
+2.12.2	[1397-11-01 (Sprint 64)]
+	Added Chart (Property Numeric Values' stat. & Drill Down ability) to OE
+	Added Save ability for user investigations
+	Fixed Some Visual problems
+
+2.12.1	[1397-10-10 (Sprint 63)]
+	Added Property Value Histogram (Property Values' stat. & Drill Down ability) to OE
+	Added Link Type Histogram (Link Type and Related Object Types' stat. & Drill Down ability) to OE
+	Added Algebraic Operation (join Object Sets ability) to OE
+
+2.12.0	[1397-09-19 (Sprint 62)]
+	Added Object Explorer Application
+	Added Preview Histogram (Object & Property types' stat. & Drill Down ability) to OE
+	Fixed some bugs / Performed some Improvements
+	
+Hotfixes:
+	Fixed Some Setup packages bugs
+	Fixed Some Unmerge bugs
+	Fixed Job-Share remote access after install
+	Fixed save Graph problem
+	Fixed Heat-map presentaional problem
+
+2.11.0	[1397-08-28 (Sprint 61)]
+	Added Image Analytics application - Face search
+	Added ability of Import data from .eml files
+	Added/Imporoved some features of Heatmap
+	Added ability of sort Hitogram contents by property "values"
+	Added ability of defining multi-value mapping for document path in Import process
+	Added Object Selection tools for Map application
+	Added ability of removing all data for Admin
+	Added ability of restarting failed Job for Admin
+	Added CI automation
+	Added Automatic Feature Tests for critical features
+	Added Desktop Version to install software on single machine
+	Imporved Links retrievation method, show and unmerge them on Graph
+	Upgraded .net framework and 3rd party liberaries' version
+	Fixed some bugs / Performed some Improvements
+
+2.10.0	[1397-06-07 (Sprint 57)]
+	Added Custom Search-Around
+	Added Heat-Map
+	Added Data Source application
+	Added Map tile sources' customization
+	Added Filter Search for Map application
+	Added interactive Word Cloud form objects/documents properties/content
+	Updated Admin manual documentations
+	Updated Infrastructure technologies
+	Tested features with more than 10GB data on distributed infrastructure
+	Fixed Hotkeys operation problems
+	Fixed some bugs / Performed some Improvements
+
+2.9.0	[1397-03-13 (Sprint 54)]
+	Added (Radius, Polygon & Route) Geo-Search on Map
+	Added capability of importing date-time data from any format, culture and style
+	Added import data from Excel source files
+	Added language-based Summarization for Douments
+	Added ability of moving objects from Map to Graph by Drag-and-Drop
+	Changed Object Display-Name concept to an intrinsic Property
+	Improved Summarization by customization
+	Improved Horizon and Search servers synchronization strategy
+	Improved Docker packages to install services distributed
+	Fixed some bugs / Performed some Improvements
+
+2.8.0	[1396-11-16 (Sprint 48)]
+	Added Dispatch services access authentication
+	Added ability of defining Group of Users
+	Added ability of setting default Classification for Groups
+	Added Access Control logic on Data Sources
+	Added Classification logic on Data Sources
+	Added ability of defining new Data Lake input methods
+	Added Summarization ability for imported docuemtns
+	Added Docker images to setup Linux-based services + update Admin Manual
+	Updated installtion packages and Admin Manual documentations
+	Fixed NLP-Dispatch connection problem on some installations
+	Fixed some other bugs
+	Tested Data Lake infrastructure operationally
+
+2.7.0	[1396-09-08 (Sprint 45)]
+	Added Cockroach-based Repository infrastructure
+	Added Data-Lake input approach to the infrastructure
+	Changed local database engines on Dispatch and Job Server to SQL-Express to reduce complexity
+	Improved services dependency in the architecture
+	Improved "Tag Cloud" visualization appearance
+	Improved "Same Property" Search-Around performance
+	Fixed "Related Events" Search-Around fault on unpublished data
+	Fixed some other bugs
+	
+2.6.2	[1396-07-23 (Sprint 43)]
+	Added batch document import capability
+	Improved typical Search-Arounds (except Property-Based) performance
+
+Hotfixes:
+	Fixed some installation wizards' problem with last changes
+	Fixed Synchronize ontology in Search server reset
+	Fixed problem of calling NLP services by Dispatch service
+	Fixed Horizon server data sync. performance issue that affects reset process
+	Fixed NLP service connectivity problem
+	Fixed Job Server installation liberaries problem
+	Fixed Horizon/Search Admin Tools run-time configuration update problem
+
+2.6.1	[1396-07-03 (Sprint 42)]
+	Added Graph repository infrastructure for Horizon server to provide typical Search-Arounds (except Property-Based)
+	Added NLP server to infrastructure
+	Added "Content Analysis" tab for "Browser" with "Tag Cloud" and "Language Spectrum" tools
+	Prevent mistake Global Resolutions by limiting Global Resolution candidates number
+
+2.6.0	[1396-06-13 (Sprint 41)]
+	Filter search provider rule grant to Search Server
+	Horizon Database Server rule removed (documentations updated)
+	Add 'multi-value', 'regex based' and 'geo-spacial format conversation' capabilities for import UI and transformation phase
+	Improve Graph performance and upgrade it's base control
+	Improve search server synchronizations/reset by manging it's commits
+	Improve non-releasable Timeline control
+	Improve Graph capabilities by upgrade underlay control and apply some performance improvements
+	Prevent Global-Resolution for resolved objects exist properties duplication in case of the property type not defined in Linking Properties
+
+	Fixed search results integeration on local and remote data
+	Fixed 'Job Monitoring Agent' installation pack bug on creating shortcuts
+	Fixed graph selection after add filter search results
+	Fixed Dispatch configuration for map images path
+	Fixed Global Resolution candidate retrieval problem with string properties
+	Fixed Event-Based internal relationships direction problem in links retrieval
+	Fixed setting of default geographical properties in ontology that swaps Lat. and Long.!
+	Fixed some presentational bugs in Workspace
+	Fixed windows of Get\Publish Graph problem on locking UI during retrieve/publish and showing wait prompt
+	Fixed publish graph problem on clearing the graph content after sucessful publish
+	Fixed histogam data retrieval in collapsed state
+	Fixed object browser to prevent assign two properties when add them with keyboard
+	Fixed importing unstructured file selection problem that were discarded in import final step
+	Fixed adding search-around results to graph unfriendly arrangment
+	Fixed merging links dependency with internal relationships' directions
+	Fixed Filter Search to execute query on unpublished objects.
+	Improved searches result on Workspace side data when using wildcards
+	Improved install packages automatic generation by reading version number form assembles
+	Improved event-based and mergeed links direction showing on graph
+	Improved graph performance
+	Improved UI performance during histogram load
+	Updated default ontology icons
+	Updated admin user manual for defining 'Linked-Server' on local machine
+
+2.5.4	[1396-03-22 (Sprint 37)]:
+	Global Resolution from Graph
+	Prevent user local changes to affect "Global Resolution Wizard" window
+	Import CSV with custom separator implemented
+	Multi-Media data import implemented
+	IP to Geo UI implemented
+	Parallel Job processing capability for Job Monitoring Agent added
+	31 Bugs/Preventions fixed/applied
+	Search server "Reset" method reformed and "Solr Management Service" removed
+	Code Name changed
+	Setup Packages for Services added
+	Minimal Ontology defined
+	User Manual implemented
+	Admin Manual implemented
+
+2.5.3	[1395-12-11 (Sprint 33)]:
+	Textual Search on text-based assigned Media's content implemented
+	Textual Search on text-based Property values implemented
+	Semi-structured import from SQL service implemented
+	11 Bugs/Preventions fixed/applied
+	"Dispatch File Server" merged with "Dispatch Server"
+	"Hadoop Server" name changed to "File Repository Server"
+	Import & Global Resolution test with 18.6 M rows passed
+
+2.5.2	[1395-11-20 (Sprint 32 Demo)]:
+	Publish window changed
+	52 Bugs/Preventions fixed/applied
+	Used Hadoop version upgraded and a space usage optimization performed
+	Document concept defined
+	Unstructured file (Document) import implemented
+	Textual search on Document contents implemented
+	View Documents using Windows App installations implemented
+	User login added
+	User account control interface implemented
+
+2.5.1	[1395-10-12 (Sprint 31)]:
+	Global Resolution (Non-returnable) Added
+		+ Using Global Resolution Wizard
+		+ Using Saved Suite (for both Workspace and Server side)
+	Apache Solr text-based search for Global Resolution candidates retrieval implemented
+	Internal Resolution bug on fully ignorable Objects fixed
+	Repository and Horizon Databases schema and indexes improved
+
+2.4.0	[1395-08-19 (Sprint 28)]:
+	Links' Merge-Unmerge on Graph was added
+	Links' label position problem fixed
+	Import Extraction and Internal-Resolution phase performance improved
+	Dispatch side ID assignment
+	(Horizon update on publishes has some problems and will fix in next version)
+
+2.3.5	[1395-02-08 (Sprint 19 Demo)]:
+	Map application was added
+	Timeline helper was added
+	Publish window was added
+	DAM critical section problem solved
+	Some Browser application bugs fixed and it's perfromance improved
+	Some other bugs fixed!

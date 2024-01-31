@@ -1,0 +1,230 @@
+﻿<Window x:Class="GPAS.Workspace.Presentation.Windows.DataImport.SetPathWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Commonconverters="clr-namespace:GPAS.Workspace.Presentation.Controls.Common.Converters"
+        xmlns:dataimport="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport"
+        xmlns:converters="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Converters"
+        xmlns:map="clr-namespace:GPAS.Workspace.Presentation.Controls.DataImport.Model.Map"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Height="600" Width="900"
+        Foreground="{DynamicResource MaterialDesignBody}">
+
+    <Window.Resources>
+        <converters:ValidationStatusToVisibilityConverter x:Key="ValidationStatusToVisibilityConverter"/>
+        <converters:ValidationStatusToForegroundConverter x:Key="ValidationStatusToForegroundConverter"/>
+        <Commonconverters:EnumDescriptionConverter x:Key="EnumDescriptionConverter"/>
+        <Commonconverters:ValuesEqualityConverter x:Key="ValuesEqualityConverter"/>
+        <Commonconverters:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
+        <Commonconverters:ImportStatusToIsEnableConverter x:Key="ImportStatusToIsEnableConverter"/>
+
+        <system:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">5</system:Double>
+        <system:Double x:Key="{x:Static SystemParameters.HorizontalScrollBarHeightKey}">5</system:Double>
+
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type system:Enum}" x:Key="DocumentPathOption">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="map:DocumentPathOption" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type sys:Enum}" x:Key="ResolutionPolicyValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="map:ResolutionPolicy" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        
+        <Style TargetType="TextBlock" x:Key="SetHint"
+               BasedOn="{StaticResource MaterialDesignSubtitle1TextBlock}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Document.Path.SampleValue.Length,
+                    FallbackValue=0, TargetNullValue=0,
+                    RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" Value="0">
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Opacity" Value=".5"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip" BasedOn="{StaticResource MaterialDesignToolTip}">
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                   MaxHeight="300" MaxWidth="500"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border x:Name="MainBorder" CornerRadius="10" BorderBrush="{DynamicResource PrimaryHueMidBrush}" 
+            Background="{DynamicResource MaterialDesignCardBackground}"
+            BorderThickness="2" MouseLeftButtonDown="MainBorder_MouseLeftButtonDown">
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="TitleWindow" Grid.Row="0" Text="Set document path" Style="{StaticResource NormalHeader}"/>
+
+            <Grid Grid.Row="1" Margin="0 10 0 0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">                    
+                    <TextBlock Text="Path type" Style="{StaticResource NormalTextBlock}"
+                               Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                    <RadioButton Content="File" Margin="5" GroupName="PathType" Name="FileTypeRadioButton" HorizontalAlignment="Left"
+                                 Foreground="{DynamicResource MaterialDesignBody}"
+                                 IsChecked="{Binding Document.PathOption, 
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource EnumToBooleanConverter},
+                        ConverterParameter={x:Static map:DocumentPathOption.File}}"
+                                 IsEnabled="{Binding Document.OwnerMap.OwnerDataSource.ImportStatus,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource ImportStatusToIsEnableConverter}}"/>
+                    
+                    <RadioButton Content="Folder with subfolder" Margin="5" GroupName="PathType" Name="FolderTypeRadioButton"
+                                 HorizontalAlignment="Left"
+                                 Foreground="{DynamicResource MaterialDesignBody}"
+                                 IsChecked="{Binding Document.PathOption, 
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource EnumToBooleanConverter},
+                        ConverterParameter={x:Static map:DocumentPathOption.FolderWithSubFolder}}"
+                                 IsEnabled="{Binding Document.OwnerMap.OwnerDataSource.ImportStatus,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource ImportStatusToIsEnableConverter}}"/>
+
+                    <TextBlock Text="Resolve settings" Style="{StaticResource NormalTextBlock}" Margin="5 20 5 5"
+                               Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                    <CheckBox Grid.Row="2" Name="FileResolutionCheckBox" Margin="5" HorizontalAlignment="Left"
+                              IsEnabled="{Binding Document.OwnerMap.OwnerDataSource.ImportStatus,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource ImportStatusToIsEnableConverter}}"
+                              Content="Resolve documents"
+                              ToolTip="Documents that have the same file path are resolved."
+                              IsChecked="{Binding Document.Path.HasResolution, 
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                          />
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="5"
+                                Visibility="{Binding Document.Path.HasResolution,
+                        IsAsync=True, FallbackValue=Collapsed,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Text="Resolve policy: " VerticalAlignment="Center"/>
+                        <ComboBox Name="ResolutionPolicyComboBox" VerticalAlignment="Center" HorizontalContentAlignment="Left" Margin="5 0"
+                                  ItemsSource="{Binding Source={StaticResource ResolutionPolicyValues}}"
+                                  SelectedItem="{Binding Document.ResolutionPolicy, FallbackValue=SetNew,
+                            RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                              IsEnabled="{Binding Document.OwnerMap.OwnerDataSource.ImportStatus,
+                            RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                            Converter={StaticResource ImportStatusToIsEnableConverter}}"
+                                  >
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Tag="{Binding}" Margin="2 2 12 2"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <Separator Grid.Column="1" Margin="5">
+                    <Separator.LayoutTransform>
+                        <RotateTransform Angle="90" />
+                    </Separator.LayoutTransform>
+                </Separator>
+
+                <Grid Grid.Column="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>                    
+
+                    <dataimport:SetMappingPropertiesValueUserControl
+                        Margin="5 0 0 0"  Grid.Row="1" 
+                        SelectedProperty="{Binding Document.Path, RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}"/>
+                </Grid>
+            </Grid>
+
+            <Separator Grid.Row="2" Margin="5"/>
+
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Path:" Style="{StaticResource NormalTextBlock}" 
+                               Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                    <Border Grid.Column="1" BorderThickness="0.5" BorderBrush="{DynamicResource MaterialDesignBody}"
+                        CornerRadius="4" Margin="0 8 5 8">
+
+                        <TextBlock TextWrapping="NoWrap" Margin="5" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"
+                       Foreground="{DynamicResource MaterialDesignBody}" ToolTipService.Placement="MousePoint">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignSubtitle2TextBlock}">
+                                    <Setter Property="Text" Value="{Binding Document.Path.SampleValue, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                                    <Setter Property="ToolTip" Value="{Binding Document.Path.SampleValue, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Document.Path.SampleValue.Length,FallbackValue=0,
+                                            TargetNullValue=0, RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}"
+                                         Value="0">
+                                            <Setter Property="Text" Value="Selected document path"/>
+                                            <Setter Property="Opacity" Value="0.5"/>
+                                            <Setter Property="ToolTipService.IsEnabled" Value="False"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+
+                    </Border>
+
+                    <materialDesign:PackIcon Grid.Column="2" Kind="Warning" Height="20" Width="20" Background="#00FFFFFF"
+                                    VerticalAlignment="Center" Margin="5 0"
+                                    ToolTip="{Binding Document.Path.SampleValueValidationStatus.Message,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                    Foreground="{Binding Document.Path.SampleValueValidationStatus.Status, 
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, 
+                        Converter={StaticResource ValidationStatusToForegroundConverter}}"
+                                    Visibility="{Binding Document.Path.SampleValueValidationStatus.Status,
+                        RelativeSource={RelativeSource FindAncestor, AncestorType=Window},
+                        Converter={StaticResource ValidationStatusToVisibilityConverter}}"/>
+                </Grid>
+
+                <UniformGrid x:Name="CancelSetPathWindow" Grid.Row="1" Margin="5 0 5 5" HorizontalAlignment="Right" Rows="1" Columns="2">
+                    <Button Click="CancelSetPathWindow_Click" Content="Cancel" />
+                    <Button Click="OkSetPathWindow_Click" Content="Ok"  Margin="5 0 0 0"/>
+                </UniformGrid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

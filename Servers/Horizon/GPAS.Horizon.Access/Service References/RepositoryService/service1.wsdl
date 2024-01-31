@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.AccessControl" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/GPAS.RepositoryServer.Entities.Publish" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjects" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveObjectsSequentialByIDRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveObjectsSequentialByIDRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveObjectsSequentialByIDRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveObjectsSequentialByIDRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesOfObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesOfObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesOfObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesOfObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesOfObjectsWithoutAuthorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesOfObjectsWithoutAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesOfObjectsWithoutAuthorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesOfObjectsWithoutAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesOfObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesOfObjects" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesOfObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesOfObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpecifiedPropertiesOfObjectsByTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifiedPropertiesOfObjectsByTypes" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpecifiedPropertiesOfObjectsByTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifiedPropertiesOfObjectsByTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpecifiedPropertiesOfObjectsByTypeAndValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifiedPropertiesOfObjectsByTypeAndValue" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSpecifiedPropertiesOfObjectsByTypeAndValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSpecifiedPropertiesOfObjectsByTypeAndValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesByID" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPropertiesByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPropertiesByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationships_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationships" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationships_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveRelationships_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveRelationships" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveRelationships_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveRelationshipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveRelationshipsSequentialByIDRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveRelationshipsSequentialByIDRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveRelationshipsSequentialByIDRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveRelationshipsSequentialByIDRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSourceLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSourceLink" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSourceLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSourceLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceOrTargetObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceOrTargetObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceOrTargetObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceOrTargetObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceObjectWithoutAuthParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceObjectWithoutAuthParams" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceObjectWithoutAuthParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceObjectWithoutAuthParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceOrTargetObjectWithoutAuthParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceOrTargetObjectWithoutAuthParams" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRelationshipsBySourceOrTargetObjectWithoutAuthParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipsBySourceOrTargetObjectWithoutAuthParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExistingRelationship_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingRelationship" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExistingRelationship_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistingRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaForObject" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediaForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediaForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediasForObjectsWithoutAuthorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediasForObjectsWithoutAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediasForObjectsWithoutAuthorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediasForObjectsWithoutAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediasForObjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediasForObjects" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMediasForObjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMediasForObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Publish_InputMessage">
+    <wsdl:part name="parameters" element="tns:Publish" />
+  </wsdl:message>
+  <wsdl:message name="IService_Publish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateNewGraphArrangment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewGraphArrangment" />
+  </wsdl:message>
+  <wsdl:message name="IService_CreateNewGraphArrangment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewGraphArrangmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGraphArrangements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphArrangements" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGraphArrangements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphArrangementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGraphImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphImage" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGraphImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGraphArrangementXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphArrangementXML" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetGraphArrangementXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGraphArrangementXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteGraph_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGraph" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteGraph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGraphResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedObjectId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedObjectId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedObjectId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedObjectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedPropertyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedPropertyId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedPropertyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedPropertyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedRelationshipId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedRelationshipId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedRelationshipId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedRelationshipIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedMediaId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedMediaId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedMediaId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedMediaIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedGraphId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedGraphId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedGraphId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedGraphIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedDataSourceId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedDataSourceId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetLastAsignedDataSourceId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastAsignedDataSourceIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Optimize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Optimize" />
+  </wsdl:message>
+  <wsdl:message name="IService_Optimize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OptimizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_TruncateDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:TruncateDatabase" />
+  </wsdl:message>
+  <wsdl:message name="IService_TruncateDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TruncateDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RegisterNewDataSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewDataSource" />
+  </wsdl:message>
+  <wsdl:message name="IService_RegisterNewDataSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewDataSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSubsetOfConceptsByPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubsetOfConceptsByPermission" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSubsetOfConceptsByPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubsetOfConceptsByPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveDataSourceACLs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveDataSourceACLs" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveDataSourceACLs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveDataSourceACLsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveTopNDataSourceACLs_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveTopNDataSourceACLs" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetrieveTopNDataSourceACLs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveTopNDataSourceACLsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetriveDataSourcesSequentialIDByIDRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetriveDataSourcesSequentialIDByIDRange" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetriveDataSourcesSequentialIDByIDRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetriveDataSourcesSequentialIDByIDRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataSourcesByIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesByIDs" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDataSourcesByIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSourcesByIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAvailableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetObjects" message="tns:IService_GetObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetObjectsResponse" message="tns:IService_GetObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveObjectsSequentialByIDRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetrieveObjectsSequentialByIDRange" message="tns:IService_RetrieveObjectsSequentialByIDRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetrieveObjectsSequentialByIDRangeResponse" message="tns:IService_RetrieveObjectsSequentialByIDRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesOfObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPropertiesOfObject" message="tns:IService_GetPropertiesOfObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPropertiesOfObjectResponse" message="tns:IService_GetPropertiesOfObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesOfObjectsWithoutAuthorization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPropertiesOfObjectsWithoutAuthorization" message="tns:IService_GetPropertiesOfObjectsWithoutAuthorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPropertiesOfObjectsWithoutAuthorizationResponse" message="tns:IService_GetPropertiesOfObjectsWithoutAuthorization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesOfObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPropertiesOfObjects" message="tns:IService_GetPropertiesOfObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPropertiesOfObjectsResponse" message="tns:IService_GetPropertiesOfObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedPropertiesOfObjectsByTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectsByTypes" message="tns:IService_GetSpecifiedPropertiesOfObjectsByTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectsByTypesResponse" message="tns:IService_GetSpecifiedPropertiesOfObjectsByTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedPropertiesOfObjectsByTypeAndValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectsByTypeAndValue" message="tns:IService_GetSpecifiedPropertiesOfObjectsByTypeAndValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectsByTypeAndValueResponse" message="tns:IService_GetSpecifiedPropertiesOfObjectsByTypeAndValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPropertiesByID" message="tns:IService_GetPropertiesByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPropertiesByIDResponse" message="tns:IService_GetPropertiesByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationships">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationships" message="tns:IService_GetRelationships_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipsResponse" message="tns:IService_GetRelationships_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRelationships">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetrieveRelationships" message="tns:IService_RetrieveRelationships_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetrieveRelationshipsResponse" message="tns:IService_RetrieveRelationships_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRelationshipsSequentialByIDRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetrieveRelationshipsSequentialByIDRange" message="tns:IService_RetrieveRelationshipsSequentialByIDRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetrieveRelationshipsSequentialByIDRangeResponse" message="tns:IService_RetrieveRelationshipsSequentialByIDRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSourceLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSourceLink" message="tns:IService_GetSourceLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSourceLinkResponse" message="tns:IService_GetSourceLink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceObject" message="tns:IService_GetRelationshipsBySourceObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceObjectResponse" message="tns:IService_GetRelationshipsBySourceObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceOrTargetObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceOrTargetObject" message="tns:IService_GetRelationshipsBySourceOrTargetObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceOrTargetObjectResponse" message="tns:IService_GetRelationshipsBySourceOrTargetObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceObjectWithoutAuthParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceObjectWithoutAuthParams" message="tns:IService_GetRelationshipsBySourceObjectWithoutAuthParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceObjectWithoutAuthParamsResponse" message="tns:IService_GetRelationshipsBySourceObjectWithoutAuthParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceOrTargetObjectWithoutAuthParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceOrTargetObjectWithoutAuthParams" message="tns:IService_GetRelationshipsBySourceOrTargetObjectWithoutAuthParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRelationshipsBySourceOrTargetObjectWithoutAuthParamsResponse" message="tns:IService_GetRelationshipsBySourceOrTargetObjectWithoutAuthParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingRelationship">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetExistingRelationship" message="tns:IService_GetExistingRelationship_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetExistingRelationshipResponse" message="tns:IService_GetExistingRelationship_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaForObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMediaForObject" message="tns:IService_GetMediaForObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMediaForObjectResponse" message="tns:IService_GetMediaForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediasForObjectsWithoutAuthorization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMediasForObjectsWithoutAuthorization" message="tns:IService_GetMediasForObjectsWithoutAuthorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMediasForObjectsWithoutAuthorizationResponse" message="tns:IService_GetMediasForObjectsWithoutAuthorization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMediasForObjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMediasForObjects" message="tns:IService_GetMediasForObjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMediasForObjectsResponse" message="tns:IService_GetMediasForObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Publish" message="tns:IService_Publish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PublishResponse" message="tns:IService_Publish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewGraphArrangment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CreateNewGraphArrangment" message="tns:IService_CreateNewGraphArrangment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CreateNewGraphArrangmentResponse" message="tns:IService_CreateNewGraphArrangment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphArrangements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGraphArrangements" message="tns:IService_GetGraphArrangements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGraphArrangementsResponse" message="tns:IService_GetGraphArrangements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGraphImage" message="tns:IService_GetGraphImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGraphImageResponse" message="tns:IService_GetGraphImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphArrangementXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetGraphArrangementXML" message="tns:IService_GetGraphArrangementXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetGraphArrangementXMLResponse" message="tns:IService_GetGraphArrangementXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGraph">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteGraph" message="tns:IService_DeleteGraph_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteGraphResponse" message="tns:IService_DeleteGraph_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedObjectId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAsignedObjectId" message="tns:IService_GetLastAsignedObjectId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAsignedObjectIdResponse" message="tns:IService_GetLastAsignedObjectId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedPropertyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAsignedPropertyId" message="tns:IService_GetLastAsignedPropertyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAsignedPropertyIdResponse" message="tns:IService_GetLastAsignedPropertyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedRelationshipId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAsignedRelationshipId" message="tns:IService_GetLastAsignedRelationshipId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAsignedRelationshipIdResponse" message="tns:IService_GetLastAsignedRelationshipId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedMediaId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAsignedMediaId" message="tns:IService_GetLastAsignedMediaId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAsignedMediaIdResponse" message="tns:IService_GetLastAsignedMediaId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedGraphId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAsignedGraphId" message="tns:IService_GetLastAsignedGraphId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAsignedGraphIdResponse" message="tns:IService_GetLastAsignedGraphId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedDataSourceId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetLastAsignedDataSourceId" message="tns:IService_GetLastAsignedDataSourceId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetLastAsignedDataSourceIdResponse" message="tns:IService_GetLastAsignedDataSourceId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Optimize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Optimize" message="tns:IService_Optimize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OptimizeResponse" message="tns:IService_Optimize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TruncateDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/TruncateDatabase" message="tns:IService_TruncateDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/TruncateDatabaseResponse" message="tns:IService_TruncateDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewDataSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RegisterNewDataSource" message="tns:IService_RegisterNewDataSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RegisterNewDataSourceResponse" message="tns:IService_RegisterNewDataSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsetOfConceptsByPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSubsetOfConceptsByPermission" message="tns:IService_GetSubsetOfConceptsByPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSubsetOfConceptsByPermissionResponse" message="tns:IService_GetSubsetOfConceptsByPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDataSourceACLs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetrieveDataSourceACLs" message="tns:IService_RetrieveDataSourceACLs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetrieveDataSourceACLsResponse" message="tns:IService_RetrieveDataSourceACLs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTopNDataSourceACLs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetrieveTopNDataSourceACLs" message="tns:IService_RetrieveTopNDataSourceACLs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetrieveTopNDataSourceACLsResponse" message="tns:IService_RetrieveTopNDataSourceACLs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetriveDataSourcesSequentialIDByIDRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetriveDataSourcesSequentialIDByIDRange" message="tns:IService_RetriveDataSourcesSequentialIDByIDRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetriveDataSourcesSequentialIDByIDRangeResponse" message="tns:IService_RetriveDataSourcesSequentialIDByIDRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourcesByIDs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDataSourcesByIDs" message="tns:IService_GetDataSourcesByIDs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDataSourcesByIDsResponse" message="tns:IService_GetDataSourcesByIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsAvailable" message="tns:IService_IsAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsAvailableResponse" message="tns:IService_IsAvailable_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetObjects">
+      <soap:operation soapAction="http://tempuri.org/IService/GetObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveObjectsSequentialByIDRange">
+      <soap:operation soapAction="http://tempuri.org/IService/RetrieveObjectsSequentialByIDRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesOfObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPropertiesOfObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesOfObjectsWithoutAuthorization">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPropertiesOfObjectsWithoutAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesOfObjects">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPropertiesOfObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedPropertiesOfObjectsByTypes">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectsByTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpecifiedPropertiesOfObjectsByTypeAndValue">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSpecifiedPropertiesOfObjectsByTypeAndValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPropertiesByID">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPropertiesByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationships">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRelationships">
+      <soap:operation soapAction="http://tempuri.org/IService/RetrieveRelationships" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveRelationshipsSequentialByIDRange">
+      <soap:operation soapAction="http://tempuri.org/IService/RetrieveRelationshipsSequentialByIDRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSourceLink">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSourceLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationshipsBySourceObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceOrTargetObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationshipsBySourceOrTargetObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceObjectWithoutAuthParams">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationshipsBySourceObjectWithoutAuthParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipsBySourceOrTargetObjectWithoutAuthParams">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRelationshipsBySourceOrTargetObjectWithoutAuthParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistingRelationship">
+      <soap:operation soapAction="http://tempuri.org/IService/GetExistingRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediaForObject">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMediaForObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediasForObjectsWithoutAuthorization">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMediasForObjectsWithoutAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMediasForObjects">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMediasForObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap:operation soapAction="http://tempuri.org/IService/Publish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewGraphArrangment">
+      <soap:operation soapAction="http://tempuri.org/IService/CreateNewGraphArrangment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphArrangements">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGraphArrangements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphImage">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGraphImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGraphArrangementXML">
+      <soap:operation soapAction="http://tempuri.org/IService/GetGraphArrangementXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGraph">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteGraph" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedObjectId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAsignedObjectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedPropertyId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAsignedPropertyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedRelationshipId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAsignedRelationshipId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedMediaId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAsignedMediaId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedGraphId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAsignedGraphId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastAsignedDataSourceId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetLastAsignedDataSourceId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Optimize">
+      <soap:operation soapAction="http://tempuri.org/IService/Optimize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TruncateDatabase">
+      <soap:operation soapAction="http://tempuri.org/IService/TruncateDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewDataSource">
+      <soap:operation soapAction="http://tempuri.org/IService/RegisterNewDataSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsetOfConceptsByPermission">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSubsetOfConceptsByPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveDataSourceACLs">
+      <soap:operation soapAction="http://tempuri.org/IService/RetrieveDataSourceACLs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTopNDataSourceACLs">
+      <soap:operation soapAction="http://tempuri.org/IService/RetrieveTopNDataSourceACLs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetriveDataSourcesSequentialIDByIDRange">
+      <soap:operation soapAction="http://tempuri.org/IService/RetriveDataSourcesSequentialIDByIDRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSourcesByIDs">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDataSourcesByIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAvailable">
+      <soap:operation soapAction="http://tempuri.org/IService/IsAvailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://core-kavosh:9031/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
